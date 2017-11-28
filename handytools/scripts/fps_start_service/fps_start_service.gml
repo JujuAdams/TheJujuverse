@@ -1,0 +1,1 @@
+if ( !RELEASE ) instantiate( obj_fps );

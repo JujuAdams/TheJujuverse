@@ -1,0 +1,1 @@
+transition( obj_transition_wipe, DEFAULT, DEFAULT, TRANSITION_RETURN );

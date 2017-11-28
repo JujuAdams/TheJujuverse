@@ -1,0 +1,1 @@
+string_save( "options.txt", json_prettify( json_encode( global.options_json ) ) );

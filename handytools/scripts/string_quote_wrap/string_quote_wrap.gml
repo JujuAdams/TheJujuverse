@@ -1,0 +1,1 @@
+return QU + string( argument0 ) + QU;

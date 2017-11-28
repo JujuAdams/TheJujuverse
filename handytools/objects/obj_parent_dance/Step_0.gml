@@ -1,0 +1,1 @@
+image_angle += dsin( current_time * 0.2 );

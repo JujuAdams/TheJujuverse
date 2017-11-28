@@ -1,0 +1,1 @@
+if ( room != rm_game ) instance_destroy();

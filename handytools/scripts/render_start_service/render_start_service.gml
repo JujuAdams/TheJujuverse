@@ -1,0 +1,1 @@
+instantiate( obj_render );

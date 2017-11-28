@@ -1,0 +1,1 @@
+time_offset = random( 360 );
