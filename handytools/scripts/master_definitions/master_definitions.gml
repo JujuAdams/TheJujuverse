@@ -8,17 +8,20 @@
 //--------------------
 //Release flags
 #macro RELEASE false
+#macro DEVTOOLS (true && !RELEASE)
 #macro TITLE "handytools"
 #macro VERSION "v0.1.0"
-#macro AUTHOR "Code: @jujuadams  |  Assets: @i_am_thireen + @gartman_gh + @blokatt  |  Special Thanks: @tophtacular"
+#macro VERSION_NOMIKER "Preview"
+#macro CREDITS "Code: @jujuadams\nImGUI GML Implementation: @babyj3ans\nAssets: @i_am_thireen + @gartman_gh + @blokatt\nSpecial Thanks: @tophtacular + The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
 #macro DATE "2017.11.26"
-#macro DEVTOOLS (true && !RELEASE)
 
 //Debug flags
 #macro TRACE_SHOW true
 #macro TRACE_SHOW_ERROR true
-#macro ERROR_DEPRECIATED_SCRIPTS true
+#macro TRACE_TO_GAME_OUTPUT true
+#macro GAME_OUTPUT_MAX_MESSAGES 50
+#macro ERROR_DEPRECIATED_SCRIPTS (true && !RELEASE)
 #macro GAMEFLOW_DEBUG false
 
 //Formatting

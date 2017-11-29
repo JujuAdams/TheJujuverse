@@ -1,1 +1,1 @@
-instantiate( obj_controls );
+instantiate_protected( obj_controls );

@@ -1,5 +1,3 @@
-trace_f( "Starting renderer" );
-
 application_surface_draw_enable( false );
 persistent = true;
 

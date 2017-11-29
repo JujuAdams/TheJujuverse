@@ -1,1 +1,1 @@
-instantiate( obj_music );
+instantiate_protected( obj_music );

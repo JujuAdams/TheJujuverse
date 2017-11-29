@@ -1,1 +1,1 @@
-if ( !RELEASE ) instantiate( obj_fps );
+if ( FPS_ON ) instantiate_protected( obj_fps );

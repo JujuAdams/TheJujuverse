@@ -14,5 +14,5 @@ if ( _update ) {
 var _update = tween_perform( TWEEN_OUT, false );
 if ( _update ) {
 	x = tween_lerp( TWEEN_OUT, 0, -( room_width + 270 ) );
-	if ( tween_ping[TWEEN_OUT] ) instance_destroy();
+	if ( tween_ping[TWEEN_OUT] ) tr_instance_destroy();
 }

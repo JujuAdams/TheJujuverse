@@ -1,8 +1,10 @@
+global.master_game_output = ds_list_create();
+global.master_start_time = current_time;
+global.master_game_frames = 0;
+
 trace_f( "--------------------", NL,
          "    GAME  STARTS", NL,
          "--------------------" );
-global.master_start_time = current_time;
-global.master_game_frames = 0;
 
 //initialise miscellaneous stuff
 randomize();
@@ -19,3 +21,9 @@ audio_init();
 wan_init();
 options_init();
 gameflow_init();
+
+//register our game instance debug output in the tracker
+if ( TRACKER_ON ) __tr_list_register( global.master_game_output, "<master game output>", true );
+
+//we have to start the ImGUI service here for some reason?!
+imguigml_start_service();

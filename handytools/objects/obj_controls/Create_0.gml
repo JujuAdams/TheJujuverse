@@ -1,5 +1,3 @@
-trace_f( "Starting controls" );
-
 depth = -2000;
 persistent = true;
 camera_interesting = true;

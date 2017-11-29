@@ -1,5 +1,3 @@
-trace_f( "Starting music" );
-
 persistent = true; 
 
 game_intro_played = false;

@@ -1,1 +1,1 @@
-instantiate( obj_gameflow );
+instantiate_protected( obj_gameflow );

@@ -18,6 +18,20 @@ if ( TRACKER_ON ) {
 	
 	__tr_list_register( global.tracker_lists, "<lists>", true );
 	
+	//JSON handling
+	global.tracker_map_nested_maps   = tr_map_create( "<map nested maps>"  , true );
+	global.tracker_map_nested_lists  = tr_map_create( "<map nested lists>" , true );
+	global.tracker_list_nested_maps  = tr_map_create( "<list nested maps>" , true );
+	global.tracker_list_nested_lists = tr_map_create( "<list nested lists>", true );
+	
+	//pre-register these maps in preparation for having lists added to them
+	global.tracker_map_nested_lists[? global.tracker_map_nested_maps   ] = noone;
+	global.tracker_map_nested_lists[? global.tracker_map_nested_lists  ] = noone;
+	global.tracker_map_nested_lists[? global.tracker_list_nested_maps  ] = noone;
+	global.tracker_map_nested_lists[? global.tracker_list_nested_lists ] = noone;
+	
+	
+	
 	//grids
 	global.tracker_grids         = tr_list_create( "<grids>"         , true );
 	global.tracker_grids_origin  = tr_map_create(  "<grids, origin>" , true );
@@ -30,17 +44,11 @@ if ( TRACKER_ON ) {
 	global.tracker_vbuffs_note    = tr_map_create(  "<vbuffs, note>"   , true );
 	global.tracker_vbuffs_protect = tr_map_create(  "<vbuffs, protect>", true );
 	
-	//JSON handling
-	global.tracker_map_nested_maps   = tr_map_create( "<map nested maps>"  , true );
-	global.tracker_map_nested_lists  = tr_map_create( "<map nested lists>" , true );
-	global.tracker_list_nested_maps  = tr_map_create( "<list nested maps>" , true );
-	global.tracker_list_nested_lists = tr_map_create( "<list nested lists>", true );
-	
-	//pre-register these maps in preparation for having lists added to them
-	global.tracker_map_nested_lists[? global.tracker_map_nested_maps   ] = noone;
-	global.tracker_map_nested_lists[? global.tracker_map_nested_lists  ] = noone;
-	global.tracker_map_nested_lists[? global.tracker_list_nested_maps  ] = noone;
-	global.tracker_map_nested_lists[? global.tracker_list_nested_lists ] = noone;
+	//instances
+	global.tracker_instances         = tr_list_create( "<instances>"         , true );
+	global.tracker_instances_origin  = tr_map_create(  "<instances, origin>" , true );
+	global.tracker_instances_note    = tr_map_create(  "<instances, note>"   , true );
+	global.tracker_instances_protect = tr_map_create(  "<instances, protect>", true );
 	
 }
 

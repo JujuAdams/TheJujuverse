@@ -8,7 +8,7 @@
     "exportAction": 0,
     "exportDir": "",
     "fileName": "WinDev.dll",
-    "filePath": "datafiles\\yal.cc",
+    "filePath": "datafiles",
     "freeData": false,
     "origName": "",
     "overwrite": false,

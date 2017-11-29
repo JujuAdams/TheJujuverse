@@ -10,10 +10,11 @@
         "e383b970-bd75-46dc-8e04-292234001697",
         "0deba142-93ea-4235-80af-cdaf4eb8c317",
         "476f6c6f-9700-4456-9c3b-a316d0f8e5cf",
-        "9df0c87a-e127-4883-ab94-a52c0994bb53"
+        "9df0c87a-e127-4883-ab94-a52c0994bb53",
+        "91f57eee-6703-4153-a38d-8644a2d607a5"
     ],
     "filterType": "GMScript",
-    "folderName": "debug",
+    "folderName": "trace",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

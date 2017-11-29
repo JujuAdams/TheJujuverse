@@ -1,1 +1,1 @@
-instantiate( obj_render );
+instantiate_protected( obj_render );

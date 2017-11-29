@@ -1,0 +1,1 @@
+if ( IMGUI_ON ) instantiate_protected( obj_imgui_persistent );
