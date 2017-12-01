@@ -17,7 +17,7 @@ if ( TRACKER_ON ) {
 		return false;
 	}
 	
-	if ( TRACKER_DEBUG_SURFACE_DESTROY ) trace_v( "destroying surface ", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
+	if ( TRACKER_DEVELOPMENT_SURFACE_DESTROY ) trace_v( "destroying surface ", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
 	
 }
 

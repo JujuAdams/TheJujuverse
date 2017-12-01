@@ -1,0 +1,1 @@
+#macro FPS_ON (true && DEVELOPMENT && !RELEASE)

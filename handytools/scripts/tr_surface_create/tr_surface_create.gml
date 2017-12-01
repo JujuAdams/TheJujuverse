@@ -20,7 +20,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_surface_register( _index,   argument[0], argument[1],   (argument_count>2)? argument[2] : "",   (argument_count>3)? argument[3] : false );
-	if ( TRACKER_DEBUG_SURFACE_CREATE ) trace_v( "creating surface=", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_SURFACE_CREATE ) trace_v( "creating surface=", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	
 } else {
 	

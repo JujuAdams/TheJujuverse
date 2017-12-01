@@ -18,7 +18,7 @@ if ( TRACKER_ON ) {
 		return false;
 	}
 	
-	if ( TRACKER_DEBUG_VBUFF_DESTROY ) trace_v( "destroying vertex buffer ", _index, TRACE_DEFAULT_DIVIDER, tr_vertex_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_VBUFF_DESTROY ) trace_v( "destroying vertex buffer ", _index, TRACE_DEFAULT_DIVIDER, tr_vertex_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	__tr_vertex_unregister( _index );
 	
 }

@@ -17,7 +17,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_vertex_register( _index,   (argument_count>0)? argument[0] : "",   (argument_count>1)? argument[1] : false );
-	if ( TRACKER_DEBUG_VBUFF_CREATE ) trace_v( "creating vbuff=", _index, TRACE_DEFAULT_DIVIDER, tr_vertex_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_VBUFF_CREATE ) trace_v( "creating vbuff=", _index, TRACE_DEFAULT_DIVIDER, tr_vertex_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	return _index;
 }
 

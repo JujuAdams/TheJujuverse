@@ -12,11 +12,11 @@ if ( global.tracker_surfaces_width[? _index ] == undefined ) {
 	
 	if ( surface_exists( _index ) ) {
 		__tr_surface_register( _index, surface_get_width( _index ), surface_get_height( _index ), _note, false );
-		if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "existing surface ", _index, " newly registered in tracker (surface_check)", TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
+		if ( TRACKER_DEVELOPMENT_SURFACE_CHECK ) trace_v( "existing surface ", _index, " newly registered in tracker (surface_check)", TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
 		return _index;
 	}
 	
-	if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "surface ", _index, " does not exist in tracker, nor in VRAM. creating new surface" );
+	if ( TRACKER_DEVELOPMENT_SURFACE_CHECK ) trace_v( "surface ", _index, " does not exist in tracker, nor in VRAM. creating new surface" );
 	return tr_surface_create( _width, _height, _note, false );
 	
 }
@@ -30,7 +30,7 @@ if ( !surface_exists( _index ) ) {
 
 if ( _regen ) {
 	
-	if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "regen surface ", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
+	if ( TRACKER_DEVELOPMENT_SURFACE_CHECK ) trace_v( "regen surface ", _index, TRACE_DEFAULT_DIVIDER, tr_surface_details( _index, DEFAULT ) );
 	
 	var _note    = DEFAULT;
 	var _protect = DEFAULT;

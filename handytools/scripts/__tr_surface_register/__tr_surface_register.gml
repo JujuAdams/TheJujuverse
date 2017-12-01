@@ -4,7 +4,7 @@
 ///@param note
 ///@param protect
 
-if ( TRACKER_DEBUG_SURFACE_CREATE and TRACKER_BLANK_NOTE_THROW_ERROR and (argument3 == "") ) trace_error( false, "blank note!" );
+if ( TRACKER_DEVELOPMENT_SURFACE_CREATE and TRACKER_BLANK_NOTE_THROW_ERROR and (argument3 == "") ) trace_error( false, "blank note!" );
 
 ds_list_add( global.tracker_surfaces, argument0 );
 global.tracker_surfaces_width[?  argument0 ] = (argument1!=undefined)? argument1 : surface_get_width(  argument0 );

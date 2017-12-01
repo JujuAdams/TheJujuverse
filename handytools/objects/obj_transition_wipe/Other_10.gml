@@ -1,5 +1,5 @@
 ///@desc Post-create event
-
+/*
 switch( target_room ) {
 	case rm_main_menu:
 		colour = merge_colour( $763800, c_black, 0.8 );
@@ -15,3 +15,4 @@ switch( target_room ) {
 		break;
 }
 if ( room == rm_init ) colour = c_black;
+*/

@@ -1,5 +1,4 @@
 var _in_game = false;
-if ( transition_get_target_room() == rm_game ) _in_game = true;
 if ( global.gameflow_state != e_game_state.menu ) _in_game = true;
 
 if ( _in_game ) {

@@ -1,0 +1,1 @@
+if ( speech_list != noone ) and ( ds_exists( speech_list, ds_type_list ) ) ds_list_destroy( speech_list );

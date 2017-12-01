@@ -6,6 +6,8 @@
 //--------------------
 // Configuration
 //--------------------
+#macro GAMEFLOW_DEVELOPMENT false
+
 #macro DEFAULT_PLAYER_NAME "mittens"
 
 #macro PLAYER_A_COLOUR_DARK make_colour_rgb( 214, 107, 13 )

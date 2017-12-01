@@ -13,8 +13,8 @@ camera_state     = e_camera_state.follow;
 view = 0;
 view_enabled = true;
 view_set_visible( view, true );
-view_set_wport( view, 480 );
-view_set_hport( view, 270 );
+view_set_wport( view, DEFAULT_WINDOW_WIDTH );
+view_set_hport( view, DEFAULT_WINDOW_HEIGHT );
 
 var _w = view_get_wport( view )/camera_zoom;
 var _h = view_get_hport( view )/camera_zoom;

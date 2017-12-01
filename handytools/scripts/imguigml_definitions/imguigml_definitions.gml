@@ -4,7 +4,7 @@
 // Configuration
 //--------------------
 
-#macro IMGUI_ON (true && DEVTOOLS)
+#macro IMGUI_TRANSPARENCY 1.30
 
 //No idea what all this does... go ask babyjeans...
 #macro ImGuiGML_MaxVerts                 (65535)

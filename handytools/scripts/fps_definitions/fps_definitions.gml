@@ -1,1 +1,0 @@
-#macro FPS_ON (true && DEVTOOLS && !RELEASE)

@@ -25,10 +25,10 @@ switch( instance_exists( obj_camera ) ) {
 			_matrix = matrix_multiply( _matrix, matrix_build( 0,0,0,   0,0,0,   _camera_zoom*scaling_x,_camera_zoom*scaling_y,1 ) );
 			matrix_set( matrix_world, _matrix );
 			*/
-			matrix_stack_set_world();
+			matrix_stack_apply_to_world();
 			matrix_stack_push_build( -_view_x, -_view_y,0,   0,0,0,   1,1,1 );
 			matrix_stack_push_build( 0,0,0,   0,0,0,   _camera_zoom*scaling_x,_camera_zoom*scaling_y,1 );
-			matrix_stack_top_world();
+			matrix_stack_apply_to_world();
 				
 				s_shader_begin( shd_displacement_aoe );
 				with( obj_parent_screen_distortion ) event_user( 0 );

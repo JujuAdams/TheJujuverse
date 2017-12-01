@@ -15,7 +15,7 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
 	switch ( _player_map[?"mode"] ) {
 		
 		case KEYBOARD:
-			#region
+			#region KEYBOARD
 			var _mapping_map = _player_map[? "keyboard mapping" ];
 			var _sensitivity = _mapping_map[? "sensitivity" ];
 			
@@ -96,7 +96,7 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
 		break;
 		
 		case GAMEPAD:
-			#region
+			#region GAMEPAD
 			var _mapping_map = _player_map[?"gamepad mapping"];
 			var _device      = _mapping_map[?"device"];
 			var _sensitivity = _mapping_map[?"sensitivity"];

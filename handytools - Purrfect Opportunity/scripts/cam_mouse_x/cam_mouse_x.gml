@@ -1,0 +1,1 @@
+return cam_window_x_to_world( window_mouse_get_x() );

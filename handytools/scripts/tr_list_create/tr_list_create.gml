@@ -17,7 +17,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_list_register( _index,   (argument_count>0)? argument[0] : "",   (argument_count>1)? argument[1] : false );
-	if ( TRACKER_DEBUG_LIST_CREATE ) trace_v( "creating list=", _index, TRACE_DEFAULT_DIVIDER, tr_list_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_LIST_CREATE ) trace_v( "creating list=", _index, TRACE_DEFAULT_DIVIDER, tr_list_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	return _index;
 }
 

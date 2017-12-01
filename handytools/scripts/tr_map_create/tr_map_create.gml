@@ -17,7 +17,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_map_register( _index,   (argument_count>0)? argument[0] : "",   (argument_count>1)? argument[1] : false );
-	if ( TRACKER_DEBUG_MAP_CREATE ) trace_v( "creating map=", _index, TRACE_DEFAULT_DIVIDER, tr_map_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_MAP_CREATE ) trace_v( "creating map=", _index, TRACE_DEFAULT_DIVIDER, tr_map_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	return _index;
 }
 

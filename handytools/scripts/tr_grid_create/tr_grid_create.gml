@@ -19,7 +19,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_grid_register( _index,   (argument_count>2)? argument[2] : "",   (argument_count>3)? argument[3] : false );
-	if ( TRACKER_DEBUG_GRID_CREATE ) trace_v( "creating grid=", _index, TRACE_DEFAULT_DIVIDER, tr_grid_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_GRID_CREATE ) trace_v( "creating grid=", _index, TRACE_DEFAULT_DIVIDER, tr_grid_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	return _index;
 }
 

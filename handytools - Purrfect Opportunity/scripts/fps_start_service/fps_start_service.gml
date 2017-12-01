@@ -1,0 +1,1 @@
+if ( FPS_ON ) instantiate_protected( obj_fps );

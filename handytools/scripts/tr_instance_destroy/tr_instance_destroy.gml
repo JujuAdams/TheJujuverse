@@ -23,7 +23,7 @@ if ( TRACKER_ON ) {
 		}
 	}
 	
-	if ( TRACKER_DEBUG_INSTANCE_DESTROY ) trace_v( "destroying instance ", _index, TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_INSTANCE_DESTROY ) trace_v( "destroying instance ", _index, TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	__tr_instance_unregister( _index );
 	
 }

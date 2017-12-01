@@ -5,5 +5,5 @@ srf_displacement = noone;
 srf_fxaa         = noone;
 srf_postproc     = noone;
 
-scaling_x = 2;
-scaling_y = 2;
+scaling_x = 1;
+scaling_y = 1;

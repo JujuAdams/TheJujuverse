@@ -6,39 +6,50 @@
 //--------------------
 // Configuration
 //--------------------
-//Release flags
+//release flags
 #macro RELEASE false
-#macro DEVTOOLS (true && !RELEASE)
-#macro TITLE "handytools"
+#macro DEVELOPMENT (true && !RELEASE)
+#macro TITLE "handytools + A Mind Is A Small Place"
 #macro VERSION "v0.1.0"
 #macro VERSION_NOMIKER "Preview"
-#macro CREDITS "Code: @jujuadams\nImGUI GML Implementation: @babyj3ans\nAssets: @i_am_thireen + @gartman_gh + @blokatt\nSpecial Thanks: @tophtacular + The /r/GameMaker Discord"
+#macro CREDITS "Code: @jujuadams\nImGUI Implementation: @babyj3ans\nAMIASP Assets: @i_am_thireen + @tophtacular + @blokatt\nSpecial Thanks: The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
-#macro DATE "2017.11.26"
+#macro DATE "2017.11.30"
 
-//Debug flags
+//services
+#macro IMGUI_ON   (false && DEVELOPMENT)
+#macro TRACKER_ON (false && DEVELOPMENT && !RELEASE)
+#macro AUDIO_ON    true
+#macro WAN_ON      false
+#macro FPS_ON     (false && DEVELOPMENT && !RELEASE)
+#macro DEVTOOL_ON (false && IMGUI_ON && DEVELOPMENT)
+#macro RUMBLE_ON   false
+
+//debug flags
 #macro TRACE_SHOW true
 #macro TRACE_SHOW_ERROR true
 #macro TRACE_TO_GAME_OUTPUT true
-#macro GAME_OUTPUT_MAX_MESSAGES 50
-#macro ERROR_DEPRECIATED_SCRIPTS (true && !RELEASE)
-#macro GAMEFLOW_DEBUG false
+#macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
 
-//Formatting
+//output formatting
 #macro NL "\n"
 #macro QU "\""
 #macro TRACE_DEFAULT_DIVIDER ", "
 #macro TRACE_TIME_SPACE_PADDING 6
 
+//graphics
+#macro FORCE_VSYNC true
+#macro FORCE_NO_CURSOR true
+#macro FORCE_NO_INTERPOLATION true
 #macro DEFAULT_WINDOW_WIDTH 960
-#macro DEFAULT_WINDOW_HEIGHT 540
+#macro DEFAULT_WINDOW_HEIGHT 720
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
 
 //--------------------
 // Internal
 //--------------------
-//Abbreviations
+//abbreviations
 #macro APP_SURF application_surface
 #macro DEFAULT undefined
 #macro UNDF undefined

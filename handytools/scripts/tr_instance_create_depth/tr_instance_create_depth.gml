@@ -21,7 +21,7 @@ if ( TRACKER_ON ) {
 	}
 	
 	__tr_instance_register( _index,   (argument_count>4)? argument[4] : "",   (argument_count>5)? argument[5] : false );
-	if ( TRACKER_DEBUG_INSTANCE_CREATE ) trace_v( "creating instance=", _index, TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEVELOPMENT_INSTANCE_CREATE ) trace_v( "creating instance=", _index, TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
 	return _index;
 }
 

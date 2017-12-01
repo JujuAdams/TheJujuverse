@@ -1,7 +1,7 @@
 //--------------------
 // Configuration
 //--------------------
-#macro TRANSITION_DEBUG true
+#macro TRANSITION_DEVELOPMENT true
 #macro TRANSITION_DEFAULT_DURATION 250
 #macro TRANSITION_POSTCREATE_EVENT 0
 

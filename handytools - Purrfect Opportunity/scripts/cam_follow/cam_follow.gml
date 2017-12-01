@@ -1,0 +1,1 @@
+with( obj_camera ) camera_state = e_camera_state.follow;

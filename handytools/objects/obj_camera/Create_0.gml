@@ -1,24 +1,12 @@
-enum e_camera_state { follow, pan, free, static }
+x = -200; //-1400;
+y = 0;
+z = 50;
 
-tween_start          = current_time;
-tween_duration       = 1000;
-tween_t              = 0;
-tween_q              = 0;
-tween_start_x        = 0;
-tween_start_y        = 0;
-tween_end_x          = 640;
-tween_end_y          = 360;
-tween_zoom_do_centre = false;
-tween_start_zoom     = 0.5;
-tween_centre_zoom    = 0.5;
-tween_end_zoom       = 0.5;
+look_x = 0;
+look_y = 0;
+look_z = 0;
 
-cam_init();
+look_xy_angle = 0;
+look_pz_angle = 0;//p = plane
 
-/*
-test_ping_pong_state = 1;
-cam_pan( 512, 384, 1,
-         undefined,
-		 768, 384, 1,
-		 1000, 2000 );
-*/
+audio_listener_position( x, y, z );

@@ -8,7 +8,7 @@ var _loops    = argument2;
 
 var _gain = 1;
 var _pitch = 1;
-
+/*
 switch( _sound ) {
 	case snd_points_get:
 		_gain = 0.0;
@@ -58,7 +58,7 @@ switch( _sound ) {
 		_gain = .7;
 	break;
 }
-
+*/
 var _id = audio_play_sound( _sound, _priority, _loops );
 audio_sound_pitch( _id, _pitch );
 audio_sound_gain( _id, _gain, 0 );
