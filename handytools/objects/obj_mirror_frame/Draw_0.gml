@@ -9,28 +9,48 @@ vertex_submit( global.vbf_mirror_frame, pr_trianglelist, sprite_get_texture( spr
 matrix_reset_world();
 
 mouse_active_reset_colour();
-/*
+
 if ( !global.click_render ) {
+	
     shader_reset();
-    d3d_transform_set_rotation_z( image_angle );
-    d3d_transform_add_translation( x + swell_x, y + swell_y, z );
-    d3d_primitive_begin_texture( pr_trianglestrip, surface_get_texture( srf_mirror ) );
-    d3d_vertex_texture_colour( 0, -42, 62,   0, 0,   c_white, 1 );
-    d3d_vertex_texture_colour( 0, -42,  3,   0, 1,   c_white, 1 );
-    d3d_vertex_texture_colour( 0,  46, 62,   1, 0,   c_white, 1 );
-    d3d_vertex_texture_colour( 0,  46,  3,   1, 1,   c_white, 1 );
-    d3d_primitive_end();
-    d3d_transform_set_identity();
+	
+	matrix_chain_begin();
+	matrix_chain_rotate_z( image_angle );
+	matrix_chain_translate( x + swell_x, y + swell_y, z );
+	matrix_chain_end( matrix_world );
+	
+	var _model = vertex_create_buffer();
+	vertex_begin( _model, global.vft_simple );
+	vertex_position_3d( _model, 0, -42, 62 ); vertex_texcoord( _model, 1, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0, -42,  3 ); vertex_texcoord( _model, 1, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0,  46, 62 ); vertex_texcoord( _model, 0, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0,  46,  3 ); vertex_texcoord( _model, 0, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_end( _model );
+	vertex_submit( _model, pr_trianglestrip, surface_get_texture( srf_mirror ) );
+	vertex_delete_buffer( _model );
+	
+    matrix_reset_world();
     shader_set( shd_psx );
+	
 } else if ( !global.mirror_render ) {
-    d3d_set_fog( false, c_white, 0, 0 );
-    d3d_transform_set_rotation_z( image_angle );
-    d3d_transform_add_translation( x + swell_x, y + swell_y, z );
-    d3d_primitive_begin_texture( pr_trianglestrip, surface_get_texture( srf_mirror_click ) );
-    d3d_vertex_texture_colour( 0, -42, 62,   0, 0,   c_white, 1 );
-    d3d_vertex_texture_colour( 0, -42,  3,   0, 1,   c_white, 1 );
-    d3d_vertex_texture_colour( 0,  46, 62,   1, 0,   c_white, 1 );
-    d3d_vertex_texture_colour( 0,  46,  3,   1, 1,   c_white, 1 );
-    d3d_primitive_end();
+	
+    gpu_set_fog( false, c_white, 0, 0 );
+	
+	matrix_chain_begin();
+	matrix_chain_rotate_z( image_angle );
+	matrix_chain_translate( x + swell_x, y + swell_y, z );
+	matrix_chain_end( matrix_world );
+	
+	var _model = vertex_create_buffer();
+	vertex_begin( _model, global.vft_simple );
+	vertex_position_3d( _model, 0, -42, 62 ); vertex_texcoord( _model, 1, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0, -42,  3 ); vertex_texcoord( _model, 1, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0,  46, 62 ); vertex_texcoord( _model, 0, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_position_3d( _model, 0,  46,  3 ); vertex_texcoord( _model, 0, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
+	vertex_end( _model );
+	vertex_submit( _model, pr_trianglestrip, surface_get_texture( srf_mirror_click ) );
+	vertex_delete_buffer( _model );
+	
+    matrix_reset_world();
+	
 }
-*/

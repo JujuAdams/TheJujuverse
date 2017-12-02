@@ -22,7 +22,7 @@ with( obj_light ) {
 gpu_set_ztestenable( true );
 gpu_set_zwriteenable( true );
 gpu_set_ztestenable( true );
-gpu_set_cullmode( cull_noculling );
+gpu_set_cullmode( global.game_editing ? cull_counterclockwise : cull_noculling );
 draw_set_lighting( false );
 shader_reset();
 

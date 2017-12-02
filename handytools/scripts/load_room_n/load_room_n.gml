@@ -23,7 +23,7 @@ switch( _n ) {
         global.game_phone_do_ring = true;
     break;
     case 5: //Scissors
-        global.game_text = "They're all trying to help you.#Just try. Please.";
+        global.game_text = "They're all trying to help you.\nJust try. Please.";
         global.game_phone_do_ring = true;
     break;
     case 6: //Upside-Down

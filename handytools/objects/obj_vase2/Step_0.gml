@@ -3,9 +3,9 @@ event_inherited();
 if ( global.game_got_hammer ) mouse_interactible = true;
 if ( mouse_clicked ) {
     repeat( 20 ) {
-        var _inst = instance_create_z( x+0.5, y+0.5, z + random_range( -2, 5 ), 0, obj_shard );
+        var _inst = instance_create_z( x+0.5, y+0.5, z + random_range( -2.5, 7 ), 0, obj_shard );
         with( _inst ) {
-            sprite = spr_tex_vase1;
+            sprite = spr_tex_vase2;
             model = choose( global.vbf_shard3, global.vbf_shard4 );
             var _angle = random( 360 );
             var _v = random_range( 2, 3 );

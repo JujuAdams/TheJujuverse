@@ -6,7 +6,6 @@ var _objects_map = _root_map[? "objects" ];
 
 for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undefined; _object_name = ds_map_find_next( _objects_map, _object_name ) ) {
     
-	trace( _object_name );
     var _object = asset_get_index( _object_name );
     if ( global.game_room != 0 ) and ( _object == obj_door ) continue;
     

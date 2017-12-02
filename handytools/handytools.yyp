@@ -1047,6 +1047,14 @@
             }
         },
         {
+            "Key": "2d841b40-4a03-4d72-ae42-4cfdba9cd19c",
+            "Value": {
+                "id": "ddcec4b3-cc42-406b-9a15-e59ead601d41",
+                "resourcePath": "objects\\obj_chess_king\\obj_chess_king.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2db8e34e-9429-4d5b-9206-23aaa90dba71",
             "Value": {
                 "id": "4e9cb6c3-b73b-4432-b422-46b27de7eee2",
@@ -1887,6 +1895,14 @@
             }
         },
         {
+            "Key": "5399fe45-1ca2-403b-a258-a7da15a2ad7f",
+            "Value": {
+                "id": "98078ab4-a45b-44e0-bb7b-dcdfcf90a3ed",
+                "resourcePath": "objects\\obj_chess_queen_alt\\obj_chess_queen_alt.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "53ecaac6-4d38-4bab-9755-4e56217a088c",
             "Value": {
                 "id": "8feda2e5-8a14-4b41-82f3-1149e1693222",
@@ -2316,6 +2332,14 @@
                 "id": "bcb3874e-448f-45ea-92b7-b372e410be9d",
                 "resourcePath": "sprites\\spr_tex_shard_yellow\\spr_tex_shard_yellow.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "642adeef-fe89-42aa-b20f-886f5f092828",
+            "Value": {
+                "id": "8aaeaea5-cc54-41b3-b87b-3ef6170ae422",
+                "resourcePath": "objects\\obj_chess_queen\\obj_chess_queen.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3135,6 +3159,14 @@
             }
         },
         {
+            "Key": "8df045e7-4670-4e6d-9031-a2f33a16c210",
+            "Value": {
+                "id": "6339d5b5-e52b-4ee9-b966-4791cbc81a2e",
+                "resourcePath": "objects\\obj_chess_rook\\obj_chess_rook.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8dfbe1e7-d1b4-4dd5-a5d5-41281fbecb05",
             "Value": {
                 "id": "4ba48a09-2a74-4686-a649-51845af84e2f",
@@ -3372,14 +3404,6 @@
                 "id": "6fe25a12-f5bd-40eb-94d3-347d505a2778",
                 "resourcePath": "scripts\\__tr_instance_register\\__tr_instance_register.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "9b620902-5b94-4f66-9c2b-39e96ff77f85",
-            "Value": {
-                "id": "db29fd44-8501-4059-afa9-5851dadd4e3b",
-                "resourcePath": "shaders\\shd_test\\shd_test.yy",
-                "resourceType": "GMShader"
             }
         },
         {
@@ -4239,6 +4263,14 @@
             }
         },
         {
+            "Key": "c79b774f-350e-4fef-884d-c530490755d8",
+            "Value": {
+                "id": "f4de907f-8c09-4ae4-bb20-ced50613e684",
+                "resourcePath": "objects\\obj_chess_king_alt\\obj_chess_king_alt.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c7be1332-c9b7-4457-ad71-2ad14ad180e7",
             "Value": {
                 "id": "043f15e2-a9e2-46eb-af29-60f3f7f081bb",
@@ -4732,6 +4764,14 @@
                 "id": "9a4af350-a980-4a03-aa53-4d268b229f1a",
                 "resourcePath": "scripts\\instance_create_z\\instance_create_z.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e01f850d-452a-4972-aa68-e44478b0d06e",
+            "Value": {
+                "id": "261000db-3aa5-435c-a3d2-b21e87a6836e",
+                "resourcePath": "objects\\obj_chess_rook_alt\\obj_chess_rook_alt.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5276,6 +5316,14 @@
                 "id": "3a7f9b8e-a5c9-4e90-b8fb-4114074d91f3",
                 "resourcePath": "sprites\\spr_tex_skele\\spr_tex_skele.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f62e3aaf-ab0a-4576-bb31-49b3898a190d",
+            "Value": {
+                "id": "4dd0918f-e8a9-4f2d-9486-53a26d4706a8",
+                "resourcePath": "objects\\obj_chessboard\\obj_chessboard.yy",
+                "resourceType": "GMObject"
             }
         },
         {
