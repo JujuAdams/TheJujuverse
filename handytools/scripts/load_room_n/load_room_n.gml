@@ -7,11 +7,11 @@ switch( _n ) {
         global.game_phone_do_ring = true;
     break;
     case 1: //Hallway
-        global.game_text = "Hey there day-dreamer.#You seem miles away.";
+        global.game_text = "Hey there day-dreamer.\nYou seem miles away.";
         global.game_phone_do_ring = true;
     break;
     case 2: //Spirals
-        global.game_text = "Are you okay, sweetheart?#What're you staring at on the floor?";
+        global.game_text = "Are you okay, sweetheart?\nWhat're you staring at on the floor?";
         global.game_phone_do_ring = true;
     break;
     case 3: //Phones
@@ -19,7 +19,7 @@ switch( _n ) {
         global.game_phone_do_ring = true;
     break;
     case 4: //Mirrors
-        global.game_text = "Stop talking to yourself.#It's embarrassing me.";
+        global.game_text = "Stop talking to yourself.\nIt's embarrassing me.";
         global.game_phone_do_ring = true;
     break;
     case 5: //Scissors
@@ -31,15 +31,15 @@ switch( _n ) {
         global.game_phone_do_ring = true;
     break;
     case 7: //Hammer
-        global.game_text = "Why do you keep talking to me like that?#Stop calling me.";
+        global.game_text = "Why do you keep talking to me like this?\nStop calling me.";
         global.game_phone_do_ring = true;
     break;
     case 8: //Flowers
-        global.game_text = "The hospital called me last week.#Please eat your meals.";
+        global.game_text = "The hospital called me last week.\nPlease eat your meals.";
         global.game_phone_do_ring = true;
     break;
     case 9: //Broken phone
-        global.game_text = "I just wish this would be over with.#You've broken my heart.";
+        global.game_text = "I just wish this would be over with.\nYou've broken my heart.";
         global.game_phone_do_ring = true;
     break;
     case 10: //Ending

@@ -1,7 +1,5 @@
 ///unload_current_room()
 
-trace( "unload" );
-
 with ( obj_subtitle ) {
     alpha_animate = true;
     alpha_direction = -1;

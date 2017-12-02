@@ -13,8 +13,7 @@ if ( mouse_clicked ) and ( !obj_game.transition_do ) {
     
 }
 
-///Animation handling
-
+//Animation handling
 if ( intro_animate ) {
     intro_t = clamp( intro_t + intro_anim_speed, 0, 1 );
     if ( intro_t >= 1 ) {

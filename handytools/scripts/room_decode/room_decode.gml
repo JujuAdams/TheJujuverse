@@ -6,6 +6,7 @@ var _objects_map = _root_map[? "objects" ];
 
 for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undefined; _object_name = ds_map_find_next( _objects_map, _object_name ) ) {
     
+	trace( _object_name );
     var _object = asset_get_index( _object_name );
     if ( global.game_room != 0 ) and ( _object == obj_door ) continue;
     
@@ -39,9 +40,8 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 _inst.colour = _map[? "colour" ];
             break;
             default:
-                var _inst = instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
-				with( _inst ) trace( "creating ", object_get_name( object_index ), ", ", x, ", ", y, ", ", z );
-            break;
+                instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+			break;
         }
         
     }
