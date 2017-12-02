@@ -25,16 +25,16 @@ switch( instance_exists( obj_camera ) ) {
 			_matrix = matrix_multiply( _matrix, matrix_build( 0,0,0,   0,0,0,   _camera_zoom*scaling_x,_camera_zoom*scaling_y,1 ) );
 			matrix_set( matrix_world, _matrix );
 			*/
-			matrix_stack_apply_to_world();
-			matrix_stack_push_build( -_view_x, -_view_y,0,   0,0,0,   1,1,1 );
-			matrix_stack_push_build( 0,0,0,   0,0,0,   _camera_zoom*scaling_x,_camera_zoom*scaling_y,1 );
-			matrix_stack_apply_to_world();
+			matrix_chain_begin();
+			matrix_chain_translate( -_view_x, -_view_y, 0 );
+			matrix_chain_scale( _camera_zoom*scaling_x, _camera_zoom*scaling_y, 1 );
+			matrix_chain_end( matrix_world );
 				
-				s_shader_begin( shd_displacement_aoe );
-				with( obj_parent_screen_distortion ) event_user( 0 );
-				s_shader_end();
+			s_shader_begin( shd_displacement_aoe );
+			with( obj_parent_screen_distortion ) event_user( 0 );
+			s_shader_end();
 			
-			matrix_stack_clear_world();
+			matrix_reset_world();
 			
 		surface_reset_target();
 		
