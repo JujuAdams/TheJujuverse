@@ -1199,6 +1199,14 @@
             }
         },
         {
+            "Key": "37e6e72b-b51d-480d-b89c-7ea158605cec",
+            "Value": {
+                "id": "c706b11b-9c3b-458b-bfca-4cad9e552611",
+                "resourcePath": "objects\\obj_dummy_phone\\obj_dummy_phone.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "384b3cab-2111-4e2e-ae9a-e8d84029fd7e",
             "Value": {
                 "id": "4f45bd96-4103-401b-884c-97b37f8396bf",

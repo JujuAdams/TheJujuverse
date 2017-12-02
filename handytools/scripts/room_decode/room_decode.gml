@@ -39,7 +39,8 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 _inst.colour = _map[? "colour" ];
             break;
             default:
-                instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                var _inst = instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+				with( _inst ) trace( "creating ", object_get_name( object_index ), ", ", x, ", ", y, ", ", z );
             break;
         }
         

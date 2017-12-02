@@ -1,0 +1,1 @@
+trace( "clean up ", object_get_name( object_index ), ", ", x, ", ", y, ", ", z );

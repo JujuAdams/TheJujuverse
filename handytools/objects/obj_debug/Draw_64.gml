@@ -9,11 +9,11 @@ if ( global.game_editing ) {
     with( obj_screen ) {
         var _str = "ID=" + string( click_instance_over );
         with( click_instance_over ) {
-            _str += "#" + object_get_name( object_index );
-            _str += "#X=" + string( x );
-            _str += "#Y=" + string( y );
-            _str += "#Z=" + string( z );
-            _str += "#ANGLE=" + string( image_angle );
+            _str += "\n" + object_get_name( object_index );
+            _str += "\nX=" + string( x );
+            _str += "\nY=" + string( y );
+            _str += "\nZ=" + string( z );
+            _str += "\nANGLE=" + string( image_angle );
         }
     } 
     
@@ -32,7 +32,7 @@ var _str = "";
 if ( global.game_editing ) {
     
     _str += "FPS=" + string_format( fps, 4, 0 ) + "  ";
-    _str += "##[TAB] TOOL="
+    _str += "\n\n[TAB] TOOL="
     switch( global.debug_tool ) {
         case e_tool.place:  _str += "PLACE";  break;
         case e_tool.select: _str += "SELECT"; break;
@@ -41,21 +41,21 @@ if ( global.game_editing ) {
         case e_tool.delete: _str += "DELETE"; break;
     }
     
-    _str += "##FRAME TIME=" + string_format( obj_screen.smoothed_timer, 4, 0 ) + "us";
-    _str += "#[2] = LIGHTS";
-    _str += "#[3] = DITHERING";
-    _str += "#[4] = 3D";
-    _str += "#[N/M] = ZOOM IN 2D";
-    _str += "#SHIFT = SLOW MOVE";
-    _str += "##L.MB = TOGGLE SELECT";
-    if ( global.debug_tool != e_tool.place ) _str += "#R.MB = DESELECT ALL" else _str += "#R.MB = CREATE NEW INSTANCE";
-    _str += "#CTRL+S = SAVE";
-    _str += "#CTRL+L = LOAD";
-    _str += "##SHIFT+T = SELECT";
-    _str += "#SHIFT+M = MOVE";
-    _str += "#SHIFT+R = ROTATE";
-    _str += "#SHIFT+BACKSPACE = DELETE";
-    _str += "#SHIFT+P = PLACE";
+    _str += "\n\nFRAME TIME=" + string_format( obj_screen.smoothed_timer, 4, 0 ) + "us";
+    _str += "\n[2] = LIGHTS";
+    _str += "\n[3] = DITHERING";
+    _str += "\n[4] = 3D";
+    _str += "\n[N/M] = ZOOM IN 2D";
+    _str += "\nSHIFT = SLOW MOVE";
+    _str += "\n\nL.MB = TOGGLE SELECT";
+    if ( global.debug_tool != e_tool.place ) _str += "\nR.MB = DESELECT ALL" else _str += "\nR.MB = CREATE NEW INSTANCE";
+    _str += "\nCTRL+S = SAVE";
+    _str += "\nCTRL+L = LOAD";
+    _str += "\n\nSHIFT+T = SELECT";
+    _str += "\nSHIFT+M = MOVE";
+    _str += "\nSHIFT+R = ROTATE";
+    _str += "\nSHIFT+BACKSPACE = DELETE";
+    _str += "\nSHIFT+P = PLACE";
 	
 }
 
