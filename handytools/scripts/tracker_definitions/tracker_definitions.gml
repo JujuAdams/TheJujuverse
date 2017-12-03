@@ -25,7 +25,7 @@
 #macro TRACKER_DEVELOPMENT_SURFACE_DESTROY             false
 #macro TRACKER_DEVELOPMENT_SURFACE_PROTECT             false
 #macro TRACKER_DEVELOPMENT_SURFACE_CHECK               false
-#macro TRACKER_DEVELOPMENT_VBUFF_CREATE                false //vertex buffer flags
+#macro TRACKER_DEVELOPMENT_VBUFF_CREATE                true //vertex buffer flags
 #macro TRACKER_DEVELOPMENT_VBUFF_DESTROY               false
 #macro TRACKER_DEVELOPMENT_VBUFF_PROTECT               false
 #macro TRACKER_DEVELOPMENT_INSTANCE_CREATE             false //instance flags

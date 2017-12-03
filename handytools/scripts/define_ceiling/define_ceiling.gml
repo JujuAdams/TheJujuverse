@@ -23,7 +23,7 @@ with( _inst ) {
     sprite = _sprite;
     texture = sprite_get_texture( _sprite, 0 );
     
-    vbf_ceiling = tr_vertex_create_buffer();
+    vbf_ceiling = tr_vertex_create_buffer( "ceiling" );
     var _vbuff = vbf_ceiling;
     vertex_begin( _vbuff, global.vft_simple );
     

@@ -23,7 +23,7 @@ with( _inst ) {
     sprite = _sprite;
     texture = sprite_get_texture( _sprite, 0 );
     
-    vbf_floor = tr_vertex_create_buffer();
+    vbf_floor = tr_vertex_create_buffer( "floor" );
     var _vbuff = vbf_floor;
     vertex_begin( _vbuff, global.vft_simple );
     

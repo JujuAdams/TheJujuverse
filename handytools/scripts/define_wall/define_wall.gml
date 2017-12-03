@@ -33,7 +33,7 @@ with( _inst ) {
     y += lengthdir_y( 6*thickness*0.5, image_angle+90 );
     
     
-    vbf_wall = tr_vertex_create_buffer();
+    vbf_wall = tr_vertex_create_buffer( "wall" );
     var _vbuff = vbf_wall;
     vertex_begin( _vbuff, global.vft_simple );
     
