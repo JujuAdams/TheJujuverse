@@ -11,7 +11,7 @@ gpu_set_fog( false, background_colour, 0, 0 );
 matrix_set( matrix_view, matrix_build_lookat( APP_SURF_W/2, APP_SURF_H/2, -16000, 
 						           	          APP_SURF_W/2, APP_SURF_H/2, 0,
 							                  0, 1, 0 ) );
-matrix_set( matrix_projection, matrix_build_projection_ortho( APP_SURF_W, APP_SURF_H, 1, 16000 ) );
+matrix_set( matrix_projection, matrix_build_projection_ortho( APP_SURF_W, APP_SURF_H, -16000, 16000 ) );
 
 var _x = APP_SURF_W/2;
 var _y = APP_SURF_H/2;
@@ -22,6 +22,5 @@ if ( global.game_room != 0 ) and ( global.game_room != 10 ) {
 
 if ( instance_exists( obj_menu ) ) draw_sprite( spr_title, 0, 0, 0 );
 if ( obj_game.transition_do ) {
-	trace_v( obj_game.transition_colour, "|", obj_game.transition_t );
     draw_sprite_ext( spr_white_pixel, 0, 0, 0, 320, 240, 0, obj_game.transition_colour, obj_game.transition_t );
 }
