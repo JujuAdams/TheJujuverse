@@ -9,9 +9,8 @@
 //set frequency to <undefined> or 0 for no pulsing
 with( obj_rumble ) {
     
-    var _event_map = ds_map_create();
-    ds_list_add( rumble_list, _event_map );
-    ds_list_mark_as_map( rumble_list, ds_list_size( rumble_list )-1 );
+    var _event_map = tr_map_create();
+    tr_list_add_map( rumble_list, _event_map );
     
     _event_map[? "player"    ] = argument0;
     _event_map[? "start"     ] = argument3;

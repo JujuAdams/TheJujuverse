@@ -36,7 +36,7 @@ if ( _regen ) {
 	__tr_surface_unregister( _index );
 	surface_free( _index );
 	return tr_surface_create( _width, _height, _note, _protect );
-
+	
 }
 
 return _index;

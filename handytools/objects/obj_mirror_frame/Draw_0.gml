@@ -19,7 +19,7 @@ if ( !global.click_render ) {
 	matrix_chain_translate( x + swell_x, y + swell_y, z );
 	matrix_chain_end( matrix_world );
 	
-	var _model = vertex_create_buffer();
+	var _model = tr_vertex_create_buffer();
 	vertex_begin( _model, global.vft_simple );
 	vertex_position_3d( _model, 0, -42, 62 ); vertex_texcoord( _model, 1, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
 	vertex_position_3d( _model, 0, -42,  3 ); vertex_texcoord( _model, 1, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
@@ -41,7 +41,7 @@ if ( !global.click_render ) {
 	matrix_chain_translate( x + swell_x, y + swell_y, z );
 	matrix_chain_end( matrix_world );
 	
-	var _model = vertex_create_buffer();
+	var _model = tr_vertex_create_buffer();
 	vertex_begin( _model, global.vft_simple );
 	vertex_position_3d( _model, 0, -42, 62 ); vertex_texcoord( _model, 1, 0 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );
 	vertex_position_3d( _model, 0, -42,  3 ); vertex_texcoord( _model, 1, 1 ); vertex_colour( _model, c_white, 1 ); vertex_normal( _model, 1, 0, 0 );

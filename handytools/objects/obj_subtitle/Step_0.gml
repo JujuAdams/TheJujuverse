@@ -4,7 +4,7 @@ if ( alpha_animate ) {
     alpha_t = clamp( alpha_t + alpha_anim_speed*alpha_direction, 0, 1 );
     if ( alpha_t <= 0 ) and ( alpha_direction < 0 ) {
         alpha_animate = false;
-        instance_destroy();
+        tr_instance_destroy();
     }
     if ( alpha_t >= 1 ) and ( alpha_direction > 0 ) {
         alpha_animate = false;

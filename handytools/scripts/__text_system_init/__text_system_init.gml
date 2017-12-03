@@ -24,7 +24,7 @@ var _surface_size          = argument[2];
 var _padding               = argument[3];
 
 global.text_font_char_size = 1 + global.text_font_char_max - global.text_font_char_min;
-global.text_font_json      = ds_map_create();
+global.text_font_json      = tr_map_create();
 
 global.text_font_surface_width  = _surface_size;
 global.text_font_surface_height = _surface_size;
@@ -44,8 +44,8 @@ var _surf_line_height = 2 + _padding;
 for( var _i = 4; _i < argument_count; _i++ ) {
     
     var _font = argument[_i];
-    var _font_map = ds_map_create();
-    ds_map_add_map( global.text_font_json, _font, _font_map );
+    var _font_map = tr_map_create();
+    tr_map_add_map( global.text_font_json, _font, _font_map );
     _font_map[? "name" ] = font_get_name( _font );
     var _uvs = undefined;
     

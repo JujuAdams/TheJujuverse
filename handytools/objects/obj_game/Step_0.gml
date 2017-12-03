@@ -3,7 +3,7 @@ if ( keyboard_check_pressed( vk_f4 ) ) {
     window_set_fullscreen( !window_get_fullscreen() );
     if ( !instance_exists( obj_menu ) ) {
         audio_play_sound( snd_flower, 1, false );
-        instance_create( 0, 0, obj_menu );
+        tr_instance_create( 0, 0, obj_menu );
     }
 }
 
@@ -12,7 +12,7 @@ if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) and ( 
     global.mouse_locked = true;
 }
 
-if ( global.mouse_locked ) {
+if ( global.mouse_locked ) and ( !obj_devtool.show_window ) and ( !obj_editor.show_window ) {
     
     window_set_cursor( cr_none );
     
@@ -43,8 +43,8 @@ if ( !global.mouse_locked ) {
 }
 
 if ( keyboard_check_pressed( vk_escape ) ) {
-    with( obj_subtitle ) instance_destroy();
-    if ( !instance_exists( obj_menu ) ) instance_create( 0, 0, obj_menu );
+    tr_instance_destroy( obj_subtitle );
+    if ( !instance_exists( obj_menu ) ) tr_instance_create( 0, 0, obj_menu );
 }
 
 #endregion
@@ -66,8 +66,8 @@ if ( global.game_outro_do ) {
             if ( global.game_room == 10 ) {
                 
                 if ( current_time > global.game_outro_last_event + 16000 ) {
-                        unload_current_room();
-                        instance_create( 0, 0, obj_menu );
+                    unload_current_room();
+                    tr_instance_create( 0, 0, obj_menu );
                 }
                 
             } else {
@@ -123,11 +123,11 @@ if ( transition_do ) {
         transition_do = false;
         transition_t = 0;
         
-        with( obj_menu ) instance_destroy();
+        tr_instance_destroy( obj_menu );
         
         if ( transition_action == e_transition.menu ) {
             
-            if ( !instance_exists( obj_menu ) ) instance_create( 0, 0, obj_menu );
+            if ( !instance_exists( obj_menu ) ) tr_instance_create( 0, 0, obj_menu );
             
             unload_current_room();
             global.game_room = 0;
@@ -181,11 +181,11 @@ if ( transition_do ) {
                 
             }
             
-            if ( !load_room_n( global.game_room ) ) instance_create( 0, 0, obj_menu );
+            if ( !load_room_n( global.game_room ) ) tr_instance_create( 0, 0, obj_menu );
             
         } else if ( transition_action == e_transition.end_game ) {
             unload_current_room();
-            instance_create( 0, 0, obj_menu );
+            tr_instance_create( 0, 0, obj_menu );
         }
         
     }

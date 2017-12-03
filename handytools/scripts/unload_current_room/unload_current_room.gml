@@ -5,7 +5,7 @@ with ( obj_subtitle ) {
     alpha_direction = -1;
 }
 
-with( obj_par_game ) instance_destroy();
+tr_instance_destroy( obj_par_game );
 
 global.game_text          = "";
 global.game_phone_do_ring = false;

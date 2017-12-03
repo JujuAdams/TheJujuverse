@@ -1,0 +1,16 @@
+Search for instance_create
+Search for ds_map_create
+Search for ds_list_create
+Search for ds_grid_create
+Search for surface_create
+Search for vertex_buffer_create
+
+Search for _destroy
+
+Search for ds_map_add_
+Search for ds_map_add_
+Search for ds_list_mask_as
+
+Search for surface_free
+Search for json_decode
+Search for vertex_delete_buffer

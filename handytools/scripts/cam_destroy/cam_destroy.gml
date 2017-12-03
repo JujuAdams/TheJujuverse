@@ -1,1 +1,1 @@
-ds_list_destroy( camera_focus_list );
+tr_list_destroy( camera_focus_list );

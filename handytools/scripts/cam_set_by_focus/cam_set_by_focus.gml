@@ -1,7 +1,7 @@
 var _left   = VERY_LARGE;
 var _top    = VERY_LARGE;
-var _right  = VERY_SMALL;
-var _bottom = VERY_SMALL;
+var _right  = VERY_NEGATIVE;
+var _bottom = VERY_NEGATIVE;
 
 var _any = false;
 var _size = ds_list_size( camera_focus_list );

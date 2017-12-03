@@ -9,4 +9,4 @@ footstep_time = current_time;
 
 view_bob_z = 0;
 view_bob_size = 0;
-view_bob_start_time = VERY_SMALL;
+view_bob_start_time = VERY_NEGATIVE;

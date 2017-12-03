@@ -1,2 +1,2 @@
 image_alpha -= 0.01;
-if ( image_alpha <= 0 ) instance_destroy();
+if ( image_alpha <= 0 ) tr_instance_destroy();

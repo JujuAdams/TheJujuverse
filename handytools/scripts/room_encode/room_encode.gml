@@ -1,10 +1,10 @@
 ///room_encode()
 
-var _root_map = ds_map_create();
+var _root_map = tr_map_create();
 _root_map[? "time" ] = date_datetime_string( date_current_datetime() );
 
-var _objects_map = ds_map_create();
-ds_map_add_map( _root_map, "objects", _objects_map );
+var _objects_map = tr_map_create();
+tr_map_add_map( _root_map, "objects", _objects_map );
 
 with( obj_par_game ) {
     if ( object_index == obj_camera ) or ( object_index == obj_player ) continue;
@@ -12,11 +12,11 @@ with( obj_par_game ) {
     var _name = object_get_name( object_index );
     var _list = _objects_map[? _name ];
     if ( _list == undefined ) {
-        _list = ds_list_create();
-        ds_map_add_list( _objects_map, _name, _list );
+        _list = tr_list_create();
+        tr_map_add_list( _objects_map, _name, _list );
     }
     
-    var _map = ds_map_create();
+    var _map = tr_map_create();
     _map[? "x" ] = x;
     _map[? "y" ] = y;
     _map[? "z" ] = z;
@@ -47,11 +47,10 @@ with( obj_par_game ) {
         break;
     }
     
-    ds_list_add( _list, _map );
-    ds_list_mark_as_map( _list, ds_list_size( _list )-1 );
+    tr_list_add_map( _list, _map );
     
 }
 
 var _str = json_encode( _root_map );
-ds_map_destroy( _root_map );
+tr_map_destroy( _root_map );
 return _str;

@@ -11,10 +11,10 @@ var _scale        = argument7;
 
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 
-var _vertex_list  = ds_list_create(); ds_list_add( _vertex_list,   0,0,0 );
-var _normal_list  = ds_list_create(); ds_list_add( _normal_list,   0,0,0 );
-var _texture_list = ds_list_create(); ds_list_add( _texture_list,  0,0   );
-var _faces_list   = ds_list_create();
+var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
+var _normal_list  = tr_list_create(); ds_list_add( _normal_list,   0,0,0 );
+var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
+var _faces_list   = tr_list_create();
 
 var _file = file_text_open_read( _filename );
 while( !file_text_eof( _file ) ) {
@@ -109,7 +109,7 @@ file_text_close( _file );
 
 
 
-var _vbuff = vertex_create_buffer();
+var _vbuff = tr_vertex_create_buffer();
 vertex_begin( _vbuff, _format );
     
     var _size = ds_list_size( _faces_list );
@@ -186,10 +186,10 @@ vertex_end( _vbuff );
 
 
 
-ds_list_destroy( _vertex_list  );
-ds_list_destroy( _normal_list  );
-ds_list_destroy( _texture_list );
-ds_list_destroy( _faces_list   );
+tr_list_destroy( _vertex_list  );
+tr_list_destroy( _normal_list  );
+tr_list_destroy( _texture_list );
+tr_list_destroy( _faces_list   );
 
 return _vbuff;
 

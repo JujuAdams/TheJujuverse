@@ -34,12 +34,12 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                                 _map[? "z"  ], _map[? "tile_size" ], asset_get_index( _map[? "sprite" ] ) );
             break;
             case obj_light:
-                var _inst = instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
                 _inst.range = _map[? "range" ];
                 _inst.colour = _map[? "colour" ];
             break;
             default:
-                instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
 			break;
         }
         
@@ -51,10 +51,10 @@ with( obj_player_spawn ) {
     
     if ( !instance_exists( obj_player ) ) {
         
-        instance_create_z( x, y, z+50, 0, obj_player );
+        tr_instance_create_z( x, y, z+50, 0, obj_player );
         
         if ( !instance_exists( obj_camera ) ) {
-            var _inst = instance_create( x, y, obj_camera );
+            var _inst = tr_instance_create( x, y, obj_camera );
             _inst.z = z + 50;
             _inst.look_xy_angle = image_angle;
         }

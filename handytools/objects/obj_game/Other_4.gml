@@ -1,1 +1,1 @@
-if ( room != rm_init ) instance_create( 0, 0, obj_menu );
+if ( room != rm_init ) instantiate( obj_menu );

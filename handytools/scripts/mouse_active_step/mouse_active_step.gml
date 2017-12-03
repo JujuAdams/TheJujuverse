@@ -34,7 +34,7 @@ if ( mouse_clicked ) {
             colour = make_colour_rgb( _red, _green, _blue );
         }
         
-        if ( global.debug_tool == e_tool.delete ) and ( mouse_selected ) instance_destroy();
+        if ( global.debug_tool == e_tool.delete ) and ( mouse_selected ) tr_instance_destroy();
         
         mouse_selected = !mouse_selected;
         
@@ -51,7 +51,7 @@ if ( mouse_clicked ) {
             var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
             
             mouse_selected = false;
-            var _inst = instance_create_z( _x, _y, z, image_angle, object_index );
+            var _inst = tr_instance_create_z( _x, _y, z, image_angle, object_index );
             with( _inst ) {
                 mouse_selected = true;
                 mouse_active_set_relative_values()

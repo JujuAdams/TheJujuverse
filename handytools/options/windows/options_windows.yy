@@ -6,7 +6,7 @@
     "option_windows_allow_fullscreen_switching": false,
     "option_windows_borderless": false,
     "option_windows_company_info": "Grumpy Pug",
-    "option_windows_copyright_info": "(c) 2017 Grumpy Pug",
+    "option_windows_copyright_info": "(c) 2017 Grumpy Pug Games",
     "option_windows_description_info": "handytools",
     "option_windows_display_cursor": true,
     "option_windows_display_name": "handytools",
@@ -26,7 +26,7 @@
     "option_windows_splash_screen": "${options_dir}\\windows\\splash\\splash.png",
     "option_windows_start_fullscreen": false,
     "option_windows_texture_page": "2048x2048",
-    "option_windows_use_splash": true,
+    "option_windows_use_splash": false,
     "option_windows_version": {
         "build": 0,
         "major": 0,

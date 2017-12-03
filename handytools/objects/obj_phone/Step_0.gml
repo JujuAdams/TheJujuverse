@@ -20,7 +20,7 @@ if ( mouse_clicked ) {
             alpha_animate = true;
             alpha_direction = -1;
         }
-        with( instance_create( 0, 0, obj_subtitle ) ) text = global.game_text;
+        with( tr_instance_create( 0, 0, obj_subtitle ) ) text = global.game_text;
     } else {
         headset_direction = -1;
         headset_animate = true;
@@ -59,7 +59,7 @@ if ( headset_animate ) {
             audio_play_sound_at( snd_phone_shatter, x, y, z, 100, 300, 1, false, 1 );
             
             repeat( 24 ) {
-                var _inst = instance_create_z( x+0.5, y+0.5, z + random_range( -2, 5 ), 0, obj_shard );
+                var _inst = tr_instance_create_z( x+0.5, y+0.5, z + random_range( -2, 5 ), 0, obj_shard );
                 with( _inst ) {
                     sprite = spr_tex_shard_yellow;
                     model = choose( global.vbf_shard1, global.vbf_shard2 );
@@ -71,7 +71,7 @@ if ( headset_animate ) {
                 }
             }
             
-            instance_destroy();
+            tr_instance_destroy();
             
         } else {
             

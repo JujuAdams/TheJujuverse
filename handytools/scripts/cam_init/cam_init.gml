@@ -1,4 +1,4 @@
-camera_focus_list = ds_list_create();
+camera_focus_list = tr_list_create();
 
 
 

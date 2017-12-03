@@ -1,4 +1,4 @@
-if ( global.game_room == 10 ) or ( global.game_room == 11 ) instance_destroy();
+if ( global.game_room == 10 ) or ( global.game_room == 11 ) tr_instance_destroy();
 
 var _mx = mean( x1, x2 );
 var _my = mean( y1, y2 );

@@ -14,12 +14,12 @@ if ( _width == undefined ) or ( _height == undefined ) {
 
 if ( !surface_exists( _surface ) ) {
 	
-	var _surface = surface_create( _width, _height );
+	var _surface = tr_surface_create( _width, _height );
 	if ( _wipe ) surface_wipe( _surface );
 	
 } else if ( surface_get_width( _surface ) != _width ) or ( surface_get_height( _surface ) != _height ) {
 	
-	var _surface = surface_create( _width, _height );
+	var _surface = tr_surface_create( _width, _height );
 	if ( _wipe ) surface_wipe( _surface );
 	
 }

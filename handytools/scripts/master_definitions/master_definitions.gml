@@ -17,12 +17,12 @@
 #macro DATE "2017.11.30"
 
 //services
-#macro IMGUI_ON   (false && DEVELOPMENT)
-#macro TRACKER_ON (false && DEVELOPMENT && !RELEASE)
+#macro IMGUI_ON   (true && DEVELOPMENT)
+#macro TRACKER_ON (true && DEVELOPMENT && !RELEASE)
 #macro AUDIO_ON    true
 #macro WAN_ON      false
-#macro FPS_ON     (false && DEVELOPMENT && !RELEASE)
-#macro DEVTOOL_ON (false && IMGUI_ON && DEVELOPMENT)
+#macro FPS_ON     (false && !RELEASE)
+#macro DEVTOOL_ON (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON   false
 
 //debug flags

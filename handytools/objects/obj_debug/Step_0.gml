@@ -112,9 +112,9 @@ if ( global.game_editing ) {
             var _h = get_integer( "HEIGHT?", _h );
             var _d = get_integer( "DEPTH?", _d );
             
-            with( obj_floor ) instance_destroy();
-            with( obj_ceiling ) instance_destroy();
-            with( obj_wall ) instance_destroy();
+            with( obj_floor ) tr_instance_destroy();
+            with( obj_ceiling ) tr_instance_destroy();
+            with( obj_wall ) tr_instance_destroy();
             
             define_wall(    0,  0,  0,   _w,  0, _d,   spr_tex_wall6 );
             define_wall(    0,  0,  0,    0, _h, _d,   spr_tex_wall6 );
@@ -138,7 +138,7 @@ if ( global.game_editing ) {
             var _object = asset_get_index( _name );
             if ( _object > obj_par_game ) {
                 
-                var _inst = instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
+                var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
                 with( _inst ) {
                     mouse_selected = true;
                     mouse_active_set_relative_values()
@@ -152,7 +152,7 @@ if ( global.game_editing ) {
                 
                 if ( _object > obj_par_game ) {
                     
-                    var _inst = instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
+                    var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
                     with( _inst ) {
                         mouse_selected = true;
                         mouse_active_set_relative_values()

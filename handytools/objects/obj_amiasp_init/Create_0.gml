@@ -4,9 +4,9 @@ display_set_gui_size( 960, 720 );
 
 vertex_buffer_definitions();
 
-instance_create( 0, 0, obj_screen );
-instance_create( 0, 0, obj_debug );
-instance_create( 0, 0, obj_game );
+instantiate_protected( obj_screen );
+instantiate_protected( obj_debug );
+instantiate_protected( obj_game );
 
 global.menu_page = 0;
 randomize();

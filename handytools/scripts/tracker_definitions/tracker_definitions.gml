@@ -5,7 +5,7 @@
 	Note that surface functionality is only partially turned on/off by TRACKER_ON
 */
 #macro TRACKER_ILLEGAL_THROW_ERROR (true && !RELEASE)
-#macro TRACKER_BLANK_NOTE_THROW_ERROR false //This feature works in conjunction with TRACKER_DEVELOPMENT_*_CREATE
+#macro TRACKER_BLANK_NOTE_THROW_ERROR true //This feature works in conjunction with TRACKER_DEVELOPMENT_*_CREATE
 #macro TRACKER_PROTECTED_INSTANCE_CAN_DESTOY_SELF true
 
 //formatting

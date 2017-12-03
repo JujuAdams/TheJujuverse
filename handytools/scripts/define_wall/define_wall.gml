@@ -10,7 +10,7 @@ var _sprite      = argument6;
 var _tile_size   = 32;
 var _thickness   = 2;
 
-var _inst = instance_create( _x1, _y1, obj_wall );
+var _inst = tr_instance_create( _x1, _y1, obj_wall );
 with( _inst ) {
     
     x1 = _x1;
@@ -33,7 +33,7 @@ with( _inst ) {
     y += lengthdir_y( 6*thickness*0.5, image_angle+90 );
     
     
-    vbf_wall = vertex_create_buffer();
+    vbf_wall = tr_vertex_create_buffer();
     var _vbuff = vbf_wall;
     vertex_begin( _vbuff, global.vft_simple );
     

@@ -32,7 +32,7 @@ global.mirror_render = true;
 
 with( obj_mirror_frame ) {
     
-    if ( !surface_exists( srf_mirror_click ) ) srf_mirror_click = surface_create( 960, 720 );
+    if ( !surface_exists( srf_mirror_click ) ) srf_mirror_click = tr_surface_create( 960, 720 );
     
     surface_set_target( srf_mirror_click );
         
@@ -62,7 +62,7 @@ camera_set_projection();
 //Render out click detection
 click_array = undefined;
 click_array[0] = noone;
-if ( !surface_exists( srf_click ) ) srf_click = surface_create( APP_SURF_W, APP_SURF_H );
+if ( !surface_exists( srf_click ) ) srf_click = tr_surface_create( APP_SURF_W, APP_SURF_H );
 
 surface_set_target( srf_click );
     
@@ -102,7 +102,7 @@ shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), 0.0 );
 global.mirror_render = true;
 with( obj_mirror_frame ) {
     
-    if ( !surface_exists( srf_mirror ) ) srf_mirror = surface_create( 960, 720 );
+    if ( !surface_exists( srf_mirror ) ) srf_mirror = tr_surface_create( 960, 720 );
     
     surface_set_target( srf_mirror );
     draw_clear( background_colour );
@@ -114,7 +114,7 @@ with( obj_mirror_frame ) {
 }
 with( obj_dummy_mirror_frame ) {
     
-    if ( !surface_exists( srf_mirror ) ) srf_mirror = surface_create( 960, 720 );
+    if ( !surface_exists( srf_mirror ) ) srf_mirror = tr_surface_create( 960, 720 );
     
     surface_set_target( srf_mirror );
     draw_clear( background_colour );

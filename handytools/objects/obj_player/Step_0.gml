@@ -26,7 +26,7 @@ if ( obj_screen.do_3d ) {
        or keyboard_check_pressed( ord( "S" ) )
        or keyboard_check_pressed( ord( "A" ) )
        or keyboard_check_pressed( ord( "D" ) ) ) {
-        footstep_time = VERY_SMALL;
+        footstep_time = VERY_NEGATIVE;
         view_bob_start_time = current_time;
     }
     

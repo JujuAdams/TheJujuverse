@@ -8,7 +8,7 @@ var _z         = argument4;
 var _tile_size = argument5;
 var _sprite    = argument6;
 
-var _inst = instance_create( _x1, _y1, obj_ceiling );
+var _inst = tr_instance_create( _x1, _y1, obj_ceiling );
 with( _inst ) {
     
     x = _x1;
@@ -23,7 +23,7 @@ with( _inst ) {
     sprite = _sprite;
     texture = sprite_get_texture( _sprite, 0 );
     
-    vbf_ceiling = vertex_create_buffer();
+    vbf_ceiling = tr_vertex_create_buffer();
     var _vbuff = vbf_ceiling;
     vertex_begin( _vbuff, global.vft_simple );
     

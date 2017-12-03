@@ -1,5 +1,5 @@
 if ( !DEVELOPMENT ) {
-    instance_destroy();
+    tr_instance_destroy();
     exit;
 }
 

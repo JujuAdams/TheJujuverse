@@ -75,7 +75,7 @@ var _dither = [ 0, 32,  8, 40,  2, 34, 10, 42,
                15, 47,  7, 39, 13, 45,  5, 37, 
                63, 31, 55, 23, 61, 29, 53, 21 ];
 
-var _surface = surface_create( 8, 8 );
+var _surface = tr_surface_create( 8, 8 );
 surface_set_target( _surface );
 draw_clear( c_black );
 for( var _i = 0; _i < 64; _i++ ) {
@@ -86,6 +86,6 @@ for( var _i = 0; _i < 64; _i++ ) {
 surface_reset_target();
 
 var _spr = sprite_create_from_surface( _surface,   0, 0, 8, 8,   false, false, 0, 0 );
-surface_free( _surface );
+tr_surface_free( _surface );
 
 return _spr;
