@@ -6,7 +6,7 @@ if ( keyboard_check( ord( "0" ) ) and ( DEVELOPMENT ) ) {
     
 } else {
     
-    if ( do_dither ) and ( do_3d ) {
+    if ( do_dither ) {
         
         gpu_set_blendenable( false );
         shader_set( shd_dither );

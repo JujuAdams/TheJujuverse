@@ -1,1 +1,0 @@
-if ( !obj_screen.do_3d ) and ( ( current_time mod 200 ) < 100 ) draw_self();

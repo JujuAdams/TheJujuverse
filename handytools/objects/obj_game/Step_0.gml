@@ -7,7 +7,7 @@ if ( keyboard_check_pressed( vk_f4 ) ) {
     }
 }
 
-if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) and ( obj_screen.do_3d ) {
+if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
     if ( !global.mouse_locked ) global.mouse_lock_time = current_time;
     global.mouse_locked = true;
 }

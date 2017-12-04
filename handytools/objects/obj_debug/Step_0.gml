@@ -2,7 +2,6 @@ if ( keyboard_check_pressed( ord( "1" ) ) ) global.game_editing = !global.game_e
 with( obj_screen ) {
     if ( keyboard_check_pressed( ord( "2" ) ) ) do_lighting = !do_lighting;
     if ( keyboard_check_pressed( ord( "3" ) ) ) do_dither   = !do_dither;
-    if ( keyboard_check_pressed( ord( "4" ) ) ) do_3d       = !do_3d
 }
 
 if ( global.game_editing ) {

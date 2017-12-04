@@ -7,46 +7,35 @@ if ( DEVELOPMENT ) {
     z = 50;
 }
 
-if ( obj_screen.do_3d ) {
+if ( DEVELOPMENT ) {
+    if ( keyboard_check( ord( "Q" ) ) ) z += 2 * _debug_factor;
+    if ( keyboard_check( ord( "E" ) ) ) z -= 2 * _debug_factor;
+}
     
-    if ( DEVELOPMENT ) {
-        if ( keyboard_check( ord( "Q" ) ) ) z += 2 * _debug_factor;
-        if ( keyboard_check( ord( "E" ) ) ) z -= 2 * _debug_factor;
-    }
+var _vpara = 0;
+var _vperp = 0;
+if ( keyboard_check( ord( "A" ) ) ) _vperp = -acceleration;
+if ( keyboard_check( ord( "D" ) ) ) _vperp =  acceleration;
+if ( keyboard_check( ord( "W" ) ) ) _vpara =  acceleration;
+if ( keyboard_check( ord( "S" ) ) ) _vpara = -acceleration;
     
-    var _vpara = 0;
-    var _vperp = 0;
-    if ( keyboard_check( ord( "A" ) ) ) _vperp = -acceleration;
-    if ( keyboard_check( ord( "D" ) ) ) _vperp =  acceleration;
-    if ( keyboard_check( ord( "W" ) ) ) _vpara =  acceleration;
-    if ( keyboard_check( ord( "S" ) ) ) _vpara = -acceleration;
+if ( !_is_moving )
+and ( keyboard_check_pressed( ord( "W" ) )
+    or keyboard_check_pressed( ord( "S" ) )
+    or keyboard_check_pressed( ord( "A" ) )
+    or keyboard_check_pressed( ord( "D" ) ) ) {
+    footstep_time = VERY_NEGATIVE;
+    view_bob_start_time = current_time;
+}
     
-    if ( !_is_moving )
-    and ( keyboard_check_pressed( ord( "W" ) )
-       or keyboard_check_pressed( ord( "S" ) )
-       or keyboard_check_pressed( ord( "A" ) )
-       or keyboard_check_pressed( ord( "D" ) ) ) {
-        footstep_time = VERY_NEGATIVE;
-        view_bob_start_time = current_time;
-    }
+if ( _vpara != 0 ) {
+    velocity_x += lengthdir_x( _vpara, obj_camera.look_xy_angle ) * _debug_factor;
+    velocity_y += lengthdir_y( _vpara, obj_camera.look_xy_angle ) * _debug_factor;
+}
     
-    if ( _vpara != 0 ) {
-        velocity_x += lengthdir_x( _vpara, obj_camera.look_xy_angle ) * _debug_factor;
-        velocity_y += lengthdir_y( _vpara, obj_camera.look_xy_angle ) * _debug_factor;
-    }
-    
-    if ( _vperp != 0 ) {
-        velocity_x += lengthdir_x( _vperp, obj_camera.look_xy_angle-90 ) * _debug_factor;
-        velocity_y += lengthdir_y( _vperp, obj_camera.look_xy_angle-90 ) * _debug_factor;
-    }
-    
-} else {
-    
-    if ( keyboard_check( ord( "A" ) ) ) velocity_x -= acceleration * _debug_factor;
-    if ( keyboard_check( ord( "D" ) ) ) velocity_x += acceleration * _debug_factor;
-    if ( keyboard_check( ord( "W" ) ) ) velocity_y -= acceleration * _debug_factor;
-    if ( keyboard_check( ord( "S" ) ) ) velocity_y += acceleration * _debug_factor;
-    
+if ( _vperp != 0 ) {
+    velocity_x += lengthdir_x( _vperp, obj_camera.look_xy_angle-90 ) * _debug_factor;
+    velocity_y += lengthdir_y( _vperp, obj_camera.look_xy_angle-90 ) * _debug_factor;
 }
 
 velocity_x *= damping;
