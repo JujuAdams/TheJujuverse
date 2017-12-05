@@ -12,10 +12,7 @@
         "84f57fb9-08a7-477f-b6fb-4395033e8454",
         "0d4c5ea5-4171-4f6e-bb18-1ed790eaf2ee",
         "28602072-960e-4e10-8f8b-70db148987b0",
-        "de88bd86-a3e1-4886-9648-fd7eaed37693",
-        "7456dc67-fa23-4351-b6eb-8c9a6632d2ab",
-        "ee851301-4551-4790-942b-3c6dd1ee3c2f",
-        "5ffc663e-ecc3-418d-ba01-952d2c1cb583"
+        "8cec9c50-0e4c-405e-bef2-09a5cebabb83"
     ],
     "filterType": "GMObject",
     "folderName": "models",

@@ -1,5 +1,9 @@
 persistent = true;
 
+vertex_buffer_definitions();
+
+global.menu_page = 0;
+
 global.game_editing = false;
 global.game_room = 0;
 global.game_swell = SWELL_SIZE*( 0.5 + 0.5*dsin( current_time/SWELL_TIME_FACTOR ) );

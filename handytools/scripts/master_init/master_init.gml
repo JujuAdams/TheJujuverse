@@ -20,8 +20,6 @@ control_init();
 audio_init();
 wan_init();
 options_init();
-gameflow_init();
-instantiate_protected( obj_amiasp_init );
 
 //register our game instance debug output in the tracker
 if ( TRACKER_ON ) __tr_list_register( global.master_game_output, "<master game output>", true );

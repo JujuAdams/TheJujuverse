@@ -1,5 +1,9 @@
 persistent = true;
 
+application_surface_draw_enable( false );
+surface_resize( application_surface, DEFAULT_APP_SURF_W, DEFAULT_APP_SURF_H );
+display_set_gui_size( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT );
+
 smoothed_timer = 5000;
 frame_start_time = get_timer();
 

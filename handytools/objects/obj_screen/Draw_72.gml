@@ -8,7 +8,8 @@ draw_set_lighting( false );
 shader_reset(); 
 
 switch( view_current ) {
-	case 0:
+	
+	case 0: //What the player sees, using forward rendering for lights
 		shader_set( shd_psx );
 		if ( do_lighting ) {
 			shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 0.1, 0.1, 0.13, 0.0 );
@@ -19,12 +20,14 @@ switch( view_current ) {
 		shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), 0.0 );
 		shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), 0.0 );
 	break;
-	case 1:
+	
+	case 1: //A screenspace click detection render
 		click_array = undefined;
 		click_array[0] = noone;
 		click_index = 0;
 		global.click_render = true;
 	break;
+	
 }
 
 /*

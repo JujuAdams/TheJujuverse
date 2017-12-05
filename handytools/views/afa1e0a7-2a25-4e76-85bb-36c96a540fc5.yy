@@ -12,8 +12,7 @@
         "8c751241-9b1a-4448-8a2a-2bf0fe8d8389",
         "62fc6371-7d0a-4e95-93b4-0ac3850378b0",
         "40ac3914-c4dd-482d-9866-f24f650de0ef",
-        "2f0397c7-df59-4b07-9747-7895b967e0a0",
-        "51feea0f-b011-4ce2-9c8a-a36df4b0ae46"
+        "2f0397c7-df59-4b07-9747-7895b967e0a0"
     ],
     "filterType": "GMShader",
     "folderName": "render",

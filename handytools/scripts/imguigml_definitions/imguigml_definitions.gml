@@ -1,11 +1,10 @@
-// (c) @babyjeans Nov 2017
+///@function imguigml_definitions()
+///@desc enums / definitions for imguigml
 
-#macro ImGuiGML_CommandBuffer        (0)
-#macro ImGuiGML_VertexBuffer         (1)
+// easy access to ImGui
 #macro ImGuiGML (global.__imguigml)
-#macro __Imgui_in (__imguigml_wrapper_buffer())
-#macro __Imgui_out (__imguigml_wrapper_buffer())
 
+#region EImGui_Cond
 // Condition for imguigml_set_window_**(), imguigml_set_next_window***(), imguigml_set_next_tree_node***() functions
 // All those functions treat 0 as a shortcut to EImGui_Cond.Always. 
 //   Note: From the point of view of the user use this as an enum (don't combine multiple values into flags).
@@ -16,7 +15,8 @@ enum EImGui_Cond
     FirstUseEver  = 1 << 2,   // Set the variable if the window has no saved data (if doesn't exist in the .ini file)
     Appearing     = 1 << 3    // Set the variable if the window is appearing after being hidden/inactive (or the first time)
 };
-
+#endregion
+#region EImGui_WindowFlags
 enum EImGui_WindowFlags {
     // Default: 0
     NoTitleBar                = 1 << 0,   // Disable title-bar
@@ -45,7 +45,8 @@ enum EImGui_WindowFlags {
     Modal                  = 1 << 26,  // Don't use! For internal use by BeginPopupModal()
     ChildMenu              = 1 << 27   // Don't use! For internal use by BeginMenu()
 };
-
+#endregion
+#region EImGui_ValType
 enum EImGui_ValType {
   Bool = 0,
   Int,
@@ -54,8 +55,8 @@ enum EImGui_ValType {
   
   Num
 };
-
-
+#endregion
+#region EImGui_InputTextFlags
 // Flags for ImGui::InputText()
 enum EImGui_InputTextFlags {
     // Default: 0
@@ -79,7 +80,8 @@ enum EImGui_InputTextFlags {
     // [Internal]
     Multiline           = 1 << 20   // For internal use by InputTextMultiline()
 };
-
+#endregion
+#region EImGui_TreeNodeFlags
 // Flags for ImGui::TreeNodeEx(), ImGui::CollapsingHeader*()
 enum EImGui_TreeNodeFlags {
     Selected             = 1 << 0,   // Draw as selected
@@ -98,7 +100,8 @@ enum EImGui_TreeNodeFlags {
     
     CollapsingHeader     = EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.NoAutoOpenOnLog
 };
-
+#endregion
+#region EImGui_SelectableFlags
 // Flags for ImGui::Selectable()
 // ImGuiSelectableFlags
 enum EImGui_SelectableFlags {
@@ -107,7 +110,8 @@ enum EImGui_SelectableFlags {
     SpanAllColumns     = 1 << 1,   // Selectable frame can span all columns (text will still fit in current column)
     AllowDoubleClick   = 1 << 2    // Generate press events on double clicks too
 };
-
+#endregion 
+#region EImGui_HoveredFlags
 // Flags for ImGui::IsItemHovered(), ImGui::IsWindowHovered()
 // ImGuiHoveredFlags
 enum EImGui_HoveredFlags
@@ -121,7 +125,8 @@ enum EImGui_HoveredFlags
     
     RectOnly                      = EImGui_HoveredFlags.AllowWhenBlockedByPopup | EImGui_HoveredFlags.AllowWhenBlockedByActiveItem | EImGui_HoveredFlags.AllowWhenOverlapped
 };
-
+#endregion
+#region EImGui_Col
 //enum ImGuiCol_
 enum EImGui_Col {
   Text = 0,
@@ -170,7 +175,8 @@ enum EImGui_Col {
  
   Num
 };
-
+#endregion
+#region EImGui_StyleVar
 // ImGuiStyleVar
 enum EImGui_StyleVar
 {
@@ -190,7 +196,8 @@ enum EImGui_StyleVar
     
     Num
 };
-
+#endregion
+#region EImGui_ColorEditFlags
 // Enumeration for ColorEdit3() / ColorEdit4() / ColorPicker3() / ColorPicker4() / ColorButton()
 enum EImGui_ColorEditFlags
 {
@@ -220,7 +227,8 @@ enum EImGui_ColorEditFlags
     _PickerMask     = EImGui_ColorEditFlags.PickerHueWheel | EImGui_ColorEditFlags.PickerHueBar,
     _OptionsDefault = EImGui_ColorEditFlags.Uint8          | EImGui_ColorEditFlags.RGB | EImGui_ColorEditFlags.PickerHueBar    // Change application default using SetColorEditOptions()
 };
-
+#endregion
+#region EImGui_MouseCursor
 // Enumeration for GetMouseCursor()
 enum EImGui_MouseCursor
 {
@@ -235,3 +243,65 @@ enum EImGui_MouseCursor
     
     Num
 };
+#endregion
+#region EImGui_TextCallbackData
+// Array Passed to the Text Callback, the Writeable params will be re-written back to ImGui!
+enum EImGui_TextCallbackData {
+  EventFlag = 0,
+  Flags,
+  ReadOnly,
+  
+  StartData,
+  
+  // Always, History, and Completion Data
+  Key = EImGui_TextCallbackData.StartData,
+  Text,         
+  TextMaxLength,     
+  CurPos,     
+  SelectionStart,
+  SelectionEnd,
+  
+  Num,
+  
+  // Charfilter
+  Char = EImGui_TextCallbackData.StartData,
+  
+  NumCharFilter,
+};
+#endregion
+#region EImGui_Key
+enum EImGui_Key {
+    Tab,       // for tabbing through fields
+    LeftArrow, // for text edit
+    RightArrow,// for text edit
+    UpArrow,   // for text edit
+    DownArrow, // for text edit
+    PageUp,
+    PageDown,
+    Home,      // for text edit
+    End,       // for text edit
+    Delete,    // for text edit
+    Backspace, // for text edit
+    Enter,     // for text edit
+    Escape,    // for text edit
+    A,         // for text edit CTRL+A: select all
+    C,         // for text edit CTRL+C: copy
+    V,         // for text edit CTRL+V: paste
+    X,         // for text edit CTRL+X: cut
+    Y,         // for text edit CTRL+Y: redo
+    Z,         // for text edit CTRL+Z: undo
+    
+    Num
+};
+#endregion
+
+#region InternalMacros
+#macro ImGuiGML_CommandBuffer        (0)
+#macro ImGuiGML_VertexBuffer         (1)
+
+#macro _RousrDefaultBufferSize (4096)
+#macro RousrCallBufferSize (4096)
+
+#macro __Imgui_in (__imguigml_wrapper_buffer())
+#macro __Imgui_out (__imguigml_wrapper_buffer())
+#endregion

@@ -5,7 +5,7 @@
 
 //release flags
 #macro RELEASE false
-#macro DEVELOPMENT (false && !RELEASE)
+#macro DEVELOPMENT (true && !RELEASE)
 #macro TITLE "handytools + A Mind Is A Small Place"
 #macro VERSION "v0.1.0"
 #macro VERSION_NOMIKER "Preview"
