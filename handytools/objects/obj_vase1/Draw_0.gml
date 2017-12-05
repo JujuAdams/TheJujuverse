@@ -1,6 +1,5 @@
-/// @description Draw
-
 mouse_active_force_colour();
+camera_click_handle_fog();
 
 matrix_chain_begin();
 matrix_chain_rotate_x( -90 );

@@ -1,4 +1,5 @@
 mouse_active_force_colour();
+camera_click_handle_fog();
 
 matrix_chain_begin();
 matrix_chain_multiply_matrix( matrix_build_rotation_axis( rot_axis_x, rot_axis_y, rot_axis_z, rotation ) );

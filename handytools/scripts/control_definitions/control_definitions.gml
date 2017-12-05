@@ -1,16 +1,3 @@
-/*
-	For default options/controls, see options_init() and options_default_controls()
-	All possible inputs need to be defined in control_init()
-*/
-
-//--------------------
-// Configuration
-//--------------------
-#macro MAX_PLAYERS 1
-
-//--------------------
-// Internal
-//--------------------
 #macro NEITHER 0
 #macro LEFT 1
 #macro RIGHT 2

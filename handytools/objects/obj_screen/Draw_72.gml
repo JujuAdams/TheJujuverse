@@ -6,6 +6,27 @@ gpu_set_ztestenable( true );
 gpu_set_cullmode( global.game_editing ? cull_counterclockwise : cull_noculling );
 draw_set_lighting( false );
 shader_reset(); 
+
+switch( view_current ) {
+	case 0:
+		shader_set( shd_psx );
+		if ( do_lighting ) {
+			shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 0.1, 0.1, 0.13, 0.0 );
+		} else {
+			shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 1.0, 1.0, 1.0, 1.0 );
+		}
+		shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vForceColour" ), 1.0, 1.0, 1.0, 0.0 );
+		shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), 0.0 );
+		shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), 0.0 );
+	break;
+	case 1:
+		click_array = undefined;
+		click_array[0] = noone;
+		click_index = 0;
+		global.click_render = true;
+	break;
+}
+
 /*
 //Render out mirror click detection
 global.click_render = true;
@@ -64,18 +85,6 @@ surface_reset_target();
 camera_set_projection();
 global.click_render = false;
 */
-
-
-//Set shader package
-shader_set( shd_psx );
-if ( do_lighting ) {
-    shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 0.1, 0.1, 0.13, 0.0 );
-} else {
-    shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 1.0, 1.0, 1.0, 1.0 );
-}
-shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vForceColour" ), 1.0, 1.0, 1.0, 0.0 );
-shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), 0.0 );
-shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), 0.0 );
 
 //camera_set_projection();
 

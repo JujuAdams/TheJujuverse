@@ -3,6 +3,7 @@ if ( global.game_editing ) {
     if ( ( current_time mod 500 ) < 450 ) {
         
         mouse_active_force_colour();
+		camera_click_handle_fog();
         
 		matrix_chain_begin();
 		matrix_chain_rotate_x( -90 );

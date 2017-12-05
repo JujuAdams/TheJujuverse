@@ -1,4 +1,5 @@
 mouse_active_force_colour();
+camera_click_handle_fog();
 
 if ( outro_t < 1 ) {
     shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), lerp( 0, 9, outro_t ) );

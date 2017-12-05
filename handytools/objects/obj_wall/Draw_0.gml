@@ -1,4 +1,5 @@
 mouse_active_force_colour();
+camera_click_handle_fog();
 
 //matrix_stack_set_build(  0, 0, 0,    0, 0, image_angle,   1, 1, 1 );
 //matrix_stack_push_build( x1 + swell_x, y1 + swell_y, z,   0, 0, 0,    1, 1, 1 );
