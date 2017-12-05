@@ -2,7 +2,6 @@ timer = get_timer() - timer;
 smoothed_timer = lerp( smoothed_timer, timer, 0.008 );
 
 var _str = "render time =" + string_format( timer, 4, 0 ) + "us // smoothed = " + string_format( smoothed_timer, 4, 0 ) + "us";
-_str += "     " + gameflow_mode_string();
 
 draw_set_font( fnt_consolas );
 draw_set_valign( fa_bottom );
