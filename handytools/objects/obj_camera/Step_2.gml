@@ -1,4 +1,4 @@
-if ( !obj_game.transition_do or ( obj_game.transition_direction == -1 ) ) {
+if ( !obj_gameflow.transition_do or ( obj_gameflow.transition_direction == -1 ) ) {
     look_xy_angle -= global.mouse_dx/8;
     look_pz_angle = clamp( look_pz_angle - global.mouse_dy/5, -89, 89 );
 }

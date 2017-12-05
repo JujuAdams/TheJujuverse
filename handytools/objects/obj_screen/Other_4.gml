@@ -6,6 +6,7 @@ srf_click = tr_surface_create( DEFAULT_APP_SURF_W, DEFAULT_APP_SURF_H );
 camera_click = camera_create_default_3d();
 view_create_camera_surface( 1, camera_click, srf_click );
 
+camera_2d = camera_create_default_2d();
 /*
 camera_2d = camera_create();
 camera_set_view_mat( camera_2d, matrix_build_lookat( DEFAULT_APP_SURF_W/2, DEFAULT_APP_SURF_H/2, -16000, 

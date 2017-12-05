@@ -22,7 +22,7 @@ if ( keyboard_check_pressed( vk_enter ) ) {
         
     } else {
 		
-        with( obj_game ) {
+        with( obj_gameflow ) {
             if ( !transition_do ) {
                 
                 audio_play_sound( snd_flower, 1, false );

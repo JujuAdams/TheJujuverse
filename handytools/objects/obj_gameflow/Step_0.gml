@@ -12,7 +12,7 @@ if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
     global.mouse_locked = true;
 }
 
-if ( global.mouse_locked ) and ( !obj_devtool.show_window ) and ( !obj_editor.show_window ) {
+if ( global.mouse_locked ) and ( !imguigml_any_window_open() ) {
     
     window_set_cursor( cr_none );
     
@@ -73,7 +73,7 @@ if ( global.game_outro_do ) {
             } else {
                 
                 if ( current_time > global.game_outro_last_event + 8000 ) {
-                    with( obj_game ) {
+                    with( obj_gameflow ) {
                         transition_do = true;
                         transition_t = 0;
                         transition_direction = 1;

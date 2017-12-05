@@ -1,9 +1,9 @@
 event_inherited();
 
-if ( mouse_clicked ) and ( !obj_game.transition_do ) {
+if ( mouse_clicked ) and ( !obj_gameflow.transition_do ) {
     
     audio_play_sound( snd_door_open, 1, false );
-    with( obj_game ) {
+    with( obj_gameflow ) {
         transition_do = true;
         transition_t = 0;
         transition_direction = 1;
