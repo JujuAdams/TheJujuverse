@@ -7,39 +7,39 @@ switch( _n ) {
         global.game_phone_do_ring = true;
     break;
     case 1: //Hallway
-        global.game_text = "Hey there day-dreamer.\nYou seem miles away.";
+        global.game_text = "This first room tutorialises\nthe basic gameflow.\n\nIn the original game, these phones acted as narrative delivery and drove the storyline.";
         global.game_phone_do_ring = true;
     break;
     case 2: //Spirals
-        global.game_text = "Are you okay, sweetheart?\nWhat're you staring at on the floor?";
+        global.game_text = "The early rooms were largely designed\nto give the player a sense of psychosis.";
         global.game_phone_do_ring = true;
     break;
     case 3: //Phones
-        global.game_text = "What are those mumblings I've been hearing from your room at night?";
+        global.game_text = "This room is based on Juju's own anxieties.\nHe hates phonecalls!";
         global.game_phone_do_ring = true;
     break;
     case 4: //Mirrors
-        global.game_text = "Stop talking to yourself.\nIt's embarrassing me.";
+        global.game_text = concat( "The ", QU, "mirrors", QU, " are constructed using separate render passes." );
         global.game_phone_do_ring = true;
     break;
     case 5: //Scissors
-        global.game_text = "They're all trying to help you.\nJust try. Please.";
+        global.game_text = "Scissors are a domestic but aggressive\nsymbol. A lot of self-harm is performed\nusing scissors.";
         global.game_phone_do_ring = true;
     break;
     case 6: //Upside-Down
-        global.game_text = "You can't come back yet... The doctors said you'd only get worse. I'm sorry.";
+        global.game_text = "The shaders and audio were made by Jan -\nhe's a great technical artist.\nThe models were made by Chris and Daniel.";
         global.game_phone_do_ring = true;
     break;
     case 7: //Hammer
-        global.game_text = "Why do you keep talking to me like this?\nStop calling me.";
+        global.game_text = concat( "This room was described as\n", QU, "depression as an art installation", QU, ".\nThis wasn't fully intended but it's good to hear people thought about what we made." );
         global.game_phone_do_ring = true;
     break;
     case 8: //Flowers
-        global.game_text = "The hospital called me last week.\nPlease eat your meals.";
+        global.game_text = "The flowers here can symbolise both life\nand death depending on your viewpoint.\n\nA lot of life depends on your perspective.";
         global.game_phone_do_ring = true;
     break;
     case 9: //Broken phone
-        global.game_text = "I just wish this would be over with.\nYou've broken my heart.";
+        global.game_text = "Most players ended up with this ending, choosing flowers that go from alive to dead.\n\nSubconscious or deliberate, this was an interesting outcome.";
         global.game_phone_do_ring = true;
     break;
     case 10: //Ending

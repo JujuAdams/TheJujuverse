@@ -20,13 +20,8 @@ if ( keyboard_check_pressed( vk_enter ) ) {
         audio_play_sound( snd_flower, 1, false );
         global.menu_page = 3;
         
-    } else if ( global.menu_page == 3 ) {
-        
-        audio_play_sound( snd_flower, 1, false );
-        global.menu_page = 4;
-        
     } else {
-        
+		
         with( obj_game ) {
             if ( !transition_do ) {
                 

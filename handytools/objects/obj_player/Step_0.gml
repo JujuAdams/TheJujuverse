@@ -74,7 +74,6 @@ if ( !obj_game.transition_do ) {
 		x += velocity_x;
 		y += velocity_y;
 		
-        /*
         var _sign_x = sign( velocity_x );
         repeat( abs( velocity_x ) ) {
             if ( !place_meeting( x + _sign_x, y, obj_par_solid ) ) {
@@ -92,7 +91,7 @@ if ( !obj_game.transition_do ) {
                 break;
             }
         }
-		*/
+		
     }
 }
 

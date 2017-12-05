@@ -1,31 +1,12 @@
-///Draw Begin
-
-frame_start_time = get_timer();
-
 draw_clear( c_black );
-draw_set_colour( c_white );
-
-for( var _i = 0; _i < 8; _i++ ) draw_light_enable( _i, false );
-var _light = 0;
-with( obj_camera ) {
-    draw_light_define_point( _light, x, y, z, 100, c_gray );
-    draw_light_enable( _light, true );
-    _light++;
-}
-with( obj_light ) {
-    if ( !visible ) continue;
-    draw_light_define_point( _light, x, y, z, range, colour );
-    draw_light_enable( _light, true );
-    _light++;
-}
 
 gpu_set_ztestenable( true );
 gpu_set_zwriteenable( true );
 gpu_set_ztestenable( true );
 gpu_set_cullmode( global.game_editing ? cull_counterclockwise : cull_noculling );
 draw_set_lighting( false );
-shader_reset();
-
+shader_reset(); 
+/*
 //Render out mirror click detection
 global.click_render = true;
 global.mirror_render = true;
@@ -82,7 +63,7 @@ surface_reset_target();
 
 camera_set_projection();
 global.click_render = false;
-
+*/
 
 
 //Set shader package
@@ -96,8 +77,9 @@ shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vForceColour" ), 1.0, 1.0,
 shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), 0.0 );
 shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), 0.0 );
 
+//camera_set_projection();
 
-
+/*
 //Render out mirrors
 global.mirror_render = true;
 with( obj_mirror_frame ) {
@@ -127,3 +109,4 @@ with( obj_dummy_mirror_frame ) {
 
 global.mirror_render = false;
 camera_set_projection();
+*/

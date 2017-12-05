@@ -1,1 +1,0 @@
-tr_surface_free( srf_mirror );
