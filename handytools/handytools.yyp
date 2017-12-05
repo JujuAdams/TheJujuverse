@@ -4263,14 +4263,6 @@
             }
         },
         {
-            "Key": "c39704bb-2aa6-4f49-866e-b2787096ea2e",
-            "Value": {
-                "id": "973420e2-e299-4076-935c-3500fcef88a5",
-                "resourcePath": "objects\\obj_imgui_persistent\\obj_imgui_persistent.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "c4303bbf-12a2-413a-808f-7a16dbb5c9d6",
             "Value": {
                 "id": "4874217f-7336-4800-a871-2d0daf5174e1",
@@ -4908,14 +4900,6 @@
                 "id": "6bb30352-aae0-4018-ba63-6b8c2181ac14",
                 "resourcePath": "datafiles_yy\\models\\rotary.obj.yy",
                 "resourceType": "GMIncludedFile"
-            }
-        },
-        {
-            "Key": "e3661930-e5b1-4f09-a413-9263e56deda2",
-            "Value": {
-                "id": "ca66fcb8-e81f-47c4-aff8-b6f97065e3bf",
-                "resourcePath": "views\\e3661930-e5b1-4f09-a413-9263e56deda2.yy",
-                "resourceType": "GMFolder"
             }
         },
         {

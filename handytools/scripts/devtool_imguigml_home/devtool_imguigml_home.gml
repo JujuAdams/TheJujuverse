@@ -1,6 +1,6 @@
 if imguigml_button( "New game instance" ) new_game_instance();
 imguigml_same_line();
-if imguigml_button( "Main Menu" ) room_goto( rm_main_menu );
+if imguigml_button( "Quit game" ) game_end();
 imguigml_new_line();
 imguigml_separator();
 

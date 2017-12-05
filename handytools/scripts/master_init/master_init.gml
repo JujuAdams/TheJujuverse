@@ -23,6 +23,3 @@ options_init();
 
 //register our game instance debug output in the tracker
 if ( TRACKER_ON ) __tr_list_register( global.master_game_output, "<master game output>", true );
-
-//we have to start the ImGUI service here for some reason?!
-imguigml_start_service();
