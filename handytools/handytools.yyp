@@ -2767,14 +2767,6 @@
             }
         },
         {
-            "Key": "76a9ca51-9078-449a-a332-396fdda9dd6c",
-            "Value": {
-                "id": "ff8d3b1c-24ce-44f2-93a9-cd6f17a1de6e",
-                "resourcePath": "scripts\\sdm\\sdm.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "76d6e3b5-84ff-4fa0-ae8d-16bd25216b5f",
             "Value": {
                 "id": "148b879e-b51f-44fa-bce8-c5efbae37461",
@@ -4034,7 +4026,7 @@
             "Key": "b45a1ad6-243d-4ea8-8ac3-8e38c6323128",
             "Value": {
                 "id": "52b1e247-d9f8-4743-ba6c-daa8294901ed",
-                "resourcePath": "objects\/obj_get_wan_ip\/obj_get_wan_ip.yy",
+                "resourcePath": "objects\\obj_wan_get_ip\\obj_wan_get_ip.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -5875,7 +5867,6 @@
         "af0ab251-b7d4-464b-9772-41888942902a",
         "0dd37687-8ab2-4a5f-b2ad-f78d016d98a1",
         "e308e0e0-382b-49ac-bcfd-e6765a8bd0e0",
-        "76a9ca51-9078-449a-a332-396fdda9dd6c",
         "f9af1b2c-15d4-4875-9c08-b77e8c9de76c",
         "257919d7-e354-4c57-b69f-58e7c01e17d9",
         "aba1dde8-38cb-4770-8782-737a95706bfe",
@@ -5927,11 +5918,11 @@
         "d6c3f09d-daee-4473-aeb7-e650ea5226e9",
         "bce731b6-f2e7-48a0-98e2-355f02801b63",
         "b012c700-0850-4ff7-bd29-03eea301ee6d",
-        "e85bffff-7d83-4775-b997-691d849cecd3",
         "1ebe573c-83ee-466e-95ec-53b59ce02e0e",
         "7ea386cc-eaee-4553-a156-c1dd241caa93",
         "bc86d048-250a-41b1-a6ae-501c4f9e0e7c",
         "80711f20-30f9-4789-9fe6-3b6de2f1be81",
+        "e85bffff-7d83-4775-b997-691d849cecd3",
         "cc45bbe9-7924-468b-9195-af322fb51af7",
         "d1dd3512-2d0c-4b82-a79d-a93aa7d6d381",
         "f5a9ab36-d348-430f-a3bc-a59674150050",

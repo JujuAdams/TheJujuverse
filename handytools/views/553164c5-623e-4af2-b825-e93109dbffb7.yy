@@ -9,7 +9,6 @@
         "af0ab251-b7d4-464b-9772-41888942902a",
         "0dd37687-8ab2-4a5f-b2ad-f78d016d98a1",
         "e308e0e0-382b-49ac-bcfd-e6765a8bd0e0",
-        "76a9ca51-9078-449a-a332-396fdda9dd6c",
         "8ee7e8e9-5cb1-44b4-8018-54c98c5b00b1",
         "08b9be2e-be02-4a3a-9541-7c0e2ed1dd6f",
         "18716ca9-56bd-43af-90f6-730cf53a723f",
@@ -20,7 +19,8 @@
         "b858aab8-54b3-4cdc-b798-b3c690734ac5",
         "9254d802-d9a1-41a5-859e-1d8c3cbbed54",
         "38b51cb9-ce6e-4da2-928f-9decb2a5cb36",
-        "eb9dd674-bdb2-4402-88f0-80f6036ac070"
+        "eb9dd674-bdb2-4402-88f0-80f6036ac070",
+        "9cd32f43-f704-4508-a431-1a4fd334ead6"
     ],
     "filterType": "GMScript",
     "folderName": "snippets",

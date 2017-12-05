@@ -31,6 +31,7 @@
 #macro DEFAULT_WINDOW_WIDTH 960
 #macro DEFAULT_WINDOW_HEIGHT 720
 #macro APP_TO_WINDOW_SCALE 3
+#macro FOV 50
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
 

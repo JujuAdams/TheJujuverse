@@ -1,4 +1,4 @@
-surface_resize( application_surface, APP_SURF_W, APP_SURF_H );
+surface_resize( application_surface, DEFAULT_APP_SURF_W, DEFAULT_APP_SURF_H );
 application_surface_draw_enable( false );
 display_set_gui_size( 960, 720 );
 

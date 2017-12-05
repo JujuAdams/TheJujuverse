@@ -2,7 +2,7 @@
     "id": "b45a1ad6-243d-4ea8-8ac3-8e38c6323128",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_get_wan_ip",
+    "name": "obj_wan_get_ip",
     "eventList": [
         {
             "id": "f79c80f7-32ae-4a70-8c2c-144d24fea7e1",
