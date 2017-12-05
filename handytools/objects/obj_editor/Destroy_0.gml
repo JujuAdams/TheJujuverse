@@ -1,0 +1,1 @@
+tr_list_destroy( object_list );

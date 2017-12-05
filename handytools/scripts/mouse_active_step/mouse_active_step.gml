@@ -5,7 +5,7 @@ var _dist = point_distance( x, y, obj_player.x, obj_player.y );
 mouse_over = false;
 mouse_clicked = false;
 
-if ( instance_exists( obj_player ) ) and ( obj_screen.click_instance_over == id ) and ( ( _dist < mouse_range ) or global.game_editing or ( ( object_index == obj_phone ) and obj_screen.click_through_mirror and ( global.game_room == 4 ) ) ) {
+if ( !imguigml_any_window_open() ) and ( instance_exists( obj_player ) ) and ( obj_screen.click_instance_over == id ) and ( ( _dist < mouse_range ) or global.game_editing or ( ( object_index == obj_phone ) and obj_screen.click_through_mirror and ( global.game_room == 4 ) ) ) {
     if ( mouse_glow == 0 ) mouse_glow_start = current_time;
     mouse_over = true;
 }
@@ -54,7 +54,7 @@ if ( mouse_clicked ) {
             var _inst = tr_instance_create_z( _x, _y, z, image_angle, object_index );
             with( _inst ) {
                 mouse_selected = true;
-                mouse_active_set_relative_values()
+                mouse_active_set_relative_values();
             }
             global.debug_tool = e_tool.move;
         }

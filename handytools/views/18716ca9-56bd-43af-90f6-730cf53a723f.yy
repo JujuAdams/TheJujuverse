@@ -10,7 +10,8 @@
         "33bd1b77-af3e-4a22-b662-84f3c4abc711",
         "dc7f225f-b734-4d14-9e6b-b1b33f8a2f1d",
         "5d1e1137-1341-402d-9b9e-2b5380d9a532",
-        "01a869e8-68a2-40b6-8cce-8b67a13d5e7d"
+        "01a869e8-68a2-40b6-8cce-8b67a13d5e7d",
+        "1c8d3cad-4f2b-4aa2-b5e8-036c6562b9b2"
     ],
     "filterType": "GMScript",
     "folderName": "strings",

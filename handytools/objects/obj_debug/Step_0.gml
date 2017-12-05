@@ -140,7 +140,7 @@ if ( global.game_editing ) {
                 var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
                 with( _inst ) {
                     mouse_selected = true;
-                    mouse_active_set_relative_values()
+                    mouse_active_set_relative_values();
                 }
                 global.debug_tool = e_tool.move;
                 
@@ -154,7 +154,7 @@ if ( global.game_editing ) {
                     var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
                     with( _inst ) {
                         mouse_selected = true;
-                        mouse_active_set_relative_values()
+                        mouse_active_set_relative_values();
                     }
                     global.debug_tool = e_tool.move;
                     

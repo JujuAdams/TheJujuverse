@@ -15,31 +15,23 @@ if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
 if ( global.mouse_locked ) and ( !imguigml_any_window_open() ) {
     
     window_set_cursor( cr_none );
-    
     if ( current_time - global.mouse_lock_time > 100 ) {
         global.mouse_dx = window_mouse_get_x() - window_get_width()*0.5;
         global.mouse_dy = window_mouse_get_y() - window_get_height()*0.5;
     }
-    
     window_mouse_set( window_get_width()*0.5, window_get_height()*0.5 );
     
 } else {
+	
     window_set_cursor( cr_default );
+	global.mouse_dx = 0;
+	global.mouse_dy = 0;
+	
 }
 
 if ( !global.mouse_locked ) {
-    
     global.mouse_dx = 0;
     global.mouse_dy = 0;
-    
-    if ( instance_exists( obj_camera ) ) {
-        global.mouse_2d_x = obj_camera.x - 320 + 640*window_mouse_get_x()/window_get_width();
-        global.mouse_2d_y = obj_camera.y - 240 + 480*window_mouse_get_y()/window_get_height();
-    } else {
-        global.mouse_2d_x = 0;
-        global.mouse_2d_y = 0;
-    }
-    
 }
 
 if ( keyboard_check_pressed( vk_escape ) ) {
