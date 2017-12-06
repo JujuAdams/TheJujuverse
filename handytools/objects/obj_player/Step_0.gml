@@ -43,7 +43,7 @@ velocity_y *= damping;
 
 if ( !obj_gameflow.transition_do ) {
     if ( !place_meeting( x + velocity_x, y + velocity_y, obj_par_solid ) ) or ( global.game_editing ) {
-        
+		
         x += velocity_x;
         y += velocity_y;
         
@@ -69,10 +69,12 @@ if ( !obj_gameflow.transition_do ) {
             
         }
         
-    } else {
+    } else if ( global.do_noclip ) {
 		
 		x += velocity_x;
 		y += velocity_y;
+		
+	} else {
 		
         var _sign_x = sign( velocity_x );
         repeat( abs( velocity_x ) ) {

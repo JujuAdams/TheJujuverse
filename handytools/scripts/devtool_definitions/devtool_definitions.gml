@@ -1,1 +1,1 @@
-enum E_EDITOR_PAGE { HOME, INSTANCES }
+//Intentionally left blank

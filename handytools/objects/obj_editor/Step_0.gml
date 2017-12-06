@@ -30,7 +30,7 @@ if ( show_window ) {
 	}
 	
 	imguigml_begin_menu_bar();
-	if ( imguigml_menu_item( "Place"      ) ) window_page = E_EDITOR_PAGE.HOME;
+	if ( imguigml_menu_item( "Place"      ) ) window_page = E_EDITOR_PAGE.PLACE;
 	if ( imguigml_menu_item( "Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
 	imguigml_end_menu_bar();
 	
@@ -38,7 +38,59 @@ if ( show_window ) {
 		
 		case E_EDITOR_PAGE.HOME:
 		#region HOME
-			window_name = "Editor - Place";
+			
+			imguigml_text( "AMIASP Editor" );
+			imguigml_text( TITLE + ", " + VERSION + " " + QU + VERSION_NOMIKER + QU );
+			imguigml_text( "Built " + DATE + " by " + BUILDER );
+			imguigml_separator();
+			imguigml_new_line();
+			
+			if ( imguigml_button( "Toggle Dither" ) ) global.do_dither = !global.do_dither;
+			imguigml_same_line();
+			if ( imguigml_button( "Toggle Lighting" ) ) global.do_lighting = !global.do_lighting;
+			imguigml_same_line();
+			if ( imguigml_button( "Toggle Noclip (" + (global.do_noclip?"is ON":"is OFF") + ")" ) )global.do_noclip = !global.do_noclip;
+			imguigml_new_line();
+			imguigml_new_line();
+			imguigml_text( concat( "Room ", global.game_room ) );
+			
+			imguigml_same_line();
+			if ( imguigml_button( "Previous Room" ) ) {
+				unload_current_room();
+				global.game_room--;
+			    if ( !load_room_n( global.game_room ) ) {
+			        trace_error( "Could not load room " + string( global.game_room ) );
+			        global.game_room++;
+			        load_room_n( global.game_room );
+			    }
+			}
+			
+			imguigml_same_line();
+			if ( imguigml_button( "Next Room" ) ) {
+				unload_current_room();
+				global.game_room++;
+			    if ( !load_room_n( global.game_room ) ) {
+			        trace_error( "Could not load room " + string( global.game_room ) );
+			        global.game_room--;
+			        load_room_n( global.game_room );
+			    }
+			}
+			
+			if ( imguigml_button( "Save Room" ) ) {
+		        var _filename = get_save_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
+		        if ( _filename != "" ) {
+		            var _file = file_text_open_write( _filename );
+		            file_text_write_string( _file, room_encode() );
+		            file_text_close( _file );
+		            trace_loud( _filename + " SAVED!" );
+		        }
+			}
+			imguigml_new_line();
+		#endregion
+		break;
+		
+		case E_EDITOR_PAGE.PLACE:
+		#region PLACE#
 			imguigml_text( "PLACE" );
 			imguigml_separator();
 			
@@ -68,8 +120,7 @@ if ( show_window ) {
 		break;
 		
 		case E_EDITOR_PAGE.INSTANCES:
-		#region INSTANCES
-			window_name = "Editor - Instances";
+		#region INSTANCES#
 			imguigml_text( "INSTANCES" );
 			imguigml_separator();
 			imguigml_columns( 5, "Columns", true );

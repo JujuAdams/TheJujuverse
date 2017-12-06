@@ -2,6 +2,10 @@ persistent = true;
 
 vertex_buffer_definitions();
 
+global.do_dither   = true;
+global.do_lighting = true;
+global.do_noclip   = DEVELOPMENT;
+
 global.menu_page = 0;
 
 global.game_editing = false;

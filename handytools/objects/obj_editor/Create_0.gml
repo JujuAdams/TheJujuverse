@@ -1,3 +1,5 @@
+enum E_EDITOR_PAGE { HOME, PLACE, INSTANCES,  }
+
 persistent = true;
 
 show_window = false;

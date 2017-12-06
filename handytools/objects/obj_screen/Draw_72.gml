@@ -11,7 +11,7 @@ switch( view_current ) {
 	
 	case 0: //What the player sees, using forward rendering for lights
 		shader_set( shd_psx );
-		if ( do_lighting ) {
+		if ( global.do_lighting ) {
 			shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 0.1, 0.1, 0.13, 0.0 );
 		} else {
 			shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vAmbientColour" ), 1.0, 1.0, 1.0, 1.0 );
