@@ -6,4 +6,4 @@ window_has_set_columns = false;
 window_width = 600;
 window_height = 600;
 window_page = 0;
-window_name = TRACKER_ON?"Devtool + Tracker":"Devtool";
+window_name = TRACKER_ON?"handytools Devtool + Tracker":"handytools Devtool";

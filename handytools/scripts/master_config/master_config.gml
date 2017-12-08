@@ -6,10 +6,10 @@
 //release flags
 #macro RELEASE false
 #macro DEVELOPMENT (true && !RELEASE)
-#macro TITLE "handytools + A Mind Is A Small Place"
-#macro VERSION "v0.1.0"
+#macro TITLE "A Mind Is A Small Place"
+#macro VERSION "v2.0.0"
 #macro VERSION_NOMIKER "Preview"
-#macro CREDITS "Code: @jujuadams\nImGUI Implementation: @babyj3ans\nAMIASP Assets: @i_am_thireen + @tophtacular + @blokatt\nSpecial Thanks: The /r/GameMaker Discord"
+#macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
 #macro DATE "2017.12.08" //always use YYYY/MM/DD
 
@@ -39,6 +39,5 @@
 #macro DEFAULT_WINDOW_HEIGHT 720
 #macro DEFAULT_APP_SURF_W DEFAULT_WINDOW_WIDTH/3
 #macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT/3
-#macro FOV 50
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )

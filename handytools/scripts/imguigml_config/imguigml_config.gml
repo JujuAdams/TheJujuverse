@@ -1,6 +1,6 @@
 // (c) @babyjeans Nov 2017
 
-#macro IMGUI_TRANSPARENCY 1.30
+#macro IMGUI_TRANSPARENCY 1.15 //no idea why but this doesn't behave how you think it would...
 
 #macro ImGuiGML_MaxVerts                 (65535)
 #macro ImGuiGML_MaxCommands              (255)

@@ -10,7 +10,7 @@ var _protected   = argument2;
 
 var _stack            = [];
 var _stack_ds         = [];
-var _stack_currentr_ = undefined;
+var _stack_currentr_  = undefined;
 var _stack_index      = -1;
 var _stack_type       = undefined;
 

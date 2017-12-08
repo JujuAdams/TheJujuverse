@@ -1,0 +1,1 @@
+if ( RESOLUTION_ON ) instantiate_protected( obj_resolution );

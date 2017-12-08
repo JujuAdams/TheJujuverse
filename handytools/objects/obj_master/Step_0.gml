@@ -9,10 +9,7 @@ if ( QUIT_ON_ESCAPE && keyboard_check_pressed( vk_escape ) ) game_end();
 
 if ( ALLOW_F4_FULLSCREEN && keyboard_check_pressed( vk_f4 ) ) {
 	if ( RESOLUTION_ON ) {
-		if ( !instance_exists( obj_fullscreener ) ) {
-			options_set( "fullscreen", !options_get( "fullscreen" ) );
-			options_apply();
-		}
+		resolution_toggle_fullscreen();
 	} else {
 		options_set( "fullscreen", !options_get( "fullscreen" ) );
 		window_set_fullscreen( options_get( "fullscreen" ) );

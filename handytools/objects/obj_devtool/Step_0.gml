@@ -69,6 +69,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.MAPS:
 			#region MAPS
 			imguigml_text( "MAPS" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_map_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_map_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
@@ -94,6 +98,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.LISTS:
 			#region LISTS
 			imguigml_text( "LISTS" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_list_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_list_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
@@ -119,6 +127,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.GRIDS:
 			#region GRIDS
 			imguigml_text( "GRIDS" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_grid_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_grid_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
@@ -144,6 +156,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.SURFACES:
 			#region SURFACES
 			imguigml_text( "SURFACES" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_surface_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_surface_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
@@ -176,6 +192,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.VERTEX_BUFFERS:
 			#region VERTEX BUFFERS
 			imguigml_text( "VERTEX BUFFERS" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_vertex_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_vertex_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
@@ -201,6 +221,10 @@ if ( show_window ) {
 		case E_TRACKER_PAGE.INSTANCES:
 			#region INSTANCES
 			imguigml_text( "INSTANCES" );
+			imguigml_same_line();
+			if imguigml_button( "Dump" ) trace_f( tr_instance_dump() );
+			imguigml_same_line();
+			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_instance_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
 			imguigml_text( "TR" );
