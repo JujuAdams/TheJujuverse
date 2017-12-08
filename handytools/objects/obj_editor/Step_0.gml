@@ -49,7 +49,9 @@ if ( show_window ) {
 			imguigml_same_line();
 			if ( imguigml_button( "Toggle Lighting" ) ) global.do_lighting = !global.do_lighting;
 			imguigml_same_line();
-			if ( imguigml_button( "Toggle Noclip (" + (global.do_noclip?"is ON":"is OFF") + ")" ) )global.do_noclip = !global.do_noclip;
+			if ( imguigml_button( "Toggle Noclip (" + (global.do_noclip?"is ON":"is OFF") + ")" ) ) global.do_noclip = !global.do_noclip;
+			imguigml_same_line();
+			if ( imguigml_button( "Toggle srf_click" ) ) global.show_click = !global.show_click;
 			imguigml_new_line();
 			imguigml_new_line();
 			imguigml_text( concat( "Room ", global.game_room ) );
