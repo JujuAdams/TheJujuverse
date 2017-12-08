@@ -4,7 +4,7 @@ options_default_values();
 options_set_defaults();
 options_default_controls();
 
-if ( !file_exists( "options.txt" ) ) {
+if ( !file_exists( "options.txt" ) || FORCE_DEFAULT_ON_LOAD ) {
 	options_save();
 } else {
 	options_load();
