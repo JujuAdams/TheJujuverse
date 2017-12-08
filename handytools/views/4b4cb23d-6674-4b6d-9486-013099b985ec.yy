@@ -9,7 +9,8 @@
         "46fa80fe-3cfd-44d3-af1f-a14c81d25886",
         "ec7c1a71-6016-451b-9024-bddf9596ea61",
         "6187236a-056b-44cc-b249-bf8c5eb10d8b",
-        "a5452793-17ff-4214-aca9-4c822fb80260"
+        "a5452793-17ff-4214-aca9-4c822fb80260",
+        "9f473af6-c810-44aa-9bd1-03e261adc0e0"
     ],
     "filterType": "GMScript",
     "folderName": "reals",

@@ -1,23 +1,4 @@
 #region INPUT
-if ( keyboard_check_pressed( vk_f4 ) && !instance_exists( obj_fullscreener ) ) {
-	
-	if ( !window_get_fullscreen() && !options_get( "fullscreen" ) ) {
-		options_set( "window x", window_get_x() );
-		options_set( "window y", window_get_y() );
-		options_set( "window width", window_get_width() );
-		options_set( "window height", window_get_height() );
-	}
-	
-	options_set( "fullscreen", !options_get( "fullscreen" ) );
-	options_apply();
-	
-    if ( !instance_exists( obj_menu ) ) {
-        audio_play_sound( snd_flower, 1, false );
-        tr_instance_create( 0, 0, obj_menu );
-    }
-}
-
-if ( DEVELOPMENT && keyboard_check_pressed( vk_escape ) ) game_end();
 
 if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
     if ( !global.mouse_locked ) global.mouse_lock_time = current_time;

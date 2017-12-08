@@ -1,4 +1,4 @@
-if ( !options_get( "fullscreen" ) ) {
+if ( !window_get_fullscreen() ) {
 	window_set_rectangle( options_get( "window x"      ),
 	                      options_get( "window y"      ),
 						  options_get( "window width"  ),
@@ -9,3 +9,4 @@ if ( !options_get( "fullscreen" ) ) {
 }
 
 alarm[2] = 20;
+phase = 2;

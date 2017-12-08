@@ -6,6 +6,9 @@ trace_f( "--------------------", NL,
          "    GAME  STARTS", NL,
          "--------------------" );
 
+persistent = true;
+loaded = false;
+
 //initialise miscellaneous stuff
 if ( !NO_RANDOMIZE ) randomize();
 

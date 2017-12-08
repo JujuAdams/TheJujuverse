@@ -14,16 +14,19 @@
 #macro DATE "2017.12.08" //always use YYYY/MM/DD
 
 //services
-#macro TRACE_ON    true
-#macro IMGUI_ON   (true  && DEVELOPMENT)
-#macro TRACKER_ON (true  && DEVELOPMENT && !RELEASE)
-#macro AUDIO_ON    true
-#macro WAN_ON      false
-#macro FPS_ON     (false && !RELEASE)
-#macro DEVTOOL_ON (true  && IMGUI_ON && DEVELOPMENT)
-#macro RUMBLE_ON   false
+#macro TRACE_ON       true
+#macro IMGUI_ON      (true  && DEVELOPMENT)
+#macro TRACKER_ON    (true  && DEVELOPMENT && !RELEASE)
+#macro AUDIO_ON       true
+#macro WAN_ON         false
+#macro FPS_ON        (false && !RELEASE)
+#macro DEVTOOL_ON    (true  && IMGUI_ON && DEVELOPMENT)
+#macro RUMBLE_ON      false
+#macro RESOLUTION_ON  true
 
 //miscellaneous
+#macro ALLOW_F4_FULLSCREEN true
+#macro QUIT_ON_ESCAPE (true && !RELEASE)
 #macro NO_RANDOMIZE false
 #macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
 
