@@ -36,6 +36,6 @@
 #macro DEFAULT_APP_SURF_H 240
 #macro DEFAULT_WINDOW_WIDTH 960
 #macro DEFAULT_WINDOW_HEIGHT 720
-#macro FOV 50
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
+#macro FOV 50
