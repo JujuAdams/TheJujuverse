@@ -3,23 +3,19 @@
 /// @param [newline_char]
 /// @param [map_spacing]
 //
-// 2017/01/21 @jujuadams
+// 2017/12/08 @jujuadams
 // If you use this, shoot me a tweet!
 //
 // With thanks to yal.cc
 
 if ( argument_count < 1 ) or ( argument_count > 4 ) {
-    
-    show_error( "bds_prettify: ERROR! Unsupported number of arguments (" + string( argument_count ) + ")" + chr(13) + chr(10), false );
-    exit;
-    
+    trace_error( false, "Unsupported number of arguments (", argument_count, ")" );
+    return undefined;
 } else {
-    
     var _json_string = argument[0];
-    if ( argument_count >= 2 ) var _indent_size  = argument[1] else var _indent_size  = 4;
-    if ( argument_count >= 3 ) var _newline_char = argument[2] else var _newline_char = chr(13) + chr(10);
-    if ( argument_count >= 4 ) var _map_space    = argument[3] else var _map_space = 1;
-
+    var _indent_size  = ((argument_count>1) && (argument[1]!=undefined))? argument[1] : 4;
+    var _newline_char = ((argument_count>2) && (argument[2]!=undefined))? argument[2] : chr(13) + chr(10);
+    var _map_space    = ((argument_count>3) && (argument[3]!=undefined))? argument[3] : 1;
 }
 
 var _in_string        = false;
@@ -58,20 +54,22 @@ repeat( string_length( _json_string ) ) {
     } else if ( _in_number_string ) {
         
         if ( _ord < 45 ) or ( _ord == 47 ) or ( _ord > 57 ) {
+			
             _in_number_string = false;
-            if ( _number_string_dot >= _number_string_last_sig - 2 ) _number_string_last_sig--; //TODO - Fix decimal point bug
+            if ( _number_string_dot >= _number_string_last_sig ) _number_string_last_sig = _number_string_dot-1;
             _output += string_copy( _number_string, 1, _number_string_last_sig );
+			
         } else {
             
+			_do_main = false;
             _number_string += _char;
             
             if ( _ord == 46 ) {
                 _number_string_dot = string_length( _number_string );
                 _number_string_last_sig = _number_string_dot;
-            }
-            
-            if ( _number_string_dot == 0 ) or ( _ord != 48 ) _number_string_last_sig++;
-            _do_main = false;
+            } else if ( _number_string_dot == 0 ) or ( _ord != 48 ) {
+				_number_string_last_sig++;
+			}
             
         }
         

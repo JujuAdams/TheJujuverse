@@ -18,7 +18,7 @@ if ( TRACKER_ON ) {
 		return false;
 	}
 	
-	if ( TRACKER_DEVELOPMENT_MAP_DESTROY ) trace_v( "destroying map ", _index, TRACE_DEFAULT_DIVIDER, tr_map_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEBUG_MAP_DESTROY ) trace_v( "destroying map ", _index, TRACE_DIV, tr_map_details( _index, TRACE_DIV ) );
 	__tr_map_unregister( _index );
 	__tr_destroy_nested_maps(  global.tracker_map_nested_maps , _index );
 	__tr_destroy_nested_lists( global.tracker_map_nested_lists, _index );

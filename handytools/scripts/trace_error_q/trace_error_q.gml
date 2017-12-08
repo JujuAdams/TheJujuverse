@@ -6,9 +6,9 @@
 
 var _start = is_real(argument[0])?1:0;
 
-if ( TRACE_SHOW ) {
+if ( TRACE_ON ) {
 	var _str = "";
 	for( var _i = _start; _i < argument_count; _i++ ) _str += string_ext( argument[_i] );
-	trace_v( "ERROR", TRACE_DEFAULT_DIVIDER, string_replace_all( _str, NL, TRACE_DEFAULT_DIVIDER ) );
+	trace_v( "ERROR", TRACE_DIV, string_replace_all( _str, NL, TRACE_DIV ) );
 	return _str;
 }

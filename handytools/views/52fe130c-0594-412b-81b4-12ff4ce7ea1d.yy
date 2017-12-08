@@ -15,7 +15,7 @@
         "a7507df4-d9c2-4d7d-837b-9666e9cda4c7"
     ],
     "filterType": "GMObject",
-    "folderName": "AMIASP",
+    "folderName": "game",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -9,7 +9,7 @@
         "7e0ee5a4-d8e5-4cd6-9a43-283f2f04fbf7"
     ],
     "filterType": "GMFont",
-    "folderName": "AMIASP",
+    "folderName": "game",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

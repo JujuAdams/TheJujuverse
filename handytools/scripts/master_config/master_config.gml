@@ -1,5 +1,5 @@
 /*
-	For default options/controls, see options_init() and options_default_controls()
+	For default options/controls, see options_default_values() and options_default_controls()
 	All possible inputs need to be defined in control_init()
 */
 
@@ -11,16 +11,21 @@
 #macro VERSION_NOMIKER "Preview"
 #macro CREDITS "Code: @jujuadams\nImGUI Implementation: @babyj3ans\nAMIASP Assets: @i_am_thireen + @tophtacular + @blokatt\nSpecial Thanks: The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
-#macro DATE "2017.11.30"
+#macro DATE "2017.12.08" //always use YYYY/MM/DD
 
 //services
-#macro IMGUI_ON   (true && DEVELOPMENT)
-#macro TRACKER_ON (true && DEVELOPMENT && !RELEASE)
+#macro TRACE_ON    true
+#macro IMGUI_ON   (true  && DEVELOPMENT)
+#macro TRACKER_ON (true  && DEVELOPMENT && !RELEASE)
 #macro AUDIO_ON    true
 #macro WAN_ON      false
 #macro FPS_ON     (false && !RELEASE)
-#macro DEVTOOL_ON (true && IMGUI_ON && DEVELOPMENT)
+#macro DEVTOOL_ON (true  && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON   false
+
+//miscellaneous
+#macro NO_RANDOMIZE false
+#macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
 
 //graphics
 #macro FORCE_VSYNC true
@@ -34,12 +39,3 @@
 #macro FOV 50
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
-
-//debug flags
-#macro TRACE_SHOW true
-#macro TRACE_SHOW_ERROR true
-#macro TRACE_TO_GAME_OUTPUT true
-#macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
-
-//
-#macro DEFAULT_PLAYER_NAME "Juju :D"

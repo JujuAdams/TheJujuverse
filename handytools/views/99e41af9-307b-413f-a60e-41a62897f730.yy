@@ -12,7 +12,8 @@
         "bb5a3d04-1605-413d-8cd4-3e686169aa51",
         "f4cdca7c-a752-46fc-a2ba-ce98a9788ad8",
         "71871438-a324-427b-b6dd-f1883d8d35dc",
-        "fa12db41-ca19-49dc-b119-f242ba861e93"
+        "fa12db41-ca19-49dc-b119-f242ba861e93",
+        "b6b5fa87-1937-4d3c-88b5-0cd62dde0fad"
     ],
     "filterType": "GMScript",
     "folderName": "services",

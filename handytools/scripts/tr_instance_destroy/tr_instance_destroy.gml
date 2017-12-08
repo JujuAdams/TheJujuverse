@@ -12,18 +12,18 @@ if ( TRACKER_ON ) {
 		return false;
 	} else if ( _protect ) {
 		if ( _index == id ) and ( TRACKER_PROTECTED_INSTANCE_CAN_DESTOY_SELF ) {
-			trace_v( "protected instance destroying itself", TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
+			trace_v( "protected instance destroying itself", TRACE_DIV, tr_instance_details( _index, TRACE_DIV ) );
 		} else {
 			if ( TRACKER_ILLEGAL_THROW_ERROR ) {
 				trace_error( false, "attempting to destroy protected instance!", NL, tr_instance_details( _index, NL ) );
 			} else {
-				trace_vf( "attempting to destroy protected instance!", TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
+				trace_vf( "attempting to destroy protected instance!", TRACE_DIV, tr_instance_details( _index, TRACE_DIV ) );
 			}
 			return false;
 		}
 	}
 	
-	if ( TRACKER_DEVELOPMENT_INSTANCE_DESTROY ) trace_v( "destroying instance ", _index, TRACE_DEFAULT_DIVIDER, tr_instance_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEBUG_INSTANCE_DESTROY ) trace_v( "destroying instance ", _index, TRACE_DIV, tr_instance_details( _index, TRACE_DIV ) );
 	__tr_instance_unregister( _index );
 	
 }

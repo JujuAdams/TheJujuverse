@@ -5,11 +5,10 @@ camera_interesting = true;
 
 
 
-if ( options_get( "lock mouse", false ) ) {
-	window_mouse_set( options_get( "window width" , DEFAULT_WINDOW_WIDTH  )/2,
-	                  options_get( "window height", DEFAULT_WINDOW_HEIGHT )/2 );
-	var _mouse_x = options_get( "window width" , DEFAULT_WINDOW_WIDTH  )/2;
-	var _mouse_y = options_get( "window height", DEFAULT_WINDOW_HEIGHT )/2;
+if ( options_get( "lock mouse" ) ) {
+	window_mouse_set( options_get( "window width"  )/2, options_get( "window height" )/2 );
+	var _mouse_x = options_get( "window width"  )/2;
+	var _mouse_y = options_get( "window height" )/2;
 } else {
 	var _mouse_x = window_mouse_get_x();
 	var _mouse_y = window_mouse_get_y();

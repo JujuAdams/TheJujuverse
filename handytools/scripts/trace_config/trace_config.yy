@@ -1,8 +1,8 @@
 {
-    "id": "d7eaf1f9-0659-4ec3-861d-df4808d8058b",
+    "id": "2e1a2cc1-1570-4388-bde5-b2fe1c3fb552",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "json_prettify_old",
+    "name": "trace_config",
     "IsCompatibility": false,
     "IsDnD": false
 }

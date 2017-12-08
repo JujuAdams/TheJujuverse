@@ -19,7 +19,7 @@
         "495143aa-f2c3-4a60-b5a6-752b08a0ccae"
     ],
     "filterType": "GMScript",
-    "folderName": "AMIASP",
+    "folderName": "game",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

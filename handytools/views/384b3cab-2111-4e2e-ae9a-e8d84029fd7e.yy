@@ -9,7 +9,7 @@
         "a5bd4fba-057e-4a90-b591-0773de4c71b8"
     ],
     "filterType": "GMShader",
-    "folderName": "AMIASP",
+    "folderName": "game",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

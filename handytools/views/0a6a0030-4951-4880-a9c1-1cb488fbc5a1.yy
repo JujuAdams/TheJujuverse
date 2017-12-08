@@ -12,7 +12,7 @@
         "e21fc587-77ff-4d9c-b007-9f9e5392c3bd"
     ],
     "filterType": "GMSprite",
-    "folderName": "AMIASP",
+    "folderName": "game",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

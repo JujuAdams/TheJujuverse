@@ -17,7 +17,7 @@ if ( TRACKER_ON ) {
 		return false;
 	}
 	
-	if ( TRACKER_DEVELOPMENT_GRID_DESTROY ) trace_v( "destroying grid ", _index, TRACE_DEFAULT_DIVIDER, tr_grid_details( _index, TRACE_DEFAULT_DIVIDER ) );
+	if ( TRACKER_DEBUG_GRID_DESTROY ) trace_v( "destroying grid ", _index, TRACE_DIV, tr_grid_details( _index, TRACE_DIV ) );
 	__tr_grid_unregister( _index );
 	
 }

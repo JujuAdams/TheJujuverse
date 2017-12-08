@@ -1,4 +1,4 @@
-if ( !options_get( "transitions", true ) ) {
+if ( !options_get( "transitions" ) ) {
 	if ( !room_exists( target_room ) ) {
 		game_end();
 	} else if ( room != target_room ) {

@@ -86,7 +86,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
-				imguigml_text( tr_map_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_map_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion
@@ -111,7 +111,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
-				imguigml_text( tr_list_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_list_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion
@@ -136,7 +136,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
-				imguigml_text( tr_grid_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_grid_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion
@@ -168,7 +168,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
-				imguigml_text( tr_surface_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_surface_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion
@@ -193,7 +193,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
-				imguigml_text( tr_vertex_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_vertex_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion
@@ -218,7 +218,7 @@ if ( show_window ) {
 				imguigml_next_column();
 				imguigml_text( instance_exists(_id)?(object_get_name(_id.object_index)+":"+string(_id)):"<destroyed?>:"+string(_id) );
 				imguigml_next_column();
-				imguigml_text( tr_instance_details( _id, TRACE_DEFAULT_DIVIDER ) );
+				imguigml_text( tr_instance_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
 			#endregion

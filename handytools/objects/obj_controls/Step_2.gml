@@ -76,7 +76,7 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
 			var _mouse_old_x = cam_mouse_x();
 			var _mouse_old_y = cam_mouse_y();
 			
-			if ( options_get( "lock mouse", false ) ) {
+			if ( options_get( "lock mouse" ) ) {
 			
 				_mouse_map[?"point x"] += _sensitivity * ( cam_mouse_x() - window_get_width()/2 );
 				_mouse_map[?"point y"] += _sensitivity * ( cam_mouse_y() - window_get_height()/2 );
