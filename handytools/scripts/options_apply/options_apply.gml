@@ -4,7 +4,12 @@ audio_group_set_gain( global.audio_group_map[? "sounds" ], options_get( "sounds"
 
 if ( options_get( "window width"  ) >= display_get_width()  )
 || ( options_get( "window height" ) >= display_get_height() ) {
-	options_set( "fullscreen", true );
+	window_set_fullscreen( true );
 }
 
-instantiate( obj_fullscreener );
+if ( !options_get( "fullscreen" ) ) {
+	window_set_rectangle( options_get( "window x"      ),
+	                      options_get( "window y"      ),
+						  options_get( "window width"  ),
+	                      options_get( "window height" ) );
+}
