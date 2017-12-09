@@ -9,8 +9,7 @@
         "78c2f057-449d-47bc-8047-d5ca89a46f34",
         "dac3ba0c-67b6-4839-a0bd-55dffbc999bd",
         "0e98f27d-b2c7-4f67-b658-09f96a9b1f8a",
-        "2931bd16-44fd-4568-a279-2493d168318d",
-        "87d3bab2-f86f-48ad-86d9-c005089a5d4e"
+        "2931bd16-44fd-4568-a279-2493d168318d"
     ],
     "filterType": "GMObject",
     "folderName": "flowers",

@@ -12,6 +12,7 @@ window_name = "Editor";
 
 preview_surface = tr_surface_create( 600, 600 );
 preview_object = undefined;
+preview_instance = noone;
 
 selected_object = undefined;
 

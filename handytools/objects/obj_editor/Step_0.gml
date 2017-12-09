@@ -127,7 +127,18 @@ if ( show_window ) {
 						*/
 						selected_object = ( selected_object == _object )? undefined : _object;
 					}
-					if ( imguigml_is_item_hovered( true ) ) preview_object = _object;
+					
+					if ( imguigml_is_item_hovered( true ) ) {
+						preview_object = _object;
+						if ( instance_exists( preview_instance ) ) and ( preview_instance.object_index != _object ) {
+							tr_instance_destroy( preview_instance );
+							preview_instance = noone;
+						}
+						if ( !instance_exists( preview_instance ) ) {
+							preview_instance = tr_instance_create_z( 0, 0, 0, 0, _object );
+							preview_instance.visible = false;
+						}
+					}
 					
 				} else {
 					
@@ -142,6 +153,13 @@ if ( show_window ) {
 			imguigml_end_child( "child" );
 			
 			imguigml_set_column_width( 0, 620 );
+			
+			if ( preview_object == undefined ) and ( instance_exists( preview_instance ) ) {
+				tr_instance_destroy( preview_instance );
+				preview_instance = noone;
+			}
+			
+			with( preview_instance ) image_angle += 0.7;
 			
 		#endregion
 		break;
