@@ -1,0 +1,1 @@
+#macro DRAW_USER_EVENT 0

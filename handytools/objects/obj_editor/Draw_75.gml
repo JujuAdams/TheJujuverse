@@ -9,6 +9,7 @@ if ( preview_object != undefined ) {
 	_instance = preview_instance;
 } else if ( selected_object != undefined ) {
 	_object = selected_object;
+	_instance = selected_instance;
 }
 
 if ( _object != undefined ) and ( instance_exists( _instance ) ) {
@@ -28,7 +29,7 @@ if ( _object != undefined ) and ( instance_exists( _instance ) ) {
 	draw_set_lighting( false );
 	shader_reset(); 
 	
-	with( _instance ) event_user( 0 );
+	with( _instance ) event_user( DRAW_USER_EVENT );
 
 	shader_reset();
 	gpu_set_ztestenable( false );

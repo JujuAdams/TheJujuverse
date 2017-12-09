@@ -15,6 +15,7 @@ preview_object = undefined;
 preview_instance = noone;
 
 selected_object = undefined;
+selected_instance = noone;
 
 object_list = tr_list_create();
 ds_list_add( object_list, obj_player_spawn       );

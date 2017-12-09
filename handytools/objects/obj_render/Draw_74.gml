@@ -31,7 +31,7 @@ switch( instance_exists( obj_camera ) ) {
 			matrix_chain_end( matrix_world );
 				
 			s_shader_begin( shd_displacement_aoe );
-			with( obj_parent_screen_distortion ) event_user( 0 );
+			with( obj_parent_screen_distortion ) event_user( DRAW_USER_EVENT );
 			s_shader_end();
 			
 			matrix_reset_world();

@@ -6,7 +6,7 @@ if ( outro_t < 1 ) {
     shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), random( 1 ) );
 }
 
-event_user( 0 );
+event_user( DRAW_USER_EVENT );
 
 mouse_active_reset_colour();
 

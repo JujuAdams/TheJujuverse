@@ -1,8 +1,15 @@
 preview_surface = tr_surface_check_auto( preview_surface );
 
 if ( keyboard_check_pressed( vk_f11 ) ) and ( IMGUI_ON ) {
+	
 	show_window = !show_window;
-	if ( show_window ) window_has_set_size = false;
+	if ( show_window ) {
+		window_has_set_size = false;
+	} else {
+		preview_object = undefined;
+		selected_object = undefined;
+	}
+	
 }
 
 if ( !instance_exists( obj_imgui ) ) show_window = false;
@@ -114,36 +121,19 @@ if ( show_window ) {
 				imguigml_next_column();
 				
 				if ( is_real( _object ) ) {
-					
-					if ( imguigml_button( object_get_pretty_name( _object ) ) ) {
-						/*
-			            var _x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
-			            var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
-			            var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
-			            with( _inst ) {
-			                mouse_selected = true;
-			                mouse_active_set_relative_values();
-			            }
-						*/
-						selected_object = ( selected_object == _object )? undefined : _object;
-					}
-					
-					if ( imguigml_is_item_hovered( true ) ) {
-						preview_object = _object;
-						if ( instance_exists( preview_instance ) ) and ( preview_instance.object_index != _object ) {
-							tr_instance_destroy( preview_instance );
-							preview_instance = noone;
-						}
-						if ( !instance_exists( preview_instance ) ) {
-							preview_instance = tr_instance_create_z( 0, 0, 0, 0, _object );
-							preview_instance.visible = false;
-						}
-					}
-					
+					if ( imguigml_button( object_get_pretty_name( _object ) ) ) selected_object = ( selected_object == _object )? undefined : _object;
+					if ( imguigml_is_item_hovered( true ) ) preview_object = _object;
+					/*
+			        var _x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
+			        var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
+			        var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
+			        with( _inst ) {
+			            mouse_selected = true;
+			            mouse_active_set_relative_values();
+			        }
+					*/
 				} else {
-					
 					imguigml_text( object_list[| _i ] );
-					
 				}
 				
 				imguigml_next_column();
@@ -153,13 +143,6 @@ if ( show_window ) {
 			imguigml_end_child( "child" );
 			
 			imguigml_set_column_width( 0, 620 );
-			
-			if ( preview_object == undefined ) and ( instance_exists( preview_instance ) ) {
-				tr_instance_destroy( preview_instance );
-				preview_instance = noone;
-			}
-			
-			with( preview_instance ) image_angle += 0.7;
 			
 		#endregion
 		break;
@@ -205,3 +188,33 @@ if ( show_window ) {
 	imguigml_end();
 	
 }
+
+
+#region PREVIEW INSTANCE
+if ( instance_exists( preview_instance ) ) and ( preview_instance.object_index != preview_object ) {
+	tr_instance_destroy( preview_instance );
+	preview_instance = noone;
+}
+			
+if ( preview_object != undefined ) and ( !instance_exists( preview_instance ) ) {
+	preview_instance = tr_instance_create_z( 0, 0, 0, 0, preview_object );
+	preview_instance.visible = false;
+}
+		
+with( preview_instance ) image_angle += 0.8;
+#endregion
+			
+#region SELECTED INSTANCE
+			
+if ( instance_exists( selected_instance ) ) and ( selected_instance.object_index != selected_object ) {
+	tr_instance_destroy( selected_instance );
+	selected_instance = noone;
+}
+			
+if ( selected_object != undefined ) and ( !instance_exists( selected_instance ) ) {
+	selected_instance = tr_instance_create_z( 0, 0, 0, 0, selected_object );
+	selected_instance.visible = false;
+}
+			
+with( selected_instance ) image_angle += 0.8;
+#endregion

@@ -7,7 +7,7 @@ if ( audio_is_playing( phone_ring_sound_instance ) ) {
     shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fGarbage" ), random( 1 ) );
 }
 
-event_user( 0 );
+event_user( DRAW_USER_EVENT );
 mouse_active_reset_colour();
 
 shader_set_uniform_f( shader_get_uniform( shd_psx, "u_fVibrate" ), 0.0 );
