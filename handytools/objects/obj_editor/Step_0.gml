@@ -16,11 +16,11 @@ if ( !instance_exists( obj_imgui ) ) show_window = false;
 
 if ( show_window ) {
 	
-	var ret = imguigml_begin( window_name, true,
+	var _window_state = imguigml_begin( window_name, true,
 	                          EImGui_WindowFlags.NoResize |
 	                          EImGui_WindowFlags.NoMove |
 	                          EImGui_WindowFlags.MenuBar );
-	if ( !ret[1] ) {
+	if ( !_window_state[1] ) {
 		show_window = false;
 		window_has_set_size = false;
 	}
@@ -123,15 +123,6 @@ if ( show_window ) {
 				if ( is_real( _object ) ) {
 					if ( imguigml_button( object_get_pretty_name( _object ) ) ) selected_object = ( selected_object == _object )? undefined : _object;
 					if ( imguigml_is_item_hovered( true ) ) preview_object = _object;
-					/*
-			        var _x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
-			        var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
-			        var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, _object );
-			        with( _inst ) {
-			            mouse_selected = true;
-			            mouse_active_set_relative_values();
-			        }
-					*/
 				} else {
 					imguigml_text( object_list[| _i ] );
 				}
@@ -187,8 +178,24 @@ if ( show_window ) {
 	
 	imguigml_end();
 	
+	#region SPAWNING
+	
+	if ( instance_exists( obj_camera ) )
+	&& ( mouse_check_button_pressed( mb_left ) )
+	&& ( !_window_state[0] )
+	&& ( selected_object != undefined ) {
+		var _x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
+		var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
+		var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, selected_object );
+		with( _inst ) {
+			mouse_selected = true;
+			mouse_active_set_relative_values();
+		}
+	}
+	
+	#endregion
+	
 }
-
 
 #region PREVIEW INSTANCE
 if ( instance_exists( preview_instance ) ) and ( preview_instance.object_index != preview_object ) {
