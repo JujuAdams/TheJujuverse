@@ -28,11 +28,20 @@ if ( window_show ) {
 	
 	if ( keyboard_check_released( ord("1") ) ) window_page = E_EDITOR_PAGE.HOME;
 	if ( keyboard_check_released( ord("2") ) ) window_page = E_EDITOR_PAGE.PLACE;
-	if ( keyboard_check_released( ord("3") ) ) window_page = E_EDITOR_PAGE.MOVE;
-	if ( keyboard_check_released( ord("4") ) ) window_page = E_EDITOR_PAGE.ROTATE;
+	if ( keyboard_check_released( ord("3") ) ) {
+		window_page = E_EDITOR_PAGE.MOVE;
+		with( obj_par_3d ) mouse_active_set_relative_values();
+	}
+	if ( keyboard_check_released( ord("4") ) ) {
+		window_page = E_EDITOR_PAGE.ROTATE;
+		with( obj_par_3d ) mouse_active_set_relative_values();
+	}
 	if ( keyboard_check_released( ord("5") ) ) window_page = E_EDITOR_PAGE.INSTANCES;
+	if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.SELECTED;
+	if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.DELETE;
+	if ( keyboard_check_released( ord("8") ) ) window_page = E_EDITOR_PAGE.LIGHT;
 	
-	if ( keyboard_check_released( vk_tab ) || mouse_check_button_pressed( mb_right ) ) {
+	if ( keyboard_check_released( vk_tab ) ) {
 		var _ = window_page;
 		window_page = window_page_return;
 		window_page_return = _;
@@ -65,13 +74,21 @@ if ( window_show ) {
 		imguigml_begin_menu_bar();
 		if ( imguigml_menu_item( "1.Home"      ) ) window_page = E_EDITOR_PAGE.HOME;
 		if ( imguigml_menu_item( "2.Place"     ) ) window_page = E_EDITOR_PAGE.PLACE;
-		if ( imguigml_menu_item( "3.Move"      ) ) window_page = E_EDITOR_PAGE.MOVE;
-		if ( imguigml_menu_item( "4.Rotate"    ) ) window_page = E_EDITOR_PAGE.ROTATE;
+		if ( imguigml_menu_item( "3.Move"      ) ) {
+			window_page = E_EDITOR_PAGE.MOVE;
+			with( obj_par_3d ) mouse_active_set_relative_values();
+		}
+		if ( imguigml_menu_item( "4.Rotate"    ) ) {
+			window_page = E_EDITOR_PAGE.ROTATE;
+			with( obj_par_3d ) mouse_active_set_relative_values();
+		}
 		if ( imguigml_menu_item( "5.Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
+		if ( imguigml_menu_item( "6.Selected"  ) ) window_page = E_EDITOR_PAGE.SELECTED;
+		if ( imguigml_menu_item( "7.Delete"    ) ) window_page = E_EDITOR_PAGE.DELETE;
+		if ( imguigml_menu_item( "8.Light"     ) ) window_page = E_EDITOR_PAGE.LIGHT;
 		imguigml_end_menu_bar();
 	
 		switch( editor_get_page() ) {
-		
 			case E_EDITOR_PAGE.HOME:
 			#region HOME
 				
@@ -82,8 +99,7 @@ if ( window_show ) {
 				imguigml_new_line();
 				imguigml_text( "F11 = Open/Close editor window" );
 				imguigml_text( "Space = Collapse window" );
-				imguigml_text( "Tab/Right Click = Return to previous tool" );
-				imguigml_new_line();
+				imguigml_text( "Tab = Return to previous tool" );
 				imguigml_new_line();
 				
 				if ( imguigml_button( "Toggle Menu" ) ) {
@@ -103,7 +119,6 @@ if ( window_show ) {
 				imguigml_same_line();
 				if ( imguigml_button( "Toggle srf_click" ) ) global.show_click = !global.show_click;
 				imguigml_new_line();
-				imguigml_new_line();
 				imguigml_text( concat( "Room ", global.game_room ) );
 			
 				imguigml_same_line();
@@ -116,7 +131,6 @@ if ( window_show ) {
 				        load_room_n( global.game_room );
 				    }
 				}
-			
 				imguigml_same_line();
 				if ( imguigml_button( "Next Room" ) ) {
 					unload_current_room();
@@ -127,7 +141,7 @@ if ( window_show ) {
 				        load_room_n( global.game_room );
 				    }
 				}
-			
+				imguigml_same_line();
 				if ( imguigml_button( "Save Room" ) ) {
 			        var _filename = get_save_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
 			        if ( _filename != "" ) {
@@ -138,6 +152,38 @@ if ( window_show ) {
 			        }
 				}
 				imguigml_new_line();
+				
+				if ( imguigml_button( "Set Floor Sprite" ) && instance_exists( obj_floor ) ) {
+		            var _texture_name = sprite_get_name( obj_floor.sprite );
+		            _texture_name = get_string( "Texture for floor?", _texture_name );
+		            if ( _texture_name != "" ) {
+		                var _texture = asset_get_index( _texture_name );
+		                if ( _texture < 0 ) {
+		                    imguigml_popup( "Error!",_texture_name + " could not be found!" );
+		                } else {
+		                    with( obj_floor ) {
+		                        sprite = _texture;
+		                        texture = sprite_get_texture( sprite, 0 );
+		                    }
+		                }
+		            }
+				}
+				imguigml_same_line();
+				if ( imguigml_button( "Set Wall Sprite" ) && instance_exists( obj_wall ) ) {
+		            var _texture_name = sprite_get_name( obj_wall.sprite );
+		            _texture_name = get_string( "Texture for walls?", _texture_name );
+		            if ( _texture_name != "" ) {
+		                var _texture = asset_get_index( _texture_name );
+		                if ( _texture < 0 ) {
+		                    imguigml_popup( "Error!", _texture_name + " could not be found!" );
+		                } else {
+		                    with( obj_wall ) {
+		                        sprite = _texture;
+		                        texture = sprite_get_texture( sprite, 0 );
+		                    }
+		                }
+		            }
+				}
 			#endregion
 			break;
 			case E_EDITOR_PAGE.PLACE:
@@ -163,6 +209,8 @@ if ( window_show ) {
 					if ( is_real( _object ) ) {
 						if ( imguigml_button( object_get_pretty_name( _object ) ) ) selected_object = ( selected_object == _object )? undefined : _object;
 						if ( imguigml_is_item_hovered( true ) ) preview_object = _object;
+					} else if ( _object = "SEP" ) {
+						imguigml_separator();
 					} else {
 						imguigml_text( object_list[| _i ] );
 					}
@@ -175,6 +223,43 @@ if ( window_show ) {
 			
 				imguigml_set_column_width( 0, 620 );
 			
+			#endregion
+			break;
+			case E_EDITOR_PAGE.MOVE:
+			case E_EDITOR_PAGE.ROTATE:
+			case E_EDITOR_PAGE.SELECTED:
+			#region MOVE
+				imguigml_text( "SELECTED" );
+				var _any = false;
+				with( obj_par_3d ) if ( mouse_selected ) _any = true;
+				if ( _any ) {
+					imguigml_columns( 5, "Columns", true );
+					imguigml_text( "Object" );
+					imguigml_next_column();
+					imguigml_text( "x" );
+					imguigml_next_column();
+					imguigml_text( "y" );
+					imguigml_next_column();
+					imguigml_text( "z" );
+					imguigml_next_column();
+					imguigml_text( "angle" );
+					imguigml_next_column();
+					imguigml_separator();
+					with( obj_par_3d ) {
+						if ( mouse_selected ) {
+							imguigml_text( concat( object_get_pretty_name( object_index ), ":", id ) );
+							imguigml_next_column();
+							imguigml_text( x );
+							imguigml_next_column();
+							imguigml_text( y );
+							imguigml_next_column();
+							imguigml_text( z );
+							imguigml_next_column();
+							imguigml_text( image_angle );
+							imguigml_next_column();
+						}
+					}
+				}
 			#endregion
 			break;
 			case E_EDITOR_PAGE.INSTANCES:
@@ -193,7 +278,6 @@ if ( window_show ) {
 				imguigml_next_column();
 				imguigml_separator();
 				with( obj_par_3d ) {
-					//if ( _last_instances_over == id ) imguigml_separator();
 					if ( mouse_selected ) imguigml_text( "S" );
 					imguigml_next_column();
 					if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
@@ -207,13 +291,11 @@ if ( window_show ) {
 					imguigml_next_column();
 					imguigml_text( (( mouse_selected || ( _last_instances_over == id )) ? "" : "  ") + string( image_angle ) );
 					imguigml_next_column();
-					//if ( _last_instances_over == id ) imguigml_separator();
 				}
 				imguigml_set_column_width( 0,  25 );
 				imguigml_set_column_width( 1, 170 );
 			#endregion
 			break;
-		
 		}
 		
 	}

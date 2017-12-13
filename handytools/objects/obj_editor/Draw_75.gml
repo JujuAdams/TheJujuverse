@@ -5,14 +5,14 @@ if ( editor_is_open() ) {
 	draw_set_font( fnt_imgui );
 	switch( window_page ) {
 		case E_EDITOR_PAGE.PLACE:
-			draw_text(  80, 15, concat( "PLACING ", object_get_pretty_name( selected_object ) ) );
+			draw_text(  80, 15, concat( "PLACE ", object_get_pretty_name( selected_object ) ) );
 			draw_text( 250, 15, concat( "x=", place_x ) );
 			draw_text( 350, 15, concat( "y=", place_y ) );
 			draw_text( 450, 15, concat( "z=", place_z ) );
 			draw_text( 550, 15, concat( "angle=", place_a ) );
 		break;
 		case E_EDITOR_PAGE.MOVE:
-			draw_text( 80, 15, "MOVING" );
+			draw_text( 80, 15, "MOVE" );
 			if ( instance_exists( _lookat_inst ) ) {
 				draw_text( 250, 15, concat( "LOOKAT ", object_get_pretty_name( _lookat_inst.object_index ), ":", _lookat_inst ) );
 				draw_text( 450, 15, concat( "x=", _lookat_inst.x ) );
@@ -21,6 +21,19 @@ if ( editor_is_open() ) {
 				draw_text( 750, 15, concat( "angle=", _lookat_inst.image_angle ) );
 			} else {
 				draw_text( 150, 15, concat( "LOOKAT ", object_get_pretty_name( undefined ) ) );
+			}
+			if ( window_collapsed ) {
+				var _y = 30;
+				with( obj_par_3d ) {
+					if ( mouse_selected ) {
+						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
+						draw_text( 450, _y, concat( "x=", x ) );
+						draw_text( 550, _y, concat( "y=", y ) );
+						draw_text( 650, _y, concat( "z=", z ) );
+						draw_text( 750, _y, concat( "angle=", image_angle ) );
+						_y += 20;
+					}
+				}
 			}
 		break;
 		case E_EDITOR_PAGE.ROTATE:
@@ -34,12 +47,47 @@ if ( editor_is_open() ) {
 			} else {
 				draw_text( 150, 15, concat( "LOOKAT ", object_get_pretty_name( undefined ) ) );
 			}
+			if ( window_collapsed ) {
+				var _y = 30;
+				with( obj_par_3d ) {
+					if ( mouse_selected ) {
+						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
+						draw_text( 450, _y, concat( "x=", x ) );
+						draw_text( 550, _y, concat( "y=", y ) );
+						draw_text( 650, _y, concat( "z=", z ) );
+						draw_text( 750, _y, concat( "angle=", image_angle ) );
+						_y += 20;
+					}
+				}
+			}
 		break;
 		case E_EDITOR_PAGE.INSTANCES:
 			draw_text( 80, 15, "INSTANCES" );
 			if ( instance_exists( instances_over ) ) {
 				draw_text( 150, 15, concat( "HOVER ", object_get_pretty_name( instances_over.object_index ), ":", id ) );
+			}
+			if ( window_collapsed ) {
+				var _y = 30;
+				with( obj_par_3d ) {
+					if ( mouse_selected ) {
+						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
+						draw_text( 450, _y, concat( "x=", x ) );
+						draw_text( 550, _y, concat( "y=", y ) );
+						draw_text( 650, _y, concat( "z=", z ) );
+						draw_text( 750, _y, concat( "angle=", image_angle ) );
+						_y += 20;
+					}
+				}
 			}	
+		break;
+		case E_EDITOR_PAGE.SELECTED:
+			draw_text( 80, 15, "SELECTED" );
+		break;
+		case E_EDITOR_PAGE.DELETE:
+			draw_text( 80, 15, "DELETE" );
+		break;
+		case E_EDITOR_PAGE.LIGHT:
+			draw_text( 80, 15, "LIGHT" );
 		break;
 	}
 }

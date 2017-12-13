@@ -29,14 +29,8 @@ if editor_is_open() {
     }
     
     if ( keyboard_check( vk_shift ) ) {
-        if ( keyboard_check_pressed( ord( "P" ) ) ) global.debug_tool = e_tool.place;
-        if ( keyboard_check_pressed( ord( "L" ) ) ) { global.debug_tool = e_tool.light; }
-        if ( keyboard_check_pressed( ord( "M" ) ) ) { global.debug_tool = e_tool.move; with( obj_par_3d ) mouse_active_set_relative_values(); }
-        if ( keyboard_check_pressed( ord( "R" ) ) ) { global.debug_tool = e_tool.rotate; with( obj_par_3d ) mouse_active_set_relative_values(); }
-        if ( keyboard_check_pressed( vk_backspace ) ) global.debug_tool = e_tool.delete;
-        if ( keyboard_check_pressed( ord( "T" ) ) ) global.debug_tool = e_tool.select;
         if ( keyboard_check_pressed( ord( "G" ) ) ) {
-        
+			
             var _texture_name = sprite_get_name( obj_floor.sprite );
             _texture_name = get_string( "Texture for floor?", _texture_name );
             if ( _texture_name != "" ) {
