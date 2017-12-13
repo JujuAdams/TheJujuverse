@@ -94,28 +94,28 @@ var _sep_char = "";
 
 var _char = " ";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = chr(13);
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = "[";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = "]";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
@@ -145,7 +145,7 @@ while( string_length( _str ) > 0 ) {
     
     //Command handling
     if ( !_skip ) {
-        if ( _sep_prev_char == "[" ) and ( _sep_char == "]" ) {
+        if ( _sep_prev_char == "[" ) && ( _sep_char == "]" ) {
             
             var _work_str = _substr + "|";
             
@@ -175,19 +175,19 @@ while( string_length( _str ) > 0 ) {
                 
                 
             //The command is an alignment keyphrase... set the alignment for the line and force a newline if the previous had content
-            } else if ( _parameters[0] == "fa_left" ) and ( _first_character ) {
+            } else if ( ( _parameters[0] == "fa_left" ) && _first_character ) {
                 
                 _text_halign = fa_left;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
                 _substr = "";
                 
-            } else if ( ( _parameters[0] == "fa_center" ) or ( _parameters[0] == "fa_centre" ) ) and ( _first_character ) {
+            } else if ( ( ( _parameters[0] == "fa_center" ) || ( _parameters[0] == "fa_centre" ) ) && _first_character ) {
                 
                 _text_halign = fa_center;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
                 _substr = "";
                 
-            } else if ( _parameters[0] == "fa_right" ) and ( _first_character ) {
+            } else if ( ( _parameters[0] == "fa_right" ) && _first_character ) {
                 
                 _text_halign = fa_right;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
@@ -275,7 +275,7 @@ while( string_length( _str ) > 0 ) {
                         } else {
                             
                             var _colour_string = string_upper( _parameters[0] );
-                            if ( string_length( _colour_string ) <= 7 ) and ( ( string_copy( _colour_string, 1, 1 ) == "#" ) or ( string_copy( _colour_string, 1, 1 ) == "$" ) ) {
+                            if ( string_length( _colour_string ) <= 7 ) && ( ( string_copy( _colour_string, 1, 1 ) == "#" ) || ( string_copy( _colour_string, 1, 1 ) == "$" ) ) {
                                 
                                 var _hex = "0123456789ABCDEF";
                                 var _red   = max( string_pos( string_copy( _colour_string, 3, 1 ), _hex )-1, 0 ) + ( max( string_pos( string_copy( _colour_string, 2, 1 ), _hex )-1, 0 ) << 4 );
@@ -306,7 +306,7 @@ while( string_length( _str ) > 0 ) {
     if ( !_skip ) {
         
         //If we've run over the maximum width of the string
-        if ( _substr_width + _text_x > _width_limit ) or ( _line_map == noone ) or ( _sep_prev_char == chr(13) ) or ( _force_newline ) {
+        if ( ( _substr_width + _text_x > _width_limit ) || ( _line_map == noone ) || ( _sep_prev_char == chr(13) ) || _force_newline ) {
             
             if ( _line_map != noone ) {
                 
@@ -379,7 +379,7 @@ while( string_length( _str ) > 0 ) {
     if ( _sep_prev_char != "[" ) {
         _char = " ";
         _pos = string_pos( _char, _str );
-        if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+        if ( _pos < _sep_pos ) && ( _pos > 0 ) {
             _sep_char = _char;
             _sep_pos = _pos;
         }
@@ -387,21 +387,21 @@ while( string_length( _str ) > 0 ) {
     
     var _char = chr(13);
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         _sep_char = _char;
         _sep_pos = _pos;
     }
 
     var _char = "[";
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         var _sep_char = _char;
         var _sep_pos = _pos;
     }
     
     var _char = "]";
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         var _sep_char = _char;
         var _sep_pos = _pos;
     }

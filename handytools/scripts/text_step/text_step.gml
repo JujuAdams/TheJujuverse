@@ -68,9 +68,9 @@ for( var _i = 0; _i < _regions; _i++ ) {
     
     var _region_x = _x + _line_map[? "x" ] + _word_map[? "x" ];
     var _region_y = _y + _line_map[? "y" ] + _word_map[? "y" ];
-    if ( _hyperlink_map != undefined ) and ( point_in_rectangle( _mouse_x, _mouse_y,
-                                                                 _region_x, _region_y,
-                                                                 _region_x + _word_map[? "width" ], _region_y + _word_map[? "height" ] ) ) {
+    if ( _hyperlink_map != undefined ) && ( point_in_rectangle( _mouse_x, _mouse_y,
+                                                                _region_x, _region_y,
+                                                                _region_x + _word_map[? "width" ], _region_y + _word_map[? "height" ] ) ) {
         _hyperlink_map[? "over" ] = true;
     }
     
@@ -81,7 +81,7 @@ for( var _key = ds_map_find_first( _hyperlinks ); _key != undefined; _key = ds_m
     if ( _map[? "over" ] ) {
         if ( mouse_check_button_pressed( mb_left ) ) {
             _map[? "down" ] = true;
-        } else if ( !mouse_check_button( mb_left ) ) and ( _map[? "down" ] ) {
+        } else if ( !mouse_check_button( mb_left ) && _map[? "down" ] ) {
             _map[? "down" ] = false;
             _map[? "clicked" ] = true;
             if ( script_exists( _map[? "script" ] ) ) script_execute( _map[? "script" ] );

@@ -109,10 +109,10 @@ for( var _i = 5; _i < argument_count; _i++ ) {
         var _r = _char_padding + _char_w;
         var _b = _char_padding + _char_h;
         
-        while( !collision_line( _l, _t, _l, _b, id, true, false ) and ( _l < _r ) ) _l++;
-        while( !collision_line( _l, _t, _r, _t, id, true, false ) and ( _t < _b ) ) _t++;
-        while( !collision_line( _r, _t, _r, _b, id, true, false ) and ( _r > _l ) ) _r--;
-        while( !collision_line( _l, _b, _r, _b, id, true, false ) and ( _b > _t ) ) _b--;
+        while( !collision_line( _l, _t, _l, _b, id, true, false ) && ( _l < _r ) ) _l++;
+        while( !collision_line( _l, _t, _r, _t, id, true, false ) && ( _t < _b ) ) _t++;
+        while( !collision_line( _r, _t, _r, _b, id, true, false ) && ( _r > _l ) ) _r--;
+        while( !collision_line( _l, _b, _r, _b, id, true, false ) && ( _b > _t ) ) _b--;
         
         _r++;
         _b++;

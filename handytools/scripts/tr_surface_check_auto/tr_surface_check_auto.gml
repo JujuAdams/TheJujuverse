@@ -29,7 +29,7 @@ if ( !surface_exists( _index ) ) {
 
 if ( _regen ) {
 	
-	if ( TRACKER_ON and TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "regen surface=", _index, TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
+	if ( TRACKER_ON && TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "regen surface=", _index, TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
 	
 	var _note    = global.tracker_surfaces_note[? _index ];
 	var _protect = global.tracker_surfaces_protect[? _index ];

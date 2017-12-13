@@ -4,30 +4,6 @@ var _disp_h = display_get_gui_height();
 draw_set_font( fnt_default );
 draw_set_color( c_white );
 
-if editor_is_open() {
-    
-    with( obj_screen ) {
-        var _str = "ID=" + string( click_instance_over );
-        with( click_instance_over ) {
-            _str += "\n" + object_get_name( object_index );
-            _str += "\nX=" + string( x );
-            _str += "\nY=" + string( y );
-            _str += "\nZ=" + string( z );
-            _str += "\nANGLE=" + string( image_angle );
-        }
-    } 
-    
-    draw_set_halign( fa_right );
-    draw_set_valign( fa_bottom );
-    draw_set_colour( c_black );
-    draw_text( _disp_w- 9, _disp_h- 9, _str );
-    draw_set_colour( c_white );
-    draw_text( _disp_w-10, _disp_h-10, _str );
-    draw_set_halign( fa_left );
-    draw_set_valign( fa_top );
-    
-}
-
 var _str = "";
 if editor_is_open() {
     

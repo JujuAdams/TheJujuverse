@@ -40,7 +40,7 @@ repeat( string_length( _json_string ) ) {
 	
     if ( _in_string ) {
         
-        if ( _ord == _string_delimiter ) and ( !_string_escape ) {
+        if ( ( _ord == _string_delimiter ) && !_string_escape ) {
             _in_string = false;
         } else if ( _ord == 92 ) and ( !_string_escape ) {
             _string_escape = true;
@@ -53,7 +53,7 @@ repeat( string_length( _json_string ) ) {
         
     } else if ( _in_number_string ) {
         
-        if ( _ord < 45 ) or ( _ord == 47 ) or ( _ord > 57 ) {
+        if ( _ord < 45 ) || ( _ord == 47 ) || ( _ord > 57 ) {
 			
             _in_number_string = false;
             if ( _number_string_dot >= _number_string_last_sig ) _number_string_last_sig = _number_string_dot-1;

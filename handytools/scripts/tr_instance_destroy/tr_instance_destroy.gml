@@ -11,7 +11,7 @@ if ( TRACKER_ON ) {
 		instance_destroy( _index, _flag );
 		return false;
 	} else if ( _protect ) {
-		if ( _index == id ) and ( TRACKER_PROTECTED_INSTANCE_CAN_DESTOY_SELF ) {
+		if ( ( _index == id ) && TRACKER_PROTECTED_INSTANCE_CAN_DESTOY_SELF ) {
 			trace_v( "protected instance destroying itself", TRACE_DIV, tr_instance_details( _index, TRACE_DIV ) );
 		} else {
 			if ( TRACKER_ILLEGAL_THROW_ERROR ) {

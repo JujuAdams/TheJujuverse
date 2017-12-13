@@ -22,29 +22,6 @@ if editor_is_open() {
         show_message( "LOADED ROOM " + string( global.game_room ) );
     }
     
-    if ( keyboard_check( vk_control ) && keyboard_check_pressed( ord("S") ) ) {
-        var _filename = get_save_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
-        if ( _filename != "" ) {
-            var _file = file_text_open_write( _filename );
-            file_text_write_string( _file, room_encode() );
-            file_text_close( _file );
-            show_message( _filename + " SAVED!" );
-        }
-    }
-    
-    if ( keyboard_check( vk_control ) && keyboard_check_pressed( ord("L") ) ) {
-        var _filename = get_open_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
-        if ( _filename != "" ) {
-            var _file = file_text_open_read( _filename );
-            var _str = file_text_read_string( _file );
-            file_text_close( _file );
-            unload_current_room();
-            room_decode( _str );
-            show_message( _filename + " LOADED!" );
-        }
-    }
-    
-    if ( keyboard_check_pressed( ord( "N" ) ) ) zoom_2d = clamp( zoom_2d+1, 1, 3 );
     if ( keyboard_check_pressed( ord( "M" ) && !keyboard_check( vk_shift ) ) ) zoom_2d = clamp( zoom_2d-1, 1, 3 );
     if ( keyboard_check_pressed( vk_tab ) ) {
         global.debug_tool = ( global.debug_tool+1 ) mod e_tool.size;

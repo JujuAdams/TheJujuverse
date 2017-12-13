@@ -5282,7 +5282,7 @@
             "Key": "e85bffff-7d83-4775-b997-691d849cecd3",
             "Value": {
                 "id": "ef5ce384-f1e7-4ae5-aa23-bf05d8aa23e9",
-                "resourcePath": "scripts\\definitions\\definitions.yy",
+                "resourcePath": "scripts\\config\\config.yy",
                 "resourceType": "GMScript"
             }
         },

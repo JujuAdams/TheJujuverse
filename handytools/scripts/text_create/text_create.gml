@@ -94,28 +94,28 @@ var _sep_char = "";
 
 var _char = " ";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = chr(13);
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = "[";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
 
 var _char = "]";
 var _pos = string_pos( _char, _str );
-if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+if ( _pos < _sep_pos ) && ( _pos > 0 ) {
     var _sep_char = _char;
     var _sep_pos = _pos;
 }
@@ -175,19 +175,19 @@ while( string_length( _str ) > 0 ) {
                 
                 
             //The command is an alignment keyphrase... set the alignment for the line and force a newline if the previous had content
-            } else if ( _parameters[0] == "fa_left" ) and ( _first_character ) {
+            } else if ( ( _parameters[0] == "fa_left" ) && _first_character ) {
                 
                 _text_halign = fa_left;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
                 _substr = "";
                 
-            } else if ( ( _parameters[0] == "fa_center" ) or ( _parameters[0] == "fa_centre" ) ) and ( _first_character ) {
+            } else if ( ( ( _parameters[0] == "fa_center" ) || ( _parameters[0] == "fa_centre" ) ) && _first_character ) {
                 
                 _text_halign = fa_center;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
                 _substr = "";
                 
-            } else if ( _parameters[0] == "fa_right" ) and ( _first_character ) {
+            } else if ( _parameters[0] == "fa_right" ) && ( _first_character ) {
                 
                 _text_halign = fa_right;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;

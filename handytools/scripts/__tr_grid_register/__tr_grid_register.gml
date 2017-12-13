@@ -2,7 +2,7 @@
 ///@param note
 ///@param protect
 
-if ( TRACKER_DEBUG_GRID_CREATE and TRACKER_BLANK_NOTE_THROW_ERROR and (argument1 == "") ) trace_error( false, "blank note!" );
+if ( TRACKER_DEBUG_GRID_CREATE && TRACKER_BLANK_NOTE_THROW_ERROR && (argument1 == "" ) ) trace_error( false, "blank note!" );
 
 ds_list_add( global.tracker_grids, argument0 );
 global.tracker_grids_origin[?  argument0 ] = tracker_origin_string();
