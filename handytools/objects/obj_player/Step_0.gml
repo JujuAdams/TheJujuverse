@@ -42,7 +42,7 @@ velocity_x *= damping;
 velocity_y *= damping;
 
 if ( !obj_gameflow.transition_do ) {
-    if ( !place_meeting( x + velocity_x, y + velocity_y, obj_par_solid ) ) or ( global.game_editing ) {
+    if ( !place_meeting( x + velocity_x, y + velocity_y, obj_par_solid ) ) || editor_is_open() {
 		
         x += velocity_x;
         y += velocity_y;

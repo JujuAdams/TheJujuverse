@@ -5,7 +5,11 @@
     "name": "2d6dc690-106d-4eb8-9833-e8b08986db9e",
     "children": [
         "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
-        "bb5fc82a-00a1-448c-8c8f-fe8c16845943"
+        "bb5fc82a-00a1-448c-8c8f-fe8c16845943",
+        "d0e55ec1-e731-4f0b-862a-e0123e1031f9",
+        "d52c06d6-c045-4547-bb53-9971c672df9b",
+        "2f88e919-ea89-477a-a4d4-f26ddad3d9f5",
+        "7a183f05-b16c-46e5-9009-890b80efe47c"
     ],
     "filterType": "GMScript",
     "folderName": "editor",

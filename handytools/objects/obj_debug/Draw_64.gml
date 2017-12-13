@@ -4,7 +4,7 @@ var _disp_h = display_get_gui_height();
 draw_set_font( fnt_default );
 draw_set_color( c_white );
 
-if ( global.game_editing ) {
+if editor_is_open() {
     
     with( obj_screen ) {
         var _str = "ID=" + string( click_instance_over );
@@ -29,7 +29,7 @@ if ( global.game_editing ) {
 }
 
 var _str = "";
-if ( global.game_editing ) {
+if editor_is_open() {
     
     _str += "FPS=" + string_format( fps, 4, 0 ) + "  ";
     _str += "\n\n[TAB] TOOL="

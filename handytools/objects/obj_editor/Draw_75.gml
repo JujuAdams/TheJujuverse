@@ -1,3 +1,14 @@
+if ( editor_is_open() && editor_is_collapsed() ) {
+	draw_set_font( fnt_game );
+	switch( window_page ) {
+		case E_EDITOR_PAGE.PLACE:
+			if ( selected_object != undefined ) {
+				draw_text( 10, 30, concat( "PLACING ", object_get_pretty_name( selected_object ) ) );
+			}
+		break;
+	}
+}
+
 surface_set_target( preview_surface );
 
 draw_clear_alpha( c_dkgray, 0.7 );
@@ -25,7 +36,7 @@ if ( _object != undefined ) and ( instance_exists( _instance ) ) {
 	gpu_set_ztestenable( true );
 	gpu_set_zwriteenable( true );
 	gpu_set_ztestenable( true );
-	gpu_set_cullmode( global.game_editing ? cull_counterclockwise : cull_noculling );
+	gpu_set_cullmode( editor_is_open() ? cull_counterclockwise : cull_noculling );
 	draw_set_lighting( false );
 	shader_reset(); 
 	

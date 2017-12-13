@@ -1,14 +1,16 @@
-enum E_EDITOR_PAGE { HOME, PLACE, INSTANCES,  }
-
 persistent = true;
 
-show_window = false;
+window_show = false;
+window_collapsed = false;
 window_has_set_size = false;
 window_has_set_columns = false;
 window_width = 940;
 window_height = 700;
-window_page = 0;
+window_page = E_EDITOR_PAGE.HOME;
+window_page_return = window_page;
 window_name = "Editor";
+window_state[0] = false;
+window_state[1] = false;
 
 preview_surface = tr_surface_create( 600, 600 );
 preview_object = undefined;

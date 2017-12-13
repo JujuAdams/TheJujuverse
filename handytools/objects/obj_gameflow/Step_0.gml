@@ -5,7 +5,12 @@ if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
     global.mouse_locked = true;
 }
 
-if ( global.mouse_locked ) and ( !imguigml_any_window_open() ) {
+var _locked = true;
+if ( !global.mouse_locked ) _locked = false;
+if ( devtool_is_open() && !devtool_is_collapsed() ) _locked = false;
+if (  editor_is_open() &&  !editor_is_collapsed() ) _locked = false;
+
+if ( _locked ) {
     
     window_set_cursor( cr_none );
     if ( current_time - global.mouse_lock_time > 100 ) {
@@ -78,23 +83,20 @@ if ( global.game_outro_do ) {
 #endregion
 
 #region STEP
-if ( global.game_editing ) or ( global.game_room == 0 ) or ( global.game_room == 10 ) or ( global.game_room == 11 ) {
+if editor_is_open() || ( global.game_room == 0 ) || ( global.game_room == 10 ) || ( global.game_room == 11 ) {
     global.game_swell = 0;
 } else {
     global.game_swell = SWELL_SIZE*( 0.5 + 0.5*dsin( current_time/SWELL_TIME_FACTOR ) );
 }
 
 if ( global.game_room == 5 ) {
-    if ( !instance_exists( obj_rope )
-    and !instance_exists( obj_door ) ) {
+    if ( !instance_exists( obj_rope ) && !instance_exists( obj_door ) ) {
         with( obj_door_spawn ) if ( door_spawn_time >= VERY_LARGE*0.5 ) door_spawn_time = current_time + 700;
     }
 }
 
 if ( global.game_room == 7 ) {
-    if ( !instance_exists( obj_vase1 )
-    and !instance_exists( obj_vase2 )
-    and !instance_exists( obj_door ) ) {
+    if ( !instance_exists( obj_vase1 ) && !instance_exists( obj_vase2 ) && !instance_exists( obj_door ) ) {
         with( obj_door_spawn ) if ( door_spawn_time >= VERY_LARGE*0.5 ) door_spawn_time = current_time + 700;
     }
 }

@@ -2,6 +2,8 @@
     "option_gameguid": "4b133d13-8b28-4012-8976-16e32cdf93c5",
     "option_lastchanged": "09 October 2017 15:49:14",
     "option_game_speed": 60
+}←1225f6b0-ac20-43bd-a82e-be73fa0b6f4f|{
+    "targets": 29263750006690030
 }←7fa50043-cea6-4cd0-9521-a8ba8c6ea9f0|{
     "audioGroups": {
         "Additions": [
@@ -34,4 +36,6 @@
             
         ]
     }
+}←7b2c4976-1e09-44e5-8256-c527145e03bb|{
+    "targets": 29263750006690030
 }

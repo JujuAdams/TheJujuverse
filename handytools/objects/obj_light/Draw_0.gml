@@ -1,4 +1,4 @@
-if ( !global.game_editing ) exit;
+if !editor_is_open() exit;
 camera_click_handle_fog();
 
 shader_set_uniform_f( shader_get_uniform( shd_psx, "u_vForceColour" ), colour_get_red( colour )/255,

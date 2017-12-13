@@ -391,6 +391,14 @@
             }
         },
         {
+            "Key": "10ef55a9-d960-4f5f-a34f-da5cb77fbe6c",
+            "Value": {
+                "id": "88fae551-1ed9-46ec-bfa2-e6cc5f96b1e4",
+                "resourcePath": "scripts\\devtool_is_open\\devtool_is_open.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "11453975-6c43-4acb-b3df-8700065cc8e8",
             "Value": {
                 "id": "cc5e6324-4333-4af8-9932-83ccfc66103b",
@@ -1143,6 +1151,14 @@
             }
         },
         {
+            "Key": "2f88e919-ea89-477a-a4d4-f26ddad3d9f5",
+            "Value": {
+                "id": "04bdaa00-7c2c-4333-8750-fd7be4a79ee1",
+                "resourcePath": "scripts\\editor_get_page\\editor_get_page.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2f8e2cbb-ac0c-4f48-9297-fdd5b7beca67",
             "Value": {
                 "id": "803d101b-d916-4e6d-ae99-f98e2b939c0b",
@@ -1195,6 +1211,14 @@
             "Value": {
                 "id": "36e7a0b3-f8e0-4f2d-bc8e-c6298a0ecfc1",
                 "resourcePath": "scripts\\__tr_grid_unregister\\__tr_grid_unregister.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "338d6734-4ac5-4935-b7e0-0f0618b86637",
+            "Value": {
+                "id": "a64e434a-a329-4300-8067-ce75d4d49f3f",
+                "resourcePath": "scripts\\devtool_is_collapsed\\devtool_is_collapsed.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2807,6 +2831,14 @@
             }
         },
         {
+            "Key": "7a183f05-b16c-46e5-9009-890b80efe47c",
+            "Value": {
+                "id": "35a47166-a5ad-4798-9a34-f43e9c92a898",
+                "resourcePath": "scripts\\editor_set_page\\editor_set_page.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7ac16af2-96c5-4561-8240-ee7192badce5",
             "Value": {
                 "id": "3394101d-9514-49cf-a7f6-832974ee1fad",
@@ -4055,14 +4087,6 @@
             }
         },
         {
-            "Key": "b16728c9-da48-461d-8c3e-322fc7b82179",
-            "Value": {
-                "id": "f77d80ae-899b-4339-8b7a-d43a32531785",
-                "resourcePath": "fonts\\fnt_game\\fnt_game.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "b172feb8-f5a4-4cc9-a79d-594271fcfc62",
             "Value": {
                 "id": "82f76a32-5f67-406a-a814-7b8c85fb9042",
@@ -4559,14 +4583,6 @@
             }
         },
         {
-            "Key": "c94437d4-d92f-4676-9d1d-e72c6569aaf4",
-            "Value": {
-                "id": "ec834dd1-d70a-400e-88ac-e13a93ba6e91",
-                "resourcePath": "views\\c94437d4-d92f-4676-9d1d-e72c6569aaf4.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "c9500ec2-7fe6-42ba-b339-4b3b98dcbc94",
             "Value": {
                 "id": "424390ea-15b3-426f-91f8-5be6ce15b5b8",
@@ -4679,6 +4695,14 @@
             }
         },
         {
+            "Key": "d0e55ec1-e731-4f0b-862a-e0123e1031f9",
+            "Value": {
+                "id": "4eb85ff7-6d58-4f4f-9a2d-09301c5adea5",
+                "resourcePath": "scripts\\editor_is_open\\editor_is_open.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d10d4150-5009-4edd-a354-b6538e940ea1",
             "Value": {
                 "id": "3656bffe-b047-4723-9898-3af54674d406",
@@ -4747,6 +4771,14 @@
             "Value": {
                 "id": "8ef1d4ef-2535-433a-8d7d-d4c7ed05c6c7",
                 "resourcePath": "scripts\\devtool_start_service\\devtool_start_service.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d52c06d6-c045-4547-bb53-9971c672df9b",
+            "Value": {
+                "id": "35125577-f21d-4f12-ba79-994c2960be48",
+                "resourcePath": "scripts\\editor_is_collapsed\\editor_is_collapsed.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5861,6 +5893,8 @@
         "94168b5f-d85a-4460-bda1-be703b49a1d2",
         "db914579-9346-486d-ae5f-77a3b896e3b9",
         "d47e051d-baab-41f8-9b48-36a61ff25e5f",
+        "10ef55a9-d960-4f5f-a34f-da5cb77fbe6c",
+        "338d6734-4ac5-4935-b7e0-0f0618b86637",
         "ba9a65f1-c765-4114-9294-4a47e7fbcfbd",
         "9addb9de-d9a8-4399-9bb2-c9536b622620",
         "48b4c471-7b52-4b03-9db8-c81731518665",
@@ -5886,6 +5920,10 @@
         "edd3a89b-6105-4589-ac90-da5c65e4c283",
         "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
         "bb5fc82a-00a1-448c-8c8f-fe8c16845943",
+        "d0e55ec1-e731-4f0b-862a-e0123e1031f9",
+        "d52c06d6-c045-4547-bb53-9971c672df9b",
+        "2f88e919-ea89-477a-a4d4-f26ddad3d9f5",
+        "7a183f05-b16c-46e5-9009-890b80efe47c",
         "ca237492-86b1-41de-873e-c7dd15b36773",
         "9d26dbba-b2e0-448a-873e-1757392cd1e5",
         "34bc447e-dcfb-44ef-aa2e-34932b8bd0c5",

@@ -1,4 +1,4 @@
-if ( global.game_editing ) {
+if editor_is_open() {
         
     mouse_active_force_colour();
 	camera_click_handle_fog();

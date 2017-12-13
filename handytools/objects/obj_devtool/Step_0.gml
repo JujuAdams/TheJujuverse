@@ -1,22 +1,21 @@
-if ( keyboard_check_pressed( vk_f12 ) ) and ( IMGUI_ON ) {
-	show_window = !show_window;
-	global.game_editing = show_window;
-	if ( show_window ) window_has_set_size = false;
+if ( IMGUI_ON && keyboard_check_pressed( vk_f12 ) ) {
+	window_show = !window_show;
+	if ( window_show ) window_has_set_size = false;
 }
 
 if ( !instance_exists( obj_imgui ) ) {
-	show_window = false;
+	window_show = false;
 	global.mouse_lock_time = current_time;
 }
 
-if ( show_window ) {
+if ( window_show ) {
 	
-	var ret = imguigml_begin( window_name, true,
+	window_state = imguigml_begin( window_name, true,
 	                          EImGui_WindowFlags.MenuBar |
 							  EImGui_WindowFlags.AlwaysVerticalScrollbar |
 							  EImGui_WindowFlags.AlwaysHorizontalScrollbar );
-	if ( !ret[1] ) {
-		show_window = false;
+	if ( !window_state[1] ) {
+		window_show = false;
 		window_has_set_size = false;
 	}
 	
@@ -251,7 +250,7 @@ if ( show_window ) {
 	
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
-		if ( window_page != E_TRACKER_PAGE.HOME ) and ( window_page != E_TRACKER_PAGE.OUTPUT ) {
+		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
 			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*15 );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );

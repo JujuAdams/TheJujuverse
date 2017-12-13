@@ -1,10 +1,4 @@
-if ( keyboard_check_pressed( ord( "1" ) ) ) global.game_editing = !global.game_editing;
-with( obj_screen ) {
-    if ( keyboard_check_pressed( ord( "2" ) ) ) global.do_lighting = !global.do_lighting;
-    if ( keyboard_check_pressed( ord( "3" ) ) ) global.do_dither   = !global.do_dither;
-}
-
-if ( global.game_editing ) {
+if editor_is_open() {
     
     if ( keyboard_check_pressed( vk_add ) ) {
         unload_current_room();
@@ -28,7 +22,7 @@ if ( global.game_editing ) {
         show_message( "LOADED ROOM " + string( global.game_room ) );
     }
     
-    if ( keyboard_check( vk_control ) ) and ( keyboard_check_pressed( ord( "S" ) ) ) {
+    if ( keyboard_check( vk_control ) && keyboard_check_pressed( ord("S") ) ) {
         var _filename = get_save_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
         if ( _filename != "" ) {
             var _file = file_text_open_write( _filename );
@@ -38,7 +32,7 @@ if ( global.game_editing ) {
         }
     }
     
-    if ( keyboard_check( vk_control ) ) and ( keyboard_check_pressed( ord( "L" ) ) ) {
+    if ( keyboard_check( vk_control ) && keyboard_check_pressed( ord("L") ) ) {
         var _filename = get_open_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
         if ( _filename != "" ) {
             var _file = file_text_open_read( _filename );
@@ -51,7 +45,7 @@ if ( global.game_editing ) {
     }
     
     if ( keyboard_check_pressed( ord( "N" ) ) ) zoom_2d = clamp( zoom_2d+1, 1, 3 );
-    if ( keyboard_check_pressed( ord( "M" ) ) and ( !keyboard_check( vk_shift ) ) ) zoom_2d = clamp( zoom_2d-1, 1, 3 );
+    if ( keyboard_check_pressed( ord( "M" ) && !keyboard_check( vk_shift ) ) ) zoom_2d = clamp( zoom_2d-1, 1, 3 );
     if ( keyboard_check_pressed( vk_tab ) ) {
         global.debug_tool = ( global.debug_tool+1 ) mod e_tool.size;
         with( obj_par_3d ) mouse_active_set_relative_values();
@@ -115,12 +109,12 @@ if ( global.game_editing ) {
             with( obj_ceiling ) tr_instance_destroy();
             with( obj_wall ) tr_instance_destroy();
             
-            define_wall(    0,  0,  0,   _w,  0, _d,   spr_tex_wall6 );
-            define_wall(    0,  0,  0,    0, _h, _d,   spr_tex_wall6 );
-            define_wall(   _w,  0,  0,   _w, _h, _d,   spr_tex_wall6 );
-            define_wall(    0, _h,  0,   _w, _h, _d,   spr_tex_wall6 );
-            define_floor(   0, 0,   _w, _h,  0, 32, spr_tex_floor1 );
-            define_ceiling( 0, 0,   _w, _h, _d, 32, spr_tex_white );
+            define_wall(    0,  0,  0,   _w,  0, _d,   spr_tex_wall6  );
+            define_wall(    0,  0,  0,    0, _h, _d,   spr_tex_wall6  );
+            define_wall(   _w,  0,  0,   _w, _h, _d,   spr_tex_wall6  );
+            define_wall(    0, _h,  0,   _w, _h, _d,   spr_tex_wall6  );
+            define_floor(   0,  0, _w,   _h,  0, 32,   spr_tex_floor1 );
+            define_ceiling( 0,  0, _w,   _h, _d, 32,   spr_tex_white  );
             
         }
     }
