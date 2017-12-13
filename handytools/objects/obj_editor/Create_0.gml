@@ -19,6 +19,13 @@ preview_instance = noone;
 selected_object = undefined;
 selected_instance = noone;
 
+place_x = 0;
+place_y = 0;
+place_z = 0;
+place_a = 0;
+
+instances_over = noone;
+
 object_list = tr_list_create();
 ds_list_add( object_list, obj_player_spawn       );
 ds_list_add( object_list, obj_door_spawn         );

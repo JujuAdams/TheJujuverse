@@ -1,10 +1,33 @@
-if ( editor_is_open() && editor_is_collapsed() ) {
-	draw_set_font( fnt_game );
+if ( editor_is_open() ) {
+	
+	var _lookat_inst = obj_screen.click_instance_over;
+	
+	draw_set_font( fnt_imgui );
 	switch( window_page ) {
 		case E_EDITOR_PAGE.PLACE:
-			if ( selected_object != undefined ) {
-				draw_text( 10, 30, concat( "PLACING ", object_get_pretty_name( selected_object ) ) );
+			draw_text( 95, 15, concat( "PLACING ", object_get_pretty_name( selected_object ) ) );
+			draw_text( 250, 15, concat( "x=", place_x ) );
+			draw_text( 350, 15, concat( "y=", place_y ) );
+			draw_text( 450, 15, concat( "z=", place_z ) );
+			draw_text( 550, 15, concat( "angle=", place_a ) );
+		break;
+		case E_EDITOR_PAGE.MOVE:
+			draw_text( 95, 15, "MOVING" );
+			if ( instance_exists( _lookat_inst ) ) {
+				draw_text( 250, 15, concat( "LOOKAT ", object_get_pretty_name( _lookat_inst.object_index ), ":", _lookat_inst ) );
+				draw_text( 450, 15, concat( "x=", _lookat_inst.x ) );
+				draw_text( 550, 15, concat( "y=", _lookat_inst.y ) );
+				draw_text( 650, 15, concat( "z=", _lookat_inst.z ) );
+				draw_text( 750, 15, concat( "angle=", _lookat_inst.image_angle ) );
+			} else {
+				draw_text( 150, 15, concat( "LOOKAT ", object_get_pretty_name( undefined ) ) );
 			}
+		break;
+		case E_EDITOR_PAGE.INSTANCES:
+			draw_text( 95, 15, "INSTANCES" );
+			if ( instance_exists( instances_over ) ) {
+				draw_text( 150, 15, concat( "HOVER ", object_get_pretty_name( instances_over.object_index ), ":", id ) );
+			}	
 		break;
 	}
 }

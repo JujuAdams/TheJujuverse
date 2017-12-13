@@ -2207,6 +2207,14 @@
             }
         },
         {
+            "Key": "5e59951e-7064-435c-a848-dfbfedae5877",
+            "Value": {
+                "id": "f93e6c54-8130-4d29-a391-a52ddb4cf8b7",
+                "resourcePath": "fonts\\fnt_imgui\\fnt_imgui.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "5ea12c51-bace-43c8-817d-be6f55542204",
             "Value": {
                 "id": "a252ddf6-d017-44f4-abf4-cffb4bd903d5",

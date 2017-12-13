@@ -118,7 +118,7 @@ if editor_is_open() {
             
         }
     }
-    
+    /*
     if ( mouse_check_button_pressed( mb_right ) ) {
         with( obj_par_3d ) mouse_selected = false;
         
@@ -162,5 +162,5 @@ if editor_is_open() {
             
         }
     }
-    
+    */
 }

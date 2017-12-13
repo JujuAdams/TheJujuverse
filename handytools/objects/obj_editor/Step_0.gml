@@ -2,6 +2,7 @@ preview_surface = tr_surface_check_auto( preview_surface );
 
 if ( IMGUI_ON && keyboard_check_pressed( vk_f11 ) ) {
 	window_show = !window_show;
+	window_state[1] = window_show;
 	if ( window_show ) {
 		window_has_set_size = false;
 		window_page_return = window_page;
@@ -10,10 +11,22 @@ if ( IMGUI_ON && keyboard_check_pressed( vk_f11 ) ) {
 if ( !instance_exists( obj_imgui ) ) window_show = false;
 if ( window_show && keyboard_check_released( vk_space ) ) window_collapsed = !window_collapsed;
 
+#region PLACEMENT COORDS
+if ( instance_exists( obj_camera ) ) {
+	place_x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
+	place_y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
+	place_z = obj_camera.z;
+	place_a = 180 - obj_camera.look_xy_angle;
+}
+#endregion
+
+var _last_instances_over = instances_over;
+instances_over = noone;
+
 #region WINDOW OPEN
 if ( window_show ) {
 	
-	if ( keyboard_check_released( vk_backspace ) ) {
+	if ( keyboard_check_released( vk_tab ) || mouse_check_button_pressed( mb_right ) ) {
 		var _ = window_page;
 		window_page = window_page_return;
 		window_page_return = _;
@@ -56,13 +69,18 @@ if ( window_show ) {
 		
 			case E_EDITOR_PAGE.HOME:
 			#region HOME
-			
+				
 				imguigml_text( "AMIASP Editor" );
 				imguigml_text( TITLE + ", " + VERSION + " " + QU + VERSION_NOMIKER + QU );
 				imguigml_text( "Built " + DATE + " by " + BUILDER );
 				imguigml_separator();
 				imguigml_new_line();
-			
+				imguigml_text( "F11 = Open/Close editor window" );
+				imguigml_text( "Space = Collapse window" );
+				imguigml_text( "Tab/Right Click = Return to previous tool" );
+				imguigml_new_line();
+				imguigml_new_line();
+				
 				if ( imguigml_button( "Toggle Dither" ) ) global.do_dither = !global.do_dither;
 				imguigml_same_line();
 				if ( imguigml_button( "Toggle Lighting" ) ) global.do_lighting = !global.do_lighting;
@@ -111,10 +129,9 @@ if ( window_show ) {
 		
 			case E_EDITOR_PAGE.PLACE:
 			#region PLACE
-				imguigml_text( "PLACE" );
-				imguigml_separator();
 				imguigml_columns( 2, "Columns", true );
-			
+				
+				imguigml_new_line();
 				imguigml_image( surface_get_texture( preview_surface ), 600, 600 );
 				imguigml_next_column();
 			
@@ -150,9 +167,7 @@ if ( window_show ) {
 		
 			case E_EDITOR_PAGE.INSTANCES:
 			#region INSTANCES
-				imguigml_text( "INSTANCES" );
-				imguigml_separator();
-				imguigml_columns( 5, "Columns", true );
+				imguigml_columns( 6, "Columns", true );
 				imguigml_next_column();
 				imguigml_text( "Object" );
 				imguigml_next_column();
@@ -162,22 +177,25 @@ if ( window_show ) {
 				imguigml_next_column();
 				imguigml_text( "z" );
 				imguigml_next_column();
+				imguigml_text( "angle" );
+				imguigml_next_column();
 				imguigml_separator();
 				with( obj_par_3d ) {
+					if ( _last_instances_over == id ) imguigml_separator();
 					if ( mouse_selected ) imguigml_text( "S" );
 					imguigml_next_column();
-					if ( mouse_interactible ) {
-						if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
-					} else {
-						imguigml_text( concat( object_get_pretty_name( object_index ), ":", id ) );
-					}
+					if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
+					if ( imguigml_is_item_hovered( true ) ) other.instances_over = id;
 					imguigml_next_column();
-					//imguigml_text( string( x ) );
+					imguigml_text( string( x ) );
 					imguigml_next_column();
-					//imguigml_text( string( y ) );
+					imguigml_text( string( y ) );
 					imguigml_next_column();
-					//imguigml_text( string( z ) );
+					imguigml_text( string( z ) );
 					imguigml_next_column();
+					imguigml_text( string( image_angle ) );
+					imguigml_next_column();
+					if ( _last_instances_over == id ) imguigml_separator();
 				}
 				imguigml_set_column_width( 0,  25 );
 				imguigml_set_column_width( 1, 170 );
@@ -204,14 +222,10 @@ if ( window_show && window_collapsed ) {
 			if ( instance_exists( obj_camera ) )
 			&& ( mouse_check_button_pressed( mb_left ) )
 			&& ( selected_object != undefined ) {
-				var _x = obj_camera.x + lengthdir_x( 30, obj_camera.look_xy_angle );
-				var _y = obj_camera.y + lengthdir_y( 30, obj_camera.look_xy_angle );
-				var _inst = tr_instance_create_z( _x, _y, obj_camera.z, 180 - obj_camera.look_xy_angle, selected_object );
-				with( _inst ) {
+				with( tr_instance_create_z( place_x, place_y, place_z, place_a, selected_object ) ) {
 					mouse_selected = true;
 					mouse_active_set_relative_values();
 				}
-				
 				editor_set_page( E_EDITOR_PAGE.MOVE );
 			}
 			
@@ -223,7 +237,7 @@ if ( window_show && window_collapsed ) {
 }
 #endregion
 
-#region PREVIEW INSTANCE
+#region PREVIEW INSTANCE HANDLING
 if instance_exists( preview_instance ) && ( preview_instance.object_index != preview_object ) {
 	tr_instance_destroy( preview_instance );
 	preview_instance = noone;
@@ -237,7 +251,7 @@ if ( preview_object != undefined ) && !instance_exists( preview_instance ) {
 with( preview_instance ) image_angle += 0.8;
 #endregion
 
-#region SELECTED INSTANCE
+#region SELECTED INSTANCE HANDLING
 			
 if ( instance_exists( selected_instance ) && ( selected_instance.object_index != selected_object ) ) {
 	tr_instance_destroy( selected_instance );

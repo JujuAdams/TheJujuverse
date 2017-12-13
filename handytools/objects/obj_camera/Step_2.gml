@@ -1,5 +1,6 @@
 if ( !obj_gameflow.transition_do or ( obj_gameflow.transition_direction == -1 ) ) {
     look_xy_angle -= global.mouse_dx/8;
+	look_xy_angle = (look_xy_angle+720) mod 360;
     look_pz_angle = clamp( look_pz_angle - global.mouse_dy/5, -89, 89 );
 }
 
