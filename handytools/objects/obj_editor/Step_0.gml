@@ -45,6 +45,7 @@ if ( window_show ) {
 		var _ = window_page;
 		window_page = window_page_return;
 		window_page_return = _;
+		if ( window_page == E_EDITOR_PAGE.MOVE ) || ( window_page == E_EDITOR_PAGE.ROTATE ) mouse_active_set_relative_values();
 	}
 	
 	imguigml_set_next_window_collapsed( window_collapsed );
@@ -247,7 +248,7 @@ if ( window_show ) {
 					imguigml_separator();
 					with( obj_par_3d ) {
 						if ( mouse_selected ) {
-							imguigml_text( concat( object_get_pretty_name( object_index ), ":", id ) );
+							if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
 							imguigml_next_column();
 							imguigml_text( x );
 							imguigml_next_column();
@@ -294,6 +295,88 @@ if ( window_show ) {
 				}
 				imguigml_set_column_width( 0,  25 );
 				imguigml_set_column_width( 1, 170 );
+			#endregion
+			break;
+			case E_EDITOR_PAGE.DELETE:
+			#region DELETE
+				imguigml_text( "SELECTED" );
+				var _any = false;
+				with( obj_par_3d ) if ( mouse_selected ) _any = true;
+				if ( _any ) {
+					imguigml_columns( 5, "Columns", true );
+					imguigml_text( "Object" );
+					imguigml_next_column();
+					imguigml_text( "x" );
+					imguigml_next_column();
+					imguigml_text( "y" );
+					imguigml_next_column();
+					imguigml_text( "z" );
+					imguigml_next_column();
+					imguigml_text( "angle" );
+					imguigml_next_column();
+					imguigml_separator();
+					with( obj_par_3d ) {
+						if ( mouse_selected ) {
+							imguigml_text( concat( object_get_pretty_name( object_index ), ":", id ) );
+							imguigml_next_column();
+							imguigml_text( x );
+							imguigml_next_column();
+							imguigml_text( y );
+							imguigml_next_column();
+							imguigml_text( z );
+							imguigml_next_column();
+							imguigml_text( image_angle );
+							imguigml_next_column();
+						}
+					}
+				}
+			#endregion
+			break;
+			case E_EDITOR_PAGE.LIGHT:
+			#region LIGHT
+				imguigml_text( "SELECTED" );
+				var _any = false;
+				with( obj_light ) if ( mouse_selected ) _any = true;
+				if ( _any ) {
+					imguigml_columns( 6, "Columns", true );
+					imguigml_text( "Instance" );
+					imguigml_next_column();
+					imguigml_text( "x" );
+					imguigml_next_column();
+					imguigml_text( "y" );
+					imguigml_next_column();
+					imguigml_text( "z" );
+					imguigml_next_column();
+					imguigml_text( "colour" );
+					imguigml_next_column();
+					imguigml_text( "range" );
+					imguigml_next_column();
+					imguigml_separator();
+					with( obj_light ) {
+						if ( mouse_selected ) {
+							if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
+							imguigml_next_column();
+							imguigml_text( x );
+							imguigml_next_column();
+							imguigml_text( y );
+							imguigml_next_column();
+							imguigml_text( z );
+							imguigml_next_column();
+							var _result = imguigml_color_picker3( concat( "colour ", id ), colour_get_red( colour )/255, colour_get_green( colour )/255, colour_get_blue( colour )/255 );
+							colour = make_colour_rgb( _result[1]*255, _result[2]*255, _result[3]*255 );
+							imguigml_next_column();
+							var _result = imguigml_slider_float( concat( "range ", id ), range, 10, 1000 );
+							range = _result[1];
+							imguigml_next_column();
+							imguigml_separator();
+						}
+					}
+					imguigml_set_column_width( 0, 130 );
+					imguigml_set_column_width( 1,  70 );
+					imguigml_set_column_width( 2,  70 );
+					imguigml_set_column_width( 3,  70 );
+					imguigml_set_column_width( 4, 300 );
+				}
 			#endregion
 			break;
 		}
