@@ -22,19 +22,6 @@ if ( editor_is_open() ) {
 			} else {
 				draw_text( 150, 15, concat( "LOOKAT ", object_get_pretty_name( undefined ) ) );
 			}
-			if ( window_collapsed ) {
-				var _y = 30;
-				with( obj_par_3d ) {
-					if ( mouse_selected ) {
-						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
-						draw_text( 450, _y, concat( "x=", x ) );
-						draw_text( 550, _y, concat( "y=", y ) );
-						draw_text( 650, _y, concat( "z=", z ) );
-						draw_text( 750, _y, concat( "angle=", image_angle ) );
-						_y += 20;
-					}
-				}
-			}
 		break;
 		case E_EDITOR_PAGE.ROTATE:
 			draw_text( 80, 15, "ROTATE" );
@@ -47,41 +34,12 @@ if ( editor_is_open() ) {
 			} else {
 				draw_text( 150, 15, concat( "LOOKAT ", object_get_pretty_name( undefined ) ) );
 			}
-			if ( window_collapsed ) {
-				var _y = 30;
-				with( obj_par_3d ) {
-					if ( mouse_selected ) {
-						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
-						draw_text( 450, _y, concat( "x=", x ) );
-						draw_text( 550, _y, concat( "y=", y ) );
-						draw_text( 650, _y, concat( "z=", z ) );
-						draw_text( 750, _y, concat( "angle=", image_angle ) );
-						_y += 20;
-					}
-				}
-			}
 		break;
 		case E_EDITOR_PAGE.INSTANCES:
 			draw_text( 80, 15, "INSTANCES" );
 			if ( instance_exists( instances_over ) ) {
 				draw_text( 150, 15, concat( "HOVER ", object_get_pretty_name( instances_over.object_index ), ":", id ) );
 			}
-			if ( window_collapsed ) {
-				var _y = 30;
-				with( obj_par_3d ) {
-					if ( mouse_selected ) {
-						draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
-						draw_text( 450, _y, concat( "x=", x ) );
-						draw_text( 550, _y, concat( "y=", y ) );
-						draw_text( 650, _y, concat( "z=", z ) );
-						draw_text( 750, _y, concat( "angle=", image_angle ) );
-						_y += 20;
-					}
-				}
-			}	
-		break;
-		case E_EDITOR_PAGE.SELECTED:
-			draw_text( 80, 15, "SELECTED" );
 		break;
 		case E_EDITOR_PAGE.DELETE:
 			draw_text( 80, 15, "DELETE" );
@@ -90,6 +48,44 @@ if ( editor_is_open() ) {
 			draw_text( 80, 15, "LIGHT" );
 		break;
 	}
+	
+	if ( window_collapsed ) {
+		switch( window_page_return ) {
+			case E_EDITOR_PAGE.HOME:      draw_text( 80, 35, "Previous: HOME"      ); break;
+			case E_EDITOR_PAGE.PLACE:     draw_text( 80, 35, "Previous: PLACE"     ); break;
+			case E_EDITOR_PAGE.INSTANCES: draw_text( 80, 35, "Previous: INSTANCES" ); break;
+			case E_EDITOR_PAGE.MOVE:      draw_text( 80, 35, "Previous: MOVE"      ); break;
+			case E_EDITOR_PAGE.ROTATE:    draw_text( 80, 35, "Previous: ROTATE"    ); break;
+			case E_EDITOR_PAGE.DELETE:    draw_text( 80, 35, "Previous: DELETE"    ); break;
+			case E_EDITOR_PAGE.LIGHT:     draw_text( 80, 35, "Previous: LIGHT"     ); break;
+		}
+	}
+		
+	#endregion
+	
+	#region SELECTED READOUT
+	
+	if ( window_collapsed ) {
+		
+		if ( window_page == E_EDITOR_PAGE.INSTANCES )
+		|| ( window_page == E_EDITOR_PAGE.MOVE )
+		|| ( window_page == E_EDITOR_PAGE.ROTATE )
+		|| ( window_page == E_EDITOR_PAGE.DELETE ) {
+			var _y = 35;
+			with( obj_par_3d ) {
+				if ( mouse_selected ) {
+					draw_text( 250, _y, concat( object_get_pretty_name( object_index ), ":", id ) );
+					draw_text( 450, _y, concat( "x=", x ) );
+					draw_text( 550, _y, concat( "y=", y ) );
+					draw_text( 650, _y, concat( "z=", z ) );
+					draw_text( 750, _y, concat( "angle=", image_angle ) );
+					_y += 20;
+				}
+			}
+		}
+		
+	}
+	
 	#endregion
 	
 	if ( editor_is_collapsed() && instance_exists( obj_camera ) ) {
@@ -103,6 +99,7 @@ if ( editor_is_open() ) {
 	}
 }
 
+#region MODEL PREVIEW
 surface_set_target( preview_surface );
 
 draw_clear_alpha( c_dkgray, 0.7 );
@@ -153,3 +150,4 @@ if ( ( _object != undefined ) && instance_exists( _instance ) ) {
 
 }
 surface_reset_target();
+#endregion

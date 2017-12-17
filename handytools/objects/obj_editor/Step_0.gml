@@ -31,17 +31,16 @@ if ( window_show ) {
 		if ( keyboard_check_released( ord("1") ) ) window_page = E_EDITOR_PAGE.HOME;
 		if ( keyboard_check_released( ord("2") ) ) window_page = E_EDITOR_PAGE.PLACE;
 		if ( keyboard_check_released( ord("3") ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-		if ( keyboard_check_released( ord("4") ) ) window_page = E_EDITOR_PAGE.SELECTED;
-		if ( keyboard_check_released( ord("5") ) ) {
+		if ( keyboard_check_released( ord("4") ) ) {
 			window_page = E_EDITOR_PAGE.MOVE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( keyboard_check_released( ord("6") ) ) {
+		if ( keyboard_check_released( ord("5") ) ) {
 			window_page = E_EDITOR_PAGE.ROTATE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.DELETE;
-		if ( keyboard_check_released( ord("8") ) ) window_page = E_EDITOR_PAGE.LIGHT;
+		if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.DELETE;
+		if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.LIGHT;
 	}
 	
 	if ( keyboard_check_released( vk_tab ) ) {
@@ -83,17 +82,16 @@ if ( window_show ) {
 		if ( imguigml_menu_item( "1.Home"      ) ) window_page = E_EDITOR_PAGE.HOME;
 		if ( imguigml_menu_item( "2.Place"     ) ) window_page = E_EDITOR_PAGE.PLACE;
 		if ( imguigml_menu_item( "3.Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-		if ( imguigml_menu_item( "4.Selected"  ) ) window_page = E_EDITOR_PAGE.SELECTED;
-		if ( imguigml_menu_item( "5.Move"      ) ) {
+		if ( imguigml_menu_item( "4.Move"      ) ) {
 			window_page = E_EDITOR_PAGE.MOVE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( imguigml_menu_item( "6.Rotate"    ) ) {
+		if ( imguigml_menu_item( "5.Rotate"    ) ) {
 			window_page = E_EDITOR_PAGE.ROTATE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( imguigml_menu_item( "7.Delete"    ) ) window_page = E_EDITOR_PAGE.DELETE;
-		if ( imguigml_menu_item( "8.Light"     ) ) window_page = E_EDITOR_PAGE.LIGHT;
+		if ( imguigml_menu_item( "6.Delete"    ) ) window_page = E_EDITOR_PAGE.DELETE;
+		if ( imguigml_menu_item( "7.Light"     ) ) window_page = E_EDITOR_PAGE.LIGHT;
 		imguigml_end_menu_bar();
 		#endregion
 		
@@ -301,45 +299,10 @@ if ( window_show ) {
 			break;
 			case E_EDITOR_PAGE.MOVE:
 			case E_EDITOR_PAGE.ROTATE:
-			case E_EDITOR_PAGE.SELECTED:
 			#region MOVE
-				imguigml_text( "SELECTED" );
-				var _any = false;
-				with( obj_par_3d ) if ( mouse_selected ) _any = true;
-				if ( _any ) {
-					imguigml_columns( 5, "Columns", true );
-					imguigml_text( "Object" );
-					imguigml_next_column();
-					imguigml_text( "x" );
-					imguigml_next_column();
-					imguigml_text( "y" );
-					imguigml_next_column();
-					imguigml_text( "z" );
-					imguigml_next_column();
-					imguigml_text( "angle" );
-					imguigml_next_column();
-					imguigml_separator();
-					with( obj_par_3d ) {
-						if ( mouse_selected ) {
-							if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
-							imguigml_next_column();
-							imguigml_text( x );
-							imguigml_next_column();
-							imguigml_text( y );
-							imguigml_next_column();
-							imguigml_text( z );
-							imguigml_next_column();
-							imguigml_text( image_angle );
-							imguigml_next_column();
-						}
-					}
-				}
-			#endregion
-			break;
-			case E_EDITOR_PAGE.INSTANCES:
-			#region INSTANCES
-				imguigml_columns( 6, "Columns", true );
-				imguigml_next_column();
+				imguigml_text( "Filtering by selected" );
+				
+				imguigml_columns( 5, "Columns", true );
 				imguigml_text( "Object" );
 				imguigml_next_column();
 				imguigml_text( "x" );
@@ -351,21 +314,14 @@ if ( window_show ) {
 				imguigml_text( "angle" );
 				imguigml_next_column();
 				imguigml_separator();
+				
 				with( obj_par_3d ) {
-					var _fine_step = 0;
-					var _coarse_step = 0;
-					if ( mouse_selected ) {
-						imguigml_text( "S" );
-						_fine_step = 0.1;
-						_coarse_step = 2;
-					}
-					imguigml_next_column();
-					if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
-					if ( imguigml_is_item_hovered( true ) ) {
-						other.instances_over = id;
-						_fine_step = 0.1;
-						_coarse_step = 2;
-					}
+					if ( !mouse_selected ) continue;
+					
+					var _fine_step = 0.1;
+					var _coarse_step = 2;
+					if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
+					
 					imguigml_next_column();
 					var _result = imguigml_input_float( concat( "##x", id ), x, _fine_step, _coarse_step, 1 ); if ( _result[0] ) x = _result[1];
 					imguigml_next_column();
@@ -376,17 +332,73 @@ if ( window_show ) {
 					var _result = imguigml_input_float( concat( "##a", id ), image_angle, _fine_step, _coarse_step, 1 ); if ( _result[0] ) image_angle = _result[1];
 					imguigml_next_column();
 				}
-				imguigml_set_column_width( 0,  25 );
-				imguigml_set_column_width( 1, 290 );
+			#endregion
+			break;
+			case E_EDITOR_PAGE.INSTANCES:
+			#region INSTANCES
+				if ( imguigml_checkbox( "Filter by selected", instances_selected_filter ) ) instances_selected_filter = !instances_selected_filter;
+				imguigml_same_line();
+				if ( imguigml_button( "Select all" ) ) with( obj_par_3d ) mouse_selected = true;
+				imguigml_same_line();
+				if ( imguigml_button( "Deselect all" ) ) with( obj_par_3d ) mouse_selected = false;
+				imguigml_new_line();
+				
+				var _any = false;
+				with( obj_par_3d ) if ( mouse_selected ) _any = true;
+				if ( !_any ) instances_selected_filter = false;
+				
+				imguigml_columns( 5, "Columns", true );
+				imguigml_text( "Object" );
+				imguigml_next_column();
+				imguigml_text( "x" );
+				imguigml_next_column();
+				imguigml_text( "y" );
+				imguigml_next_column();
+				imguigml_text( "z" );
+				imguigml_next_column();
+				imguigml_text( "angle" );
+				imguigml_next_column();
+				imguigml_separator();
+				
+				with( obj_par_3d ) {
+					if ( other.instances_selected_filter && !mouse_selected ) continue;
+					
+					var _fine_step = 0;
+					var _coarse_step = 0;
+					if ( mouse_selected ) {
+						_fine_step = 0.1;
+						_coarse_step = 2;
+					}
+					
+					if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
+					if ( imguigml_is_item_hovered( true ) ) {
+						other.instances_over = id;
+						_fine_step = 0.1;
+						_coarse_step = 2;
+					}
+					
+					imguigml_next_column();
+					var _result = imguigml_input_float( concat( "##x", id ), x, _fine_step, _coarse_step, 1 ); if ( _result[0] ) x = _result[1];
+					imguigml_next_column();
+					var _result = imguigml_input_float( concat( "##y", id ), y, _fine_step, _coarse_step, 1 ); if ( _result[0] ) y = _result[1];
+					imguigml_next_column();
+					var _result = imguigml_input_float( concat( "##z", id ), z, _fine_step, _coarse_step, 1 ); if ( _result[0] ) z = _result[1];
+					imguigml_next_column();
+					var _result = imguigml_input_float( concat( "##a", id ), image_angle, _fine_step, _coarse_step, 1 ); if ( _result[0] ) image_angle = _result[1];
+					imguigml_next_column();
+				}
+				
 			#endregion
 			break;
 			case E_EDITOR_PAGE.DELETE:
 			#region DELETE
-				imguigml_text( "SELECTED" );
+				imguigml_text( "Filtering by selected" );
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Can right-click delete without selecting the instance", delete_fast ) ) delete_fast = !delete_fast;
 				var _any = false;
 				with( obj_par_3d ) if ( mouse_selected ) _any = true;
 				if ( _any ) {
-					imguigml_columns( 5, "Columns", true );
+					imguigml_columns( 6, "Columns", true );
 					imguigml_text( "Object" );
 					imguigml_next_column();
 					imguigml_text( "x" );
@@ -397,10 +409,12 @@ if ( window_show ) {
 					imguigml_next_column();
 					imguigml_text( "angle" );
 					imguigml_next_column();
+					imguigml_text( "Delete" );
+					imguigml_next_column();
 					imguigml_separator();
 					with( obj_par_3d ) {
 						if ( mouse_selected ) {
-							imguigml_text( concat( object_get_pretty_name( object_index ), ":", id ) );
+							if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
 							imguigml_next_column();
 							imguigml_text( x );
 							imguigml_next_column();
@@ -409,6 +423,8 @@ if ( window_show ) {
 							imguigml_text( z );
 							imguigml_next_column();
 							imguigml_text( image_angle );
+							imguigml_next_column();
+							if ( imguigml_button( "X" ) ) tr_instance_destroy( id );
 							imguigml_next_column();
 						}
 					}

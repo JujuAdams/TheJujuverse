@@ -12,6 +12,8 @@ window_name = "Editor";
 window_state[0] = false;
 window_state[1] = false;
 
+instances_selected_filter = false;
+
 preview_surface = tr_surface_create( 600, 600 );
 preview_object = undefined;
 preview_instance = noone;
@@ -23,6 +25,8 @@ place_x = 0;
 place_y = 0;
 place_z = 0;
 place_a = 0;
+
+delete_fast = false;
 
 floor_select_open = false;
 

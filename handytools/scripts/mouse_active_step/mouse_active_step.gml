@@ -26,6 +26,8 @@ if ( mouse_over ) {
     mouse_down = false;
 }
 
+if ( mouse_over && mouse_check_button_pressed( mb_right ) && ( editor_get_page() == E_EDITOR_PAGE.DELETE ) && ( mouse_selected || obj_editor.delete_fast ) ) tr_instance_destroy();
+
 if ( mouse_clicked ) {
     if editor_is_open() {
         
@@ -36,8 +38,6 @@ if ( mouse_clicked ) {
             var _blue  = get_integer( "blue?" , colour_get_blue(  colour ) );
             colour = make_colour_rgb( _red, _green, _blue );
         }
-        
-        if ( editor_get_page() == E_EDITOR_PAGE.DELETE ) && ( mouse_selected ) tr_instance_destroy();
         
         mouse_selected = !mouse_selected;
         
