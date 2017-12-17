@@ -535,6 +535,14 @@
             }
         },
         {
+            "Key": "1638d121-9858-40f6-a861-10cd98f57728",
+            "Value": {
+                "id": "91ed43dd-2cb3-41d3-8775-99719b6e2a81",
+                "resourcePath": "scripts\\s_shader_texture_sampler\\s_shader_texture_sampler.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1652447a-ca3b-4c22-a72e-6ea01635b5dd",
             "Value": {
                 "id": "9f24dacf-4ba0-43b2-8a59-c4ad5e19f3d5",
@@ -6003,6 +6011,7 @@
         "a2e30817-54c0-4dcf-9990-a5175e535af2",
         "40f80071-7574-456b-b492-8d1f0cfdacc7",
         "6b29df45-b6eb-44b9-b428-ec2aa853a6d6",
+        "1638d121-9858-40f6-a861-10cd98f57728",
         "bb5ee790-0d04-45c4-997c-8cac91d0b745",
         "82cfb673-82e0-416f-bc31-9832fd10e52b",
         "03ad239f-16c5-49a4-a1f6-70927dffe7d1",

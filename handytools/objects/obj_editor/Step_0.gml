@@ -126,19 +126,19 @@ if ( window_show ) {
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip     = !global.do_noclip;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
+				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click    = !global.show_click;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting   = !global.do_lighting;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click    = !global.show_click;
-				imguigml_same_line();
+				if ( imguigml_checkbox( "Culling"      , global.do_culling    ) ) global.do_culling    = !global.do_culling;
+				imguigml_new_line();
 				if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls      = !global.do_walls;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling    = !global.do_ceiling;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Spawners", global.show_spawners ) ) global.show_spawners = !global.show_spawners;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Culling"      , global.do_culling    ) ) global.do_culling    = !global.do_culling;
+				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
 				imguigml_new_line();
 				#endregion
 				

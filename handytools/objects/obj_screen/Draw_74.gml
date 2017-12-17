@@ -1,7 +1,7 @@
 var _gui_w = display_get_gui_width();
 var _gui_h = display_get_gui_height();
-var _app_w = surface_get_width( APP_SURF );
-var _app_h = surface_get_height( APP_SURF );
+var _app_w = surface_get_width( srf_pov );
+var _app_h = surface_get_height( srf_pov );
 var _scale_w = _gui_w / _app_w;
 var _scale_h = _gui_h / _app_h;
 var _scale = min( _scale_w, _scale_h );
@@ -24,19 +24,21 @@ if ( global.show_click && DEVELOPMENT ) {
     
 } else {
     
-    if ( global.do_dither ) {
+	if ( global.do_fxaa ) {
+		
+		s_shader_begin( shd_fxaa );
+		s_shader_surface_texel_dims( "u_vTexel", srf_pov );
+		draw_surface_stretched( srf_pov, _draw_x, _draw_y, _draw_w, _draw_h );
+		s_shader_end();
+		
+	} else if ( global.do_dither ) {
         
         gpu_set_blendenable( false );
-        shader_set( shd_dither );
-        texture_set_stage( shader_get_sampler_index( shd_dither, "u_sDither" ), global.dither_texture );
-        shader_set_uniform_f( shader_get_uniform( shd_dither, "u_vTextureSize" ), 320, 240 );
+		s_shader_begin( shd_dither );
+		s_shader_texture_sampler( "u_sDither", global.dither_texture );
+		s_shader_uniform_f( "u_vTextureSize", _app_w, _app_h );
 		draw_surface_stretched( srf_pov, _draw_x, _draw_y, _draw_w, _draw_h );
-        /*if ( !DEVELOPMENT ) || !instance_exists( obj_debug ) || ( global.debug_tool != e_tool.delete ) {
-            draw_surface_stretched( srf_pov, _draw_x, _draw_y, _draw_w, _draw_h );
-        } else {
-            draw_surface_stretched_ext( srf_pov, _draw_x, _draw_y, _draw_w, _draw_h, c_red, 1 );
-        }*/
-        shader_reset();
+		s_shader_end();
         gpu_set_blendenable( true );
         
     } else {

@@ -9,8 +9,6 @@ const float c_fReduceCoeff = 0.125;
 const float c_fReduceMin   = 0.0078125;
 
 void main( void ) {
-	
-    //vec2 u_vTexel = 1.0/vec2( 1280, 720 );
  
     vec3 vNW = texture2D( gm_BaseTexture, v_vTexcoord +(vec2( -1.0, -1.0 ) * u_vTexel ) ).rgb;
     vec3 vNE = texture2D( gm_BaseTexture, v_vTexcoord +(vec2(  1.0, -1.0 ) * u_vTexel ) ).rgb;
