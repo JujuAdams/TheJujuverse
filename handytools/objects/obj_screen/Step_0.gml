@@ -1,5 +1,5 @@
 if ( surface_exists( srf_click ) ) {
-    var _pixel = surface_getpixel( srf_click, DEFAULT_APP_SURF_W*0.5, DEFAULT_APP_SURF_H*0.5 );
+    var _pixel = surface_getpixel( srf_click, global.app_surf_w*0.5, global.app_surf_h*0.5 );
     var _blue  = ( _pixel >> 16 ) & 255;
     var _green = ( _pixel >>  8 ) & 255;
     var _red   =   _pixel         & 255;

@@ -2,15 +2,17 @@ persistent = true;
 
 vertex_buffer_definitions();
 
-global.do_dither       = true;
-global.do_lighting     = true;
-global.do_noclip       = DEVELOPMENT;
-global.do_fly          = DEVELOPMENT;
-global.show_click      = false;
-global.do_walls        = true;
-global.do_ceiling      = true;
-global.show_spawners   = DEVELOPMENT;
-global.do_culling      = DEVELOPMENT;
+global.app_surf_w    = DEFAULT_APP_SURF_W;
+global.app_surf_h    = DEFAULT_APP_SURF_H;
+global.do_dither     = true;
+global.do_lighting   = true;
+global.do_noclip     = DEVELOPMENT;
+global.do_fly        = DEVELOPMENT;
+global.show_click    = false;
+global.do_walls      = true;
+global.do_ceiling    = true;
+global.show_spawners = DEVELOPMENT;
+global.do_culling    = DEVELOPMENT;
 
 global.menu_page = 0;
 

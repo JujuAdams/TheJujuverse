@@ -256,6 +256,20 @@ if ( window_show ) {
 				}
 				#endregion
 				
+				#region APPLICATION SURFACE
+				
+				imguigml_new_line();
+				imguigml_new_line();
+				imguigml_push_item_width( 120 );
+				var _result = imguigml_input_float( "App Surf Width" , global.app_surf_w, 1, 5, 0 );
+				if ( _result[0] ) global.app_surf_w = _result[1];
+				imguigml_same_line( 0, 60 );
+				var _result = imguigml_input_float( "App Surf Height", global.app_surf_h, 1, 5, 0 );
+				if ( _result[0] ) global.app_surf_h = _result[1];
+				imguigml_pop_item_width();
+				
+				#endregion
+				
 			#endregion
 			break;
 			case E_EDITOR_PAGE.PLACE:
@@ -369,9 +383,21 @@ if ( window_show ) {
 					if ( imguigml_button( "Filtering by " + object_get_pretty_name( instances_object_filter ) ) ) imguigml_open_popup( "Object Filter Pop-up" );
 				}
 				imguigml_same_line();
-				if ( imguigml_button( "Select all" ) ) with( obj_par_3d ) mouse_selected = true;
+				if ( imguigml_button( "Select all" ) ) {
+					with( obj_par_3d ) {
+						if ( other.instances_selected_filter && !mouse_selected ) continue;
+						if ( other.instances_object_filter != undefined ) && ( object_index != other.instances_object_filter ) continue;
+						mouse_selected = true;
+					}
+				}
 				imguigml_same_line();
-				if ( imguigml_button( "Deselect all" ) ) with( obj_par_3d ) mouse_selected = false;
+				if ( imguigml_button( "Deselect all" ) ) {
+					with( obj_par_3d ) {
+						if ( other.instances_selected_filter && !mouse_selected ) continue;
+						if ( other.instances_object_filter != undefined ) && ( object_index != other.instances_object_filter ) continue;
+						mouse_selected = false;
+					}
+				}
 				imguigml_new_line();
 				
 				imguigml_columns( 5, "Columns", true );
@@ -416,13 +442,25 @@ if ( window_show ) {
 					imguigml_next_column();
 				}
 				
+				imguigml_set_column_width( 0, 220 );
+				
 			#endregion
 			break;
 			case E_EDITOR_PAGE.DELETE:
 			#region DELETE
+				
+				if ( imguigml_begin_popup( "Confirm Pop-up" ) ) {
+				    if ( imguigml_button( "Cancel" ) ) imguigml_close_current_popup();
+					imguigml_separator();
+					if ( imguigml_button( "Delete All" ) ) with( obj_par_3d ) if ( mouse_selected ) tr_instance_destroy();
+				    imguigml_end_popup();
+				}
+				
 				imguigml_text( "Filtering by selected" );
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Can right-click delete without selecting the instance", delete_fast ) ) delete_fast = !delete_fast;
+				imguigml_same_line( 0, 150 );
+				if ( imguigml_button( "Delete All Selected" ) ) imguigml_open_popup( "Confirm Pop-up" );
 				imguigml_new_line();
 				
 				imguigml_columns( 6, "Columns", true );

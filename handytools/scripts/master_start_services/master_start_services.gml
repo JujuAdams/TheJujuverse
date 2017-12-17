@@ -9,5 +9,5 @@ imguigml_start_service();
 resolution_start_service();
 
 if ( DEVELOPMENT ) instantiate_protected( obj_editor );
-instantiate_protected( obj_screen );
 instantiate_protected( obj_gameflow );
+instantiate_protected( obj_screen );

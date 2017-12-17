@@ -1,7 +1,7 @@
 persistent = true;
 
 application_surface_draw_enable( false );
-surface_resize( application_surface, DEFAULT_APP_SURF_W, DEFAULT_APP_SURF_H );
+surface_resize( application_surface, global.app_surf_w, global.app_surf_h );
 display_set_gui_size( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT );
 
 smoothed_timer = 5000;

@@ -67,7 +67,7 @@ camera_set_projection();
 //Render out click detection
 click_array = undefined;
 click_array[0] = noone;
-if ( !surface_exists( srf_click ) ) srf_click = tr_surface_create( DEFAULT_APP_SURF_W, DEFAULT_APP_SURF_H );
+if ( !surface_exists( srf_click ) ) srf_click = tr_surface_create( global.app_surf_w, global.app_surf_h );
 
 surface_set_target( srf_click );
     
