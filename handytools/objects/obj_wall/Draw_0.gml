@@ -1,3 +1,5 @@
+if ( !global.do_walls ) exit;
+
 mouse_active_force_colour();
 camera_click_handle_fog();
 

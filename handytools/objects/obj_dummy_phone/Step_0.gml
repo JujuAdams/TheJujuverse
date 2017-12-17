@@ -40,12 +40,12 @@ if ( phone_ring_do ) {
 
 if ( headset_animate ) {
     headset_t = clamp( headset_t + headset_anim_speed*headset_direction, 0, 1 );
-    if ( headset_t <= 0 ) and ( headset_direction < 0 ) {
+    if ( headset_t <= 0 ) && ( headset_direction < 0 ) {
         audio_play_sound_on( emitter, snd_phone_down, false, 1 );
         headset_animate = false;
         with( obj_door ) intro_animate = true;
     }
-    if ( headset_t >= 1 ) and ( headset_direction > 0 ) {
+    if ( headset_t >= 1 ) && ( headset_direction > 0 ) {
         headset_animate = false;
     }
 }

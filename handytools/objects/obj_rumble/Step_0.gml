@@ -34,7 +34,7 @@ for( var _event = _size-1; _event >= 0; _event-- ) {
         _r_max *= 1-_t;
     }
     
-    if ( _frequency == undefined ) or ( _frequency == 0 ) or ( _frequency > 999 ) {
+    if ( _frequency == undefined ) || ( _frequency == 0 ) || ( _frequency > 999 ) {
         _l_power[_player] += _l_max;
         _r_power[_player] += _r_max;
     } else {

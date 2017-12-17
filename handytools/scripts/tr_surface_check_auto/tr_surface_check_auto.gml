@@ -1,7 +1,7 @@
 ///@param index
 
 var _index  = argument0;
-if ( _index == undefined ) or ( _index < 0 ) return undefined;
+if ( _index == undefined ) || ( _index < 0 ) return undefined;
 
 var _width  = global.tracker_surfaces_width[?  _index ];
 
@@ -23,7 +23,7 @@ var _height = global.tracker_surfaces_height[? _index ];
 var _regen = false;
 if ( !surface_exists( _index ) ) {
 	_regen = true;
-} else if ( surface_get_width( _index ) != _width ) or ( surface_get_height( _index ) != _height ) {
+} else if ( surface_get_width( _index ) != _width ) || ( surface_get_height( _index ) != _height ) {
 	_regen = true;
 }
 

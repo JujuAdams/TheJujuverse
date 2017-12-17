@@ -35,7 +35,7 @@ _str = string_replace_all( _str,           "\\n", chr(13) );
 
 draw_set_font( _def_font );
 var _space_width = string_width( " " );
-if ( !is_real( _line_height ) ) or ( _line_height < 0 ) var _line_height = string_height( chr(13) );
+if ( !is_real( _line_height ) || ( _line_height < 0 ) ) var _line_height = string_height( chr(13) );
 
 var _json = tr_map_create();
 
@@ -145,7 +145,7 @@ while( string_length( _str ) > 0 ) {
     
     //Command handling
     if ( !_skip ) {
-        if ( _sep_prev_char == "[" ) and ( _sep_char == "]" ) {
+        if ( _sep_prev_char == "[" ) && ( _sep_char == "]" ) {
             
             var _work_str = _substr + "|";
             
@@ -275,7 +275,7 @@ while( string_length( _str ) > 0 ) {
                         } else {
                             
                             var _colour_string = string_upper( _parameters[0] );
-                            if ( string_length( _colour_string ) <= 7 ) and ( ( string_copy( _colour_string, 1, 1 ) == "#" ) or ( string_copy( _colour_string, 1, 1 ) == "$" ) ) {
+                            if ( string_length( _colour_string ) <= 7 ) && ( ( string_copy( _colour_string, 1, 1 ) == "#" ) || ( string_copy( _colour_string, 1, 1 ) == "$" ) ) {
                                 
                                 var _hex = "0123456789ABCDEF";
                                 var _red   = max( string_pos( string_copy( _colour_string, 3, 1 ), _hex )-1, 0 ) + ( max( string_pos( string_copy( _colour_string, 2, 1 ), _hex )-1, 0 ) << 4 );
@@ -306,7 +306,7 @@ while( string_length( _str ) > 0 ) {
     if ( !_skip ) {
         
         //If we've run over the maximum width of the string
-        if ( _substr_width + _text_x > _width_limit ) or ( _line_map == noone ) or ( _sep_prev_char == chr(13) ) or ( _force_newline ) {
+        if ( _substr_width + _text_x > _width_limit ) || ( _line_map == noone ) || ( _sep_prev_char == chr(13) ) || ( _force_newline ) {
             
             if ( _line_map != noone ) {
                 
@@ -379,7 +379,7 @@ while( string_length( _str ) > 0 ) {
     if ( _sep_prev_char != "[" ) {
         _char = " ";
         _pos = string_pos( _char, _str );
-        if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+        if ( _pos < _sep_pos ) && ( _pos > 0 ) {
             _sep_char = _char;
             _sep_pos = _pos;
         }
@@ -387,21 +387,21 @@ while( string_length( _str ) > 0 ) {
     
     var _char = chr(13);
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         _sep_char = _char;
         _sep_pos = _pos;
     }
 
     var _char = "[";
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         var _sep_char = _char;
         var _sep_pos = _pos;
     }
     
     var _char = "]";
     var _pos = string_pos( _char, _str );
-    if ( _pos < _sep_pos ) and ( _pos > 0 ) {
+    if ( _pos < _sep_pos ) && ( _pos > 0 ) {
         var _sep_char = _char;
         var _sep_pos = _pos;
     }
@@ -572,7 +572,7 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
                 var _char = string_copy( _str, _k, 1 );
                 var _ord = ord( _char ) - global.text_font_char_min;
                 
-                if ( _ord < 0 ) or ( _ord >= global.text_font_char_size ) continue;
+                if ( _ord < 0 ) || ( _ord >= global.text_font_char_size ) continue;
                 
                 //---------------------
                 var _bbox_l = _font_uvs[ _ord, e_text_system.l ];

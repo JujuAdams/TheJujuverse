@@ -1,5 +1,7 @@
 ///@param ignore_protected
 
+var _ignore = (argument_count>0)? argument[0] : false;
+
 if ( TRACKER_ON ) {
 	var _protect = global.tracker_instances_protect[? id ];
 	
@@ -10,8 +12,8 @@ if ( TRACKER_ON ) {
 		
 	} else if ( _protect ) {
 		
-		if ( argument0 ) {
-			if ( TRACKER_DEBUG_INSTANCE_PROTECT ) trace_v( "ignoring protect of unexpectedly destroyed instance", TRACE_DIV, tr_instance_details( argument0, TRACE_DIV ) );
+		if ( _ignore ) {
+			if ( TRACKER_DEBUG_INSTANCE_PROTECT ) trace_v( "ignoring protect of unexpectedly destroyed instance", TRACE_DIV, tr_instance_details( argument[0], TRACE_DIV ) );
 		} else {
 			if ( TRACKER_ILLEGAL_THROW_ERROR ) {
 				trace_error( false, "unexpecedly destroying protected instance! Room change? Native instance_destroy() function?", NL, tr_instance_details( id, NL ) );

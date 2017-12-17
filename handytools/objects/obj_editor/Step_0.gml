@@ -26,27 +26,31 @@ instances_over = noone;
 #region WINDOW OPEN
 if ( window_show ) {
 	
-	if ( keyboard_check_released( ord("1") ) ) window_page = E_EDITOR_PAGE.HOME;
-	if ( keyboard_check_released( ord("2") ) ) window_page = E_EDITOR_PAGE.PLACE;
-	if ( keyboard_check_released( ord("3") ) ) {
-		window_page = E_EDITOR_PAGE.MOVE;
-		with( obj_par_3d ) mouse_active_set_relative_values();
+	#region KEYBOARD SHORTCUTS
+	if ( keyboard_check( vk_shift ) ) {
+		if ( keyboard_check_released( ord("1") ) ) window_page = E_EDITOR_PAGE.HOME;
+		if ( keyboard_check_released( ord("2") ) ) window_page = E_EDITOR_PAGE.PLACE;
+		if ( keyboard_check_released( ord("3") ) ) window_page = E_EDITOR_PAGE.INSTANCES;
+		if ( keyboard_check_released( ord("4") ) ) window_page = E_EDITOR_PAGE.SELECTED;
+		if ( keyboard_check_released( ord("5") ) ) {
+			window_page = E_EDITOR_PAGE.MOVE;
+			with( obj_par_3d ) mouse_active_set_relative_values();
+		}
+		if ( keyboard_check_released( ord("6") ) ) {
+			window_page = E_EDITOR_PAGE.ROTATE;
+			with( obj_par_3d ) mouse_active_set_relative_values();
+		}
+		if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.DELETE;
+		if ( keyboard_check_released( ord("8") ) ) window_page = E_EDITOR_PAGE.LIGHT;
 	}
-	if ( keyboard_check_released( ord("4") ) ) {
-		window_page = E_EDITOR_PAGE.ROTATE;
-		with( obj_par_3d ) mouse_active_set_relative_values();
-	}
-	if ( keyboard_check_released( ord("5") ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-	if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.SELECTED;
-	if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.DELETE;
-	if ( keyboard_check_released( ord("8") ) ) window_page = E_EDITOR_PAGE.LIGHT;
 	
 	if ( keyboard_check_released( vk_tab ) ) {
 		var _ = window_page;
 		window_page = window_page_return;
 		window_page_return = _;
-		if ( window_page == E_EDITOR_PAGE.MOVE ) || ( window_page == E_EDITOR_PAGE.ROTATE ) mouse_active_set_relative_values();
+		if ( window_page == E_EDITOR_PAGE.MOVE ) || ( window_page == E_EDITOR_PAGE.ROTATE ) with( obj_par_3d ) mouse_active_set_relative_values();
 	}
+	#endregion
 	
 	imguigml_set_next_window_collapsed( window_collapsed );
 	window_state = imguigml_begin( window_name, true,
@@ -72,23 +76,25 @@ if ( window_show ) {
 	
 	if ( !window_collapsed ) {
 		
+		#region TABS
 		imguigml_begin_menu_bar();
 		if ( imguigml_menu_item( "1.Home"      ) ) window_page = E_EDITOR_PAGE.HOME;
 		if ( imguigml_menu_item( "2.Place"     ) ) window_page = E_EDITOR_PAGE.PLACE;
-		if ( imguigml_menu_item( "3.Move"      ) ) {
+		if ( imguigml_menu_item( "3.Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
+		if ( imguigml_menu_item( "4.Selected"  ) ) window_page = E_EDITOR_PAGE.SELECTED;
+		if ( imguigml_menu_item( "5.Move"      ) ) {
 			window_page = E_EDITOR_PAGE.MOVE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( imguigml_menu_item( "4.Rotate"    ) ) {
+		if ( imguigml_menu_item( "6.Rotate"    ) ) {
 			window_page = E_EDITOR_PAGE.ROTATE;
 			with( obj_par_3d ) mouse_active_set_relative_values();
 		}
-		if ( imguigml_menu_item( "5.Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-		if ( imguigml_menu_item( "6.Selected"  ) ) window_page = E_EDITOR_PAGE.SELECTED;
 		if ( imguigml_menu_item( "7.Delete"    ) ) window_page = E_EDITOR_PAGE.DELETE;
 		if ( imguigml_menu_item( "8.Light"     ) ) window_page = E_EDITOR_PAGE.LIGHT;
 		imguigml_end_menu_bar();
-	
+		#endregion
+		
 		switch( editor_get_page() ) {
 			case E_EDITOR_PAGE.HOME:
 			#region HOME
@@ -96,29 +102,119 @@ if ( window_show ) {
 				imguigml_text( "AMIASP Editor" );
 				imguigml_text( TITLE + ", " + VERSION + " " + QU + VERSION_NOMIKER + QU );
 				imguigml_text( "Built " + DATE + " by " + BUILDER );
-				imguigml_separator();
 				imguigml_new_line();
 				imguigml_text( "F11 = Open/Close editor window" );
 				imguigml_text( "Space = Collapse window" );
+				imguigml_text( "Shift = Move slow" );
+				imguigml_text( "Shift+Num = Select tool (or click on the tabs)" );
 				imguigml_text( "Tab = Return to previous tool" );
+				imguigml_separator();
 				imguigml_new_line();
 				
-				if ( imguigml_button( "Toggle Menu" ) ) {
+				#region TOGGLES
+				
+				if ( imguigml_checkbox( "Menu", instance_exists( obj_menu ) ) ) {
 				    tr_instance_destroy( obj_subtitle );
-				    if ( instance_exists( obj_menu ) ) {
-						tr_instance_destroy( obj_menu );
-					} else {
-						tr_instance_create( 0, 0, obj_menu );
-					}
+				    if ( instance_exists( obj_menu ) ) tr_instance_destroy( obj_menu ) else tr_instance_create( 0, 0, obj_menu );
 				}
 				imguigml_same_line();
-				if ( imguigml_button( "Toggle Dither" ) ) global.do_dither = !global.do_dither;
+				if ( imguigml_checkbox( "Fly"          , global.do_fly        ) ) global.do_fly = !global.do_fly;
 				imguigml_same_line();
-				if ( imguigml_button( "Toggle Lighting" ) ) global.do_lighting = !global.do_lighting;
+				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip = !global.do_noclip;
 				imguigml_same_line();
-				if ( imguigml_button( "Toggle Noclip (" + (global.do_noclip?"is ON":"is OFF") + ")" ) ) global.do_noclip = !global.do_noclip;
+				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither = !global.do_dither;
 				imguigml_same_line();
-				if ( imguigml_button( "Toggle srf_click" ) ) global.show_click = !global.show_click;
+				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting = !global.do_lighting;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click = !global.show_click;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls = !global.do_walls;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling = !global.do_ceiling;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Show Spawners", global.show_spawners ) ) global.show_spawners = !global.show_spawners;
+				imguigml_new_line();
+				#endregion
+				
+				#region ROOM DIMENSIONS / TEXTURES
+				if ( imguigml_begin_popup( "Floor Pop-up" ) ) {
+					
+				    if ( imguigml_button( "Cancel" ) ) imguigml_close_current_popup();
+					imguigml_separator();
+					
+					var _size = ds_list_size( floor_sprite_list );
+					for( var _i = 0; _i < _size; _i++ ) {
+						if ( imguigml_button( sprite_get_name( floor_sprite_list[| _i ] ) ) ) {
+				            with( obj_floor ) {
+				                sprite = other.floor_sprite_list[| _i ];
+				                texture = sprite_get_texture( sprite, 0 );
+				            }
+							imguigml_close_current_popup();
+						}
+					}
+					
+				    imguigml_end_popup();
+				}
+				
+				if ( imguigml_begin_popup( "Wall Pop-up" ) ) {
+					
+				    if ( imguigml_button( "Cancel" ) ) imguigml_close_current_popup();
+					imguigml_separator();
+					
+					var _size = ds_list_size( wall_sprite_list );
+					for( var _i = 0; _i < _size; _i++ ) {
+						if ( imguigml_button( sprite_get_name( wall_sprite_list[| _i ] ) ) ) {
+				            with( obj_wall ) {
+				                sprite = other.wall_sprite_list[| _i ];
+				                texture = sprite_get_texture( sprite, 0 );
+				            }
+							imguigml_close_current_popup();
+						}
+					}
+					
+				    imguigml_end_popup();
+				}
+				
+				if ( imguigml_button( "Set Floor Sprite" ) ) imguigml_open_popup( "Floor Pop-up" );
+				imguigml_same_line( 0, 40 );
+				if ( imguigml_button( "Set Wall Sprite"  ) ) imguigml_open_popup( "Wall Pop-up"  );
+				
+	            var _w = 0;
+	            var _h = 0;
+	            var _d = 0;
+				
+	            with( obj_ceiling ) {
+	                _w = x2 - x1;
+	                _h = y2 - y1;
+	                _d = z;
+	            }
+				
+				var _any = false;
+				imguigml_push_item_width( 100 );
+				imguigml_same_line( 0, 40 );
+				var _result = imguigml_input_float( "Width" , _w, 1, 5, 0 ); _w = _result[1]; _any |= _result[0];
+				imguigml_same_line( 0, 40 );
+				    _result = imguigml_input_float( "Height", _h, 1, 5, 0 ); _h = _result[1]; _any |= _result[0];
+				imguigml_same_line( 0, 40 );
+				    _result = imguigml_input_float( "Depth" , _d, 1, 5, 0 ); _d = _result[1]; _any |= _result[0];
+				imguigml_pop_item_width();
+				
+				if ( _any ) {
+		            with( obj_floor ) tr_instance_destroy();
+		            with( obj_ceiling ) tr_instance_destroy();
+		            with( obj_wall ) tr_instance_destroy();
+		            define_wall(    0,  0,  0,   _w,  0, _d,   spr_tex_wall6  );
+		            define_wall(    0,  0,  0,    0, _h, _d,   spr_tex_wall6  );
+		            define_wall(   _w,  0,  0,   _w, _h, _d,   spr_tex_wall6  );
+		            define_wall(    0, _h,  0,   _w, _h, _d,   spr_tex_wall6  );
+		            define_floor(   0,  0, _w,   _h,  0, 32,   spr_tex_floor1 );
+		            define_ceiling( 0,  0, _w,   _h, _d, 32,   spr_tex_white  );
+				}
+				#endregion
+				
+				#region NAVIGATION
+				imguigml_new_line();
+				imguigml_separator();
 				imguigml_new_line();
 				imguigml_text( concat( "Room ", global.game_room ) );
 			
@@ -152,39 +248,8 @@ if ( window_show ) {
 			            trace_loud( _filename + " SAVED!" );
 			        }
 				}
-				imguigml_new_line();
+				#endregion
 				
-				if ( imguigml_button( "Set Floor Sprite" ) && instance_exists( obj_floor ) ) {
-		            var _texture_name = sprite_get_name( obj_floor.sprite );
-		            _texture_name = get_string( "Texture for floor?", _texture_name );
-		            if ( _texture_name != "" ) {
-		                var _texture = asset_get_index( _texture_name );
-		                if ( _texture < 0 ) {
-		                    imguigml_popup( "Error!",_texture_name + " could not be found!" );
-		                } else {
-		                    with( obj_floor ) {
-		                        sprite = _texture;
-		                        texture = sprite_get_texture( sprite, 0 );
-		                    }
-		                }
-		            }
-				}
-				imguigml_same_line();
-				if ( imguigml_button( "Set Wall Sprite" ) && instance_exists( obj_wall ) ) {
-		            var _texture_name = sprite_get_name( obj_wall.sprite );
-		            _texture_name = get_string( "Texture for walls?", _texture_name );
-		            if ( _texture_name != "" ) {
-		                var _texture = asset_get_index( _texture_name );
-		                if ( _texture < 0 ) {
-		                    imguigml_popup( "Error!", _texture_name + " could not be found!" );
-		                } else {
-		                    with( obj_wall ) {
-		                        sprite = _texture;
-		                        texture = sprite_get_texture( sprite, 0 );
-		                    }
-		                }
-		            }
-				}
 			#endregion
 			break;
 			case E_EDITOR_PAGE.PLACE:
@@ -279,22 +344,32 @@ if ( window_show ) {
 				imguigml_next_column();
 				imguigml_separator();
 				with( obj_par_3d ) {
-					if ( mouse_selected ) imguigml_text( "S" );
+					var _fine_step = 0;
+					var _coarse_step = 0;
+					if ( mouse_selected ) {
+						imguigml_text( "S" );
+						_fine_step = 0.1;
+						_coarse_step = 2;
+					}
 					imguigml_next_column();
 					if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
-					if ( imguigml_is_item_hovered( true ) ) other.instances_over = id;
+					if ( imguigml_is_item_hovered( true ) ) {
+						other.instances_over = id;
+						_fine_step = 0.1;
+						_coarse_step = 2;
+					}
 					imguigml_next_column();
-					imguigml_text( (( mouse_selected || ( _last_instances_over == id )) ? "" : "  ") + string( x ) );
+					var _result = imguigml_input_float( concat( "##x", id ), x, _fine_step, _coarse_step, 1 ); if ( _result[0] ) x = _result[1];
 					imguigml_next_column();
-					imguigml_text( (( mouse_selected || ( _last_instances_over == id )) ? "" : "  ") + string( y ) );
+					var _result = imguigml_input_float( concat( "##y", id ), y, _fine_step, _coarse_step, 1 ); if ( _result[0] ) y = _result[1];
 					imguigml_next_column();
-					imguigml_text( (( mouse_selected || ( _last_instances_over == id )) ? "" : "  ") + string( z ) );
+					var _result = imguigml_input_float( concat( "##z", id ), z, _fine_step, _coarse_step, 1 ); if ( _result[0] ) z = _result[1];
 					imguigml_next_column();
-					imguigml_text( (( mouse_selected || ( _last_instances_over == id )) ? "" : "  ") + string( image_angle ) );
+					var _result = imguigml_input_float( concat( "##a", id ), image_angle, _fine_step, _coarse_step, 1 ); if ( _result[0] ) image_angle = _result[1];
 					imguigml_next_column();
 				}
 				imguigml_set_column_width( 0,  25 );
-				imguigml_set_column_width( 1, 170 );
+				imguigml_set_column_width( 1, 290 );
 			#endregion
 			break;
 			case E_EDITOR_PAGE.DELETE:

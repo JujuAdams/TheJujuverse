@@ -24,8 +24,28 @@ place_y = 0;
 place_z = 0;
 place_a = 0;
 
+floor_select_open = false;
+
 instances_over = noone;
 
+#region FLOOR SPRITES
+floor_sprite_list = tr_list_create();
+ds_list_add( floor_sprite_list, spr_tex_floor1 );
+ds_list_add( floor_sprite_list, spr_tex_floor2 );
+ds_list_add( floor_sprite_list, spr_tex_floor3 );
+ds_list_add( floor_sprite_list, spr_tex_floor4 );
+ds_list_add( floor_sprite_list, spr_tex_floor5 );
+ds_list_add( floor_sprite_list, spr_tex_floor6 );
+#endregion
+
+#region WALL SPRITES
+wall_sprite_list = tr_list_create();
+ds_list_add( wall_sprite_list, spr_tex_wall6 );
+ds_list_add( wall_sprite_list, spr_tex_wall7 );
+ds_list_add( wall_sprite_list, spr_tex_wall8 );
+#endregion
+
+#region OBJECTS
 object_list = tr_list_create();
 ds_list_add( object_list, "GENERAL"              );
 ds_list_add( object_list, obj_player_spawn       );
@@ -95,3 +115,4 @@ ds_list_add( object_list, obj_chess_king_alt     );
 ds_list_add( object_list, obj_chess_queen_alt    );
 ds_list_add( object_list, obj_chess_rook_alt     );
 ds_list_add( object_list, obj_skele              );
+#endregion

@@ -28,7 +28,7 @@ with( obj_camera ) {
 	tween_start_y    = _start_y;
 	tween_start_zoom = _start_z;
 
-	if ( _centre_z == undefined ) or ( _centre_z <= 0 ) {
+	if ( _centre_z == undefined ) || ( _centre_z <= 0 ) {
 		tween_zoom_do_centre = false;
 		tween_centre_zoom    = mean( _start_z, _end_z );
 	} else {

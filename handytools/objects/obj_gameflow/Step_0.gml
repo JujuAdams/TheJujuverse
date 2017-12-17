@@ -1,6 +1,6 @@
 #region INPUT
 
-if ( instance_exists( obj_camera ) ) and ( !instance_exists( obj_menu ) ) {
+if ( instance_exists( obj_camera ) && !instance_exists( obj_menu ) ) {
     if ( !global.mouse_locked ) global.mouse_lock_time = current_time;
     global.mouse_locked = true;
 }
@@ -105,7 +105,7 @@ if ( global.game_room == 7 ) {
 #region TRANSITION
 if ( transition_do ) {
     transition_t = clamp( transition_t + transition_speed*transition_direction, 0, 1 );
-    if ( transition_t >= 1 ) and ( transition_direction > 0 ) {
+    if ( transition_t >= 1 ) && ( transition_direction > 0 ) {
         
         transition_do = false;
         transition_t = 0;
@@ -141,7 +141,7 @@ if ( transition_do ) {
             
             unload_current_room();
             global.game_room++;
-            if ( global.game_room == 9 ) and ( global.happy_ending ) {
+            if ( ( global.game_room == 9 ) && global.happy_ending ) {
                 
                 global.game_room = 11;
                 audio_play_sound( snd_skeleton, 1, false );
@@ -176,7 +176,7 @@ if ( transition_do ) {
         }
         
     }
-    if ( transition_t <= 0 ) and ( transition_direction < 0 ) {
+    if ( transition_t <= 0 ) && ( transition_direction < 0 ) {
         transition_do = false;
         transition_direction = 1;
     }

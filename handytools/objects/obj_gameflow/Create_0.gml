@@ -2,9 +2,14 @@ persistent = true;
 
 vertex_buffer_definitions();
 
-global.do_dither   = true;
-global.do_lighting = true;
-global.do_noclip   = DEVELOPMENT;
+global.do_dither       = true;
+global.do_lighting     = true;
+global.do_noclip       = DEVELOPMENT;
+global.do_fly          = DEVELOPMENT;
+global.show_click      = false;
+global.do_walls        = true;
+global.do_ceiling      = true;
+global.show_spawners = true;
 
 global.menu_page = 0;
 

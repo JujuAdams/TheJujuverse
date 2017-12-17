@@ -31,7 +31,7 @@ if ( mouse_clicked ) {
     }
 }
 
-if ( phone_ring_do ) and ( !mirror_room_cut_out ) {
+if ( phone_ring_do && !mirror_room_cut_out ) {
     if ( phone_ring_do_delay ) {
         if ( current_time > phone_ring_last_time + phone_ring_delay ) {
             phone_ring_sound_instance = audio_play_sound_on( emitter, snd_phone_ring, false, 1 );
@@ -51,7 +51,7 @@ if ( phone_ring_do ) and ( !mirror_room_cut_out ) {
 
 if ( headset_animate ) {
     headset_t = clamp( headset_t + headset_anim_speed*headset_direction, 0, 1 );
-    if ( headset_t <= 0 ) and ( headset_direction < 0 ) {
+    if ( headset_t <= 0 ) && ( headset_direction < 0 ) {
         headset_animate = false;
         if ( global.game_room == 9 ) {
             
@@ -75,7 +75,7 @@ if ( headset_animate ) {
             
         } else {
             
-            if ( global.game_room != 5 ) and ( global.game_room != 7 ) and ( global.game_room != 8 ) {
+            if ( global.game_room != 5 ) && ( global.game_room != 7 ) && ( global.game_room != 8 ) {
                 if ( !instance_exists( obj_door ) ) with( obj_door_spawn ) door_spawn_time = current_time + 700;
             }
             with( obj_door ) intro_animate = true;
@@ -85,7 +85,5 @@ if ( headset_animate ) {
         }
         
     }
-    if ( headset_t >= 1 ) and ( headset_direction > 0 ) {
-        headset_animate = false;
-    }
+    if ( headset_t >= 1 ) && ( headset_direction > 0 ) headset_animate = false;
 }

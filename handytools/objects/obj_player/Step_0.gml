@@ -7,7 +7,7 @@ if ( DEVELOPMENT ) {
     z = 50;
 }
 
-if ( DEVELOPMENT ) {
+if ( global.do_fly ) {
     if ( keyboard_check( ord( "Q" ) ) ) z += 2 * _debug_factor;
     if ( keyboard_check( ord( "E" ) ) ) z -= 2 * _debug_factor;
 }
@@ -20,10 +20,10 @@ if ( keyboard_check( ord( "W" ) ) ) _vpara =  acceleration;
 if ( keyboard_check( ord( "S" ) ) ) _vpara = -acceleration;
     
 if ( !_is_moving )
-and ( keyboard_check_pressed( ord( "W" ) )
-    or keyboard_check_pressed( ord( "S" ) )
-    or keyboard_check_pressed( ord( "A" ) )
-    or keyboard_check_pressed( ord( "D" ) ) ) {
+&& (  keyboard_check_pressed( ord( "W" ) )
+   || keyboard_check_pressed( ord( "S" ) )
+   || keyboard_check_pressed( ord( "A" ) )
+   || keyboard_check_pressed( ord( "D" ) ) ) {
     footstep_time = VERY_NEGATIVE;
     view_bob_start_time = current_time;
 }
@@ -100,5 +100,5 @@ if ( !obj_gameflow.transition_do ) {
 with( obj_camera ) {
     x = other.x;
     y = other.y;
-    z = other.z + other.view_bob_z;
+    z = other.z + (global.do_fly? 0 : other.view_bob_z);
 }

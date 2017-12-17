@@ -35,7 +35,7 @@ _str = string_replace_all( _str,           "\\n", chr(13) );
 
 draw_set_font( _def_font );
 var _space_width = string_width( " " );
-if ( !is_real( _line_height ) ) or ( _line_height < 0 ) var _line_height = string_height( chr(13) );
+if ( !is_real( _line_height ) ) || ( _line_height < 0 ) var _line_height = string_height( chr(13) );
 
 var _json = tr_map_create();
 
@@ -571,7 +571,7 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
                 var _char = string_copy( _str, _k, 1 );
                 var _ord = ord( _char ) - global.text_font_char_min;
                 
-                if ( _ord < 0 ) or ( _ord >= global.text_font_char_size ) continue;
+                if ( _ord < 0 ) || ( _ord >= global.text_font_char_size ) continue;
                 
                 var _uv_l   = _font_uvs[ _ord, 0 ]/global.text_font_surface_width;
                 var _uv_t   = _font_uvs[ _ord, 1 ]/global.text_font_surface_height;

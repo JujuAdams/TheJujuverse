@@ -7,7 +7,7 @@ var _objects_map = tr_map_create();
 tr_map_add_map( _root_map, "objects", _objects_map );
 
 with( obj_par_game ) {
-    if ( object_index == obj_camera ) or ( object_index == obj_player ) continue;
+    if ( object_index == obj_camera ) || ( object_index == obj_player ) continue;
     
     var _name = object_get_name( object_index );
     var _list = _objects_map[? _name ];

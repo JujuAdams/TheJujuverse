@@ -1,4 +1,4 @@
-if editor_is_open() {
+if ( editor_is_open() && global.show_spawners ) {
 	
     if ( ( current_time mod 500 ) < 450 ) {
         mouse_active_force_colour();

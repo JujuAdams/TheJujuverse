@@ -7,7 +7,7 @@
 //  https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 
-if ( keyboard_check_pressed( vk_anykey ) and !keyboard_check_pressed( vk_space ) ) test_mode = ( test_mode + 1 ) mod 2;
+if ( keyboard_check_pressed( vk_anykey ) && !keyboard_check_pressed( vk_space ) ) test_mode = ( test_mode + 1 ) mod 2;
 
 if ( test_mode == 1 ) {
     

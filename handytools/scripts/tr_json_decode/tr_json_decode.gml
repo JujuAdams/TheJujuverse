@@ -32,7 +32,7 @@ repeat( _size ) {
     
     if ( _in_string ) {
         
-        if ( _ord == _string_delimiter ) and ( !_string_escape ) {
+        if ( ( _ord == _string_delimiter ) && !_string_escape ) {
             
             if ( _stack_type == ds_type_list ) {
                 ds_list_add( _stack_currentr_, _string );
@@ -47,7 +47,7 @@ repeat( _size ) {
             _in_string = false;
             _string = "";
             
-        } else if ( _ord == 92 ) and ( !_string_escape ) {
+        } else if ( ( _ord == 92 ) && !_string_escape ) {
             
             _string_escape = true;
             
@@ -58,7 +58,7 @@ repeat( _size ) {
             
         }
         
-    } else if ( _ord == 34 ) or ( _ord == 39 ) { // ' or "
+    } else if ( _ord == 34 ) || ( _ord == 39 ) { // ' or "
         
         if ( _string != "" ) trace_error( false, "tr_json_decode: unexpected string (index=", _index, ")" );
         _string = "";

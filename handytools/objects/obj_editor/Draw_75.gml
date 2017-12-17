@@ -1,5 +1,5 @@
 if ( editor_is_open() ) {
-	
+	#region HEADER
 	var _lookat_inst = obj_screen.click_instance_over;
 	
 	draw_set_font( fnt_imgui );
@@ -90,6 +90,17 @@ if ( editor_is_open() ) {
 			draw_text( 80, 15, "LIGHT" );
 		break;
 	}
+	#endregion
+	
+	if ( editor_is_collapsed() && instance_exists( obj_camera ) ) {
+		draw_set_font( fnt_imgui );
+		draw_set_valign( fa_bottom );
+		draw_text(  10, display_get_gui_height() - 10, concat( "x=", obj_camera.x ) );
+		draw_text( 110, display_get_gui_height() - 10, concat( "y=", obj_camera.y ) );
+		draw_text( 210, display_get_gui_height() - 10, concat( "z=", obj_camera.z ) );
+		draw_text( 310, display_get_gui_height() - 10, concat( "a=", obj_camera.look_xy_angle ) );
+		draw_set_valign( fa_top );
+	}
 }
 
 surface_set_target( preview_surface );
@@ -106,7 +117,7 @@ if ( preview_object != undefined ) {
 	_instance = selected_instance;
 }
 
-if ( _object != undefined ) and ( instance_exists( _instance ) ) {
+if ( ( _object != undefined ) && instance_exists( _instance ) ) {
 	
 	var _old_view = matrix_get( matrix_view );
 	var _old_proj = matrix_get( matrix_projection );
@@ -119,7 +130,7 @@ if ( _object != undefined ) and ( instance_exists( _instance ) ) {
 	gpu_set_ztestenable( true );
 	gpu_set_zwriteenable( true );
 	gpu_set_ztestenable( true );
-	gpu_set_cullmode( editor_is_open() ? cull_counterclockwise : cull_noculling );
+	gpu_set_cullmode( cull_noculling );
 	draw_set_lighting( false );
 	shader_reset(); 
 	

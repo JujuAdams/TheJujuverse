@@ -8,10 +8,10 @@ tween_ping[_index] = false;
 
 var _prev = tween_chain_prev[_index];
 if ( _prev != undefined ) {
-	if ( !tween_finished[_index] and tween_finished[_prev] ) tween_do[_index] = true;
+	if ( !tween_finished[_index] && tween_finished[_prev] ) tween_do[_index] = true;
 }
 
-if ( _force or tween_do[_index] ) {
+if ( _force || tween_do[_index] ) {
 	
 	tween_t[_index] = ( current_time - tween_start_time[_index] ) / tween_length[_index];
 	if ( tween_clamp ) tween_t[_index] = clamp( tween_t[_index], 0, 1 );

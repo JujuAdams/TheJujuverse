@@ -159,7 +159,7 @@ vertex_begin( _vbuff, _format );
         var _nx = 0;
         var _ny = 0;
         var _nz = 0;
-        if ( ( floor( real( _n_index ) ) != -1 ) and ( ds_list_size( _normal_list ) >= 1 ) ) {
+        if ( ( floor( real( _n_index ) ) != -1 ) && ( ds_list_size( _normal_list ) >= 1 ) ) {
             var _n_index = 3*floor( real( _n_index ) );
             _nx = _normal_list[| _n_index   ];
             _ny = _normal_list[| _n_index+1 ];
@@ -168,7 +168,7 @@ vertex_begin( _vbuff, _format );
         
         var _tx = 0;
         var _ty = 0;
-        if ( ( floor( real( _t_index)) != -1 ) and ( ds_list_size( _texture_list ) >= 1 ) ) {
+        if ( ( floor( real( _t_index)) != -1 ) && ( ds_list_size( _texture_list ) >= 1 ) ) {
             var _t_index = 2*floor( real( _t_index ) );
             _tx = _texture_list[| _t_index   ];
             _ty = _texture_list[| _t_index+1 ];

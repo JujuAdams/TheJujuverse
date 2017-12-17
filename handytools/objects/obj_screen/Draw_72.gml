@@ -3,7 +3,7 @@ draw_clear( c_black );
 gpu_set_ztestenable( true );
 gpu_set_zwriteenable( true );
 gpu_set_ztestenable( true );
-gpu_set_cullmode( editor_is_open() ? cull_counterclockwise : cull_noculling );
+gpu_set_cullmode( cull_noculling );
 draw_set_lighting( false );
 shader_reset(); 
 

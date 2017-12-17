@@ -8,7 +8,7 @@
 //
 // With thanks to yal.cc
 
-if ( argument_count < 1 ) or ( argument_count > 4 ) {
+if ( argument_count < 1 ) || ( argument_count > 4 ) {
     trace_error( false, "Unsupported number of arguments (", argument_count, ")" );
     return undefined;
 } else {
@@ -42,7 +42,7 @@ repeat( string_length( _json_string ) ) {
         
         if ( ( _ord == _string_delimiter ) && !_string_escape ) {
             _in_string = false;
-        } else if ( _ord == 92 ) and ( !_string_escape ) {
+        } else if ( _ord == 92 ) && ( !_string_escape ) {
             _string_escape = true;
         } else {
             _string_escape = false;
@@ -67,7 +67,7 @@ repeat( string_length( _json_string ) ) {
             if ( _ord == 46 ) {
                 _number_string_dot = string_length( _number_string );
                 _number_string_last_sig = _number_string_dot;
-            } else if ( _number_string_dot == 0 ) or ( _ord != 48 ) {
+            } else if ( _number_string_dot == 0 ) || ( _ord != 48 ) {
 				_number_string_last_sig++;
 			}
             

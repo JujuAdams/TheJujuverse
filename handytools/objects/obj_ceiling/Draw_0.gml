@@ -1,3 +1,5 @@
+if ( !global.do_ceiling ) exit;
+
 camera_click_handle_fog();
 
 matrix_set_world( matrix_build( 0, 0, -global.game_swell,   0, 0, 0,   1, 1, 1 ) );

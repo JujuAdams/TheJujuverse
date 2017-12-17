@@ -42,7 +42,7 @@ var _scrollbar_over = point_in_rectangle( _mouse_x, _mouse_y,   _scrollbar_left,
 _scroll_json[? "scrollbar over" ] = _scrollbar_over;
 
 if ( _scrollbar_over ) {
-    if ( mouse_check_button( mb_left ) ) and ( !_scrollbar_down ) {
+    if ( mouse_check_button( mb_left ) && !_scrollbar_down ) {
         _scrollbar_down = true;
         _scrollbar_down_y = _mouse_y - _scrollbar_top;
         _scroll_json[? "scrollbar down y" ] = _scrollbar_down_y;
