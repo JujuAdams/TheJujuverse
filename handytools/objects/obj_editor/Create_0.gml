@@ -13,6 +13,8 @@ window_state[0] = false;
 window_state[1] = false;
 
 instances_selected_filter = false;
+instances_object_filter = undefined;
+instances_object_list = tr_list_create();
 
 preview_surface = tr_surface_create( 600, 600 );
 preview_object = undefined;

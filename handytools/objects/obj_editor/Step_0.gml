@@ -336,16 +336,44 @@ if ( window_show ) {
 			break;
 			case E_EDITOR_PAGE.INSTANCES:
 			#region INSTANCES
+				
+				ds_list_clear( instances_object_list );
+				var _any = false;
+				with( obj_par_3d ) {
+					if ( ds_list_find_index( other.instances_object_list, object_index ) < 0 ) ds_list_add( other.instances_object_list, object_index );
+					if ( mouse_selected ) _any = true;
+				}
+				if ( !_any ) instances_selected_filter = false;
+				
+				
+				if ( imguigml_begin_popup( "Object Filter Pop-up" ) ) {
+					
+				    if ( imguigml_button( "Cancel" ) ) imguigml_close_current_popup();
+				    if ( imguigml_button( "None" ) ) {
+						instances_object_filter = undefined;
+						imguigml_close_current_popup();
+					}
+					imguigml_separator();
+					
+					var _size = ds_list_size( instances_object_list );
+					for( var _i = 0; _i < _size; _i++ ) {
+						if ( imguigml_button( object_get_pretty_name( instances_object_list[| _i ] ) ) ) {
+							instances_object_filter = instances_object_list[| _i ];
+							imguigml_close_current_popup();
+						}
+					}
+					
+				    imguigml_end_popup();
+				}
+				
 				if ( imguigml_checkbox( "Filter by selected", instances_selected_filter ) ) instances_selected_filter = !instances_selected_filter;
+				imguigml_same_line();
+				if ( imguigml_button( "Filter by object" ) ) imguigml_open_popup( "Object Filter Pop-up" );
 				imguigml_same_line();
 				if ( imguigml_button( "Select all" ) ) with( obj_par_3d ) mouse_selected = true;
 				imguigml_same_line();
 				if ( imguigml_button( "Deselect all" ) ) with( obj_par_3d ) mouse_selected = false;
 				imguigml_new_line();
-				
-				var _any = false;
-				with( obj_par_3d ) if ( mouse_selected ) _any = true;
-				if ( !_any ) instances_selected_filter = false;
 				
 				imguigml_columns( 5, "Columns", true );
 				imguigml_text( "Object" );
@@ -362,6 +390,7 @@ if ( window_show ) {
 				
 				with( obj_par_3d ) {
 					if ( other.instances_selected_filter && !mouse_selected ) continue;
+					if ( other.instances_object_filter != undefined ) && ( object_index != other.instances_object_filter ) continue;
 					
 					var _fine_step = 0;
 					var _coarse_step = 0;
