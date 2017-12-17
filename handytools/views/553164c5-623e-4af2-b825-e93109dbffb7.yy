@@ -22,7 +22,8 @@
         "9254d802-d9a1-41a5-859e-1d8c3cbbed54",
         "38b51cb9-ce6e-4da2-928f-9decb2a5cb36",
         "eb9dd674-bdb2-4402-88f0-80f6036ac070",
-        "9cd32f43-f704-4508-a431-1a4fd334ead6"
+        "9cd32f43-f704-4508-a431-1a4fd334ead6",
+        "0333d723-7103-4e28-b331-365908976959"
     ],
     "filterType": "GMScript",
     "folderName": "snippets",

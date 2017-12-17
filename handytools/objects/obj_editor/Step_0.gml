@@ -50,6 +50,8 @@ if ( window_show ) {
 		window_page_return = _;
 		if ( window_page == E_EDITOR_PAGE.MOVE ) || ( window_page == E_EDITOR_PAGE.ROTATE ) with( obj_par_3d ) mouse_active_set_relative_values();
 	}
+	
+	if ( keyboard_check_released( vk_control ) ) with( obj_par_3d ) mouse_selected = false;
 	#endregion
 	
 	imguigml_set_next_window_collapsed( window_collapsed );
@@ -105,7 +107,11 @@ if ( window_show ) {
 				imguigml_new_line();
 				imguigml_text( "F11 = Open/Close editor window" );
 				imguigml_text( "Space = Collapse window" );
+				imguigml_text( "Left Click = Select/deselect objects" );
+				imguigml_text( "Right Click = Use tool" );
+				imguigml_text( "Control = Deselect all" );
 				imguigml_text( "Shift = Move slow" );
+				imguigml_text( "Q/E = Ascend/descend" );
 				imguigml_text( "Shift+Num = Select tool (or click on the tabs)" );
 				imguigml_text( "Tab = Return to previous tool" );
 				imguigml_separator();
@@ -118,21 +124,23 @@ if ( window_show ) {
 				    if ( instance_exists( obj_menu ) ) tr_instance_destroy( obj_menu ) else tr_instance_create( 0, 0, obj_menu );
 				}
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Fly"          , global.do_fly        ) ) global.do_fly = !global.do_fly;
+				if ( imguigml_checkbox( "Fly"          , global.do_fly        ) ) global.do_fly        = !global.do_fly;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip = !global.do_noclip;
+				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip     = !global.do_noclip;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither = !global.do_dither;
+				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting = !global.do_lighting;
+				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting   = !global.do_lighting;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click = !global.show_click;
+				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click    = !global.show_click;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls = !global.do_walls;
+				if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls      = !global.do_walls;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling = !global.do_ceiling;
+				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling    = !global.do_ceiling;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Spawners", global.show_spawners ) ) global.show_spawners = !global.show_spawners;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Culling"      , global.do_culling    ) ) global.do_culling    = !global.do_culling;
 				imguigml_new_line();
 				#endregion
 				

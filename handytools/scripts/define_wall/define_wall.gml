@@ -47,21 +47,21 @@ with( _inst ) {
             
             var _y = _thickness*0.5;
             vertex_position_3d( _vbuff, _p_l, _y, _p_t ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
-            vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
             vertex_position_3d( _vbuff, _p_l, _y, _p_b ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
+            vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
             
             vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
-            vertex_position_3d( _vbuff, _p_r, _y, _p_b ); vertex_texcoord( _vbuff, 1, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
             vertex_position_3d( _vbuff, _p_l, _y, _p_b ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
+            vertex_position_3d( _vbuff, _p_r, _y, _p_b ); vertex_texcoord( _vbuff, 1, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 1, 0 );
             
             _y = -_thickness*0.5;
             vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
-            vertex_position_3d( _vbuff, _p_l, _y, _p_t ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
             vertex_position_3d( _vbuff, _p_l, _y, _p_b ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
+            vertex_position_3d( _vbuff, _p_l, _y, _p_t ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
             
             vertex_position_3d( _vbuff, _p_r, _y, _p_b ); vertex_texcoord( _vbuff, 1, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
-            vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
             vertex_position_3d( _vbuff, _p_l, _y, _p_b ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
+            vertex_position_3d( _vbuff, _p_r, _y, _p_t ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, -1, 0 );
             
         }
     }

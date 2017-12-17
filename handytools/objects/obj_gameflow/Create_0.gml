@@ -9,7 +9,8 @@ global.do_fly          = DEVELOPMENT;
 global.show_click      = false;
 global.do_walls        = true;
 global.do_ceiling      = true;
-global.show_spawners = true;
+global.show_spawners   = DEVELOPMENT;
+global.do_culling      = !DEVELOPMENT;
 
 global.menu_page = 0;
 
