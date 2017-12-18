@@ -17,18 +17,8 @@ switch( view_current ) {
 		                     else s_shader_uniform_f( "u_vAmbientColour", 1.0, 1.0, 1.00, 1.0 );
 		
 		var _light = 0;
-		with( obj_camera ) { //Make proximity light for camera
-			s_shader_set_light( _light, x, y, z, 100, c_gray, 1 );
-		    _light++;
-		}
-		
-		with( obj_light ) { //Add scene lights
-		    if ( !visible ) continue;
-			s_shader_set_light( _light, x, y, z, range, colour, 1 );
-		    _light++;
-		}
-		
-		//Reset the remainder of the lights to off
+		with( obj_camera ) s_shader_set_light( _light++, x, y, z, 100, c_gray, 1 );
+		with( obj_light ) if ( visible ) s_shader_set_light( _light++, x, y, z, range, colour, 1 );
 		for( var _i = _light; _i < 8; _i++ ) s_shader_set_light( _light, 0, 0, 0, 1, c_black, 0 );
 		
 	break;
