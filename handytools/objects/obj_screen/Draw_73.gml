@@ -9,7 +9,7 @@ gpu_set_fog( false, background_colour, 0, 0 );
 
 switch( view_current ) {
 	
-	case 0: //What the player sees, using forward rendering for lights
+	case 0:
 		camera_apply( camera_2d );
 		var _x = global.app_surf_w/2;
 		var _y = global.app_surf_h/2;
@@ -20,7 +20,7 @@ switch( view_current ) {
 													       0, obj_gameflow.transition_colour, obj_gameflow.transition_t );
 	break;
 	
-	case 1: //A screenspace click detection render
+	case 1:
 		global.click_render = false;
 	break;
 	
