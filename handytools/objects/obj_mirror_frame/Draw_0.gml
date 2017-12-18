@@ -14,7 +14,7 @@ if ( !global.click_render ) {
 	vertex_submit( mirror_model, pr_trianglestrip, surface_get_texture( srf_mirror ) );
     matrix_reset_world();
 	
-    shader_set( shd_psx );
+    shader_set( shd_per_texel_lighting );
 	
 } else if ( !global.mirror_render ) {
 	

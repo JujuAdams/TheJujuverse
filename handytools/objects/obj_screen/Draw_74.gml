@@ -5,18 +5,11 @@ var _app_h = surface_get_height( srf_pov );
 var _scale_w = _gui_w / _app_w;
 var _scale_h = _gui_h / _app_h;
 var _scale = min( _scale_w, _scale_h );
-if ( keyboard_check_pressed( ord( "J" ) ) ) trace( _scale_w, ",", _scale_h );
 if ( ( _scale >= 1 ) && FORCE_WINDOW_SCALE_INTEGER ) _scale = floor( _scale );
-if ( keyboard_check_pressed( ord( "J" ) ) ) trace( _scale );
 var _draw_w = _app_w*_scale;
 var _draw_h = _app_h*_scale;
 var _draw_x = 0.5*( _gui_w - _draw_w );
 var _draw_y = 0.5*( _gui_h - _draw_h );
-
-if ( keyboard_check_pressed( ord( "J" ) ) ) {
-	trace( _gui_w, "x", _gui_h, "   ", _app_w, "x", _app_h );
-	trace( _draw_x, ",", _draw_y, "   ", _draw_w, "x", _draw_h );
-}
 
 if ( global.show_click && DEVELOPMENT ) {
     

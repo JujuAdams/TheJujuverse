@@ -719,6 +719,14 @@
             }
         },
         {
+            "Key": "1f6da81e-53c9-46af-9971-66a5c4ec1d69",
+            "Value": {
+                "id": "43e9c4b5-3c6d-4cd7-8c94-b5b6857b9c26",
+                "resourcePath": "scripts\\s_shader_set_light\\s_shader_set_light.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1fa17ba9-ffc9-4eb8-a074-f8594d830607",
             "Value": {
                 "id": "68f95380-eec3-4000-8fc6-be099691da54",
@@ -2943,6 +2951,14 @@
             }
         },
         {
+            "Key": "7e895a3d-2d86-43f4-9edb-c60a4b887504",
+            "Value": {
+                "id": "e2ac2b28-a469-486c-a082-7ee77894387e",
+                "resourcePath": "scripts\\s_shader_rgba\\s_shader_rgba.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7e903c4d-6a94-4239-91a8-a5298dce2b63",
             "Value": {
                 "id": "e571ef25-ab6e-4ac7-ba79-b4d7a352b2ac",
@@ -3715,6 +3731,14 @@
             "Value": {
                 "id": "7a1e4148-a6ad-4f7f-8d31-1c4c9e03918c",
                 "resourcePath": "scripts\\tween_lerp\\tween_lerp.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a21f5263-1a95-4a03-8b48-6c7ca489070e",
+            "Value": {
+                "id": "b6f1a3f0-bd6f-4009-b038-0ca8a084d763",
+                "resourcePath": "scripts\\s_shader_rgb\\s_shader_rgb.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5679,6 +5703,14 @@
             }
         },
         {
+            "Key": "f70c325a-0aae-44fa-860f-ba8056e95d11",
+            "Value": {
+                "id": "f3cf6912-a76b-4a19-a9e6-2f27c5593f15",
+                "resourcePath": "shaders\\shd_per_texel_lighting\\shd_per_texel_lighting.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "f772f102-8308-4426-a2e9-bf601b19f1df",
             "Value": {
                 "id": "eab971b9-730b-4423-a80c-3daac6bb62b9",
@@ -6012,6 +6044,9 @@
         "40f80071-7574-456b-b492-8d1f0cfdacc7",
         "6b29df45-b6eb-44b9-b428-ec2aa853a6d6",
         "1638d121-9858-40f6-a861-10cd98f57728",
+        "1f6da81e-53c9-46af-9971-66a5c4ec1d69",
+        "7e895a3d-2d86-43f4-9edb-c60a4b887504",
+        "a21f5263-1a95-4a03-8b48-6c7ca489070e",
         "bb5ee790-0d04-45c4-997c-8cac91d0b745",
         "82cfb673-82e0-416f-bc31-9832fd10e52b",
         "03ad239f-16c5-49a4-a1f6-70927dffe7d1",

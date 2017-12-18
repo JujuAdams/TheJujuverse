@@ -31,14 +31,6 @@ if ( mouse_over && mouse_check_button_pressed( mb_right ) && ( editor_get_page()
 if ( mouse_clicked ) {
     if editor_is_open() {
         
-        if ( object_index == obj_light ) && ( editor_get_page() == E_EDITOR_PAGE.LIGHT ) {
-            range = get_integer( "range?", range );
-            var _red   = get_integer( "red?"  , colour_get_red(   colour ) );
-            var _green = get_integer( "green?", colour_get_green( colour ) );
-            var _blue  = get_integer( "blue?" , colour_get_blue(  colour ) );
-            colour = make_colour_rgb( _red, _green, _blue );
-        }
-        
         mouse_selected = !mouse_selected;
         
         if ( mouse_selected ) {

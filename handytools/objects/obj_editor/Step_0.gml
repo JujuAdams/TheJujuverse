@@ -117,11 +117,6 @@ if ( window_show ) {
 				
 				#region TOGGLES
 				
-				if ( imguigml_checkbox( "Menu", instance_exists( obj_menu ) ) ) {
-				    tr_instance_destroy( obj_subtitle );
-				    if ( instance_exists( obj_menu ) ) tr_instance_destroy( obj_menu ) else tr_instance_create( 0, 0, obj_menu );
-				}
-				imguigml_same_line();
 				if ( imguigml_checkbox( "Fly"          , global.do_fly        ) ) global.do_fly        = !global.do_fly;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip     = !global.do_noclip;
@@ -131,7 +126,13 @@ if ( window_show ) {
 				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting   = !global.do_lighting;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Culling"      , global.do_culling    ) ) global.do_culling    = !global.do_culling;
+				
 				imguigml_new_line();
+				if ( imguigml_checkbox( "Menu", instance_exists( obj_menu ) ) ) {
+				    tr_instance_destroy( obj_subtitle );
+				    if ( instance_exists( obj_menu ) ) tr_instance_destroy( obj_menu ) else tr_instance_create( 0, 0, obj_menu );
+				}
+				imguigml_same_line();
 				if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls      = !global.do_walls;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling    = !global.do_ceiling;
