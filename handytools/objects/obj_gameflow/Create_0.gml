@@ -34,4 +34,3 @@ transition_action = e_transition.next_room;
 transition_colour = c_black;
 
 unload_current_room();
-load_room_n( global.game_room );
