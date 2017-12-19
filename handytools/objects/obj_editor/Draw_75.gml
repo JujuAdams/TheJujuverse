@@ -11,8 +11,17 @@ if ( editor_is_open() ) {
 		case E_EDITOR_PAGE.DELETE:    draw_text( 80, 15, "DELETE"    ); break;
 		case E_EDITOR_PAGE.LIGHT:     draw_text( 80, 15, "LIGHT"     ); break;
 	}
-	
 	if ( window_collapsed ) {
+		if ( show_hints ) {
+			switch( window_page ) {
+				case E_EDITOR_PAGE.PLACE:     draw_text( 80, 55, "Left Click = Clone" ); draw_text( 80, 75, "Right Click = Spawn" ); break;
+				case E_EDITOR_PAGE.MOVE:      draw_text( 80, 55, "Left Click = Select" ); draw_text( 80, 75, "Right Click (hold) = Freeze" ); break;
+				case E_EDITOR_PAGE.ROTATE:    draw_text( 80, 55, "Left Click = Select" ); draw_text( 80, 75, "Right Click (hold) = Freeze" ); break;
+				case E_EDITOR_PAGE.INSTANCES: draw_text( 80, 55, "Left Click = Select" ); break;
+				case E_EDITOR_PAGE.DELETE:    draw_text( 80, 55, "Left Click = Select" ); draw_text( 80, 75, "Right Click = Delete" ); break;
+				case E_EDITOR_PAGE.LIGHT:     draw_text( 80, 55, "Left Click = Select" ); break;
+			}
+		}
 		switch( window_page_return ) {
 			case E_EDITOR_PAGE.HOME:      draw_text( 80, 35, "Previous: HOME"      ); break;
 			case E_EDITOR_PAGE.PLACE:     draw_text( 80, 35, "Previous: PLACE"     ); break;
@@ -28,7 +37,7 @@ if ( editor_is_open() ) {
 	
 	#region SELECTED READOUT
 	
-	if ( window_collapsed ) {
+	if ( window_collapsed && show_selected_readout ) {
 		
 		if ( window_page == E_EDITOR_PAGE.PLACE ) {
 			draw_text( 250, 15, concat( "x=", place_x ) );

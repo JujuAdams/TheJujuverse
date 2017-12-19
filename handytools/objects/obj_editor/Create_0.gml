@@ -1,5 +1,8 @@
 persistent = true;
 
+show_hints = true;
+show_selected_readout = true;
+
 window_show = EDITOR_START_OPEN;
 window_collapsed = false;
 window_has_set_size = false;

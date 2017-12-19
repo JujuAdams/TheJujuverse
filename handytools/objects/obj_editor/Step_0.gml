@@ -105,28 +105,32 @@ if ( window_show ) {
 				imguigml_new_line();
 				imguigml_text( "F11 = Open/Close editor window" );
 				imguigml_text( "Space = Collapse window" );
-				imguigml_text( "Left Click = Select/deselect objects" );
-				imguigml_text( "Right Click = Use tool" );
-				imguigml_text( "Control = Deselect all" );
 				imguigml_text( "Shift = Move slow" );
 				imguigml_text( "Q/E = Ascend/descend" );
+				imguigml_text( "Left Click/Right Click = Context sensitive" );
+				imguigml_text( "Control = Deselect all" );
 				imguigml_text( "Shift+Num = Select tool (or click on the tabs)" );
 				imguigml_text( "Tab = Return to previous tool" );
-				imguigml_separator();
 				imguigml_new_line();
 				
-				#region TOGGLES
+				#region EDITOR TOGGLES
+				if ( imguigml_checkbox( "Fly"          , global.do_fly         ) ) global.do_fly         = !global.do_fly;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Noclip"       , global.do_noclip      ) ) global.do_noclip      = !global.do_noclip;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "srf_click"    , global.show_click     ) ) global.show_click     = !global.show_click;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Lighting"     , global.do_lighting    ) ) global.do_lighting    = !global.do_lighting;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Culling"      , global.do_culling     ) ) global.do_culling     = !global.do_culling;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Show Context Hints"        , show_hints            ) ) show_hints            = !show_hints;
+				imguigml_same_line();
+				if ( imguigml_checkbox( "Show Selected Details", show_selected_readout ) ) show_selected_readout = !show_selected_readout;
+				imguigml_separator();
+				#endregion
 				
-				if ( imguigml_checkbox( "Fly"          , global.do_fly        ) ) global.do_fly        = !global.do_fly;
-				imguigml_same_line();
-				if ( imguigml_checkbox( "Noclip"       , global.do_noclip     ) ) global.do_noclip     = !global.do_noclip;
-				imguigml_same_line();
-				if ( imguigml_checkbox( "srf_click"    , global.show_click    ) ) global.show_click    = !global.show_click;
-				imguigml_same_line();
-				if ( imguigml_checkbox( "Lighting"     , global.do_lighting   ) ) global.do_lighting   = !global.do_lighting;
-				imguigml_same_line();
-				if ( imguigml_checkbox( "Culling"      , global.do_culling    ) ) global.do_culling    = !global.do_culling;
-				
+				#region CUSTOM TOGGLES
 				imguigml_new_line();
 				if ( imguigml_checkbox( "Menu", instance_exists( obj_menu ) ) ) {
 				    tr_instance_destroy( obj_subtitle );
