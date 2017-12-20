@@ -118,7 +118,7 @@ if ( window_show ) {
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Noclip"       , global.do_noclip      ) ) global.do_noclip      = !global.do_noclip;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "srf_click"    , global.show_click     ) ) global.show_click     = !global.show_click;
+				if ( imguigml_checkbox( "Click Surface", global.show_click     ) ) global.show_click     = !global.show_click;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Lighting"     , global.do_lighting    ) ) global.do_lighting    = !global.do_lighting;
 				imguigml_same_line();

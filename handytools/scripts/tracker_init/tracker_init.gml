@@ -1,3 +1,5 @@
+trace_f( TRACKER_ON? "TRACKER" : "TRACKER (forced)" );
+
 if ( TRACKER_ON ) {
 	
 	//maps and lists get mixed up due some weirdness with OoO

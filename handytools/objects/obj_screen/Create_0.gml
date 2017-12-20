@@ -10,11 +10,13 @@ frame_start_time = get_timer();
 global.dither_sprite = dither_make_sprite();
 global.dither_texture = sprite_get_texture( global.dither_sprite, 0 );
 
-srf_pov = noone;
-srf_click = noone;
 click_array[0] = noone;
 click_instance_over = noone;
 click_through_mirror = false;
 global.click_render = false;
 
 global.mirror_render = false;
+
+grip_create( "pov"  , global.app_surf_w, global.app_surf_h, false, true  ); grip_activate( "pov" );
+grip_create( "click", global.app_surf_w, global.app_surf_h, false, true  ); grip_activate( "click" );
+grip_create( "2d"   , global.app_surf_w, global.app_surf_h, false, false );

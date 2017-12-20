@@ -1,4 +1,11 @@
-///vertex_create_buffer_from_obj( filename, vertex format, flip normals, flip UVs, x, y, z, scale )
+///@param filename
+///@param vertex_format
+///@param flip_normals
+///@param flip_UVs
+///@param x
+///@param y
+///@param z
+///@param scale
 
 var _filename     = argument0;
 var _format       = argument1;

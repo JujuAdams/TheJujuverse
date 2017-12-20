@@ -1,1 +1,4 @@
-if ( DEVTOOL_ON ) instantiate_protected( obj_devtool );
+if ( DEVTOOL_ON ) {
+	trace_f( "DEVTOOL" );
+	instantiate_protected( obj_devtool );
+}

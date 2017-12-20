@@ -7,10 +7,10 @@ draw_set_lighting( false );
 
 gpu_set_fog( false, background_colour, 0, 0 );
 
-switch( view_current ) {
+switch( grip_view_get_camera_name( view_current ) ) {
 	
-	case 0:
-		camera_apply( camera_2d );
+	case "pov":
+		camera_apply( grip_get_camera( "2d" ) );
 		var _x = global.app_surf_w/2;
 		var _y = global.app_surf_h/2;
 		if ( global.game_room != 0 ) && ( global.game_room != 10 ) draw_sprite_ext( spr_white_pixel, 0, _x, _y, 2, 2, 0, c_white, 0.3 );
@@ -20,7 +20,7 @@ switch( view_current ) {
 													       0, obj_gameflow.transition_colour, obj_gameflow.transition_t );
 	break;
 	
-	case 1:
+	case "click":
 		global.click_render = false;
 	break;
 	

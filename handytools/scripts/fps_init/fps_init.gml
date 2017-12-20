@@ -1,1 +1,3 @@
-//Intentionally left blank
+if ( FPS_ON ) {
+	trace_f( "FPS" );
+}

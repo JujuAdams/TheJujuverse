@@ -5,11 +5,11 @@ gpu_set_zwriteenable( true );
 gpu_set_ztestenable( true );
 gpu_set_cullmode( global.do_culling? cull_counterclockwise : cull_noculling );
 draw_set_lighting( false );
-shader_reset(); 
+shader_reset();
 
-switch( view_current ) {
+switch( grip_view_get_camera_name( view_current ) ) {
 	
-	case 0: //What the player sees, using forward rendering for lights
+	case "pov": //What the player sees, using forward rendering for lights
 		
 		s_shader_begin( shd_per_texel_lighting );
 		s_shader_uniform_f( "u_vForceColour", 1.0, 1.0, 1.0, 0.0 );
@@ -23,7 +23,7 @@ switch( view_current ) {
 		
 	break;
 	
-	case 1: //A screenspace click detection render
+	case "click": //A screenspace click detection render
 		click_array = undefined;
 		click_array[0] = noone;
 		click_index = 0;
@@ -44,7 +44,7 @@ with( obj_mirror_frame ) {
     surface_set_target( srf_mirror_click );
         
 		matrix_set( matrix_view, matrix_build_lookat( x, y, z+32,   lengthdir_x( 1, image_angle )+x, lengthdir_y( 1, image_angle )+y, z+32,   0, 0, 1 ) );
-		matrix_set( matrix_projection, matrix_build_projection_perspective_fov( FOV, 320/240, 1, 4000 ) );
+		matrix_set( matrix_projection, matrix_build_projection_perspective_fov( DEFAULT_FOV, 320/240, 1, 4000 ) );
         draw_clear( c_black );
         
         var _index = 0;
@@ -103,7 +103,7 @@ with( obj_mirror_frame ) {
     surface_set_target( srf_mirror );
     draw_clear( background_colour );
 	matrix_set( matrix_view, matrix_build_lookat( x, y, z+32,   lengthdir_x( 1, image_angle )+x, lengthdir_y( 1, image_angle )+y, z+32,   0, 0, 1 ) );
-	matrix_set( matrix_projection, matrix_build_projection_perspective_fov( FOV, 320/240, 1, 4000 ) );
+	matrix_set( matrix_projection, matrix_build_projection_perspective_fov( DEFAULT_FOV, 320/240, 1, 4000 ) );
     with( all ) if ( object_index != obj_mirror_frame ) and ( object_index != obj_dummy_mirror_frame ) event_perform( ev_draw, 0 );
     surface_reset_target();
     
@@ -115,7 +115,7 @@ with( obj_dummy_mirror_frame ) {
     surface_set_target( srf_mirror );
     draw_clear( background_colour );
 	matrix_set( matrix_view, matrix_build_lookat( x, y, z+32,   lengthdir_x( 1, image_angle )+x, lengthdir_y( 1, image_angle )+y, z+32,   0, 0, 1 ) );
-	matrix_set( matrix_projection, matrix_build_projection_perspective_fov( FOV, 320/240, 1, 4000 ) );
+	matrix_set( matrix_projection, matrix_build_projection_perspective_fov( DEFAULT_FOV, 320/240, 1, 4000 ) );
     with( all ) if ( object_index != obj_mirror_frame ) and ( object_index != obj_dummy_mirror_frame ) event_perform( ev_draw, 0 );
     surface_reset_target();
     

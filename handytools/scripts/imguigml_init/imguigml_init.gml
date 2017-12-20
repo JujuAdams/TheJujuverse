@@ -1,1 +1,3 @@
-//Intentionally left blank
+if ( IMGUI_ON ) {
+	trace_f( "ImGUI" );
+}

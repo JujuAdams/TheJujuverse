@@ -108,7 +108,7 @@ if ( ( _object != undefined ) && instance_exists( _instance ) ) {
 	var _old_proj = matrix_get( matrix_projection );
 
 	var _view = matrix_build_lookat( 100, 0, 100,   0, 0, 30,   0, 0, 1 );
-	var _proj = matrix_build_projection_perspective_fov( FOV, surface_get_aspect( preview_surface ), 1, 4000 );
+	var _proj = matrix_build_projection_perspective_fov( DEFAULT_FOV, surface_get_aspect( preview_surface ), 1, 4000 );
 	matrix_set( matrix_view, _view );
 	matrix_set( matrix_projection, _proj );
 

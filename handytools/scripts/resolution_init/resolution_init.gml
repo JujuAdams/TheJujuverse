@@ -1,1 +1,3 @@
-//Intentionally left blank
+if ( RESOLUTION_ON ) {
+	trace_f( "RESOLUTION" );
+}

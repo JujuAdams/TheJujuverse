@@ -1,0 +1,2 @@
+#macro GRIP_VIEWS_START 0
+#macro GRIP_VIEWS_END 7

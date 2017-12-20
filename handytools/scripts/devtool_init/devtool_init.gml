@@ -1,1 +1,3 @@
-//Intentionally left blank
+if ( DEVTOOL_ON ) {
+	trace_f( "DEVTOOL" );
+}

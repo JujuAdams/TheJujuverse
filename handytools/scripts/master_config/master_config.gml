@@ -7,11 +7,11 @@
 #macro RELEASE false
 #macro DEVELOPMENT (true && !RELEASE)
 #macro TITLE "A Mind Is A Small Place"
-#macro VERSION "v2.0.0"
+#macro VERSION "v2.0.2"
 #macro VERSION_NOMIKER "Preview"
-#macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: The /r/GameMaker Discord"
+#macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: @net8floz + The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
-#macro DATE "2017.12.08" //always use YYYY/MM/DD
+#macro DATE "2017.12.20" //always use YYYY/MM/DD
 
 //services
 #macro TRACE_ON       true
@@ -23,6 +23,8 @@
 #macro DEVTOOL_ON    (true  && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  true
+#macro RESOLUTION_ON  false
+#macro GRIP_ON        true
 
 //miscellaneous
 #macro ALLOW_F4_FULLSCREEN true
@@ -41,3 +43,8 @@
 #macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT/3
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
+
+//3d
+#macro DEFAULT_FOV 50
+#macro DEFAULT_Z_NEAR 1
+#macro DEFAULT_Z_FAR 4000

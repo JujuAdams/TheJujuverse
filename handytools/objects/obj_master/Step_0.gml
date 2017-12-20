@@ -2,6 +2,9 @@ if ( audio_group_is_loaded_all() && !loaded ) {
 	loaded = true;
 	trace_f( "Audio groups loaded" );
 	master_start_services();
+	trace_f( "--------------------", NL,
+	         "  SERVICES  LOADED", NL,
+	         "--------------------" );
 	master_start_game();
 }
 

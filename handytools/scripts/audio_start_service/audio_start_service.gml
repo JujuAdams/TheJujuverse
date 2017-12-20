@@ -1,1 +1,4 @@
-if ( AUDIO_ON ) instantiate_protected( obj_music );
+if ( AUDIO_ON ) {
+	trace_f( "AUDIO" );
+	instantiate_protected( obj_music );
+}
