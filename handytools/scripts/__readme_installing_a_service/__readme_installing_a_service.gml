@@ -1,6 +1,6 @@
 /*
 	Installing a service:
-	1. Import all scripts and objects relevant for the service
+	1. Import/Create all scripts and objects relevant for the service
 	2. Set up a SERVICE_ON macro in master_config()
 	3. Execute service_init() in master_init()
 	4. Execute service_start_service() in master_start_services()
