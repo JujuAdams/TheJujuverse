@@ -32,5 +32,3 @@ transition_speed = 0.014;
 transition_direction = -1;
 transition_action = e_transition.next_room;
 transition_colour = c_black;
-
-unload_current_room();

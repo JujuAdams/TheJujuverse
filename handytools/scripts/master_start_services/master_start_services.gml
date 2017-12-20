@@ -16,3 +16,4 @@ resolution_start_service();
 
 instantiate_protected( obj_gameflow );
 instantiate_protected( obj_screen );
+unload_current_room();

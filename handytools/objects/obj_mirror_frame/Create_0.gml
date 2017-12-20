@@ -16,3 +16,5 @@ vertex_position_3d( mirror_model, 0, -42,  3 ); vertex_texcoord( mirror_model, 1
 vertex_position_3d( mirror_model, 0,  46, 62 ); vertex_texcoord( mirror_model, 0, 0 ); vertex_colour( mirror_model, c_white, 1 ); vertex_normal( mirror_model, 1, 0, 0 );
 vertex_position_3d( mirror_model, 0,  46,  3 ); vertex_texcoord( mirror_model, 0, 1 ); vertex_colour( mirror_model, c_white, 1 ); vertex_normal( mirror_model, 1, 0, 0 );
 vertex_end( mirror_model );
+
+mirror_index = global.mirror_count++;

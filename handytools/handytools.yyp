@@ -3391,6 +3391,14 @@
             }
         },
         {
+            "Key": "8ad1ce8e-91eb-49bb-adb7-367e1563288e",
+            "Value": {
+                "id": "d10e7a0f-a87f-413d-9084-a86afb10facd",
+                "resourcePath": "scripts\\grip_reactivate_all\\grip_reactivate_all.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8ae0913b-5bad-461f-ad1b-4bd8c62bc804",
             "Value": {
                 "id": "5fe1cf0a-499c-4e9b-8b20-5fd3eb5b4f2d",
@@ -6112,6 +6120,8 @@
         }
     ],
     "script_order": [
+        "abf215f3-137e-4913-9ec9-86e1e715a7c0",
+        "ff3068a1-7c45-4e52-9543-4d30f5ebd019",
         "dde261cb-c176-4c51-9206-7fa1c6612894",
         "57dea10c-abe9-46fd-a176-30f247cde8e7",
         "7f759bcc-a886-4c8d-b662-0c023291fbcd",
@@ -6278,6 +6288,7 @@
         "5e85dd4e-a9b0-45eb-82b1-efd895489fcb",
         "ef7cd8f7-3b2e-447d-9be8-ebb2c1f09afe",
         "e46387ba-1c28-48fb-b908-b7f19ecf99a3",
+        "8ad1ce8e-91eb-49bb-adb7-367e1563288e",
         "a4ac13a1-ec3f-4e29-8d38-9c0f6d842aea",
         "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
         "bb5fc82a-00a1-448c-8c8f-fe8c16845943",
@@ -6452,8 +6463,6 @@
         "80711f20-30f9-4789-9fe6-3b6de2f1be81",
         "7427ee24-ce39-4a84-985c-940281ed3122",
         "c51d4cce-59ee-47da-9d10-4f1f42847f8c",
-        "abf215f3-137e-4913-9ec9-86e1e715a7c0",
-        "ff3068a1-7c45-4e52-9543-4d30f5ebd019",
         "e85bffff-7d83-4775-b997-691d849cecd3",
         "8babd2e0-a3fa-4ba1-8b43-6f79afef3bd0",
         "4e668c57-b7ef-4b7a-97fa-13579ed4b7c4",

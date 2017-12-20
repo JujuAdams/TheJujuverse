@@ -91,8 +91,6 @@ camera_set_projection();
 global.click_render = false;
 */
 
-//camera_set_projection();
-
 /*
 //Render out mirrors
 global.mirror_render = true;
