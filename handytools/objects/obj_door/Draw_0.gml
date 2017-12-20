@@ -1,3 +1,5 @@
+if ( global.click_render && global.mirror_render ) exit; //Don't render the door on a mirror click surface
+
 mouse_active_force_colour();
 camera_click_handle_fog();
 

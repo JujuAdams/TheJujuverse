@@ -20,6 +20,9 @@ global.menu_page = 0;
 global.game_room = START_ROOM;
 global.game_swell = SWELL_SIZE*( 0.5 + 0.5*dsin( current_time/SWELL_TIME_FACTOR ) );
 
+global.mirror_count = 0;
+global.mirror_click_count = 0;
+
 global.mouse_dx        = 0;
 global.mouse_dy        = 0;
 global.mouse_locked    = false;

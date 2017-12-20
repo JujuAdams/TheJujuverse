@@ -1,5 +1,8 @@
 /// @param string
 
+global.mirror_count = 0;
+global.mirror_click_count = 0;
+
 var _string = argument0;
 var _root_map = json_decode( _string );
 var _objects_map = _root_map[? "objects" ];
