@@ -1,5 +1,5 @@
 {
-    "id": "de0f2faf-d904-4321-8794-750bdedd36fe",
+    "id": "2e0088a4-27ad-4824-81a7-e041cc550b72",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "hammer.obj",

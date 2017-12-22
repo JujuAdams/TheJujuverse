@@ -1,5 +1,5 @@
 {
-    "id": "06db2faa-8571-4366-aca1-81a0f1d1a66a",
+    "id": "78e5c08d-9f23-4763-aae4-94202e4f9003",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "scissors.obj",

@@ -1,5 +1,5 @@
 {
-    "id": "5c9e4ad4-76bf-488f-a50d-2b98943e062e",
+    "id": "68e7ad60-3b96-4bb4-91ed-b4c19ad00552",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "open_book.obj",

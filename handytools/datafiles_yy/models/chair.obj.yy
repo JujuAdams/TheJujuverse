@@ -1,5 +1,5 @@
 {
-    "id": "3a425692-2b78-4c11-8e7a-f4414c6a29c5",
+    "id": "6d406a26-6fb9-40cb-8f8c-3d89edfcec2d",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "chair.obj",

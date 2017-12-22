@@ -1,5 +1,5 @@
 {
-    "id": "6351d57b-6203-48cc-911b-b52dfddf7b45",
+    "id": "21976864-ad62-43bb-8954-7b689095b17c",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "chess_rook.obj",

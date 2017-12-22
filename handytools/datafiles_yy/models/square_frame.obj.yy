@@ -1,5 +1,5 @@
 {
-    "id": "707efe92-3b25-498e-9b43-db0346832318",
+    "id": "d9356b46-673e-4b00-9ee6-e140a395ae11",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "square_frame.obj",

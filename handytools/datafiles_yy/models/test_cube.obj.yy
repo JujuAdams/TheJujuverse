@@ -1,5 +1,5 @@
 {
-    "id": "95a5e9e4-3db5-4882-9d55-e21786d8e908",
+    "id": "6797789e-350f-4125-a4f2-33fba102b0c3",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "test_cube.obj",

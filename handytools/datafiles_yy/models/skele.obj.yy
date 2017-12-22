@@ -1,5 +1,5 @@
 {
-    "id": "04176d03-5d72-4c1f-97af-5eaa0d0846ec",
+    "id": "3f312a8b-e2b9-4f84-b3b7-93a98a70293f",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "skele.obj",

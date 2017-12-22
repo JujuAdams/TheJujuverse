@@ -1,5 +1,5 @@
 {
-    "id": "0c3133c0-7959-4ab0-8cd5-598171eb170f",
+    "id": "5bf8948c-b28a-40c9-a868-1954d16323f1",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "pedestal.obj",

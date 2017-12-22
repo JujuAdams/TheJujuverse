@@ -1,5 +1,5 @@
 {
-    "id": "5f3536b3-ea64-471b-a045-0137fd5df9ea",
+    "id": "189b180d-bd4d-4272-9867-daf1988137b6",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "chess_queen.obj",

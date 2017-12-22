@@ -1,5 +1,5 @@
 {
-    "id": "6c12aaf8-8cc6-4e7b-b1d5-26ae0e493d25",
+    "id": "2efd1d88-0642-4721-b7e8-5e9e792480f4",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "vase1.obj",

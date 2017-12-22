@@ -1,5 +1,5 @@
 {
-    "id": "eb490a22-cfad-4157-ad43-11743331126a",
+    "id": "d48bce5d-c1df-4ee1-a871-9a3cc532cff7",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "desk_lamp.obj",

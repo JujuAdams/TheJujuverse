@@ -6,9 +6,9 @@ if ( mouse_over )
 && ( mouse_interactible || editor_is_open() )
 && ( ( object_index != obj_door ) || !global.mirror_render )
 && ( ( object_index != obj_door ) || !obj_gameflow.transition_do ) {
-    shader_set_uniform_f( shader_get_uniform( shd_per_texel_lighting, "u_vForceColour" ), 1.0, 1.0, 1.0, lerp( 0.5, 0.8, mouse_glow ) );
+    s_shader_colour( "u_vForceColour", c_white, lerp( 0.5, 0.8, mouse_glow ) );
 }
 
 if ( editor_is_open() && mouse_selected ) {
-    shader_set_uniform_f( shader_get_uniform( shd_per_texel_lighting, "u_vForceColour" ), 1.0, 1.0, 1.0, 0.7 );
+    s_shader_colour( "u_vForceColour", c_white, 0.7 );
 }

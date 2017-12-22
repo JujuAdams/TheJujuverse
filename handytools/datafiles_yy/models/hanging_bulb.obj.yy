@@ -1,5 +1,5 @@
 {
-    "id": "84dbb394-92b0-40b3-b80d-8d69a73671ad",
+    "id": "ba424681-5169-4ca7-8526-5e167b5cccd1",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "hanging_bulb.obj",

@@ -1,5 +1,5 @@
 {
-    "id": "de20e707-1598-4dc4-b0ba-959d6cfa6529",
+    "id": "8f057410-e7ce-4c27-873b-0e593caa1ca0",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "chess_king.obj",

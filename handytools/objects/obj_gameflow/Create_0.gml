@@ -19,6 +19,7 @@ global.menu_page = 0;
 
 global.game_room = START_ROOM;
 global.game_swell = SWELL_SIZE*( 0.5 + 0.5*dsin( current_time/SWELL_TIME_FACTOR ) );
+global.happy_ending = false;
 
 global.mirror_count = 0;
 global.mirror_click_count = 0;

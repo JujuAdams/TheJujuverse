@@ -29,6 +29,8 @@
 #macro EDITOR_ON      true
 
 //miscellaneous
+#macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"
+#macro ALLOW_DATAFILE_COPYING !RELEASE //I cannot stress enough that this function should be used extremely carefully
 #macro ALLOW_F4_FULLSCREEN true
 #macro QUIT_ON_ESCAPE (true && !RELEASE)
 #macro NO_RANDOMIZE false

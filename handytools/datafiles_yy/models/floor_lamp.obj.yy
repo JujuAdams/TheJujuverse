@@ -1,5 +1,5 @@
 {
-    "id": "14640678-8674-4adc-b89c-aecbf3267a97",
+    "id": "2efb2378-2014-4978-b053-3f6cf2274132",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "floor_lamp.obj",
