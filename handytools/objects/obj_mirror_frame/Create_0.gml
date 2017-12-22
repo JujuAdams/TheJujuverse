@@ -15,4 +15,6 @@ vertex_position_3d( mirror_model, 0,  46,  3 ); vertex_texcoord( mirror_model, 0
 vertex_end( mirror_model );
 
 mirror_index = global.mirror_count++;
+grip_activate( concat( "mirror", mirror_index ) );
 mirror_click_index = global.mirror_click_count++;
+grip_activate( concat( "mirror click", mirror_click_index ) );

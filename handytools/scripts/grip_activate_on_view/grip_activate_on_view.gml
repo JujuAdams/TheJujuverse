@@ -9,8 +9,6 @@ if ( _view < GRIP_VIEWS_START ) || ( _view > GRIP_VIEWS_END ) {
 	return undefined;
 }
 
-trace_f( "assigning grip ", QU, _name, QU, " to view ", _view );
-
 var _map = global.grip_cameras_map[? _name ];
 if ( _map[? "active" ] ) grip_deactivate( _name ) else _map[? "active" ] = true;
 _map[? "view" ] = _view;

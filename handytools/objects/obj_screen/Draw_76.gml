@@ -1,8 +1,5 @@
 frame_start_time = get_timer();
 
-//click_array = undefined;
-//click_array[0] = noone;
-
 draw_set_colour( c_white );
 
 global.click_index = 0;
