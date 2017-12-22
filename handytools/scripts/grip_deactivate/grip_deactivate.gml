@@ -5,7 +5,7 @@ var _name = argument0;
 var _map = global.grip_cameras_map[? _name ];
 
 if ( !_map[? "active" ] ) {
-	trace( "grip camera", QU, _name, QU, " isn't active!" );
+	trace( "grip camera ", QU, _name, QU, " isn't active!" );
 	exit;
 }
 

@@ -1,2 +1,2 @@
-with( obj_editor ) return window_state[0];
+with( obj_editor ) return window_collapsed;
 return false;

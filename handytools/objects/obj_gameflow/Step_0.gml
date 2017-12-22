@@ -6,9 +6,9 @@ if ( instance_exists( obj_camera ) && !instance_exists( obj_menu ) ) {
 }
 
 var _locked = true;
-if ( !global.mouse_locked ) _locked = false;
-if ( devtool_is_open() && !devtool_is_collapsed() ) _locked = false;
-if (  editor_is_open() &&  !editor_is_collapsed() ) _locked = false;
+if ( !global.mouse_locked
+||   devtool_is_open()
+||   (editor_is_open() && !editor_is_collapsed()) ) _locked = false;
 
 if ( _locked ) {
     

@@ -1,6 +1,6 @@
 if ( editor_is_open() ) {
 	#region HEADER
-	var _lookat_inst = obj_screen.click_instance_over;
+	var _lookat_inst = global.click_instance_over;
 	
 	draw_set_font( fnt_imgui );
 	switch( window_page ) {

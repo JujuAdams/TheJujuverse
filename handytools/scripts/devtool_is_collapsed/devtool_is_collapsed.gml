@@ -1,2 +1,2 @@
-with( obj_devtool ) return window_state[0];
+with( obj_devtool ) return window_collapsed;
 return false;

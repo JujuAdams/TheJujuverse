@@ -28,9 +28,6 @@ switch( grip_view_get_camera_name( view_current ) ) {
 	case "click": //A screenspace click detection render
 		global.click_render = true;
 		global.mirror_render = false;
-		click_array = undefined;
-		click_array[0] = noone;
-		click_index = 0;
 	break;
 	
 	case "mirror0": //Render out mirrors
@@ -53,11 +50,8 @@ switch( grip_view_get_camera_name( view_current ) ) {
 	
 	case "mirror click0": //Render out mirrors
 	case "mirror click1":
-		global.mirror_render = true;
 		global.click_render = true;
-		click_array = undefined;
-		click_array[0] = noone;
-		click_index = 0;
+		global.mirror_render = true;
 	break;
 	
 }

@@ -783,6 +783,14 @@
             }
         },
         {
+            "Key": "20c2ac8d-78bd-4b0b-834a-d6bcfce656d0",
+            "Value": {
+                "id": "2801f445-727a-4d06-97e9-fc42e689df84",
+                "resourcePath": "scripts\\matrix_flip_x\\matrix_flip_x.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2179d076-23f7-4274-9764-f916e83b9c15",
             "Value": {
                 "id": "50431a3e-d549-48b3-9665-c6ca6a8d9d0e",
@@ -6450,6 +6458,7 @@
         "e63a63f0-4988-4434-82cf-b5208078f12e",
         "122d613a-3835-471d-8e41-4cbdcceb3259",
         "6a7e07d7-a632-43b8-8184-f856670eec96",
+        "20c2ac8d-78bd-4b0b-834a-d6bcfce656d0",
         "6c1c8a99-ed36-4672-959e-d94d6d9de5f7",
         "33d06772-2d85-47d3-9ff6-51bebec3168a",
         "9d743b23-e7e5-4fca-95c9-c7cda0aab458",

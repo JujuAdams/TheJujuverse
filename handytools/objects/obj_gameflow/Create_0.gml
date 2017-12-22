@@ -28,6 +28,9 @@ global.mouse_dy        = 0;
 global.mouse_locked    = false;
 global.mouse_lock_time = current_time;
 
+global.click_render  = false;
+global.mirror_render = false;
+
 enum e_transition { nothing, new_game, next_room, end_game, menu }
 transition_do = true;
 transition_t = 1;

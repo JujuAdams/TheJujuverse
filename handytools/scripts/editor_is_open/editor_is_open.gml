@@ -1,2 +1,2 @@
-with( obj_editor ) return window_state[1];
+with( obj_editor ) return window_show;
 return false;

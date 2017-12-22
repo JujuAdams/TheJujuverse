@@ -1,2 +1,2 @@
-with( obj_devtool ) return window_state[1];
+with( obj_devtool ) return window_show;
 return false;

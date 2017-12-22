@@ -21,6 +21,13 @@ switch( grip_view_get_camera_name( view_current ) ) {
 	break;
 	
 	case "click":
+	case "mirror0":
+	case "mirror1":
+	case "mirror2":
+	case "mirror3":
+	case "mirror click0":
+	case "mirror click1":
+		global.mirror_render = false;
 		global.click_render = false;
 	break;
 	

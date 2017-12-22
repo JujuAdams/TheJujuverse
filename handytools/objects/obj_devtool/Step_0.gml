@@ -10,14 +10,16 @@ if ( !instance_exists( obj_imgui ) ) {
 
 if ( window_show ) {
 	
+	imguigml_set_next_window_collapsed( window_collapsed );
 	window_state = imguigml_begin( window_name, true,
-	                          EImGui_WindowFlags.MenuBar |
-							  EImGui_WindowFlags.AlwaysVerticalScrollbar |
-							  EImGui_WindowFlags.AlwaysHorizontalScrollbar );
+	                               EImGui_WindowFlags.MenuBar |
+							       EImGui_WindowFlags.AlwaysVerticalScrollbar |
+							       EImGui_WindowFlags.AlwaysHorizontalScrollbar );
 	if ( !window_state[1] ) {
 		window_show = false;
 		window_has_set_size = false;
 	}
+	window_collapsed = !window_state[0];
 	
 	if ( !window_has_set_size ) {
 		window_has_set_size = true;
@@ -32,17 +34,18 @@ if ( window_show ) {
 	
 	imguigml_begin_menu_bar();
 	var _old_page = window_page;
-		if ( imguigml_menu_item( "Home"           ) ) window_page = E_TRACKER_PAGE.HOME;
-		if ( imguigml_menu_item( "Output"         ) ) window_page = E_TRACKER_PAGE.OUTPUT;
+		if ( imguigml_menu_item( "Home"                      ) ) window_page = E_TRACKER_PAGE.HOME;
+		if ( imguigml_menu_item( "Output"                    ) ) window_page = E_TRACKER_PAGE.OUTPUT;
+		if ( view_enabled ) if ( imguigml_menu_item( "Views" ) ) window_page = E_TRACKER_PAGE.VIEWS;
 	if ( TRACKER_ON ) {
-		if ( imguigml_menu_item( "Maps"           ) ) window_page = E_TRACKER_PAGE.MAPS;
-		if ( imguigml_menu_item( "Lists"          ) ) window_page = E_TRACKER_PAGE.LISTS;
-		if ( imguigml_menu_item( "Grids"          ) ) window_page = E_TRACKER_PAGE.GRIDS;
+		if ( imguigml_menu_item( "Maps"                      ) ) window_page = E_TRACKER_PAGE.MAPS;
+		if ( imguigml_menu_item( "Lists"                     ) ) window_page = E_TRACKER_PAGE.LISTS;
+		if ( imguigml_menu_item( "Grids"                     ) ) window_page = E_TRACKER_PAGE.GRIDS;
 	}
-		if ( imguigml_menu_item( "Surfaces"       ) ) window_page = E_TRACKER_PAGE.SURFACES;
+		if ( imguigml_menu_item( "Surfaces"                  ) ) window_page = E_TRACKER_PAGE.SURFACES;
 	if ( TRACKER_ON ) {
-		if ( imguigml_menu_item( "Vertex Buffers" ) ) window_page = E_TRACKER_PAGE.VERTEX_BUFFERS;
-		if ( imguigml_menu_item( "Instances"      ) ) window_page = E_TRACKER_PAGE.INSTANCES;
+		if ( imguigml_menu_item( "Vertex Buffers"            ) ) window_page = E_TRACKER_PAGE.VERTEX_BUFFERS;
+		if ( imguigml_menu_item( "Instances"                 ) ) window_page = E_TRACKER_PAGE.INSTANCES;
 	}
 	if ( window_page != _old_page ) window_has_set_columns = false;
 	imguigml_end_menu_bar();
@@ -60,9 +63,22 @@ if ( window_show ) {
 			#endregion
 		break;
 		case E_TRACKER_PAGE.OUTPUT:
-			#region HOME
+			#region OUTPUT
 				var _size = ds_list_size( global.master_game_output );
 				for( var _i = 0; _i < _size; _i++ ) imguigml_text( global.master_game_output[| _i ] );
+			#endregion
+		break;
+		case E_TRACKER_PAGE.VIEWS:
+			#region VIEWS
+			
+			var _label = "View";
+			if ( GRIP_ON ) _label = concat( QU, global.grip_view_list[| view_preview ], QU );
+			var _result = imguigml_input_float( _label, view_preview, 1, 1, 0 );
+			view_preview = clamp( _result[1], 0, 7 );
+			imguigml_new_line();
+			imguigml_separator();
+			imguigml_image( surface_get_texture( view_preview_surface ), 480, 480 );
+			
 			#endregion
 		break;
 		case E_TRACKER_PAGE.MAPS:
@@ -250,7 +266,7 @@ if ( window_show ) {
 	
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
-		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
+		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.VIEWS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
 			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*15 );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );
