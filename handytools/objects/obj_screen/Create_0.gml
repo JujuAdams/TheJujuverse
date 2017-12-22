@@ -10,8 +10,9 @@ frame_start_time = get_timer();
 global.dither_sprite = dither_make_sprite();
 global.dither_texture = sprite_get_texture( global.dither_sprite, 0 );
 
-global.click_array = undefined;
 global.click_array[ instance_count-1 ] = noone;
+global.click_array[ 0                ] = noone;
+global.click_index = 1;
 global.click_instance_over  = noone;
 global.click_through_mirror = false;
 
