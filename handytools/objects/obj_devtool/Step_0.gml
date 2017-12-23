@@ -89,7 +89,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_map_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -100,7 +100,16 @@ if ( window_show ) {
 			var _size = ds_list_size( global.tracker_maps );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_maps[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_maps_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -118,7 +127,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_list_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -129,7 +138,17 @@ if ( window_show ) {
 			var _size = ds_list_size( global.tracker_lists );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_lists[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_lists_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -147,7 +166,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_grid_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -158,7 +177,17 @@ if ( window_show ) {
 			var _size = ds_list_size( global.tracker_grids );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_grids[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_grids_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -176,7 +205,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_surface_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -190,11 +219,22 @@ if ( window_show ) {
 			imguigml_next_column();
 			imguigml_text( concat( "<application surface> ", surface_get_width( application_surface ), "x", surface_get_height( application_surface ) ) );
 			imguigml_next_column();
+			imguigml_separator();
 			
 			var _size = ds_list_size( global.tracker_surfaces );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_surfaces[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_surfaces_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -212,7 +252,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_vertex_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -223,7 +263,17 @@ if ( window_show ) {
 			var _size = ds_list_size( global.tracker_vbuffs );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_vbuffs[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_vbuffs_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -241,7 +291,7 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_instance_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "TR" );
+			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -252,7 +302,17 @@ if ( window_show ) {
 			var _size = ds_list_size( global.tracker_instances );
 			for( var _i = 0; _i < _size; _i++ ) {
 				var _id = global.tracker_instances[| _i ];
-				imguigml_text( _i );
+				
+				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
+					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
+					imguigml_same_line();
+					imguigml_text( concat( "Tracker ID=", _i ) );
+					imguigml_separator();
+					imguigml_text( array_unpack( global.tracker_instances_callstack[? _id ], NL, "" ) );
+					imguigml_end_popup();
+				}
+				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				
 				imguigml_next_column();
 				imguigml_text( instance_exists(_id)?(object_get_name(_id.object_index)+":"+string(_id)):"<destroyed?>:"+string(_id) );
 				imguigml_next_column();
