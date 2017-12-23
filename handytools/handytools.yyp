@@ -759,6 +759,14 @@
             }
         },
         {
+            "Key": "1f37008b-a625-4eca-b5b7-40b77b5de961",
+            "Value": {
+                "id": "7caae23e-c097-4c73-b533-43aabcfaeafc",
+                "resourcePath": "datafiles_yy\\WinDev.dll.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "1f53161b-a9fa-4465-8b2c-ff26a088249e",
             "Value": {
                 "id": "4f232e15-f51a-47b3-90cd-faaf4c56d4e0",
