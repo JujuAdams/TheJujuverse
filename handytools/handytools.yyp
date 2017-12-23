@@ -4202,7 +4202,7 @@
             "Key": "a621adb5-c288-4d2e-a8ef-49195cb850e6",
             "Value": {
                 "id": "bedce2b7-059c-421a-9175-f2ab2d524984",
-                "resourcePath": "scripts\/time_passed\/time_passed.yy",
+                "resourcePath": "scripts\\time_has_passed\\time_has_passed.yy",
                 "resourceType": "GMScript"
             }
         },

@@ -6,10 +6,15 @@ if ( IMGUI_ON && keyboard_check_pressed( vk_f11 ) ) {
 	if ( window_show ) {
 		window_has_set_size = false;
 		window_page_return = window_page;
+	} else {
+		control_property_set( 0, "mouse", "lock time", current_time );
 	}
 }
 if ( !instance_exists( obj_imgui ) ) window_show = false;
-if ( window_show && keyboard_check_released( vk_space ) ) window_collapsed = !window_collapsed;
+if ( window_show && keyboard_check_released( vk_space ) ) {
+	window_collapsed = !window_collapsed;
+	if ( window_collapsed ) control_property_set( 0, "mouse", "lock time", current_time );
+}
 
 #region PLACEMENT COORDS
 if ( instance_exists( obj_camera ) ) {
@@ -122,6 +127,8 @@ if ( window_show ) {
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Lighting"     , global.do_lighting    ) ) global.do_lighting    = !global.do_lighting;
 				imguigml_same_line();
+				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
+				imguigml_same_line();
 				if ( imguigml_checkbox( "Culling"      , global.do_culling     ) ) global.do_culling     = !global.do_culling;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Context Hints"   , show_hints            ) ) show_hints            = !show_hints;
@@ -142,8 +149,6 @@ if ( window_show ) {
 				if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling    = !global.do_ceiling;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Spawners", global.show_spawners ) ) global.show_spawners = !global.show_spawners;
-				imguigml_same_line();
-				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
 				imguigml_new_line();
 				#endregion
 				

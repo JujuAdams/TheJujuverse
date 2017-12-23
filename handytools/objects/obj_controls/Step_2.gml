@@ -85,8 +85,12 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
 				_mouse_map[?"aim x"] += _sensitivity * ( cam_mouse_y() - window_get_height()/2 );
 				*/
 				
-				var _dx = _sensitivity * ( window_mouse_get_x() - window_get_width()/2 );
-				var _dy = _sensitivity * ( window_mouse_get_y() - window_get_height()/2 );
+				var _dx = 0;
+				var _dy = 0;
+				if ( time_has_passed( _mouse_map[? "lock time" ], 50 ) ) {
+					var _dx = _sensitivity * ( window_mouse_get_x() - window_get_width()/2 );
+					var _dy = _sensitivity * ( window_mouse_get_y() - window_get_height()/2 );
+				}
 				
 				_mouse_map[?"point x"] += _dx;
 				_mouse_map[?"point y"] += _dy;
