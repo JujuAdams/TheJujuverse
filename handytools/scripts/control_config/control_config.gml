@@ -4,3 +4,4 @@
 */
 
 #macro MAX_PLAYERS 1
+#macro FORCE_LOCK_MOUSE true

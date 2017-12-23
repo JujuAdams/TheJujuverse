@@ -124,7 +124,7 @@ if ( window_show ) {
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Culling"      , global.do_culling     ) ) global.do_culling     = !global.do_culling;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Show Context Hints"        , show_hints            ) ) show_hints            = !show_hints;
+				if ( imguigml_checkbox( "Show Context Hints"   , show_hints            ) ) show_hints            = !show_hints;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Selected Details", show_selected_readout ) ) show_selected_readout = !show_selected_readout;
 				imguigml_separator();

@@ -1,0 +1,1 @@
+#macro SCREEN_MAX_LIGHTS 8

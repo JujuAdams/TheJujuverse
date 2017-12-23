@@ -14,7 +14,8 @@
         "19486558-5cd5-4afc-9939-74fbc8a19139",
         "613c2fa8-55bc-4a6a-8b0f-699ec004631f",
         "857859c4-5c0f-435c-9964-e1db5ca0a7a5",
-        "41c43397-772a-4748-b356-92a4e727e53a"
+        "41c43397-772a-4748-b356-92a4e727e53a",
+        "3161de5c-de70-4038-8b15-1ed5733efd96"
     ],
     "filterType": "GMScript",
     "folderName": "libraries",

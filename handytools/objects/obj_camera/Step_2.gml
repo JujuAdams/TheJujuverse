@@ -1,7 +1,7 @@
 if ( !obj_gameflow.transition_do || ( obj_gameflow.transition_direction == -1 ) ) {
-    look_xy_angle -= global.mouse_dx/8;
+    look_xy_angle -= control_property( 0, "mouse", "dx" )/8;
 	look_xy_angle = (look_xy_angle+720) mod 360;
-    look_pz_angle = clamp( look_pz_angle - global.mouse_dy/5, -89, 89 );
+    look_pz_angle = clamp( look_pz_angle - control_property( 0, "mouse", "dy" )/5, -89, 89 );
 }
 
 var _xy_cos = dcos( look_xy_angle );

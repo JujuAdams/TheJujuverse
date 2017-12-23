@@ -1,6 +1,6 @@
 ///mouse_active_force_colour()
 
-if ( global.click_render ) exit;
+if ( global.screen_click_render ) exit;
 
 if ( mouse_over )
 && ( mouse_interactible || editor_is_open() )

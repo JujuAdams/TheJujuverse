@@ -26,7 +26,8 @@
         "e46387ba-1c28-48fb-b908-b7f19ecf99a3",
         "8ad1ce8e-91eb-49bb-adb7-367e1563288e",
         "febd5dda-a628-4e98-8d6b-f54477e2fb28",
-        "2706800b-4fa8-4a8a-82c6-44381f6a9262"
+        "2706800b-4fa8-4a8a-82c6-44381f6a9262",
+        "a59d2e64-c719-419f-838e-20ad48fd5b5e"
     ],
     "filterType": "GMScript",
     "folderName": "grip",

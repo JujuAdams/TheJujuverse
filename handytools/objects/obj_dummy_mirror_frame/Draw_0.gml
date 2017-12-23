@@ -5,7 +5,7 @@ camera_click_handle_fog();
 event_user( DRAW_USER_EVENT );
 mouse_active_reset_colour();
 
-if ( !global.click_render ) {
+if ( !global.screen_click_render ) {
     shader_reset();
 	
 	matrix_chain_begin();

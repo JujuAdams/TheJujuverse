@@ -1,8 +1,8 @@
 {
-    "id": "d4dd9c85-145a-4d2d-97b3-74e99739fe98",
+    "id": "c72e7a3b-9a33-4108-9837-0f3e4a2f8e67",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "grip_get_current_rendering",
+    "name": "screen_3d_end",
     "IsCompatibility": false,
     "IsDnD": false
 }

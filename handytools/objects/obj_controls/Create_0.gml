@@ -1,12 +1,10 @@
 depth = -2000;
 persistent = true;
-camera_interesting = true;
 
 
 
-
-if ( options_get( "lock mouse" ) ) {
-	window_mouse_set( options_get( "window width"  )/2, options_get( "window height" )/2 );
+if ( options_get( "lock mouse", FORCE_LOCK_MOUSE, true ) ) {
+	window_mouse_set( options_get( "window width" )/2, options_get( "window height" )/2 );
 	var _mouse_x = options_get( "window width"  )/2;
 	var _mouse_y = options_get( "window height" )/2;
 } else {
@@ -30,6 +28,8 @@ for( var _i = 0; _i < MAX_PLAYERS; _i++ ) {
 	_mouse_map[? "point y" ] = _mouse_y;
 	_mouse_map[? "aim x"   ] = 0;
 	_mouse_map[? "aim y"   ] = 0;
+	_mouse_map[? "dx"      ] = 0;
+	_mouse_map[? "dy"      ] = 0;
 	
 	var _key_map = tr_map_create( "keyboard input" );
 	tr_map_add_map( _player_map, "keyboard mapping", _key_map );

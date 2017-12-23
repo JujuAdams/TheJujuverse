@@ -1,8 +1,6 @@
 escape_down_time = current_time;
 var _list = tr_list_create();
 
-global.mouse_locked = false;
-
 credit_string = "";
 ds_list_add( _list, "JUJU ADAMS  /  @jujuadams", "DANIEL MARQUES  /  @i_am_thirteen", "JAN VORISEK  /  @blokatt", "CHRIS ANSELMO  /  @tophtacular" );
 ds_list_shuffle( _list );

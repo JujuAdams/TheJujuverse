@@ -1,43 +1,10 @@
-#region INPUT
-
-if ( instance_exists( obj_camera ) && !instance_exists( obj_menu ) ) {
-    if ( !global.mouse_locked ) global.mouse_lock_time = current_time;
-    global.mouse_locked = true;
-}
-
-var _locked = true;
-if ( !global.mouse_locked
-||   devtool_is_open()
-||   (editor_is_open() && !editor_is_collapsed()) ) _locked = false;
-
-if ( _locked ) {
-    
-    window_set_cursor( cr_none );
-    if ( current_time - global.mouse_lock_time > 100 ) {
-        global.mouse_dx = window_mouse_get_x() - window_get_width()*0.5;
-        global.mouse_dy = window_mouse_get_y() - window_get_height()*0.5;
-    }
-    window_mouse_set( window_get_width()*0.5, window_get_height()*0.5 );
-    
-} else {
-	
-    window_set_cursor( cr_default );
-	global.mouse_dx = 0;
-	global.mouse_dy = 0;
-	
-}
-
-if ( !global.mouse_locked ) {
-    global.mouse_dx = 0;
-    global.mouse_dy = 0;
-}
+global.control_try_lock_mouse = true;
+if ( devtool_is_open() || ( editor_is_open() && !editor_is_collapsed()) ) global.control_try_lock_mouse = false;
 
 if ( keyboard_check_pressed( vk_escape ) ) {
     tr_instance_destroy( obj_subtitle );
-    if ( !instance_exists( obj_menu ) ) tr_instance_create( 0, 0, obj_menu );
+	instantiate( obj_menu );
 }
-
-#endregion
 
 #region OUTRO
 if ( global.game_outro_do ) {

@@ -12,6 +12,7 @@
     "option_mac_copyright": "(c) 2017 GrumpyPug",
     "option_mac_display_cursor": true,
     "option_mac_display_name": "The Purrfect Opportunity",
+    "option_mac_enable_retina": false,
     "option_mac_enable_steam": false,
     "option_mac_icon_png": "${options_dir}\/mac\/icons\/1024.png",
     "option_mac_interpolate_pixels": false,

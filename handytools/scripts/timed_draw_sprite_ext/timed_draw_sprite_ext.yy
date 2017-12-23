@@ -1,8 +1,8 @@
 {
-    "id": "0d978d9b-2de1-4e03-b609-5ae2a2557daf",
+    "id": "59b3219c-8d25-4e62-8ea0-0ba00c6159bf",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "three_dee_start",
+    "name": "timed_draw_sprite_ext",
     "IsCompatibility": false,
     "IsDnD": false
 }

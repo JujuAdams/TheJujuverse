@@ -4,8 +4,8 @@ vertex_buffer_definitions();
 
 global.app_surf_w    = DEFAULT_APP_SURF_W;
 global.app_surf_h    = DEFAULT_APP_SURF_H;
-global.do_dither     = true;
-global.do_lighting   = true;
+global.do_dither     = true && ALLOW_DITHER;
+global.do_lighting   = true && ALLOW_LIGHTING;
 global.do_noclip     = DEVELOPMENT;
 global.do_fly        = DEVELOPMENT;
 global.show_click    = false;
@@ -26,10 +26,9 @@ global.mirror_click_count = 0;
 
 global.mouse_dx        = 0;
 global.mouse_dy        = 0;
-global.mouse_locked    = false;
 global.mouse_lock_time = current_time;
 
-global.click_render  = false;
+global.screen_click_render  = false;
 global.mirror_render = false;
 
 enum e_transition { nothing, new_game, next_room, end_game, menu }

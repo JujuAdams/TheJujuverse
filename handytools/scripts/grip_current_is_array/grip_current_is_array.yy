@@ -1,8 +1,8 @@
 {
-    "id": "c72e7a3b-9a33-4108-9837-0f3e4a2f8e67",
+    "id": "a59d2e64-c719-419f-838e-20ad48fd5b5e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "three_dee_end",
+    "name": "grip_current_is_array",
     "IsCompatibility": false,
     "IsDnD": false
 }

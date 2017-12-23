@@ -35,6 +35,8 @@
 #macro QUIT_ON_ESCAPE (true && !RELEASE)
 #macro NO_RANDOMIZE false
 #macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
+#macro TIMED_SPRITE !RELEASE
+#macro TIMED_SPRITE_THRESHOLD 1000
 
 //graphics
 #macro FORCE_VSYNC true
