@@ -14,4 +14,4 @@ rot_axis_y *= _d;
 rot_axis_z *= _d;
 
 sprite = spr_tex_white;
-model = global.vbf_shard1;
+model = obj_from_name( "shard1" );

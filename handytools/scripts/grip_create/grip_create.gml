@@ -18,7 +18,7 @@ _map[? "manual draw"   ] = false;
 
 var _actual_width  = grip_get_width( argument0 );
 var _actual_height = grip_get_height( argument0 );
-_map[? "surface" ] = tr_surface_create( _actual_width, _actual_height, concat( "grip camera surface ", QU, argument0, QU ), true );
+_map[? "surface" ] = tr_surface_create( _actual_width, _actual_height, concat( "grip: ", QU, argument0, QU ), true );
 
 if ( _map[? "3d" ] ) {
 	var _view_matrix = matrix_build_lookat( 0, 0, 0,   1, 0, 0,   0, 0, 1 );

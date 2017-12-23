@@ -25,7 +25,7 @@ with( _inst ) {
     
     vbf_ceiling = tr_vertex_create_buffer( "ceiling" );
     var _vbuff = vbf_ceiling;
-    vertex_begin( _vbuff, global.vft_simple );
+    vertex_begin( _vbuff, global.vft_simple_3d );
     
     for( var _x = _x1; _x < _x2; _x += _tile_size ) {
         for( var _y = _y1; _y < _y2; _y += _tile_size ) {

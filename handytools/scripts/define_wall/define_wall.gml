@@ -35,7 +35,7 @@ with( _inst ) {
     
     vbf_wall = tr_vertex_create_buffer( "wall" );
     var _vbuff = vbf_wall;
-    vertex_begin( _vbuff, global.vft_simple );
+    vertex_begin( _vbuff, global.vft_simple_3d );
     
     for( var _x = 0; _x < _length; _x += _tile_size ) {
         for( var _z = 0; _z < _z2-_z1; _z += _tile_size ) {

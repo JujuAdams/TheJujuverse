@@ -117,7 +117,7 @@ file_text_close( _file );
 
 
 
-var _vbuff = tr_vertex_create_buffer( _name, true );
+var _vbuff = tr_vertex_create_buffer( ".obj: " + _name, true );
 vertex_begin( _vbuff, _format );
     
     var _size = ds_list_size( _faces_list );
