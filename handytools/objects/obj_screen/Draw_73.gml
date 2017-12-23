@@ -1,13 +1,6 @@
-shader_reset();
-gpu_set_ztestenable( false );
-gpu_set_zwriteenable( false );
-gpu_set_ztestenable( false );
-gpu_set_cullmode( cull_noculling );
-draw_set_lighting( false );
+three_dee_end();
 
-gpu_set_fog( false, background_colour, 0, 0 );
-
-switch( grip_view_get_camera_name( view_current ) ) {
+switch( grip_get_current_rendering() ) {
 	
 	case "pov":
 		camera_apply( grip_get_camera( "2d" ) );

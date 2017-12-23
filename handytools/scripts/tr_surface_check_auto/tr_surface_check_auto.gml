@@ -3,7 +3,7 @@
 var _index  = argument0;
 if ( _index == undefined ) || ( _index < 0 ) return undefined;
 
-var _width  = global.tracker_surfaces_width[?  _index ];
+var _width = global.tracker_surfaces_width[?  _index ];
 
 if ( _width == undefined ) {
 	

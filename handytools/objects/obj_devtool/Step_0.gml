@@ -34,18 +34,18 @@ if ( window_show ) {
 	
 	imguigml_begin_menu_bar();
 	var _old_page = window_page;
-		if ( imguigml_menu_item( "Home"                      ) ) window_page = E_TRACKER_PAGE.HOME;
-		if ( imguigml_menu_item( "Output"                    ) ) window_page = E_TRACKER_PAGE.OUTPUT;
-		if ( view_enabled ) if ( imguigml_menu_item( "Views" ) ) window_page = E_TRACKER_PAGE.VIEWS;
+		if ( imguigml_menu_item( "Home"                 ) ) window_page = E_TRACKER_PAGE.HOME;
+		if ( imguigml_menu_item( "Output"               ) ) window_page = E_TRACKER_PAGE.OUTPUT;
+		if ( GRIP_ON ) if ( imguigml_menu_item( "Grips" ) ) window_page = E_TRACKER_PAGE.GRIPS;
 	if ( TRACKER_ON ) {
-		if ( imguigml_menu_item( "Maps"                      ) ) window_page = E_TRACKER_PAGE.MAPS;
-		if ( imguigml_menu_item( "Lists"                     ) ) window_page = E_TRACKER_PAGE.LISTS;
-		if ( imguigml_menu_item( "Grids"                     ) ) window_page = E_TRACKER_PAGE.GRIDS;
+		if ( imguigml_menu_item( "Maps"                 ) ) window_page = E_TRACKER_PAGE.MAPS;
+		if ( imguigml_menu_item( "Lists"                ) ) window_page = E_TRACKER_PAGE.LISTS;
+		if ( imguigml_menu_item( "Grids"                ) ) window_page = E_TRACKER_PAGE.GRIDS;
 	}
-		if ( imguigml_menu_item( "Surfaces"                  ) ) window_page = E_TRACKER_PAGE.SURFACES;
+		if ( imguigml_menu_item( "Surfaces"             ) ) window_page = E_TRACKER_PAGE.SURFACES;
 	if ( TRACKER_ON ) {
-		if ( imguigml_menu_item( "Vertex Buffers"            ) ) window_page = E_TRACKER_PAGE.VERTEX_BUFFERS;
-		if ( imguigml_menu_item( "Instances"                 ) ) window_page = E_TRACKER_PAGE.INSTANCES;
+		if ( imguigml_menu_item( "Vertex Buffers"       ) ) window_page = E_TRACKER_PAGE.VERTEX_BUFFERS;
+		if ( imguigml_menu_item( "Instances"            ) ) window_page = E_TRACKER_PAGE.INSTANCES;
 	}
 	if ( window_page != _old_page ) window_has_set_columns = false;
 	imguigml_end_menu_bar();
@@ -68,16 +68,14 @@ if ( window_show ) {
 				for( var _i = 0; _i < _size; _i++ ) imguigml_text( global.master_game_output[| _i ] );
 			#endregion
 		break;
-		case E_TRACKER_PAGE.VIEWS:
-			#region VIEWS
+		case E_TRACKER_PAGE.GRIPS:
+			#region GRIPS
 			
-			var _label = "View";
-			if ( GRIP_ON ) _label = concat( QU, global.grip_view_list[| view_preview ], QU );
-			var _result = imguigml_input_float( _label, view_preview, 1, 1, 0 );
-			view_preview = clamp( _result[1], 0, 7 );
+			var _result = imguigml_input_float( concat( QU, global.grip_manual_list[| grip_preview ], QU ), grip_preview, 1, 1, 0 );
+			grip_preview = clamp( _result[1], 0, ds_list_size( global.grip_manual_list )-1 );
 			imguigml_new_line();
 			imguigml_separator();
-			imguigml_image( surface_get_texture( view_preview_surface ), 480, 480 );
+			imguigml_image( surface_get_texture( grip_preview_surface ), 480, 480 );
 			
 			#endregion
 		break;
@@ -194,7 +192,7 @@ if ( window_show ) {
 			
 			var _size = ds_list_size( global.tracker_surfaces );
 			for( var _i = 0; _i < _size; _i++ ) {
-				var _id = global.tracker_grids[| _i ];
+				var _id = global.tracker_surfaces[| _i ];
 				imguigml_text( _i );
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -266,7 +264,7 @@ if ( window_show ) {
 	
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
-		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.VIEWS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
+		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.GRIPS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
 			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*15 );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );

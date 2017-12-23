@@ -1,13 +1,7 @@
+three_dee_start();
 draw_clear( c_black );
 
-gpu_set_ztestenable( true );
-gpu_set_zwriteenable( true );
-gpu_set_ztestenable( true );
-gpu_set_cullmode( global.do_culling? cull_counterclockwise : cull_noculling );
-draw_set_lighting( false );
-shader_reset();
-
-switch( grip_view_get_camera_name( view_current ) ) {
+switch( grip_get_current_rendering() ) {
 	
 	case "pov": //What the player sees, using forward rendering for lights
 		global.click_render = false;

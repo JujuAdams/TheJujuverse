@@ -6,6 +6,8 @@
 ///@param colour
 ///@param alpha
 
+if ( global.shader_focus == undefined ) exit;
+
 var _index  = argument0;
 var _x      = argument1;
 var _y      = argument2;

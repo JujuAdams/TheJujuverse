@@ -10,7 +10,8 @@ if ( _view < GRIP_VIEWS_START ) || ( _view > GRIP_VIEWS_END ) {
 }
 
 var _map = global.grip_cameras_map[? _name ];
-if ( _map[? "active" ] ) grip_deactivate( _name ) else _map[? "active" ] = true;
+if ( _map[? "active" ] ) grip_deactivate( _name );
+_map[? "active" ] = true;
 _map[? "view" ] = _view;
 
 camera_destroy( _map[? "camera" ] );

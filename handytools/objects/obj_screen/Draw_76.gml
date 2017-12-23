@@ -1,5 +1,6 @@
 frame_start_time = get_timer();
 
+s_shader_end();
 draw_set_colour( c_white );
 
 //Assign all instances a "click index" for click detection rendering
@@ -21,3 +22,6 @@ with( obj_camera ) s_shader_set_light( _light++, x, y, z, 100, c_gray, 1 );
 with( obj_light ) if ( visible ) s_shader_set_light( _light++, x, y, z, range, colour, 1 );
 for( var _i = _light; _i < 8; _i++ ) s_shader_set_light( _light, 0, 0, 0, 1, c_black, 0 );
 s_shader_end();
+
+//Render out manual grips
+grip_handle_predraw();

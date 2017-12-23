@@ -1,8 +1,8 @@
 {
-    "id": "d4dd9c85-145a-4d2d-97b3-74e99739fe98",
+    "id": "2706800b-4fa8-4a8a-82c6-44381f6a9262",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "grip_view_get_camera_name",
+    "name": "grip_set_surface",
     "IsCompatibility": false,
     "IsDnD": false
 }
