@@ -1,3 +1,4 @@
+/*
 var _in_game = false;
 if ( global.gameflow_state != e_game_state.menu ) _in_game = true;
 
@@ -37,3 +38,4 @@ if ( _in_game ) {
 	if ( audio_sound_get_gain( game_song ) < 0.05 ) audio_stop_sound( game_song );
 	
 }
+*/

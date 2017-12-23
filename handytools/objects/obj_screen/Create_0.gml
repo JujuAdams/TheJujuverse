@@ -1,11 +1,12 @@
 persistent = true;
 
-global.app_surf_w    = DEFAULT_APP_SURF_W;
-global.app_surf_h    = DEFAULT_APP_SURF_H;
-global.do_dither     = true && ALLOW_DITHER;
-global.do_lighting   = true && ALLOW_LIGHTING;
-global.do_culling    = DEVELOPMENT;
-global.do_fxaa       = false;
+global.app_surf_w         = DEFAULT_APP_SURF_W;
+global.app_surf_h         = DEFAULT_APP_SURF_H;
+global.screen_do_dither   = true && ALLOW_DITHER;
+global.screen_do_lighting = true && ALLOW_LIGHTING;
+global.screen_do_culling  = DEVELOPMENT;
+global.screen_do_fxaa     = false;
+global.screen_show_click  = false;
 
 application_surface_draw_enable( false );
 surface_resize( application_surface, global.app_surf_w, global.app_surf_h );
@@ -15,7 +16,7 @@ global.mirror_count = 0;
 global.mirror_click_count = 0;
 
 global.screen_click_render = false;
-global.mirror_render = false;
+global.screen_mirror_render = false;
 
 if ( FPS_ON ) {
 	smoothed_timer = 5000;
@@ -50,4 +51,4 @@ grip_create( "mirror0"      , 960, 720, false, true );
 grip_create( "mirror1"      , 960, 720, false, true );
 grip_create( "mirror2"      , 960, 720, false, true );
 grip_create( "mirror3"      , 960, 720, false, true );
-global.mirror_render = false;
+global.screen_mirror_render = false;

@@ -2207,6 +2207,14 @@
             }
         },
         {
+            "Key": "540a59de-1e3b-4dd1-bda9-8330c46c6712",
+            "Value": {
+                "id": "e67537f1-9df0-49a1-b115-275568e0ee17",
+                "resourcePath": "scripts\\load_obj_async\\load_obj_async.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5458c0b2-fd9f-4b53-a4fc-890949cae076",
             "Value": {
                 "id": "72bc125c-9bf4-4839-9375-26b664044d7b",
@@ -3428,6 +3436,14 @@
                 "id": "721c1834-e238-4e70-8e78-10d1121ac27c",
                 "resourcePath": "objects\\obj_dead_tree\\obj_dead_tree.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "881e6fd1-7e44-49ad-97db-be929a5092a2",
+            "Value": {
+                "id": "3b0bb16f-a0bb-4a36-a3cd-4d42cd58d1dc",
+                "resourcePath": "scripts\\vertex_create_buffer_from_obj\\vertex_create_buffer_from_obj.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4759,6 +4775,14 @@
             }
         },
         {
+            "Key": "bc5af8ec-c3ce-4667-9d6a-48f9515aebcf",
+            "Value": {
+                "id": "dc4d4afa-c6dd-480a-858a-e07b9c8772b0",
+                "resourcePath": "scripts\\load_obj_async_process\\load_obj_async_process.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bc86d048-250a-41b1-a6ae-501c4f9e0e7c",
             "Value": {
                 "id": "2bd1996f-8c6b-44b2-ba82-c5ce6f6198e8",
@@ -5011,6 +5035,14 @@
             "Value": {
                 "id": "6dcad4b7-b938-4e7a-bb50-4e33cc155a16",
                 "resourcePath": "scripts\\transition_definitions\\transition_definitions.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cae9bbbd-e37c-4670-8128-fb85ec36a712",
+            "Value": {
+                "id": "c775a691-0ff4-470a-8032-7cdb2727841f",
+                "resourcePath": "scripts\\obj_from_name\\obj_from_name.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5292,14 +5324,6 @@
                 "id": "3897c9f6-cd08-4daa-bbf5-889775f0c940",
                 "resourcePath": "sounds\\snd_phone_up\\snd_phone_up.yy",
                 "resourceType": "GMSound"
-            }
-        },
-        {
-            "Key": "d7bea078-b357-42d6-a286-9c7d8d7b0a16",
-            "Value": {
-                "id": "34c25f8f-dd74-4fd6-91e9-acec32363f69",
-                "resourcePath": "scripts\\vertex_create_buffer_from_obj\\vertex_create_buffer_from_obj.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -6650,6 +6674,10 @@
         "c51d4cce-59ee-47da-9d10-4f1f42847f8c",
         "e03a696e-42c6-447f-91ad-a5a6d6a5a121",
         "1c3730e2-d003-49ec-91bd-2d74a3749ffb",
+        "881e6fd1-7e44-49ad-97db-be929a5092a2",
+        "540a59de-1e3b-4dd1-bda9-8330c46c6712",
+        "bc5af8ec-c3ce-4667-9d6a-48f9515aebcf",
+        "cae9bbbd-e37c-4670-8128-fb85ec36a712",
         "e85bffff-7d83-4775-b997-691d849cecd3",
         "8babd2e0-a3fa-4ba1-8b43-6f79afef3bd0",
         "4e668c57-b7ef-4b7a-97fa-13579ed4b7c4",
@@ -6668,7 +6696,6 @@
         "efeaf08b-81cc-4736-b4ef-99c524cfed7c",
         "fb1a3810-29c8-4f38-ab75-651ad238d076",
         "ce084a3b-ce12-431f-aad5-2c4653ad0a10",
-        "d7bea078-b357-42d6-a286-9c7d8d7b0a16",
         "ced4146c-5e65-4769-af69-f19f0b916487",
         "137eefda-b1ba-40cb-9807-785c58cfa693",
         "56debf2b-9683-4c48-af2d-613605ec1e6d",

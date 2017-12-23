@@ -1,3 +1,4 @@
+/*
 if ( !options_get( "transitions" ) ) {
 	if ( !room_exists( target_room ) ) {
 		game_end();
@@ -6,3 +7,4 @@ if ( !options_get( "transitions" ) ) {
 		tween_start_time = current_time - ( tween_in_length + tween_out_length );
 	}
 }
+*/

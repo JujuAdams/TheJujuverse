@@ -1,18 +1,6 @@
 depth = -2000;
 persistent = true;
 
-
-/*
-if ( options_get( "lock mouse", FORCE_LOCK_MOUSE, true ) ) {
-	window_mouse_set( options_get( "window width" )/2, options_get( "window height" )/2 );
-	var _mouse_x = options_get( "window width"  )/2;
-	var _mouse_y = options_get( "window height" )/2;
-} else {
-	var _mouse_x = window_mouse_get_x();
-	var _mouse_y = window_mouse_get_y();
-}
-*/
-
 var _mouse_x = window_mouse_get_x();
 var _mouse_y = window_mouse_get_y();
 
@@ -32,7 +20,7 @@ for( var _i = 0; _i < MAX_PLAYERS; _i++ ) {
 	_mouse_map[? "aim y"     ] = 0;
 	_mouse_map[? "dx"        ] = 0;
 	_mouse_map[? "dy"        ] = 0;
-	_mouse_map[? "lock"      ] = 0;
+	_mouse_map[? "lock"      ] = false;
 	_mouse_map[? "lock time" ] = current_time;
 	
 	var _key_map = tr_map_create( "keyboard input" );

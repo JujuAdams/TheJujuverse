@@ -17,5 +17,4 @@ ds_list_add( _list, "back"      );
 /*
 	We do not include "mouse" or "sensitivity" as these are handled differently (and presumed common to all games)
 */
-global.control_try_lock_mouse = true;
 global.control_master_list = _list;

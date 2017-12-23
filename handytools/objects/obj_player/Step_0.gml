@@ -7,7 +7,7 @@ if ( DEVELOPMENT ) {
     z = 50;
 }
 
-if ( global.do_fly ) {
+if ( global.editor_fly ) {
     if ( keyboard_check( ord( "Q" ) ) ) z += 2 * _debug_factor;
     if ( keyboard_check( ord( "E" ) ) ) z -= 2 * _debug_factor;
 }
@@ -69,7 +69,7 @@ if ( !obj_gameflow.transition_do ) {
             
         }
         
-    } else if ( global.do_noclip ) {
+    } else if ( global.editor_noclip ) {
 		
 		x += velocity_x;
 		y += velocity_y;
@@ -100,5 +100,5 @@ if ( !obj_gameflow.transition_do ) {
 with( obj_camera ) {
     x = other.x;
     y = other.y;
-    z = other.z + (global.do_fly? 0 : other.view_bob_z);
+    z = other.z + (global.editor_fly? 0 : other.view_bob_z);
 }

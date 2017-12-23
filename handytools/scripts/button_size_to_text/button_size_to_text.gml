@@ -1,3 +1,4 @@
+/*
 draw_set_font( font );
 var _w = string_width( text );
 var _h = string_height( text );
@@ -23,3 +24,4 @@ if ( v_align == fa_top ) {
 	mouse_bbox_top    = y - _h/2;
 	mouse_bbox_bottom = y + _h/2;
 }
+*/

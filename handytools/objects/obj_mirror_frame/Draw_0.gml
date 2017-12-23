@@ -1,4 +1,4 @@
-if ( global.mirror_render ) exit; //Don't render mirror frames in mirrors
+if ( global.screen_mirror_render ) exit; //Don't render mirror frames in mirrors
 
 mouse_active_force_colour();
 camera_click_handle_fog();
@@ -18,7 +18,7 @@ if ( !global.screen_click_render ) {
 	
     shader_set( shd_per_texel_lighting );
 	
-} else if ( !global.mirror_render ) {
+} else if ( !global.screen_mirror_render ) {
 	
     gpu_set_fog( false, c_white, 0, 0 );
 	

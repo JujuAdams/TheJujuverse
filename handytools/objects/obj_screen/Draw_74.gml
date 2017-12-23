@@ -15,19 +15,19 @@ var _draw_y = 0.5*( _gui_h - _draw_h );
 
 gpu_set_blendenable( false );
 	
-if ( SCREEN_3D && DEVELOPMENT && global.show_click ) {
+if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 	
 	//Debug mode for click surface checking
 	draw_surface_stretched( grip_get_surface( "click" ), _draw_x, _draw_y, _draw_w, _draw_h );
     
-} else if ( ALLOW_FXAA && global.do_fxaa ) {
+} else if ( ALLOW_FXAA && global.screen_do_fxaa ) {
 	
 	s_shader_begin( shd_fxaa );
 	s_shader_surface_texel_dims( "u_vTexel", _surface );
 	draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
 	s_shader_end();
 		
-} else if ( ALLOW_DITHER && global.do_dither ) {
+} else if ( ALLOW_DITHER && global.screen_do_dither ) {
     
 	s_shader_begin( shd_dither );
 	s_shader_texture_sampler( "u_sDither", global.dither_texture );

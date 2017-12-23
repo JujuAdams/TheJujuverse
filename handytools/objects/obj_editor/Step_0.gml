@@ -119,17 +119,17 @@ if ( window_show ) {
 				imguigml_new_line();
 				
 				#region EDITOR TOGGLES
-				if ( imguigml_checkbox( "Fly"          , global.do_fly         ) ) global.do_fly         = !global.do_fly;
+				if ( imguigml_checkbox( "Fly"          , global.editor_fly         ) ) global.editor_fly         = !global.editor_fly;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Noclip"       , global.do_noclip      ) ) global.do_noclip      = !global.do_noclip;
+				if ( imguigml_checkbox( "Noclip"       , global.editor_noclip      ) ) global.editor_noclip      = !global.editor_noclip;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Click Surface", global.show_click     ) ) global.show_click     = !global.show_click;
+				if ( imguigml_checkbox( "Click Surface", global.screen_show_click     ) ) global.screen_show_click     = !global.screen_show_click;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Lighting"     , global.do_lighting    ) ) global.do_lighting    = !global.do_lighting;
+				if ( imguigml_checkbox( "Lighting"     , global.screen_do_lighting    ) ) global.screen_do_lighting    = !global.screen_do_lighting;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Dither"       , global.do_dither     ) ) global.do_dither     = !global.do_dither;
+				if ( imguigml_checkbox( "Dither"       , global.screen_do_dither     ) ) global.screen_do_dither     = !global.screen_do_dither;
 				imguigml_same_line();
-				if ( imguigml_checkbox( "Culling"      , global.do_culling     ) ) global.do_culling     = !global.do_culling;
+				if ( imguigml_checkbox( "Culling"      , global.screen_do_culling     ) ) global.screen_do_culling     = !global.screen_do_culling;
 				imguigml_same_line();
 				if ( imguigml_checkbox( "Show Context Hints"   , show_hints            ) ) show_hints            = !show_hints;
 				imguigml_same_line();

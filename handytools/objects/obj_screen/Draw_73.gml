@@ -34,4 +34,4 @@ switch( grip_get_current() ) {
 
 //Reset screen render states
 global.screen_click_render = false;
-global.mirror_render = false;
+global.screen_mirror_render = false;

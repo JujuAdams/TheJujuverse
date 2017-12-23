@@ -1,3 +1,4 @@
+///@param name
 ///@param filename
 ///@param vertex_format
 ///@param flip_normals
@@ -7,21 +8,36 @@
 ///@param z
 ///@param scale
 
-var _filename     = argument0;
-var _format       = argument1;
-var _flip_normals = argument2;
-var _flip_UVs     = argument3;
-var _offset_x     = argument4;
-var _offset_y     = argument5;
-var _offset_z     = argument6;
-var _scale        = argument7;
+var _name         = argument0;
+var _filename     = argument1;
+var _format       = argument2;
+var _flip_normals = argument3;
+var _flip_UVs     = argument4;
+var _offset_x     = argument5;
+var _offset_y     = argument6;
+var _offset_z     = argument7;
+var _scale        = argument8;
 
 var _buffer = buffer_create( 2000, buffer_grow, 1 );
 var _id = buffer_load_async( _buffer, _filename, 0, -1 );
-global.buffer_filename[? _id ] = _filename;
-global.buffer_map[? _filename ] = _buffer;
 
-exit;
+var _map = tr_map_create();
+_map[? "name"          ] = _name;
+_map[? "filename"      ] = _filename;
+_map[? "format"        ] = _format;
+_map[? "flip normals"  ] = _flip_normals;
+_map[? "flip UVs"      ] = _flip_UVs;
+_map[? "offset x"      ] = _offset_x;
+_map[? "offset y"      ] = _offset_y;
+_map[? "offset z"      ] = _offset_z;
+_map[? "scale"         ] = _scale;
+_map[? "vertex buffer" ] = undefined; //Set in load_obj_async_process()
+_map[? "buffer"        ] = _buffer;
+_map[? "load id"       ] = _id;
+
+tr_map_add_map( global.obj_load_map, _id, _map );
+return _id;
+
 /*
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 

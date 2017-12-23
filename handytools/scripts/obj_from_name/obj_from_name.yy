@@ -1,8 +1,8 @@
 {
-    "id": "881e6fd1-7e44-49ad-97db-be929a5092a2",
+    "id": "cae9bbbd-e37c-4670-8128-fb85ec36a712",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "vertex_create_buffer_from_obj",
+    "name": "obj_from_name",
     "IsCompatibility": false,
     "IsDnD": false
 }

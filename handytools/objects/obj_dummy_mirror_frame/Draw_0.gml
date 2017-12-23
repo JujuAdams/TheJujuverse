@@ -1,4 +1,4 @@
-if ( global.mirror_render ) exit; //Don't render mirror frames in mirrors
+if ( global.screen_mirror_render ) exit; //Don't render mirror frames in mirrors
 
 mouse_active_force_colour();
 camera_click_handle_fog();

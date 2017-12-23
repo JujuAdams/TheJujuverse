@@ -1,28 +1,22 @@
-///@param filename
-///@param vertex_format
-///@param flip_normals
-///@param flip_UVs
-///@param x
-///@param y
-///@param z
-///@param scale
+///@param map
+///@param delete_buffer
 
-var _filename     = argument0;
-var _format       = argument1;
-var _flip_normals = argument2;
-var _flip_UVs     = argument3;
-var _offset_x     = argument4;
-var _offset_y     = argument5;
-var _offset_z     = argument6;
-var _scale        = argument7;
+var _map           = argument0;
+var _delete_buffer = argument1;
 
-var _buffer = buffer_create( 2000, buffer_grow, 1 );
-var _id = buffer_load_async( _buffer, _filename, 0, -1 );
-global.buffer_filename[? _id ] = _filename;
-global.buffer_map[? _filename ] = _buffer;
+var _name          = _map[? "name"         ];
+var _filename      = _map[? "filename"     ];
+var _format        = _map[? "format"       ];
+var _flip_normals  = _map[? "flip normals" ];
+var _flip_UVs      = _map[? "flip UVs"     ];
+var _offset_x      = _map[? "offset x"     ];
+var _offset_y      = _map[? "offset y"     ];
+var _offset_z      = _map[? "offset z"     ];
+var _scale         = _map[? "scale"        ];
+var _buffer        = _map[? "buffer"       ];
 
-exit;
-/*
+buffer_save( _buffer, "_" );
+
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 
 var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
@@ -30,7 +24,7 @@ var _normal_list  = tr_list_create(); ds_list_add( _normal_list,   0,0,0 );
 var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
 var _faces_list   = tr_list_create();
 
-var _file = file_text_open_read( _filename );
+var _file = file_text_open_read( "_" );
 while( !file_text_eof( _file ) ) {
 
     var _row_string = file_text_read_string( _file );
@@ -123,7 +117,7 @@ file_text_close( _file );
 
 
 
-var _vbuff = tr_vertex_create_buffer( argument0, true );
+var _vbuff = tr_vertex_create_buffer( _name, true );
 vertex_begin( _vbuff, _format );
     
     var _size = ds_list_size( _faces_list );
@@ -205,5 +199,10 @@ tr_list_destroy( _normal_list  );
 tr_list_destroy( _texture_list );
 tr_list_destroy( _faces_list   );
 
+_map[? "vertex buffer" ] = _vbuff;
+if ( _delete_buffer ) {
+	buffer_delete( _buffer );
+	_map[? "buffer" ] = undefined;
+}
+file_delete( "_" );
 return _vbuff;
-*/

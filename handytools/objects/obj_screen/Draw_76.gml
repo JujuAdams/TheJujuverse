@@ -19,7 +19,7 @@ if ( SCREEN_3D ) {
 	//Set up uniforms for the lighting shader
 	s_shader_begin( SCREEN_3D_SHADER );
 	var _light = 0;
-	if ( ALLOW_LIGHTING && global.do_lighting ) {
+	if ( ALLOW_LIGHTING && global.screen_do_lighting ) {
 		s_shader_colour( "u_vAmbientColour", C_AMBIENT, 0 );
 		with( obj_camera ) s_shader_set_light( _light++, x, y, z, 100, c_gray, 1 );
 		with( obj_light ) if ( visible ) s_shader_set_light( _light++, x, y, z, range, colour, 1 );

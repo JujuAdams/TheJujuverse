@@ -1,0 +1,1 @@
+rumble_list = tr_list_create( "<rumble list>", true );

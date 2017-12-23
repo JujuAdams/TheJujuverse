@@ -1,3 +1,4 @@
+/*
 var _left   = VERY_LARGE;
 var _top    = VERY_LARGE;
 var _right  = VERY_NEGATIVE;
@@ -53,3 +54,4 @@ _centre_x = clamp( _centre_x, 0.5*_w, room_width  - 0.5*_w );
 _centre_y = clamp( _centre_y, 0.5*_h, room_height - 0.5*_h );
 
 return [ _centre_x, _centre_y, _zoom ];
+*/

@@ -1,5 +1,6 @@
-global.control_try_lock_mouse = true;
-if ( devtool_is_open() || ( editor_is_open() && !editor_is_collapsed()) ) global.control_try_lock_mouse = false;
+var _lock_mouse = true;
+if ( devtool_is_open() || ( editor_is_open() && !editor_is_collapsed()) ) _lock_mouse = false;
+control_property_set( 0, "mouse", "lock", _lock_mouse );
 
 if ( keyboard_check_pressed( vk_escape ) ) {
     tr_instance_destroy( obj_subtitle );
@@ -11,7 +12,7 @@ if ( global.game_outro_do ) {
     
     switch( global.game_outro_stage ) {
         case 0:
-            if ( current_time > global.game_outro_last_event + 5500 ) {
+            if ( time_has_passed( global.game_outro_last_event, 5500 ) ) {
                 global.game_outro_stage++;
                 global.game_outro_last_event = current_time;
                 audio_play_sound( snd_skeleton_reverse, 1, false );
@@ -22,14 +23,14 @@ if ( global.game_outro_do ) {
         case 1:
             if ( global.game_room == 10 ) {
                 
-                if ( current_time > global.game_outro_last_event + 16000 ) {
+                if ( time_has_passed( global.game_outro_last_event, 16000 ) ) {
                     unload_current_room();
                     tr_instance_create( 0, 0, obj_menu );
                 }
                 
             } else {
                 
-                if ( current_time > global.game_outro_last_event + 8000 ) {
+                if ( time_has_passed( global.game_outro_last_event, 8000 ) ) {
                     with( obj_gameflow ) {
                         transition_do = true;
                         transition_t = 0;

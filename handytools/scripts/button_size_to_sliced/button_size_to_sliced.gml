@@ -1,3 +1,4 @@
+/*
 var _wl = sprite_get_width(spr_button_left);
 var _wr = sprite_get_width(spr_button_right);
 var _h = sprite_get_height(spr_button_center);
@@ -19,3 +20,4 @@ mouse_bbox_bottom = y + _h;
 
 mouse_bbox_left = x;
 mouse_bbox_right = x + _wl + _wr + _width;
+*/

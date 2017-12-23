@@ -75,7 +75,7 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
 			if ( keyboard_check(          _key ) ) _state_map[?_control] = HELD else
 			if ( keyboard_check_released( _key ) ) _state_map[?_control] = RELEASED;
 			
-			if ( options_get( "lock mouse", FORCE_LOCK_MOUSE, true ) && global.control_try_lock_mouse ) {
+			if ( options_get( "lock mouse", FORCE_LOCK_MOUSE, true ) && _mouse_map[? "lock" ] ) {
 				
 				/*
 				_mouse_map[?"point x"] += _sensitivity * ( cam_mouse_x() - window_get_width()/2 );

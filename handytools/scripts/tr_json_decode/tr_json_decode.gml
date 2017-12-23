@@ -3,7 +3,7 @@
 ///@param protected
 //
 // Original: 2017/01/21 @jujuadams
-
+/*
 var _json_string = argument0;
 var _note        = argument1;
 var _protected   = argument2;
@@ -194,3 +194,4 @@ repeat( _size ) {
 
 trace_error( false, "tr_json_decode: unexpected end of string" );
 return _stack[0];
+*/

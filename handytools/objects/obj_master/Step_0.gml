@@ -1,4 +1,4 @@
-if ( audio_group_is_loaded_all() && !loaded ) {
+if ( audio_group_is_loaded_all() && !loaded && ds_map_empty( global.obj_load_map ) ) {
 	loaded = true;
 	trace_f( "Audio groups loaded" );
 	master_start_services();
