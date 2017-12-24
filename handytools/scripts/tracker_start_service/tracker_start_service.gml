@@ -1,1 +1,1 @@
-if ( TRACKER_ON ) trace_f( TRACKER_ON );
+if ( TRACKER_ON ) trace_f( "TRACKER" );

@@ -1,0 +1,1 @@
+if ( TRANSITION_ON ) trace_f( "TRANSITION" );

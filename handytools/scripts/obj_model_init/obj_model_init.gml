@@ -1,5 +1,5 @@
 if ( OBJ_MODEL_ON ) {
-	trace( "OBJ MODEL" );
+	trace_f( "OBJ MODEL" );
 	
 	vertex_format_begin();
 	vertex_format_add_position_3d();

@@ -1,1 +1,1 @@
-//Intentionally left blank
+if ( SCRIBBLE_ON ) trace_f( "SCRIBBLE" );

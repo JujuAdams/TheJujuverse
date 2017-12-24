@@ -20,7 +20,7 @@
 #macro AUDIO_ON       false
 #macro WAN_ON         false
 #macro CONTROLS_ON    true
-#macro OPTIONS_ON     true
+#macro OPTIONS_ON     false
 #macro FPS_ON        (false && !RELEASE)
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
@@ -29,6 +29,7 @@
 #macro EDITOR_ON      false
 #macro OBJ_MODEL_ON   false
 #macro SCRIBBLE_ON    true
+#macro TRANSITION_ON  true
 
 //miscellaneous
 #macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"

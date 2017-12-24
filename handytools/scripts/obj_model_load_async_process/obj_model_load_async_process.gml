@@ -129,16 +129,15 @@ while( !file_text_eof( _file ) ) {
     file_text_readln( _file );          
 }
 _inner_time = get_timer() - _inner_time;
+/*
 trace( _filename, "    inner time=", _inner_time,
                     ", vertices=", ds_list_size( _vertex_list ),
 					 ", normals=", ds_list_size( _normal_list ),
 				   ", texcoords=", ds_list_size( _texture_list ),
 				       ", faces=", ds_list_size( _faces_list ) );
-
+*/
 file_text_close( _file );
 file_delete( "_" );
-
-trace( _filename, "    inner time=", _inner_time );
 
 var _vbuff = tr_vertex_create_buffer( ".obj: " + _name, true );
 vertex_begin( _vbuff, _format );
@@ -229,7 +228,7 @@ if ( _delete_buffer ) {
 }
 
 _total_time = get_timer() - _total_time;
-trace( _filename, "    total time=", _total_time );
+//trace( _filename, "    total time=", _total_time );
 global.obj_model_total_time += _total_time;
 
 return _vbuff;

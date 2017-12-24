@@ -10,7 +10,7 @@ if ( !SCRIBBLE_AUTO_FONT_INIT ) {
 //------------------------------------------------------------------
 
 if ( !SCRIBBLE_ON ) exit;
-trace( "SCRIBBLE" );
+trace_f( "SCRIBBLE" );
 
 vertex_format_begin();
 vertex_format_add_position_3d();

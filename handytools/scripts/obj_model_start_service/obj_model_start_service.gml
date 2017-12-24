@@ -1,4 +1,4 @@
 if ( OBJ_MODEL_ON ) {
-	trace( "OBJ MODEL" );
+	trace_f( "OBJ MODEL" );
 	instantiate_protected( obj_obj_model );
 }

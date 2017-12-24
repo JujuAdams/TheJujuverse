@@ -15,3 +15,4 @@ resolution_init();
     editor_init();
  obj_model_init();
   scribble_init();
+transition_init();
