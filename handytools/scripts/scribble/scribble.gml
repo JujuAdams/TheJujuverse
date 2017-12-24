@@ -1,11 +1,11 @@
 /// @param string
-/// @param font
-/// @param colour
-/// @param halign
 /// @param box_width
-/// @param line_height
-/// @param box_halign
-/// @param box_valign 
+/// @param [font]
+/// @param [colour]
+/// @param [halign]
+/// @param [line_height]
+/// @param [box_halign]
+/// @param [box_valign] 
 //
 //  April 2017
 //  Juju Adams
@@ -15,14 +15,15 @@
 //  This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
 //  https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-var _str         = argument0;
-var _def_font    = argument1;
-var _def_colour  = argument2;
-var _def_halign  = argument3;
-var _width_limit = argument4;
-var _line_height = argument5;
-var _box_halign  = argument6;
-var _box_valign  = argument7;
+var _str         = argument[0];
+var _width_limit = argument[1];
+var _def_font    = ((argument_count<3) || (argument[2]==undefined))? DEFAULT_FONT             : argument[2];
+draw_set_font( _def_font );
+var _def_colour  = ((argument_count<4) || (argument[3]==undefined))? c_white                  : argument[3];
+var _def_halign  = ((argument_count<5) || (argument[4]==undefined))? fa_left                  : argument[4];
+var _line_height = ((argument_count<6) || (argument[5]==undefined))? string_height( chr(13) ) : argument[5];
+var _box_halign  = ((argument_count<7) || (argument[6]==undefined))? fa_left                  : argument[6];
+var _box_valign  = ((argument_count<8) || (argument[7]==undefined))? fa_top                   : argument[7];
 
 //Replace newlines with single characters
 if ( SCRIBBLE_HASH_NEWLINE ) _str = string_replace_all( _str, "#", chr(13) );
@@ -31,11 +32,10 @@ _str = string_replace_all( _str, chr(13)+chr(10), chr(13) );
 _str = string_replace_all( _str,         chr(10), chr(13) );
 _str = string_replace_all( _str,           "\\n", chr(13) );
 
-draw_set_font( _def_font );
 var _space_width = string_width( " " );
-if ( !is_real( _line_height ) || ( _line_height < 0 ) ) var _line_height = string_height( chr(13) );
 
 var _json = tr_map_create();
+scribble_set_shader( _json );
 
 var _text_root_list         = tr_list_create();
 var _hyperlink_map          = tr_map_create();

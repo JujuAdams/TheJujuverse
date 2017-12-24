@@ -1,8 +1,9 @@
 /// @param x
 /// @param y
 /// @param json
+/// @param [colour]
+/// @param [alpha]
 /// @param [fade]
-/// @param [smoothness] 
 //
 //  April 2017
 //  Juju Adams
@@ -17,23 +18,24 @@ var _old_alpha = draw_get_alpha();
 var _x          = argument[0];
 var _y          = argument[1];
 var _json       = argument[2];
-var _fade       = ((argument_count < 4) || (argument[3]==undefined))? 1 : argument[3];
-var _smoothness = ((argument_count < 5) || (argument[4]==undefined))? 0 : argument[4];
+var _colour     = ((argument_count < 4) || (argument[3]==undefined))? draw_get_colour() : argument[3];
+var _alpha      = ((argument_count < 5) || (argument[4]==undefined))? draw_get_alpha()  : argument[4];
+var _fade       = ((argument_count < 6) || (argument[5]==undefined))? 1                 : argument[5];
 if ( _json < 0 ) exit;
 
 var _hyperlinks        = _json[? "hyperlinks"        ];
 var _hyperlink_regions = _json[? "hyperlink regions" ];
 var _json_lines        = _json[? "lines"             ];
 
-/*
-shader_set( shd_text_fade_char );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fSmoothness" ), _smoothness );
-*/
-s_shader_begin( shd_text_fade_char );
-s_shader_uniform_f( "u_fTime", ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
-s_shader_uniform_f( "u_fSmoothness", _smoothness );
+var _shader            = _json[? "shader"            ];
+var _smoothness        = _json[? "shader smoothness" ];
 
+s_shader_begin( _shader );
+s_shader_uniform_f( "u_fTime"      , ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+s_shader_uniform_f( "u_fSmoothness", _smoothness );
+s_shader_colour(    "u_vColour"    , _colour, _alpha );
+	
+	//Set up basic translation matrix
 	var _matrix;
 	_matrix[15] =  1;
 	_matrix[ 0] =  1;
@@ -45,6 +47,7 @@ s_shader_uniform_f( "u_fSmoothness", _smoothness );
 	
 		vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
 	
+	//Now reset the shader to a straight pass-through (in a really efficient way!)
 	_matrix[12] = 0;
 	_matrix[13] = 0;
 	matrix_set( matrix_world, _matrix );

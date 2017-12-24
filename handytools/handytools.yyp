@@ -359,6 +359,14 @@
             }
         },
         {
+            "Key": "0e8c1dbb-2120-433b-a6b0-e2ec3dc2eb9c",
+            "Value": {
+                "id": "06a9bd79-ff7b-442c-9738-fdcbb7b3551f",
+                "resourcePath": "scripts\\scribble_set_shader\\scribble_set_shader.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0e98f27d-b2c7-4f67-b658-09f96a9b1f8a",
             "Value": {
                 "id": "ae08526c-627c-4af3-8d24-50d4e172cb62",
@@ -631,6 +639,14 @@
             }
         },
         {
+            "Key": "1851a88c-ac67-4682-afb9-a5786b78c601",
+            "Value": {
+                "id": "e79297fb-a0d7-45ea-b216-5648c4800cac",
+                "resourcePath": "views\\1851a88c-ac67-4682-afb9-a5786b78c601.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "18716ca9-56bd-43af-90f6-730cf53a723f",
             "Value": {
                 "id": "a27c2904-e651-40dd-b573-b6bf0d94d9ef",
@@ -812,6 +828,14 @@
                 "id": "68f95380-eec3-4000-8fc6-be099691da54",
                 "resourcePath": "sounds\\snd_breathing\\snd_breathing.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "1faf0582-7efd-42f9-b5f1-48ae040ff140",
+            "Value": {
+                "id": "a90cd0d3-a728-4132-8929-2b83529f0022",
+                "resourcePath": "views\\1faf0582-7efd-42f9-b5f1-48ae040ff140.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1567,14 +1591,6 @@
             }
         },
         {
-            "Key": "39b2d1b4-2e3c-4cc5-b78a-397bd4e02e49",
-            "Value": {
-                "id": "cc8c508b-fe6f-4fbe-810d-6449b01750f6",
-                "resourcePath": "views\\39b2d1b4-2e3c-4cc5-b78a-397bd4e02e49.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "3a5832e8-183e-4b25-b674-99593c64c2de",
             "Value": {
                 "id": "37255056-b42e-4472-8ca6-0256b21646a6",
@@ -1596,14 +1612,6 @@
                 "id": "51058aaf-f1bd-412f-8dfc-2d3dec97094f",
                 "resourcePath": "scripts\/options_apply\/options_apply.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "3c256040-e943-439e-8d4f-cfb62387a74f",
-            "Value": {
-                "id": "37161e9f-d8b5-4bd7-ae20-5232008a9584",
-                "resourcePath": "fonts\\fnt_atari_20\\fnt_atari_20.yy",
-                "resourceType": "GMFont"
             }
         },
         {
@@ -1871,14 +1879,6 @@
             }
         },
         {
-            "Key": "4521f3c6-ce6b-44c2-b56e-d404333d91bf",
-            "Value": {
-                "id": "92504679-2931-4fc9-8d6d-093dc124ef36",
-                "resourcePath": "fonts\/fnt_atari_12\/fnt_atari_12.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "45c55780-1a48-4fe8-a072-acd991151261",
             "Value": {
                 "id": "12056553-5cd8-41ac-a916-a2052b04b6e7",
@@ -2132,14 +2132,6 @@
                 "id": "fe2ed391-f8a4-4668-8435-0de1491dd45f",
                 "resourcePath": "views\\4f63bced-3dd7-4d41-9f5a-e145598ddbd3.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "4feda79b-d653-45b6-9f8a-c2a2c3425172",
-            "Value": {
-                "id": "24c06228-35fe-479f-b251-ea60b1c64762",
-                "resourcePath": "fonts\/fnt_atari_24\/fnt_atari_24.yy",
-                "resourceType": "GMFont"
             }
         },
         {
@@ -3079,14 +3071,6 @@
             }
         },
         {
-            "Key": "75c5452a-83a5-4ec0-8e10-ac69c507c7f1",
-            "Value": {
-                "id": "c96c9e39-81f2-45c7-9cb4-6defbb869829",
-                "resourcePath": "fonts\/fnt_atari_50\/fnt_atari_50.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "75d60e3d-5b63-44a6-937f-721308d3737b",
             "Value": {
                 "id": "01a4e756-6b70-4333-a453-b678f8cec02c",
@@ -3250,7 +3234,7 @@
             "Key": "7f68a045-69fa-4f96-861a-61e318aed382",
             "Value": {
                 "id": "063e02f0-b1c6-4324-87aa-12e7b636704b",
-                "resourcePath": "shaders\/shd_text_fade_line\/shd_text_fade_line.yy",
+                "resourcePath": "shaders\\shd_scribble_fade_line\\shd_scribble_fade_line.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -3922,7 +3906,7 @@
             "Key": "98bb89e5-5367-4f73-b39f-849e3b216dc8",
             "Value": {
                 "id": "9df2525d-28d7-4781-8ddc-4254db1ddbb8",
-                "resourcePath": "shaders\/shd_text_fade_char\/shd_text_fade_char.yy",
+                "resourcePath": "shaders\\shd_scribble_fade_char\\shd_scribble_fade_char.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -5594,7 +5578,7 @@
             "Key": "de10db7c-2101-4677-a2e7-4f157a295010",
             "Value": {
                 "id": "7aab8dd8-095b-4bae-bb2b-e89d8beccdc2",
-                "resourcePath": "shaders\/shd_text_basic\/shd_text_basic.yy",
+                "resourcePath": "shaders\\shd_scribble_basic\\shd_scribble_basic.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -5839,14 +5823,6 @@
             }
         },
         {
-            "Key": "e7dc43ef-76ad-4978-9a31-47e51d9beddb",
-            "Value": {
-                "id": "37ef9694-530c-4648-a564-b0d5deee61ed",
-                "resourcePath": "fonts\\fnt_atari_8\\fnt_atari_8.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "e7eaee2e-7151-4c24-a934-b7b9c3bd1a5a",
             "Value": {
                 "id": "934d6f08-1a82-4636-867b-3165b63cbe77",
@@ -6039,14 +6015,6 @@
             }
         },
         {
-            "Key": "ee1d2cc9-8b56-411c-8fc7-07c73451b4eb",
-            "Value": {
-                "id": "a35d1bc2-51be-4401-94be-f5be29a0fa2f",
-                "resourcePath": "fonts\/fnt_atari_30\/fnt_atari_30.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "ee79df2f-2bc1-4065-857d-033a8952b404",
             "Value": {
                 "id": "fb418523-ebdd-4a05-b64b-cd9c9fa11855",
@@ -6060,14 +6028,6 @@
                 "id": "82eaab3b-a900-4221-92b4-124fee5d842f",
                 "resourcePath": "objects\\obj_floor\\obj_floor.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "eedff2a1-14d6-4ad7-bf2d-c3a5e8448736",
-            "Value": {
-                "id": "3229fae2-01a7-4e2f-b493-72b33ce71b9b",
-                "resourcePath": "fonts\/fnt_test\/fnt_test.yy",
-                "resourceType": "GMFont"
             }
         },
         {
@@ -6647,6 +6607,7 @@
         "26e101ea-d981-47b0-a9a5-a24cf536461e",
         "159cb965-d92e-4297-a66a-3fadfb0d0436",
         "57ab8dc0-3870-4b89-b8e7-66f831ea38ff",
+        "0e8c1dbb-2120-433b-a6b0-e2ec3dc2eb9c",
         "2ca4999d-dbbb-4b62-a545-8e34eed17d3c",
         "c4303bbf-12a2-413a-808f-7a16dbb5c9d6",
         "3e89ba52-5b2e-4e33-b2c7-f995440c3496",

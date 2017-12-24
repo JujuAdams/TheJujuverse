@@ -9,7 +9,7 @@
         "7f68a045-69fa-4f96-861a-61e318aed382"
     ],
     "filterType": "GMShader",
-    "folderName": "text",
+    "folderName": "scribble",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

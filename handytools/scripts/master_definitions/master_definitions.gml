@@ -6,8 +6,8 @@
 //abbreviations
 #macro APP_SURF application_surface
 #macro DEFAULT undefined
-#macro UNDF undefined
-#macro DFLT undefined
+#macro DEF undefined
+#macro UD undefined
 #macro VERY_LARGE 9999999
 #macro VERY_SMALL 0.0000001
 #macro VERY_NEGATIVE -9999999

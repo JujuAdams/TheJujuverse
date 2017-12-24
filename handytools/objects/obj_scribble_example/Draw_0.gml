@@ -13,7 +13,7 @@ switch( test_mode ) {
     case 0:
         draw_text( 5, 5, "SCRIBBLE" );
 		var _t = get_timer();
-        scribble_draw( 15, 40, lorem_ipsum_json, dsin_norm( current_time/70 ), 50 );
+        scribble_draw( 15, 40, lorem_ipsum_json, UD, UD, dsin_norm( current_time/70 ) );
 		_t = get_timer() - _t;
     break;
     case 1:
@@ -30,5 +30,5 @@ switch( test_mode ) {
 	*/
 }
 
-render_time_smoothed = lerp( render_time_smoothed, _t, 0.1 );
-draw_text( 100, 5, concat( "Render time=", render_time_smoothed ) );
+render_time_smoothed = lerp( render_time_smoothed, _t, 0.01 );
+draw_text( 100, 5, concat( "Render time=", floor( render_time_smoothed ) ) );

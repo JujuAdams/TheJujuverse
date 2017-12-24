@@ -10,7 +10,9 @@ render_time_smoothed = 200;
 test_mode = 0;
 
 lorem_ipsum_string = concat( LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM );
-lorem_ipsum_json = scribble( lorem_ipsum_string, fnt_consolas, c_white, fa_left, 800, 20, fa_left, fa_top );
+lorem_ipsum_json = scribble( lorem_ipsum_string, 800, fnt_consolas, UD, UD, 20, UD, UD );
+scribble_set_shader( lorem_ipsum_json, shd_scribble_fade_char, 50 );
+
 /*
 var _str = @"This is text.
 
