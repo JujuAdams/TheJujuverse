@@ -1,4 +1,4 @@
-trace_f( OPTIONS_ON? "OPTIONS" : "OPTIONS (forced)" );
+trace_f( OPTIONS_ON? "OPTIONS" : "OPTIONS (forced default)" );
 
 global.options_defaults = tr_map_create( "options (defaults)", true );
 global.options_json = tr_map_create( "options", true );

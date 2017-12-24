@@ -25,8 +25,9 @@
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
-#macro GRIP_ON        true
-#macro EDITOR_ON      true
+#macro GRIP_ON        false
+#macro EDITOR_ON      false
+#macro OBJ_MODEL_ON   false
 
 //miscellaneous
 #macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"
@@ -34,13 +35,13 @@
 #macro ALLOW_F4_FULLSCREEN true
 #macro QUIT_ON_ESCAPE (true && !RELEASE)
 #macro NO_RANDOMIZE false
-#macro ERROR_DEPRECIATED_SCRIPTS (false && !RELEASE)
+#macro ERROR_DEPRECIATED_SCRIPTS (true && !RELEASE)
 #macro TIMED_SPRITE !RELEASE
 #macro TIMED_SPRITE_THRESHOLD 1000
 
 //graphics
 #macro FORCE_VSYNC true
-#macro FORCE_NO_CURSOR true
+#macro FORCE_NO_CURSOR false
 #macro FORCE_NO_INTERPOLATION true
 #macro FORCE_WINDOW_SCALE_INTEGER !DEVELOPMENT
 #macro DEFAULT_WINDOW_WIDTH 960

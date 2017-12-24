@@ -16,13 +16,6 @@ var _offset_y     = argument5;
 var _offset_z     = argument6;
 var _scale        = argument7;
 
-var _buffer = buffer_create( 2000, buffer_grow, 1 );
-var _id = buffer_load_async( _buffer, _filename, 0, -1 );
-global.buffer_filename[? _id ] = _filename;
-global.buffer_map[? _filename ] = _buffer;
-
-exit;
-/*
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 
 var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
@@ -206,4 +199,3 @@ tr_list_destroy( _texture_list );
 tr_list_destroy( _faces_list   );
 
 return _vbuff;
-*/

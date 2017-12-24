@@ -1,8 +1,5 @@
 persistent = true;
 
-global.editor_noclip = DEVELOPMENT;
-global.editor_fly    = DEVELOPMENT;
-
 show_hints = true;
 show_selected_readout = true;
 

@@ -89,7 +89,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_map_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -109,7 +108,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_maps_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				imguigml_next_column();
 				imguigml_text( _id );
 				imguigml_next_column();
@@ -127,7 +126,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_list_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -147,7 +145,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_lists_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -166,7 +164,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_grid_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -186,7 +183,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_grids_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -205,7 +202,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_surface_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -233,7 +229,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_surfaces_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -252,7 +248,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_vertex_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -272,7 +267,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_vbuffs_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -291,7 +286,6 @@ if ( window_show ) {
 			if imguigml_button( "Copy to clipboard" ) { clipboard_set_text( tr_instance_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 			imguigml_separator();
 			imguigml_columns( 3, "Columns", true );
-			imguigml_text( "More" );
 			imguigml_next_column();
 			imguigml_text( "GM" );
 			imguigml_next_column();
@@ -311,7 +305,7 @@ if ( window_show ) {
 					imguigml_text( array_unpack( global.tracker_instances_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
-				if ( imguigml_button( concat( " ##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
 				
 				imguigml_next_column();
 				imguigml_text( instance_exists(_id)?(object_get_name(_id.object_index)+":"+string(_id)):"<destroyed?>:"+string(_id) );
@@ -326,7 +320,7 @@ if ( window_show ) {
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
 		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.GRIPS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
-			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*15 );
+			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*10 );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );
 			} else {

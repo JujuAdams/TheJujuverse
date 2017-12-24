@@ -16,6 +16,6 @@ if ( TRACE_SHOW_ERROR ) {
 } else if ( TRACE_ON ) {
 	var _str = "";
 	for( var _i = _start; _i < argument_count; _i++ ) _str += string_ext( argument[_i] );
-	trace_v( "ERROR", TRACE_DIV, string_replace_all( _str, NL, TRACE_DIV ) );
+	trace_v( "ERROR", TRACE_DIV, string_replace_all( _str, NL, TRACE_DIV ), TRACE_DIV, "((", debug_get_callstack_unpacked( "  ||  ", "" ), "))" );
 	return _str;
 }

@@ -1,6 +1,11 @@
 ///@param name
 ///@param manual_draw
 
+if ( !GRIP_ON ) {
+	trace_error_q( false, "Can't execute script - turn GRIP on" );
+	exit;
+}
+
 var _name   = argument0;
 var _manual = argument1 || GRIP_FORCE_ALL_MANUAL;
 

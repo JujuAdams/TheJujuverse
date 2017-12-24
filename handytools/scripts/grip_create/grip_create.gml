@@ -4,6 +4,11 @@
 ///@param relative_to_app_surf
 ///@param 3d_projection
 
+if ( !GRIP_ON ) {
+	trace_error_q( false, "Can't execute script - turn GRIP on" );
+	exit;
+}
+
 var _map = tr_map_create();
 tr_map_add_map( global.grip_cameras_map, argument0, _map );
 

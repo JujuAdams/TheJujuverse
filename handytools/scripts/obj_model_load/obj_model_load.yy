@@ -1,8 +1,8 @@
 {
-    "id": "a0c2e24c-f3b5-42cc-b5f2-a774d9c3b175",
+    "id": "dad2e592-565d-4c10-9f86-861c33d0526c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "grip_room_start",
+    "name": "obj_model_load",
     "IsCompatibility": false,
     "IsDnD": false
 }

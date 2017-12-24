@@ -1,5 +1,10 @@
 ///@param name
 
+if ( !GRIP_ON ) {
+	trace_error_q( false, "Can't execute script - turn GRIP on" );
+	exit;
+}
+
 var _map = global.grip_cameras_map[? argument0 ];
 var _surface = _map[? "surface" ];
 tr_surface_set_protect( _surface, false )

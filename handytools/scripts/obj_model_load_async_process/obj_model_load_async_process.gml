@@ -1,6 +1,8 @@
 ///@param map
 ///@param delete_buffer
 
+var _total_time = get_timer();
+
 var _map           = argument0;
 var _delete_buffer = argument1;
 
@@ -15,6 +17,19 @@ var _offset_z      = _map[? "offset z"     ];
 var _scale         = _map[? "scale"        ];
 var _buffer        = _map[? "buffer"       ];
 
+if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
+
+var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
+var _normal_list  = tr_list_create(); ds_list_add( _normal_list,   0,0,0 );
+var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
+var _faces_list   = tr_list_create();
+
+var _first_character = true;
+var _string = "";
+var _value = 0;
+var _fractional = 1;
+var _negative = 1;
+var _mode = 0;
 buffer_save( _buffer, "_" );
 
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
@@ -25,6 +40,7 @@ var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
 var _faces_list   = tr_list_create();
 
 var _file = file_text_open_read( "_" );
+var _inner_time = get_timer();
 while( !file_text_eof( _file ) ) {
 
     var _row_string = file_text_read_string( _file );
@@ -112,10 +128,17 @@ while( !file_text_eof( _file ) ) {
     
     file_text_readln( _file );          
 }
+_inner_time = get_timer() - _inner_time;
+trace( _filename, "    inner time=", _inner_time,
+                    ", vertices=", ds_list_size( _vertex_list ),
+					 ", normals=", ds_list_size( _normal_list ),
+				   ", texcoords=", ds_list_size( _texture_list ),
+				       ", faces=", ds_list_size( _faces_list ) );
 
 file_text_close( _file );
+file_delete( "_" );
 
-
+trace( _filename, "    inner time=", _inner_time );
 
 var _vbuff = tr_vertex_create_buffer( ".obj: " + _name, true );
 vertex_begin( _vbuff, _format );
@@ -204,5 +227,9 @@ if ( _delete_buffer ) {
 	buffer_delete( _buffer );
 	_map[? "buffer" ] = undefined;
 }
-file_delete( "_" );
+
+_total_time = get_timer() - _total_time;
+trace( _filename, "    total time=", _total_time );
+global.obj_model_total_time += _total_time;
+
 return _vbuff;

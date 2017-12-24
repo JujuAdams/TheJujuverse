@@ -6,8 +6,8 @@ matrix_chain_translate( x, y, z );
 if ( global.game_room != 6 ) matrix_chain_translate( 0, 0, global.game_swell );
 if ( global.game_room == 6 ) matrix_chain_translate( 0, 0, -global.game_swell );
 matrix_chain_end( matrix_world );
-vertex_submit( obj_from_name( "phonebase" ), pr_trianglelist, sprite_get_texture( spr_tex_phone_base, 0 ) );
-vertex_submit( obj_from_name( "phonerotary" ) , pr_trianglelist, sprite_get_texture( spr_tex_phone_rotary, 0 ) );
+vertex_submit( obj_model( "phonebase" ), pr_trianglelist, sprite_get_texture( spr_tex_phone_base, 0 ) );
+vertex_submit( obj_model( "phonerotary" ) , pr_trianglelist, sprite_get_texture( spr_tex_phone_rotary, 0 ) );
 
 matrix_chain_begin();
 matrix_chain_rotate_x( -90 );
@@ -22,5 +22,5 @@ matrix_chain_translate( x, y, z );
 if ( global.game_room != 6 ) matrix_chain_translate( 0, 0, global.game_swell );
 if ( global.game_room == 6 ) matrix_chain_translate( 0, 0, -global.game_swell );
 matrix_chain_end( matrix_world );
-vertex_submit( obj_from_name( "phoneheadset" ), pr_trianglelist, sprite_get_texture( spr_tex_phone_headset, 0 ) );
+vertex_submit( obj_model( "phoneheadset" ), pr_trianglelist, sprite_get_texture( spr_tex_phone_headset, 0 ) );
 matrix_reset_world();

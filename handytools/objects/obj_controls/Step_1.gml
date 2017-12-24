@@ -13,3 +13,13 @@ for( var _p = 0; _p < _size; _p++ ) {
 	_state_map[?"down" ] = OFF;
 	
 }
+
+if ( ALLOW_F4_FULLSCREEN && keyboard_check_pressed( vk_f4 ) ) {
+	if ( RESOLUTION_ON ) {
+		resolution_toggle_fullscreen();
+	} else {
+		options_set( "fullscreen", !options_get( "fullscreen" ) );
+		window_set_fullscreen( options_get( "fullscreen" ) );
+		on_fullscreen_toggle();
+	}
+}

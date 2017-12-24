@@ -1,5 +1,7 @@
 ///grip_camera_set_proj_matrix( name, matrix )
 
+if ( !GRIP_ON ) return undefined;
+
 var _name   = argument0;
 var _matrix = argument1;
 

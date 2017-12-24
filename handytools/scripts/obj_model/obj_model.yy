@@ -1,8 +1,8 @@
 {
-    "id": "540a59de-1e3b-4dd1-bda9-8330c46c6712",
+    "id": "cae9bbbd-e37c-4670-8128-fb85ec36a712",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "load_obj_async",
+    "name": "obj_model",
     "IsCompatibility": false,
     "IsDnD": false
 }

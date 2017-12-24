@@ -1,4 +1,5 @@
 var _surface = grip_get_surface( SCREEN_3D? "3d" : "2d" );
+if ( _surface == undefined ) _surface = application_surface;
 
 var _gui_w = display_get_gui_width();
 var _gui_h = display_get_gui_height();

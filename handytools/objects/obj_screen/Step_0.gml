@@ -1,4 +1,4 @@
-if ( SCREEN_3D ) {
+if ( SCREEN_3D && GRIP_ON ) {
 	
 	//Find the instance underneath the centre of the view
 	var _surface = grip_get_surface( "click" );

@@ -1,3 +1,5 @@
+if ( !GRIP_ON ) return undefined;
+
 //Keep view grip surfaces alive
 var _size = ds_list_size( global.grip_view_list );
 for( var _i = GRIP_VIEWS_START; _i <= GRIP_VIEWS_END; _i++ ) {

@@ -1,1 +1,1 @@
-trace_f( "OPTIONS (forced)" );
+trace_f( "OPTIONS (limited)" );

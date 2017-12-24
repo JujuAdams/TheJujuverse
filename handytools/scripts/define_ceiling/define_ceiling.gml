@@ -1,5 +1,10 @@
 ///define_ceiling( x1, y1, x2, y2, z, tile size, texture sprite )
 
+if ( !OBJ_MODEL_ON ) {
+	trace_error_q( false, "Can't build ceiling - turn OBJ_MODEL on" );
+	exit;
+}
+
 var _x1        = argument0;
 var _y1        = argument1;
 var _x2        = argument2;

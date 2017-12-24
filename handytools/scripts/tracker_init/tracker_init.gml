@@ -1,4 +1,4 @@
-trace_f( TRACKER_ON? "TRACKER" : "TRACKER (forced)" );
+trace_f( TRACKER_ON? "TRACKER" : "TRACKER (limited)" );
 
 if ( TRACKER_ON ) {
 	
