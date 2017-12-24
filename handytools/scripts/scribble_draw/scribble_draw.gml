@@ -1,8 +1,8 @@
 /// @param x
 /// @param y
 /// @param json
-/// @param fade
-/// @param smoothness 
+/// @param [fade]
+/// @param [smoothness] 
 //
 //  April 2017
 //  Juju Adams
@@ -14,47 +14,42 @@
 
 var _old_alpha = draw_get_alpha();
 
-var _x          = argument0;
-var _y          = argument1;
-var _json       = argument2;
-var _fade       = argument3;
-var _smoothness = argument4;
+var _x          = argument[0];
+var _y          = argument[1];
+var _json       = argument[2];
+var _fade       = ((argument_count < 4) || (argument[3]==undefined))? 1 : argument[3];
+var _smoothness = ((argument_count < 5) || (argument[4]==undefined))? 0 : argument[4];
 if ( _json < 0 ) exit;
-
-if ( !is_real( _fade ) ) _fade = 1;
-if ( !is_real( _smoothness ) ) _smoothness = 0;
 
 var _hyperlinks        = _json[? "hyperlinks"        ];
 var _hyperlink_regions = _json[? "hyperlink regions" ];
 var _json_lines        = _json[? "lines"             ];
 
 /*
-shader_set( shd_text_basic );
-//*/
-//*
 shader_set( shd_text_fade_char );
 shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
 shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fSmoothness" ), _smoothness );
-//*/
-/*
-shader_set( shd_SCRIBBLE_FADE.ON_line );
-shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_line, "u_fTime" ), ( ds_list_size( _json[? "lines" ] ) + _smoothness ) * _fade );
-shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_line, "u_fSmoothness" ), _smoothness );
-//*/
+*/
+s_shader_begin( shd_text_fade_char );
+s_shader_uniform_f( "u_fTime", ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+s_shader_uniform_f( "u_fSmoothness", _smoothness );
 
-var _matrix;
-_matrix[15] =  1;
-_matrix[ 0] =  1;
-_matrix[ 5] =  1;
-_matrix[10] =  1;
-_matrix[12] = _x;
-_matrix[13] = _y;
-matrix_set( matrix_world, _matrix );
-vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
-_matrix[12] = 0;
-_matrix[13] = 0;
-matrix_set( matrix_world, _matrix );
-shader_reset();
+	var _matrix;
+	_matrix[15] =  1;
+	_matrix[ 0] =  1;
+	_matrix[ 5] =  1;
+	_matrix[10] =  1;
+	_matrix[12] = _x;
+	_matrix[13] = _y;
+	matrix_set( matrix_world, _matrix );
+	
+		vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
+	
+	_matrix[12] = 0;
+	_matrix[13] = 0;
+	matrix_set( matrix_world, _matrix );
+
+s_shader_end();
 
 
 

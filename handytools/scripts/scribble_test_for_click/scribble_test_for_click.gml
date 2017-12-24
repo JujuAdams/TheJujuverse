@@ -1,5 +1,5 @@
-/// @description text_test_for_click( json, hyperlink name )
-/// @function text_test_for_click
+/// @description scribble_test_for_click( json, hyperlink name )
+/// @function scribble_test_for_click
 /// @param  json
 /// @param  hyperlink name 
 //

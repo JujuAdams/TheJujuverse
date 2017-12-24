@@ -1,8 +1,8 @@
 {
-    "id": "0db94eec-5a64-4919-aab2-85a52918fce4",
+    "id": "2ab9cf48-2d17-4415-b8cf-192280c4edc7",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "__text_create",
+    "name": "scribble_test_for_click",
     "IsCompatibility": false,
     "IsDnD": false
 }

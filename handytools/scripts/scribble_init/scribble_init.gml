@@ -1,9 +1,11 @@
 /*
 	Edit this array to add more fonts to the Scribble font renderer.
 */
-var _font_array = [ fnt_default, fnt_consolas,
-                    fnt_verdana_32, fnt_verdana_32_bold,
-			        fnt_tnr_41, fnt_tnr_41_italics ];
+if ( !SCRIBBLE_AUTO_FONT_INIT ) {
+	var _font_array = [ fnt_default, fnt_consolas,
+	                    fnt_verdana_32, fnt_verdana_32_bold,
+				        fnt_tnr_41, fnt_tnr_41_italics ];
+}
 
 //------------------------------------------------------------------
 
@@ -46,6 +48,13 @@ var _surf_line_height = 2 + SCRIBBLE_CHAR_PADDING;
 var _char_max_w = 0;
 var _char_max_h = 0;
 
+if ( SCRIBBLE_AUTO_FONT_INIT ) {
+	trace( "Automatically scanning for fonts" );
+	_font_array = undefined;
+	var _size = 0;
+	for( var _i = 0; _i < 1000; _i++ ) if ( font_exists( _i ) ) _font_array[ _size++ ] = _i;
+}
+
 var _font_count = array_length_1d( _font_array );
 for( var _i = 0; _i < _font_count; _i++ ) {
     
@@ -79,8 +88,10 @@ for( var _i = 0; _i < _font_count; _i++ ) {
         var _char_h = string_height( _char );
         
         surface_set_target( _char_surface );
+            gpu_set_blendenable( false );
             draw_clear_alpha( c_white, 0 );
             draw_text( SCRIBBLE_CHAR_PADDING, SCRIBBLE_CHAR_PADDING, _char );
+            gpu_set_blendenable( true );
         surface_reset_target();
         
         sprite_index = sprite_create_from_surface( _char_surface, 0, 0, SCRIBBLE_CHARACTER_SURFACE_SIZE, SCRIBBLE_CHARACTER_SURFACE_SIZE, false, false, SCRIBBLE_CHAR_PADDING, SCRIBBLE_CHAR_PADDING );

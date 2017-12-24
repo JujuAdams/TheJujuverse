@@ -20,9 +20,9 @@ if ( test_mode == 1 ) {
 	*/
     /*
     if ( os_browser != browser_not_a_browser ) { //Callbacks don't work properly in HTML5 due to obfuscation :(
-        if ( text_test_for_click( scrollbox_focus_text, "unique name"  ) ) example_do_bork();
-        if ( text_test_for_click( scrollbox_focus_text, "twinned link" ) ) example_do_close();
-        if ( text_test_for_click( scrollbox_focus_text, "url"          ) ) example_open_url();
+        if ( scribble_test_for_click( scrollbox_focus_text, "unique name"  ) ) example_do_bork();
+        if ( scribble_test_for_click( scrollbox_focus_text, "twinned link" ) ) example_do_close();
+        if ( scribble_test_for_click( scrollbox_focus_text, "url"          ) ) example_open_url();
     }
 	*/
 }
