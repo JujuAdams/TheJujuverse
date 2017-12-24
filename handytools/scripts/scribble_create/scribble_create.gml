@@ -467,6 +467,7 @@ var _texture_y    = 0;
 
 var _lines = _json[? "lines" ];
 var _lines_size = ds_list_size( _lines );
+if ( _lines_size >= 255 ) trace_error( false, "Scribble JSON exceeds line limit! (", _lines_size, "/255)" );
 for( var _i = 0; _i < _lines_size; _i++ ) {
     
     var _line_map = _lines[| _i ];
