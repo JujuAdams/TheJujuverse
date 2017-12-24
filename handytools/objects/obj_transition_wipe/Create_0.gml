@@ -1,4 +1,5 @@
 event_inherited();
 
-x = room_width + 270;
-colour = c_black;
+x = 2*room_width;
+y = 0;
+colour = $191919;

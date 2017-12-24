@@ -18,6 +18,7 @@ vertex_format_add_texcoord();
 vertex_format_add_colour();
 global.scribble_font_vertex_format = vertex_format_end();
 
+
 draw_set_halign( fa_left );
 draw_set_valign( fa_top );
 
@@ -54,7 +55,7 @@ if ( SCRIBBLE_AUTO_FONT_INIT ) {
 	var _size = 0;
 	for( var _i = 0; _i < 1000; _i++ ) if ( font_exists( _i ) ) _font_array[ _size++ ] = _i;
 }
-
+  
 var _font_count = array_length_1d( _font_array );
 for( var _i = 0; _i < _font_count; _i++ ) {
     
@@ -64,18 +65,16 @@ for( var _i = 0; _i < _font_count; _i++ ) {
     _font_map[? "name" ] = font_get_name( _font );
         
     var _uvs = undefined;
-    /*
-		0 = bbox left relative to draw position
-	    1 = bbox top relative to draw position
-	    2 = bbox right relative to draw position
-	    3 = bbox bottom relative to draw position
-	    4 = bbox width
-	    5 = bbox height
-	    6 = x on texture page
-	    7 = y on texture page
-	    8 = string_width of character
-	    9 = string_height of character
-	*/
+	// 0 = bbox left relative to draw position
+	// 1 = bbox top relative to draw position
+	// 2 = bbox right relative to draw position
+	// 3 = bbox bottom relative to draw position
+	// 4 = bbox width
+	// 5 = bbox height
+	// 6 = x on texture page
+	// 7 = y on texture page
+	// 8 = string_width of character
+	// 9 = string_height of character
     
     draw_set_font( _font );
     
@@ -166,3 +165,5 @@ tr_surface_free( _char_surface );
 x = _old_x;
 y = _old_y;
 sprite_index = _old_sprite_index;
+
+draw_reset();

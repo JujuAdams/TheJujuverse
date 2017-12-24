@@ -13,3 +13,6 @@ imguigml_separator();
 var _size = ds_list_size( global.master_game_output );
 for( var _i = max( 0, _size-5 ); _i < _size; _i++ ) imguigml_text( global.master_game_output[| _i ] );
 imguigml_separator();
+
+imguigml_new_line();
+imguigml_text( concat( "Current room=", QU, room_get_name( room ), QU, " (", room, ")" ) );

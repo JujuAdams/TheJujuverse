@@ -2,7 +2,6 @@
 	Fonts are declared in scribble_init(), unless overridden by SCRIBBLE_AUTO_FONT_INIT
 */
 
-#macro SCRIBBLE_DEFAULT_FONT fnt_default;
 #macro SCRIBBLE_AUTO_FONT_INIT true
 
 #macro SCRIBBLE_FONT_CHAR_MIN 32

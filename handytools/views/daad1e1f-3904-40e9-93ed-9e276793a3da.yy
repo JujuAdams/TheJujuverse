@@ -11,7 +11,7 @@
         "c1af183a-cc88-4b94-8c0b-7cfd84a01b73"
     ],
     "filterType": "GMScript",
-    "folderName": "config",
+    "folderName": "additional config",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

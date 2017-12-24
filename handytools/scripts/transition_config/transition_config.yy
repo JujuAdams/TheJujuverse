@@ -1,8 +1,8 @@
 {
-    "id": "5adc775b-6cea-40c2-b6fa-dc82b31ead80",
+    "id": "ca237492-86b1-41de-873e-c7dd15b36773",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "transition_definitions",
+    "name": "transition_config",
     "IsCompatibility": false,
     "IsDnD": false
 }

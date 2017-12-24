@@ -340,7 +340,10 @@ if ( window_show ) {
 	
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
-		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.GRIPS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
+		if ( window_page != E_TRACKER_PAGE.HOME )
+		&& ( window_page != E_TRACKER_PAGE.GRIPS )
+		&& ( window_page != E_TRACKER_PAGE.OUTPUT )
+		&& ( window_page != E_TRACKER_PAGE.SURFACE_PREVIEW ) {
 			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*( (window_page != E_TRACKER_PAGE.SURFACES)? 10 : 20 ) );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );

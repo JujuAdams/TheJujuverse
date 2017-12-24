@@ -1,1 +1,1 @@
-if ( load_phase != E_MASTER.FINISHED ) draw_text( 10, 10, "Loading..." );
+if ( room == rm_init ) draw_text( 10, 10, "Loading..." );

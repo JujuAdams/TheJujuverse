@@ -16,7 +16,7 @@ switch( load_phase ) {
 		if ( FORCE_VSYNC ) display_reset( 0, true );
 		if ( FORCE_NO_CURSOR ) window_set_cursor( cr_none );
 		if ( FORCE_NO_INTERPOLATION ) gpu_set_texfilter( false );
-
+		
 		master_init();
 
 		//register our game instance debug output in the tracker

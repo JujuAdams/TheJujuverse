@@ -1,5 +1,5 @@
 //handytools build information
-#macro HANDYTOOLS_VERSION "v0.4.1"
+#macro HANDYTOOLS_VERSION "v0.6.1"
 #macro HANDYTOOLS_DATE "2017.12.24" //always use YYYY/MM/DD
 #macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI implementation by @babyj3ans"
 

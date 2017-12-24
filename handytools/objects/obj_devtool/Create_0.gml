@@ -1,4 +1,4 @@
-persistent = true;
+ persistent = true;
 
 window_show = false;
 window_collapsed = false;

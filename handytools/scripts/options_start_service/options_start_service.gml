@@ -1,1 +1,1 @@
-trace_f( "OPTIONS (limited)" );
+if ( OPTIONS_ON ) trace_f( "OPTIONS" );

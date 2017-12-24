@@ -1,6 +1,6 @@
 
 {
-    "name": "rm_text_test",
+    "name": "rm_scribble_test",
     "id": "65f5d51d-8a00-422a-ac4e-0c97c94ad4e5",
     "creationCodeFile": "",
     "inheritCode": false,

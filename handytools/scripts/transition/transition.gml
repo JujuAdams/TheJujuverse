@@ -3,7 +3,7 @@
 ///@param out_time
 ///@param destination_room
 
-if ( TRANSITION_DEVELOPMENT ) trace_v( object_get_name( argument0 ), " does ", transition_get_name( room ), ",", argument1, "ms --> ", argument2, "ms,", transition_get_name( argument3 ) );
+if ( TRANSITION_DEBUG ) trace_v( object_get_name( argument0 ), " does ", transition_get_name( room ), ",", argument1, "ms --> ", argument2, "ms,", transition_get_name( argument3 ) );
 
 with( instantiate( argument0 ) ) {
 	
