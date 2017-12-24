@@ -20,14 +20,14 @@
 #macro AUDIO_ON       false
 #macro WAN_ON         false
 #macro CONTROLS_ON    true
-#macro OPTIONS_ON    (true || !DEVELOPMENT)
+#macro OPTIONS_ON    (false || !DEVELOPMENT)
 #macro FPS_ON        (false && !RELEASE)
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
-#macro GRIP_ON        true
-#macro EDITOR_ON      true
-#macro OBJ_MODEL_ON   true
+#macro GRIP_ON        false
+#macro EDITOR_ON      false
+#macro OBJ_MODEL_ON   false
 #macro SCRIBBLE_ON    true
 #macro TRANSITION_ON  true
 

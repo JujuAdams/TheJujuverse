@@ -16,7 +16,8 @@ resolution_start_service();
  obj_model_start_service();
   scribble_start_service();
 transition_start_service();
-
+/*
 instantiate_protected( obj_gameflow );
 instantiate_protected( obj_screen );
 unload_current_room();
+*/
