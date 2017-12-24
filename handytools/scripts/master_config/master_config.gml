@@ -28,6 +28,7 @@
 #macro GRIP_ON        false
 #macro EDITOR_ON      false
 #macro OBJ_MODEL_ON   false
+#macro SCRIBBLE_ON    true
 
 //miscellaneous
 #macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"
@@ -46,8 +47,8 @@
 #macro FORCE_WINDOW_SCALE_INTEGER !DEVELOPMENT
 #macro DEFAULT_WINDOW_WIDTH 960
 #macro DEFAULT_WINDOW_HEIGHT 720
-#macro DEFAULT_APP_SURF_W DEFAULT_WINDOW_WIDTH/3
-#macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT/3
+#macro DEFAULT_APP_SURF_W DEFAULT_WINDOW_WIDTH //DEFAULT_WINDOW_WIDTH/3
+#macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT //DEFAULT_WINDOW_HEIGHT/3
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
 

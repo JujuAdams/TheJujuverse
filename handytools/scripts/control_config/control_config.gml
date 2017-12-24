@@ -5,4 +5,4 @@
 
 #macro MAX_PLAYERS 1
 #macro FORCE_LOCK_MOUSE false
-#macro MOUSE_CURSOR_SPRITE undefined //spr_cursor
+#macro MOUSE_CURSOR_SPRITE undefined //spr_cursor //set to <undefined> for no sprite cursor

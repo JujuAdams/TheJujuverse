@@ -14,7 +14,7 @@ var _json = argument0;
 
 if ( _json < 0 ) exit;
 
-if ( _json[? "transition state" ] == text_state_intro ) || ( _json[? "transition state" ] == text_state_visible ) {
+if ( _json[? "transition state" ] == E_SCRIBBLE_STATE.INTRO ) || ( _json[? "transition state" ] == E_SCRIBBLE_STATE.VISIBLE ) {
     _json[? "transition timer" ] = _json[? "outro max" ];
-    _json[? "transition state" ] = text_state_outro;
+    _json[? "transition state" ] = E_SCRIBBLE_STATE.OUTRO;
 }

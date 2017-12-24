@@ -44,11 +44,11 @@ for( var _i = 0; _i < MAX_PLAYERS; _i++ ) {
 	
 	var _state_map = tr_map_create( "input states" );
 	tr_map_add_map( _player_map, "state", _state_map );
-	_state_map[? "left"  ] = OFF;
-	_state_map[? "right" ] = OFF;
-	_state_map[? "up"    ] = OFF;
-	_state_map[? "down"  ] = OFF;
-	_state_map[? "mouse" ] = OFF;
+	_state_map[? "left"  ] = CTRL_OFF;
+	_state_map[? "right" ] = CTRL_OFF;
+	_state_map[? "up"    ] = CTRL_OFF;
+	_state_map[? "down"  ] = CTRL_OFF;
+	_state_map[? "mouse" ] = CTRL_OFF;
 	
 }
 

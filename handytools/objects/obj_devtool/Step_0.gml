@@ -44,6 +44,7 @@ if ( window_show ) {
 		if ( imguigml_menu_item( "Grids"                ) ) window_page = E_TRACKER_PAGE.GRIDS;
 	}
 		if ( imguigml_menu_item( "Surfaces"             ) ) window_page = E_TRACKER_PAGE.SURFACES;
+		if ( imguigml_menu_item( "Surface Preview"      ) ) window_page = E_TRACKER_PAGE.SURFACE_PREVIEW;
 	if ( TRACKER_ON ) {
 		if ( imguigml_menu_item( "Vertex Buffers"       ) ) window_page = E_TRACKER_PAGE.VERTEX_BUFFERS;
 		if ( imguigml_menu_item( "Instances"            ) ) window_page = E_TRACKER_PAGE.INSTANCES;
@@ -223,13 +224,18 @@ if ( window_show ) {
 				
 				if ( imguigml_begin_popup( concat( _i, " Pop-up" ) ) ) {
 					if ( imguigml_button( "Close" ) ) imguigml_close_current_popup();
-					imguigml_same_line();
+	 				imguigml_same_line();
 					imguigml_text( concat( "Tracker ID=", _i ) );
 					imguigml_separator();
 					imguigml_text( array_unpack( global.tracker_surfaces_callstack[? _id ], NL, "" ) );
 					imguigml_end_popup();
 				}
 				if ( imguigml_button( concat( "?##", _i ) ) ) imguigml_open_popup( concat( _i, " Pop-up" ) );
+				imguigml_same_line();
+				if ( imguigml_button( concat( "Pr##", _i ) ) ) {
+					surface_preview = _id;
+					window_page = E_TRACKER_PAGE.SURFACE_PREVIEW;
+				}
 				
 				imguigml_next_column();
 				imguigml_text( _id );
@@ -237,6 +243,21 @@ if ( window_show ) {
 				imguigml_text( tr_surface_details( _id, TRACE_DIV ) );
 				imguigml_next_column();
 			}
+			#endregion
+		break;
+		case E_TRACKER_PAGE.SURFACE_PREVIEW:
+			#region SURFACE PREVIEW
+			
+			var _result = imguigml_input_float( concat( QU, surface_preview, QU ), surface_preview, 1, 1, 0 );
+			surface_preview = max( _result[1], 0 );
+			imguigml_new_line();
+			imguigml_separator();
+			if ( surface_exists( surface_preview ) ) {
+				imguigml_image( surface_get_texture( surface_preview ), 480, 480 );
+			} else {
+				imguigml_text( concat( "Surface ", QU, surface_preview, QU, " doesn't exist." ) );
+			}
+			
 			#endregion
 		break;
 		case E_TRACKER_PAGE.VERTEX_BUFFERS:
@@ -320,7 +341,7 @@ if ( window_show ) {
 	if ( !window_has_set_columns ) {
 		window_has_set_columns = true;
 		if ( window_page != E_TRACKER_PAGE.HOME ) && ( window_page != E_TRACKER_PAGE.GRIPS ) && ( window_page != E_TRACKER_PAGE.OUTPUT ) {
-			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*10 );
+			imguigml_set_column_width( 0, TRACKER_ID_SPACE_PADDING*( (window_page != E_TRACKER_PAGE.SURFACES)? 10 : 20 ) );
 			if ( window_page != E_TRACKER_PAGE.INSTANCES ) {
 				imguigml_set_column_width( 1, TRACKER_ID_SPACE_PADDING*15 );
 			} else {

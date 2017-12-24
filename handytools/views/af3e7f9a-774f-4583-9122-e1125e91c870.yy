@@ -1,11 +1,13 @@
 {
-    "id": "31195166-ebcd-4d22-a974-e6a7b2d7c83f",
+    "id": "af3e7f9a-774f-4583-9122-e1125e91c870",
     "modelName": "GMFolder",
     "mvc": "1.1",
-    "name": "31195166-ebcd-4d22-a974-e6a7b2d7c83f",
+    "name": "af3e7f9a-774f-4583-9122-e1125e91c870",
     "children": [
         "26e101ea-d981-47b0-a9a5-a24cf536461e",
-        "6b7208c4-6851-4bfe-8351-91375e47f219",
+        "f0556f0e-af87-4ad4-8998-437bcbb16546",
+        "a8cc1594-6150-4635-8385-cfd73fe695c7",
+        "159cb965-d92e-4297-a66a-3fadfb0d0436",
         "57ab8dc0-3870-4b89-b8e7-66f831ea38ff",
         "0db94eec-5a64-4919-aab2-85a52918fce4",
         "2ca4999d-dbbb-4b62-a545-8e34eed17d3c",
@@ -18,7 +20,7 @@
         "a8d95f6e-e68d-47cf-bb3e-4b12a949526f"
     ],
     "filterType": "GMScript",
-    "folderName": "text",
+    "folderName": "scribble",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

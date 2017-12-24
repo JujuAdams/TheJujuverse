@@ -6,15 +6,10 @@
 //  This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
 //  https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-text_system_init( 32, 127, 2048, 10,   fnt_default, fnt_verdana_32, fnt_verdana_32_bold, fnt_tnr_41, fnt_tnr_41_italics, fnt_consolas );
-
-
-
 test_mode = 0;
 
-lorem_ipsum_string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-lorem_ipsum_string = lorem_ipsum_string + "\n\n" + lorem_ipsum_string + "\n\n" + lorem_ipsum_string + "\n\n" + lorem_ipsum_string + "\n\n" + lorem_ipsum_string;
-lorem_ipsum_json = text_create( lorem_ipsum_string, fnt_consolas, c_white, fa_left, 800, 20, fa_left, fa_top );
+lorem_ipsum_string = concat( LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM );
+lorem_ipsum_json = scribble( lorem_ipsum_string, fnt_consolas, c_white, fa_left, 800, 20, fa_left, fa_top );
 
 var _str = @"This is text.
 
@@ -26,10 +21,10 @@ var _str = @"This is text.
 
 [fa_centre][link|twinned link|example_do_close]Click here to destroy this text[/link]
 [fnt_tnr_41](or on the grumpy pug [link|twinned link][spr_test_2][/link])[].";
-introduction_text_json = text_create( _str, fnt_verdana_32, c_white, fa_left, 900, 65, fa_left, fa_top );
+introduction_text_json = scribble( _str, fnt_verdana_32, c_white, fa_left, 900, 65, fa_left, fa_top );
 
 var _str = "Nothing more to see here!#Made by [link|url|example_open_url]@jujuadams";
-outro_text_json = text_create( _str, fnt_verdana_32, c_white, fa_left, 800, 65, fa_left, fa_top );
+outro_text_json = scribble( _str, fnt_verdana_32, c_white, fa_left, 800, 65, fa_left, fa_top );
 
 
 

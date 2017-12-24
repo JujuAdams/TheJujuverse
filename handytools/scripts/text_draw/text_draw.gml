@@ -34,14 +34,14 @@ var _json_lines        = _json[? "lines"             ];
 shader_set( shd_text_basic );
 //*/
 //*
-shader_set( shd_text_fade_char );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fSmoothness" ), _smoothness );
+shader_set( shd_SCRIBBLE_FADE.ON_char );
+shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_char, "u_fSmoothness" ), _smoothness );
 //*/
 /*
-shader_set( shd_text_fade_line );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_line, "u_fTime" ), ( ds_list_size( _json[? "lines" ] ) + _smoothness ) * _fade );
-shader_set_uniform_f( shader_get_uniform( shd_text_fade_line, "u_fSmoothness" ), _smoothness );
+shader_set( shd_SCRIBBLE_FADE.ON_line );
+shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_line, "u_fTime" ), ( ds_list_size( _json[? "lines" ] ) + _smoothness ) * _fade );
+shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_line, "u_fSmoothness" ), _smoothness );
 //*/
 
 var _matrix;
@@ -52,7 +52,7 @@ _matrix[10] =  1;
 _matrix[12] = _x;
 _matrix[13] = _y;
 matrix_set( matrix_world, _matrix );
-vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.text_font_texture );
+vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
 _matrix[12] = 0;
 _matrix[13] = 0;
 matrix_set( matrix_world, _matrix );

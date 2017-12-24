@@ -24,14 +24,14 @@ var _destroy = argument5;
 
 if ( _json < 0 ) return noone;
 
-if ( _json[? "transition state" ] == text_state_intro ) {
+if ( _json[? "transition state" ] == E_SCRIBBLE_STATE.INTRO ) {
     _json[? "transition timer" ] = clamp( _json[? "transition timer" ] + _json[? "intro speed" ], 0, _json[? "intro max" ] );
-    if ( _json[? "transition timer" ] >= _json[? "intro max" ] ) _json[? "transition state" ] = text_state_visible;
+    if ( _json[? "transition timer" ] >= _json[? "intro max" ] ) _json[? "transition state" ] = E_SCRIBBLE_STATE.VISIBLE;
 }
 
-if ( _json[? "transition state" ] == text_state_outro ) {
+if ( _json[? "transition state" ] == E_SCRIBBLE_STATE.OUTRO ) {
     _json[? "transition timer" ] = clamp( _json[? "transition timer" ] - _json[? "outro speed" ], 0, _json[? "outro max" ] );
-    if ( _json[? "transition timer" ] <= 0 ) _json[? "transition state" ] = text_state_invisible;
+    if ( _json[? "transition timer" ] <= 0 ) _json[? "transition state" ] = E_SCRIBBLE_STATE.INVISIBLE;
 }
 
 var _text_limit        = _json[? "transition timer"  ];
@@ -47,12 +47,12 @@ for( var _key = ds_map_find_first( _hyperlinks ); _key != undefined; _key = ds_m
     _map[? "clicked" ] = false;
 }
 
-if ( _json[? "transition state" ] == text_state_invisible ) {
+if ( _json[? "transition state" ] == E_SCRIBBLE_STATE.INVISIBLE ) {
     text_destroy( _json );
     return noone;
 }
 
-if ( _json[? "transition state" ] != text_state_visible ) return _json;
+if ( _json[? "transition state" ] != E_SCRIBBLE_STATE.VISIBLE ) return _json;
 
 var _regions = ds_list_size( _hyperlink_regions );
 for( var _i = 0; _i < _regions; _i++ ) {

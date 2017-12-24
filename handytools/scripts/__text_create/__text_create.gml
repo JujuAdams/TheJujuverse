@@ -1,4 +1,4 @@
-/// @description text_create( string, default font, default colour, default halign, box width, line height, box halign, box valign )
+/// @description scribble( string, default font, default colour, default halign, box width, line height, box halign, box valign )
 /// @function text_create
 /// @param  string
 /// @param  default font
@@ -62,14 +62,14 @@ _json[? "left"             ] = 0;
 _json[? "top"              ] = 0;
 _json[? "right"            ] = 0;
 _json[? "bottom"           ] = 0;
-_json[? "intro style"      ] = text_no_fade;
+_json[? "intro style"      ] = SCRIBBLE_FADE.OFF;
 _json[? "intro max"        ] = 0;
 _json[? "intro speed"      ] = 0.1;
-_json[? "outro style"      ] = text_no_fade;
+_json[? "outro style"      ] = SCRIBBLE_FADE.OFF;
 _json[? "outro max"        ] = 0;
 _json[? "outro speed"      ] = 0.1;
 _json[? "transition timer" ] = 0;
-_json[? "transition state" ] = text_state_intro;
+_json[? "transition state" ] = E_SCRIBBLE_STATE.INTRO;
 _json[? "vertex buffer"    ] = noone;
 _json[? "vbuff chars"      ] = 0;
 
@@ -508,7 +508,7 @@ if ( _box_valign == fa_top ) {
 
 //Build precached text model
 var _vbuff = tr_vertex_create_buffer();
-vertex_begin( _vbuff, global.text_font_vertex_format );
+vertex_begin( _vbuff, global.scribble_font_vertex_format );
 
 var _max_alpha = draw_get_alpha();
 
@@ -558,7 +558,7 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
         } else {
             
             var _font     = _word_map[? "font" ];
-            var _font_uvs = ds_map_find_value( global.text_font_json[? _font ], "uvs" );
+            var _font_uvs = ds_map_find_value( global.scribble_font_json[? _font ], "uvs" );
             var _colour = _word_map[? "colour" ];
             
             var _str = _word_map[? "string" ];
@@ -569,16 +569,16 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
             for( var _k = 1; _k <= _string_size; _k++ ) {
                 
                 var _char = string_copy( _str, _k, 1 );
-                var _ord = ord( _char ) - global.text_font_char_min;
+                var _ord = ord( _char ) - SCRIBBLE_FONT_CHAR_MIN;
                 
-                if ( _ord < 0 ) || ( _ord >= global.text_font_char_size ) continue;
+                if ( _ord < 0 ) || ( _ord >= SCRIBBLE_FONT_CHAR_SIZE ) continue;
                 
-                var _uv_l   = _font_uvs[ _ord, 0 ]/global.text_font_surface_width;
-                var _uv_t   = _font_uvs[ _ord, 1 ]/global.text_font_surface_height;
+                var _uv_l   = _font_uvs[ _ord, 0 ]/SCRIBBLE_SURFACE_SIZE;
+                var _uv_t   = _font_uvs[ _ord, 1 ]/SCRIBBLE_SURFACE_SIZE;
                 var _char_w = _font_uvs[ _ord, 2 ];
                 var _char_h = _font_uvs[ _ord, 3 ];
-                var _uv_r   = _uv_l + _char_w/global.text_font_surface_width;
-                var _uv_b   = _uv_t + _char_h/global.text_font_surface_height;
+                var _uv_r   = _uv_l + _char_w/SCRIBBLE_SURFACE_SIZE;
+                var _uv_b   = _uv_t + _char_h/SCRIBBLE_SURFACE_SIZE;
                 
                 var _z = _i + ( _texture_char << 8 );
                 

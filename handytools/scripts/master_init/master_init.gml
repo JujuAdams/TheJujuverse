@@ -14,3 +14,4 @@ resolution_init();
       grip_init();
     editor_init();
  obj_model_init();
+  scribble_init();

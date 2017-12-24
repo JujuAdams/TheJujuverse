@@ -1,3 +1,1 @@
-if ( TRACKER_ON ) {
-	trace_f( "TRACKER" );
-}
+trace_f( TRACKER_ON? "TRACKER" : "tracker (off)" );
