@@ -1,6 +1,8 @@
 # "handytools" v0.6.2
 ### Written by @jujuadams, ImGUI Implementation by @babyj3ans
-##### A series of libraries and tools to assist with game creation.
+A series of libraries and tools to assist with game creation.
+	
+Press F12 to open DEVTOOL.
 
 Includes the following services:
 * CONTROLS - Universal control and input layer
