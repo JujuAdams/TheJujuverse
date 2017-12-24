@@ -22,7 +22,8 @@ if ( mouse_clicked ) {
         }
         with( tr_instance_create( 0, 0, obj_subtitle ) ) {
 			text = global.game_text;
-			scribble = scribble_create( text, display_get_gui_width(), fnt_subtitle, fa_centre, UD, UD, fa_centre, fa_middle );
+			scribble = scribble_create( text, display_get_gui_width(), fnt_subtitle, fa_centre );
+			scribble_set_box_alignment( scribble, fa_centre, fa_middle );
 			scribble_set_shader( scribble, shd_scribble_fade_char, 20 );
 		}
     } else {

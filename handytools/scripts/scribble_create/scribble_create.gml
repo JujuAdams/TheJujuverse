@@ -4,8 +4,6 @@
 /// @param [halign]
 /// @param [colour]
 /// @param [line_height]
-/// @param [box_halign]
-/// @param [box_valign] 
 //
 //  April 2017
 //  Juju Adams
@@ -22,8 +20,6 @@ draw_set_font( _def_font );
 var _def_halign  = ((argument_count<4) || (argument[3]==undefined))? fa_left                  : argument[3];
 var _def_colour  = ((argument_count<5) || (argument[4]==undefined))? c_white                  : argument[4];
 var _line_height = ((argument_count<6) || (argument[5]==undefined))? string_height( chr(13) ) : argument[5];
-var _box_halign  = ((argument_count<7) || (argument[6]==undefined))? fa_left                  : argument[6];
-var _box_valign  = ((argument_count<8) || (argument[7]==undefined))? fa_top                   : argument[7];
 
 //Replace newlines with single characters
 if ( SCRIBBLE_HASH_NEWLINE ) _str = string_replace_all( _str, "#", chr(13) );
@@ -50,8 +46,8 @@ _json[? "default font"     ] = _def_font;
 _json[? "default colour"   ] = _def_colour;
 _json[? "width limit"      ] = _width_limit;
 _json[? "line height"      ] = _line_height;
-_json[? "halign"           ] = _box_halign;
-_json[? "valign"           ] = _box_valign;
+_json[? "halign"           ] = fa_left;
+_json[? "valign"           ] = fa_top;
 _json[? "length"           ] = 0;
 _json[? "words"            ] = 0;
 _json[? "width"            ] = 0;
@@ -447,29 +443,7 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
     
 }
 
-//Horizontal justification
-if ( _box_halign == fa_left ) {
-    _json[? "left" ]  = 0;
-    _json[? "right" ] = _textbox_width;
-} else if ( _box_halign == fa_center ) {
-    _json[? "left" ]  = -_textbox_width div 2;
-    _json[? "right" ] =  _textbox_width div 2;
-} else if ( _box_halign == fa_right ) {
-    _json[? "left" ]  = -_textbox_width;
-    _json[? "right" ] = 0;
-}
-
-//Vertical justification
-if ( _box_valign == fa_top ) {
-    _json[? "top"    ] = 0;
-    _json[? "bottom" ] = _textbox_height;
-} else if ( _box_valign == fa_middle ) {
-    _json[? "top"    ] = -_textbox_height div 2;
-    _json[? "bottom" ] =  _textbox_height div 2;
-} else if ( _box_valign == fa_bottom ) {
-    _json[? "top"    ] = -_textbox_height;
-    _json[? "bottom" ] = 0;
-}
+scribble_set_box_alignment( _json );
 
 //Build precached text model
 var _vbuff = vertex_create_buffer();
