@@ -1,1 +1,0 @@
-return current_time - global.master_start_time;

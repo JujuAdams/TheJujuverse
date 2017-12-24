@@ -1,1 +1,0 @@
-if ( WAN_ON ) instantiate_protected( obj_get_wan_ip );

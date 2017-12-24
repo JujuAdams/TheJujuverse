@@ -1,1 +1,0 @@
-timer = get_timer();

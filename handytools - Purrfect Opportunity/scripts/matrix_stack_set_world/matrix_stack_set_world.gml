@@ -1,1 +1,0 @@
-matrix_stack_set( matrix_get( matrix_world ) );
