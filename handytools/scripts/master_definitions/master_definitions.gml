@@ -16,3 +16,7 @@
 #macro QU "\""
 #macro GUI_WIDTH display_get_gui_width()
 #macro GUI_HEIGHT display_get_gui_height()
+
+//UK English
+#macro fa_centre fa_center
+#macro c_grey c_gray

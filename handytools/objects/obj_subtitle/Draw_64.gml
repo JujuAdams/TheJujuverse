@@ -3,6 +3,10 @@
 var _w = display_get_gui_width();
 var _h = display_get_gui_height();
 
+scribble_draw( 2+_w*0.5, 2+_h*0.5, scribble, c_black, UD, alpha_t + ((alpha_direction < 0)? 1 : 0) );
+scribble_draw( 1+_w*0.5, 1+_h*0.5, scribble, c_white, UD, alpha_t + ((alpha_direction < 0)? 1 : 0) );
+
+/*
 draw_set_halign( fa_center );
 draw_set_valign( fa_middle );
 draw_set_alpha( alpha_t );
@@ -15,3 +19,4 @@ draw_set_halign( fa_left );
 draw_set_valign( fa_top );
 draw_set_font( fnt_default );
 draw_set_alpha( 1 );
+*/

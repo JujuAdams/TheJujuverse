@@ -19,7 +19,7 @@ obj_model_load_async( "couch"       , "models/couch.obj"       , global.vft_simp
 obj_model_load_async( "desk_lamp"   , "models/desk_lamp.obj"   , global.vft_simple_3d,   false, false,   0, 0, 0,  4 );									  
 obj_model_load_async( "spiral1"     , "models/spiral.obj"      , global.vft_simple_3d,   false, false,   1, 0, -1, 6 );
 obj_model_load_async( "spiral2"     , "models/spiral2.obj"     , global.vft_simple_3d,   false, false,   1, 0, -1, 5 );										  
-obj_model_load_async( "mirrorframe" , "models/mirrorframe.obj" , global.vft_simple_3d,   false, false,   0, 0, 0, 10 );
+obj_model_load_async( "mirror_frame", "models/mirrorframe.obj" , global.vft_simple_3d,   false, false,   0, 0, 0, 10 );
 obj_model_load_async( "bookshelf"   , "models/bookshelf.obj"   , global.vft_simple_3d,   false, false,   0, 0, 0, 18 );
 obj_model_load_async( "open_book"   , "models/open_book.obj"   , global.vft_simple_3d,   false, false,   0, 0, 0,  9 );										  
 obj_model_load_async( "scissors"    , "models/scissors.obj"    , global.vft_simple_3d,   false, false,   1, 0, -1, 3 );

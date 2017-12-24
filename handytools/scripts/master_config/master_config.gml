@@ -20,14 +20,14 @@
 #macro AUDIO_ON       false
 #macro WAN_ON         false
 #macro CONTROLS_ON    true
-#macro OPTIONS_ON     false
+#macro OPTIONS_ON    (true || !DEVELOPMENT)
 #macro FPS_ON        (false && !RELEASE)
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
-#macro GRIP_ON        false
-#macro EDITOR_ON      false
-#macro OBJ_MODEL_ON   false
+#macro GRIP_ON        true
+#macro EDITOR_ON      true
+#macro OBJ_MODEL_ON   true
 #macro SCRIBBLE_ON    true
 #macro TRANSITION_ON  true
 
@@ -43,14 +43,14 @@
 
 //graphics
 #macro FORCE_VSYNC true
-#macro FORCE_NO_CURSOR false
+#macro FORCE_NO_CURSOR true
 #macro FORCE_NO_INTERPOLATION true
 #macro FORCE_WINDOW_SCALE_INTEGER !DEVELOPMENT
 #macro DEFAULT_FONT fnt_default
 #macro DEFAULT_WINDOW_WIDTH 960
 #macro DEFAULT_WINDOW_HEIGHT 720
-#macro DEFAULT_APP_SURF_W DEFAULT_WINDOW_WIDTH //DEFAULT_WINDOW_WIDTH/3
-#macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT //DEFAULT_WINDOW_HEIGHT/3
+#macro DEFAULT_APP_SURF_W DEFAULT_WINDOW_WIDTH/3
+#macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT/3
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
 

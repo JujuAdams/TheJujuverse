@@ -20,7 +20,11 @@ if ( mouse_clicked ) {
             alpha_animate = true;
             alpha_direction = -1;
         }
-        with( tr_instance_create( 0, 0, obj_subtitle ) ) text = global.game_text;
+        with( tr_instance_create( 0, 0, obj_subtitle ) ) {
+			text = global.game_text;
+			scribble = scribble_create( text, display_get_gui_width(), fnt_subtitle, fa_centre, UD, UD, fa_centre, fa_middle );
+			scribble_set_shader( scribble, shd_scribble_fade_char, 20 );
+		}
     } else {
         headset_direction = -1;
         headset_animate = true;

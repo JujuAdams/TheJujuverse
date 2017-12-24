@@ -32,6 +32,7 @@ var _smoothness        = _json[? "shader smoothness" ];
 
 s_shader_begin( _shader );
 s_shader_uniform_f( "u_fTime"      , ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+s_shader_uniform_f( "u_fMaxTime"   ,   _json[? "vbuff chars" ] + _smoothness );
 s_shader_uniform_f( "u_fSmoothness", _smoothness );
 s_shader_colour(    "u_vColour"    , _colour, _alpha );
 	
@@ -41,8 +42,8 @@ s_shader_colour(    "u_vColour"    , _colour, _alpha );
 	_matrix[ 0] =  1;
 	_matrix[ 5] =  1;
 	_matrix[10] =  1;
-	_matrix[12] = _x;
-	_matrix[13] = _y;
+	_matrix[12] = _x + _json[? "left" ];
+	_matrix[13] = _y + _json[? "top"  ];
 	matrix_set( matrix_world, _matrix );
 	
 		vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
