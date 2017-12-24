@@ -1,5 +1,5 @@
-/// @description text_destroy( json )
-/// @function text_destroy
+/// @description scribble_destroy( json )
+/// @function scribble_destroy
 /// @param  json 
 
 var _json = argument0;

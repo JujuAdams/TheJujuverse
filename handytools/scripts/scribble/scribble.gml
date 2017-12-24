@@ -25,10 +25,10 @@ var _box_halign  = argument6;
 var _box_valign  = argument7;
 
 //Replace newlines with single characters
+if ( SCRIBBLE_HASH_NEWLINE ) _str = string_replace_all( _str, "#", chr(13) );
 _str = string_replace_all( _str, chr(10)+chr(13), chr(13) );
 _str = string_replace_all( _str, chr(13)+chr(10), chr(13) );
 _str = string_replace_all( _str,         chr(10), chr(13) );
-_str = string_replace_all( _str,             "#", chr(13) );
 _str = string_replace_all( _str,           "\\n", chr(13) );
 
 draw_set_font( _def_font );
@@ -37,10 +37,10 @@ if ( !is_real( _line_height ) || ( _line_height < 0 ) ) var _line_height = strin
 
 var _json = tr_map_create();
 
-var _text_root_list         = ds_list_create();
-var _hyperlink_map          = ds_map_create();
-var _hyperlink_regions_list = ds_list_create();
-var _vbuff_sprite_list    tr = ds_list_create();
+var _text_root_list         = tr_list_create();
+var _hyperlink_map          = tr_map_create();
+var _hyperlink_regions_list = tr_list_create();
+var _vbuff_sprite_list      = tr_list_create();
 tr_map_add_list( _json, "lines"            , _text_root_list );
 tr_map_add_map(  _json, "hyperlinks"       , _hyperlink_map );
 tr_map_add_list( _json, "hyperlink regions", _hyperlink_regions_list );
@@ -60,10 +60,10 @@ _json[? "left"             ] = 0;
 _json[? "top"              ] = 0;
 _json[? "right"            ] = 0;
 _json[? "bottom"           ] = 0;
-_json[? "intro style"      ] = SCRIBBLE_FADE.OFF;
+_json[? "intro style"      ] = E_SCRIBBLE_FADE.OFF;
 _json[? "intro max"        ] = 0;
 _json[? "intro speed"      ] = 0.1;
-_json[? "outro style"      ] = SCRIBBLE_FADE.OFF;
+_json[? "outro style"      ] = E_SCRIBBLE_FADE.OFF;
 _json[? "outro max"        ] = 0;
 _json[? "outro speed"      ] = 0.1;
 _json[? "transition timer" ] = 0;

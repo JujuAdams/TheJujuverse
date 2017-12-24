@@ -9,3 +9,4 @@
 #macro SCRIBBLE_SURFACE_SIZE 1024 //Incrase this size if you're adding more fonts/characters
 #macro SCRIBBLE_CHARACTER_SURFACE_SIZE 60 //Increase this size if large characters are getting clipped
 #macro SCRIBBLE_OUTPUT_MAXIMUM_CHAR_SIZE (false && DEVELOPMENT)
+#macro SCRIBBLE_HASH_NEWLINE true

@@ -1,10 +1,8 @@
-/// @description text_draw( x, y, json, fade, smoothness )
-/// @function text_draw
-/// @param  x
-/// @param  y
-/// @param  json
-/// @param  fade
-/// @param  smoothness 
+/// @param x
+/// @param y
+/// @param json
+/// @param fade
+/// @param smoothness 
 //
 //  April 2017
 //  Juju Adams
@@ -34,9 +32,9 @@ var _json_lines        = _json[? "lines"             ];
 shader_set( shd_text_basic );
 //*/
 //*
-shader_set( shd_SCRIBBLE_FADE.ON_char );
-shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
-shader_set_uniform_f( shader_get_uniform( shd_SCRIBBLE_FADE.ON_char, "u_fSmoothness" ), _smoothness );
+shader_set( shd_text_fade_char );
+shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fTime" ), ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+shader_set_uniform_f( shader_get_uniform( shd_text_fade_char, "u_fSmoothness" ), _smoothness );
 //*/
 /*
 shader_set( shd_SCRIBBLE_FADE.ON_line );

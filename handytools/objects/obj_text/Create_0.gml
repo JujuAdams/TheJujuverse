@@ -10,7 +10,7 @@ test_mode = 0;
 
 lorem_ipsum_string = concat( LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM );
 lorem_ipsum_json = scribble( lorem_ipsum_string, fnt_consolas, c_white, fa_left, 800, 20, fa_left, fa_top );
-
+/*
 var _str = @"This is text.
 
 [$DADA21]This text is coloured with a hex code.
@@ -25,10 +25,11 @@ introduction_text_json = scribble( _str, fnt_verdana_32, c_white, fa_left, 900, 
 
 var _str = "Nothing more to see here!#Made by [link|url|example_open_url]@jujuadams";
 outro_text_json = scribble( _str, fnt_verdana_32, c_white, fa_left, 800, 65, fa_left, fa_top );
+*/
 
-
-
+/*
 scrollbox_focus_text = introduction_text_json;
 scrollbox = text_scrollbox_create( 940, 500, 30, 30, c_gray );
 scrollbox_x = ( room_width  - scrollbox[? "width"  ] ) div 2;
 scrollbox_y = ( room_height - scrollbox[? "height" ] ) div 2;
+*/

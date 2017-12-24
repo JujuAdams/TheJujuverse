@@ -1,8 +1,8 @@
 {
-    "id": "3e89ba52-5b2e-4e33-b2c7-f995440c3496",
+    "id": "2ca4999d-dbbb-4b62-a545-8e34eed17d3c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "text_destroy",
+    "name": "scribble_step",
     "IsCompatibility": false,
     "IsDnD": false
 }

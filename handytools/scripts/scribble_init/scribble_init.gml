@@ -79,7 +79,7 @@ for( var _i = 0; _i < _font_count; _i++ ) {
         var _char_h = string_height( _char );
         
         surface_set_target( _char_surface );
-            draw_clear_alpha( c_black, 0 );
+            draw_clear_alpha( c_white, 0 );
             draw_text( SCRIBBLE_CHAR_PADDING, SCRIBBLE_CHAR_PADDING, _char );
         surface_reset_target();
         
@@ -93,25 +93,12 @@ for( var _i = 0; _i < _font_count; _i++ ) {
 		if ( _l < 0 ) && ( _t < 0 ) && ( _b < 0 ) && ( _t < 0 ) {
 	        _l = SCRIBBLE_CHAR_PADDING + _char_w;
 	        _t = SCRIBBLE_CHAR_PADDING + _char_h;
-	        _r = _l + 1;
-	        _b = _t + 1;
+	        _r = _l;
+	        _b = _t;
 		}
-		/*
-        var _l = -SCRIBBLE_CHAR_PADDING;
-        var _t = -SCRIBBLE_CHAR_PADDING;
-        var _r =  SCRIBBLE_CHAR_PADDING + _char_w;
-        var _b =  SCRIBBLE_CHAR_PADDING + _char_h;
-        
-        while( !collision_line( _l, _t, _l, _b, id, true, false ) && ( _l < _r ) ) _l++;
-        while( !collision_line( _l, _t, _r, _t, id, true, false ) && ( _t < _b ) ) _t++;
-        while( !collision_line( _r, _t, _r, _b, id, true, false ) && ( _r > _l ) ) _r--;
-        while( !collision_line( _l, _b, _r, _b, id, true, false ) && ( _b > _t ) ) _b--;
-        
-        _r++;
-        _b++;
+		_r++;
+		_b++;
 		
-		trace_loud( bbox_left, ",", bbox_top, "->", bbox_right, ",", bbox_bottom, " versus ", _l, ",", _t, "->", _r, ",", _b );
-		*/
         var _w = _r - _l;
         var _h = _b - _t;
 		_char_max_w = max( _char_max_w, _w );

@@ -69,7 +69,7 @@ if ( _text_json >= 0 ) {
         _mouse_u = -99999999;
     }
     
-    _text_json = text_step( _x - _text_json[? "left" ], _y - _text_json[? "top" ] - _scroll_distance, _text_json, _mouse_x, _mouse_y, _destroy );
+    _text_json = scribble_step( _x - _text_json[? "left" ], _y - _text_json[? "top" ] - _scroll_distance, _text_json, _mouse_x, _mouse_y, _destroy );
     
 }
 

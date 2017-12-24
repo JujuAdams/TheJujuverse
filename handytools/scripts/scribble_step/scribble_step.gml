@@ -1,5 +1,3 @@
-/// @description text_step( x, y, json, mouse x, mouse y, destroy if invisible )
-/// @function text_step
 /// @param  x
 /// @param  y
 /// @param  json
@@ -48,7 +46,7 @@ for( var _key = ds_map_find_first( _hyperlinks ); _key != undefined; _key = ds_m
 }
 
 if ( _json[? "transition state" ] == E_SCRIBBLE_STATE.INVISIBLE ) {
-    text_destroy( _json );
+    scribble_destroy( _json );
     return noone;
 }
 

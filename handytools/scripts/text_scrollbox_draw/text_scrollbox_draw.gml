@@ -53,7 +53,7 @@ surface_set_target( _surface );
     
     draw_set_colour( c_white );
     gpu_set_colourwriteenable( true, true, true, false );
-    if ( _text_json >= 0 ) text_draw( -_text_json[? "left" ], -_text_json[? "top" ] - _scrollbar_t * _scroll_distance, _text_json, DEFAULT, DEFAULT );
+    if ( _text_json >= 0 ) scribble_draw( -_text_json[? "left" ], -_text_json[? "top" ] - _scrollbar_t * _scroll_distance, _text_json, DEFAULT, DEFAULT );
     gpu_set_colourwriteenable( true, true, true, true );
     
     draw_set_colour( c_red );

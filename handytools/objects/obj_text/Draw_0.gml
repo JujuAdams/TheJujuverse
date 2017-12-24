@@ -12,7 +12,7 @@ draw_set_font( fnt_consolas );
 switch( test_mode ) {
     case 0:
         draw_text( 5, 5, "CUSTOM" );
-        text_draw( 15, 40, lorem_ipsum_json, 1 /*0.5 + 0.5*dsin( current_time/150 )*/, 0 );
+        scribble_draw( 15, 40, lorem_ipsum_json, 1 /*0.5 + 0.5*dsin( current_time/150 )*/, 0 );
         shader_reset();
     break;
     case 1:

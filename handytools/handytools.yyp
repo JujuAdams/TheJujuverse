@@ -1170,7 +1170,7 @@
             "Key": "2ca4999d-dbbb-4b62-a545-8e34eed17d3c",
             "Value": {
                 "id": "5da44052-36b4-43c1-9505-aac354c25964",
-                "resourcePath": "scripts\/text_step\/text_step.yy",
+                "resourcePath": "scripts\\scribble_step\\scribble_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1674,7 +1674,7 @@
             "Key": "3e89ba52-5b2e-4e33-b2c7-f995440c3496",
             "Value": {
                 "id": "6a0f1c80-0fa8-4a27-8c3c-dc8083d9328b",
-                "resourcePath": "scripts\/text_destroy\/text_destroy.yy",
+                "resourcePath": "scripts\\scribble_destroy\\scribble_destroy.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4583,6 +4583,14 @@
             }
         },
         {
+            "Key": "b222b90d-973c-44af-ad27-09b216a8af70",
+            "Value": {
+                "id": "af300756-4a17-4999-9e6f-d588bd7a48a9",
+                "resourcePath": "scripts\\__text_create1\\__text_create1.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b288c5fa-9959-4643-afa6-8627280830d9",
             "Value": {
                 "id": "937f6eb6-60c5-4e2a-a154-898a99a7add3",
@@ -4978,7 +4986,7 @@
             "Key": "c4303bbf-12a2-413a-808f-7a16dbb5c9d6",
             "Value": {
                 "id": "4874217f-7336-4800-a871-2d0daf5174e1",
-                "resourcePath": "scripts\/text_draw\/text_draw.yy",
+                "resourcePath": "scripts\\scribble_draw\\scribble_draw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6631,7 +6639,6 @@
         "a8cc1594-6150-4635-8385-cfd73fe695c7",
         "159cb965-d92e-4297-a66a-3fadfb0d0436",
         "57ab8dc0-3870-4b89-b8e7-66f831ea38ff",
-        "0db94eec-5a64-4919-aab2-85a52918fce4",
         "2ca4999d-dbbb-4b62-a545-8e34eed17d3c",
         "c4303bbf-12a2-413a-808f-7a16dbb5c9d6",
         "3e89ba52-5b2e-4e33-b2c7-f995440c3496",
@@ -6639,6 +6646,7 @@
         "22f0889f-2e41-4221-9e4c-a9ad123f6aa8",
         "95ec6b5b-4d25-41c7-ad8e-5354e09a0d0a",
         "2ab9cf48-2d17-4415-b8cf-192280c4edc7",
+        "0db94eec-5a64-4919-aab2-85a52918fce4",
         "59357701-6a9a-4608-81a1-3cb18f4cdc25",
         "6e09f251-6a67-4c3e-be51-0d754f469f9c",
         "5784a58b-4aa1-4718-aa7b-c18a317a8d05",
