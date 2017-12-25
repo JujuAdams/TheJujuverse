@@ -11,9 +11,11 @@
 	Services must...
 	1. be toggleable with a unique SERVICE_ON macro
 	2. have service_init() and service_start_service() scripts
-	3. report when service_init() and service_start_service() scripts are run
-	4. report if service_init() sets defaults values even when SERVICE_ON is set to <false>
-	5. use distinct prefixed scripts and objects throughout
-	6. use distinct macros defined in service_config() and service_definitions()
-	7. section off non-customisable macros in service_definitions()
+	3. report when its service_init() script is run
+	4. report when service_start_service() is run if service_start_service() executes any code
+	5. report if service_init() sets default values even when SERVICE_ON is set to <false>
+	6. use distinct prefixed scripts and objects throughout
+	7. use distinct macros defined in service_config() and service_definitions()
+	8. section off non-customisable internal macros in service_definitions()
+	9. if using User Events, have a configuration for which User Event(s) to execute
 */
