@@ -78,6 +78,9 @@ var _text_font      = _def_font;
 var _text_colour    = _def_colour;
 var _text_halign    = _def_halign;
 var _text_hyperlink = "";
+var _text_rainbow   = false;
+var _text_shake     = false;
+var _text_wave      = false;
 
 
 
@@ -163,13 +166,50 @@ while( string_length( _str ) > 0 ) {
                 _text_font      = _def_font;
                 _text_colour    = _def_colour;
                 _text_hyperlink = "";
+				
+				_text_rainbow   = false;
+				_text_shake     = false;
+				_text_wave      = false;
+				
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
                 draw_set_font( _text_font );
                 
                 
                 
+            } else if ( _parameters[0] == "rainbow" ) { 
+				
+				_text_rainbow = true;
+                _skip = true;
+				
+		    } else if ( _parameters[0] == "/rainbow" ) { 
+				
+				_text_rainbow = false;
+                _skip = true;
+                
+            } else if ( _parameters[0] == "shake" ) { 
+				
+				_text_shake = true;
+                _skip = true;
+				
+		    } else if ( _parameters[0] == "/shake" ) { 
+				
+				_text_shake = false;
+                _skip = true;
+                
+            } else if ( _parameters[0] == "wave" ) { 
+				
+				_text_wave = true;
+                _skip = true;
+				
+		    } else if ( _parameters[0] == "/wave" ) { 
+				
+				_text_wave = false;
+                _skip = true;
+				
+				
+				
             //The command is an alignment keyphrase... set the alignment for the line and force a newline if the previous had content
-            } else if ( ( _parameters[0] == "fa_left" ) && _first_character ) {
+		    } else if ( ( _parameters[0] == "fa_left" ) && _first_character ) {
                 
                 _text_halign = fa_left;
                 if ( _line_map != noone ) _line_map[? "halign" ] = _text_halign;
@@ -340,6 +380,9 @@ while( string_length( _str ) > 0 ) {
         _map[? "font"      ] = _text_font;
         _map[? "colour"    ] = _text_colour;
         _map[? "hyperlink" ] = _text_hyperlink;
+		_map[? "rainbow"   ] = _text_rainbow;
+		_map[? "shake"     ] = _text_shake;
+		_map[? "wave"      ] = _text_wave;
         
         //If we've got a word with a hyperlink, add it to our list of hyperlink regions
         if ( _text_hyperlink != "" ) {
@@ -500,7 +543,10 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
             var _font     = _word_map[? "font" ];
             var _font_map = global.scribble_font_json[? _font ];
             var _font_uvs = _font_map[? "uvs" ];
-            var _colour = _word_map[? "colour" ];
+            var _colour   = _word_map[? "colour" ];
+			var _rainbow  = _word_map[? "rainbow" ];
+			var _shake    = _word_map[? "shake" ];
+			var _wave     = _word_map[? "wave" ];
             
             var _str = _word_map[? "string" ];
             var _string_size = string_length( _str );
@@ -538,14 +584,15 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
 				
                 var _z = _i + ( _texture_char << 8 );
                 
-                vertex_position_3d( _vbuff, _pos_l, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_t ); vertex_colour( _vbuff, _colour, 1 );
-                vertex_position_3d( _vbuff, _pos_r, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, _colour, 1 );
-                vertex_position_3d( _vbuff, _pos_l, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _colour, 1 );
-											
-                vertex_position_3d( _vbuff, _pos_r, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, _colour, 1 );
-                vertex_position_3d( _vbuff, _pos_r, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_b ); vertex_colour( _vbuff, _colour, 1 );
-                vertex_position_3d( _vbuff, _pos_l, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _colour, 1 );
-                //---------------------
+                vertex_position_3d( _vbuff, _pos_l, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_t ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+                vertex_position_3d( _vbuff, _pos_r, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+                vertex_position_3d( _vbuff, _pos_l, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+				
+                vertex_position_3d( _vbuff, _pos_r, _pos_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+                vertex_position_3d( _vbuff, _pos_r, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_b ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+                vertex_position_3d( _vbuff, _pos_l, _pos_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+                
+				//---------------------
                 
                 _char_x += _char_w;
                 _texture_char++;
@@ -558,13 +605,13 @@ for( var _i = 0; _i < _lines_size; _i++ ) {
             var _word_w = _word_map[? "width" ];
             var _word_h = _word_map[? "height" ];
             
-            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
-            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
-            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
-            																   
-            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
-            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
-            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 );
+            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+            																   																		 
+            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h-1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+            vertex_position_3d( _vbuff, _str_x+_word_w, _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
+            vertex_position_3d( _vbuff, _str_x        , _str_y+_word_h+1, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, _colour, 1 ); vertex_normal( _vbuff, _rainbow, _shake, _wave );
             
         }
         

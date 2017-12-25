@@ -9,8 +9,18 @@
 render_time_smoothed = 200;
 test_mode = 0;
 
-lorem_ipsum_string = concat( LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM, "\n\n", LOREM_IPSUM );
-lorem_ipsum_json = scribble_create( lorem_ipsum_string, 800, fnt_consolas, UD, UD, 20 );
+lorem_ipsum_plain = concat( LOREM_IPSUM, "\n\n",
+                            LOREM_IPSUM, "\n\n",
+					        LOREM_IPSUM, "\n\n",
+					        LOREM_IPSUM, "\n\n",
+					        LOREM_IPSUM );
+
+var _string = concat( LOREM_IPSUM_FANCY, "\n\n",
+                      LOREM_IPSUM_FANCY, "\n\n",
+					  LOREM_IPSUM_FANCY, "\n\n",
+					  LOREM_IPSUM_FANCY, "\n\n",
+					  LOREM_IPSUM_FANCY );
+lorem_ipsum_json = scribble_create( _string, 800, fnt_consolas, UD, UD, 20 );
 scribble_set_shader( lorem_ipsum_json, shd_scribble_fade_char, 50 );
 
 /*

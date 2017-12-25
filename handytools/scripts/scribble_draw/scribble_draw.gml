@@ -31,10 +31,13 @@ var _shader            = _json[? "shader"            ];
 var _smoothness        = _json[? "shader smoothness" ];
 
 s_shader_begin( _shader );
-s_shader_uniform_f( "u_fTime"      , ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
-s_shader_uniform_f( "u_fMaxTime"   ,   _json[? "vbuff chars" ] + _smoothness );
-s_shader_uniform_f( "u_fSmoothness", _smoothness );
-s_shader_colour(    "u_vColour"    , _colour, _alpha );
+s_shader_uniform_f( "u_fTime"       , ( _json[? "vbuff chars" ] + _smoothness ) * _fade );
+s_shader_uniform_f( "u_fMaxTime"    ,   _json[? "vbuff chars" ] + _smoothness );
+s_shader_uniform_f( "u_fSmoothness" , _smoothness );
+s_shader_uniform_f( "u_fRainbowTime", (current_time/1200) mod 1 );
+s_shader_uniform_f( "u_vShakeTime"  , random_range( -1, 1 ), random_range( -1, 1 ) );
+s_shader_uniform_f( "u_fWaveTime"   , current_time/1600 );
+s_shader_colour(    "u_vColour"     , _colour, _alpha );
 	
 	//Set up basic translation matrix
 	var _matrix;

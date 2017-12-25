@@ -19,7 +19,7 @@ switch( test_mode ) {
     case 1:
         draw_text( 5, 5, "NATIVE" );
 		var _t = get_timer();
-        draw_text_ext( 15, 40, lorem_ipsum_string, 20, 800 );
+        draw_text_ext( 15, 40, lorem_ipsum_plain, 20, 800 );
 		_t = get_timer() - _t;
     break;
 	/*
