@@ -1098,7 +1098,7 @@
             "Key": "2904b833-6c13-4e20-b1db-5acba3beea04",
             "Value": {
                 "id": "69bde10d-fe1d-4890-8d4e-5a76a13d96ae",
-                "resourcePath": "scripts\/text_scrollbox_destroy\/text_scrollbox_destroy.yy",
+                "resourcePath": "scripts\\scribble_scrollbox_destroy\\scribble_scrollbox_destroy.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2322,7 +2322,7 @@
             "Key": "5784a58b-4aa1-4718-aa7b-c18a317a8d05",
             "Value": {
                 "id": "8b5c120b-5e0f-4f9d-95cf-f8e94f73d82c",
-                "resourcePath": "scripts\/text_scrollbox_draw\/text_scrollbox_draw.yy",
+                "resourcePath": "scripts\\scribble_scrollbox_draw\\scribble_scrollbox_draw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2354,7 +2354,7 @@
             "Key": "59357701-6a9a-4608-81a1-3cb18f4cdc25",
             "Value": {
                 "id": "1562ad29-3636-4402-87c0-6ff5c39044b1",
-                "resourcePath": "scripts\/text_scrollbox_create\/text_scrollbox_create.yy",
+                "resourcePath": "scripts\\scribble_scrollbox_create\\scribble_scrollbox_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2922,7 +2922,7 @@
             "Key": "6e09f251-6a67-4c3e-be51-0d754f469f9c",
             "Value": {
                 "id": "64a59c80-5f22-4877-868e-72d3596a96f2",
-                "resourcePath": "scripts\/text_scrollbox_step\/text_scrollbox_step.yy",
+                "resourcePath": "scripts\\scribble_scrollbox_step\\scribble_scrollbox_step.yy",
                 "resourceType": "GMScript"
             }
         },

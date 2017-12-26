@@ -1,8 +1,8 @@
 {
-    "id": "2904b833-6c13-4e20-b1db-5acba3beea04",
+    "id": "6e09f251-6a67-4c3e-be51-0d754f469f9c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "text_scrollbox_destroy",
+    "name": "scribble_scrollbox_step",
     "IsCompatibility": false,
     "IsDnD": false
 }

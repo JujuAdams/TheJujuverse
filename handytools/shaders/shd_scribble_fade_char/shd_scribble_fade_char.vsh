@@ -11,6 +11,7 @@ varying vec3 v_vNormal;
 uniform vec2 u_vShakeTime;
 uniform float u_fWaveTime;
 
+//Look, I'm not above copy-pasting code aite
 float rand(vec2 co){
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
 }
@@ -29,7 +30,7 @@ void main() {
 		object_space_pos.y += 5.0*(rand( vec2( v_fIndex + u_vShakeTime.y ) )-0.5);
 	}
 	
-    if ( in_Normal.z > 0.5 ) {
+    if ( in_Normal.z > 0.0 ) {
 		object_space_pos.y += 3.0*sin( 10.0*u_fWaveTime + v_fIndex );
 	}
 	

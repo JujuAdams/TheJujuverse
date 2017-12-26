@@ -1,5 +1,3 @@
-/// @description text_scrollbox_destroy( scrollbox json )
-/// @function text_scrollbox_destroy
 /// @param  scrollbox json 
 //
 //  April 2017

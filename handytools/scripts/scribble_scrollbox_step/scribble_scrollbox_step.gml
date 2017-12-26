@@ -1,5 +1,3 @@
-/// @description text_scrollbox_step( x, y, scrollbox json, text json, mouse x, mouse y, destroy if invisible )
-/// @function text_scrollbox_step
 /// @param  x
 /// @param  y
 /// @param  scrollbox json

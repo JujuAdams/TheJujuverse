@@ -1,5 +1,3 @@
-/// @description text_scrollbox_create( width, height, scrollbar width, scrollbar height, colour )
-/// @function text_scrollbox_create
 /// @param  width
 /// @param  height
 /// @param  scrollbar width

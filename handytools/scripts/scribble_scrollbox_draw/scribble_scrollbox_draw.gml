@@ -1,5 +1,3 @@
-/// @description text_scrollbox_draw( x, y, scrollbox json, text json )
-/// @function text_scrollbox_draw
 /// @param  x
 /// @param  y
 /// @param  scrollbox json
