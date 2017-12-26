@@ -1,5 +1,3 @@
-///Step
-
 if ( alpha_animate ) {
     alpha_t = clamp( alpha_t + alpha_anim_speed*alpha_direction, 0, 1 );
     if ( alpha_t <= 0 ) && ( alpha_direction < 0 ) {

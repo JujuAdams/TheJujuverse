@@ -13,7 +13,7 @@ switch( test_mode ) {
     case 0:
         draw_text( 5, 5, "SCRIBBLE" );
 		var _t = get_timer();
-        scribble_draw( 15, 40, lorem_ipsum_json, UD, UD, dsin_norm( current_time/70 ) );
+        scribble_draw( 15, 40, lorem_ipsum_json, UD, UD, (current_time/5000) mod 2 );
 		_t = get_timer() - _t;
     break;
     case 1:

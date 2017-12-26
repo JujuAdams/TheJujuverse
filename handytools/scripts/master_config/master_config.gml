@@ -25,9 +25,9 @@
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
-#macro GRIP_ON        false
-#macro EDITOR_ON      false
-#macro OBJ_MODEL_ON   false
+#macro GRIP_ON        true
+#macro EDITOR_ON      true
+#macro OBJ_MODEL_ON   true
 #macro SCRIBBLE_ON    true
 #macro TRANSITION_ON  true
 #macro JIFFY_ON       false

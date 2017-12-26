@@ -18,8 +18,6 @@ resolution_start_service();
 transition_start_service();
      jiffy_start_service();
 
-/*
 instantiate_protected( obj_gameflow );
 instantiate_protected( obj_screen );
 unload_current_room();
-//*/
