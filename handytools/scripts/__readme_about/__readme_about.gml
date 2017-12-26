@@ -1,10 +1,10 @@
 /*
-	VERSION   v0.6.2
-	DATE      2017.12.24
-	CREDITS   handytools by @jujuadams, ImGUI implementation by @babyj3ans
+	VERSION   v0.6.3
+	DATE      2017.12.26
+	CREDITS   handytools by @jujuadams, ImGUI implementation by @babyj3ans, JIFFY by @net8floz
 	
-	# "handytools" v0.6.2
-	### Written by @jujuadams, ImGUI Implementation by @babyj3ans
+	# "handytools" v0.6.3
+	### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz
 	A series of libraries and tools to assist with game creation.
 	
 	Press F12 to open DEVTOOL.
@@ -17,6 +17,7 @@
 	* TRACE - Convenient debug output
 	* TRACKER - Memory management and usage tracking utility
 	* ImGUI - In-game debug utility (Thanks @babyj3ans!)
+	* JIFFY - Fixed time step system
 
 	With some tasty 3D services too:
 	* OBJ MODEL - .obj loader

@@ -16,3 +16,4 @@ resolution_init();
  obj_model_init();
   scribble_init();
 transition_init();
+     jiffy_init();

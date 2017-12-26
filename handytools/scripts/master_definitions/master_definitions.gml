@@ -1,7 +1,7 @@
 //handytools build information
-#macro HANDYTOOLS_VERSION "v0.6.2"
-#macro HANDYTOOLS_DATE "2017.12.24" //always use YYYY/MM/DD
-#macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI implementation by @babyj3ans"
+#macro HANDYTOOLS_VERSION "v0.6.3"
+#macro HANDYTOOLS_DATE "2017.12.26" //always use YYYY/MM/DD
+#macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI implementation by @babyj3ans, JIFFY by @net8floz"
 
 //abbreviations
 #macro APP_SURF application_surface

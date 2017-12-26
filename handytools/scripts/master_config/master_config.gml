@@ -9,7 +9,7 @@
 #macro TITLE "A Mind Is A Small Place"
 #macro VERSION "v2.0.2"
 #macro VERSION_NOMIKER "Preview"
-#macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: @net8floz + The /r/GameMaker Discord"
+#macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
 #macro DATE "2017.12.20" //always use YYYY/MM/DD
 
@@ -30,6 +30,7 @@
 #macro OBJ_MODEL_ON   false
 #macro SCRIBBLE_ON    true
 #macro TRANSITION_ON  true
+#macro JIFFY_ON       false
 
 //miscellaneous
 #macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"
