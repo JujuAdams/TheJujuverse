@@ -1,4 +1,6 @@
-///file_open_string( filename )
+///@param filename
+///@description reads in an entire file as string
+///@returns string|undefined
 
 var _filename = argument0;
 
