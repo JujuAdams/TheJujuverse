@@ -41,3 +41,5 @@ SCRIBBLE - Output word index
 		 
 JIFFY - Check with Kyle for updates
       - Update AMIASP to use delta timing
+	  
+OBJ MODEL - Sphere filling!
