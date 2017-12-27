@@ -1,6 +1,7 @@
-///@param string
-///@param note
-///@param protected
+/// @description JSON decode that's compatible with TRACKER
+/// @param string
+/// @param note
+/// @param protected
 //
 // Original: 2017/01/21 @jujuadams
 /*

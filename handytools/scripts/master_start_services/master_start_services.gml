@@ -1,3 +1,11 @@
+/// @description Master service initialisation
+/*
+	Note: Services are created in two stages - this is the second stage.
+	Service start_service() scripts should instantiate control instances for services.
+	Service start_service() scripts may have dependencies, but only on global values defined in service init() scripts
+	Service start_service() scripts should report when they're run and their specific master_config() macro is on.
+*/
+
 trace( "Creating service instances" );
 
    tracker_start_service();

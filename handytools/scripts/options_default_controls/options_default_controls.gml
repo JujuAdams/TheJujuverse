@@ -1,3 +1,9 @@
+/// @description Default controls
+/*
+	Note: This script is currently limited to defining only one player.
+	//TODO Expand default control scheme to include more players (4?)
+*/
+
 var _root_list = ds_list_create();
 tr_map_add_list( global.options_json, "controls", _root_list );
 

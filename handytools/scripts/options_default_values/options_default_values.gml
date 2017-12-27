@@ -1,3 +1,5 @@
+/// @description Default option values
+
 if ( !DEVELOPMENT ) {
 	global.options_defaults[? "version"         ] = VERSION;
 	if ( !FORCE_LOCK_MOUSE ) global.options_defaults[? "lock mouse" ] = false;

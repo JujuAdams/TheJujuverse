@@ -1,5 +1,6 @@
-///@param [note]
-///@param [protected]
+/// @description TRACKER list creation
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
 	var _index = ds_list_create();

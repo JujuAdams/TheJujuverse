@@ -1,3 +1,5 @@
+/// @description TRACKER dump of all list details
+
 if ( !TRACKER_ON ) return "<no ds_list dump, tracker off>";
 
 var _str = "----- ds_list dump -----" + NL;

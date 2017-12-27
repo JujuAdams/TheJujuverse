@@ -1,8 +1,7 @@
-///@param abort
-///@param value
-///@param [value...]
-//
-// Used to report serious errors that should be amended for production
+/// @description TRACE pop-up error output (safe for non-string arguments)
+/// @param abort
+/// @param value
+/// @param [value...]
 
 var _abort = is_real(argument[0])?argument[0]:false;
 var _start = is_real(argument[0])?1:0;

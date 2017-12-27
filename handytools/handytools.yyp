@@ -4815,6 +4815,14 @@
             }
         },
         {
+            "Key": "b6ff8f72-016b-4abf-9806-df125c00f345",
+            "Value": {
+                "id": "1bc1520c-2cde-4b52-88cf-99bb26eed607",
+                "resourcePath": "views\\b6ff8f72-016b-4abf-9806-df125c00f345.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "b726070d-b5f6-4668-a413-1de365001164",
             "Value": {
                 "id": "4ae48add-b7ba-463a-8565-d9771e960b2e",
@@ -6522,7 +6530,7 @@
             "Key": "fd30aef3-d0ec-47c3-9cb7-cc0864db4769",
             "Value": {
                 "id": "65bde517-6b8f-433c-b1bc-c6051c2d04e2",
-                "resourcePath": "notes\\note0.yy",
+                "resourcePath": "notes\\TODO.yy",
                 "resourceType": "GMNotes"
             }
         },

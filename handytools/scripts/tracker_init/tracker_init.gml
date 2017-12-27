@@ -1,3 +1,5 @@
+/// @description TRACKER service initialisation
+
 trace_f( TRACKER_ON? "TRACKER" : "TRACKER (limited)" );
 
 if ( TRACKER_ON ) {

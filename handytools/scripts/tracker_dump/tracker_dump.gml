@@ -1,3 +1,5 @@
+/// @description TRACKER full dump of resource data
+
 return concat( NL,
                "--------------------", NL,
 	           " tracker dump", NL,

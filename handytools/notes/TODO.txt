@@ -1,0 +1,43 @@
+//TODO
+
+Write descriptions for TRACKER functions
+  "        "        "  ImGUI       "
+  "        "        "  CONTROLS    "
+  "        "        "  AUDIO       "
+  "        "        "  WAN         "
+  "        "        "  OPTIONS     "
+  "        "        "  FPS         "
+  "        "        "  DEVTOOL     "
+  "        "        "  RUMBLE      "
+  "        "        "  RESOLUTION  "
+  "        "        "  GRIP        "
+  "        "        "  EDITOR      "
+  "        "        "  SCREEN      "
+  "        "        "  OBJ MODEL   "
+  "        "        "  SCRIBBLE    "
+  "        "        "  TRANSITION  "
+  "        "        "  JIFFY       "
+Tidy up services TODO folder
+  
+  
+Write descriptions for JSON       library
+  "        "        "  Quaternion    "
+  "        "        "  Easing        "
+  "        "        "  Super Shader  "
+  "        "        "  Tweeing       "
+  "        "        "  Batch File    "
+  "        "        "  Matrix Chain  "
+Tidy up library TODO folder
+
+
+Write descriptions for all the snippets
+
+
+Write readmes for the above :'( So much documentation
+
+
+SCRIBBLE - Output word index
+         - Pack text optins bitwise
+		 
+JIFFY - Check with Kyle for updates
+      - Update AMIASP to use delta timing
