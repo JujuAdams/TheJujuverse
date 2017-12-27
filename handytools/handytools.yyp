@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "078dce73-3ccb-4b8d-a160-dab4ac1581ff",
+            "Value": {
+                "id": "93d757b1-dada-4bfd-9ac5-394190161975",
+                "resourcePath": "scripts\\distance_from_point_to_mesh\\distance_from_point_to_mesh.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "07e81ed5-c3ac-4339-a968-dd539d0dc98f",
             "Value": {
                 "id": "9964dcd3-07af-4aee-833e-2b8901d35472",
@@ -419,6 +427,14 @@
             "Value": {
                 "id": "88fae551-1ed9-46ec-bfa2-e6cc5f96b1e4",
                 "resourcePath": "scripts\\devtool_is_open\\devtool_is_open.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "10ef57f4-86e0-4417-a098-464cd011ff8e",
+            "Value": {
+                "id": "449e60f0-ee79-4f63-b160-7d18d18fe7c0",
+                "resourcePath": "scripts\\vertex_buffer_sphere\\vertex_buffer_sphere.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2207,6 +2223,14 @@
             }
         },
         {
+            "Key": "526ad9ea-d9a7-4bfc-a837-9179165d4c51",
+            "Value": {
+                "id": "27ee0c76-960d-46e9-94a2-fe71191d488a",
+                "resourcePath": "scripts\\vertex_buffer_triangle_array\\vertex_buffer_triangle_array.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "529b7648-1755-44b9-a336-ca4748ae64a7",
             "Value": {
                 "id": "52e53981-fe5d-4e66-a496-abd87c2a4c17",
@@ -2379,6 +2403,14 @@
             "Value": {
                 "id": "1562ad29-3636-4402-87c0-6ff5c39044b1",
                 "resourcePath": "scripts\\scribble_scrollbox_create\\scribble_scrollbox_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5957355c-1424-452e-9ace-c908138b3943",
+            "Value": {
+                "id": "47c6dac4-524c-4ad5-99da-2c19ab63f9ee",
+                "resourcePath": "scripts\\distance_from_point_to_mesh_preprocess\\distance_from_point_to_mesh_preprocess.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2556,6 +2588,14 @@
                 "id": "808d274f-dd77-4196-b097-f8a11ad8335c",
                 "resourcePath": "scripts\\control_init\\control_init.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5f7843dd-3e37-46e0-a65f-c242a7749701",
+            "Value": {
+                "id": "c7150b27-ddef-4026-ba49-44eda808af81",
+                "resourcePath": "objects\\obj_cube\\obj_cube.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3100,6 +3140,14 @@
                 "id": "22840674-7745-433e-9f14-cb77a4072cd4",
                 "resourcePath": "datafiles_yy\\models\\coil.obj.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "758057bc-a218-435c-b7a7-95698adb62ff",
+            "Value": {
+                "id": "00346ed0-84fe-41fa-b7f1-7a34e127d5ac",
+                "resourcePath": "scripts\\distance_from_point_to_mesh_fast\\distance_from_point_to_mesh_fast.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4135,6 +4183,14 @@
             }
         },
         {
+            "Key": "a0387044-b8f7-40e2-adcc-e5a06fe54d44",
+            "Value": {
+                "id": "7600754b-d69c-4374-bc59-0bb064b49e2e",
+                "resourcePath": "scripts\\vertex_buffer_copy\\vertex_buffer_copy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a0456147-10d8-4705-b59b-4b8ce3aed4e8",
             "Value": {
                 "id": "b944e5d8-4072-44a3-b0a4-0060d11f777e",
@@ -4495,10 +4551,26 @@
             }
         },
         {
+            "Key": "ad334cda-caaa-47a5-af4b-555e9ef47c22",
+            "Value": {
+                "id": "9bccb147-823f-40b1-b347-b85f02fb5e83",
+                "resourcePath": "scripts\\vertex_buffer_add\\vertex_buffer_add.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ad4d1351-9d67-419b-a224-debebf2ff025",
             "Value": {
                 "id": "92343757-e0e1-47a2-9552-0f232abbfdd8",
                 "resourcePath": "views\/ad4d1351-9d67-419b-a224-debebf2ff025.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ad648311-b591-402b-b1eb-00152583eb46",
+            "Value": {
+                "id": "a50d582a-1a49-4585-9076-120aa1e6bc2a",
+                "resourcePath": "views\\ad648311-b591-402b-b1eb-00152583eb46.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -5919,6 +5991,14 @@
             }
         },
         {
+            "Key": "e7d677c8-8464-4ab9-81d5-5f0100bcf85e",
+            "Value": {
+                "id": "d9475f5e-2ac3-4ab1-b9c3-14d1b2b360f3",
+                "resourcePath": "objects\\obj_sphere\\obj_sphere.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e7eaee2e-7151-4c24-a934-b7b9c3bd1a5a",
             "Value": {
                 "id": "934d6f08-1a82-4636-867b-3165b63cbe77",
@@ -6890,6 +6970,13 @@
         "80711f20-30f9-4789-9fe6-3b6de2f1be81",
         "7427ee24-ce39-4a84-985c-940281ed3122",
         "c51d4cce-59ee-47da-9d10-4f1f42847f8c",
+        "10ef57f4-86e0-4417-a098-464cd011ff8e",
+        "ad334cda-caaa-47a5-af4b-555e9ef47c22",
+        "a0387044-b8f7-40e2-adcc-e5a06fe54d44",
+        "526ad9ea-d9a7-4bfc-a837-9179165d4c51",
+        "078dce73-3ccb-4b8d-a160-dab4ac1581ff",
+        "758057bc-a218-435c-b7a7-95698adb62ff",
+        "5957355c-1424-452e-9ace-c908138b3943",
         "e03a696e-42c6-447f-91ad-a5a6d6a5a121",
         "1c3730e2-d003-49ec-91bd-2d74a3749ffb",
         "beaedd58-3606-4608-bcd4-5afa80f70075",

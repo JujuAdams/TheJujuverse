@@ -5,6 +5,8 @@ ds_list_add( _list, obj_door_spawn         );
 ds_list_add( _list, obj_light              );
 ds_list_add( _list, obj_phone              );
 ds_list_add( _list, obj_dummy_phone        );
+ds_list_add( _list, obj_cube               );
+ds_list_add( _list, obj_sphere             );
 ds_list_add( _list, "SEP"                  );
 
 ds_list_add( _list, "DECORATIONS"          );

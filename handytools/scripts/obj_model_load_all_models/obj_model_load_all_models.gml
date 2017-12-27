@@ -4,11 +4,12 @@ global.obj_model_total_time = 0;
 
 obj_model_load_async( "prism"       , "models/prism.obj"       , global.vft_simple_3d,   false, false,   0, 2.2, 0, 12 );
 obj_model_load_async( "cube"        , "models/old_cube.obj"    , global.vft_simple_3d,   false, false,   4, 0, 4, 1 );
+obj_model_load_async( "door"        , "models/door.obj"        , global.vft_simple_3d,   false, false,   0, 0, 0, 2.77 );
+//*
 obj_model_load_async( "phonebase"   , "models/phonebase.obj"   , global.vft_simple_3d,   false, false,   0, 0, 0, 5 );
 obj_model_load_async( "phoneheadset", "models/phoneheadset.obj", global.vft_simple_3d,   false, false,   0, 0, 0, 5 );
 obj_model_load_async( "phonerotary" , "models/rotary.obj"      , global.vft_simple_3d,   false, false,   0, 0, 0, 5 );
 obj_model_load_async( "pedestal"    , "models/pedestal.obj"    , global.vft_simple_3d,   false, false,   0, 0, 0, 2.77 ); //original height = 13.367, new height = 40
-obj_model_load_async( "door"        , "models/door.obj"        , global.vft_simple_3d,   false, false,   0, 0, 0, 2.77 );
 obj_model_load_async( "chair"       , "models/chair.obj"       , global.vft_simple_3d,   false, false,   0, 0, 0, 2.77 );
 obj_model_load_async( "table"       , "models/table.obj"       , global.vft_simple_3d,   false, false,   1, 0, -1, 16 );
 obj_model_load_async( "hanging_bulb", "models/hanging_bulb.obj", global.vft_simple_3d,   false, false,   0, 0, 0,  5 );
@@ -48,3 +49,4 @@ obj_model_load_async( "chess_rook"  , "models/chess_rook.obj"  , global.vft_simp
 obj_model_load_async( "spiral3"     , "models/spiral3.obj"     , global.vft_simple_3d,   false, false,   1, 0, -1, 6 );
 obj_model_load_async( "coil"        , "models/coil.obj"        , global.vft_simple_3d,   false, false,   1, 0, -1, 12 );
 obj_model_load_async( "square_frame", "models/square_frame.obj", global.vft_simple_3d,   false, false,   0, 0, 0,  1 );
+//*/

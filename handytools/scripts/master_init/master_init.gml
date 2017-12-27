@@ -1,4 +1,21 @@
 trace_f( "Initialising services" );
+	
+vertex_format_begin();
+vertex_format_add_position_3d(); //12
+vertex_format_add_texcoord();    // 8
+vertex_format_add_colour();      // 4
+vertex_format_add_normal();      //12 = 36
+global.vft_simple_3d = vertex_format_end();
+
+vertex_format_begin();
+vertex_format_add_position(); //8
+vertex_format_add_texcoord(); //8
+vertex_format_add_colour();   //4 = 20
+global.vft_simple_2d = vertex_format_end();
+
+global.vbf_sphere = vertex_buffer_sphere( -1, -1, -1,
+                                           1,  1,  1,
+										   1,  1, 16 );
 
    tracker_init();
   imguigml_init();
