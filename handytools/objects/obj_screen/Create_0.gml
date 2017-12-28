@@ -2,7 +2,7 @@ persistent = true;
 
 global.app_surf_w         = DEFAULT_APP_SURF_W;
 global.app_surf_h         = DEFAULT_APP_SURF_H;
-global.screen_do_dither   = true && ALLOW_DITHER;
+global.screen_do_dither   = false && ALLOW_DITHER;
 global.screen_do_lighting = true && ALLOW_LIGHTING;
 global.screen_do_culling  = false;
 global.screen_do_fxaa     = false;

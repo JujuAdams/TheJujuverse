@@ -23,7 +23,7 @@ global.vft_simple_2d = vertex_format_end();
 
 global.vbf_sphere = vertex_buffer_build_sphere( -1, -1, -1,
                                                  1,  1,  1,
-										         1,  1, 16 );
+										         1,  1, 128 );
 
 trace_f( "Initialising services" );
 
