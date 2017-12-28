@@ -21,9 +21,9 @@ vertex_format_add_texcoord(); //8
 vertex_format_add_colour();   //4 = 20
 global.vft_simple_2d = vertex_format_end();
 
-global.vbf_sphere = vertex_buffer_sphere( -1, -1, -1,
-                                           1,  1,  1,
-										   1,  1, 16 );
+global.vbf_sphere = vertex_buffer_build_sphere( -1, -1, -1,
+                                                 1,  1,  1,
+										         1,  1, 16 );
 
 trace_f( "Initialising services" );
 

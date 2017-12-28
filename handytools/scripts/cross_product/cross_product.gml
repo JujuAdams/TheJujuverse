@@ -1,4 +1,9 @@
-///@func cross_product( x1, y1, z1, x2, y2, z2 )
+/// @param x1
+/// @param y1
+/// @param z1
+/// @param x2
+/// @param y2
+/// @param z2
 
 var _x1 = argument0;
 var _y1 = argument1;

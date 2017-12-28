@@ -26,11 +26,11 @@
         "9cd32f43-f704-4508-a431-1a4fd334ead6",
         "0333d723-7103-4e28-b331-365908976959",
         "5ddc12b8-814f-4446-a846-8c6f889ac803",
-        "ad648311-b591-402b-b1eb-00152583eb46",
         "e03a696e-42c6-447f-91ad-a5a6d6a5a121",
         "1c3730e2-d003-49ec-91bd-2d74a3749ffb",
         "beaedd58-3606-4608-bcd4-5afa80f70075",
-        "13ce029f-5753-425a-a1b8-52191795a23b"
+        "13ce029f-5753-425a-a1b8-52191795a23b",
+        "a4b097fe-b0b1-4fdf-8ae1-e1ecc3a3b42b"
     ],
     "filterType": "GMScript",
     "folderName": "snippets",
