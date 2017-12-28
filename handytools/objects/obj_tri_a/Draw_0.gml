@@ -36,13 +36,13 @@ if ( ( !editor_is_open() || obj_editor.window_page != E_EDITOR_PAGE.PLACE )
 	var _jz = _cz - _az;
 	
 	vertex_submit_and_delete(
-		vertex_buffer_line( 2*_ix+_ax, 2*_iy+_ay, 2*_iz+_az,
+		vertex_buffer_line( 1*_ix+_ax, 1*_iy+_ay, 1*_iz+_az,
 			                      _ax,       _ay,       _az,
 							c_red, 1, 0.8 )
 	);
 	
 	vertex_submit_and_delete(
-		vertex_buffer_line( 2*_jx+_ax, 2*_jy+_ay, 2*_jz+_az,
+		vertex_buffer_line( 1*_jx+_ax, 1*_jy+_ay, 1*_jz+_az,
 			                      _ax,       _ay,       _az,
 							c_blue, 1, 0.8 )
 	);
@@ -78,52 +78,40 @@ if ( ( !editor_is_open() || obj_editor.window_page != E_EDITOR_PAGE.PLACE )
 	var _dist = sqrt( _rx*_rx + _ry*_ry + _rz*_rz );
 	
 	var _i_sqr_dist = _ix*_ix + _iy*_iy + _iz*_iz;
+	var _i_dist     = sqrt( _i_sqr_dist );
 	var _j_sqr_dist = _jx*_jx + _jy*_jy + _jz*_jz;
+	var _j_dist     = sqrt( _j_sqr_dist );
+	
+	var _result = cross_product_normalised( _nx, _ny, _nz,   _ix, _iy, _iz );
+	var _kx = _result[0]*_i_dist;
+	var _ky = _result[1]*_i_dist;
+	var _kz = _result[2]*_i_dist;
+	
 	
 	//Project onto the basis vectors for the triangle
 	var _i = dot_product_3d( _sx, _sy, _sz,   _ix, _iy, _iz ) / _i_sqr_dist;
-	var _j = dot_product_3d( _sx, _sy, _sz,   _jx, _jy, _jz ) / _j_sqr_dist;
+	var _k = dot_product_3d( _sx, _sy, _sz,   _kx, _ky, _kz ) / _i_sqr_dist;
 	
-	var _result = cross_product_normalised( _ix, _iy, _iz,   _nx, _ny, _nz );
-	var _kx = _result[0];
-	var _ky = _result[1];
-	var _kz = _result[2];
+	var _j_dot_i = dot_product_3d( _jx, _jy, _jz,   _ix, _iy, _iz ) / _i_sqr_dist;
+	var _j_dot_k = dot_product_3d( _jx, _jy, _jz,   _kx, _ky, _kz ) / _i_sqr_dist;
+	
+	var _j = _k / _j_dot_k;
+	_i = ( _sx - _j*_jx ) / _ix;
+	
+	vertex_submit_and_delete(
+		vertex_buffer_line( _j*_jx+_ax, _j*_jy+_ay, _j*_jz+_az,
+			                   _sx+_ax,    _sy+_ay,    _sz+_az,
+							c_blue, 1, 0.8 )
+	);
+	
+	vertex_submit_sphere( _i*_ix+_ax, _i*_iy+_ay, _i*_iz+_az, 1 );
+	vertex_submit_sphere( _j*_jx+_ax, _j*_jy+_ay, _j*_jz+_az, 1 );
 	
 	output_i = _i;
 	output_j = _j;
 	output_x = _sx;
 	output_y = _sy;
 	output_z = _sz;
-	/*
-	vertex_submit_sphere( _i*_ix+_ax, _i*_iy+_ay, _i*_iz+_az, 1 );
-	vertex_submit_sphere( _j*_jx+_ax, _j*_jy+_ay, _j*_jz+_az, 1 );
-	*/
-	vertex_submit_sphere( _i*_ix+_ax, _i*_iy+_ay, _i*_iz+_az, 1 );
-	vertex_submit_sphere( _j*_jx+_ax, _j*_jy+_ay, _j*_jz+_az, 1 );
-	
-	var _i_dot_j = dot_product_3d( _ix, _iy, _iz,   _jx, _jy, _jz ) / ( _i_sqr_dist * _j_sqr_dist );
-	_i -= _i*_i_dot_j;
-	_j -= _j*_i_dot_j;
-	
-	vertex_submit_sphere( _i*_ix + _j*_jx + _ax,
-	                      _i*_iy + _j*_jy + _ay,
-						  _i*_iz + _j*_jz + _az, 2 );
-	
-	/*
-	vertex_submit_and_delete(
-		vertex_buffer_line( _i*_i_dist*_ix+_ax, _i*_i_dist*_iy+_ay, _i*_i_dist*_iz+_az,
-			                           _sx+_ax,            _sy+_ay,            _sz+_az,
-							c_white, 1, 0.8 )
-	);
-	vertex_submit_sphere( _i*_i_dist*_ix+_ax, _i*_i_dist*_iy+_ay, _i*_i_dist*_iz+_az, 1 );
-	
-	vertex_submit_and_delete(
-		vertex_buffer_line( _j*_j_dist*_jx+_ax, _j*_j_dist*_jy+_ay, _j*_j_dist*_jz+_az,
-			                           _sx+_ax,            _sy+_ay,            _sz+_az,
-							c_white, 1, 0.8 )
-	);
-	vertex_submit_sphere( _j*_j_dist*_jx+_ax, _j*_j_dist*_jy+_ay, _j*_j_dist*_jz+_az, 1 );
-	*/
 	
 	/*
 		|\
@@ -132,7 +120,7 @@ if ( ( !editor_is_open() || obj_editor.window_page != E_EDITOR_PAGE.PLACE )
 		|   \
 		L____\
 	*/
-	/*
+	
 	var _closest_i = 0;
 	var _closest_j = 0;
 	if ( _i < 0 ) && ( _j >= 0 ) {
@@ -208,6 +196,5 @@ if ( ( !editor_is_open() || obj_editor.window_page != E_EDITOR_PAGE.PLACE )
 	
 	//if ( current_time mod 1000 < 500 ) vertex_submit_sphere( output_x+_ax, output_y+_ay, output_z+_az, 2 );
 	_closest = min( _closest, _dist );
-	*/
 	
 }
