@@ -1,7 +1,6 @@
-///@param value
-///@param [value...]
-//
-// Used for bug tracking given its greater information content
+/// @description TRACE output with extra origin data (safe for non-string arguments)
+/// @param value
+/// @param [value...]
 
 if ( TRACE_ON ) {
 	var _str = CURRENT_TIME_PADDED + TRACE_DIV + object_get_name( object_index ) + ":" + string( id ) + TRACE_DIV;

@@ -1,7 +1,6 @@
-///@param value
-///@param [value...]
-//
-// Used for generic debugging when a pop-up is needed
+/// @description TRACE pop-up output (safe for non-string arguments)
+/// @param value
+/// @param [value...]
 
 if ( TRACE_ON ) {
 	var _str = "";

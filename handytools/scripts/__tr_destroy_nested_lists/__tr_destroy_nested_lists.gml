@@ -1,5 +1,6 @@
-///@param tracker_map
-///@param id
+/// @description TRACKER internal function to destroy lists safely
+/// @param tracker_map
+/// @param id
 
 var _tracker_map = argument0;
 var _index       = argument1;

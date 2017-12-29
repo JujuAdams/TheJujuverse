@@ -1,8 +1,8 @@
 {
-    "id": "10ef57f4-86e0-4417-a098-464cd011ff8e",
+    "id": "2aeca39b-8033-4e10-ae26-91b1ad772e06",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "vertex_buffer_sphere",
+    "name": "vertex_submit_and_delete",
     "IsCompatibility": false,
     "IsDnD": false
 }

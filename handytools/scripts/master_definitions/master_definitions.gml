@@ -1,3 +1,5 @@
+/// @description Internal master definitions
+
 //handytools build information
 #macro HANDYTOOLS_VERSION "v0.6.3"
 #macro HANDYTOOLS_DATE "2017.12.26" //always use YYYY/MM/DD

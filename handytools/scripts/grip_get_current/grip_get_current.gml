@@ -1,3 +1,5 @@
+/// @func grip_get_current()
+
 if ( !GRIP_ON ) return undefined;
 
 if ( global.grip_handling_manual ) return global.grip_current_manual;
