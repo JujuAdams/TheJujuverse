@@ -43,7 +43,7 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
             break;
             default:
                 tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
-			break;
+            break;
         }
         
     }

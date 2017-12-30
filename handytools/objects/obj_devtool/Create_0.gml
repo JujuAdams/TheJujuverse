@@ -12,8 +12,8 @@ window_state[0] = false;
 window_state[1] = false;
 
 if ( GRIP_ON ) {
-	grip_preview = 0;
-	grip_preview_surface = tr_surface_create( 480, 480, "Tracker grip preview" );
+    grip_preview = 0;
+    grip_preview_surface = tr_surface_create( 480, 480, "Tracker grip preview" );
 }
 
 surface_preview = 0;

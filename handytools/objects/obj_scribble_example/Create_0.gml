@@ -11,15 +11,15 @@ test_mode = 0;
 
 lorem_ipsum_plain = concat( LOREM_IPSUM, "\n\n",
                             LOREM_IPSUM, "\n\n",
-					        LOREM_IPSUM, "\n\n",
-					        LOREM_IPSUM, "\n\n",
-					        LOREM_IPSUM );
+                            LOREM_IPSUM, "\n\n",
+                            LOREM_IPSUM, "\n\n",
+                            LOREM_IPSUM );
 
 var _string = concat( LOREM_IPSUM_FANCY, "\n\n",
                       LOREM_IPSUM_FANCY, "\n\n",
-					  LOREM_IPSUM_FANCY, "\n\n",
-					  LOREM_IPSUM_FANCY, "\n\n",
-					  LOREM_IPSUM_FANCY );
+                      LOREM_IPSUM_FANCY, "\n\n",
+                      LOREM_IPSUM_FANCY, "\n\n",
+                      LOREM_IPSUM_FANCY );
 lorem_ipsum_json = scribble_create( _string, 800, fnt_consolas, UD, UD, 20 );
 scribble_set_shader( lorem_ipsum_json, shd_scribble_fade_char, 50, E_SCRIBBLE_FADE.PER_CHAR );
 

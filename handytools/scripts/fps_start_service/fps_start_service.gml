@@ -1,4 +1,4 @@
 if ( FPS_ON ) {
-	trace_f( "FPS" );
-	instantiate_protected( obj_fps );
+    trace_f( "FPS" );
+    instantiate_protected( obj_fps );
 }

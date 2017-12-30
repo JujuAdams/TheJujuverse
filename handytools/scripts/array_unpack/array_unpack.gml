@@ -9,7 +9,7 @@ var _indent    = (( argument_count < 3 ) || ( argument[2] == undefined ))? "  " 
 var _string = "";
 var _size = array_length_1d( _array )-1;
 for( var _i = _size-1; _i >= 1; _i-- ) {
-	repeat( _size-_i-1 ) _string += _indent;
-	_string += string( _array[ _i ] ) + ((_i > 1)? _separator : "");
+    repeat( _size-_i-1 ) _string += _indent;
+    _string += string( _array[ _i ] ) + ((_i > 1)? _separator : "");
 }
 return _string;

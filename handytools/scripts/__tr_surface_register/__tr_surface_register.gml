@@ -11,8 +11,8 @@ global.tracker_surfaces_width[?  argument0 ] = (argument1!=undefined)? argument1
 global.tracker_surfaces_height[? argument0 ] = (argument2!=undefined)? argument2 : surface_get_height( argument0 );
 
 if ( TRACKER_ON ) {
-	global.tracker_surfaces_origin[?    argument0 ] = tracker_origin_string();
-	global.tracker_surfaces_note[?      argument0 ] = string_space_padded_right( QU + argument3 + QU, TRACKER_NOTE_SPACE_PADDING );
-	global.tracker_surfaces_protect[?   argument0 ] = argument4;
-	global.tracker_surfaces_callstack[? argument0 ] = debug_get_callstack();
+    global.tracker_surfaces_origin[?    argument0 ] = tracker_origin_string();
+    global.tracker_surfaces_note[?      argument0 ] = string_space_padded_right( QU + argument3 + QU, TRACKER_NOTE_SPACE_PADDING );
+    global.tracker_surfaces_protect[?   argument0 ] = argument4;
+    global.tracker_surfaces_callstack[? argument0 ] = debug_get_callstack();
 }

@@ -4,6 +4,6 @@ audio_group_set_gain( global.audio_group_map[? "sounds" ], options_get( "sounds"
 /*
 if ( options_get( "window width"  ) >= display_get_width()  )
 || ( options_get( "window height" ) >= display_get_height() ) {
-	options_set( "fullscreen", true );
+    options_set( "fullscreen", true );
 }
 */

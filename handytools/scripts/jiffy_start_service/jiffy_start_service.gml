@@ -1,4 +1,4 @@
 if ( JIFFY_ON ) {
-	trace( "JIFFY" );
-	instantiate_protected( obj_jiffy );
+    trace( "JIFFY" );
+    instantiate_protected( obj_jiffy );
 }

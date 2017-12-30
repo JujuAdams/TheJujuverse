@@ -1,10 +1,10 @@
 /*
-	Edit this array to add more fonts to the Scribble font renderer.
+    Edit this array to add more fonts to the Scribble font renderer.
 */
 if ( !SCRIBBLE_AUTO_FONT_INIT ) {
-	var _font_array = [ fnt_default, fnt_consolas,
-	                    fnt_verdana_32, fnt_verdana_32_bold,
-				        fnt_tnr_41, fnt_tnr_41_italics ];
+    var _font_array = [ fnt_default, fnt_consolas,
+                        fnt_verdana_32, fnt_verdana_32_bold,
+                        fnt_tnr_41, fnt_tnr_41_italics ];
 }
 
 //------------------------------------------------------------------
@@ -35,12 +35,12 @@ var _surface = tr_surface_create( SCRIBBLE_SURFACE_SIZE, SCRIBBLE_SURFACE_SIZE, 
 var _char_surface = tr_surface_create( SCRIBBLE_CHARACTER_SURFACE_SIZE, SCRIBBLE_CHARACTER_SURFACE_SIZE, "scribble char surface", false );
 
 surface_set_target( _surface );
-	draw_clear_alpha( c_white, 0 );
-	gpu_set_blendenable( false );
-	draw_set_colour( c_white );
-	draw_rectangle( 0, 0, 1, 1, false );
-	draw_set_alpha( 1 );
-	gpu_set_blendenable( true );
+    draw_clear_alpha( c_white, 0 );
+    gpu_set_blendenable( false );
+    draw_set_colour( c_white );
+    draw_rectangle( 0, 0, 1, 1, false );
+    draw_set_alpha( 1 );
+    gpu_set_blendenable( true );
 surface_reset_target();
 
 var _surf_x           = 2 + SCRIBBLE_CHAR_PADDING;
@@ -51,10 +51,10 @@ var _char_max_w = 0;
 var _char_max_h = 0;
 
 if ( SCRIBBLE_AUTO_FONT_INIT ) {
-	trace( "Automatically scanning for fonts" );
-	_font_array = undefined;
-	var _size = 0;
-	for( var _i = 0; _i < 1000; _i++ ) if ( font_exists( _i ) ) _font_array[ _size++ ] = _i;
+    trace( "Automatically scanning for fonts" );
+    _font_array = undefined;
+    var _size = 0;
+    for( var _i = 0; _i < 1000; _i++ ) if ( font_exists( _i ) ) _font_array[ _size++ ] = _i;
 }
   
 var _font_count = array_length_1d( _font_array );
@@ -66,16 +66,16 @@ for( var _i = 0; _i < _font_count; _i++ ) {
     _font_map[? "name" ] = font_get_name( _font );
         
     var _uvs = undefined;
-	// 0 = bbox left relative to draw position
-	// 1 = bbox top relative to draw position
-	// 2 = bbox right relative to draw position
-	// 3 = bbox bottom relative to draw position
-	// 4 = bbox width
-	// 5 = bbox height
-	// 6 = x on texture page
-	// 7 = y on texture page
-	// 8 = string_width of character
-	// 9 = string_height of character
+    // 0 = bbox left relative to draw position
+    // 1 = bbox top relative to draw position
+    // 2 = bbox right relative to draw position
+    // 3 = bbox bottom relative to draw position
+    // 4 = bbox width
+    // 5 = bbox height
+    // 6 = x on texture page
+    // 7 = y on texture page
+    // 8 = string_width of character
+    // 9 = string_height of character
     
     draw_set_font( _font );
     
@@ -96,24 +96,24 @@ for( var _i = 0; _i < _font_count; _i++ ) {
         
         sprite_index = sprite_create_from_surface( _char_surface, 0, 0, SCRIBBLE_CHARACTER_SURFACE_SIZE, SCRIBBLE_CHARACTER_SURFACE_SIZE, false, false, SCRIBBLE_CHAR_PADDING, SCRIBBLE_CHAR_PADDING );
         sprite_collision_mask( sprite_index, false,   0, 0,0,0,0,   0, 2 );
-		
+        
         var _l = bbox_left;
         var _t = bbox_top;
         var _r = bbox_right;
         var _b = bbox_bottom;
-		if ( _l < 0 ) && ( _t < 0 ) && ( _b < 0 ) && ( _t < 0 ) {
-	        _l = SCRIBBLE_CHAR_PADDING + _char_w;
-	        _t = SCRIBBLE_CHAR_PADDING + _char_h;
-	        _r = _l;
-	        _b = _t;
-		}
-		_r++;
-		_b++;
-		
+        if ( _l < 0 ) && ( _t < 0 ) && ( _b < 0 ) && ( _t < 0 ) {
+            _l = SCRIBBLE_CHAR_PADDING + _char_w;
+            _t = SCRIBBLE_CHAR_PADDING + _char_h;
+            _r = _l;
+            _b = _t;
+        }
+        _r++;
+        _b++;
+        
         var _w = _r - _l;
         var _h = _b - _t;
-		_char_max_w = max( _char_max_w, _w );
-		_char_max_h = max( _char_max_h, _h );
+        _char_max_w = max( _char_max_w, _w );
+        _char_max_h = max( _char_max_h, _h );
         
         _uvs[ _index, E_SCRIBBLE.L ] = _l;
         _uvs[ _index, E_SCRIBBLE.T ] = _t;
@@ -153,8 +153,8 @@ for( var _i = 0; _i < _font_count; _i++ ) {
     
     _font_map[? "uvs" ] = _uvs;
     
-	if ( SCRIBBLE_OUTPUT_MAXIMUM_CHAR_SIZE ) trace( QU, font_get_pretty_name( _font ), QU, " max char size=", _char_max_w, "x", _char_max_h );
-	
+    if ( SCRIBBLE_OUTPUT_MAXIMUM_CHAR_SIZE ) trace( QU, font_get_pretty_name( _font ), QU, " max char size=", _char_max_w, "x", _char_max_h );
+    
 }
 
 global.scribble_sprite  = sprite_create_from_surface( _surface, 0, 0, SCRIBBLE_SURFACE_SIZE, SCRIBBLE_SURFACE_SIZE, false, false, 0, 0 );

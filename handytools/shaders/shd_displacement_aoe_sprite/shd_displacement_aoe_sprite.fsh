@@ -10,7 +10,7 @@ void main() {
     vec2 coords = ( v_vTexcoord.xy - u_fUVs.xy ) / u_fUVs.zw;
     float dist = distance( vec2( 0.5, 0.5 ), coords );
     vec2 displacement = vec2( 0.5 ) + ( vec2( 0.5 ) - coords ) * sin( u_fRepeats * 6.28318 * ( dist + u_fSineOffset ) );
-	float alpha = texture2D( gm_BaseTexture, v_vTexcoord ).a * u_fIntensity * ( 1.0 - 2.0 * dist );
+    float alpha = texture2D( gm_BaseTexture, v_vTexcoord ).a * u_fIntensity * ( 1.0 - 2.0 * dist );
     gl_FragColor = vec4( displacement, length( displacement ), alpha );
     
 }

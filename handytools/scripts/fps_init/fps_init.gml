@@ -1,3 +1,3 @@
 if ( FPS_ON ) {
-	trace_f( "FPS" );
+    trace_f( "FPS" );
 }

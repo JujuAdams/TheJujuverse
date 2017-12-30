@@ -21,7 +21,7 @@ if ( keyboard_check_pressed( vk_enter ) ) {
         global.menu_page = 3;
         
     } else {
-		
+        
         with( obj_gameflow ) {
             if ( !transition_do ) {
                 

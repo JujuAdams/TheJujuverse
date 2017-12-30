@@ -52,7 +52,7 @@ if ( mouse_clicked ) {
                 mouse_active_set_relative_values();
             }
             editor_set_page( E_EDITOR_PAGE.MOVE );
-			
+            
         }
         
     }
@@ -64,22 +64,22 @@ if editor_is_open() {
     if ( mouse_selected ) {
         
         if ( editor_get_page() == E_EDITOR_PAGE.MOVE ) {
-			
-			if ( !mouse_check_button( mb_right ) ) {
-	            x = mouse_relative_x + obj_camera.x;
-	            y = mouse_relative_y + obj_camera.y;
-	            z = mouse_relative_z + obj_camera.z;
-			} else {
-				mouse_active_set_relative_values();
-			}
+            
+            if ( !mouse_check_button( mb_right ) ) {
+                x = mouse_relative_x + obj_camera.x;
+                y = mouse_relative_y + obj_camera.y;
+                z = mouse_relative_z + obj_camera.z;
+            } else {
+                mouse_active_set_relative_values();
+            }
             
         } else if ( editor_get_page() == E_EDITOR_PAGE.ROTATE ) {
-			
-			if ( !mouse_check_button( mb_right ) ) {
-				image_angle = mouse_relative_angle + point_direction( x, y, obj_camera.x, obj_camera.y );
-			} else {
-				mouse_active_set_relative_values();
-			}
+            
+            if ( !mouse_check_button( mb_right ) ) {
+                image_angle = mouse_relative_angle + point_direction( x, y, obj_camera.x, obj_camera.y );
+            } else {
+                mouse_active_set_relative_values();
+            }
             
         }
         

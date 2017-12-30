@@ -155,14 +155,14 @@ repeat( _size ) {
                     tr_map_add_list( _stack_currentr_, _string_key, _new );
                     _string_key = "";
                 } else {
-					tr_list_add_list( _stack_currentr_, _new );
+                    tr_list_add_list( _stack_currentr_, _new );
                 }
             }
             
             _stack_currentr_ = _new;
             _stack_index++;
             _stack[_stack_index] = _stack_currentr_;
-			_stack_ds[_stack_index] = ds_type_list;
+            _stack_ds[_stack_index] = ds_type_list;
             _stack_type = ds_type_list;
             
         break;
@@ -182,7 +182,7 @@ repeat( _size ) {
             _stack_currentr_ = _new;
             _stack_index++;
             _stack[_stack_index] = _stack_currentr_;
-			_stack_ds[_stack_index] = ds_type_map;
+            _stack_ds[_stack_index] = ds_type_map;
             _stack_type = ds_type_map;
             _string_map_mode = JSON_MAP_KEY;
             

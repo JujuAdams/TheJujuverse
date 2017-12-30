@@ -39,95 +39,95 @@ var _total_read_time = 0;
 var _size = buffer_get_size( _buffer );
 trace( _filename, "    size=", _size );
 repeat( _size ) {
-	
-	_ord = buffer_read( _buffer, buffer_u8 );
-	
-	if ( OBJ_LOAD_HALT_ON_NULL && ( _ord == 0 ) ) {
-		trace( "obj_model_load_async_process: Halting on NULL read (", _filename, ")" );
-		break;
-	}
-	
-	if ( _ord == 32 ) || ( _ord == 13 ) {
-		
-		if ( _data ) {
-			
-			_value *= _negative*_fractional*10;
-			
-			switch( _mode ) {
-				case 1:
-					switch( _entry_count ) {
-						case 0: ds_list_add( _vertex_list, ( _value + _offset_x ) * _scale ); break;
-						case 1: ds_list_add( _vertex_list, ( _value + _offset_y ) * _scale ); break;
-						case 2: ds_list_add( _vertex_list, ( _value + _offset_z ) * _scale ); break;
-					}
-					_entry_count++;
-				break;
-				case 2: ds_list_add( _normal_list , _value ); break;
-				case 3: ds_list_add( _texture_list, _value ); break;
-				case 4: ds_list_add( _faces_list, _string ); break;
-			}
-			
-			_value = 0;
-			_negative = 1;
-			_fractional = 1;
-			_data = false;
-			_string = "";
-			
-		}
-		
-		if ( _ord == 13 ) {
-			_entry_count = 0;
-			_mode = 0;
-			_first_character = true;
-		}
-		
-	} else if ( _ord > 32 ) {
-		
-		if ( _ord >= 48 ) && ( _mode <= 57 ) {
-			
-			if ( _fractional < 1 ) _fractional *= 0.1;
-			_value = 10*_value + (_ord-48);
-			_data = true;
-			
-		} else if ( _mode == 4 ) {
-			
-			_data = true;
-			_string += chr( _ord );
-			
-		} else if ( _ord == 45 ) {
-			
-			_negative = -1;
-			_data = true;
-			
-		} else if ( _ord == 46 ) {
-			
-			_fractional = 0.1;
-			_data = true;
-			
-		} else if ( _first_character ) {
-			
-			if ( _ord == 102 ) _mode = 4 else
-			if ( _ord == 118 ) _mode = 1;
-			
-		} else if ( _mode == 1 ) {
-			
-			if ( _ord == 110 ) _mode = 2 else
-			if ( _ord == 116 ) _mode = 3;
-			
-		}
-	
-		_first_character = false;
-	
-	}
-	
+    
+    _ord = buffer_read( _buffer, buffer_u8 );
+    
+    if ( OBJ_LOAD_HALT_ON_NULL && ( _ord == 0 ) ) {
+        trace( "obj_model_load_async_process: Halting on NULL read (", _filename, ")" );
+        break;
+    }
+    
+    if ( _ord == 32 ) || ( _ord == 13 ) {
+        
+        if ( _data ) {
+            
+            _value *= _negative*_fractional*10;
+            
+            switch( _mode ) {
+                case 1:
+                    switch( _entry_count ) {
+                        case 0: ds_list_add( _vertex_list, ( _value + _offset_x ) * _scale ); break;
+                        case 1: ds_list_add( _vertex_list, ( _value + _offset_y ) * _scale ); break;
+                        case 2: ds_list_add( _vertex_list, ( _value + _offset_z ) * _scale ); break;
+                    }
+                    _entry_count++;
+                break;
+                case 2: ds_list_add( _normal_list , _value ); break;
+                case 3: ds_list_add( _texture_list, _value ); break;
+                case 4: ds_list_add( _faces_list, _string ); break;
+            }
+            
+            _value = 0;
+            _negative = 1;
+            _fractional = 1;
+            _data = false;
+            _string = "";
+            
+        }
+        
+        if ( _ord == 13 ) {
+            _entry_count = 0;
+            _mode = 0;
+            _first_character = true;
+        }
+        
+    } else if ( _ord > 32 ) {
+        
+        if ( _ord >= 48 ) && ( _mode <= 57 ) {
+            
+            if ( _fractional < 1 ) _fractional *= 0.1;
+            _value = 10*_value + (_ord-48);
+            _data = true;
+            
+        } else if ( _mode == 4 ) {
+            
+            _data = true;
+            _string += chr( _ord );
+            
+        } else if ( _ord == 45 ) {
+            
+            _negative = -1;
+            _data = true;
+            
+        } else if ( _ord == 46 ) {
+            
+            _fractional = 0.1;
+            _data = true;
+            
+        } else if ( _first_character ) {
+            
+            if ( _ord == 102 ) _mode = 4 else
+            if ( _ord == 118 ) _mode = 1;
+            
+        } else if ( _mode == 1 ) {
+            
+            if ( _ord == 110 ) _mode = 2 else
+            if ( _ord == 116 ) _mode = 3;
+            
+        }
+    
+        _first_character = false;
+    
+    }
+    
 }
 _inner_time = get_timer() - _inner_time;
 trace( _filename, "    inner time=", _inner_time,
                ", total read time=", _total_read_time,
                       ", vertices=", ds_list_size( _vertex_list ),
-					   ", normals=", ds_list_size( _normal_list ),
-				     ", texcoords=", ds_list_size( _texture_list ),
-			   	         ", faces=", ds_list_size( _faces_list ) );
+                       ", normals=", ds_list_size( _normal_list ),
+                     ", texcoords=", ds_list_size( _texture_list ),
+                            ", faces=", ds_list_size( _faces_list ) );
 
 
 
@@ -215,8 +215,8 @@ tr_list_destroy( _faces_list   );
 
 _map[? "vertex buffer" ] = _vbuff;
 if ( _delete_buffer ) {
-	buffer_delete( _buffer );
-	_map[? "buffer" ] = undefined;
+    buffer_delete( _buffer );
+    _map[? "buffer" ] = undefined;
 }
 
 _total_time = get_timer() - _total_time;

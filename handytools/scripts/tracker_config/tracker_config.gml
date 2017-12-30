@@ -1,6 +1,6 @@
 /// @description TRACKER configuration
 /*
-	Note: TRACKER surface functionality is only partially turned on/off by TRACKER_ON
+    Note: TRACKER surface functionality is only partially turned on/off by TRACKER_ON
 */
 #macro TRACKER_ILLEGAL_THROW_ERROR (true && !RELEASE)
 #macro TRACKER_BLANK_NOTE_THROW_ERROR true //This feature works in conjunction with TRACKER_DEBUG_*_CREATE

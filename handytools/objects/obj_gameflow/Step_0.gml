@@ -4,7 +4,7 @@ control_property_set( 0, "mouse", "lock", _lock_mouse );
 
 if ( keyboard_check_pressed( vk_escape ) ) {
     tr_instance_destroy( obj_subtitle );
-	instantiate( obj_menu );
+    instantiate( obj_menu );
 }
 
 #region OUTRO

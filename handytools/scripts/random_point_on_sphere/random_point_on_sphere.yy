@@ -1,8 +1,8 @@
 {
-    "id": "758057bc-a218-435c-b7a7-95698adb62ff",
+    "id": "02f40e8a-9787-40f5-a4f4-5b103d573b16",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "distance_from_point_to_mesh_fast",
+    "name": "random_point_on_sphere",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -28,5 +28,5 @@ _z /= _length;
 //Build matrix
 return [ _omc * _x*_x + _c   ,  _omc * _x*_y + _s*_z,  _omc * _x*_z - _s*_y,  0,
          _omc * _x*_y - _s*_z,  _omc * _y*_y + _c   ,  _omc * _y*_z + _s*_x,  0,
-		 _omc * _x*_z + _s*_y,  _omc * _y*_z - _s*_x,  _omc * _z*_z + _c   ,  0,
-		                    0,                     0,                     0,  1 ];
+         _omc * _x*_z + _s*_y,  _omc * _y*_z - _s*_x,  _omc * _z*_z + _c   ,  0,
+                            0,                     0,                     0,  1 ];

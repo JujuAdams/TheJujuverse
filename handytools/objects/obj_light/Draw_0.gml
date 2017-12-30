@@ -1,5 +1,5 @@
 if !( editor_is_open() && global.show_spawners ) exit;
-	
+    
 camera_click_handle_fog();
 
 s_shader_colour( "u_vForceColour", colour, 1 );

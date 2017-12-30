@@ -11,7 +11,7 @@ switch( global.menu_page ) {
         draw_set_halign( fa_center );
         draw_set_font( fnt_intro_large );
         draw_text( _disp_w*0.5, 60, _str );
-		
+        
         _str = "Made in 72 hours\nfor the 38th Ludum Dare\n\n'A SMALL WORLD'\n21st-24th April, 2017\n\nRebuilt December 2017";
         draw_set_halign( fa_center );
         draw_set_font( fnt_intro );

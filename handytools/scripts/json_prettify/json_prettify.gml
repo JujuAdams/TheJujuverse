@@ -37,7 +37,7 @@ repeat( string_length( _json_string ) ) {
     var _char = string_char_at( _json_string, _index );
     var _ord = ord( _char );
     var _do_main = true;
-	
+    
     if ( _in_string ) {
         
         if ( ( _ord == _string_delimiter ) && !_string_escape ) {
@@ -54,22 +54,22 @@ repeat( string_length( _json_string ) ) {
     } else if ( _in_number_string ) {
         
         if ( _ord < 45 ) || ( _ord == 47 ) || ( _ord > 57 ) {
-			
+            
             _in_number_string = false;
             if ( _number_string_dot >= _number_string_last_sig ) _number_string_last_sig = _number_string_dot-1;
             _output += string_copy( _number_string, 1, _number_string_last_sig );
-			
+            
         } else {
             
-			_do_main = false;
+            _do_main = false;
             _number_string += _char;
             
             if ( _ord == 46 ) {
                 _number_string_dot = string_length( _number_string );
                 _number_string_last_sig = _number_string_dot;
             } else if ( _number_string_dot == 0 ) || ( _ord != 48 ) {
-				_number_string_last_sig++;
-			}
+                _number_string_last_sig++;
+            }
             
         }
         

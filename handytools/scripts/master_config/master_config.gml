@@ -1,7 +1,7 @@
 /// @description Master configuration macros
 /*
-	For default options/controls, see options_default_values() and options_default_controls()
-	All possible inputs need to be defined in control_init()
+    For default options/controls, see options_default_values() and options_default_controls()
+    All possible inputs need to be defined in control_init()
 */
 
 //release flags

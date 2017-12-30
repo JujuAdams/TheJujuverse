@@ -1,8 +1,8 @@
 ///define_wall( x1, y1, z1, x2, y2, z2, texture sprite )
 
 if ( !OBJ_MODEL_ON ) {
-	trace_error_q( false, "Can't build wall - turn OBJ_MODEL on" );
-	exit;
+    trace_error_q( false, "Can't build wall - turn OBJ_MODEL on" );
+    exit;
 }
 
 var _x1          = argument0;

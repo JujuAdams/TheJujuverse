@@ -9,40 +9,40 @@ var _height = ( (argument[2]!=undefined) && (argument[2]!=application_surface) )
 var _note   = (argument_count>3)? argument[3] : "";
 
 if ( global.tracker_surfaces_width[? _index ] == undefined ) {
-	
-	if ( surface_exists( _index ) ) {
-		__tr_surface_register( _index, surface_get_width( _index ), surface_get_height( _index ), _note, false );
-		if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "existing surface ", _index, " newly registered in tracker (surface_check)", TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
-		return _index;
-	}
-	
-	if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "surface ", _index, " does not exist in tracker, nor in VRAM. creating new surface" );
-	return tr_surface_create( _width, _height, _note, false );
-	
+    
+    if ( surface_exists( _index ) ) {
+        __tr_surface_register( _index, surface_get_width( _index ), surface_get_height( _index ), _note, false );
+        if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "existing surface ", _index, " newly registered in tracker (surface_check)", TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
+        return _index;
+    }
+    
+    if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "surface ", _index, " does not exist in tracker, nor in VRAM. creating new surface" );
+    return tr_surface_create( _width, _height, _note, false );
+    
 }
 
 var _regen = false;
 if ( !surface_exists( _index ) ) {
-	_regen = true;
+    _regen = true;
 } else if ( surface_get_width( _index ) != _width ) || ( surface_get_height( _index ) != _height ) {
-	_regen = true;
+    _regen = true;
 }
 
 if ( _regen ) {
-	
-	if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "regen surface ", _index, TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
-	
-	var _note    = DEFAULT;
-	var _protect = DEFAULT;
-	if ( TRACKER_ON ) {
-		_note    = global.tracker_surfaces_note[?    _index ];
-		_protect = global.tracker_surfaces_protect[? _index ];
-	}
-	
-	__tr_surface_unregister( _index );
-	surface_free( _index );
-	return tr_surface_create( _width, _height, _note, _protect );
-	
+    
+    if ( TRACKER_DEBUG_SURFACE_CHECK ) trace_v( "regen surface ", _index, TRACE_DIV, tr_surface_details( _index, DEFAULT ) );
+    
+    var _note    = DEFAULT;
+    var _protect = DEFAULT;
+    if ( TRACKER_ON ) {
+        _note    = global.tracker_surfaces_note[?    _index ];
+        _protect = global.tracker_surfaces_protect[? _index ];
+    }
+    
+    __tr_surface_unregister( _index );
+    surface_free( _index );
+    return tr_surface_create( _width, _height, _note, _protect );
+    
 }
 
 return _index;

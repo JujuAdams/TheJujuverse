@@ -1,8 +1,8 @@
 ///@param array_of_exceptions
 
 if ( argument_count == 0 ) {
-	with( obj_par_imgui_window ) if ( window_show ) return true;
-	return false;
+    with( obj_par_imgui_window ) if ( window_show ) return true;
+    return false;
 }
 
 var _exceptions = argument[0];

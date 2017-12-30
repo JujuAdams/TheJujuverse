@@ -38,8 +38,8 @@ Write readmes for the above :'( So much documentation
 
 SCRIBBLE - Output word index
          - Pack text optins bitwise
-		 
+         
 JIFFY - Check with Kyle for updates
       - Update AMIASP to use delta timing
-	  
+      
 OBJ MODEL - Sphere filling!

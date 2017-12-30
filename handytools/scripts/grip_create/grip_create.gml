@@ -5,8 +5,8 @@
 ///@param 3d_projection
 
 if ( !GRIP_ON ) {
-	trace_error_q( false, "Can't execute script - turn GRIP on" );
-	exit;
+    trace_error_q( false, "Can't execute script - turn GRIP on" );
+    exit;
 }
 
 var _map = tr_map_create();
@@ -26,13 +26,13 @@ var _actual_height = grip_get_height( argument0 );
 _map[? "surface" ] = tr_surface_create( _actual_width, _actual_height, concat( "grip: ", QU, argument0, QU ), true );
 
 if ( _map[? "3d" ] ) {
-	var _view_matrix = matrix_build_lookat( 0, 0, 0,   1, 0, 0,   0, 0, 1 );
-	var _proj_matrix = matrix_build_projection_perspective_fov( DEFAULT_FOV, _actual_width/_actual_height, DEFAULT_Z_NEAR, DEFAULT_Z_FAR );
+    var _view_matrix = matrix_build_lookat( 0, 0, 0,   1, 0, 0,   0, 0, 1 );
+    var _proj_matrix = matrix_build_projection_perspective_fov( DEFAULT_FOV, _actual_width/_actual_height, DEFAULT_Z_NEAR, DEFAULT_Z_FAR );
 } else {
-	var _view_matrix = matrix_build_lookat( _actual_width/2, _actual_height/2, -16000, 
-						           	        _actual_width/2, _actual_height/2, 0,
-							                0, 1, 0 );
-	var _proj_matrix = matrix_build_projection_ortho( _actual_width, _actual_height, -16000, 16000 );
+    var _view_matrix = matrix_build_lookat( _actual_width/2, _actual_height/2, -16000, 
+                                               _actual_width/2, _actual_height/2, 0,
+                                            0, 1, 0 );
+    var _proj_matrix = matrix_build_projection_ortho( _actual_width, _actual_height, -16000, 16000 );
 }
 
 _map[? "view matrix" ] = _view_matrix;

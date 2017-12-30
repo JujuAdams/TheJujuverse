@@ -32,9 +32,9 @@ var _smoothness        = _json[? "shader smoothness" ];
 
 var _max = 1;
 if ( _json[? "shader fade" ] == E_SCRIBBLE_FADE.PER_CHAR ) {
-	_max = _json[? "vbuff chars" ];
+    _max = _json[? "vbuff chars" ];
 } else if ( _json[? "shader fade" ] == E_SCRIBBLE_FADE.PER_LINE ) {
-	_max = ds_list_size( _json_lines );
+    _max = ds_list_size( _json_lines );
 }
 
 s_shader_begin( _shader );
@@ -45,23 +45,23 @@ s_shader_uniform_f( "u_fRainbowTime", (current_time/1200) mod 1 );
 s_shader_uniform_f( "u_vShakeTime"  , random_range( -1, 1 ), random_range( -1, 1 ) );
 s_shader_uniform_f( "u_fWaveTime"   , current_time/1600 );
 s_shader_colour(    "u_vColour"     , _colour, _alpha );
-	
-	//Set up basic translation matrix
-	var _matrix;
-	_matrix[15] =  1;
-	_matrix[ 0] =  1;
-	_matrix[ 5] =  1;
-	_matrix[10] =  1;
-	_matrix[12] = _x + _json[? "left" ];
-	_matrix[13] = _y + _json[? "top"  ];
-	matrix_set( matrix_world, _matrix );
-	
-		vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
-	
-	//Now reset the shader to a straight pass-through (in a really efficient way!)
-	_matrix[12] = 0;
-	_matrix[13] = 0;
-	matrix_set( matrix_world, _matrix );
+    
+    //Set up basic translation matrix
+    var _matrix;
+    _matrix[15] =  1;
+    _matrix[ 0] =  1;
+    _matrix[ 5] =  1;
+    _matrix[10] =  1;
+    _matrix[12] = _x + _json[? "left" ];
+    _matrix[13] = _y + _json[? "top"  ];
+    matrix_set( matrix_world, _matrix );
+    
+        vertex_submit( _json[? "vertex buffer" ], pr_trianglelist, global.scribble_texture );
+    
+    //Now reset the shader to a straight pass-through (in a really efficient way!)
+    _matrix[12] = 0;
+    _matrix[13] = 0;
+    matrix_set( matrix_world, _matrix );
 
 s_shader_end();
 

@@ -1,5 +1,5 @@
 /*
-	Fonts are declared in scribble_init(), unless overridden by SCRIBBLE_AUTO_FONT_INIT
+    Fonts are declared in scribble_init(), unless overridden by SCRIBBLE_AUTO_FONT_INIT
 */
 
 #macro SCRIBBLE_AUTO_FONT_INIT true

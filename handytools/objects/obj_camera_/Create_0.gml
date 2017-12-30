@@ -19,6 +19,6 @@ cam_init();
 test_ping_pong_state = 1;
 cam_pan( 512, 384, 1,
          undefined,
-		 768, 384, 1,
-		 1000, 2000 );
+         768, 384, 1,
+         1000, 2000 );
 */

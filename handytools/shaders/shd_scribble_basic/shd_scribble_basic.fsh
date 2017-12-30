@@ -18,9 +18,9 @@ vec3 hsv2rgb(vec3 c) {
 }
 
 void main() {
-	
-	vec4 colour = v_vColour;
-	if ( v_vNormal.x > 0.0 ) colour.rgb = hsv2rgb( vec3( u_fRainbowTime, 1.0, 1.0 ) );
+    
+    vec4 colour = v_vColour;
+    if ( v_vNormal.x > 0.0 ) colour.rgb = hsv2rgb( vec3( u_fRainbowTime, 1.0, 1.0 ) );
     gl_FragColor = u_vColour * colour * texture2D( gm_BaseTexture, v_vTexcoord );
     
 }

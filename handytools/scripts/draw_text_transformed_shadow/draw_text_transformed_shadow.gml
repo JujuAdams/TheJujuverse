@@ -1,10 +1,10 @@
 /// @param x              0
-/// @param y			  1
-/// @param string		  2
-/// @param xscale		  3
-/// @param yscale		  4
-/// @param angle		  5
-/// @param colour		  6
+/// @param y              1
+/// @param string          2
+/// @param xscale          3
+/// @param yscale          4
+/// @param angle          5
+/// @param colour          6
 /// @param shadow_colour  7
 
 draw_set_colour( argument7 );

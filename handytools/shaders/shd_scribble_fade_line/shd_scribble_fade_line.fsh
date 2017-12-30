@@ -19,14 +19,14 @@ vec3 hsv2rgb(vec3 c) {
 
 void main() {
     
-	vec4 colour = v_vColour;
+    vec4 colour = v_vColour;
     float alpha = 1.0;
-	if ( u_fTime <= u_fMaxTime ) {
-		 alpha = max( 0.0, min( 1.0, ( u_fTime - v_fLine ) / u_fSmoothness ) );
-	} else {
-		 alpha = 1.0 - max( 0.0, min( 1.0, ( (u_fTime - u_fMaxTime) - v_fLine ) / u_fSmoothness ) );
-	}
-	if ( v_vNormal.x > 0.0 ) colour.rgb = hsv2rgb( vec3( u_fRainbowTime, 1.0, 1.0 ) );
+    if ( u_fTime <= u_fMaxTime ) {
+         alpha = max( 0.0, min( 1.0, ( u_fTime - v_fLine ) / u_fSmoothness ) );
+    } else {
+         alpha = 1.0 - max( 0.0, min( 1.0, ( (u_fTime - u_fMaxTime) - v_fLine ) / u_fSmoothness ) );
+    }
+    if ( v_vNormal.x > 0.0 ) colour.rgb = hsv2rgb( vec3( u_fRainbowTime, 1.0, 1.0 ) );
     gl_FragColor = u_vColour * vec4( colour.rgb, alpha ) * texture2D( gm_BaseTexture, v_vTexcoord );
     
 }

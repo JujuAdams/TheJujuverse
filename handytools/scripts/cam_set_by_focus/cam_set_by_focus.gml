@@ -6,22 +6,22 @@ var _bottom = VERY_NEGATIVE;
 var _any = false;
 var _size = ds_list_size( camera_focus_list );
 for( var _i = _size - 1; _i >= 0; _i-- ) {
-	
-	var _inst = camera_focus_list[|_i];
-	if ( !instance_exists( _inst ) ) {
-		
-		ds_list_delete( camera_focus_list, _i );
-		
-	} else if ( _inst.camera_interesting ) {
-		
-		_any = true;
-		_left   = min( _left,   _inst.x + _inst.camera_lead_x );
-		_top    = min( _top,    _inst.y + _inst.camera_lead_y );
-		_right  = max( _right,  _inst.x + _inst.camera_lead_x );
-		_bottom = max( _bottom, _inst.y + _inst.camera_lead_y );
-		
-	}
-	
+    
+    var _inst = camera_focus_list[|_i];
+    if ( !instance_exists( _inst ) ) {
+        
+        ds_list_delete( camera_focus_list, _i );
+        
+    } else if ( _inst.camera_interesting ) {
+        
+        _any = true;
+        _left   = min( _left,   _inst.x + _inst.camera_lead_x );
+        _top    = min( _top,    _inst.y + _inst.camera_lead_y );
+        _right  = max( _right,  _inst.x + _inst.camera_lead_x );
+        _bottom = max( _bottom, _inst.y + _inst.camera_lead_y );
+        
+    }
+    
 }
 
 if ( !_any ) return undefined;

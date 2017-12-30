@@ -1,8 +1,8 @@
 ///@param name
 
 if ( !GRIP_ON ) {
-	trace_error_q( false, "Can't execute script - turn GRIP on" );
-	exit;
+    trace_error_q( false, "Can't execute script - turn GRIP on" );
+    exit;
 }
 
 var _map = global.grip_cameras_map[? argument0 ];

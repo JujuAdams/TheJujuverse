@@ -132,9 +132,9 @@ _inner_time = get_timer() - _inner_time;
 /*
 trace( _filename, "    inner time=", _inner_time,
                     ", vertices=", ds_list_size( _vertex_list ),
-					 ", normals=", ds_list_size( _normal_list ),
-				   ", texcoords=", ds_list_size( _texture_list ),
-				       ", faces=", ds_list_size( _faces_list ) );
+                     ", normals=", ds_list_size( _normal_list ),
+                   ", texcoords=", ds_list_size( _texture_list ),
+                       ", faces=", ds_list_size( _faces_list ) );
 */
 file_text_close( _file );
 file_delete( "_" );
@@ -223,8 +223,8 @@ tr_list_destroy( _faces_list   );
 
 _map[? "vertex buffer" ] = _vbuff;
 if ( _delete_buffer ) {
-	buffer_delete( _buffer );
-	_map[? "buffer" ] = undefined;
+    buffer_delete( _buffer );
+    _map[? "buffer" ] = undefined;
 }
 
 _total_time = get_timer() - _total_time;

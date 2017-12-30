@@ -1,3 +1,3 @@
 if ( RESOLUTION_ON ) {
-	trace_f( "RESOLUTION" );
+    trace_f( "RESOLUTION" );
 }

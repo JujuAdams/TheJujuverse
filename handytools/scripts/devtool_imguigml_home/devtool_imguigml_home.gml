@@ -4,10 +4,10 @@ if imguigml_button( "New game instance" ) new_game_instance();
 imguigml_same_line();
 if imguigml_button( "Quit game" ) game_end();
 if ( TRACKER_ON ) {
-	imguigml_same_line();
-	if imguigml_button( "Tracker dump" ) trace_f( tracker_dump() );
-	imguigml_same_line();
-	if imguigml_button( "Tracker dump to clipboard" ) { clipboard_set_text( tracker_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
+    imguigml_same_line();
+    if imguigml_button( "Tracker dump" ) trace_f( tracker_dump() );
+    imguigml_same_line();
+    if imguigml_button( "Tracker dump to clipboard" ) { clipboard_set_text( tracker_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 }
 imguigml_new_line();
 imguigml_separator();

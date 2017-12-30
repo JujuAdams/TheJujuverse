@@ -6,13 +6,13 @@ var _h = sprite_get_height(spr_button_center);
 var _width = 100;
 
 if ( argument_count == 1 ) {
-	if ( argument[0] == undefined ) {
-		draw_set_font( font );
-		_width = string_width( text );
-		draw_set_font( fnt_default );
-	} else {
-		_width = argument[0];
-	}
+    if ( argument[0] == undefined ) {
+        draw_set_font( font );
+        _width = string_width( text );
+        draw_set_font( fnt_default );
+    } else {
+        _width = argument[0];
+    }
 }
 
 mouse_bbox_top = y;

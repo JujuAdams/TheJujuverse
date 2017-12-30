@@ -16,10 +16,10 @@ _array[_source_count-1] = 0;
 
 var _j = 0;
 for( var _i = 0; _i < _source_size; _i += _format_vertex_size ) {
-	_array[_j  ] = buffer_peek( _source, _i  , buffer_f32 );
-	_array[_j+1] = buffer_peek( _source, _i+4, buffer_f32 );
-	_array[_j+2] = buffer_peek( _source, _i+8, buffer_f32 );
-	_j += 3;
+    _array[_j  ] = buffer_peek( _source, _i  , buffer_f32 );
+    _array[_j+1] = buffer_peek( _source, _i+4, buffer_f32 );
+    _array[_j+2] = buffer_peek( _source, _i+8, buffer_f32 );
+    _j += 3;
 }
 
 buffer_delete( _source );

@@ -2,16 +2,16 @@
 ///@param view
 
 if ( !GRIP_ON ) {
-	trace_error_q( false, "Can't execute script - turn GRIP on" );
-	exit;
+    trace_error_q( false, "Can't execute script - turn GRIP on" );
+    exit;
 }
 
 var _name = argument0;
 var _view = argument1;
 
 if ( _view < GRIP_VIEWS_START ) || ( _view > GRIP_VIEWS_END ) {
-	trace_error( false, "grip camera ", QU, _name, QU, " attempting to assign to view ", _view, " outside defined range (", GRIP_VIEWS_START, "->", GRIP_VIEWS_END, ")" );
-	return undefined;
+    trace_error( false, "grip camera ", QU, _name, QU, " attempting to assign to view ", _view, " outside defined range (", GRIP_VIEWS_START, "->", GRIP_VIEWS_END, ")" );
+    return undefined;
 }
 
 var _map = global.grip_cameras_map[? _name ];
@@ -29,5 +29,5 @@ view_enabled           = true;
 view_visible[_view]    = true;
 view_camera[_view]     = _camera;
 view_surface_id[_view] = _map[? "surface" ];
-	
+    
 global.grip_view_list[| _view ] = _name;

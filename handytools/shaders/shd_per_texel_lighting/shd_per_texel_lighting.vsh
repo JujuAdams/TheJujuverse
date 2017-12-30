@@ -23,8 +23,8 @@ void main() {
     
     v_vColour   = in_Colour;
     v_vTexcoord = in_TextureCoord;
-	v_vPosWS    = gm_Matrices[MATRIX_WORLD] * object_space_pos;
-	v_vNormalWS = gm_Matrices[MATRIX_WORLD] * vec4( in_Normal, 0.0 );
+    v_vPosWS    = gm_Matrices[MATRIX_WORLD] * object_space_pos;
+    v_vNormalWS = gm_Matrices[MATRIX_WORLD] * vec4( in_Normal, 0.0 );
     v_vNormalWS /= -length( v_vNormalWS );
     
 }

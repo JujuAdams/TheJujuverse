@@ -11,6 +11,8 @@ ds_list_add( _list, obj_tri_a              );
 ds_list_add( _list, obj_tri_b              );
 ds_list_add( _list, obj_tri_c              );
 ds_list_add( _list, obj_tri_sphere         );
+ds_list_add( _list, obj_line_a             );
+ds_list_add( _list, obj_line_b             );
 ds_list_add( _list, "SEP"                  );
 
 ds_list_add( _list, "DECORATIONS"          );

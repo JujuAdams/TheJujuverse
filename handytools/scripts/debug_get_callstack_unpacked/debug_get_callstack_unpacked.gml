@@ -8,7 +8,7 @@ var _string = "";
 var _array = debug_get_callstack();
 var _size = array_length_1d( _array )-1;
 for( var _i = 1; _i < _size; _i++ ) {
-	repeat( _i ) _string += _indent;
-	_string += string( _array[ _i ] ) + ((_i < _size-1)? _separator : "");
+    repeat( _i ) _string += _indent;
+    _string += string( _array[ _i ] ) + ((_i < _size-1)? _separator : "");
 }
 return _string;

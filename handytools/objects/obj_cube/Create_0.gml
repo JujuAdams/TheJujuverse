@@ -1,112 +1,134 @@
 event_inherited();
 
 z = 0;
-
-var _array = vertex_buffer_triangle_array( obj_model( "cube" ) );
-
-var _px = 0.8;
-var _py = 0.1;
-var _pz = 0.2;
-
-//var _radius = distance_from_point_to_mesh( _array,   _px, _py, _pz );
-
-var _preprocessed_array = distance_from_point_to_mesh_preprocess( _array );
-var _radius = distance_from_point_to_mesh_fast( _preprocessed_array,   _px, _py, _pz );
-
-var _vbuff = vertex_buffer_copy( obj_model( "cube" ) );
-collision_model = vertex_buffer_add( _vbuff, global.vbf_sphere,   _px, _py, _pz,   _radius );
-vertex_delete_buffer( _vbuff );
-trace( _radius );
-
 /*
-var _px = 0.50;
-var _py = 0.50;
-var _pz = 0.50;
-var _closest = VERY_LARGE;
+var _mesh_array = vertex_buffer_triangle_array( obj_model( "cube" ) );
 
-var _size = array_length_1d( _array );
-for( var _tri = 0; _tri < _size; _tri += 9 ) {
+var _px = 0.5;
+var _py = 0.5;
+var _pz = 0.5;
+var _pr = distance_from_point_to_mesh( _mesh_array,   _px, _py, _pz );
+
+var _local_pri = ds_priority_create();
+var _x_stack = ds_queue_create();
+var _y_stack = ds_queue_create();
+var _z_stack = ds_queue_create();
+var _r_stack = ds_queue_create();
+var _i_stack = ds_queue_create();
+var _d_stack = ds_queue_create();
+ds_queue_enqueue( _x_stack, _px );
+ds_queue_enqueue( _y_stack, _py );
+ds_queue_enqueue( _z_stack, _pz );
+ds_queue_enqueue( _r_stack, _pr );
+ds_queue_enqueue( _i_stack,   0 );
+ds_queue_enqueue( _d_stack,   1 );
+
+var _sphere_array_size = 4;
+var _sphere_array;
+_sphere_array[0] = _px;
+_sphere_array[1] = _py;
+_sphere_array[2] = _pz;
+_sphere_array[3] = _pr;
+
+while( !ds_queue_empty( _x_stack ) ) {
 	
-	var _ax = _array[_tri  ];
-	var _ay = _array[_tri+1];
-	var _az = _array[_tri+2];
+	var _sphere_x = ds_queue_dequeue( _x_stack );
+	var _sphere_y = ds_queue_dequeue( _y_stack );
+	var _sphere_z = ds_queue_dequeue( _z_stack );
+	var _sphere_r = ds_queue_dequeue( _r_stack );
+	var _sphere_i = ds_queue_dequeue( _i_stack );
+	var _sphere_d = ds_queue_dequeue( _d_stack );
 	
-	var _bx = _array[_tri+3];
-	var _by = _array[_tri+4];
-	var _bz = _array[_tri+5];
+	if ( _sphere_d > 1 ) continue;
 	
-	var _cx = _array[_tri+6];
-	var _cy = _array[_tri+7];
-	var _cz = _array[_tri+8];
-	
-	//Make all vertices relative to a single point (make A the origin)
-	var _ix = _ax - _cx;
-	var _iy = _ay - _cy;
-	var _iz = _az - _cz;
-	
-	var _jx = _bx - _cx;
-	var _jy = _by - _cy;
-	var _jz = _bz - _cz;
-	
-	var _vx = _px - _cx;
-	var _vy = _py - _cy;
-	var _vz = _pz - _cz;
-	
-	//Find the normal of the triangle
-	var _normal = cross_product( _ix, _iy, _iz,
-	                             _jx, _jy, _jz );
-	var _nx = _normal[0];
-	var _ny = _normal[1];
-	var _nz = _normal[2];
-	
-	//Project V onto the triangle's plane
-	var _dot = dot_product_3d( _vx, _vy, _vz,   _nx, _ny, _nz );
-	var _sx = _vx - _nx*_dot;
-	var _sy = _vy - _ny*_dot;
-	var _sz = _vz - _nz*_dot;
-	
-	//Project onto the basis vectors for the triangle
-	var _i = dot_product_3d( _sx, _sy, _sz,   _ix, _iy, _iz );
-	var _j = dot_product_3d( _sx, _sy, _sz,   _jx, _jy, _jz );
-	
-	//
-	//	|\
-	//	| \
-	//	|  \
-	//	|   \
-	//	L____\
-	//
-	var _closest_i = 0;
-	var _closest_j = 0;
-	if ( _i < 0 ) && ( _j >= 0 ) {
-		//Left
-		//_closest_i =  0;
-		_closest_j = min( 1, _j );
-	} else if ( _i >= 0 ) && ( _j < 0 ) {
-		//Below
-		_closest_i = min( _i, 1 );
-		//_closest_j =  0;
-	} else if ( _i < 0 ) && ( _j < 0 ) {
-		//Bottom-left
-		//_closest_i =  0;
-		//_closest_j =  0;
-	} else if ( _i + _j > 1 ) {
-		//Outside (remember that y=1-x defines the hypotenuese)
-		//Shortest distance is always on the line y=x+c
-		//Closest point satisfies both equations
-		_closest_i = 0.5*( 1 + (_j - _i) );
-		_closest_j = 1 - _closest_i;
-	} else {
-		//Inside the triangle
-		_closest_i = _i;
-		_closest_j = _j;
+	var _local_sphere_size = 0;
+	var _local_sphere = undefined;
+	ds_priority_clear( _local_pri );
+		
+	var _repeat = true;
+	repeat( 100 ) {
+			
+		var _point = random_point_on_sphere();
+		var _dx = _point[0];
+		var _dy = _point[1];
+		var _dz = _point[2];
+			
+		var _radius_offset = 0.9*_sphere_r + _pr;
+		var _px = _sphere_x + _dx*_radius_offset;
+		var _py = _sphere_y + _dy*_radius_offset;
+		var _pz = _sphere_z + _dz*_radius_offset;
+	    var _pr = _sphere_r;
+		
+		//if ( sphere_collides_with_sphere_array( _sphere_array,   _px, _py, _pz, _pr,   _sphere_i ) ) continue;
+		
+		do {
+			var _new_r = distance_from_point_to_mesh( _mesh_array,   _px, _py, _pz );
+			var _radius_offset = 0.9*_sphere_r + _new_r
+			var _px = _sphere_x + _dx*_radius_offset;
+			var _py = _sphere_y + _dy*_radius_offset;
+			var _pz = _sphere_z + _dz*_radius_offset;
+			var _pr = _new_r;
+			
+			var _percent = 100*abs( _new_r - _pr )/_pr;
+		} until ( _percent < 1 ) || ( _new_r < 0.2 );
+		if ( _new_r < 0.2 ) continue;
+		
+		ds_priority_add( _local_pri, _local_sphere_size, _pr );
+		_local_sphere[ _local_sphere_size   ] = _px;
+		_local_sphere[ _local_sphere_size+1 ] = _py;
+		_local_sphere[ _local_sphere_size+2 ] = _pz;
+		_local_sphere[ _local_sphere_size+3 ] = _pr;
+		_local_sphere_size += 4;
+		
 	}
 	
-	var _rx = _ix*_closest_i + _jx*_closest_j - _vx;
-	var _ry = _iy*_closest_i + _jy*_closest_j - _vy;
-	var _rz = _iz*_closest_i + _jz*_closest_j - _vz;
-	var _dist = sqrt( _rx*_rx + _ry*_ry + _rz*_rz );
-	_closest = min( _closest, _dist );
+	var _try_count = 3;
+	repeat( ds_priority_size( _local_pri ) ) {
+		
+		var _i = ds_priority_delete_max( _local_pri );
+		_px = _local_sphere[ _i   ];
+		_py = _local_sphere[ _i+1 ];
+		_pz = _local_sphere[ _i+2 ];
+		_pr = _local_sphere[ _i+3 ];
+		
+		if ( sphere_collides_with_sphere_array( _sphere_array,   _px, _py, _pz, _pr,   _sphere_i ) ) continue;
+		
+		ds_queue_enqueue( _x_stack, _px );
+		ds_queue_enqueue( _y_stack, _py );
+		ds_queue_enqueue( _z_stack, _pz );
+		ds_queue_enqueue( _r_stack, _pr );
+		ds_queue_enqueue( _i_stack, _sphere_array_size );
+		ds_queue_enqueue( _d_stack, _sphere_d+1 );
+	
+		_sphere_array[ _sphere_array_size   ] = _px;
+		_sphere_array[ _sphere_array_size+1 ] = _py;
+		_sphere_array[ _sphere_array_size+2 ] = _pz;
+		_sphere_array[ _sphere_array_size+3 ] = _pr;
+		_sphere_array_size += 4;
+		
+		_try_count--;
+		if ( _try_count <= 0 ) break;
+	
+	}
 	
 }
+ds_queue_destroy( _x_stack );
+ds_queue_destroy( _y_stack );
+ds_queue_destroy( _z_stack );
+ds_queue_destroy( _r_stack );
+ds_queue_destroy( _i_stack );
+ds_queue_destroy( _d_stack );
+
+
+
+var _a = vertex_create_buffer();
+for( var _i = 0; _i < _sphere_array_size; _i += 4 ) {
+	var _b = vertex_buffer_add( _a, global.vbf_sphere,
+	                            _sphere_array[_i  ], _sphere_array[_i+1], _sphere_array[_i+2],
+								_sphere_array[_i+3] );
+	vertex_delete_buffer( _a );
+	_a = _b;
+}
+collision_model = _a;
+vertex_freeze( collision_model );
 */

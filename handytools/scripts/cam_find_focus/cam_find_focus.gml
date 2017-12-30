@@ -8,26 +8,26 @@ var _size = ds_list_size( camera_focus_list );
 if ( _size <= 0 ) return undefined;
 
 for( var _i = _size - 1; _i >= 0; _i-- ) {
-	
-	var _inst = camera_focus_list[|_i];
-	if ( !instance_exists( _inst ) ) {
-		
-		ds_list_delete( camera_focus_list, _i );
-		
-	} else if ( _inst.camera_interesting ) {
-		
-		var _dcos =  dcos( -phy_rotation );
-		var _dsin = -dsin( -phy_rotation );
-		var _com_x = x + _inst.camera_i_com_x*_dcos - _inst.camera_i_com_y*_dsin;
-		var _com_y = y + _inst.camera_i_com_x*_dsin + _inst.camera_i_com_y*_dcos;
-		
-		_left   = min( _left,   _com_x );
-		_top    = min( _top,    _com_y );
-		_right  = max( _right,  _com_x );
-		_bottom = max( _bottom, _com_y );
-		
-	}
-	
+    
+    var _inst = camera_focus_list[|_i];
+    if ( !instance_exists( _inst ) ) {
+        
+        ds_list_delete( camera_focus_list, _i );
+        
+    } else if ( _inst.camera_interesting ) {
+        
+        var _dcos =  dcos( -phy_rotation );
+        var _dsin = -dsin( -phy_rotation );
+        var _com_x = x + _inst.camera_i_com_x*_dcos - _inst.camera_i_com_y*_dsin;
+        var _com_y = y + _inst.camera_i_com_x*_dsin + _inst.camera_i_com_y*_dcos;
+        
+        _left   = min( _left,   _com_x );
+        _top    = min( _top,    _com_y );
+        _right  = max( _right,  _com_x );
+        _bottom = max( _bottom, _com_y );
+        
+    }
+    
 }
 
 _left   -= 100;

@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "02f40e8a-9787-40f5-a4f4-5b103d573b16",
+            "Value": {
+                "id": "cff9d860-23ef-479c-90b3-29ee7988e52c",
+                "resourcePath": "scripts\\random_point_on_sphere\\random_point_on_sphere.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0333d723-7103-4e28-b331-365908976959",
             "Value": {
                 "id": "e371358d-28c1-4858-ac19-080356a01520",
@@ -147,6 +155,14 @@
             "Value": {
                 "id": "4f652616-f15a-46e6-a627-04b87b19d969",
                 "resourcePath": "scripts\\__tr_vertex_unregister\\__tr_vertex_unregister.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "04360e6f-51d0-40b3-8f9f-4cc72de73096",
+            "Value": {
+                "id": "79b14cbe-50c0-4699-9ed6-868b62ca9f62",
+                "resourcePath": "scripts\\sphere_collides_with_sphere_array\\sphere_collides_with_sphere_array.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -971,6 +987,14 @@
             "Value": {
                 "id": "15182292-5199-410f-b717-8e2338b6ee6c",
                 "resourcePath": "scripts\\grip_create\\grip_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "235f59b3-15c7-43bd-87fd-c37663b428c5",
+            "Value": {
+                "id": "eba6650b-1bdd-41d0-b6a6-77088debae6f",
+                "resourcePath": "scripts\\vector_intersects_triangle\\vector_intersects_triangle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2455,14 +2479,6 @@
             }
         },
         {
-            "Key": "5957355c-1424-452e-9ace-c908138b3943",
-            "Value": {
-                "id": "47c6dac4-524c-4ad5-99da-2c19ab63f9ee",
-                "resourcePath": "scripts\\distance_from_point_to_mesh_preprocess\\distance_from_point_to_mesh_preprocess.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "59b3219c-8d25-4e62-8ea0-0ba00c6159bf",
             "Value": {
                 "id": "36105490-4a65-402b-852d-a890ee6995fa",
@@ -3199,14 +3215,6 @@
             }
         },
         {
-            "Key": "758057bc-a218-435c-b7a7-95698adb62ff",
-            "Value": {
-                "id": "00346ed0-84fe-41fa-b7f1-7a34e127d5ac",
-                "resourcePath": "scripts\\distance_from_point_to_mesh_fast\\distance_from_point_to_mesh_fast.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "759620c6-2b19-4e22-bfcb-92761e8daf19",
             "Value": {
                 "id": "5ea6ba77-8541-472e-b703-d6d74ad91bac",
@@ -3627,6 +3635,14 @@
             "Value": {
                 "id": "3b0bb16f-a0bb-4a36-a3cd-4d42cd58d1dc",
                 "resourcePath": "scripts\\vertex_create_buffer_from_obj\\vertex_create_buffer_from_obj.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "88248fa4-37fc-4c25-88fe-217959633189",
+            "Value": {
+                "id": "a53157ef-ad9c-4244-ac4c-8ed9139c3206",
+                "resourcePath": "scripts\\vector_plane_intersection\\vector_plane_intersection.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4343,6 +4359,14 @@
             }
         },
         {
+            "Key": "a312418c-9060-4e0d-9982-09690ca6ce94",
+            "Value": {
+                "id": "4599638e-1518-42be-8b6e-1381d98eb128",
+                "resourcePath": "objects\\obj_line_a\\obj_line_a.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a3418584-939a-461d-a594-ad3730af870d",
             "Value": {
                 "id": "88fc2826-c10e-423d-b5e1-43ed7df16ceb",
@@ -5044,6 +5068,14 @@
                 "id": "16d97c76-7ac4-4343-9019-eb1842a9101e",
                 "resourcePath": "views\\bb9cd0cf-9e79-49db-a61f-21ec164b3617.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bbcd18eb-1cfd-4e84-8b19-ae484cb9f8af",
+            "Value": {
+                "id": "fc709811-e192-4bb1-ac26-ff2773ccea46",
+                "resourcePath": "scripts\\vector_normaliser\\vector_normaliser.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6399,6 +6431,14 @@
             }
         },
         {
+            "Key": "f213b306-fa97-4e32-9535-2d614a3b8649",
+            "Value": {
+                "id": "9f78a7b2-5ffe-4dde-8c35-48a2ad192afa",
+                "resourcePath": "objects\\obj_line_b\\obj_line_b.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f2561d94-ee80-4dcb-a709-2fc71804fed5",
             "Value": {
                 "id": "b65d5644-4c15-45ee-8fa9-2d53cdf486e0",
@@ -7016,8 +7056,6 @@
         "a0387044-b8f7-40e2-adcc-e5a06fe54d44",
         "526ad9ea-d9a7-4bfc-a837-9179165d4c51",
         "078dce73-3ccb-4b8d-a160-dab4ac1581ff",
-        "758057bc-a218-435c-b7a7-95698adb62ff",
-        "5957355c-1424-452e-9ace-c908138b3943",
         "45988dab-3870-4c4d-a10f-dac6b4aa1553",
         "0e92d761-026a-47a8-86dd-37b7128d4568",
         "51b84102-b656-4efc-9f9c-cae33aaa9711",
@@ -7085,6 +7123,11 @@
         "33d06772-2d85-47d3-9ff6-51bebec3168a",
         "9d743b23-e7e5-4fca-95c9-c7cda0aab458",
         "4d6418c3-b651-4e1a-8aa6-84196bbf00f5",
+        "02f40e8a-9787-40f5-a4f4-5b103d573b16",
+        "04360e6f-51d0-40b3-8f9f-4cc72de73096",
+        "bbcd18eb-1cfd-4e84-8b19-ae484cb9f8af",
+        "88248fa4-37fc-4c25-88fe-217959633189",
+        "235f59b3-15c7-43bd-87fd-c37663b428c5",
         "d6c3f09d-daee-4473-aeb7-e650ea5226e9",
         "bce731b6-f2e7-48a0-98e2-355f02801b63",
         "b012c700-0850-4ff7-bd29-03eea301ee6d",
