@@ -1,3 +1,5 @@
+/// @description CONTROL service initialisation
+
 /*
     For default options/controls, see options_init() and options_default_controls()
     All possible inputs need to be defined here

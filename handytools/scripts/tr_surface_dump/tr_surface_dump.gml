@@ -1,3 +1,5 @@
+/// @description TRACKER dump of all surface details
+
 var _str = "----- surface dump -----" + NL;
 
 var _size = ds_list_size( global.tracker_surfaces );

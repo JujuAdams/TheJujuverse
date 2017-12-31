@@ -1,3 +1,5 @@
+/// @description EDITOR service initialisation
+
 if ( EDITOR_ON ) {
     trace_f( "EDITOR" );
 

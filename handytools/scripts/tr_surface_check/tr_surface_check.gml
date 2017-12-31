@@ -1,7 +1,8 @@
-///@param index
-///@param width
-///@param height
-///@param [note]
+/// @description TRACKER automatically recreate a surface (with manual dimensions) if it doesn't exist
+/// @param index
+/// @param width
+/// @param height
+/// @param [note]
 
 var _index  = argument[0];
 var _width  = ( (argument[1]!=undefined) && (argument[1]!=application_surface) )? argument[1] : surface_get_width(  application_surface );

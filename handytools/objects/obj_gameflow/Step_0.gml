@@ -1,6 +1,6 @@
 var _lock_mouse = true;
 if ( devtool_is_open() || ( editor_is_open() && !editor_is_collapsed()) ) _lock_mouse = false;
-control_property_set( 0, "mouse", "lock", _lock_mouse );
+control_set( 0, "mouse", "lock", _lock_mouse );
 
 if ( keyboard_check_pressed( vk_escape ) ) {
     tr_instance_destroy( obj_subtitle );

@@ -1,5 +1,6 @@
-///@param index
-///@param divider
+/// @description TRACKER grid details string
+/// @param index
+/// @param divider
 
 if ( !TRACKER_ON ) return "<tracker off>";
 

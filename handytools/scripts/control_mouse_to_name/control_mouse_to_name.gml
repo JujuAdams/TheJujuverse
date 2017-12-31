@@ -1,3 +1,4 @@
+/// @description Returns the string name for a GameMaker native mouse button index
 /// @param mouse_button
 
 var _mb = argument0;

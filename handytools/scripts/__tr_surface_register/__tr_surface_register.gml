@@ -1,8 +1,9 @@
-///@param index
-///@param width
-///@param height
-///@param note
-///@param protect
+/// @description TRACKER internal function to add a surface to global record
+/// @param index
+/// @param width
+/// @param height
+/// @param note
+/// @param protect
 
 if ( TRACKER_DEBUG_SURFACE_CREATE && TRACKER_BLANK_NOTE_THROW_ERROR && (argument3 == "") ) trace_error( false, "blank note!" );
 

@@ -1,7 +1,7 @@
-///@param json
-///@param [shader]
-///@param [smoothness]
-///@param [fade_type]
+/// @param json
+/// @param [shader]
+/// @param [smoothness]
+/// @param [fade_type]
 
 var _json       = argument[0];
 var _shader     = ((argument_count < 2) || (argument[1] == undefined))?  shd_scribble_basic : argument[1];

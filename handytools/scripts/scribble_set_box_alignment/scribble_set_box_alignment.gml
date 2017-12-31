@@ -1,6 +1,6 @@
-///@param json
-///@param [halign]
-///@param [valign]
+/// @param json
+/// @param [halign]
+/// @param [valign]
 
 var _json   = argument[0];
 var _halign = ((argument_count<2) || (argument[1]==undefined))? fa_left : argument[1];

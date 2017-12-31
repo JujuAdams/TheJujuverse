@@ -1,3 +1,5 @@
+/// @description Returns the number of connected gamepads
+
 var _result = 0;
 
 var _size = gamepad_get_device_count();

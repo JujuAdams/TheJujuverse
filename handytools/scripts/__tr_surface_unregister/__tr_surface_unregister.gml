@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER internal function to remove a list from global record
+/// @param index
 
 if ( TRACKER_ON ) {
     ds_map_delete(  global.tracker_surfaces_origin   , argument0 );

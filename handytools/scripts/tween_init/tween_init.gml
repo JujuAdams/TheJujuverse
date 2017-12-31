@@ -1,4 +1,4 @@
-///@param clamp
+/// @param clamp
 
 tween_do         = [];
 tween_start_time = [];

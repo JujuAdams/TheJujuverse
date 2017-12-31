@@ -1,6 +1,7 @@
-///@param index
-///@param note
-///@param protect
+/// @description TRACKER internal function to add a grid to global record
+/// @param index
+/// @param note
+/// @param protect
 
 if ( TRACKER_DEBUG_GRID_CREATE && TRACKER_BLANK_NOTE_THROW_ERROR && (argument1 == "" ) ) trace_error( false, "blank note!" );
 

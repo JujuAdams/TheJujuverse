@@ -54,7 +54,7 @@ for( var _i = 0; _i < MAX_PLAYERS; _i++ ) {
 
 options_set_mappings();
 
-if ( control_property( 0, "mode" ) == GAMEPAD ) {
-    control_property_set( 0, "mouse", "point x", floor( cam_window_x_to_world( window_get_width()/2 ) ) );
-    control_property_set( 0, "mouse", "point y", floor( cam_window_x_to_world( window_get_height()/2 ) ) );
+if ( control_get( 0, "mode" ) == GAMEPAD ) {
+    control_set( 0, "mouse", "point x", floor( cam_window_x_to_world( window_get_width()/2 ) ) );
+    control_set( 0, "mouse", "point y", floor( cam_window_x_to_world( window_get_height()/2 ) ) );
 }

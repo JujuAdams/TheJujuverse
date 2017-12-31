@@ -1,9 +1,9 @@
-///@param dest_vbuff
-///@param source_vbuff
-///@param x
-///@param y
-///@param z
-///@param scale
+/// @param dest_vbuff
+/// @param source_vbuff
+/// @param x
+/// @param y
+/// @param z
+/// @param scale
 
 //This script presumes the use of global.vft_simple_3d (pos 3d, texcoord, colour, normal)
 

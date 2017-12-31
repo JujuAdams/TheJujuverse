@@ -1,3 +1,5 @@
+/// @description TRACKER dump of all map details
+
 if ( !TRACKER_ON ) return "<no ds_map dump, tracker off>";
 
 var _str = "----- ds_map dump -----" + NL;

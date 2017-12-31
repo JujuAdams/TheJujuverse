@@ -1,3 +1,4 @@
+/// @description Customisable audio-playing function, used to add variety to playback
 /// @param sound
 /// @param priority
 /// @param loops

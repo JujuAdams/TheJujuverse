@@ -1,6 +1,6 @@
-///@param json
-///@param key...
-///@param ...value
+/// @param json
+/// @param key...
+/// @param ...value
 
 var _ds = argument[0];
 

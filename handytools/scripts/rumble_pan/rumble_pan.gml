@@ -1,3 +1,4 @@
+/// @description Adds a rumble operation to the stack, biased to one side
 /// @param player
 /// @param left
 /// @param right

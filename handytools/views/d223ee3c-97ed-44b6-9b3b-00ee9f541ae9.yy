@@ -4,9 +4,9 @@
     "mvc": "1.1",
     "name": "d223ee3c-97ed-44b6-9b3b-00ee9f541ae9",
     "children": [
+        "5f5235ea-22d8-4473-ba27-e4ef07b4a1f7",
         "fb6b7a9a-f7b2-4e95-9dda-a50efac74d7a",
         "82d7b3d0-bd9d-4766-baf8-6992a28cbb8a",
-        "5f5235ea-22d8-4473-ba27-e4ef07b4a1f7",
         "811d49e5-b49e-46bd-8065-205891759d86",
         "a3418584-939a-461d-a594-ad3730af870d",
         "db25b9cf-80f3-4675-8ac7-70763928b31b",
@@ -20,7 +20,7 @@
         "a8875df3-d7fa-4fdf-accd-5e795b27d900"
     ],
     "filterType": "GMScript",
-    "folderName": "controls",
+    "folderName": "control",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

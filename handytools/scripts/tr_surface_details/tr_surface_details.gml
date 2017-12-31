@@ -1,5 +1,6 @@
-///@param index
-///@param divider
+/// @description TRACKER surface details string
+/// @param index
+/// @param divider
 
 var _index = argument0;
 var _divider = (argument1!=undefined)? argument1 : TRACE_DIV;

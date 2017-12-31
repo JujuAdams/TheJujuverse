@@ -1,9 +1,10 @@
-///@param x
-///@param y
-///@param layer
-///@param object
-///@param [note]
-///@param [protected]
+/// @description TRACKER instance creation using layers
+/// @param x
+/// @param y
+/// @param layer
+/// @param object
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
     var _index = instance_create_layer( argument[0], argument[1], argument[2], argument[3] );

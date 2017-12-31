@@ -1,4 +1,6 @@
-if ( OBJ_MODEL_ON ) {
+/// @description OBJMODEL service initialisation
+
+if ( OBJMODEL_ON ) {
     trace_f( "OBJ MODEL" );
 
     global.obj_map               = tr_map_create( "<.obj map>"     , true );

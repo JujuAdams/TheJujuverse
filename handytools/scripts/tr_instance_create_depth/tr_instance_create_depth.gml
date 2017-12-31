@@ -1,9 +1,10 @@
-///@param x
-///@param y
-///@param depth
-///@param object
-///@param [note]
-///@param [protected]
+/// @description TRACKER instance creation using depths
+/// @param x
+/// @param y
+/// @param depth
+/// @param object
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
     var _index = instance_create_depth( argument[0], argument[1], argument[2], argument[3] );

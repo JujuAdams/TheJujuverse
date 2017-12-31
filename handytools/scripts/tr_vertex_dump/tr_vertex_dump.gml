@@ -1,3 +1,5 @@
+/// @description TRACKER dump of all vertex buffer details
+
 if ( !TRACKER_ON ) return "<no vertex buffer dump, tracker off>";
 
 var _str = "----- vertex buffer dump -----" + NL;

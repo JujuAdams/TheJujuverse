@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER automatically recreate a previously created surface if it's been lost
+/// @param index
 
 var _index  = argument0;
 if ( _index == undefined ) || ( _index < 0 ) return undefined;

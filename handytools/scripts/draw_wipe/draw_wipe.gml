@@ -1,5 +1,5 @@
-///@param [colour]
-///@param [alpha]
+/// @param [colour]
+/// @param [alpha]
 
 if ( argument_count == 1 ) {
     draw_clear_alpha( argument[0], 1 );

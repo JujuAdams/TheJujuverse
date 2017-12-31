@@ -42,8 +42,8 @@ switch( load_phase ) {
     break;
     
     case E_MASTER.OBJ:
-        if ( !OBJ_MODEL_ON || ds_map_empty( global.obj_load_map ) ) {
-            if ( OBJ_MODEL_ON ) trace_f( ".obj models loaded, time taken=", global.obj_model_total_time );
+        if ( !OBJMODEL_ON || ds_map_empty( global.obj_load_map ) ) {
+            if ( OBJMODEL_ON ) trace_f( ".obj models loaded, time taken=", global.obj_model_total_time );
             trace_f( "--------------------", NL,
                      "   STARTING  GAME", NL,
                      "--------------------" );

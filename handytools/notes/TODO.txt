@@ -1,22 +1,8 @@
 //TODO
 
-Write descriptions for TRACKER functions
-  "        "        "  ImGUI       "
-  "        "        "  CONTROLS    "
-  "        "        "  AUDIO       "
-  "        "        "  WAN         "
-  "        "        "  OPTIONS     "
-  "        "        "  FPS         "
-  "        "        "  DEVTOOL     "
-  "        "        "  RUMBLE      "
-  "        "        "  RESOLUTION  "
+Write descriptions for ImGUI   functions
   "        "        "  GRIP        "
-  "        "        "  EDITOR      "
-  "        "        "  SCREEN      "
-  "        "        "  OBJ MODEL   "
   "        "        "  SCRIBBLE    "
-  "        "        "  TRANSITION  "
-  "        "        "  JIFFY       "
 Tidy up services TODO folder
   
   
@@ -35,6 +21,8 @@ Write descriptions for all the snippets
 
 Write readmes for the above :'( So much documentation
 
+
+TRACKER - Add tr_delete functions for compatibility with nested functions
 
 SCRIBBLE - Output word index
          - Pack text optins bitwise

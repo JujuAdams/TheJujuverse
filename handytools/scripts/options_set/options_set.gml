@@ -1,3 +1,4 @@
+/// @description Sets an option value
 /// @param key
 /// @param value
 

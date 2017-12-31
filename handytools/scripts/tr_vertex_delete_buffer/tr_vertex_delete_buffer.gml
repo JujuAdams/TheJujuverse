@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER vertex buffer deletion
+/// @param index
 
 var _index = argument0;
 

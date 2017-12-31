@@ -1,6 +1,6 @@
-///@param uniform
-///@param colour
-///@param alpha
+/// @param uniform
+/// @param colour
+/// @param alpha
 
 if ( global.shader_focus == undefined ) exit;
 

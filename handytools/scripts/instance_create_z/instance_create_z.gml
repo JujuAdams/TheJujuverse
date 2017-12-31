@@ -1,8 +1,8 @@
-///@param x
-///@param y
-///@param z
-///@param rotation
-///@param object
+/// @param x
+/// @param y
+/// @param z
+/// @param rotation
+/// @param object
 
 var _x   = argument0;
 var _y   = argument1;

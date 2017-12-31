@@ -1,5 +1,6 @@
-///@param [note]
-///@param [protected]
+/// @description TRACKER map create
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
     var _index = ds_map_create();

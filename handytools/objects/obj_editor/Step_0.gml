@@ -7,13 +7,13 @@ if ( IMGUI_ON && keyboard_check_pressed( vk_f11 ) ) {
         window_has_set_size = false;
         window_page_return = window_page;
     } else {
-        control_property_set( 0, "mouse", "lock time", current_time );
+        control_set( 0, "mouse", "lock time", current_time );
     }
 }
 if ( !instance_exists( obj_imgui ) ) window_show = false;
 if ( window_show && keyboard_check_released( vk_space ) ) {
     window_collapsed = !window_collapsed;
-    if ( window_collapsed ) control_property_set( 0, "mouse", "lock time", current_time );
+    if ( window_collapsed ) control_set( 0, "mouse", "lock time", current_time );
 }
 
 #region PLACEMENT COORDS

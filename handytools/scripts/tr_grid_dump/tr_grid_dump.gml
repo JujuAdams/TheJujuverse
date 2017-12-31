@@ -1,3 +1,5 @@
+/// @description TRACKER dump of all grid details
+
 if ( !TRACKER_ON ) return "<no ds_grid dump, tracker off>";
 
 var _str = "----- ds_grid dump -----" + NL;

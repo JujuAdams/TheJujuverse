@@ -1,4 +1,4 @@
-///@param string
+/// @param string
 
 var _str = argument0;
 

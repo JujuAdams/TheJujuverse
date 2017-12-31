@@ -1,4 +1,4 @@
-///@param source_vbuff
+/// @param source_vbuff
 
 //This script presumes the use of global.vft_simple_3d (pos 3d, texcoord, colour, normal)
 

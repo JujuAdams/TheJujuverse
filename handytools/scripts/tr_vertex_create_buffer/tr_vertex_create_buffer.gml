@@ -1,5 +1,6 @@
-///@param [note]
-///@param [protected]
+/// @description TRACKER vertex buffer creation
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
     var _index = vertex_create_buffer();

@@ -1,5 +1,5 @@
-///@param filename
-///@param string
+/// @param filename
+/// @param string
 
 var _name   = argument0;
 var _string = argument1;

@@ -1,3 +1,5 @@
+/// @description SCRIBBLE configuration
+
 /*
     Fonts are declared in scribble_init(), unless overridden by SCRIBBLE_AUTO_FONT_INIT
 */

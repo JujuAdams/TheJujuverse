@@ -1,6 +1,6 @@
-///@param buffer
-///@param size
-///@param seed
+/// @param buffer
+/// @param size
+/// @param seed
 
 var _buffer = argument0;
 var _size   = argument1;

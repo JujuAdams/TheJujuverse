@@ -1,3 +1,5 @@
+/// @description JIFFY-compatible Draw code
+
 if ( sprite_exists( sprite_index ) ) {
     draw_sprite_ext( sprite_index, image_index,
                      lerp( xprevious, x, global.jiffy_render_alpha ),

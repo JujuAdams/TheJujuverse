@@ -1,3 +1,4 @@
+/// @description Unregisters an instance from being updated by JIFFY
 /// @param instance_or_object_index
 
 var _index = global.jiffy_instances[| argument0 ];

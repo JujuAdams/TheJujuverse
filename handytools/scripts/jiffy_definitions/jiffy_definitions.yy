@@ -1,8 +1,8 @@
 {
-    "id": "074d39b9-bd83-4b1c-8b6a-24ea16cbed0d",
+    "id": "f25b1b10-5fe1-4b79-9b16-0d775bcc97d7",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "control_property_set",
+    "name": "jiffy_definitions",
     "IsCompatibility": false,
     "IsDnD": false
 }

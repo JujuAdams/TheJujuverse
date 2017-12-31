@@ -1,7 +1,8 @@
-///@param object
-///@param in_time
-///@param out_time
-///@param destination_room
+/// @description Starts a transition to another room
+/// @param object
+/// @param in_time
+/// @param out_time
+/// @param destination_room
 
 var _target_room = (argument3 == TRANSITION_RETURN)? global.transition_previous_room : argument3;
 

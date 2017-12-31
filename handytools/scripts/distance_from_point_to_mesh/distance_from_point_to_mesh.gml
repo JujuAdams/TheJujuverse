@@ -1,8 +1,8 @@
-///@param triangle_array
-///@param x
-///@param y
-///@param z
-///@param [initial_distance]
+/// @param triangle_array
+/// @param x
+/// @param y
+/// @param z
+/// @param [initial_distance]
 
 var _array   = argument[0];
 var _px      = argument[1];

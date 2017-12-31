@@ -1,5 +1,4 @@
-///@function imguigml_definitions()
-///@desc enums / definitions for imguigml
+/// @description ImGUI definitions
 
 // easy access to ImGui
 #macro ImGuiGML (global.__imguigml)

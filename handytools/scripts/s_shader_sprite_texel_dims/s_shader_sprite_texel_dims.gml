@@ -1,6 +1,6 @@
-///@param uniform
-///@param sprite
-///@param image
+/// @param uniform
+/// @param sprite
+/// @param image
 
 if ( global.shader_focus == undefined ) exit;
 

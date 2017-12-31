@@ -1,4 +1,4 @@
-///@param name
+/// @param name
 
 if ( !GRIP_ON ) return surface_get_aspect( application_surface );
 

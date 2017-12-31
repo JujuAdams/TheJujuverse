@@ -1,5 +1,7 @@
-///@param map
-///@param delete_buffer
+/// @description Processes an .obj model to a vertex buffer using buffer operations
+///              This script assumes use of the global.vft_simple_3d vertex format.
+/// @param map
+/// @param delete_buffer
 
 var _total_time = get_timer();
 

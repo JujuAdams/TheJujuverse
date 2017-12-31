@@ -1,3 +1,4 @@
+/// @description Returns the string name for a GameMaker native key index
 /// @param key
 
 var _ord = argument0;

@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER grid destruction
+/// @param index
 
 var _index = argument0;
 

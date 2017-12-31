@@ -1,4 +1,5 @@
-///@param ignore_protected
+/// @description TRACKER safely destroy an instance (useful for Destroy and Room End events)
+/// @param ignore_protected
 
 var _ignore = (argument_count>0)? argument[0] : false;
 

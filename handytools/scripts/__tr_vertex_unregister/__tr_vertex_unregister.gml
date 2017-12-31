@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER internal function to remove a vertex buffer from global record
+/// @param index
 
 ds_list_delete( global.tracker_vbuffs, ds_list_find_index( global.tracker_vbuffs, argument0 ) );
 ds_map_delete( global.tracker_vbuffs_origin   , argument0 );

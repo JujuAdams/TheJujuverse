@@ -1,3 +1,5 @@
+/// @description GRIP service initialisation
+
 if ( GRIP_ON ) {
     
     trace_f( "GRIP" );

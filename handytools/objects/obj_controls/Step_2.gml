@@ -1,4 +1,4 @@
-if ( gamepad_number_connected() <= 0 ) control_property_set( 0, "mode", KEYBOARD );
+if ( gamepad_number_connected() <= 0 ) control_set( 0, "mode", KEYBOARD );
 
 for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
     

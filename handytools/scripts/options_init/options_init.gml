@@ -1,3 +1,5 @@
+/// @description OPTIONS service initialisation
+
 trace_f( OPTIONS_ON? "OPTIONS" : "OPTIONS (forced default)" );
 
 global.options_defaults = tr_map_create( "options (defaults)", true );

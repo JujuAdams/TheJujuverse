@@ -1,8 +1,8 @@
 {
-    "id": "a8875df3-d7fa-4fdf-accd-5e795b27d900",
+    "id": "db25b9cf-80f3-4675-8ac7-70763928b31b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "control_verify_map",
+    "name": "control_get",
     "IsCompatibility": false,
     "IsDnD": false
 }

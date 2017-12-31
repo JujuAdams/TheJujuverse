@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER surface freeing
+/// @param index
 
 var _index = argument0;
 

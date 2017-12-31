@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER instance destruction
+/// @param index
 
 var _index = (argument_count>0)?argument[0]:id;
 var _flag  = (argument_count>1)?argument[1]:false;

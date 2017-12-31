@@ -1,4 +1,4 @@
-///@param array
+/// @param array
 
 if ( !GRIP_ON ) return false;
 

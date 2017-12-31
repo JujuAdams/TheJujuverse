@@ -1,5 +1,5 @@
-///@param name
-///@param surface
+/// @param name
+/// @param surface
 
 if ( !GRIP_ON ) return undefined;
 

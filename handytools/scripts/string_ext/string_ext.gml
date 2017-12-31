@@ -1,4 +1,4 @@
-///@param value
+/// @param value
 
 if ( is_undefined( argument0 ) ) {
     return "<undefined>";

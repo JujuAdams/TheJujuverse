@@ -1,6 +1,8 @@
-///@param player
-///@param key...
-///@param ...value
+/// @description Sets the state of an action for a particular player
+/// @param player
+/// @param action
+/// @param [action...]
+/// @param value
 
 var _ds = obj_controls.controls_list;
 

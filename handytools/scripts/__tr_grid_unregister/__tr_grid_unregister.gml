@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER internal function to remove a grid from global record
+/// @param index
 
 ds_list_delete( global.tracker_grids, ds_list_find_index( global.tracker_grids, argument0 ) );
 ds_map_delete( global.tracker_grids_origin   , argument0 );

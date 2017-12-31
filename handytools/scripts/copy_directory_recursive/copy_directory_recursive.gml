@@ -1,5 +1,5 @@
-///@param source
-///@param destination
+/// @param source
+/// @param destination
 
 var _src  = argument0;
 var _dest = argument1;

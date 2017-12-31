@@ -1,6 +1,6 @@
 /// @description Master .obj model loading definitions
 
-if ( OBJ_MODEL_ON ) {
+if ( OBJMODEL_ON ) {
     
     global.obj_model_total_time = 0;
 

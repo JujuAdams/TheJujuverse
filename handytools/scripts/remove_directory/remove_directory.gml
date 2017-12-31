@@ -1,4 +1,4 @@
-///@param path
+/// @param path
 
 var _path = argument0;
 

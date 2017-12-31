@@ -1,4 +1,5 @@
-///@param index
+/// @description TRACKER map destruction
+/// @param index
 
 var _index = argument0;
 

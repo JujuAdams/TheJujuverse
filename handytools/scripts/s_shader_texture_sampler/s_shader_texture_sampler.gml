@@ -1,5 +1,5 @@
-///@param uniform
-///@param surface
+/// @param uniform
+/// @param surface
 
 if ( global.shader_focus == undefined ) exit;
 

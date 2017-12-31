@@ -1,3 +1,4 @@
+/// @description Returns the string name for a GM native gamepad button index
 /// @param button
 
 var _button = argument0;

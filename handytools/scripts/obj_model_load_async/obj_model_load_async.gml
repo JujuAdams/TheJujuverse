@@ -1,12 +1,13 @@
-///@param name
-///@param filename
-///@param vertex_format
-///@param flip_normals
-///@param flip_UVs
-///@param x
-///@param y
-///@param z
-///@param scale
+/// @description Queues an .obj file on disk to be loaded and processed
+/// @param name
+/// @param filename
+/// @param vertex_format
+/// @param flip_normals
+/// @param flip_UVs
+/// @param x
+/// @param y
+/// @param z
+/// @param scale
 
 var _name         = argument0;
 var _filename     = argument1;

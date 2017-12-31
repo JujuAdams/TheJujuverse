@@ -1,5 +1,6 @@
-///@param index
-///@param divider
+/// @description TRACKER vertex buffer details string
+/// @param index
+/// @param divider
 
 if ( !TRACKER_ON ) return "<tracker off>";
 

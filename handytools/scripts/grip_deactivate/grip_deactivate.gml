@@ -1,4 +1,4 @@
-///@param name
+/// @param name
 
 if ( !GRIP_ON ) {
     trace_error_q( false, "Can't execute script - turn GRIP on" );

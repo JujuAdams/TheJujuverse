@@ -1,6 +1,7 @@
-///@param index
-///@param note
-///@param protect
+/// @description TRACKER internal function to add a vertex buffer to global record
+/// @param index
+/// @param note
+/// @param protect
 
 if ( TRACKER_DEBUG_VBUFF_CREATE && TRACKER_BLANK_NOTE_THROW_ERROR && (argument1 == "" ) ) trace_error( false, "blank note!" );
 

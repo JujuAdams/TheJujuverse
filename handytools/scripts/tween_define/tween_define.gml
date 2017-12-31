@@ -1,7 +1,7 @@
-///@param tween_index
-///@param do
-///@param start_time
-///@param length
+/// @param tween_index
+/// @param do
+/// @param start_time
+/// @param length
 
 if ( !variable_instance_exists( id, "tween_count" ) ) tween_init( TWEEN_DEFAULT_CLAMP );
 

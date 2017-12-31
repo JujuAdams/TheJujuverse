@@ -3,7 +3,7 @@ if ( IMGUI_ON && keyboard_check_pressed( vk_f12 ) ) {
     if ( window_show ) {
         window_has_set_size = false;
     } else {
-        control_property_set( 0, "mouse", "lock time", current_time );
+        control_set( 0, "mouse", "lock time", current_time );
     }
 }
 

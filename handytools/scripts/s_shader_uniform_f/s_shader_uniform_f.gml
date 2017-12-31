@@ -1,6 +1,6 @@
-///@param uniform
-///@param data
-///@param [data...]
+/// @param uniform
+/// @param data
+/// @param [data...]
 
 if ( global.shader_focus == undefined ) exit;
 

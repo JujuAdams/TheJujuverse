@@ -67,5 +67,5 @@ if ( !DEVELOPMENT ) {
     #endregion
 }
 
-control_verify_map( _key_map );
-control_verify_map( _button_map );
+control_verify_mapping( _key_map );
+control_verify_mapping( _button_map );

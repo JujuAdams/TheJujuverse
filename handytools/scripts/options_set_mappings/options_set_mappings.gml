@@ -1,3 +1,5 @@
+/// @description Sets CONTROL button indices (GM native) using string names in the options
+
 var _options_root_list = options_get( "controls" );
 if ( _options_root_list == undefined ) exit;
 var _root_list = obj_controls.controls_list;

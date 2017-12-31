@@ -1,3 +1,5 @@
+/// @description ImGUI configuration
+
 // (c) @babyjeans Nov 2017
 
 #macro IMGUI_TRANSPARENCY 1.15 //no idea why but this doesn't behave how you think it would...

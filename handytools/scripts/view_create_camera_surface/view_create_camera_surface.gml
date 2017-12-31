@@ -1,6 +1,6 @@
-///@param view
-///@param camera
-///@param surface
+/// @param view
+/// @param camera
+/// @param surface
 
 var _view    = argument0;
 var _camera  = argument1;

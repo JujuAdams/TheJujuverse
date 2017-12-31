@@ -1,3 +1,4 @@
+/// @description Verifies that a control mapping contains all necessary values
 /// @param map
 
 var _map = argument0;

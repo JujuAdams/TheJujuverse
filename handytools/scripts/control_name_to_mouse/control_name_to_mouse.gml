@@ -1,3 +1,4 @@
+/// @description Returns the GM native mouse button index for a string name
 /// @param name
 
 var _string = string_upper( argument0 );

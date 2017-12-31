@@ -1,7 +1,8 @@
-///@param width
-///@param height
-///@param [note]
-///@param [protected]
+/// @description TRACKER grid creation
+/// @param width
+/// @param height
+/// @param [note]
+/// @param [protected]
 
 if ( TRACKER_ON ) {
     var _index = ds_grid_create( argument[0], argument[1] );

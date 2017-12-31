@@ -1,3 +1,5 @@
+/// @description AUDIO service initialisation
+
 trace_f( "AUDIO (forced)" );
 trace_f( "Loading audio groups (", AUDIO_GROUPS, " total)" );
 

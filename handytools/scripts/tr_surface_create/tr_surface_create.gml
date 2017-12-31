@@ -1,7 +1,8 @@
-///@param width
-///@param height
-///@param [note]
-///@param [protected]
+/// @description TRACKER surface creation
+/// @param width
+/// @param height
+/// @param [note]
+/// @param [protected]
 
 var _index = surface_create( argument[0], argument[1] );
 

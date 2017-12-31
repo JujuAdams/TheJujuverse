@@ -1,5 +1,5 @@
-///@param name
-///@param manual_draw
+/// @param name
+/// @param manual_draw
 
 if ( !GRIP_ON ) {
     trace_error_q( false, "Can't execute script - turn GRIP on" );

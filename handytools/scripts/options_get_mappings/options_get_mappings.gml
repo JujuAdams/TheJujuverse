@@ -1,3 +1,5 @@
+/// @description Sets OPTIONS mapping names using CONTROL's GameMaker native button indices
+
 var _options_root_list = global.options_json[? "controls" ];
 if ( _options_root_list == undefined ) exit;
 var _root_list = obj_controls.controls_list;

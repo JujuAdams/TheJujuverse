@@ -1,6 +1,6 @@
-///@param xscale
-///@param yscale
-///@param zscale
+/// @param xscale
+/// @param yscale
+/// @param zscale
 
 matrix_chain_multiply_build(         0,         0,         0,
                                      0,         0,         0, 

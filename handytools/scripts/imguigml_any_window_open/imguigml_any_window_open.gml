@@ -1,4 +1,5 @@
-///@param array_of_exceptions
+/// @description Returns if any ImGUI window is open
+/// @param array_of_exceptions
 
 if ( argument_count == 0 ) {
     with( obj_par_imgui_window ) if ( window_show ) return true;

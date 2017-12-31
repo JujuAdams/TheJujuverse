@@ -1,3 +1,4 @@
+/// @description Returns the GameMaker native key index for a string name
 /// @param name
 
 var _string = string_upper( argument0 );

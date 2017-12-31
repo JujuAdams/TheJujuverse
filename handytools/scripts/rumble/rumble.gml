@@ -1,3 +1,4 @@
+/// @description Adds a simple rumble operation to the stack
 /// @param player
 /// @param strength
 /// @param duration

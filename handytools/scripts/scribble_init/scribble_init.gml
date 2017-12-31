@@ -1,3 +1,5 @@
+/// @description SCRIBBLE service initialisation
+
 /*
     Edit this array to add more fonts to the Scribble font renderer.
 */

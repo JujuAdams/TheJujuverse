@@ -1,11 +1,13 @@
-///@param filename
-///@param vertex_format
-///@param flip_normals
-///@param flip_UVs
-///@param x
-///@param y
-///@param z
-///@param scale
+/// @description Synchronously loads an .obj model from disk to a vertex buffer
+///              This script assumes use of the global.vft_simple_3d vertex format.
+/// @param filename
+/// @param vertex_format
+/// @param flip_normals
+/// @param flip_UVs
+/// @param x
+/// @param y
+/// @param z
+/// @param scale
 
 var _filename     = argument0;
 var _format       = argument1;

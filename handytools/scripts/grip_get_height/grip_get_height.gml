@@ -1,4 +1,4 @@
-///@param index
+/// @param index
 
 if ( !GRIP_ON ) return surface_get_height( application_surface );
 

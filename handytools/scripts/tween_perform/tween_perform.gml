@@ -1,5 +1,5 @@
-///@param tween_index
-///@param force
+/// @param tween_index
+/// @param force
 
 var _index = argument0;
 var _force = argument1;

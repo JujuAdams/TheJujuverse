@@ -1,4 +1,4 @@
-///@param surface
+/// @param surface
 
 if ( ERROR_DEPRECIATED_SCRIPTS ) trace_error( false, "surface_wipe() is a depreciated script." );
 

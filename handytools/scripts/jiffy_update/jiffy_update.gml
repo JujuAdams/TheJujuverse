@@ -1,3 +1,5 @@
+/// @description Executes the JIFFY update scripts for registered instances
+
 var _new_time = get_timer();
 var _frame_time = _new_time - global.jiffy_time;
 _frame_time /= 1000000;

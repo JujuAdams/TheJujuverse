@@ -1,3 +1,5 @@
+/// @description JIFFY service initialisation
+
 if ( JIFFY_ON ) {
     trace( "JIFFY" );
     global.jiffy_accumulator             = 0;

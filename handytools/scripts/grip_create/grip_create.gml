@@ -1,8 +1,8 @@
-///@param name
-///@param surface_width
-///@param surface_height
-///@param relative_to_app_surf
-///@param 3d_projection
+/// @param name
+/// @param surface_width
+/// @param surface_height
+/// @param relative_to_app_surf
+/// @param 3d_projection
 
 if ( !GRIP_ON ) {
     trace_error_q( false, "Can't execute script - turn GRIP on" );

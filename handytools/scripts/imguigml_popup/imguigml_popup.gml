@@ -1,5 +1,6 @@
-///@param title_text
-///@param body_text
+/// @description Pops up a custom ImGUI window (for warnings etc.)
+/// @param title_text
+/// @param body_text
 
 if ( IMGUI_ON ) {
     

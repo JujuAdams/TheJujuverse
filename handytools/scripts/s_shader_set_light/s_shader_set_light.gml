@@ -1,10 +1,10 @@
-///@param index
-///@param x
-///@param y
-///@param z
-///@param range
-///@param colour
-///@param alpha
+/// @param index
+/// @param x
+/// @param y
+/// @param z
+/// @param range
+/// @param colour
+/// @param alpha
 
 if ( global.shader_focus == undefined ) exit;
 

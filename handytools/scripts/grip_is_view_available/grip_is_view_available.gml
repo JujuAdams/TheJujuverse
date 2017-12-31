@@ -1,4 +1,4 @@
-///@param view
+/// @param view
 
 if ( !GRIP_ON ) return false;
 

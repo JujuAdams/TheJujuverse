@@ -1,3 +1,4 @@
+/// @description Returns the default option value
 /// @param key
 
 var _value = global.options_defaults[? argument0 ];

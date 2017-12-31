@@ -1,3 +1,5 @@
+/// @description CONTROL definitions
+
 #macro NEITHER 0
 #macro LEFT 1
 #macro RIGHT 2
