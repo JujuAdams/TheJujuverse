@@ -55,11 +55,11 @@ _ny *= _n_inv_dist;
 _nz *= _n_inv_dist;
 /*
 vertex_submit_and_delete(
-	vertex_buffer_line( _ax, _ay, _az,
-	                    _ax+20*_nx, _ay+20*_ny, _az+20*_nz,
-						c_white, 1, 1 )
+    vertex_buffer_line( _ax, _ay, _az,
+                        _ax+20*_nx, _ay+20*_ny, _az+20*_nz,
+                        c_white, 1, 1 )
 );
-*/	
+*/    
 var _ux = _qx - _px;
 var _uy = _qy - _py;
 var _uz = _qz - _pz;
@@ -68,12 +68,12 @@ var _uz = _qz - _pz;
 // U.N
 var _u_dot_n = _ux*_nx + _uy*_ny + _uz*_nz;
 if ( _u_dot_n == 0 ) return false;
-	
+    
 var _wx = _px - _ax;
 var _wy = _py - _ay;
 var _wz = _pz - _az;
 var _w_dot_n = _wx*_nx + _wy*_ny + _wz*_nz;
-	
+    
 var _s = -_w_dot_n / _u_dot_n;
 var _sx = _s*_ux + _px - _ax;
 var _sy = _s*_uy + _py - _ay;

@@ -31,7 +31,7 @@ if ( _size > 0 ) {
         
         //Manually render out manual grips
         var _my_id = id;
-		surface_set_target( grip_get_surface( global.grip_current_manual ) );
+        surface_set_target( grip_get_surface( global.grip_current_manual ) );
             camera_apply( grip_get_camera( global.grip_current_manual ) );
             event_perform( ev_draw, ev_draw_begin );
             with( all ) if ( id != _my_id ) event_perform( ev_draw, ev_draw_begin );

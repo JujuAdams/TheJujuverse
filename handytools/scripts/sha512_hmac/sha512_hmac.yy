@@ -1,8 +1,8 @@
 {
-    "id": "e7274a61-8962-4941-b0e8-13080919e1ef",
+    "id": "3aa577c8-cdc6-4e99-87dc-837c7ec5b6b6",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "buffer_sha512",
+    "name": "sha512_hmac",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -20,14 +20,14 @@ if ( SCREEN_3D ) {
     s_shader_begin( SCREEN_3D_SHADER );
     var _light = 0;
     if ( ALLOW_LIGHTING && global.screen_do_lighting ) {
-        s_shader_colour( "u_vAmbientColour", C_AMBIENT, 0 );
+        s_shader_rgba( "u_vAmbientColour", C_AMBIENT, 0 );
         with( obj_camera ) s_shader_set_light( _light++, x, y, z, 100, c_gray, 1 );
         with( obj_light ) if ( visible ) s_shader_set_light( _light++, x, y, z, range, colour, 1 );
     } else {
-        s_shader_colour( "u_vAmbientColour", c_white, 1 );
+        s_shader_rgba( "u_vAmbientColour", c_white, 1 );
     }
     for( var _i = _light; _i < SCREEN_MAX_LIGHTS; _i++ ) s_shader_set_light( _light, 0, 0, 0, 1, c_black, 0 );
-    s_shader_colour( "u_vForceColour", c_white, 0 );
+    s_shader_rgba( "u_vForceColour", c_white, 0 );
     s_shader_end();
     
 } else {

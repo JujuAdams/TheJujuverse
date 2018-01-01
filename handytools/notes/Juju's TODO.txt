@@ -21,7 +21,7 @@ TRACKER - Add tr_delete functions for compatibility with nested functions
 
 SCRIBBLE - Output word index
          - Pack text optins bitwise
-		 - Fix scrollboxes
+         - Fix scrollboxes
          
 JIFFY - Check with Kyle for updates
       - Update AMIASP to use delta timing

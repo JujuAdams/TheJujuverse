@@ -29,7 +29,7 @@ repeat( _indent_size ) _indent_string += " ";
 var _in_real              = false;
 var _real_string_dot      = 0;
 var _real_string_last_sig = 1;
-				
+                
 var _in_string            = false;
 var _string_escape        = false;
 var _string               = "";
@@ -47,11 +47,11 @@ repeat( _size ) {
     var _ord = ord( _char );
     
     if ( _in_string ) {
-		#region STRING HANDLING
-		
+        #region STRING HANDLING
+        
         if ( ( _ord == _string_delimiter ) && !_string_escape ) {
-			
-			//Add a string to the current data structure
+            
+            //Add a string to the current data structure
             if ( _stack_current_type == ds_type_list ) {
                 ds_list_add( _stack_current, "\"" + _string + "\"" );
             } else if ( _string_map_mode == JSON_MAP_KEY ) {
@@ -63,7 +63,7 @@ repeat( _size ) {
             }
             
             _in_string = false;
-			_in_real = false;
+            _in_real = false;
             _string = "";
             
         } else if ( ( _ord == 92 ) && !_string_escape ) {
@@ -72,36 +72,36 @@ repeat( _size ) {
             
         } else {
             
-			if ( _ord == 34 ) _char = "\\\""; //Handle escaping double quotes
+            if ( _ord == 34 ) _char = "\\\""; //Handle escaping double quotes
             _string_escape = false;
             _string += _char;
             
         }
         
-		#endregion
+        #endregion
     } else switch( _ord ) {
         
-		case  34: // "
-		case  39: // '
-	        if ( _string != "" ) show_error( false, "json_prettify_alphabetise: unexpected string (index=" + string( _index ) + ")" );
-	        _string = "";
-	        _string_delimiter = _ord;
-	        _in_string = true;
-		break;
-		
+        case  34: // "
+        case  39: // '
+            if ( _string != "" ) show_error( false, "json_prettify_alphabetise: unexpected string (index=" + string( _index ) + ")" );
+            _string = "";
+            _string_delimiter = _ord;
+            _in_string = true;
+        break;
+        
         case  44: // ,
         case  93: // ]
         case 125: // }
             
-			//Put this string into the current data structure
+            //Put this string into the current data structure
             if ( _string != "" ) {
-				
-				if ( _in_real ) {
-					_in_real = false;
-			        if ( _real_string_dot >= _real_string_last_sig ) _real_string_last_sig = _real_string_dot-1;
-			        _string = string_copy( _string, 1, _real_string_last_sig );
-			    }
-				
+                
+                if ( _in_real ) {
+                    _in_real = false;
+                    if ( _real_string_dot >= _real_string_last_sig ) _real_string_last_sig = _real_string_dot-1;
+                    _string = string_copy( _string, 1, _real_string_last_sig );
+                }
+                
                 if ( _stack_current_type == ds_type_list ) {
                     ds_list_add( _stack_current, _string );
                 } else if ( _string_map_mode == JSON_MAP_VALUE ) {
@@ -114,150 +114,150 @@ repeat( _size ) {
             }
             
             _string = "";
-			
-			if ( _ord != 44 ) { //Ignore if this character is a comma
-				#region TURN DATA STRUCTURE INTO STRING
-				
-				_ds_string = "";
-				
-				//Compress down a list into a string
-				if ( _ord == 93 ) && ( _stack_current_type == ds_type_list ) {
-					
-					_ds_string += "[";
-					
-					var _size = ds_list_size( _stack_current );
-					if ( _size > 0 ) {
-						
-						_ds_string += _newline_char;
-						
-						for( _i = 0; _i < _size; _i++ ) {
-							repeat( _stack_depth+1 ) _ds_string += _indent_string;
-							_ds_string += string( _stack_current[| _i ] ) + ((_i == _size-1)? "":",") + _newline_char;
-						}
-						
-						repeat( _stack_depth ) _ds_string += _indent_string;
-						
-					}
-					
-					_ds_string += "]";
-					
-				//Compress down a map into a string
-				} else if ( _ord == 125 ) && ( _stack_current_type == ds_type_map ) {
-					
-					_ds_string += "{";
-					
-					var _size = ds_map_size( _stack_current );
-					if ( _size > 0 ) {
-						
-						_ds_string += _newline_char;
-						
-						//Build alphabetisation list
-						ds_list_clear( _alpha_list );
-						var _i = 0;
-						for( _key = ds_map_find_first( _stack_current ); _key != undefined; _key = ds_map_find_next( _stack_current, _key ) ) _alpha_list[| _i++ ] = _key;
-						ds_list_sort( _alpha_list, true );
-					
-						//Actually form up the string
-						for( var _i = 0; _i < _size; _i++ ) {
-							repeat( _stack_depth+1 ) _ds_string += _indent_string;
-							_key = _alpha_list[| _i ];
-							if ( is_string( _key ) ) _ds_string += "\"" + _key + "\"" else _ds_string += string( _key );
-							_ds_string += ":";
-							repeat( _map_space ) _ds_string += " ";
-							_ds_string += _stack_current[? _key ] + ((_i == _size-1)? "":",") + _newline_char;
-						}
-						
-						repeat( _stack_depth ) _ds_string += _indent_string;
-						
-					}
-					
-					_ds_string += "}";
-					
-				} else {
-					
-					show_error( false, "json_prettify_alphabetise: unexpected terminator" );
-					
-				}
-				
+            
+            if ( _ord != 44 ) { //Ignore if this character is a comma
+                #region TURN DATA STRUCTURE INTO STRING
+                
+                _ds_string = "";
+                
+                //Compress down a list into a string
+                if ( _ord == 93 ) && ( _stack_current_type == ds_type_list ) {
+                    
+                    _ds_string += "[";
+                    
+                    var _size = ds_list_size( _stack_current );
+                    if ( _size > 0 ) {
+                        
+                        _ds_string += _newline_char;
+                        
+                        for( _i = 0; _i < _size; _i++ ) {
+                            repeat( _stack_depth+1 ) _ds_string += _indent_string;
+                            _ds_string += string( _stack_current[| _i ] ) + ((_i == _size-1)? "":",") + _newline_char;
+                        }
+                        
+                        repeat( _stack_depth ) _ds_string += _indent_string;
+                        
+                    }
+                    
+                    _ds_string += "]";
+                    
+                //Compress down a map into a string
+                } else if ( _ord == 125 ) && ( _stack_current_type == ds_type_map ) {
+                    
+                    _ds_string += "{";
+                    
+                    var _size = ds_map_size( _stack_current );
+                    if ( _size > 0 ) {
+                        
+                        _ds_string += _newline_char;
+                        
+                        //Build alphabetisation list
+                        ds_list_clear( _alpha_list );
+                        var _i = 0;
+                        for( _key = ds_map_find_first( _stack_current ); _key != undefined; _key = ds_map_find_next( _stack_current, _key ) ) _alpha_list[| _i++ ] = _key;
+                        ds_list_sort( _alpha_list, true );
+                    
+                        //Actually form up the string
+                        for( var _i = 0; _i < _size; _i++ ) {
+                            repeat( _stack_depth+1 ) _ds_string += _indent_string;
+                            _key = _alpha_list[| _i ];
+                            if ( is_string( _key ) ) _ds_string += "\"" + _key + "\"" else _ds_string += string( _key );
+                            _ds_string += ":";
+                            repeat( _map_space ) _ds_string += " ";
+                            _ds_string += _stack_current[? _key ] + ((_i == _size-1)? "":",") + _newline_char;
+                        }
+                        
+                        repeat( _stack_depth ) _ds_string += _indent_string;
+                        
+                    }
+                    
+                    _ds_string += "}";
+                    
+                } else {
+                    
+                    show_error( false, "json_prettify_alphabetise: unexpected terminator" );
+                    
+                }
+                
                 if ( _stack_depth > 0 ) {
-					#region MOVE UP STACK
-					
-					//Destroy our old data structure
-					if ( _stack_current_type == ds_type_list ) ds_list_destroy( _stack_current ) else ds_map_destroy( _stack_current );
-					var _prev_ds   = _stack[_stack_depth-1];
-					var _prev_type = _stack_type[_stack_depth-1];
-					
-					//Overwrite our old index with a string
-					if ( _prev_type == ds_type_list ) {
-						_prev_ds[| _stack_index[_stack_depth] ] = _ds_string;
-					} else {
-						_prev_ds[? _stack_index[_stack_depth] ] = _ds_string;
-					}
-					
+                    #region MOVE UP STACK
+                    
+                    //Destroy our old data structure
+                    if ( _stack_current_type == ds_type_list ) ds_list_destroy( _stack_current ) else ds_map_destroy( _stack_current );
+                    var _prev_ds   = _stack[_stack_depth-1];
+                    var _prev_type = _stack_type[_stack_depth-1];
+                    
+                    //Overwrite our old index with a string
+                    if ( _prev_type == ds_type_list ) {
+                        _prev_ds[| _stack_index[_stack_depth] ] = _ds_string;
+                    } else {
+                        _prev_ds[? _stack_index[_stack_depth] ] = _ds_string;
+                    }
+                    
                     _stack_depth--;
                     _stack_current = _prev_ds;
                     _stack_current_type = _prev_type;
                     _string_map_mode = JSON_MAP_KEY;
-					
-					#endregion
+                    
+                    #endregion
                 } else {
-					#region RETURN FINAL STRING
-					
-					//Compress down a list into a string
-					if ( _stack_current_type == ds_type_list ) {
-					
-						_ds_string = "[";
-						
-						var _size = ds_list_size( _stack_current );
-						if ( _size > 0 ) {
-							_ds_string += _newline_char;
-							for( _i = 0; _i < _size; _i++ ) _ds_string += _indent_string + string( _stack_current[| _i ] ) + ((_i == _size-1)? "":",") + _newline_char;
-						}
-						
-						_ds_string += "]";
-						ds_list_destroy( _stack_current );
-					
-					//Compress down a map into a string
-					} else {
-						
-						_ds_string = "{";
-						
-						var _size = ds_map_size( _stack_current );
-						if ( _size > 0 ) {
-							_ds_string += _newline_char;
-							
-							//Build alphabetisation list
-							ds_list_clear( _alpha_list );
-							var _i = 0;
-							for( _key = ds_map_find_first( _stack_current ); _key != undefined; _key = ds_map_find_next( _stack_current, _key ) ) _alpha_list[| _i++ ] = _key;
-							ds_list_sort( _alpha_list, true );
-							
-							//Actually form up the string
-							for( var _i = 0; _i < _size; _i++ ) {
-								_key = _alpha_list[| _i ];
-								_ds_string += _indent_string;
-								if ( is_string( _key ) ) _ds_string += "\"" + _key + "\"" else _ds_string += string( _key );
-								_ds_string += ":";
-								repeat( _map_space ) _ds_string += " ";
-								_ds_string += _stack_current[? _key ] + ((_i == _size-1)? "":",") + _newline_char;
-							}
-							
-						}
-						
-						_ds_string += "}";
-						ds_map_destroy( _stack_current );
-						
-					}
-					
-					ds_list_destroy( _alpha_list );
+                    #region RETURN FINAL STRING
+                    
+                    //Compress down a list into a string
+                    if ( _stack_current_type == ds_type_list ) {
+                    
+                        _ds_string = "[";
+                        
+                        var _size = ds_list_size( _stack_current );
+                        if ( _size > 0 ) {
+                            _ds_string += _newline_char;
+                            for( _i = 0; _i < _size; _i++ ) _ds_string += _indent_string + string( _stack_current[| _i ] ) + ((_i == _size-1)? "":",") + _newline_char;
+                        }
+                        
+                        _ds_string += "]";
+                        ds_list_destroy( _stack_current );
+                    
+                    //Compress down a map into a string
+                    } else {
+                        
+                        _ds_string = "{";
+                        
+                        var _size = ds_map_size( _stack_current );
+                        if ( _size > 0 ) {
+                            _ds_string += _newline_char;
+                            
+                            //Build alphabetisation list
+                            ds_list_clear( _alpha_list );
+                            var _i = 0;
+                            for( _key = ds_map_find_first( _stack_current ); _key != undefined; _key = ds_map_find_next( _stack_current, _key ) ) _alpha_list[| _i++ ] = _key;
+                            ds_list_sort( _alpha_list, true );
+                            
+                            //Actually form up the string
+                            for( var _i = 0; _i < _size; _i++ ) {
+                                _key = _alpha_list[| _i ];
+                                _ds_string += _indent_string;
+                                if ( is_string( _key ) ) _ds_string += "\"" + _key + "\"" else _ds_string += string( _key );
+                                _ds_string += ":";
+                                repeat( _map_space ) _ds_string += " ";
+                                _ds_string += _stack_current[? _key ] + ((_i == _size-1)? "":",") + _newline_char;
+                            }
+                            
+                        }
+                        
+                        _ds_string += "}";
+                        ds_map_destroy( _stack_current );
+                        
+                    }
+                    
+                    ds_list_destroy( _alpha_list );
                     return _ds_string;
-					
-					#endregion
+                    
+                    #endregion
                 }
                 
-				#endregion
+                #endregion
             }
-			
+            
         break;
         
         case  45: // -
@@ -272,23 +272,23 @@ repeat( _size ) {
         case  55: // 7
         case  56: // 8
         case  57: // 9
-			
-			_string += _char;
-			
-			if ( _in_real ) {
-				if ( _ord == 46 ) {
-				    _real_string_dot = string_length( _string );
-				    _real_string_last_sig = _real_string_dot;
-				} else if ( _real_string_dot == 0 ) || ( _ord != 48 ) {
-				    _real_string_last_sig++;
-				}
-			} else {
-				_in_real = true;
-	            _real_string_dot = 0;
-	            _real_string_last_sig = 1;
-			}
-			
-		break;
+            
+            _string += _char;
+            
+            if ( _in_real ) {
+                if ( _ord == 46 ) {
+                    _real_string_dot = string_length( _string );
+                    _real_string_last_sig = _real_string_dot;
+                } else if ( _real_string_dot == 0 ) || ( _ord != 48 ) {
+                    _real_string_last_sig++;
+                }
+            } else {
+                _in_real = true;
+                _real_string_dot = 0;
+                _real_string_last_sig = 1;
+            }
+            
+        break;
         
         case 116: // t
         case 114: // r
@@ -324,12 +324,12 @@ repeat( _size ) {
             if ( _stack_current != undefined ) {
                 if ( _stack_current_type == ds_type_map ) { //using previous stack type
                     ds_map_add_list( _stack_current, _string_key, _new );
-					_stack_index[_stack_depth+1] = _string_key;
+                    _stack_index[_stack_depth+1] = _string_key;
                     _string_key = "";
                 } else {
                     ds_list_add( _stack_current, _new );
-					ds_list_mark_as_list( _stack_current, ds_list_size( _stack_current )-1 );
-					_stack_index[_stack_depth+1] = ds_list_size( _stack_current )-1;
+                    ds_list_mark_as_list( _stack_current, ds_list_size( _stack_current )-1 );
+                    _stack_index[_stack_depth+1] = ds_list_size( _stack_current )-1;
                 }
             }
             
@@ -347,12 +347,12 @@ repeat( _size ) {
             if ( _stack_current != undefined ) {
                 if ( _stack_current_type == ds_type_map ) { //using previous stack type
                     ds_map_add_map( _stack_current, _string_key, _new );
-					_stack_index[_stack_depth+1] = _string_key;
+                    _stack_index[_stack_depth+1] = _string_key;
                     _string_key = "";
                 } else {
                     ds_list_add( _stack_current, _new );
-					ds_list_mark_as_map( _stack_current, ds_list_size( _stack_current )-1 );
-					_stack_index[_stack_depth+1] = ds_list_size( _stack_current )-1;
+                    ds_list_mark_as_map( _stack_current, ds_list_size( _stack_current )-1 );
+                    _stack_index[_stack_depth+1] = ds_list_size( _stack_current )-1;
                 }
             }
             

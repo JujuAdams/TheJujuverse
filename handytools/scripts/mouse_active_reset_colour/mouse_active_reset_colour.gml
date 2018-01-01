@@ -1,1 +1,1 @@
-s_shader_colour( "u_vForceColour", c_white, 0 );
+s_shader_rgba( "u_vForceColour", c_white, 0 );
