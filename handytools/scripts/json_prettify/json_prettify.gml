@@ -1,23 +1,16 @@
 /// @description Nicely formats a JSON string so it's easier to read
+///
+/// With thanks to yal.cc
+///
 /// @param json_string
 /// @param [indent_size]
 /// @param [newline_char]
 /// @param [map_spacing]
-//
-// 2017/12/08 @jujuadams
-// If you use this, shoot me a tweet!
-//
-// With thanks to yal.cc
 
-if ( argument_count < 1 ) || ( argument_count > 4 ) {
-    trace_error( false, "Unsupported number of arguments (", argument_count, ")" );
-    return undefined;
-} else {
-    var _json_string = argument[0];
-    var _indent_size  = ((argument_count>1) && (argument[1]!=undefined))? argument[1] : 4;
-    var _newline_char = ((argument_count>2) && (argument[2]!=undefined))? argument[2] : chr(13) + chr(10);
-    var _map_space    = ((argument_count>3) && (argument[3]!=undefined))? argument[3] : 1;
-}
+var _json_string  = argument[0];
+var _indent_size  = ((argument_count>1) && (argument[1]!=undefined))? argument[1] : 4;
+var _newline_char = ((argument_count>2) && (argument[2]!=undefined))? argument[2] : chr(13) + chr(10);
+var _map_space    = ((argument_count>3) && (argument[3]!=undefined))? argument[3] : 1;
 
 var _in_string        = false;
 var _string_escape    = false;
