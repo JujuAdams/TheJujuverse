@@ -1,3 +1,4 @@
+/// @description Saves a JSON directly to a file on disk (synchronously)
 /// @param json
 /// @param filename
 

@@ -1,3 +1,4 @@
+/// @description Activates a GRIP camera and readies it for rendering
 /// @param name
 /// @param manual_draw
 

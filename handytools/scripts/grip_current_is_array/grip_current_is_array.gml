@@ -1,3 +1,4 @@
+/// @description Returns if the current GRIP camera name is found in an array
 /// @param array
 
 if ( !GRIP_ON ) return false;

@@ -1,3 +1,4 @@
+/// @description Sets a texel size vec2 uniform, from a sprite, in the current shader
 /// @param uniform
 /// @param sprite
 /// @param image

@@ -1,3 +1,6 @@
+/// @description Rebinds all GRIP cameras that were previously active to GM's native views
+///              This function should be called on Room Start to keep GRIP cameras active.
+
 if ( !GRIP_ON ) {
     trace_error_q( false, "Can't execute script - turn GRIP on" );
     exit;

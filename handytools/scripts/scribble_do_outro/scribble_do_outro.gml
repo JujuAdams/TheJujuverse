@@ -1,6 +1,6 @@
 /// @description text_do_outro( json )
 /// @function text_do_outro
-/// @param  json 
+/// @param json 
 //
 //  April 2017
 //  Juju Adams

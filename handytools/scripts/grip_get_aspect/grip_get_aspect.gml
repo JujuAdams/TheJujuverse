@@ -1,3 +1,4 @@
+/// @description Gets the aspect ratio of a GRIP camera
 /// @param name
 
 if ( !GRIP_ON ) return surface_get_aspect( application_surface );

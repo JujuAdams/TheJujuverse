@@ -1,3 +1,5 @@
+/// @description Activates a GRIP camera and renders to its surface using a GM native view
+///              This script is called by grip_activate() if "manual_draw" is <false>
 /// @param name
 /// @param view
 

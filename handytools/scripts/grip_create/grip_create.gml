@@ -1,3 +1,4 @@
+/// @description Creates a new GRIP camera
 /// @param name
 /// @param surface_width
 /// @param surface_height

@@ -1,4 +1,4 @@
-/// @func grip_get_current()
+/// @description Returns the current GRIP camera that's being rendered
 
 if ( !GRIP_ON ) return undefined;
 

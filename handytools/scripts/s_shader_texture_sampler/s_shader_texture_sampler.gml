@@ -1,3 +1,4 @@
+/// @description Sets a sampler uniform, using a texture index, in the current shader
 /// @param uniform
 /// @param surface
 

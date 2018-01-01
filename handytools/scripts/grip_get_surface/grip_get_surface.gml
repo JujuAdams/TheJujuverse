@@ -1,3 +1,4 @@
+/// @description Returns the surface attached to a GRIP camera
 /// @param name
 
 if ( !GRIP_ON ) return undefined;

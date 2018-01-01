@@ -1,3 +1,4 @@
+/// @description Loads a JSON directly from a file on disk (synchronously)
 /// @param filename
 
 var _filename = argument0;

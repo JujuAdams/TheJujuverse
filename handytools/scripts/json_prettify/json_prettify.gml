@@ -1,3 +1,4 @@
+/// @description Nicely formats a JSON string so it's easier to read
 /// @param json_string
 /// @param [indent_size]
 /// @param [newline_char]

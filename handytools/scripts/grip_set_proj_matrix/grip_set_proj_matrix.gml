@@ -1,4 +1,6 @@
-///grip_camera_set_proj_matrix( name, matrix )
+/// @description Sets the projection matrix for a GRIP camera
+/// @param name
+/// @param matrix
 
 if ( !GRIP_ON ) return undefined;
 

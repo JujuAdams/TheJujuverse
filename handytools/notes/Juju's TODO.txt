@@ -1,18 +1,13 @@
 //TODO
 
-Write descriptions for ImGUI   functions
-  "        "        "  GRIP        "
-  "        "        "  SCRIBBLE    "
 Tidy up services TODO folder
   
-  
-Write descriptions for JSON       library
-  "        "        "  Quaternion    "
-  "        "        "  Easing        "
-  "        "        "  Super Shader  "
-  "        "        "  Tweeing       "
-  "        "        "  Batch File    "
-  "        "        "  Matrix Chain  "
+Write descriptions for:
+Easing
+Tweeing
+Batch File
+Matrix Chain
+Vertex Buffers
 Tidy up library TODO folder
 
 
@@ -26,6 +21,7 @@ TRACKER - Add tr_delete functions for compatibility with nested functions
 
 SCRIBBLE - Output word index
          - Pack text optins bitwise
+		 - Fix scrollboxes
          
 JIFFY - Check with Kyle for updates
       - Update AMIASP to use delta timing

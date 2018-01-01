@@ -1,17 +1,19 @@
+/// @description Creates, and returns, a SCRIBBLE JSON, and its vertex buffer, built from a string
+///
+/// April 2017
+/// Juju Adams
+/// julian.adams@email.com
+/// @jujuadams
+///
+/// This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
+/// https://creativecommons.org/licenses/by-nc-sa/4.0/
+///
 /// @param string
 /// @param [box_width]
 /// @param [font]
 /// @param [halign]
 /// @param [colour]
 /// @param [line_height]
-//
-//  April 2017
-//  Juju Adams
-//  julian.adams@email.com
-//  @jujuadams
-//
-//  This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
-//  https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 var _str         = argument[0];
 var _width_limit = ((argument_count<2) || (argument[1]==undefined))? VERY_LARGE               : argument[1];

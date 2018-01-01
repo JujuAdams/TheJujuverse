@@ -1,15 +1,14 @@
-/// @description scribble_test_for_click( json, hyperlink name )
-/// @function scribble_test_for_click
-/// @param  json
-/// @param  hyperlink name 
-//
-//  April 2017
-//  Juju Adams
-//  julian.adams@email.com
-//  @jujuadams
-//
-//  This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
-//  https://creativecommons.org/licenses/by-nc-sa/4.0/
+/// @description Returns if a SCRIBBLE hyperlink has been clicked this frame
+///
+/// April 2017
+/// Juju Adams
+/// julian.adams@email.com
+/// @jujuadams
+///
+/// This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
+/// https://creativecommons.org/licenses/by-nc-sa/4.0/
+/// @param json
+/// @param hyperlink name 
 
 var _json = argument0;
 var _name = argument1;

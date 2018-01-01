@@ -1,3 +1,4 @@
+/// @description Sets a texel size vec2 uniform, from a surface, in the current shader
 /// @param uniform
 /// @param surface
 

@@ -1,3 +1,9 @@
+/// @description Manually renders out GRIP cameras that are active and unbound
+///              This function does not respect depth!
+///              
+///              If you're using Draw Begin/Draw End events to set e.g. shader states then
+///              this script should be called in the object that is setting that draw state.
+
 if ( !GRIP_ON ) return undefined;
 
 //Keep view grip surfaces alive
@@ -24,13 +30,14 @@ if ( _size > 0 ) {
         grip_set_surface( global.grip_current_manual, tr_surface_check_auto( grip_get_surface( global.grip_current_manual ) ) );
         
         //Manually render out manual grips
-        surface_set_target( grip_get_surface( global.grip_current_manual ) );
+        var _my_id = id;
+		surface_set_target( grip_get_surface( global.grip_current_manual ) );
             camera_apply( grip_get_camera( global.grip_current_manual ) );
-            with( obj_screen ) event_perform( ev_draw, ev_draw_begin );
-            with( all ) if ( object_index != obj_screen ) event_perform( ev_draw, ev_draw_begin );
+            event_perform( ev_draw, ev_draw_begin );
+            with( all ) if ( id != _my_id ) event_perform( ev_draw, ev_draw_begin );
             with( all ) event_perform( ev_draw, 0 );
-            with( all ) if ( object_index != obj_screen ) event_perform( ev_draw, ev_draw_end );
-            with( obj_screen ) event_perform( ev_draw, ev_draw_end );
+            with( all ) if ( id != _my_id ) event_perform( ev_draw, ev_draw_end );
+            event_perform( ev_draw, ev_draw_end );
         surface_reset_target();
     
     }

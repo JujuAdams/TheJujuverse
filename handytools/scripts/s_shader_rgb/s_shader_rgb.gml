@@ -1,3 +1,4 @@
+/// @description Sets a colour vec3 uniform in the current shader
 /// @param uniform
 /// @param colour
 

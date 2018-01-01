@@ -1,3 +1,4 @@
+/// @description Destroys a GRIP camera and frees the attached surface
 /// @param name
 
 if ( !GRIP_ON ) {

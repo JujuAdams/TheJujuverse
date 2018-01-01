@@ -1,6 +1,6 @@
-/// @description scribble_destroy( json )
-/// @function scribble_destroy
-/// @param  json 
+/// @description Destroys a SCRIBBLE, including its vertex buffer
+///
+/// @param json 
 
 var _json = argument0;
 

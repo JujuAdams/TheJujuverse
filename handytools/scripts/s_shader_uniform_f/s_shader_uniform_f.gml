@@ -1,3 +1,4 @@
+/// @description Sets a float uniform in the current shader
 /// @param uniform
 /// @param data
 /// @param [data...]

@@ -1,3 +1,4 @@
+/// @description Sets a colour vec4 uniform in the current shader
 /// @param uniform
 /// @param colour
 /// @param alpha

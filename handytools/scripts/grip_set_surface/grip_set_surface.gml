@@ -1,3 +1,4 @@
+/// @description Sets the attached surface for a GRIP camera
 /// @param name
 /// @param surface
 

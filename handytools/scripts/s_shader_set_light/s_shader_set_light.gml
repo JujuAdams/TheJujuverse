@@ -1,3 +1,4 @@
+/// @description Sets a custom lighting uniform in the current shader
 /// @param index
 /// @param x
 /// @param y

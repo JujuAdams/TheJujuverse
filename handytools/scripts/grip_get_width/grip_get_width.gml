@@ -1,3 +1,4 @@
+/// @description Gets the width of a GRIP camera
 /// @param index
 
 if ( !GRIP_ON ) return surface_get_width( application_surface );

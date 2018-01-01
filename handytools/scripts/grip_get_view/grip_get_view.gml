@@ -1,3 +1,4 @@
+/// @description Returns the GM native view target for a GRIP camera
 /// @param name
 
 if ( !GRIP_ON ) return undefined;

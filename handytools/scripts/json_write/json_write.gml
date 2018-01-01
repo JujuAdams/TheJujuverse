@@ -1,3 +1,4 @@
+/// @description Sets a value in a JSON (using a more convenient syntax!)
 /// @param json
 /// @param key...
 /// @param ...value

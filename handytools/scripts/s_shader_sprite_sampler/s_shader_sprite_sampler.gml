@@ -1,3 +1,4 @@
+/// @description Sets a sampler uniform, using a sprite, in the current shader
 /// @param uniform
 /// @param sprite
 /// @param image

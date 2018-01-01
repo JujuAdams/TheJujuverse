@@ -1,3 +1,4 @@
+/// @description Gets the height of a GRIP camera
 /// @param index
 
 if ( !GRIP_ON ) return surface_get_height( application_surface );

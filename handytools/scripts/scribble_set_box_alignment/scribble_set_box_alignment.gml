@@ -1,3 +1,5 @@
+/// @description Sets the alignment of a SCRIBBLE JSON
+///              Pass in no additional arguments to reset the SCRIBBLE alignment to left+top
 /// @param json
 /// @param [halign]
 /// @param [valign]

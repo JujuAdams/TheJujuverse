@@ -1,3 +1,4 @@
+/// @description Deactivates a GRIP camera
 /// @param name
 
 if ( !GRIP_ON ) {

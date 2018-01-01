@@ -1,3 +1,6 @@
+/// @description Sets the shader used to draw a particular SCRIBBLE
+///              Pass in no additional arguments to reset the shader to the default
+///              
 /// @param json
 /// @param [shader]
 /// @param [smoothness]

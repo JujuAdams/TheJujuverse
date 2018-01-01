@@ -1,4 +1,6 @@
-///grip_camera_set_view_proj( name, matrix )
+/// @description Sets the view matric for a GRIP camera
+/// @param name
+/// @param matrix
 
 if ( !GRIP_ON ) return undefined;
 

@@ -1,3 +1,4 @@
+/// @description Gets the GameMaker native camera attached to a GRIP camera
 /// @param name
 
 if ( !GRIP_ON ) return undefined;

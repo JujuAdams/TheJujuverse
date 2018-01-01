@@ -1,10 +1,6 @@
-/// @desc Multiplies two quaternions together, adding one rotation onto another.
+/// @description Multiplies two quaternions together, adding one rotation onto another
 /// @param quaternion_1
 /// @param quaternion_2
-///
-/// Quaternion library
-/// 7th Nov 2016
-/// @jujuadams
 
 var _a = argument0;
 var _b = argument1;

@@ -1,3 +1,4 @@
+/// @description Sets a UV vec4 uniform containing the left-top-width-height coordinates, from a sprite, in the current shader
 /// @param uniform
 /// @param sprite
 /// @param image
