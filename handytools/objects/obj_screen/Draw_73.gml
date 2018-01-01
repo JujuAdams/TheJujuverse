@@ -10,7 +10,7 @@ switch( grip_get_current() ) {
         var _y = global.app_surf_h/2;
         if ( global.game_room != 0 ) && ( global.game_room != 10 ) draw_sprite_ext( spr_white_pixel, 0, _x, _y, 2, 2, 0, c_white, 0.3 );
         
-        //Draw the menu background
+        //Draw the menu background if needed
         if ( instance_exists( obj_menu ) ) draw_sprite( spr_title, 0, 0, 0 );
         
         //Handle transitions
@@ -22,16 +22,10 @@ switch( grip_get_current() ) {
     case "click":
     break;
     
-    case "mirror0":
-    case "mirror1":
-    case "mirror2":
-    case "mirror3":
-    case "mirror click0":
-    case "mirror click1":
-    break;
-    
 }
 
-//Reset screen render states
+//Reset screen render state
 global.screen_click_render = false;
-global.screen_mirror_render = false;
+
+//Call custom script
+if ( script_exists( SCREEN_DRAW_END_SCRIPT ) ) script_execute( SCREEN_DRAW_END_SCRIPT );

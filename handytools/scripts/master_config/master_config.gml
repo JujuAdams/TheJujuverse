@@ -21,6 +21,7 @@
 #macro AUDIO_ON       false
 #macro WAN_ON         false
 #macro CONTROLS_ON    true
+#macro SCREEN_ON      true
 #macro OPTIONS_ON    (false || !DEVELOPMENT)
 #macro FPS_ON        (false && !RELEASE)
 #macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)

@@ -3,9 +3,8 @@ if ( SCREEN_BACKGROUND_COLOUR != undefined ) draw_clear( SCREEN_BACKGROUND_COLOU
 
 switch( grip_get_current() ) {
     
-    case "3d": //What the player sees, using forward rendering for lights
-        
-        //This fixes a bug with GM automatically submitting a blank vertex buffer to a shader in the wrong format
+    case "3d": //What the player sees
+        //This check fixes a bug with GM automatically submitting a blank vertex buffer to a shader in the wrong format
         if ( instance_exists( obj_par_3d ) ) s_shader_begin( SCREEN_3D_SHADER );
     break;
     
@@ -13,18 +12,7 @@ switch( grip_get_current() ) {
         global.screen_click_render = true;
     break;
     
-    case "mirror0": //Render out mirrors
-    case "mirror1":
-    case "mirror2":
-    case "mirror3":
-        global.screen_mirror_render = true;
-        s_shader_begin( SCREEN_3D_SHADER );
-    break;
-    
-    case "mirror click0": //Render out mirror click detection
-    case "mirror click1":
-        global.screen_click_render = true;
-        global.screen_mirror_render = true;
-    break;
-    
 }
+
+//Call custom script
+if ( script_exists( SCREEN_DRAW_BEGIN_SCRIPT ) ) script_execute( SCREEN_DRAW_BEGIN_SCRIPT );

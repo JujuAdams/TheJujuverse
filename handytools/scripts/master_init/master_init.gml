@@ -30,6 +30,7 @@ trace_f( "Initialising services" );
    tracker_init();
   imguigml_init();
    control_init();
+    screen_init();
      audio_init();
        wan_init();
    options_init();
