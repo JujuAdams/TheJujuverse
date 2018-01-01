@@ -83,7 +83,7 @@ repeat( _size ) {
         
         case  34: // "
         case  39: // '
-            if ( _string != "" ) show_error( false, "json_prettify_alphabetise: unexpected string (index=" + string( _index ) + ")" );
+            if ( _string != "" ) trace_error( false, "json_prettify_alphabetise: unexpected string (index=", _index, ")" );
             _string = "";
             _string_delimiter = _ord;
             _in_string = true;
@@ -109,7 +109,7 @@ repeat( _size ) {
                     _string_key = "";
                     _string_map_mode = JSON_MAP_KEY;
                 } else if ( _string_key != "" ) {
-                    show_error( false, "json_prettify_alphabetise: unexpected key:value pair termination (key=" + string( _string_key ) + ", index=" + string( _index ) + ")" );
+                    trace_error( false, "json_prettify_alphabetise: unexpected key:value pair termination (key=", _string_key, ", index=", _index, ")" );
                 }
             }
             
@@ -175,7 +175,7 @@ repeat( _size ) {
                     
                 } else {
                     
-                    show_error( false, "json_prettify_alphabetise: unexpected terminator" );
+                    trace_error( false, "json_prettify_alphabetise: unexpected terminator" );
                     
                 }
                 
@@ -370,6 +370,6 @@ repeat( _size ) {
     
 }
 
-show_error( false, "json_prettify_alphabetise: unexpected end of string" );
+trace_error( false, "json_prettify_alphabetise: unexpected end of string" );
 ds_list_destroy( _alpha_list );
 return _ds_string;
