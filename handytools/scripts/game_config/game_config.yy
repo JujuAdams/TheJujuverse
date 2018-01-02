@@ -1,8 +1,8 @@
 {
-    "id": "ce084a3b-ce12-431f-aad5-2c4653ad0a10",
+    "id": "e85bffff-7d83-4775-b997-691d849cecd3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "camera_set_projection",
+    "name": "game_config",
     "IsCompatibility": false,
     "IsDnD": false
 }
