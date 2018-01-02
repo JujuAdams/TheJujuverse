@@ -20,3 +20,4 @@ ds_list_add( _list, "back"      );
     We do not include "mouse" or "sensitivity" as these are handled differently (and presumed common to all games)
 */
 global.control_master_list = _list;
+global.control_master_total = ds_list_size( global.control_master_list );

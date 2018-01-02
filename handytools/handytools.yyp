@@ -2199,6 +2199,14 @@
             }
         },
         {
+            "Key": "4bdf52ae-20bd-47be-bdad-fc9ea5811b84",
+            "Value": {
+                "id": "a9566d29-0d4f-4114-b255-03eaefd7e058",
+                "resourcePath": "scripts\\alarm_set_safe\\alarm_set_safe.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4be04917-f47a-4330-9441-ece6644a8523",
             "Value": {
                 "id": "21da8e4b-2ab2-40f1-a809-253936fd50a3",
@@ -7257,6 +7265,7 @@
         "beaedd58-3606-4608-bcd4-5afa80f70075",
         "13ce029f-5753-425a-a1b8-52191795a23b",
         "a4b097fe-b0b1-4fdf-8ae1-e1ecc3a3b42b",
+        "4bdf52ae-20bd-47be-bdad-fc9ea5811b84",
         "e85bffff-7d83-4775-b997-691d849cecd3",
         "8babd2e0-a3fa-4ba1-8b43-6f79afef3bd0",
         "4e668c57-b7ef-4b7a-97fa-13579ed4b7c4",

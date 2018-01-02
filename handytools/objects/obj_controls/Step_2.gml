@@ -9,71 +9,30 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
     _mouse_map[?"dx"] = 0;
     _mouse_map[?"dy"] = 0;
     var _state_map = _player_map[?"state"];
-    _state_map[?"left" ] = CTRL_OFF;
-    _state_map[?"right"] = CTRL_OFF;
-    _state_map[?"up"   ] = CTRL_OFF;
-    _state_map[?"down" ] = CTRL_OFF;
     
     switch ( _player_map[?"mode"] ) {
         
         case KEYBOARD:
             #region KEYBOARD
+			
             var _mapping_map = _player_map[? "keyboard mapping" ];
             var _sensitivity = _mapping_map[? "sensitivity" ];
             
+			for( var _i = 0; _i < global.control_master_total; _i++ ) {
+				var _control = global.control_master_list[| _i ];
+				var _key = _mapping_map[? _control ];
+	            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED  else
+	            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD     else
+	            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED else
+				                                       _state_map[?_control] = CTRL_OFF;
+			}
+			
             var _control = "mouse";
             var _key = _mapping_map[?_control];
-            if ( mouse_check_button_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( mouse_check_button(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( mouse_check_button_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "left";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "right";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "fire";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt left";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt right";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt fire";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "back";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "talk";
-            var _key = _mapping_map[?_control];
-            if ( keyboard_check_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( keyboard_check(          _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( keyboard_check_released( _key ) ) _state_map[?_control] = CTRL_RELEASED;
+            if ( mouse_check_button_pressed(  _key ) ) _state_map[?_control] = CTRL_PRESSED  else
+            if ( mouse_check_button(          _key ) ) _state_map[?_control] = CTRL_HELD     else
+            if ( mouse_check_button_released( _key ) ) _state_map[?_control] = CTRL_RELEASED else
+				                                       _state_map[?_control] = CTRL_OFF;
             
             if ( options_get( "lock mouse", FORCE_LOCK_MOUSE, true ) && _mouse_map[? "lock" ] ) {
                 
@@ -111,68 +70,32 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
                 _mouse_map[?"point x"] = window_mouse_get_x();
                 _mouse_map[?"point y"] = window_mouse_get_y();
             }
+			
             #endregion
         break;
         
         case GAMEPAD:
             #region GAMEPAD
+			
             var _mapping_map = _player_map[?"gamepad mapping"];
             var _device      = _mapping_map[?"device"];
             var _sensitivity = _mapping_map[?"sensitivity"];
             
+			for( var _i = 0; _i < global.control_master_total; _i++ ) {
+				var _control = global.control_master_list[| _i ];
+				var _key = _mapping_map[? _control ];
+	            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED  else
+	            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD     else
+	            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED else
+				                                                      _state_map[?_control] = CTRL_OFF;
+			}
+			
             var _control = "mouse";
             var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "left";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "right";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "fire";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt left";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt right";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "alt fire";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "back";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
-            
-            var _control = "talk";
-            var _key = _mapping_map[?_control];
-            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED else
-            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD else
-            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED;
+            if ( gamepad_button_check_pressed(  _device, _key ) ) _state_map[?_control] = CTRL_PRESSED  else
+            if ( gamepad_button_check(          _device, _key ) ) _state_map[?_control] = CTRL_HELD     else
+            if ( gamepad_button_check_released( _device, _key ) ) _state_map[?_control] = CTRL_RELEASED else
+				                                                  _state_map[?_control] = CTRL_OFF;
             
             var _lx = gamepad_axis_value( _device, gp_axislh );
             var _ly = gamepad_axis_value( _device, gp_axislv );
@@ -185,6 +108,7 @@ for( var _p = 0; _p < MAX_PLAYERS; _p++ ) {
                 
             _mouse_map[?"dx"] = _lx;
             _mouse_map[?"dy"] = _ly;
+			
             #endregion
         break;
         

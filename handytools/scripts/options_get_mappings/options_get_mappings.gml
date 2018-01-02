@@ -29,22 +29,5 @@ for( var _i = 0; _i < MAX_PLAYERS; _i++ ) {
         _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
         _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
     }
-    /*
-    var _control = "left";      _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "right";     _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "fire";      _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "talk";      _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "alt left";  _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "alt right"; _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "alt fire";  _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-        _control = "back";      _options_key_map[?    _control ] = control_key_to_name(     _key_map[?    _control ] );
-                                _options_button_map[? _control ] = control_gamepad_to_name( _button_map[? _control ] );
-    */
+    
 }
