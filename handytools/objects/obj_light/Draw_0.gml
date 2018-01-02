@@ -1,6 +1,6 @@
 if !( editor_is_open() && global.show_spawners ) exit;
     
-camera_click_handle_fog();
+screen_click_handle_fog( global.mirror_render? 128 : 0 );
 
 s_shader_rgba( "u_vForceColour", colour, 1 );
 

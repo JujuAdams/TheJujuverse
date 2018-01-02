@@ -1,8 +1,8 @@
 {
-    "id": "495143aa-f2c3-4a60-b5a6-752b08a0ccae",
+    "id": "d1681949-2bdf-47df-ad3f-5565d9e363a8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "camera_create_default_2d",
+    "name": "slerp_3d",
     "IsCompatibility": false,
     "IsDnD": false
 }

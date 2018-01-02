@@ -3,7 +3,7 @@
 /// @param indent
 
 var _array     = argument[0];
-var _separator = (( argument_count < 2 ) || ( argument[1] == undefined ))? NL : argument[1];
+var _separator = (( argument_count < 2 ) || ( argument[1] == undefined ))? NL   : argument[1];
 var _indent    = (( argument_count < 3 ) || ( argument[2] == undefined ))? "  " : argument[2];
 
 var _string = "";

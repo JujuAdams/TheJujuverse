@@ -35,12 +35,12 @@ var _cz = argument14;
 var _ix = (_bx - _ax);
 var _iy = (_by - _ay);
 var _iz = (_bz - _az);
-var _i_inv_dist = vector_normaliser( _ix, _iy, _iz );
+var _i_inv_dist = vector_inverse_distance( _ix, _iy, _iz );
 
 var _jx = (_cx - _ax);
 var _jy = (_cy - _ay);
 var _jz = (_cz - _az);
-var _j_inv_dist = vector_normaliser( _jx, _jy, _jz );
+var _j_inv_dist = vector_inverse_distance( _jx, _jy, _jz );
     
 //Find the normal of the triangle
 // N = I x J
@@ -53,13 +53,7 @@ var _n_inv_dist = 1 / _n_dist;
 _nx *= _n_inv_dist;
 _ny *= _n_inv_dist;
 _nz *= _n_inv_dist;
-/*
-vertex_submit_and_delete(
-    vertex_buffer_line( _ax, _ay, _az,
-                        _ax+20*_nx, _ay+20*_ny, _az+20*_nz,
-                        c_white, 1, 1 )
-);
-*/    
+
 var _ux = _qx - _px;
 var _uy = _qy - _py;
 var _uz = _qz - _pz;

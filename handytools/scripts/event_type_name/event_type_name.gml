@@ -9,7 +9,7 @@ switch( event_type ) {
 		_str = "Step";
 		switch( event_number ) {
 			case ev_step_begin: _str += " (Begin)";  break;
-			case ev_step_begin: _str += " (Normal)"; break;
+			case ev_step:       _str += " (Normal)"; break;
 			case ev_step_end:   _str += " (End)";    break;
 		}
 	break;

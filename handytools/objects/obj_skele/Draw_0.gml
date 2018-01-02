@@ -1,5 +1,5 @@
 mouse_active_force_colour();
-camera_click_handle_fog();
+screen_click_handle_fog( global.mirror_render? 128 : 0 );
 
 if ( outro_t < 1 ) {
     s_shader_uniform_f( "u_fVibrate", lerp( 0, 9, outro_t ) );

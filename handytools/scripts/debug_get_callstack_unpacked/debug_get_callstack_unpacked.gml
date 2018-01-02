@@ -1,7 +1,7 @@
 /// @param separator
 /// @param indent
 
-var _separator = (( argument_count < 1 ) || ( argument[0] == undefined ))? NL : argument[0];
+var _separator = (( argument_count < 1 ) || ( argument[0] == undefined ))? NL   : argument[0];
 var _indent    = (( argument_count < 2 ) || ( argument[1] == undefined ))? "  " : argument[1];
 
 var _string = "";

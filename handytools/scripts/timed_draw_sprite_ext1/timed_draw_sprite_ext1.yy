@@ -1,8 +1,8 @@
 {
-    "id": "4d6418c3-b651-4e1a-8aa6-84196bbf00f5",
+    "id": "0176b88f-f0e1-488c-bd42-c6d3d2b036b8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "fixed_dot_product_3d_normalised",
+    "name": "timed_draw_sprite_ext1",
     "IsCompatibility": false,
     "IsDnD": false
 }

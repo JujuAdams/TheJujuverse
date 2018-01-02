@@ -1,4 +1,4 @@
-/// @description Rotates a 3D vector (3-element 1D array) by a quaternion
+/// @description Transforms a 3D vector (3-element 1D array) by a quaternion
 /// @param vector
 /// @param quaternion
 

@@ -1,12 +1,3 @@
-//  April 2017
-//  Juju Adams
-//  julian.adams@email.com
-//  @jujuadams
-//
-//  This code and engine are provided under the Creative Commons "Attribution - NonCommerical - ShareAlike" international license.
-//  https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-
 if ( keyboard_check_pressed( vk_anykey ) && !keyboard_check_pressed( vk_space ) ) test_mode = ( test_mode + 1 ) mod 2;
 
 if ( test_mode == 1 ) {
