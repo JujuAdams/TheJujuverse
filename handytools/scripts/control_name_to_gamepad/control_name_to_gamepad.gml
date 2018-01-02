@@ -18,18 +18,18 @@ switch( _string ) {
     case "SQUARE":         return gp_face3;      break;
     case "TRIANGLE":       return gp_face4;      break;
     
-    case "DPAD UP":        return gp_padu;       break;
-    case "DPAD DOWN":      return gp_padd;       break;
-    case "DPAD LEFT":      return gp_padl;       break;
-    case "DPAD RIGHT":     return gp_padr;       break;
+    case "DPAD_UP":        return gp_padu;       break;
+    case "DPAD_DOWN":      return gp_padd;       break;
+    case "DPAD_LEFT":      return gp_padl;       break;
+    case "DPAD_RIGHT":     return gp_padr;       break;
     
-    case "LEFT SHOULDER":  return gp_shoulderl;  break;
-    case "LEFT TRIGGER":   return gp_shoulderlb; break;
-    case "RIGHT SHOULDER": return gp_shoulderr;  break;
-    case "RIGHT TRIGGER":  return gp_shoulderrb; break;
+    case "LEFT_SHOULDER":  return gp_shoulderl;  break;
+    case "LEFT_TRIGGER":   return gp_shoulderlb; break;
+    case "RIGHT_SHOULDER": return gp_shoulderr;  break;
+    case "RIGHT_TRIGGER":  return gp_shoulderrb; break;
     
-    case "LEFT STICK":     return gp_stickl;     break;
-    case "RIGHT STICK":    return gp_stickr;     break;
+    case "LEFT_STICK":     return gp_stickl;     break;
+    case "RIGHT_STICK":    return gp_stickr;     break;
     
     default:
         return undefined;

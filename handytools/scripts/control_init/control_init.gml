@@ -7,17 +7,6 @@
 
 trace_f( "CONTROLS (forced)" );
 
-var _list = tr_list_create( "control_master_list", true );
-ds_list_add( _list, "left"      );
-ds_list_add( _list, "right"     );
-ds_list_add( _list, "fire"      );
-ds_list_add( _list, "talk"      );
-ds_list_add( _list, "alt left"  );
-ds_list_add( _list, "alt right" );
-ds_list_add( _list, "alt fire"  );
-ds_list_add( _list, "back"      );
-/*
-    We do not include "mouse" or "sensitivity" as these are handled differently (and presumed common to all games)
-*/
-global.control_master_list = _list;
+global.control_master_list = tr_list_create( "control_master_list", true );
+controls_init_controls();
 global.control_master_total = ds_list_size( global.control_master_list );

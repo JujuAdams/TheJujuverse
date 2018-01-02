@@ -8,22 +8,22 @@ if ( DEVELOPMENT ) {
 }
 
 if ( global.editor_fly ) {
-    if ( keyboard_check( ord( "Q" ) ) ) z += 2 * _debug_factor;
-    if ( keyboard_check( ord( "E" ) ) ) z -= 2 * _debug_factor;
+    if ( control_get_on( 0, "state", "ascend"  ) ) z += 2 * _debug_factor;
+    if ( control_get_on( 0, "state", "descend" ) ) z -= 2 * _debug_factor;
 }
     
 var _vpara = 0;
 var _vperp = 0;
-if ( keyboard_check( ord( "A" ) ) ) _vperp = -acceleration;
-if ( keyboard_check( ord( "D" ) ) ) _vperp =  acceleration;
-if ( keyboard_check( ord( "W" ) ) ) _vpara =  acceleration;
-if ( keyboard_check( ord( "S" ) ) ) _vpara = -acceleration;
+if ( control_get_on( 0, "state", "strafe left"  ) ) _vperp = -acceleration;
+if ( control_get_on( 0, "state", "strafe right" ) ) _vperp =  acceleration;
+if ( control_get_on( 0, "state", "forwards"     ) ) _vpara =  acceleration;
+if ( control_get_on( 0, "state", "backwards"    ) ) _vpara = -acceleration;
     
 if ( !_is_moving )
-&& (  keyboard_check_pressed( ord( "W" ) )
-   || keyboard_check_pressed( ord( "S" ) )
-   || keyboard_check_pressed( ord( "A" ) )
-   || keyboard_check_pressed( ord( "D" ) ) ) {
+&& (  control_get_pressed( 0, "state", "strafe left"  )
+   || control_get_pressed( 0, "state", "strafe right" )
+   || control_get_pressed( 0, "state", "forwards"     )
+   || control_get_pressed( 0, "state", "backwards"    ) ) {
     footstep_time = VERY_NEGATIVE;
     view_bob_start_time = current_time;
 }

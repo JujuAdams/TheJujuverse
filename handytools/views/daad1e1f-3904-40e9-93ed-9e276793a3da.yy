@@ -12,7 +12,8 @@
         "101b0cd1-ac8f-4585-b0ab-be5304bee001",
         "281a23b0-b7cc-4998-a60d-ef226b819258",
         "afc2733a-f400-4c63-9a3a-6aa0c91ba4d7",
-        "fe4b12ce-56fd-4705-9018-fc115f91215e"
+        "fe4b12ce-56fd-4705-9018-fc115f91215e",
+        "84aab45a-8544-41c2-bd59-4c283f5d57e1"
     ],
     "filterType": "GMScript",
     "folderName": "additional config",
