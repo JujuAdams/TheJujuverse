@@ -1,9 +1,9 @@
 <h1 align="center">"handytools" v0.6.6</h1>
 <p align="center"><img src="https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png" style="display:block; margin:auto; width:300px"></p>
 
-<h3 align="centre">Written by @jujuadams</h3>
-<h3 align="centre">ImGUI Implementation by @babyj3ans, JIFFY by @net8floz
-Logo by @stefanvonranda</h3>
+<h3 align="center">Written by @jujuadams</h3>
+<h3 align="center">ImGUI Implementation by @babyj3ans, JIFFY by @net8floz</h3>
+<h3 align="center">Logo by @stefanvonranda</h3>
 A series of libraries and tools to assist with game creation.
 	
 Press F12 to open DEVTOOL.
