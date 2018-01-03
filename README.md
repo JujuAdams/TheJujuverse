@@ -1,5 +1,7 @@
-# "handytools" v0.6.6
+<p style="font-size:3rem;" align="center">
+"handytools" v0.6.6
 <img src="https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png" style="display:block; margin:auto; width:300px">
+</p>
 
 ### Written by @jujuadams
 ### ImGUI Implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvonranda
