@@ -34,7 +34,7 @@ if ( _map[? "3d" ] ) {
     var _proj_matrix = matrix_build_projection_perspective_fov( DEFAULT_FOV, _actual_width/_actual_height, DEFAULT_Z_NEAR, DEFAULT_Z_FAR );
 } else {
     var _view_matrix = matrix_build_lookat( _actual_width/2, _actual_height/2, -16000, 
-                                               _actual_width/2, _actual_height/2, 0,
+                                            _actual_width/2, _actual_height/2, 0,
                                             0, 1, 0 );
     var _proj_matrix = matrix_build_projection_ortho( _actual_width, _actual_height, -16000, 16000 );
 }

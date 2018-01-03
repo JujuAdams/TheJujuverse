@@ -1,8 +1,8 @@
 {
-    "id": "0b135248-9fa8-4997-b69c-72bab1d01bd4",
+    "id": "844dc4a8-3fdd-4b93-8129-ac23f56f9980",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "grip_set_lookat",
+    "name": "grip_set_ortho",
     "IsCompatibility": false,
     "IsDnD": false
 }

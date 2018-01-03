@@ -1,8 +1,5 @@
-/// @description Sets a projection matrix to perspective implicitly for a GRIP camera
+/// @description Sets a projection matrix to orthographic implicitly for a GRIP camera
 /// @param name
-/// @param [fov]
-/// @param [znear]
-/// @param [zfar]
 
 if ( !GRIP_ON ) return undefined;
 
@@ -11,7 +8,9 @@ var _fov   = ((argument_count<2) || (argument[1]==undefined))? DEFAULT_FOV    : 
 var _znear = ((argument_count<3) || (argument[2]==undefined))? DEFAULT_Z_NEAR : argument[2];
 var _zfar  = ((argument_count<4) || (argument[3]==undefined))? DEFAULT_Z_FAR  : argument[3];
 
-var _matrix = matrix_flip_y( matrix_build_projection_perspective_fov( _fov, grip_get_aspect( _name ), _znear, _zfar ) );
+
+
+var _matrix = matrix_build_projection_ortho( grip_get_width( _name ), grip_get_height( _name ), -16000, 16000 );
 
 var _map = global.grip_cameras_map[? _name ];
 _map[? "proj matrix" ] = _matrix;

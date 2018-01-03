@@ -1,4 +1,4 @@
-/// @description Sets the view matric for a GRIP camera
+/// @description Sets the view matrix for a GRIP camera
 /// @param name
 /// @param matrix
 

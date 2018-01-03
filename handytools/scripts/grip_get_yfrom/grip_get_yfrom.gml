@@ -1,5 +1,5 @@
 /// @description Returns the yfrom coordinate for a GRIP camera
-///              This script will only work if grip_set_lookat() is used
+///              This script will only work if grip_set_lookat is used
 /// @param name
 
 if ( !GRIP_ON ) return undefined;

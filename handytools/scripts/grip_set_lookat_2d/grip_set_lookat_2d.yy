@@ -1,8 +1,8 @@
 {
-    "id": "d10e4a6a-43cc-4f30-b246-21333637330c",
+    "id": "f17dd133-435f-4b9d-98dc-e32e8022ca2b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "grip_set_proj_matrix",
+    "name": "grip_set_lookat_2d",
     "IsCompatibility": false,
     "IsDnD": false
 }
