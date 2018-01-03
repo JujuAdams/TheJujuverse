@@ -1,6 +1,6 @@
 # "handytools" v0.6.6
 <p align="center">
-<img src=https://github.com/GameMakerDiscord/handytools/blob/master/LOGO_small.png?raw=true style="height: 900px;width: 900px;">
+<img src=https://github.com/GameMakerDiscord/handytools/blob/master/LOGO_small.png?raw=true style="height: 100px;width: 100px;"/>
 </p>
 ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvonranda
 A series of libraries and tools to assist with game creation.
