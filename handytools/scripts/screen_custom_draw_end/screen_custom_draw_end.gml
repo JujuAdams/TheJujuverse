@@ -1,6 +1,6 @@
 //Custom GRIP rendering states
 //(Doesn't do anything, but here for completeness
-switch( grip_get_current() ) {
+switch( grip_current() ) {
     
     case "mirror0":
     case "mirror1":

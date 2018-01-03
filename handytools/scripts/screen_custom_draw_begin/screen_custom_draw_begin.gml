@@ -1,5 +1,5 @@
 //Custom GRIP rendering states
-switch( grip_get_current() ) {
+switch( grip_current() ) {
     
     case "mirror0": //Render out mirrors
     case "mirror1":

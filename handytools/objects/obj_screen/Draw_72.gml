@@ -1,7 +1,7 @@
 if ( SCREEN_3D ) screen_3d_start();
 if ( SCREEN_BACKGROUND_COLOUR != undefined ) draw_clear( SCREEN_BACKGROUND_COLOUR );
 
-switch( grip_get_current() ) {
+switch( grip_current() ) {
     
     case "3d": //What the player sees
         //This check fixes a bug with GM automatically submitting a blank vertex buffer to a shader in the wrong format

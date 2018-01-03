@@ -2,7 +2,7 @@ event_inherited();
 
 if ( ( !editor_is_open() || obj_editor.window_page != E_EDITOR_PAGE.PLACE )
 && instances_exist( obj_tri_b, obj_tri_c, obj_line_a, obj_line_b )
-&& ( grip_get_current() == "3d" ) ) {
+&& ( grip_current() == "3d" ) ) {
     
     vertex_submit_and_delete(
         vertex_buffer_triangle( obj_tri_a.x, obj_tri_a.y, obj_tri_a.z,

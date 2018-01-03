@@ -1,6 +1,6 @@
 if ( SCREEN_3D ) screen_3d_end();
 
-switch( grip_get_current() ) {
+switch( grip_current() ) {
     
     case "3d":
         camera_apply( grip_get_camera( "2d" ) );
