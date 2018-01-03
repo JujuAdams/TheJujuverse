@@ -21,6 +21,9 @@ _map[? "3d"            ] = argument4;
 _map[? "active"        ] = false;
 _map[? "view"          ] = undefined;
 _map[? "manual draw"   ] = false;
+_map[? "xfrom"         ] = 0;
+_map[? "yfrom"         ] = 0;
+_map[? "zfrom"         ] = 0;
 
 var _actual_width  = grip_get_width( argument0 );
 var _actual_height = grip_get_height( argument0 );

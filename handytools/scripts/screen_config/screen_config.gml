@@ -1,3 +1,5 @@
+/// @description SCREEN configuration
+
 #macro ALLOW_DITHER true
 #macro ALLOW_LIGHTING (true && SCREEN_3D)
 #macro ALLOW_FXAA true

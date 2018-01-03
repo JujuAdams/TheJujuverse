@@ -22,6 +22,8 @@ if ( SCREEN_3D ) {
     global.click_instance_over = noone;
 }
 
+light_priority = ds_priority_create();
+
 grip_create( "2d", global.app_surf_w, global.app_surf_h, false, false );
 if ( SCREEN_3D ) {
     grip_create( "3d"   , global.app_surf_w, global.app_surf_h, false, true ); grip_activate( "3d", false ); //Use the 3D PoV grip as a view
