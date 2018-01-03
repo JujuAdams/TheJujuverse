@@ -1,4 +1,4 @@
-# "handytools" v0.6.6 ![LOGO](https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO.png)
+# "handytools" v0.6.6 ![LOGO](https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png)
 ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvonranda
 A series of libraries and tools to assist with game creation.
 	
