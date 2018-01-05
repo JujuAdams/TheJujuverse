@@ -9,7 +9,7 @@ switch( grip_current() ) {
     case "mirror click0":
     case "mirror click1":
     break;
-	
+    
 }
 
 global.mirror_render = false;

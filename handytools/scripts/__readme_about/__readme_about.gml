@@ -6,7 +6,7 @@
     # "handytools" v0.6.3
     ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz
     A series of libraries and tools to assist with game creation.
-    
+        
     Press F12 to open DEVTOOL.
 
     Includes the following services:

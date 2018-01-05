@@ -15,7 +15,7 @@ if ( ALLOW_DITHER ) {
 }
 
 if ( SCREEN_3D ) {
-	global.click_colour = c_black;
+    global.click_colour = c_black;
     global.click_array[ instance_count-1 ] = noone;
     global.click_array[ 0 ] = noone;
     global.click_index = 1;

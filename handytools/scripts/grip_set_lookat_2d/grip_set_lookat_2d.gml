@@ -12,7 +12,7 @@ var _y    = argument2;
 var _matrix = matrix_build_lookat( _x, _y, -16000, 
                                    _x, _y, 0,
                                     0,  1, 0 );
-									 
+                                     
 var _map = global.grip_cameras_map[? _name ];
 _map[? "view matrix" ] = _matrix;
 _map[? "xfrom"       ] = _x;

@@ -15,7 +15,7 @@ var _button_map = tr_map_add_map( _player_map, "gamepad mapping", tr_map_create(
 
 if ( !DEVELOPMENT ) {
     _player_map[? "mode" ] = "KEYBOARD";
-	
+    
     _key_map[? "strafe left"  ] = "A";
     _key_map[? "strafe right" ] = "D";
     _key_map[? "forwards"     ] = "W";
@@ -30,7 +30,7 @@ if ( !DEVELOPMENT ) {
     _key_map[? "back"         ] = "ESCAPE";
     _key_map[? "mouse"        ] = "ANY";
     _key_map[? "sensitivity"  ] = 0.5;
-	
+    
     _button_map[? "strafe left"  ] = "DPAD_LEFT";
     _button_map[? "strafe right" ] = "DPAD_RIGHT";
     _button_map[? "forwards"     ] = "DPAD_UP";
@@ -49,7 +49,7 @@ if ( !DEVELOPMENT ) {
 } else {
     #region DEVELOPMENT DEFAULTS
     _player_map[? "mode" ] = "KEYBOARD";
-	
+    
     _key_map[? "strafe left"  ] = "A";
     _key_map[? "strafe right" ] = "D";
     _key_map[? "forwards"     ] = "W";
@@ -59,7 +59,7 @@ if ( !DEVELOPMENT ) {
     _key_map[? "back"         ] = "ESCAPE";
     _key_map[? "mouse"        ] = "ANY";
     _key_map[? "sensitivity"  ] = 0.5;
-	
+    
     _button_map[? "strafe left"  ] = "DPAD_LEFT";
     _button_map[? "strafe right" ] = "DPAD_RIGHT";
     _button_map[? "forwards"     ] = "DPAD_UP";

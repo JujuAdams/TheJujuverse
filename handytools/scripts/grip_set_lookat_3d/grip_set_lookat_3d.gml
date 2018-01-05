@@ -25,8 +25,8 @@ var _zup    = argument9;
 
 var _matrix = matrix_build_lookat( _xfrom, _yfrom, _zfrom,
                                      _xto,   _yto,   _zto,
-									 _xup,   _yup,   _zup );
-									 
+                                     _xup,   _yup,   _zup );
+                                     
 var _map = global.grip_cameras_map[? _name ];
 _map[? "view matrix" ] = _matrix;
 _map[? "xfrom"       ] = _xfrom;

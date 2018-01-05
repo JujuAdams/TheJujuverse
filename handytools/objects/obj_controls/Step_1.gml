@@ -9,9 +9,9 @@ for( var _p = 0; _p < _size; _p++ ) {
     
     var _mapping_map = _player_map[? "keyboard mapping" ];
     var _state_map = _player_map[?"state"];
-	
-	_state_map[?"mouse"] = CTRL_OFF;
-	for( var _i = 0; _i < global.control_master_total; _i++ ) _state_map[? global.control_master_list[| _i ] ] = CTRL_OFF;
+    
+    _state_map[?"mouse"] = CTRL_OFF;
+    for( var _i = 0; _i < global.control_master_total; _i++ ) _state_map[? global.control_master_list[| _i ] ] = CTRL_OFF;
     
 }
 
