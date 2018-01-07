@@ -3335,6 +3335,14 @@
             }
         },
         {
+            "Key": "745ac8c1-78a3-4479-a22d-a1d1b1e774e4",
+            "Value": {
+                "id": "1325481b-05d4-44d6-9865-0547ce98fb76",
+                "resourcePath": "scripts\\matrix_inverse\\matrix_inverse.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "74965e0b-4c44-40e3-b2f0-24ab7a06e36b",
             "Value": {
                 "id": "22840674-7745-433e-9f14-cb77a4072cd4",
@@ -7395,6 +7403,7 @@
         "6a7e07d7-a632-43b8-8184-f856670eec96",
         "20c2ac8d-78bd-4b0b-834a-d6bcfce656d0",
         "6c1c8a99-ed36-4672-959e-d94d6d9de5f7",
+        "745ac8c1-78a3-4479-a22d-a1d1b1e774e4",
         "a1db37eb-c4f2-41b0-a411-6de31b115722",
         "59b3219c-8d25-4e62-8ea0-0ba00c6159bf",
         "0176b88f-f0e1-488c-bd42-c6d3d2b036b8",
