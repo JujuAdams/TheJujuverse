@@ -31,6 +31,6 @@ switch( _index ) {
     default: return false; break;
 }
 
-s_shader_uniform_f( _posrange_uniform, _x, _y, _z, _range );
-s_shader_uniform_f( _colour_uniform, colour_get_red( _colour )/255, colour_get_green( _colour )/255, colour_get_blue( _colour )/255, _alpha );
+s_shader_float( _posrange_uniform, _x, _y, _z, _range );
+s_shader_float( _colour_uniform, colour_get_red( _colour )/255, colour_get_green( _colour )/255, colour_get_blue( _colour )/255, _alpha );
 return true;

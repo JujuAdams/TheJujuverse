@@ -1,6 +1,10 @@
 var _surface = grip_get_surface( SCREEN_3D? "3d" : "2d" );
 if ( _surface == undefined ) _surface = application_surface;
 
+blur_surface          = tr_surface_check_auto( blur_surface          );
+blur_transfer_surface = tr_surface_check_auto( blur_transfer_surface );
+surface_blur_to_surface( _surface, blur_transfer_surface, blur_surface, shd_gaussian );
+
 var _gui_w = display_get_gui_width();
 var _gui_h = display_get_gui_height();
 var _app_w = surface_get_width(  _surface );
@@ -32,13 +36,19 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     
     s_shader_begin( shd_dither );
     s_shader_texture_sampler( "u_sDither", global.dither_texture );
-    s_shader_uniform_f( "u_vTextureSize", _app_w, _app_h );
+    s_shader_float( "u_vTextureSize", _app_w, _app_h );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
         
 } else {
     
+    s_shader_begin( shd_dof );
+    s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
+    s_shader_surface_sampler( "u_sBlur", blur_surface );
+    s_shader_float( "u_vDOF_centre", global.click_depth_smoothed );
+    s_shader_float( "u_vDOF_range", lerp( 0.15, 1, global.click_depth_smoothed ) );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
+    s_shader_end();
     
 }
     

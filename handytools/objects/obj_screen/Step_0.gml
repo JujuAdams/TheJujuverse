@@ -11,7 +11,23 @@ if ( SCREEN_3D && GRIP_ON ) {
         global.click_instance_over = global.click_array[_index];
     }
     
+    //Find the depth underneath the centre of the view
+    var _surface = grip_get_depth_surface( "3d" );
+    if ( surface_exists( _surface ) ) {
+        var _colour = surface_getpixel( _surface, global.app_surf_w*0.5, global.app_surf_h*0.5 );
+        var _blue  = ( _colour>> 16 ) & 255;
+        var _green = ( _colour>>  8 ) & 255;
+        var _red   =   _colour        & 255;
+        global.click_depth    = clamp( _red/255 + _green/255/255 + _blue/255/255/255, 0.0, 1.0 );
+        global.click_distance = DEFAULT_Z_NEAR + (DEFAULT_Z_FAR - DEFAULT_Z_NEAR)*global.click_depth;
+    } else {
+        global.click_depth    = 0;
+        global.click_distance = 0;
+    }
+    global.click_depth_smoothed = lerp( global.click_depth_smoothed, global.click_depth, SCREEN_DOF_SMOOTH_RATE );
+    
 }
+
 
 //Call custom script
 if ( script_exists( SCREEN_STEP_SCRIPT ) ) script_execute( SCREEN_STEP_SCRIPT );

@@ -27,11 +27,23 @@ if ( _size > 0 ) {
         global.grip_current_manual = global.grip_manual_list[| _i ];
         
         //Keep manual grip surfaces alive
-        grip_set_surface( global.grip_current_manual, tr_surface_check_auto( grip_get_surface( global.grip_current_manual ) ) );
+        var _surface        = tr_surface_check_auto( grip_get_surface(        global.grip_current_manual ) );
+        var _depth_surface  = tr_surface_check_auto( grip_get_depth_surface(  global.grip_current_manual ) );
+        var _normal_surface = tr_surface_check_auto( grip_get_normal_surface( global.grip_current_manual ) );
+        grip_set_surface(        global.grip_current_manual, _surface        )
+        grip_set_depth_surface(  global.grip_current_manual, _depth_surface  );
+        grip_set_normal_surface( global.grip_current_manual, _normal_surface );
         
         //Manually render out manual grips
         var _my_id = id;
-        surface_set_target( grip_get_surface( global.grip_current_manual ) );
+        if ( _depth_surface == undefined ) && ( _normal_surface == undefined ) {
+            surface_set_target( grip_get_surface( global.grip_current_manual ) );
+        } else {
+            var _j = 0;
+                                                surface_set_target_ext( _j++, _surface        );
+            if ( _depth_surface  != undefined ) surface_set_target_ext( _j++, _depth_surface  );
+            if ( _normal_surface != undefined ) surface_set_target_ext( _j++, _normal_surface );
+        }
             camera_apply( grip_get_camera( global.grip_current_manual ) );
             event_perform( ev_draw, ev_draw_begin );
             with( all ) if ( id != _my_id ) event_perform( ev_draw, ev_draw_begin );

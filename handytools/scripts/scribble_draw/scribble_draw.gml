@@ -40,12 +40,12 @@ if ( _json[? "shader fade" ] == E_SCRIBBLE_FADE.PER_CHAR ) {
 }
 
 s_shader_begin( _shader );
-s_shader_uniform_f( "u_fTime"       , ( _max + _smoothness ) * _fade );
-s_shader_uniform_f( "u_fMaxTime"    ,   _max + _smoothness );
-s_shader_uniform_f( "u_fSmoothness" , _smoothness );
-s_shader_uniform_f( "u_fRainbowTime", (current_time/1200) mod 1 );
-s_shader_uniform_f( "u_vShakeTime"  , random_range( -1, 1 ), random_range( -1, 1 ) );
-s_shader_uniform_f( "u_fWaveTime"   , current_time/1600 );
+s_shader_float( "u_fTime"       , ( _max + _smoothness ) * _fade );
+s_shader_float( "u_fMaxTime"    ,   _max + _smoothness );
+s_shader_float( "u_fSmoothness" , _smoothness );
+s_shader_float( "u_fRainbowTime", (current_time/1200) mod 1 );
+s_shader_float( "u_vShakeTime"  , random_range( -1, 1 ), random_range( -1, 1 ) );
+s_shader_float( "u_fWaveTime"   , current_time/1600 );
 s_shader_rgba(      "u_vColour"     , _colour, _alpha );
     
     //Set up basic translation matrix

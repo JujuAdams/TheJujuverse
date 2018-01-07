@@ -1,11 +1,9 @@
 attribute vec3 in_Position;
-attribute vec2 in_TextureCoord;
 attribute vec4 in_Colour;
-attribute vec3 in_Normal;
+attribute vec2 in_TextureCoord;
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-varying vec3 v_vNormal;
 
 void main() {
     
@@ -14,6 +12,5 @@ void main() {
     
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord;
-    v_vNormal = in_Normal;
     
 }

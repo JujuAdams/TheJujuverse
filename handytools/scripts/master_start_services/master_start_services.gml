@@ -18,7 +18,6 @@ trace( "Creating service instances" );
        fps_start_service();
    devtool_start_service();
     rumble_start_service();
-     trace_start_service();
 resolution_start_service();
       grip_start_service();
     editor_start_service();

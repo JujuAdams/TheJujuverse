@@ -13,17 +13,19 @@ if ( !GRIP_ON ) {
 var _map = tr_map_create();
 tr_map_add_map( global.grip_cameras_map, argument0, _map );
 
-_map[? "name"          ] = argument0;
-_map[? "width"         ] = argument1;
-_map[? "height"        ] = argument2;
-_map[? "relative size" ] = argument3;
-_map[? "3d"            ] = argument4;
-_map[? "active"        ] = false;
-_map[? "view"          ] = undefined;
-_map[? "manual draw"   ] = false;
-_map[? "xfrom"         ] = 0;
-_map[? "yfrom"         ] = 0;
-_map[? "zfrom"         ] = 0;
+_map[? "name"           ] = argument0;
+_map[? "width"          ] = argument1;
+_map[? "height"         ] = argument2;
+_map[? "relative size"  ] = argument3;
+_map[? "3d"             ] = argument4;
+_map[? "active"         ] = false;
+_map[? "view"           ] = undefined;
+_map[? "manual draw"    ] = true;
+_map[? "xfrom"          ] = 0;
+_map[? "yfrom"          ] = 0;
+_map[? "zfrom"          ] = 0;
+_map[? "depth surface"  ] = undefined;
+_map[? "normal surface" ] = undefined;
 
 var _actual_width  = grip_get_width( argument0 );
 var _actual_height = grip_get_height( argument0 );

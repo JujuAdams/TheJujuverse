@@ -20,6 +20,7 @@ var _map = global.grip_cameras_map[? _name ];
 if ( _map[? "active" ] ) grip_deactivate( _name );
 _map[? "active" ] = true;
 _map[? "view" ] = _view;
+_map[? "manual draw" ] = false;
 
 camera_destroy( _map[? "camera" ] );
 var _camera = camera_create();

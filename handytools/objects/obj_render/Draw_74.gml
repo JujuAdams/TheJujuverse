@@ -44,8 +44,8 @@ switch( instance_exists( obj_camera ) ) {
         srf_postproc = tr_surface_check( srf_postproc, APP_SURF, APP_SURF, "srf_postproc" );
         surface_set_target( srf_postproc );
             s_shader_begin( shd_postproc );
-            s_shader_uniform_f( "u_fAberration_min",  0.3 );
-            s_shader_uniform_f( "u_fAberration_max", 40.0 );
+            s_shader_float( "u_fAberration_min",  0.3 );
+            s_shader_float( "u_fAberration_max", 40.0 );
             s_shader_surface_sampler( "u_sDisplacement", srf_displacement );
             draw_surface( application_surface, 0, 0 );
             s_shader_end();

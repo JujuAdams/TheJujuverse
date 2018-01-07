@@ -22,6 +22,8 @@ if ( SCREEN_3D ) {
     var _light = 0;
     
     s_shader_begin( SCREEN_3D_SHADER );
+    s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+    
     if ( ALLOW_LIGHTING && global.screen_do_lighting ) {
         
         s_shader_rgba( "u_vAmbientColour", C_AMBIENT, 0 );

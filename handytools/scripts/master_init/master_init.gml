@@ -37,7 +37,6 @@ trace_f( "Initialising services" );
        fps_init();
    devtool_init();
     rumble_init();
-     trace_init();
 resolution_init();
       grip_init();
     editor_init();

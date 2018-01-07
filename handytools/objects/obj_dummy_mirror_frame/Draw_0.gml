@@ -15,5 +15,5 @@ if ( !global.screen_click_render ) {
     vertex_submit( mirror_model, pr_trianglestrip, surface_get_texture( grip_get_surface( concat( "mirror", mirror_index ) ) ) );
     matrix_reset_world();
     
-    shader_set( shd_per_texel_lighting );
+    shader_set( SCREEN_3D_SHADER );
 }
