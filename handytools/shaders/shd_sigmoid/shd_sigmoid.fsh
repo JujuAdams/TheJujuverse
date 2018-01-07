@@ -1,4 +1,4 @@
-const float RADIUS = 20.0; //Edit this
+const float RADIUS = 4.0; //Edit this
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;

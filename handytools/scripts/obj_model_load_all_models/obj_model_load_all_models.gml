@@ -36,7 +36,7 @@ if ( OBJMODEL_ON ) {
     obj_model_load_async( "shard2"      , "models/shard2.obj"      , global.vft_simple_3d,   false, false,   0, 0, 0,  3 );
     obj_model_load_async( "shard3"      , "models/shard3.obj"      , global.vft_simple_3d,   false, false,   0, 0, 0,  3 );
     obj_model_load_async( "shard4"      , "models/shard4.obj"      , global.vft_simple_3d,   false, false,   0, 0, 0,  3 );                                          
-    obj_model_load_async( "tree"        , "models/tree.obj"        , global.vft_simple_3d,   false, false,   0, 0, 0, 10 );
+    obj_model_load_async( "dead_tree"   , "models/tree.obj"        , global.vft_simple_3d,   false, false,   0, 0, 0, 10 );
     obj_model_load_async( "flowerpot"   , "models/flowerpot.obj"   , global.vft_simple_3d,   false, false,   1, 0, -1, 3 );
     obj_model_load_async( "flower1"     , "models/flower1.obj"     , global.vft_simple_3d,   false, false,   1, 0, -1, 3 );
     obj_model_load_async( "flower2"     , "models/flower2.obj"     , global.vft_simple_3d,   false, false,   1, 0, -1, 3 );
