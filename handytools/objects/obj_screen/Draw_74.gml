@@ -55,8 +55,6 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 		trace( "transformed" );
 		vector_transform( _vp_mat, _vertex );
 		debug_vertex( _vertex );
-		//trace( "divided by z far" );
-		//debug_vertex( vector_scalar( 1/DEFAULT_Z_FAR, _vertex[0], _vertex[1], _vertex[2], _vertex[3] ) );
 		trace( "divided by w" );
 		vector_perspective_correction(  _vertex );
 		debug_vertex( _vertex );
