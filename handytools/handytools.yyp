@@ -2119,6 +2119,14 @@
             }
         },
         {
+            "Key": "46f6b95d-e7bb-4d37-8f40-6445ad8232e0",
+            "Value": {
+                "id": "5cdf014a-2cd2-402c-978b-c0e5b70a02aa",
+                "resourcePath": "scripts\\vector_scalar\\vector_scalar.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "46fa80fe-3cfd-44d3-af1f-a14c81d25886",
             "Value": {
                 "id": "dd2a589f-2557-4654-ac69-90bad2880fc2",
@@ -4871,6 +4879,14 @@
             }
         },
         {
+            "Key": "acff9419-81ad-47ce-8d6a-b262246554fd",
+            "Value": {
+                "id": "cfae6660-d0e5-46b7-a54f-bf353dc75e30",
+                "resourcePath": "scripts\\debug_vertex\\debug_vertex.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ad334cda-caaa-47a5-af4b-555e9ef47c22",
             "Value": {
                 "id": "9bccb147-823f-40b1-b347-b85f02fb5e83",
@@ -5631,10 +5647,26 @@
             }
         },
         {
+            "Key": "ca40e4e7-9b5d-4b09-9372-e3a2cf1ba113",
+            "Value": {
+                "id": "4fdb6f1e-468f-4119-af01-461b26befe53",
+                "resourcePath": "scripts\\debug_matrix\\debug_matrix.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cae9bbbd-e37c-4670-8128-fb85ec36a712",
             "Value": {
                 "id": "c775a691-0ff4-470a-8032-7cdb2727841f",
                 "resourcePath": "scripts\\obj_model\\obj_model.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cb796125-b9e0-4e6a-aff3-d00c27b5a20f",
+            "Value": {
+                "id": "e6422721-9a0c-4277-a31b-f147733f3a29",
+                "resourcePath": "scripts\\vector_transform\\vector_transform.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6499,6 +6531,14 @@
             "Value": {
                 "id": "8f2f8354-8d8d-49d4-a702-f09b9689a58d",
                 "resourcePath": "scripts\\s_shader_matrix\\s_shader_matrix.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e895eb1a-d78b-49cb-92a7-df501222df10",
+            "Value": {
+                "id": "e608835a-5e4b-4e4f-80d7-dcc4e02bbdaa",
+                "resourcePath": "scripts\\vector_perspective_correction\\vector_perspective_correction.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7429,6 +7469,9 @@
         "bbcd18eb-1cfd-4e84-8b19-ae484cb9f8af",
         "88248fa4-37fc-4c25-88fe-217959633189",
         "235f59b3-15c7-43bd-87fd-c37663b428c5",
+        "cb796125-b9e0-4e6a-aff3-d00c27b5a20f",
+        "e895eb1a-d78b-49cb-92a7-df501222df10",
+        "46f6b95d-e7bb-4d37-8f40-6445ad8232e0",
         "03b2b7a7-37d0-4032-a368-f06d8097f82b",
         "ff0fe59e-3a7b-4e79-bf2b-18f3d0217e7d",
         "d09b5610-6a89-4101-89c0-5f82cca6e871",
@@ -7540,6 +7583,8 @@
         "beaedd58-3606-4608-bcd4-5afa80f70075",
         "a4b097fe-b0b1-4fdf-8ae1-e1ecc3a3b42b",
         "4bdf52ae-20bd-47be-bdad-fc9ea5811b84",
+        "ca40e4e7-9b5d-4b09-9372-e3a2cf1ba113",
+        "acff9419-81ad-47ce-8d6a-b262246554fd",
         "e85bffff-7d83-4775-b997-691d849cecd3",
         "8babd2e0-a3fa-4ba1-8b43-6f79afef3bd0",
         "4e668c57-b7ef-4b7a-97fa-13579ed4b7c4",

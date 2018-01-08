@@ -1,9 +1,10 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform float     u_fZFar;
 uniform sampler2D u_sDepth;
 uniform sampler2D u_sNormal;
+uniform mat4      u_mInverseView;
+uniform mat4      u_mInverseProj;
 uniform mat4      u_mInverseViewProj;
 
 uniform vec4 u_vAmbientColour;
@@ -24,8 +25,17 @@ uniform vec4 u_vLightColour3;
 //uniform vec4 u_vLightColour6;
 //uniform vec4 u_vLightColour7;
 
-float UnpackDepth( vec3 colour ) {
-    return clamp(float((colour.r)+(colour.g/255.0)+(colour.b/(255.0*255.0))), 0.0, 1.0);
+float RGBAToDepth( vec4 colour ) {
+	colour /= vec4( 1., 255., 255.*255., 255.*255.*255. );
+    return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
+}
+
+vec3 InferPosition( vec2 texCoord ) {
+    // Calculate out of the fragment in screen space the view space position.
+    vec4 posView = u_mInverseViewProj * vec4( 2.*texCoord - 1., RGBAToDepth( texture2D( u_sDepth, texCoord ) ), 1.0 );
+	//posView = u_mInverseView * posView;
+    posView /= posView.w;
+    return posView.xyz;
 }
 
 float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
@@ -48,14 +58,7 @@ vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
 }
 
 void main() {
-    
-    float z_ = u_fZFar * UnpackDepth( texture2D( u_sDepth, v_vTexcoord ).rgb );
-    vec3 posWS = vec3( 2.*v_vTexcoord.x - 1.,
-                       1. - 2.*v_vTexcoord.y,
-                                          z_ );
-    posWS = (u_mInverseViewProj*vec4( posWS, 1. )).xyz;
-    vec3 normalWS = texture2D( u_sDepth, v_vTexcoord ).rgb;
-    
-    gl_FragColor = v_vColour * vec4( DoLightingCustom( u_vAmbientColour.rgb, posWS, 2.*normalWS - 1. ), 1. ) * texture2D( gm_BaseTexture, v_vTexcoord );
-    
+    vec3 posWS = InferPosition( v_vTexcoord );
+    vec3 normalWS = 2.*texture2D( u_sNormal, v_vTexcoord ).rgb - 1.;
+    gl_FragColor = v_vColour * vec4( DoLightingCustom( u_vAmbientColour.rgb, posWS, normalWS ), 1. ) * texture2D( gm_BaseTexture, v_vTexcoord );
 }

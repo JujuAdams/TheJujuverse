@@ -41,12 +41,52 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     s_shader_end();
         
 } else {
-    //*
+	
+	if ( keyboard_check_pressed( ord( "J" ) ) ) {
+		var _view_mat = grip_get_view_matrix( "3d" );
+		var _proj_mat = grip_get_proj_matrix( "3d" );
+		var _vp_mat = matrix_multiply( _view_mat, _proj_mat );
+		
+		trace( "VP matrix" );
+		debug_matrix( _vp_mat );
+		trace( "vertex" );
+		var _vertex = [ 200, 200, 20, 1 ];
+		debug_vertex( _vertex );
+		trace( "transformed" );
+		vector_transform( _vp_mat, _vertex );
+		debug_vertex( _vertex );
+		//trace( "divided by z far" );
+		//debug_vertex( vector_scalar( 1/DEFAULT_Z_FAR, _vertex[0], _vertex[1], _vertex[2], _vertex[3] ) );
+		trace( "divided by w" );
+		vector_perspective_correction(  _vertex );
+		debug_vertex( _vertex );
+		trace( "inverse VP matrix" );
+		var _inv_vp_mat = matrix_inverse( _vp_mat );
+		debug_matrix( _inv_vp_mat );
+		trace( "storage" );
+		var _tex_x = 0.5 + 0.5*_vertex[0];
+		var _tex_y = 0.5 + 0.5*_vertex[1];
+		var _z     = _vertex[2];
+		trace( "texture=", _tex_x, ",", _tex_y );
+		trace( "z=", _z );
+		trace( "new vertex" );
+		_vertex = [ 2*_tex_x-1, 2*_tex_y-1, _z, 1 ];
+		trace( "inverse transform" );
+		vector_transform( _inv_vp_mat, _vertex );
+		debug_vertex( _vertex );
+		trace( "divided by w" );
+		vector_perspective_correction(  _vertex );
+		debug_vertex( _vertex );
+	}
+	
+    /*
     s_shader_begin( shd_deferred_lighting );
     s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
-    screen_set_shader_lights( light_priority, 1 );
+    screen_set_shader_lights( light_priority, 4 );
     s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
     s_shader_surface_sampler( "u_sNormal", grip_get_normal_surface( "3d" ) );
+    s_shader_matrix( "u_mInverseView", matrix_inverse( grip_get_view_matrix( "3d" ) ) );
+    s_shader_matrix( "u_mInverseProj", matrix_inverse( grip_get_proj_matrix( "3d" ) ) );
     s_shader_matrix( "u_mInverseViewProj", matrix_inverse( matrix_multiply( grip_get_view_matrix( "3d" ), grip_get_proj_matrix( "3d" ) ) ) );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
