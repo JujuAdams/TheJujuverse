@@ -5,7 +5,7 @@
 #macro ALLOW_FXAA true
 
 #macro SCREEN_3D true
-#macro SCREEN_3D_SHADER shd_hlsl_pixel_lighting //Using forward rendering for 3D lights
+#macro SCREEN_3D_SHADER shd_hlsl_mrt
 #macro SCREEN_CLICK_GRIP_AS_VIEW true
 #macro SCREEN_BACKGROUND_COLOUR c_black //Set to undefined for no clear
 #macro SCREEN_DOF_SMOOTH_RATE 0.07

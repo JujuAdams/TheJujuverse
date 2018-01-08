@@ -3927,6 +3927,14 @@
             }
         },
         {
+            "Key": "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
+            "Value": {
+                "id": "d263a63a-8766-4d75-8dde-6fd935d2edcb",
+                "resourcePath": "scripts\\screen_set_shader_lights\\screen_set_shader_lights.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
             "Value": {
                 "id": "f0c53511-6830-4c5d-bbc7-b40056f065d5",
@@ -4436,6 +4444,14 @@
                 "id": "b90a7acc-d4e3-43d2-b225-68c9371eb740",
                 "resourcePath": "scripts\/json_minify\/json_minify.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9fdf5200-e0f2-4162-8e87-d05569ef76f3",
+            "Value": {
+                "id": "66b27b48-e40f-4de7-8651-79146a56d33e",
+                "resourcePath": "shaders\\shd_dof\\shd_dof.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -6242,7 +6258,15 @@
             "Key": "e155c3cc-fa5b-47f6-96ec-dab1d3774533",
             "Value": {
                 "id": "7ebe442a-5556-40e6-a67b-6b0ed795ed1e",
-                "resourcePath": "shaders\\shd_dof\\shd_dof.yy",
+                "resourcePath": "shaders\\shd_deferred_lighting\\shd_deferred_lighting.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "e198ebf4-dc08-4e08-ac46-87bb711e87ba",
+            "Value": {
+                "id": "27178c3d-cfb2-436a-b93f-8c48b5aa464a",
+                "resourcePath": "shaders\\shd_hlsl_mrt\\shd_hlsl_mrt.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -6467,6 +6491,14 @@
             "Value": {
                 "id": "651a374f-cf8c-4eb3-adf5-c990e691f893",
                 "resourcePath": "scripts\\tween_erp_dsin\\tween_erp_dsin.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e88b7d17-472c-4ecf-af3c-020956dcf3bf",
+            "Value": {
+                "id": "8f2f8354-8d8d-49d4-a702-f09b9689a58d",
+                "resourcePath": "scripts\\s_shader_matrix\\s_shader_matrix.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7303,6 +7335,7 @@
         "0d978d9b-2de1-4e03-b609-5ae2a2557daf",
         "c72e7a3b-9a33-4108-9837-0f3e4a2f8e67",
         "898ac36b-f7ed-4edc-9daf-9d740f524158",
+        "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
         "ed1f42c1-a2af-4505-8dc9-c3da22cc5b9c",
         "6d347988-e81a-49ab-81c9-e7095e8c3909",
         "f11e73fa-e945-451f-aa22-c1e47113893c",
@@ -7331,6 +7364,7 @@
         "e9d86281-f361-4bd7-9fbd-25a756b092dd",
         "b3be565a-bd47-42e8-9956-5099b6b7b0fd",
         "f31c61fe-62c8-4ff2-a290-ccf19b4ac4d5",
+        "e88b7d17-472c-4ecf-af3c-020956dcf3bf",
         "1638d121-9858-40f6-a861-10cd98f57728",
         "7f8fa4f5-c341-475e-ae18-d69847fd0946",
         "477da869-dd52-43a5-af78-3379c9f5d317",

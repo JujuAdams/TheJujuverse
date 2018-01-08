@@ -41,7 +41,16 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     s_shader_end();
         
 } else {
-    
+    //*
+    s_shader_begin( shd_deferred_lighting );
+    s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+    screen_set_shader_lights( light_priority, 1 );
+    s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
+    s_shader_surface_sampler( "u_sNormal", grip_get_normal_surface( "3d" ) );
+    s_shader_matrix( "u_mInverseViewProj", matrix_inverse( matrix_multiply( grip_get_view_matrix( "3d" ), grip_get_proj_matrix( "3d" ) ) ) );
+    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
+    s_shader_end();
+    /*/
     s_shader_begin( shd_dof );
     s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
     s_shader_surface_sampler( "u_sBlur", blur_surface );
@@ -49,7 +58,7 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     s_shader_float( "u_vDOF_range", lerp( 0.15, 1, global.click_depth_smoothed ) );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
-    
+    //*/
 }
     
 gpu_set_blendenable( true );

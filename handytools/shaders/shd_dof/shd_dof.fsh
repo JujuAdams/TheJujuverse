@@ -6,7 +6,7 @@ uniform float     u_vDOF_range;
 uniform sampler2D u_sDepth;
 uniform sampler2D u_sBlur;
 
-float UnpackDepth( vec3 colour ){
+float UnpackDepth( vec3 colour ) {
     return clamp(float((colour.r)+(colour.g/255.0)+(colour.b/(255.0*255.0))), 0.0, 1.0);
 }
 
