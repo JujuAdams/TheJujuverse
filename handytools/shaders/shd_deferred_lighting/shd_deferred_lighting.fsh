@@ -27,14 +27,11 @@ uniform vec4 u_vLightColour7;
 
 float RGBAToDepth( vec4 colour ) {
 	colour /= vec4( 1., 255., 255.*255., 255.*255.*255. );
-    return clamp( colour.r + colour.g + colour.b/* + colour.a*/,    0.0, 1.0 );
+    return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
 }
 
 vec3 InferPosition( vec2 texCoord ) {
-    // Calculate out of the fragment in screen space the view space position.
-    //vec4 posView = u_mInverseViewProj * vec4( 2.*texCoord - 1., RGBAToDepth( texture2D( u_sDepth, texCoord ) ), 1.0 );
-	//posView = u_mInverseView * posView;
-    //posView /= posView.w;
+    //With thanks to kraifpatrik!
     float depth = RGBAToDepth( texture2D( u_sDepth, texCoord ) );
     return (u_mInverseView * vec4( u_fZFar * vec3( u_vTanAspect * depth * ( 2.*texCoord - 1. ), depth ), 1. ) ).xyz;
 }
