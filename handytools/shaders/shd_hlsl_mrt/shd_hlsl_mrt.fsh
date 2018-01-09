@@ -27,7 +27,7 @@ OUTPUT main(PS In) {
     OUTPUT Out;
     Out.Colour0  = lerp( In.Colour, float4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );
     Out.Colour0 *= gm_BaseTextureObject.Sample( gm_BaseTexture, In.Texcoord );
-    Out.Colour1  = DepthToRGBA( In.Depth );
+    Out.Colour1  = float4( DepthToRGBA( In.Depth ).rgb, 1.0 );
     Out.Colour2  = float4( .5 + .5*In.NormalWS, 1. );
     return Out;
 }

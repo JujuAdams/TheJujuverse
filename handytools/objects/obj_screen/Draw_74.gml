@@ -77,15 +77,14 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 		debug_vertex( _vertex );
 	}
 	
-    /*
+    //*
     s_shader_begin( shd_deferred_lighting );
     s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
-    screen_set_shader_lights( light_priority, 4 );
+    screen_set_shader_lights( light_priority, 8 );
     s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
     s_shader_surface_sampler( "u_sNormal", grip_get_normal_surface( "3d" ) );
     s_shader_matrix( "u_mInverseView", matrix_inverse( grip_get_view_matrix( "3d" ) ) );
-    s_shader_matrix( "u_mInverseProj", matrix_inverse( grip_get_proj_matrix( "3d" ) ) );
-    s_shader_matrix( "u_mInverseViewProj", matrix_inverse( matrix_multiply( grip_get_view_matrix( "3d" ), grip_get_proj_matrix( "3d" ) ) ) );
+    s_shader_float( "u_vTanAspect", dtan( DEFAULT_FOV/2 ) * grip_get_aspect( "3d" ), -dtan( DEFAULT_FOV/2 ) );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
     /*/
