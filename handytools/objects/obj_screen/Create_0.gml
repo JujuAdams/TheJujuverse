@@ -4,16 +4,9 @@ application_surface_draw_enable( false );
 surface_resize( application_surface, global.app_surf_w, global.app_surf_h );
 display_set_gui_size( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT );
 
-global.screen_do_dof = true;
-
 if ( FPS_ON ) {
     smoothed_timer = 5000;
     frame_start_time = get_timer();
-}
-
-if ( SCREEN_ALLOW_DITHER ) {
-    global.dither_sprite = dither_make_sprite();
-    global.dither_texture = sprite_get_texture( global.dither_sprite, 0 );
 }
 
 if ( SCREEN_3D ) {
@@ -32,13 +25,12 @@ light_priority = ds_priority_create();
 grip_create( "2d", global.app_surf_w, global.app_surf_h, false, false );
 if ( SCREEN_3D ) {
     
-    if ( SCREEN_DEFERRED_LIGHTS && !ALLOW_MRT ) trace_error( "Deferred lights require MRTs! Check screen_config()" );
-    
     global.screen_main_camera = "3d";
     grip_create( "3d", global.app_surf_w, global.app_surf_h, false, true );
-    grip_activate( "3d", true ); //Use the 3D PoV grip as a view
-    if ( SCREEN_DEFERRED_LIGHTS ) {
-        grip_add_depth_surface( "3d" );
+    grip_activate( "3d", false ); //Use the 3D PoV grip as a view
+	
+    if ( SCREEN_ALLOW_DEFERRED ) {
+        grip_add_depth_surface(  "3d" );
         grip_add_normal_surface( "3d" );
     }
     
@@ -57,15 +49,20 @@ if ( SCREEN_3D ) {
     
 }
 
+if ( SCREEN_ALLOW_DITHER ) {
+    global.dither_sprite = dither_make_sprite();
+    global.dither_texture = sprite_get_texture( global.dither_sprite, 0 );
+}
+
 deferred_composite_surface_a = undefined;
 deferred_composite_surface_b = undefined;
-if ( SCREEN_DEFERRED_LIGHTS ) {
+if ( SCREEN_ALLOW_DEFERRED ) {
 	deferred_composite_surface_a = tr_surface_create( grip_get_width(  global.screen_main_camera ),
                                                       grip_get_height( global.screen_main_camera ),
-                                                      "SCREEN deferred lighting", true );
+                                                      "SCREEN deferred lighting A", true );
 	deferred_composite_surface_b = tr_surface_create( grip_get_width(  global.screen_main_camera ),
                                                       grip_get_height( global.screen_main_camera ),
-                                                      "SCREEN deferred lighting", true );
+                                                      "SCREEN deferred lighting B", true );
 }
 
 //Call custom script

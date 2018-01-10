@@ -12,11 +12,7 @@ var _h                 = argument3;
 var _camera            = argument4;
 var _composite_surface = argument5;
 
-if ( !SCREEN_ALLOW_LIGHTING || !global.screen_do_lighting ) exit;
-if ( !SCREEN_DEFERRED_LIGHTS ) {
-    trace_error( "Deferred lighting turned off!" );
-    exit;
-}
+if ( !SCREEN_ALLOW_LIGHTING || !SCREEN_ALLOW_DEFERRED || !global.screen_do_lighting ) exit;
 
 var _depth_surface = grip_get_depth_surface( _camera );
 var _tan_aspect    = dtan( DEFAULT_FOV/2 );

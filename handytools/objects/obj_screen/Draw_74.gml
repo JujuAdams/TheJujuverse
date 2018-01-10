@@ -1,4 +1,4 @@
-if ( SCREEN_DEFERRED_LIGHTS ) {
+if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
 	deferred_composite_surface_a = tr_surface_check_auto( deferred_composite_surface_a );
 	deferred_composite_surface_b = tr_surface_check_auto( deferred_composite_surface_b );
 }
@@ -53,16 +53,19 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
         
 } else {
 	
-	if ( !global.screen_do_dof ) {
+	if ( !SCREEN_ALLOW_DOF || !global.screen_do_dof ) {
 		
 	    gpu_set_blendenable( false );
 	    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
 	    gpu_set_blendenable( true );
-	    if ( SCREEN_DEFERRED_LIGHTS ) screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
+		
+	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
+			screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
+		}
 		
 	} else {
 		
-		if ( SCREEN_DEFERRED_LIGHTS ) {
+		if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
 			
 			surface_set_target( deferred_composite_surface_b );
 		    gpu_set_blendenable( false );

@@ -1,5 +1,11 @@
-if ( SCREEN_3D && GRIP_ON ) {
-    
+if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
+	grip_set_shader( global.screen_main_camera, SCREEN_3D_MRT_SHADER );
+} else {
+	grip_set_shader( global.screen_main_camera, SCREEN_3D_FORWARD_SHADER );
+}
+
+if ( SCREEN_3D ) {
+	
     //Find the instance underneath the centre of the view
     var _surface = grip_get_surface( "click" );
     if ( surface_exists( _surface ) ) {
@@ -11,8 +17,8 @@ if ( SCREEN_3D && GRIP_ON ) {
         global.click_instance_over = global.click_array[_index];
     }
     
-    if ( ALLOW_MRT ) {
-        
+    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
+		
         //Find the depth underneath the centre of the view
         var _surface = grip_get_depth_surface( "3d" );
         if ( surface_exists( _surface ) ) {
@@ -29,7 +35,7 @@ if ( SCREEN_3D && GRIP_ON ) {
         global.click_depth_smoothed = lerp( global.click_depth_smoothed, global.click_depth, SCREEN_DOF_SMOOTH_RATE );
         
     }
-    
+	
 }
 
 

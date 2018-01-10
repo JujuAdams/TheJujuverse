@@ -26,6 +26,7 @@ _map[? "yfrom"          ] = 0;
 _map[? "zfrom"          ] = 0;
 _map[? "depth surface"  ] = undefined;
 _map[? "normal surface" ] = undefined;
+_map[? "shader"         ] = undefined;
 
 var _actual_width  = grip_get_width( argument0 );
 var _actual_height = grip_get_height( argument0 );

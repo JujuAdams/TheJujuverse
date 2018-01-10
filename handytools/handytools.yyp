@@ -567,6 +567,14 @@
             }
         },
         {
+            "Key": "12f378d8-e755-423b-a33b-e34d76cd3340",
+            "Value": {
+                "id": "bc13bf0f-4691-4933-a771-9f8a341289cf",
+                "resourcePath": "scripts\\grip_set_shader\\grip_set_shader.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "137eefda-b1ba-40cb-9807-785c58cfa693",
             "Value": {
                 "id": "47e0b085-f13e-4aab-99a8-23b348e0e57d",
@@ -5607,6 +5615,14 @@
             }
         },
         {
+            "Key": "c745128e-62e9-4981-8499-0d011aa699ca",
+            "Value": {
+                "id": "6e64cd14-6031-488d-bc30-d9851023c01b",
+                "resourcePath": "scripts\\grip_get_shader\\grip_get_shader.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c79b774f-350e-4fef-884d-c530490755d8",
             "Value": {
                 "id": "f4de907f-8c09-4ae4-bb20-ced50613e684",
@@ -7363,6 +7379,7 @@
         "d2a38b1e-0751-4677-a3d2-62812acdcaff",
         "1e1817cc-4e03-437f-a17d-9d7b322dd8ef",
         "9774d33c-bed2-4b7f-930b-35d5237c7380",
+        "c745128e-62e9-4981-8499-0d011aa699ca",
         "2706800b-4fa8-4a8a-82c6-44381f6a9262",
         "e4b49b10-b79e-4147-9355-58bcb04c7667",
         "02dc3d85-bfea-4c54-a510-0e8715453cb0",
@@ -7372,6 +7389,7 @@
         "844dc4a8-3fdd-4b93-8129-ac23f56f9980",
         "5e85dd4e-a9b0-45eb-82b1-efd895489fcb",
         "d10e4a6a-43cc-4f30-b246-21333637330c",
+        "12f378d8-e755-423b-a33b-e34d76cd3340",
         "a4ac13a1-ec3f-4e29-8d38-9c0f6d842aea",
         "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
         "bb5fc82a-00a1-448c-8c8f-fe8c16845943",
