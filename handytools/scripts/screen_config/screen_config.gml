@@ -6,7 +6,7 @@
 #macro SCREEN_ALLOW_DOF true
 
 #macro SCREEN_3D true
-#macro SCREEN_3D_SHADER SCREEN_3D_FORWARD
+#macro SCREEN_3D_SHADER SCREEN_DEFAULT_SHADER
 #macro SCREEN_CLICK_GRIP_AS_VIEW true
 #macro SCREEN_BACKGROUND_COLOUR c_black //Set to undefined for no clear
 #macro SCREEN_DOF_SMOOTH_RATE 0.07
