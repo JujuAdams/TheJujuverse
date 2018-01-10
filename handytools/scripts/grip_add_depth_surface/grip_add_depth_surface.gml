@@ -6,6 +6,8 @@ if ( !GRIP_ON ) {
     exit;
 }
 
+if ( !ALLOW_MRT ) trace_error_q( false, "Caution! Adding a depth surface when MRTs are disabled!" );
+
 var _name = argument0;
 var _map = global.grip_cameras_map[? argument0 ];
 _map[? "depth surface" ] = tr_surface_create( grip_get_width( _name ), grip_get_height( _name ),

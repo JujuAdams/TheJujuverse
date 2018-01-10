@@ -3,7 +3,10 @@ if ( SCREEN_3D ) screen_3d_end();
 switch( grip_current() ) {
     
     case "3d":
+        
+        s_shader_end();
         gpu_set_blendenable( true );
+        
         camera_apply( grip_get_camera( "2d" ) );
         
         //Draw a wee dot in the centre of the screen

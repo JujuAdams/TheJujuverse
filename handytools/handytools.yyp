@@ -959,6 +959,14 @@
             }
         },
         {
+            "Key": "2072ebba-4be3-4b0d-8a12-1147b1e578c5",
+            "Value": {
+                "id": "a88c6043-9887-4fff-8eaf-b303de1965d0",
+                "resourcePath": "scripts\\screen_render_deferred_lights_all\\screen_render_deferred_lights_all.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "209b1f88-f21a-47b6-ada7-76e20f44f44b",
             "Value": {
                 "id": "2a4e94d9-e725-4055-87e7-c8a82d1b595f",
@@ -3938,7 +3946,7 @@
             "Key": "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
             "Value": {
                 "id": "d263a63a-8766-4d75-8dde-6fd935d2edcb",
-                "resourcePath": "scripts\\screen_set_shader_lights\\screen_set_shader_lights.yy",
+                "resourcePath": "scripts\\screen_set_shader_lights_nearest\\screen_set_shader_lights_nearest.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5519,6 +5527,14 @@
             }
         },
         {
+            "Key": "c43c70ad-8b88-4e68-8d8a-70f90e44bada",
+            "Value": {
+                "id": "0a02be7c-345e-4169-b544-4c88b9288506",
+                "resourcePath": "scripts\\screen_set_shader_ambient_light\\screen_set_shader_ambient_light.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c45975ea-3635-4325-a2a3-0d9e66a5354f",
             "Value": {
                 "id": "e819ada4-c33f-441f-8efc-e8f382757da0",
@@ -5740,6 +5756,14 @@
                 "id": "27d44322-5207-4931-9616-5946e566ec5d",
                 "resourcePath": "sprites\\spr_tex_open_book\\spr_tex_open_book.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d0082589-6702-49e0-95dd-10ec716d406a",
+            "Value": {
+                "id": "f3097a05-2a35-4165-8abe-5a85805c0424",
+                "resourcePath": "scripts\\screen_set_shader_lights\\screen_set_shader_lights.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6719,6 +6743,14 @@
             }
         },
         {
+            "Key": "ee8efe3b-32f2-420d-8918-66cbddd9fa25",
+            "Value": {
+                "id": "41d034b7-9a4e-4208-a690-ed5da56dae07",
+                "resourcePath": "scripts\\grip_surface_set_target\\grip_surface_set_target.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "eeaab7f1-ecc2-40da-93b2-d72520139bbc",
             "Value": {
                 "id": "cfa8094e-8d86-4c8c-95f0-6786de6c9519",
@@ -6764,6 +6796,14 @@
                 "id": "41d24f66-b25d-41c5-8d60-a2486032bf70",
                 "resourcePath": "scripts\\scribble_config\\scribble_config.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f0971bd4-2b5f-4bd7-9edf-3eb32b7a789e",
+            "Value": {
+                "id": "345c9217-684f-4d74-b388-3e7754dbecc1",
+                "resourcePath": "shaders\\__shd_glsles_vertex_lighting\\__shd_glsles_vertex_lighting.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -7293,6 +7333,7 @@
         "febd5dda-a628-4e98-8d6b-f54477e2fb28",
         "a59d2e64-c719-419f-838e-20ad48fd5b5e",
         "d4dd9c85-145a-4d2d-97b3-74e99739fe98",
+        "ee8efe3b-32f2-420d-8918-66cbddd9fa25",
         "22ef7f25-2471-4619-9945-d09e82060d53",
         "32c93d61-41af-4a6d-9da3-088d91fa2821",
         "1929a447-93ca-4175-9bdd-da6b659f9a7f",
@@ -7375,7 +7416,10 @@
         "0d978d9b-2de1-4e03-b609-5ae2a2557daf",
         "c72e7a3b-9a33-4108-9837-0f3e4a2f8e67",
         "898ac36b-f7ed-4edc-9daf-9d740f524158",
+        "c43c70ad-8b88-4e68-8d8a-70f90e44bada",
         "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
+        "d0082589-6702-49e0-95dd-10ec716d406a",
+        "2072ebba-4be3-4b0d-8a12-1147b1e578c5",
         "ed1f42c1-a2af-4505-8dc9-c3da22cc5b9c",
         "6d347988-e81a-49ab-81c9-e7095e8c3909",
         "f11e73fa-e945-451f-aa22-c1e47113893c",

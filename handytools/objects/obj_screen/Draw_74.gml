@@ -1,4 +1,5 @@
-var _surface = grip_get_surface( SCREEN_3D? "3d" : "2d" );
+var _camera = global.screen_main_camera;
+var _surface = grip_get_surface( _camera );
 if ( _surface == undefined ) _surface = application_surface;
 
 blur_surface          = tr_surface_check_auto( blur_surface          );
@@ -18,75 +19,53 @@ var _draw_h = _app_h*_scale;
 var _draw_x = 0.5*( _gui_w - _draw_w );
 var _draw_y = 0.5*( _gui_h - _draw_h );
 
-gpu_set_blendenable( false );
     
 if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     
     //Debug mode for click surface checking
+    gpu_set_blendenable( false );
     draw_surface_stretched( grip_get_surface( "click" ), _draw_x, _draw_y, _draw_w, _draw_h );
+    gpu_set_blendenable( true );
     
 } else if ( ALLOW_FXAA && global.screen_do_fxaa ) {
     
+    gpu_set_blendenable( false );
     s_shader_begin( shd_fxaa );
     s_shader_surface_texel_dims( "u_vTexel", _surface );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
+    gpu_set_blendenable( true );
         
 } else if ( ALLOW_DITHER && global.screen_do_dither ) {
     
+    gpu_set_blendenable( false );
     s_shader_begin( shd_dither );
     s_shader_texture_sampler( "u_sDither", global.dither_texture );
     s_shader_float( "u_vTextureSize", _app_w, _app_h );
     draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
+    gpu_set_blendenable( true );
         
 } else {
 	
-	if ( keyboard_check_pressed( ord( "J" ) ) ) {
-		var _view_mat = grip_get_view_matrix( "3d" );
-		var _proj_mat = grip_get_proj_matrix( "3d" );
-		var _vp_mat = matrix_multiply( _view_mat, _proj_mat );
-		
-		trace( "VP matrix" );
-		debug_matrix( _vp_mat );
-		trace( "vertex" );
-		var _vertex = [ 200, 200, 20, 1 ];
-		debug_vertex( _vertex );
-		trace( "transformed" );
-		vector_transform( _vp_mat, _vertex );
-		debug_vertex( _vertex );
-		trace( "divided by w" );
-		vector_perspective_correction(  _vertex );
-		debug_vertex( _vertex );
-		trace( "inverse VP matrix" );
-		var _inv_vp_mat = matrix_inverse( _vp_mat );
-		debug_matrix( _inv_vp_mat );
-		trace( "storage" );
-		var _tex_x = 0.5 + 0.5*_vertex[0];
-		var _tex_y = 0.5 + 0.5*_vertex[1];
-		var _z     = _vertex[2];
-		trace( "texture=", _tex_x, ",", _tex_y );
-		trace( "z=", _z );
-		trace( "new vertex" );
-		_vertex = [ 2*_tex_x-1, 2*_tex_y-1, _z, 1 ];
-		trace( "inverse transform" );
-		vector_transform( _inv_vp_mat, _vertex );
-		debug_vertex( _vertex );
-		trace( "divided by w" );
-		vector_perspective_correction(  _vertex );
-		debug_vertex( _vertex );
-	}
-	
+    gpu_set_blendenable( false );
+    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
+    gpu_set_blendenable( true );
+    if ( SCREEN_DEFERRED_LIGHTS ) screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface );
+    
     //*
+    /*
+    gpu_set_blendmode_ext( bm_zero, bm_src_colour );
     s_shader_begin( shd_deferred_lighting );
     s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
     screen_set_shader_lights( light_priority, 8 );
-    s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );
     s_shader_surface_sampler( "u_sNormal", grip_get_normal_surface( "3d" ) );
     s_shader_matrix( "u_mInverseView", matrix_inverse( grip_get_view_matrix( "3d" ) ) );
     s_shader_float( "u_vTanAspect", dtan( DEFAULT_FOV/2 ) * grip_get_aspect( "3d" ), -dtan( DEFAULT_FOV/2 ) );
-    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
+    draw_surface_stretched( grip_get_depth_surface( "3d" ), _draw_x, _draw_y, _draw_w, _draw_h );
     s_shader_end();
+    gpu_set_blendmode( bm_normal );
+    */
     /*/
     s_shader_begin( shd_dof );
     s_shader_surface_sampler( "u_sDepth", grip_get_depth_surface( "3d" ) );

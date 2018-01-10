@@ -1,8 +1,8 @@
 {
-    "id": "d0082589-6702-49e0-95dd-10ec716d406a",
+    "id": "2072ebba-4be3-4b0d-8a12-1147b1e578c5",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "screen_set_shader_lights",
+    "name": "screen_render_deferred_lights_all",
     "IsCompatibility": false,
     "IsDnD": false
 }

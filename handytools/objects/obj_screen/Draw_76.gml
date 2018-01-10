@@ -16,11 +16,20 @@ if ( SCREEN_3D ) {
         global.click_array[ my_click_index ] = id;
     }
     
-    s_shader_begin( SCREEN_3D_SHADER );
-    s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
-    screen_set_shader_lights( light_priority, 1 );
-    s_shader_rgba( "u_vForceColour", c_white, 0 );
-    s_shader_end();
+    //Set up uniforms in our shader
+    if ( SCREEN_DEFERRED_LIGHTS ) {
+        s_shader_begin( SCREEN_3D_SHADER );
+        s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+        s_shader_rgba( "u_vForceColour", c_white, 0 );
+        s_shader_end();
+    } else {
+        s_shader_begin( SCREEN_3D_SHADER );
+        s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+        screen_set_shader_ambient_light();
+        screen_set_shader_lights_nearest( grip_get_xfrom( "3d" ), grip_get_yfrom( "3d" ), grip_get_zfrom( "3d" ), light_priority );
+        s_shader_rgba( "u_vForceColour", c_white, 0 );
+        s_shader_end();
+    }
     
 } else {
     

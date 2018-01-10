@@ -1,12 +1,10 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-
-uniform float     u_fZFar;
-uniform vec2      u_vTanAspect;
-uniform sampler2D u_sNormal;
-uniform mat4      u_mInverseView;
+varying vec4 v_vPosWS;
+varying vec4 v_vNormalWS;
 
 uniform vec4 u_vAmbientColour;
+uniform vec4 u_vForceColour;
 uniform vec4 u_vLightPosRange0;
 uniform vec4 u_vLightPosRange1;
 uniform vec4 u_vLightPosRange2;
@@ -24,21 +22,10 @@ uniform vec4 u_vLightColour5;
 uniform vec4 u_vLightColour6;
 uniform vec4 u_vLightColour7;
 
-float RGBAToDepth( vec4 colour ) {
-	colour /= vec4( 1., 255., 255.*255., 255.*255.*255. );
-    return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
-}
-
-vec3 InferPosition( vec2 texCoord ) {
-    //With thanks to kraifpatrik!
-    float depth = RGBAToDepth( texture2D( gm_BaseTexture, texCoord ) );
-    return (u_mInverseView * vec4( u_fZFar * vec3( u_vTanAspect * depth * ( 2.*texCoord - 1. ), depth ), 1. ) ).xyz;
-}
-
 float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
-    vec3 delta = posrange.xyz - ws_pos;
+    vec3 delta = ws_pos - posrange.xyz;
     float dist = length( delta );
-    return max( 0., dot( ws_normal, delta/dist ) ) * clamp( ( 1. - ( dist / posrange.w ) ), 0., 1. );
+    return max( 0.0, dot( ws_normal, delta/dist ) ) * clamp( ( 1.0 - ( dist / posrange.w ) ), 0.0, 1.0 );
 }
 
 vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
@@ -51,11 +38,10 @@ vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
     colour += u_vLightColour5.a * u_vLightColour5.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange5 );
     colour += u_vLightColour6.a * u_vLightColour6.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange6 );
     colour += u_vLightColour7.a * u_vLightColour7.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange7 );
-    return min( colour, vec3(1.) );
+    return min( colour, vec3(1.0) );
 }
 
 void main() {
-    vec3 posWS = InferPosition( v_vTexcoord );
-    vec3 normalWS = 2.*texture2D( u_sNormal, v_vTexcoord ).rgb - 1.;
-    gl_FragColor = vec4( DoLightingCustom( u_vAmbientColour.rgb, posWS, normalWS ), 1. ) ;
+    gl_FragColor = mix( v_vColour*vec4( DoLightingCustom( u_vAmbientColour.rgb, v_vPosWS.xyz, v_vNormalWS.xyz ), 1.0 ), vec4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a )
+                   * texture2D( gm_BaseTexture, v_vTexcoord );
 }

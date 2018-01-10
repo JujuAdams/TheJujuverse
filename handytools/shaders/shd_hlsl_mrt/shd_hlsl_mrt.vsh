@@ -20,7 +20,6 @@ uniform float u_fZFar;
 PS main(VS In) {
     PS Out;
     Out.Position   = mul( gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION], In.Position );
-    //Out.Depth      = Out.Position.z / Out.Position.w;
     Out.Depth      = Out.Position.z / u_fZFar;
     Out.Texcoord   = In.Texcoord;
     Out.Colour     = In.Colour;
