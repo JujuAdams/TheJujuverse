@@ -9,7 +9,7 @@
 #macro SCREEN_3D_SHADER SCREEN_DEFAULT_SHADER
 #macro SCREEN_CLICK_GRIP_AS_VIEW true
 #macro SCREEN_BACKGROUND_COLOUR c_black //Set to undefined for no clear
-#macro SCREEN_DOF_SMOOTH_RATE 0.07
+#macro SCREEN_DOF_SMOOTH_RATE 0.10
 #macro SCREEN_DEFERRED_LIGHTS true
 
 #macro SCREEN_CREATE_SCRIPT     screen_custom_create

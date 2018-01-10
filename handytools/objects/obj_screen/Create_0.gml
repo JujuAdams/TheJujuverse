@@ -4,6 +4,8 @@ application_surface_draw_enable( false );
 surface_resize( application_surface, global.app_surf_w, global.app_surf_h );
 display_set_gui_size( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT );
 
+global.screen_do_dof = true;
+
 if ( FPS_ON ) {
     smoothed_timer = 5000;
     frame_start_time = get_timer();
@@ -55,10 +57,16 @@ if ( SCREEN_3D ) {
     
 }
 
-deferred_composite_surface = undefined;
-if ( SCREEN_DEFERRED_LIGHTS ) deferred_composite_surface = tr_surface_create( grip_get_width(  global.screen_main_camera ),
-                                                                             grip_get_height( global.screen_main_camera ),
-                                                                             "SCREEN deferred lighting", true );
+deferred_composite_surface_a = undefined;
+deferred_composite_surface_b = undefined;
+if ( SCREEN_DEFERRED_LIGHTS ) {
+	deferred_composite_surface_a = tr_surface_create( grip_get_width(  global.screen_main_camera ),
+                                                      grip_get_height( global.screen_main_camera ),
+                                                      "SCREEN deferred lighting", true );
+	deferred_composite_surface_b = tr_surface_create( grip_get_width(  global.screen_main_camera ),
+                                                      grip_get_height( global.screen_main_camera ),
+                                                      "SCREEN deferred lighting", true );
+}
 
 //Call custom script
 if ( script_exists( SCREEN_CREATE_SCRIPT ) ) script_execute( SCREEN_CREATE_SCRIPT );

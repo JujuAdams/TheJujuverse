@@ -14,7 +14,8 @@
         "c43c70ad-8b88-4e68-8d8a-70f90e44bada",
         "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
         "d0082589-6702-49e0-95dd-10ec716d406a",
-        "2072ebba-4be3-4b0d-8a12-1147b1e578c5"
+        "2072ebba-4be3-4b0d-8a12-1147b1e578c5",
+        "681baa80-4f65-4b5e-ade5-75491448d7ae"
     ],
     "filterType": "GMScript",
     "folderName": "screen",
