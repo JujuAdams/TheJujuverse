@@ -6,7 +6,7 @@ switch( grip_current() ) {
     case "mirror2":
     case "mirror3":
         global.mirror_render = true;
-        s_shader_begin( SCREEN_3D_SHADER );
+        s_shader_begin( grip_get_shader( grip_current() ) );;
     break;
     
     case "mirror click0": //Render out mirror click detection

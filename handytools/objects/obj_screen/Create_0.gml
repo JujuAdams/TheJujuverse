@@ -32,14 +32,17 @@ if ( SCREEN_3D ) {
     if ( SCREEN_ALLOW_DEFERRED ) {
         grip_add_depth_surface(  "3d" );
         grip_add_normal_surface( "3d" );
+        grip_set_shader( "3d", SCREEN_3D_MRT_SHADER );
+    } else {
+        grip_set_shader( "3d", SCREEN_3D_FORWARD_SHADER );
     }
     
     grip_create( "click", global.app_surf_w, global.app_surf_h, false, true );
     grip_activate( "click", SCREEN_CLICK_GRIP_AS_VIEW );
     
     if ( SCREEN_ALLOW_DOF ) {
-        dof_surface          = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
-        dof_transfer_surface = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
+        dof_surface          = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ), "DoF blur" );
+        dof_transfer_surface = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ), "DoF transfer" );
     }
     
 } else {

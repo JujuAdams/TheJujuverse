@@ -2,6 +2,7 @@ if ( SCREEN_3D ) screen_3d_start();
 if ( SCREEN_BACKGROUND_COLOUR != undefined ) draw_clear( SCREEN_BACKGROUND_COLOUR );
 
 s_shader_begin( grip_get_shader( grip_current() ) );
+grip_surface_set_target( grip_current(), true );
 
 switch( grip_current() ) {
     

@@ -53,17 +53,7 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
         
 } else {
 	
-	if ( !SCREEN_ALLOW_DOF || !global.screen_do_dof ) {
-		
-	    gpu_set_blendenable( false );
-	    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
-	    gpu_set_blendenable( true );
-		
-	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
-			screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
-		}
-		
-	} else {
+	if ( SCREEN_ALLOW_DOF && global.screen_do_dof ) {
 		
 		if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
 			
@@ -90,6 +80,16 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 									 global.click_depth_smoothed, lerp( 0.01, 0.70, global.click_depth_smoothed ) );
 			gpu_set_blendenable( true );
 			
+		}
+		
+	} else {
+		
+	    gpu_set_blendenable( false );
+	    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
+	    gpu_set_blendenable( true );
+		
+	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
+			screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
 		}
 		
 	}
