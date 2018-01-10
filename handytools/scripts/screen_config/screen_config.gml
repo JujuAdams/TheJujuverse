@@ -1,8 +1,9 @@
 /// @description SCREEN configuration
 
-#macro ALLOW_DITHER true
-#macro ALLOW_LIGHTING (true && SCREEN_3D)
-#macro ALLOW_FXAA true
+#macro SCREEN_ALLOW_DITHER true
+#macro SCREEN_ALLOW_LIGHTING (true && SCREEN_3D)
+#macro SCREEN_ALLOW_FXAA true
+#macro SCREEN_ALLOW_DOF true
 
 #macro SCREEN_3D true
 #macro SCREEN_3D_SHADER SCREEN_3D_FORWARD

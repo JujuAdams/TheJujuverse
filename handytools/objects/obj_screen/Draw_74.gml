@@ -27,7 +27,7 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     draw_surface_stretched( grip_get_surface( "click" ), _draw_x, _draw_y, _draw_w, _draw_h );
     gpu_set_blendenable( true );
     
-} else if ( ALLOW_FXAA && global.screen_do_fxaa ) {
+} else if ( SCREEN_ALLOW_FXAA && global.screen_do_fxaa ) {
     
     gpu_set_blendenable( false );
     s_shader_begin( shd_fxaa );
@@ -36,7 +36,7 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
     s_shader_end();
     gpu_set_blendenable( true );
         
-} else if ( ALLOW_DITHER && global.screen_do_dither ) {
+} else if ( SCREEN_ALLOW_DITHER && global.screen_do_dither ) {
     
     gpu_set_blendenable( false );
     s_shader_begin( shd_dither );

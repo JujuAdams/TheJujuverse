@@ -13,7 +13,7 @@ var _max   = ((argument_count < 5) || (argument[4] == undefined))? SCREEN_MAX_LI
 
 var _light = 0;
     
-if ( ALLOW_LIGHTING && global.screen_do_lighting ) {
+if ( SCREEN_ALLOW_LIGHTING && global.screen_do_lighting ) {
     
     //with( obj_camera ) s_shader_set_light( _light++, x, y, z, 100, c_gray, 1 );
     

@@ -12,7 +12,7 @@ var _h                 = argument3;
 var _camera            = argument4;
 var _composite_surface = argument5;
 
-if ( !ALLOW_LIGHTING || !global.screen_do_lighting ) exit;
+if ( !SCREEN_ALLOW_LIGHTING || !global.screen_do_lighting ) exit;
 if ( !SCREEN_DEFERRED_LIGHTS ) {
     trace_error( "Deferred lighting turned off!" );
     exit;

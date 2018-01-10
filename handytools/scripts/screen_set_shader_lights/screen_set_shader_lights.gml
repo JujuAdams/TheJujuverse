@@ -7,7 +7,7 @@ var _count = argument1;
 
 var _light = 0;
 
-if ( ALLOW_LIGHTING && global.screen_do_lighting ) {
+if ( SCREEN_ALLOW_LIGHTING && global.screen_do_lighting ) {
     
     if ( _count > SCREEN_MAX_LIGHTS ) {
         trace_error_q( false, "Number of lights specified (", _count, ") larger than definied maximum (", SCREEN_MAX_LIGHTS, ")" );
