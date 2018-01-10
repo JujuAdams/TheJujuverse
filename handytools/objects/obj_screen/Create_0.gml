@@ -46,8 +46,8 @@ if ( SCREEN_3D ) {
     grip_activate( "click", SCREEN_CLICK_GRIP_AS_VIEW );
     
     if ( SCREEN_ALLOW_DOF ) {
-        blur_surface          = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
-        blur_transfer_surface = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
+        dof_surface          = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
+        dof_transfer_surface = tr_surface_create( grip_get_width( "3d" ), grip_get_height( "3d" ) );
     }
     
 } else {
