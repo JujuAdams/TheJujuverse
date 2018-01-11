@@ -15,23 +15,23 @@
 #macro DATE "2017.12.20" //always use YYYY/MM/DD
 
 //services
-#macro TRACE_ON       true
-#macro IMGUI_ON      (true && DEVELOPMENT)
-#macro TRACKER_ON    (true && DEVELOPMENT && !RELEASE)
+#macro TRACE_ON        true
+#macro IMGUI_ON      ( true && DEVELOPMENT)
+#macro TRACKER_ON    ( true && DEVELOPMENT && !RELEASE)
 #macro AUDIO_ON       false
 #macro WAN_ON         false
-#macro CONTROLS_ON    true
-#macro SCREEN_ON      true
+#macro CONTROLS_ON     true
+#macro SCREEN_ON       true
 #macro OPTIONS_ON    (false || !DEVELOPMENT)
-#macro FPS_ON        (false && !RELEASE)
-#macro DEVTOOL_ON    (true && IMGUI_ON && DEVELOPMENT)
+#macro FPS_ON        ( true && !RELEASE)
+#macro DEVTOOL_ON    ( true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
-#macro GRIP_ON        true
-#macro EDITOR_ON      true
-#macro OBJMODEL_ON    true
-#macro SCRIBBLE_ON    true
-#macro TRANSITION_ON  true
+#macro GRIP_ON         true
+#macro EDITOR_ON       true
+#macro OBJMODEL_ON     true
+#macro SCRIBBLE_ON     true
+#macro TRANSITION_ON   true
 #macro JIFFY_ON       false
 
 //miscellaneous
@@ -45,6 +45,7 @@
 #macro TIMED_SPRITE_THRESHOLD 1000
 
 //graphics
+#macro ALLOW_MRT true
 #macro FORCE_VSYNC true
 #macro FORCE_NO_CURSOR true
 #macro FORCE_NO_INTERPOLATION true

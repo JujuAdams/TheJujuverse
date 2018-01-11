@@ -1,14 +1,18 @@
 /// @description SCREEN configuration
 
-#macro ALLOW_DITHER true
-#macro ALLOW_LIGHTING (true && SCREEN_3D)
-#macro ALLOW_FXAA true
-
 #macro SCREEN_3D true
-#macro SCREEN_3D_SHADER shd_hlsl_pixel_lighting //Using forward rendering for 3D lights
+
+#macro SCREEN_ALLOW_DITHER     true
+#macro SCREEN_ALLOW_LIGHTING ( true && SCREEN_3D)
+#macro SCREEN_ALLOW_FXAA       true
+#macro SCREEN_ALLOW_DEFERRED ( true && ALLOW_MRT) //This functionality requires MRTs
+#macro SCREEN_ALLOW_DOF      ( true && SCREEN_ALLOW_DEFERRED && ALLOW_MRT) //This functionality requires MRTs and deferred rendering
+
+#macro SCREEN_3D_MRT_SHADER      shd_hlsl_mrt //Use SCREEN_DEFAULT_SHADER for the default shader
+#macro SCREEN_3D_FORWARD_SHADER  shd_glsles_pixel_lighting //Use SCREEN_DEFAULT_SHADER for the default shader#]
 #macro SCREEN_CLICK_GRIP_AS_VIEW true
-#macro SCREEN_BACKGROUND_COLOUR c_black //Set to undefined for no clear
-#macro SCREEN_DOF_SMOOTH_RATE 0.07
+#macro SCREEN_BACKGROUND_COLOUR  c_black //Set to undefined for no clear
+#macro SCREEN_DOF_SMOOTH_RATE    0.10
 
 #macro SCREEN_CREATE_SCRIPT     screen_custom_create
 #macro SCREEN_STEP_SCRIPT       screen_custom_step

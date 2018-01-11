@@ -3,6 +3,8 @@ if ( SCREEN_3D ) screen_3d_end();
 switch( grip_current() ) {
     
     case "3d":
+        
+        /*
         camera_apply( grip_get_camera( "2d" ) );
         
         //Draw a wee dot in the centre of the screen
@@ -17,6 +19,7 @@ switch( grip_current() ) {
         if ( obj_gameflow.transition_do ) draw_sprite_ext( spr_white_pixel, 0, 0, 0,
                                                            global.app_surf_w, global.app_surf_h,
                                                            0, obj_gameflow.transition_colour, obj_gameflow.transition_t );
+		*/
     break;
     
     case "click":

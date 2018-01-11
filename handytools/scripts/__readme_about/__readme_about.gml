@@ -1,7 +1,11 @@
 /*
     VERSION   v0.6.3
     DATE      2017.12.26
-    CREDITS   handytools by @jujuadams, ImGUI implementation by @babyj3ans, JIFFY by @net8floz
+    CREDITS   handytools by @jujuadams
+              ImGUI implementation by @babyj3ans
+              JIFFY by @net8floz
+              SCREEN with assistance from kraifpatrik
+              Logo by @stefanvonranda
     
     # "handytools" v0.6.3
     ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz

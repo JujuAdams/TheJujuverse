@@ -1,1 +1,1 @@
-timer = get_timer();
+if ( FPS_MEASURE_DRAW ) timer = get_timer();
