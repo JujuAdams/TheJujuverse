@@ -3007,6 +3007,14 @@
             }
         },
         {
+            "Key": "66184121-da27-4283-802e-5936c25a7685",
+            "Value": {
+                "id": "abceaaab-1d84-41b7-b69c-54535f86267c",
+                "resourcePath": "shaders\\shd_deferred_lighting\\shd_deferred_lighting.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "6656fa22-b20c-4d0d-a103-7f1af341bea0",
             "Value": {
                 "id": "8510e2c9-d416-4a3c-8c11-1414354cd1f8",
@@ -3859,6 +3867,14 @@
             "Value": {
                 "id": "39855467-e990-4941-97ec-8a0ff58f4db3",
                 "resourcePath": "scripts\\tr_list_add_list\\tr_list_add_list.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "88cdf51e-ef83-4445-82db-07a9d8df6525",
+            "Value": {
+                "id": "a5015eff-25fd-41fb-b38c-c8038ea90ac2",
+                "resourcePath": "scripts\\script477\\script477.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6335,14 +6351,6 @@
             }
         },
         {
-            "Key": "e155c3cc-fa5b-47f6-96ec-dab1d3774533",
-            "Value": {
-                "id": "7ebe442a-5556-40e6-a67b-6b0ed795ed1e",
-                "resourcePath": "shaders\\shd_deferred_lighting\\shd_deferred_lighting.yy",
-                "resourceType": "GMShader"
-            }
-        },
-        {
             "Key": "e198ebf4-dc08-4e08-ac46-87bb711e87ba",
             "Value": {
                 "id": "27178c3d-cfb2-436a-b93f-8c48b5aa464a",
@@ -7684,7 +7692,8 @@
         "efeaf08b-81cc-4736-b4ef-99c524cfed7c",
         "137eefda-b1ba-40cb-9807-785c58cfa693",
         "56debf2b-9683-4c48-af2d-613605ec1e6d",
-        "0389765f-dd45-4d65-848f-3129c81aa890"
+        "0389765f-dd45-4d65-848f-3129c81aa890",
+        "88cdf51e-ef83-4445-82db-07a9d8df6525"
     ],
     "tutorial": ""
 }

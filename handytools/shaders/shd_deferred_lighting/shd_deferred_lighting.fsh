@@ -3,6 +3,7 @@ varying vec4 v_vColour;
 
 uniform float     u_fZFar;
 uniform vec2      u_vTanAspect;
+uniform sampler2D u_sDepth;
 uniform sampler2D u_sNormal;
 uniform mat4      u_mInverseView;
 
@@ -31,7 +32,7 @@ float RGBAToDepth( vec4 colour ) {
 
 vec3 InferPosition( vec2 texCoord ) {
     //With thanks to kraifpatrik!
-    float depth = RGBAToDepth( texture2D( gm_BaseTexture, texCoord ) );
+    float depth = RGBAToDepth( texture2D( u_sDepth, texCoord ) );
     return (u_mInverseView * vec4( u_fZFar * vec3( u_vTanAspect * depth * ( 2.*texCoord - 1. ), depth ), 1. ) ).xyz;
 }
 

@@ -26,7 +26,7 @@ float4 DepthToRGBA( float depth ) {
 OUTPUT main(PS In) {
     OUTPUT Out;
     Out.Colour0  = lerp( In.Colour, float4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );
-    Out.Colour0 *= gm_BaseTextureObject.Sample( gm_BaseTexture, In.Texcoord );
+    Out.Colour0 *= float4( gm_BaseTextureObject.Sample( gm_BaseTexture, In.Texcoord ).rgb, 1. );
     Out.Colour1  = DepthToRGBA( In.Depth );
     Out.Colour2  = float4( .5 + .5*In.NormalWS, 1. );
     return Out;

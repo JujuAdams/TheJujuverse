@@ -10,6 +10,9 @@ if ( TRACKER_ON ) {
     if imguigml_button( "Tracker dump to clipboard" ) { clipboard_set_text( tracker_dump() ); imguigml_popup( "", "Copied to clipboard!" ); }
 }
 imguigml_new_line();
+if ( FPS_ON ) {
+    if ( imguigml_checkbox( "Show FPS", global.fps_show ) ) global.fps_show = !global.fps_show;
+}
 imguigml_separator();
 
 var _size = ds_list_size( global.master_game_output );
