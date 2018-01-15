@@ -7,6 +7,8 @@ uniform sampler2D u_sDepth;
 uniform sampler2D u_sNormal;
 uniform mat4      u_mInverseView;
 
+uniform vec4 u_vFogColour; //RGB + boolean
+uniform vec2 u_fFogRange; //.x = start, .y = (end-start)
 uniform vec4 u_vAmbientColour;
 uniform vec4 u_vLightPosRange0;
 uniform vec4 u_vLightPosRange1;
@@ -30,10 +32,10 @@ float RGBAToDepth( vec4 colour ) {
     return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
 }
 
-vec3 InferPosition( vec2 texCoord ) {
+vec4 InferViewPosition( vec2 texCoord, float depth ) {
     //With thanks to kraifpatrik!
     float depth = RGBAToDepth( texture2D( u_sDepth, texCoord ) );
-    return (u_mInverseView * vec4( u_fZFar * vec3( u_vTanAspect * depth * ( 2.*texCoord - 1. ), depth ), 1. ) ).xyz;
+    return vec4( u_fZFar * vec3( u_vTanAspect * depth * ( 2.*texCoord - 1. ), depth ), 1. );
 }
 
 float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
@@ -42,8 +44,8 @@ float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
     return max( 0., dot( ws_normal, delta/dist ) ) * clamp( ( 1. - ( dist / posrange.w ) ), 0., 1. );
 }
 
-vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
-    vec3 colour = ambient_colour;
+vec3 DoLightingCustom( vec3 ambientColour, vec3 ws_pos, vec3 ws_norm ) {
+    vec3 colour = ambientColour;
     colour += u_vLightColour0.a * u_vLightColour0.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange0 );
     colour += u_vLightColour1.a * u_vLightColour1.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange1 );
     colour += u_vLightColour2.a * u_vLightColour2.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange2 );
@@ -56,7 +58,8 @@ vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
 }
 
 void main() {
-    vec3 posWS = InferPosition( v_vTexcoord );
+    vec4 viewPos = InferViewPosition( v_vTexcoord );
+    float fogAmount = clamp( ( viewPos.z - u_fFogRange.x ) / u_fFogRange.y, 0., 1. ); 
     vec3 normalWS = 2.*texture2D( u_sNormal, v_vTexcoord ).rgb - 1.;
-    gl_FragColor = vec4( DoLightingCustom( u_vAmbientColour.rgb, posWS, normalWS ), 1. ) ;
+    gl_FragColor = vec4( mix( DoLightingCustom( u_vAmbientColour.rgb, (u_mInverseView*viewPos).xyz, normalWS ), u_vFogColour.rgb, fogAmount*u_vFogColour.a ), 1. ) ;
 }
