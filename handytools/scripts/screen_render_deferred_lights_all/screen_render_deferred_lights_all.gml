@@ -27,6 +27,7 @@ if ( _light_count <= SCREEN_MAX_LIGHTS ) { //Do the deferred lighting in one pas
     gpu_set_blendmode_ext( bm_zero, bm_src_colour );
     
     s_shader_begin( shd_deferred_lighting );
+	s_shader_fog( false, c_black, 0, 0 );
     s_shader_float(           "u_fZFar"       , DEFAULT_Z_FAR   );
     s_shader_surface_sampler( "u_sDepth"      , _depth_surface  );
     s_shader_surface_sampler( "u_sNormal"     , _normal_surface );
@@ -52,6 +53,7 @@ if ( _light_count <= SCREEN_MAX_LIGHTS ) { //Do the deferred lighting in one pas
         
         gpu_set_blendmode( bm_add );
         s_shader_begin( shd_deferred_lighting );
+		s_shader_fog( false, c_black, 0, 0 );
         s_shader_float(           "u_fZFar"       , DEFAULT_Z_FAR   );
         s_shader_surface_sampler( "u_sDepth"      , _depth_surface  );
         s_shader_surface_sampler( "u_sNormal"     , _normal_surface );
