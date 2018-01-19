@@ -88,38 +88,9 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 	    draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
 	    gpu_set_blendenable( true );
         
-        var _surface        = grip_get_surface( "3d" );
-        var _depth_surface  = grip_get_depth_surface( "3d" );
-        var _normal_surface = grip_get_normal_surface( "3d" );
-        var _tan_aspect_y   = -dtan( DEFAULT_FOV/2 );
-        var _tan_aspect_x   = -_tan_aspect_y*grip_get_aspect( "3d" );
-        var _matrix_inverse = matrix_inverse( grip_get_view_matrix( "3d" ) );
-        
-        //gpu_set_blendmode_ext( bm_zero, bm_src_colour );
-        s_shader_begin( shd_shadowmap );
-        
-        s_shader_fog( false, c_black, 0, 0 );
-        s_shader_float(           "u_fZFar"       , DEFAULT_Z_FAR   );
-        s_shader_surface_sampler( "u_sDepth"      , _depth_surface  );
-        s_shader_surface_sampler( "u_sNormal"     , _normal_surface );
-        s_shader_matrix(          "u_mInverseView", _matrix_inverse );
-        s_shader_float(           "u_vTanAspect"  , _tan_aspect_x,
-                                                    _tan_aspect_y   );
-        screen_set_shader_ambient_light();
-        
-        with( obj_directional_light ) {
-            
-            var _map = global.grip_cameras_map[? ID_STR ];
-            _map[? "view*proj matrix" ] = matrix_multiply( _map[? "view matrix" ], _map[? "proj matrix" ] );
-            
-            s_shader_matrix( "u_mLightViewProj", _map[? "view*proj matrix" ] );
-            s_shader_surface_sampler( "u_sLightDepth", grip_get_surface( ID_STR ) );
-            
-            draw_surface_stretched( _surface, _draw_x, _draw_y, _draw_w, _draw_h );
-        }
-        
-        s_shader_end();
-        gpu_set_blendmode( bm_normal );
+	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
+			screen_render_shadowmapped_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
+		}
         
 		/*
 	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {

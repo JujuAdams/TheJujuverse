@@ -1,4 +1,4 @@
-#macro SWELL_SIZE 4
+#macro SWELL_SIZE 0 //4
 #macro SWELL_TIME_FACTOR 32
 #macro C_OFF_WHITE $F7F7F7
 #macro C_AMBIENT $211A1A

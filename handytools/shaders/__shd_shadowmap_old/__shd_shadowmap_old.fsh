@@ -1,7 +1,6 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform float     u_fBias;
 uniform float     u_fZFar;
 uniform vec2      u_vTanAspect;
 uniform sampler2D u_sDepth;
@@ -50,12 +49,24 @@ void main() {
 	vec4 shadowPos = ( u_mLightViewProj * vec4( worldPos, 1. ) );
     
     float shadowDepth = shadowPos.z / u_fZFar;
-    vec2 shadowUV = .5 + .5*shadowPos.xy/shadowPos.z;
-    float lightDepth = RGBToDepth( texture2D( u_sLightDepth, shadowUV ).rgb );
-    float dist = length( ( shadowUV - .5 ) * vec2( 1.3333333, 1. ) );
-    gl_FragColor.rgb +=   step( shadowDepth, lightDepth + u_fBias )
-                        * step( 0., shadowDepth )
-                        * pow( smoothstep( 1., 0., 2.*dist ), .1 );
+    if ( shadowDepth >= 0. ) {
+        
+        vec2 shadowUV = .5 + .5*shadowPos.xy/shadowPos.z;
+        /*if ( ( shadowUV.x >= 0. )
+    	  && ( shadowUV.y >= 0. )
+    	  && ( shadowUV.x <= 1. )
+    	  && ( shadowUV.y <= 1. )
+          && ( shadowDepth > 0. ) ) {*/
+          
+            float lightDepth = RGBToDepth( texture2D( u_sLightDepth, shadowUV ).rgb );
+            if ( shadowDepth <= lightDepth + .001 ) {
+                float dist = length( ( shadowUV - .5 ) * vec2( 1.3333333, 1. ) );
+                gl_FragColor.rgb += pow( smoothstep( 1., 0., 2.*dist ), .1 );
+            }
+          
+        //}
+        
+    }
     
     float fogAmount = clamp( ( viewPos.z - u_vFogRange.x ) / u_vFogRange.y, 0., 1. ); 
     gl_FragColor.rgb = mix( gl_FragColor.rgb, u_vFogColour.rgb, fogAmount*u_vFogRange.z ); //Fog colour

@@ -12,7 +12,8 @@
         "66184121-da27-4283-802e-5936c25a7685",
         "33306845-1f54-476e-9354-a67d52ada4a1",
         "9fdf5200-e0f2-4162-8e87-d05569ef76f3",
-        "9b971c97-02e6-4045-a235-f8dc5d7fd753"
+        "9b971c97-02e6-4045-a235-f8dc5d7fd753",
+        "4c4c0da5-a4b4-431b-88ce-856b5e6a815f"
     ],
     "filterType": "GMShader",
     "folderName": "screen",
