@@ -27,26 +27,29 @@ uniform vec4 u_vLightColour5;
 uniform vec4 u_vLightColour6;
 uniform vec4 u_vLightColour7;
 
+float RGBToDepth( vec3 colour ) {
+	colour /= vec3( 1., 255., 255.*255. );
+    return clamp( colour.r + colour.g + colour.b,    0.0, 1.0 );
+}
+/*
 float RGBAToDepth( vec4 colour ) {
 	colour /= vec4( 1., 255., 255.*255., 255.*255.*255. );
     return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
 }
-
-vec4 InferViewPosition( vec2 texCoord ) {
+*/
+vec4 InferViewPosition( vec2 texCoord, float depth ) {
     //With thanks to kraifpatrik!
-    float depth = RGBAToDepth( texture2D( u_sDepth, texCoord ) );
-    //return vec4( u_fZFar * depth * vec3( u_vTanAspect * ( 2.*texCoord - 1. ), 1. ), 1. );
     return vec4( u_fZFar * depth * u_vTanAspect * ( 2.*texCoord - 1. ), u_fZFar * depth, 1. );
 }
 
-/*
+
 vec3 DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange, vec4 colour ) {
     vec3 delta = posrange.xyz - ws_pos;
     float dist = length( delta );
     return colour.a * colour.rgb * max( 0., dot( ws_normal, delta/dist ) ) * clamp( ( 1. - ( dist / posrange.w ) ), 0., 1. );
 }
-*/
 
+/*
 vec3 DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange, vec4 colour ) {
     
     vec3 delta = posrange.xyz - ws_pos;
@@ -61,11 +64,11 @@ vec3 DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange, vec4 colour ) {
         vec3 n_delta = normalize( delta );
         vec3 reflected = reflect( n_delta, n_ws_normal );
         vec3 n_ws_pos = normalize( ws_pos );
-        /*
-        float lambert = dot( ws_normal, n_delta );
-        float attentuation = 1. - ( dist / posrange.w );
-        diffuse_ = colour.a * colour.rgb * max( 0., lambert ) * clamp( attentuation, 0., 1. );
-        */
+        
+        //float lambert = dot( ws_normal, n_delta );
+        //float attentuation = 1. - ( dist / posrange.w );
+        //diffuse_ = colour.a * colour.rgb * max( 0., lambert ) * clamp( attentuation, 0., 1. );
+        
         float specular_ = pow( max( dot( reflected, ws_pos ), 0. ), 1. );
         
     }
@@ -73,7 +76,7 @@ vec3 DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange, vec4 colour ) {
     return diffuse_ * ( 0. + specular_ );
     
 }
-
+*/
 vec3 DoLightingCustom( vec3 ambientColour, vec3 ws_pos, vec3 ws_norm ) {
     vec3 colour = ambientColour;
     colour += DoLight( ws_pos, ws_norm, u_vLightPosRange0, u_vLightColour0 );
@@ -88,9 +91,13 @@ vec3 DoLightingCustom( vec3 ambientColour, vec3 ws_pos, vec3 ws_norm ) {
 }
 
 void main() {
-    float depth = RGBAToDepth( texture2D( u_sDepth, v_vTexcoord ) );
+    vec4 sample = texture2D( u_sDepth, v_vTexcoord );
+    float depth = RGBToDepth( sample.rgb );
     vec4 viewPos = InferViewPosition( v_vTexcoord, depth );
     float fogAmount = clamp( ( viewPos.z - u_vFogRange.x ) / u_vFogRange.y, 0., 1. ); 
     vec3 normalWS = 2.*texture2D( u_sNormal, v_vTexcoord ).rgb - 1.;
-    gl_FragColor = vec4( mix( DoLightingCustom( u_vAmbientColour.rgb, (u_mInverseView*viewPos).xyz, normalWS ), u_vFogColour.rgb, fogAmount*u_vFogRange.z ), 1. ) ;
+    
+    gl_FragColor     = vec4( DoLightingCustom( u_vAmbientColour.rgb, (u_mInverseView*viewPos).xyz, normalWS ), 1. );
+    gl_FragColor.rgb = mix( gl_FragColor.rgb, u_vFogColour.rgb, fogAmount*u_vFogRange.z ); //Fog colour
+    gl_FragColor     = mix( gl_FragColor, vec4(1.), sample.a ); //Force colour
 }

@@ -31,6 +31,10 @@ if ( SCREEN_3D ) {
     }
     s_shader_end();
     
+	s_shader_begin( shd_depth );
+    s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+    s_shader_end();
+    
 } else {
     
     //2D stuff idk

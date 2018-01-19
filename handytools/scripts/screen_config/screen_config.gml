@@ -6,7 +6,7 @@
 #macro SCREEN_ALLOW_LIGHTING ( true && SCREEN_3D)
 #macro SCREEN_ALLOW_FXAA       true
 #macro SCREEN_ALLOW_DEFERRED ( true && ALLOW_MRT) //This functionality requires MRTs
-#macro SCREEN_ALLOW_DOF      ( true && SCREEN_ALLOW_DEFERRED && ALLOW_MRT) //This functionality requires MRTs and deferred rendering
+#macro SCREEN_ALLOW_DOF      ( false && SCREEN_ALLOW_DEFERRED && ALLOW_MRT) //This functionality requires MRTs and deferred rendering
 
 #macro SCREEN_3D_MRT_SHADER      shd_hlsl_mrt //Use SCREEN_DEFAULT_SHADER for the default shader
 #macro SCREEN_3D_FORWARD_SHADER  shd_glsles_pixel_lighting //Use SCREEN_DEFAULT_SHADER for the default shader#]

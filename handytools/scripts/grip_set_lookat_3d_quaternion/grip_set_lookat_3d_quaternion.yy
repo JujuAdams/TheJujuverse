@@ -1,8 +1,8 @@
 {
-    "id": "4b8fd7cc-1d7a-4a32-a520-8cd1fd761b08",
+    "id": "330cebee-a6ea-4980-a535-cd415afc6d67",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "quaternion_transform_vector",
+    "name": "grip_set_lookat_3d_quaternion",
     "IsCompatibility": false,
     "IsDnD": false
 }

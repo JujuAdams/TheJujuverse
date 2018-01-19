@@ -42,8 +42,9 @@ if ( _map[? "3d" ] ) {
     var _proj_matrix = matrix_build_projection_ortho( _actual_width, _actual_height, -16000, 16000 );
 }
 
-_map[? "view matrix" ] = _view_matrix;
-_map[? "proj matrix" ] = _proj_matrix;
+_map[? "view matrix"      ] = _view_matrix;
+_map[? "proj matrix"      ] = _proj_matrix;
+_map[? "view*proj matrix" ] = matrix_multiply( _view_matrix, _proj_matrix );
 
 var _camera = camera_create();
 camera_set_view_mat( _camera, _view_matrix );
