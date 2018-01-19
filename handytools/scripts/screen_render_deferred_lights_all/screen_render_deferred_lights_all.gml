@@ -29,6 +29,7 @@ surface_set_target( _composite_surface );
         
     gpu_set_blendmode( bm_add );
     
+    #region SIMPLE POINT LIGHTS
     s_shader_begin( shd_deferred_lighting );
         s_shader_float(           "u_fZFar"       , DEFAULT_Z_FAR   );
         s_shader_surface_sampler( "u_sDepth"      , _depth_surface  );
@@ -44,7 +45,9 @@ surface_set_target( _composite_surface );
             draw_surface( _surface, 0, 0 );
         }
     s_shader_end();
+    #endregion
     
+    #region SHADOW MAPPED DIRECTIONAL LIGHTS
     s_shader_begin( shd_shadowmap );
         s_shader_float(           "u_fZFar"         , DEFAULT_Z_FAR   );
         s_shader_surface_sampler( "u_sDepth"        , _depth_surface  );
@@ -61,9 +64,12 @@ surface_set_target( _composite_surface );
             s_shader_matrix(          "u_mLightViewProj", matrix_multiply( _map[? "view matrix" ], _map[? "proj matrix" ] ) );
             s_shader_surface_sampler( "u_sLightDepth"   , grip_get_surface( UNIQUE_NAME ) );
             s_shader_rgb(             "u_vColour"       , colour );
+            s_shader_float(           "u_fSoftness"     , 1 );
+            s_shader_float(           "u_vAspect"       , grip_get_aspect( UNIQUE_NAME ), 1 );
             draw_surface_stretched( _surface, _x, _y, _w, _h );
         }
     s_shader_end();
+    #endregion
 
 surface_reset_target();
     

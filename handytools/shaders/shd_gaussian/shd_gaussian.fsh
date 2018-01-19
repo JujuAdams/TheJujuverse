@@ -1,5 +1,5 @@
-const float RADIUS      =  5.0; //Edit these
-const float SIGMA       =  2.5; //RADIUS/2 is usually a good place to start
+const float RADIUS      =  4.0; //Edit these
+const float SIGMA       =  2.0; //RADIUS/2 is usually a good place to start
 
 const float PI          = 3.14159265358979323846;
 const float SQRT_TWO_PI = 2.506628274631000502415765284811;

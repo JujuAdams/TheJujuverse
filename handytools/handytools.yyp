@@ -2335,14 +2335,6 @@
             }
         },
         {
-            "Key": "4c4c0da5-a4b4-431b-88ce-856b5e6a815f",
-            "Value": {
-                "id": "f19fc233-a2bf-4e7f-83d3-15f25dae49f5",
-                "resourcePath": "shaders\\__shd_shadowmap_old\\__shd_shadowmap_old.yy",
-                "resourceType": "GMShader"
-            }
-        },
-        {
             "Key": "4ceda796-2621-499e-8b5b-75814b09c637",
             "Value": {
                 "id": "8f3c1890-a176-4d24-a7da-2f66c5a283ee",

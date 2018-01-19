@@ -3,7 +3,7 @@ event_inherited();
 range = random_range( 120, 400 );
 colour = c_white; //make_colour_hsv( irandom( 255 ), 255, 255 );
 
-grip_create( UNIQUE_NAME, global.app_surf_w, global.app_surf_h, false, true );
+grip_create( UNIQUE_NAME, 1, 1, true, true );
 grip_activate( UNIQUE_NAME, true );
 
 quat = quaternion_create();
