@@ -45,6 +45,10 @@ with( obj_par_game ) {
             _map[? "range"  ] = range;
             _map[? "colour" ] = colour;
         break;
+        case obj_directional_light:
+            _map[? "range"  ] = range;
+            _map[? "colour" ] = colour;
+        break;
     }
     
     tr_list_add_map( _list, _map );

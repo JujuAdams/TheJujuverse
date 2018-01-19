@@ -1,4 +1,5 @@
-if ( grip_current() == ID_STR ) exit;
+if !( editor_is_open() && global.show_spawners ) exit;
+if ( grip_current() == UNIQUE_NAME ) exit;
 
 screen_click_handle_fog( global.mirror_render? 128 : 0 );
 

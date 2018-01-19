@@ -1,2 +1,2 @@
 event_inherited();
-//grip_destroy( ID_STR );
+//grip_destroy( UNIQUE_NAME );

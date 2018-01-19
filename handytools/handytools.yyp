@@ -2351,14 +2351,6 @@
             }
         },
         {
-            "Key": "4d310edf-2cfa-4b07-9155-0c7277ae5d37",
-            "Value": {
-                "id": "2ecb5388-8966-41ac-a165-2cf623915c63",
-                "resourcePath": "scripts\\screen_render_shadowmapped_lights_all\\screen_render_shadowmapped_lights_all.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "4d6418c3-b651-4e1a-8aa6-84196bbf00f5",
             "Value": {
                 "id": "7f067fe7-9dcc-4394-be35-1d15bd34ee27",
@@ -5583,6 +5575,14 @@
             }
         },
         {
+            "Key": "c1c723ff-1a98-458d-8a4d-83bc66bb8e03",
+            "Value": {
+                "id": "8b58373d-feaf-4d10-a512-76fad56741f9",
+                "resourcePath": "views\\c1c723ff-1a98-458d-8a4d-83bc66bb8e03.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c1e26299-9792-4de6-8b75-149a21b5b5cd",
             "Value": {
                 "id": "b219d12c-f7c2-49f4-a45b-a0d34079d1f5",
@@ -6108,6 +6108,14 @@
                 "id": "df8b363e-ba14-489e-8fa2-29b0ccac1aa7",
                 "resourcePath": "scripts\\audio_config\\audio_config.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d6fd0331-60e3-4d34-a1cd-2f6cc0298e64",
+            "Value": {
+                "id": "ee324ade-ec8b-4c2f-9174-eb54f8b45f95",
+                "resourcePath": "objects\\obj_parent_light\\obj_parent_light.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -7535,7 +7543,6 @@
         "8b3b30db-0af2-48cc-afc0-e76cc0d79e7d",
         "d0082589-6702-49e0-95dd-10ec716d406a",
         "2072ebba-4be3-4b0d-8a12-1147b1e578c5",
-        "4d310edf-2cfa-4b07-9155-0c7277ae5d37",
         "681baa80-4f65-4b5e-ade5-75491448d7ae",
         "ed1f42c1-a2af-4505-8dc9-c3da22cc5b9c",
         "6d347988-e81a-49ab-81c9-e7095e8c3909",

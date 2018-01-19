@@ -6,7 +6,7 @@
 #macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI implementation by @babyj3ans, JIFFY by @net8floz"
 
 //abbreviations
-#macro ID_STR string( id )
+#macro UNIQUE_NAME object_get_name( object_index ) + ":" + string( id )
 #macro APP_SURF application_surface
 #macro DEFAULT undefined
 #macro DEF undefined

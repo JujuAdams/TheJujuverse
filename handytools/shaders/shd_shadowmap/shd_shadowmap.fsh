@@ -2,6 +2,7 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 uniform float     u_fBias;
+uniform vec3      u_vColour;
 uniform float     u_fZFar;
 uniform vec2      u_vTanAspect;
 uniform sampler2D u_sDepth;
@@ -53,7 +54,8 @@ void main() {
     vec2 shadowUV = .5 + .5*shadowPos.xy/shadowPos.z;
     float lightDepth = RGBToDepth( texture2D( u_sLightDepth, shadowUV ).rgb );
     float dist = length( ( shadowUV - .5 ) * vec2( 1.3333333, 1. ) );
-    gl_FragColor.rgb +=   step( shadowDepth, lightDepth + u_fBias )
+    gl_FragColor.rgb +=   u_vColour
+                        * step( shadowDepth, lightDepth + u_fBias )
                         * step( 0., shadowDepth )
                         * pow( smoothstep( 1., 0., 2.*dist ), .1 );
     

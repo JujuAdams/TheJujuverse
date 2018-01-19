@@ -41,6 +41,15 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 _inst.range = _map[? "range" ];
                 _inst.colour = _map[? "colour" ];
             break;
+            case obj_directional_light:
+                var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                _inst.range = _map[? "range" ];
+                _inst.colour = _map[? "colour" ];
+                with( _inst ) {
+                    quat = quaternion_rotate_worldx( quat, -10 );
+                    quat = quaternion_rotate_worldz( quat, 135 );
+                }
+            break;
             default:
                 tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
             break;

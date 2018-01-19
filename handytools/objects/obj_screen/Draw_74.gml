@@ -89,14 +89,9 @@ if ( SCREEN_3D && DEVELOPMENT && global.screen_show_click ) {
 	    gpu_set_blendenable( true );
         
 	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
-			screen_render_shadowmapped_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
-		}
-        
-		/*
-	    if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
 			screen_render_deferred_lights_all( _draw_x, _draw_y, _draw_w, _draw_h, global.screen_main_camera, deferred_composite_surface_a );
 		}
-		*/
+        
 	}
     
 }
