@@ -10,7 +10,7 @@ uniform mat4      u_mInverseView;
 uniform mat4      u_mLightViewProj;
 
 uniform float     u_fBias;
-uniform float     u_fSoftness;
+//uniform float     u_fSoftness;
 uniform vec3      u_vColour;
 uniform vec2      u_vAspect;
 
@@ -54,13 +54,25 @@ void main() {
 	vec4 shadowPos = ( u_mLightViewProj * vec4( worldPos, 1. ) );
     
     float shadowDepth = shadowPos.z / u_fZFar;
-    vec2 shadowUV = .5 + .5*shadowPos.xy/shadowPos.z;
+    vec2 shadowUV = clamp( .5 + .5*shadowPos.xy/shadowPos.z, 0., 1. );
     float lightDepth = RGBToDepth( texture2D( u_sLightDepth, shadowUV ).rgb );
+    
+    float dist = length( ( shadowUV - .5 ) * u_vAspect );
+    gl_FragColor.rgb +=   u_vColour                                  //Colour
+                        * step( 0., shadowUV.x )
+                        * step( 0., shadowUV.y )
+                        * ( 1. - step( 1., shadowUV.x ) )
+                        * ( 1. - step( 1., shadowUV.y ) )
+                        * step( shadowDepth, lightDepth + u_fBias )  //If our world sample is in front of the occluder
+                        * step( 0., shadowDepth )                    //If our world sample is in front of the light source
+                        * texture2D( gm_BaseTexture, shadowUV ).rgb; //Sample light from the input surface
+    /*
     float dist = length( ( shadowUV - .5 ) * u_vAspect );
     gl_FragColor.rgb +=   u_vColour                                           //Colour
                         * step( shadowDepth, lightDepth + u_fBias )           //If our world sample is in front of the occluder
                         * step( 0., shadowDepth )                             //If our world sample is in front of the light source
                         * pow( smoothstep( 1., 0., 2.*dist ), u_fSoftness );  //Circular light
+    */
     
     float fogAmount = clamp( ( viewPos.z - u_vFogRange.x ) / u_vFogRange.y, 0., 1. ); 
     gl_FragColor.rgb = mix( gl_FragColor.rgb, u_vFogColour.rgb, fogAmount*u_vFogRange.z ); //Fog colour

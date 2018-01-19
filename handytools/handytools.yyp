@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "033d40c1-e24b-40e8-b76d-1abac1d2391c",
+            "Value": {
+                "id": "cdb20bb6-fc17-4395-9e29-4790a7e4d4d6",
+                "resourcePath": "scripts\\grip_set_primary_is_depth\\grip_set_primary_is_depth.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "034ddd3e-d7cb-42da-a46f-a389e57cf3bc",
             "Value": {
                 "id": "2f187440-2d40-4d7a-83e1-5bfa3ef7af38",
@@ -5167,6 +5175,14 @@
             }
         },
         {
+            "Key": "b3a94a24-6db5-4d46-8bdf-936a9cabc67a",
+            "Value": {
+                "id": "8de4f9e5-607d-4e42-8d6d-bdb79e423598",
+                "resourcePath": "scripts\\grip_get_primary_is_depth\\grip_get_primary_is_depth.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b3be565a-bd47-42e8-9956-5099b6b7b0fd",
             "Value": {
                 "id": "df5dc784-1f9f-49ae-8b5d-e358d8aa3174",
@@ -7460,6 +7476,7 @@
         "1e1817cc-4e03-437f-a17d-9d7b322dd8ef",
         "9774d33c-bed2-4b7f-930b-35d5237c7380",
         "c745128e-62e9-4981-8499-0d011aa699ca",
+        "b3a94a24-6db5-4d46-8bdf-936a9cabc67a",
         "2706800b-4fa8-4a8a-82c6-44381f6a9262",
         "e4b49b10-b79e-4147-9355-58bcb04c7667",
         "02dc3d85-bfea-4c54-a510-0e8715453cb0",
@@ -7471,6 +7488,7 @@
         "5e85dd4e-a9b0-45eb-82b1-efd895489fcb",
         "d10e4a6a-43cc-4f30-b246-21333637330c",
         "12f378d8-e755-423b-a33b-e34d76cd3340",
+        "033d40c1-e24b-40e8-b76d-1abac1d2391c",
         "a4ac13a1-ec3f-4e29-8d38-9c0f6d842aea",
         "8ba1ecdb-dc40-4d85-9375-126aea4480b6",
         "bb5fc82a-00a1-448c-8c8f-fe8c16845943",

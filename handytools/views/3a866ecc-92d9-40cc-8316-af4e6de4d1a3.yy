@@ -14,7 +14,8 @@
         "844dc4a8-3fdd-4b93-8129-ac23f56f9980",
         "5e85dd4e-a9b0-45eb-82b1-efd895489fcb",
         "d10e4a6a-43cc-4f30-b246-21333637330c",
-        "12f378d8-e755-423b-a33b-e34d76cd3340"
+        "12f378d8-e755-423b-a33b-e34d76cd3340",
+        "033d40c1-e24b-40e8-b76d-1abac1d2391c"
     ],
     "filterType": "GMScript",
     "folderName": "setters",

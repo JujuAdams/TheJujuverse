@@ -62,11 +62,11 @@ surface_set_target( _composite_surface );
         with( obj_directional_light ) {
             var _map = global.grip_cameras_map[? UNIQUE_NAME ];
             s_shader_matrix(          "u_mLightViewProj", matrix_multiply( _map[? "view matrix" ], _map[? "proj matrix" ] ) );
-            s_shader_surface_sampler( "u_sLightDepth"   , grip_get_surface( UNIQUE_NAME ) );
+            s_shader_surface_sampler( "u_sLightDepth"   , grip_get_depth_surface( UNIQUE_NAME ) );
             s_shader_rgb(             "u_vColour"       , colour );
-            s_shader_float(           "u_fSoftness"     , 1 );
+            //s_shader_float(           "u_fSoftness"     , 1 );
             s_shader_float(           "u_vAspect"       , grip_get_aspect( UNIQUE_NAME ), 1 );
-            draw_surface_stretched( _surface, _x, _y, _w, _h );
+            draw_surface_stretched( grip_get_surface( UNIQUE_NAME ), _x, _y, _w, _h );
         }
     s_shader_end();
     #endregion
