@@ -16,6 +16,7 @@ if ( SCREEN_3D ) {
         if ( surface_exists( _surface ) && surface_exists( _normal_surface ) ) {
             var _lsf = ( surface_getpixel_ext( _surface       , global.app_surf_w*0.5, global.app_surf_h*0.5 ) >> 24 ) & 255;
             var _msf = ( surface_getpixel_ext( _normal_surface, global.app_surf_w*0.5, global.app_surf_h*0.5 ) >> 24 ) & 255;
+            global.click_colour = make_colour_rgb( _lsf, _msf, 0 );
             var _index = _lsf + _msf*256;
             global.click_instance_over = (( _index > 0 ) && ( _index < array_length_1d( global.click_array ) ) )? global.click_array[_index] : noone;
         }
@@ -39,12 +40,12 @@ if ( SCREEN_3D ) {
         //Find the instance underneath the centre of the view
         var _surface = grip_get_surface( "click" );
         if ( surface_exists( _surface ) ) {
-            var _colour = surface_getpixel( _surface, global.app_surf_w*0.5, global.app_surf_h*0.5 );
-            //var _blue  = ( _colour >> 16 ) & 255; //We don't need this channel for default behaviour
-            var _green = ( _colour >>  8 ) & 255;
-            var _red   =   _colour         & 255;
+            global.click_colour = surface_getpixel( _surface, global.app_surf_w*0.5, global.app_surf_h*0.5 );
+            //var _blue  = ( global.click_colour >> 16 ) & 255; //We don't need this channel for default behaviour
+            var _green = ( global.click_colour >>  8 ) & 255;
+            var _red   =   global.click_colour         & 255;
             var _index = _red + _green*256;
-            global.click_instance_over = global.click_array[_index];
+            global.click_instance_over = (( _index > 0 ) && ( _index < array_length_1d( global.click_array ) ) )? global.click_array[_index] : noone;
         }
         
         global.click_depth    = 0;

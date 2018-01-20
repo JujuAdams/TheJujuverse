@@ -7,9 +7,11 @@ grip_surface_set_target( grip_current(), true );
 switch( grip_current() ) {
     
     case "3d": //What the player sees
+        
+        //
+        if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) gpu_set_blendmode_ext( bm_one, bm_zero );
+        
         //This check fixes a bug with GM automatically submitting a blank vertex buffer to a shader in the wrong format
-        //gpu_set_blendenable( false );
-        gpu_set_blendmode_ext( bm_one, bm_zero );
         if ( !instance_exists( obj_par_3d ) ) s_shader_end();
     break;
     

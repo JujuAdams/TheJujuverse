@@ -17,12 +17,13 @@ if ( FPS_ON ) {
 }
 
 if ( SCREEN_3D ) {
-    global.click_array[ instance_count-1 ] = noone;
-    global.click_array[                0 ] = noone;
-    global.click_instance_over  = noone;
-    global.click_depth          = 0.5;
-    global.click_depth_smoothed = 0.5;
-    global.click_distance       = DEFAULT_Z_NEAR + (DEFAULT_Z_FAR - DEFAULT_Z_NEAR)*global.click_depth;
+    global.click_array[instance_count-1] = noone;
+    global.click_array[               0] = noone;
+    global.click_instance_over           = noone;
+    global.click_colour                  = c_black;
+    global.click_depth                   = 0.5;
+    global.click_depth_smoothed          = 0.5;
+    global.click_distance                = DEFAULT_Z_NEAR + (DEFAULT_Z_FAR - DEFAULT_Z_NEAR)*global.click_depth;
 }
 
 light_priority = ds_priority_create();
