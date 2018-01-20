@@ -7,9 +7,9 @@ uniform sampler2D u_sDepth;
 uniform sampler2D u_sNormal;
 uniform mat4      u_mInverseView;
 
-uniform vec3 u_vFogColour; //RGB
-uniform vec3 u_vFogRange; //.x = start, .y = (end-start), .z = enable
-uniform vec4 u_vAmbientColour;
+//uniform vec3 u_vFogColour; //RGB
+//uniform vec3 u_vFogRange; //.x = start, .y = (end-start), .z = enable
+//uniform vec4 u_vAmbientColour;
 uniform vec4 u_vLightPosRange0;
 uniform vec4 u_vLightPosRange1;
 uniform vec4 u_vLightPosRange2;
@@ -94,10 +94,11 @@ void main() {
     vec4 sample = texture2D( u_sDepth, v_vTexcoord );
     float depth = RGBToDepth( sample.rgb );
     vec4 viewPos = InferViewPosition( v_vTexcoord, depth );
-    float fogAmount = clamp( ( viewPos.z - u_vFogRange.x ) / u_vFogRange.y, 0., 1. ); 
     vec3 normalWS = 2.*texture2D( u_sNormal, v_vTexcoord ).rgb - 1.;
+    //float fogAmount = clamp( ( viewPos.z - u_vFogRange.x ) / u_vFogRange.y, 0., 1. ); 
     
-    gl_FragColor     = vec4( DoLightingCustom( u_vAmbientColour.rgb, (u_mInverseView*viewPos).xyz, normalWS ), 1. );
-    gl_FragColor.rgb = mix( gl_FragColor.rgb, u_vFogColour.rgb, fogAmount*u_vFogRange.z ); //Fog colour
+    //gl_FragColor     = vec4( DoLightingCustom( u_vAmbientColour.rgb, (u_mInverseView*viewPos).xyz, normalWS ), 1. );
+    //gl_FragColor.rgb = mix( gl_FragColor.rgb, u_vFogColour.rgb, fogAmount*u_vFogRange.z ); //Fog colour
+    gl_FragColor     = vec4( DoLightingCustom( vec3(0.), (u_mInverseView*viewPos).xyz, normalWS ), 1. );
     gl_FragColor     = mix( gl_FragColor, vec4(1.), sample.a ); //Force colour
 }

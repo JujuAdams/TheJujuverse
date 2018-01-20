@@ -37,8 +37,6 @@ surface_set_target( _composite_surface );
         s_shader_matrix(          "u_mInverseView", _matrix_inverse );
         s_shader_float(           "u_vTanAspect"  , _tan_aspect_x,
                                                     _tan_aspect_y   );
-        screen_set_shader_ambient_light( c_black, 0 );
-    	s_shader_fog( false, c_black, 0, 0 );
     
         for( var _light = 0; _light < _light_count; _light += SCREEN_MAX_LIGHTS ) {
             screen_set_shader_lights( _light, min( SCREEN_MAX_LIGHTS, _light_count - _light ) );
@@ -56,17 +54,15 @@ surface_set_target( _composite_surface );
         s_shader_float(           "u_vTanAspect"    , _tan_aspect_x,
                                                       _tan_aspect_y   );
         s_shader_float(           "u_fBias"         , 0.005           );
-        screen_set_shader_ambient_light( c_black, 0 );
-        s_shader_fog( false, c_black, 0, 0 );
         
         with( obj_directional_light ) {
             var _map = global.grip_cameras_map[? UNIQUE_NAME ];
             s_shader_matrix(          "u_mLightViewProj", matrix_multiply( _map[? "view matrix" ], _map[? "proj matrix" ] ) );
-            s_shader_surface_sampler( "u_sLightDepth"   , grip_get_depth_surface( UNIQUE_NAME ) );
+            s_shader_surface_sampler( "u_sLightDepth"   , grip_get_surface( UNIQUE_NAME ) );
             s_shader_rgb(             "u_vColour"       , colour );
-            //s_shader_float(           "u_fSoftness"     , 1 );
             s_shader_float(           "u_vAspect"       , grip_get_aspect( UNIQUE_NAME ), 1 );
-            draw_surface_stretched( grip_get_surface( UNIQUE_NAME ), _x, _y, _w, _h );
+            s_shader_sprite_uv_ltwh(  "u_vSpriteUVs"    , light_sprite, light_image );
+            draw_sprite_stretched( light_sprite, light_image, _x, _y, _w, _h );
         }
     s_shader_end();
     #endregion

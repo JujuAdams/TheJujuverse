@@ -1,5 +1,5 @@
 {
-    "id": "33306845-1f54-476e-9354-a67d52ada4a1",
+    "id": "00509bf9-2ade-469b-928b-410ff7affb4e",
     "modelName": "GMShader",
     "mvc": "1.0",
     "name": "shd_shadowmap",

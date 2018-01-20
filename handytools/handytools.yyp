@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "00509bf9-2ade-469b-928b-410ff7affb4e",
+            "Value": {
+                "id": "4d5e6d1d-68bb-4928-baf2-e8e9c1bca576",
+                "resourcePath": "shaders\\shd_shadowmap\\shd_shadowmap.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "0127f1be-8047-4b2f-9e4a-2867e9a1aeca",
             "Value": {
                 "id": "171907fa-ce65-4ae8-a952-76736f63e4b3",
@@ -1588,14 +1596,6 @@
                 "id": "cfd7741d-3f4f-4450-9d73-4798b581e0ea",
                 "resourcePath": "scripts\\grip_set_lookat_3d_quaternion\\grip_set_lookat_3d_quaternion.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "33306845-1f54-476e-9354-a67d52ada4a1",
-            "Value": {
-                "id": "2b1c5c47-ac41-43dd-b3d6-bdc36a81e38a",
-                "resourcePath": "shaders\\shd_shadowmap\\shd_shadowmap.yy",
-                "resourceType": "GMShader"
             }
         },
         {
@@ -5028,6 +5028,14 @@
                 "id": "06082a58-6978-4860-8435-c5db7957a773",
                 "resourcePath": "views\\adf43556-f122-4163-953a-63635f1e6c14.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ae9e48e4-4afe-4be7-8609-cad883f458b6",
+            "Value": {
+                "id": "8cb4b2f2-a430-46cc-95a3-356b47a679f0",
+                "resourcePath": "sprites\\spr_light_map\\spr_light_map.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
