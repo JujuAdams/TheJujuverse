@@ -108,6 +108,7 @@ if ( window_show ) {
                 imguigml_text( TITLE + ", " + VERSION + " " + QU + VERSION_NOMIKER + QU );
                 imguigml_text( "Built " + DATE + " by " + BUILDER );
                 imguigml_new_line();
+                repeat( 5 ) imguigml_spacing();
                 imguigml_text( "F11 = Open/Close editor window" );
                 imguigml_text( "Space = Collapse window" );
                 imguigml_text( "Shift = Move slow" );
@@ -117,6 +118,7 @@ if ( window_show ) {
                 imguigml_text( "Shift+Num = Select tool (or click on the tabs)" );
                 imguigml_text( "Tab = Return to previous tool" );
                 imguigml_new_line();
+                repeat( 5 ) imguigml_spacing();
                 
                 #region EDITOR TOGGLES
                 
@@ -250,6 +252,7 @@ if ( window_show ) {
                 #region NAVIGATION
                 imguigml_new_line();
                 imguigml_separator();
+                repeat( 5 ) imguigml_spacing();
                 imguigml_new_line();
                 imguigml_text( concat( "Room ", global.game_room ) );
             

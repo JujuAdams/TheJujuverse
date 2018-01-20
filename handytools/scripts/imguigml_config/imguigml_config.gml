@@ -1,10 +1,10 @@
 ///@function imguigml_config()
 ///@desc imguigml configuration
 
-#macro IMGUI_TRANSPARENCY 0.9
+#macro IMGUI_TRANSPARENCY 1
 
 /// Input configuration
-#macro Imguigml_Show_ImGui_cursor            (false)  // if this is false, we won't touch the GMS cursor while ImGui is active.
+#macro Imguigml_Show_ImGui_cursor            (true)  // if this is false, we won't touch the GMS cursor while ImGui is active.
 #macro Imguigml_User_override                (true)  // if this is true, ImGuiGML will not call `window_set_cursor()` at the end of the step.
 
 /// Debug Configuration
