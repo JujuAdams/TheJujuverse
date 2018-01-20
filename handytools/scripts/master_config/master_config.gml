@@ -12,7 +12,7 @@
 #macro VERSION_NOMIKER "Preview"
 #macro CREDITS "@jujuadams + @i_am_thireen + @tophtacular + @blokatt\n" + HANDYTOOLS_CREDITS + "\nSpecial Thanks: The /r/GameMaker Discord"
 #macro BUILDER "@jujuadams"
-#macro DATE "2017.12.20" //always use YYYY/MM/DD
+#macro DATE "2017.01.20" //always use YYYY/MM/DD
 
 //services
 #macro TRACE_ON        true

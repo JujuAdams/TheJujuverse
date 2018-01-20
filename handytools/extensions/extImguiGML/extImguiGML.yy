@@ -42,8 +42,7 @@
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
-                        2,
-                        2
+                        
                     ],
                     "externalName": "Init",
                     "help": "initialze imguigml (_display_width, _display_height)",
@@ -152,6 +151,7 @@
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
+                        2,
                         1
                     ],
                     "externalName": "CreateFontTexture",
@@ -522,21 +522,6 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "_extImguiGML_set_next_window_content_size",
-                    "returnType": 2
-                },
-                {
-                    "id": "97d9e43b-605f-4350-ac22-7820884917f3",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "SetNextWindowContentWidth",
-                    "help": "",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "_extImguiGML_set_next_window_content_width",
                     "returnType": 2
                 },
                 {
@@ -2887,11 +2872,11 @@
                     "args": [
                         
                     ],
-                    "externalName": "GetItemsLineHeightWithSpacing",
+                    "externalName": "GetFrameHeightWithSpacing",
                     "help": "",
                     "hidden": false,
                     "kind": 1,
-                    "name": "_extImguiGML_get_items_line_height_with_spacing",
+                    "name": "_extImguiGML_get_frame_height_with_spacing",
                     "returnType": 2
                 },
                 {
@@ -3267,36 +3252,6 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "_extImguiGML_is_window_hovered",
-                    "returnType": 2
-                },
-                {
-                    "id": "5fcdbf71-a663-4fb6-b109-aeee0a738052",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "IsRootWindowFocused",
-                    "help": "",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "_extImguiGML_is_root_window_focused",
-                    "returnType": 2
-                },
-                {
-                    "id": "82e50bf7-865c-4e94-8799-fb665b4fb40f",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "IsRootWindowOrAnyChildFocused",
-                    "help": "",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "_extImguiGML_is_root_window_or_any_child_focused",
                     "returnType": 2
                 },
                 {
@@ -4297,7 +4252,7 @@
                     "args": [
                         
                     ],
-                    "externalName": "IOSetOSXBehaviors",
+                    "externalName": "IOSetOptMacOSXBehaviors",
                     "help": "OS X style: Text editing cursor movement using Alt instead of Ctrl, Shortcuts using Cmd\/Super instead of Ctrl, Line\/Text Start and End using Cmd+Arrows instead of Home\/End, Double click selects by word instead of selecting whole text, Multi-selection in lists uses Cmd\/Super instead of Ctrl",
                     "hidden": false,
                     "kind": 1,
@@ -4312,7 +4267,7 @@
                     "args": [
                         
                     ],
-                    "externalName": "",
+                    "externalName": "IOGetOptMacOSXBehaviors",
                     "help": "OS X style: Text editing cursor movement using Alt instead of Ctrl, Shortcuts using Cmd\/Super instead of Ctrl, Line\/Text Start and End using Cmd+Arrows instead of Home\/End, Double click selects by word instead of selecting whole text, Multi-selection in lists uses Cmd\/Super instead of Ctrl",
                     "hidden": false,
                     "kind": 1,
@@ -4425,6 +4380,1628 @@
                     "kind": 1,
                     "name": "_extRousrDLL_callstack_shutdown",
                     "returnType": 2
+                },
+                {
+                    "id": "b14133f5-d9b5-42c8-bf25-274eeb5dae59",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "BeginTabBar",
+                    "help": "Begin a new tab bar (_str_id, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_begin_tab_bar",
+                    "returnType": 2
+                },
+                {
+                    "id": "50f820b4-c561-4fbd-921c-415e318f50cb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "EndTabBar",
+                    "help": "End tab bar",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_end_tab_bar",
+                    "returnType": 2
+                },
+                {
+                    "id": "94d26af4-9322-4310-bc8b-decda4b68f7e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TabItem",
+                    "help": "create a tab item (_label, [_open=undefined], [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_tab_item",
+                    "returnType": 2
+                },
+                {
+                    "id": "164caab9-ac13-43c7-a7ff-8d4b9b82fe11",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "SetTabItemClosed",
+                    "help": "set an item closed (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_set_tab_item_closed",
+                    "returnType": 2
+                },
+                {
+                    "id": "ba65aa5b-d14e-49e1-89c8-9773a9eb99ca",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "SetTabItemSelected",
+                    "help": "set a tab item selected (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_set_tab_item_selected",
+                    "returnType": 2
+                },
+                {
+                    "id": "6bb1c245-ca54-49ce-86db-8e09df0dc59a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowTabsDemo",
+                    "help": "show the tabs demo (_title, [_open=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_show_tabs_demo",
+                    "returnType": 2
+                },
+                {
+                    "id": "35849655-e73c-47e4-9156-46e429e46649",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowsTabsDebug",
+                    "help": "show tabs debug info ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_extra_show_tabs_debug",
+                    "returnType": 2
+                },
+                {
+                    "id": "d5a02e34-5ec5-4760-8c72-ccd1f8def957",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddLine",
+                    "help": "Adds a line to the draw list (_x1, _y1, _x2, _y1, _col, [_line_thickness=1.0f])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_line",
+                    "returnType": 2
+                },
+                {
+                    "id": "2e66c56f-0079-4a39-ba94-f6820420410c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddRect",
+                    "help": "Adds a rectangle to the drawlist (_x1, _y1, _x2, _y2, _col, [_roundine = 0.0], [_rounding_corner_flags = ~0], [_thickness = 0.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "d6991798-3a2a-4b4d-94c2-3ae5eeed8d17",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddRectFilled",
+                    "help": "Adds a filled rectangle to the drawlist ( _x1, _y1, _x2, _y2, _col, [_rounding = 0.0], [_rounding_corners_flags = ~0] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_rect_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "0f17f55c-e04f-4431-aa06-9c8d29bfb059",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddRectFilledMultiColor",
+                    "help": "Adds a filled rectangle to the draw list ( _x1, _y2, _x2, _y2, _col_upr_left, _col_upr_right, _col_bot_left, _col_bot_right )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_rect_filled_multicolor",
+                    "returnType": 2
+                },
+                {
+                    "id": "8c758fad-fab2-4521-8b31-a830befe784c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddQuad",
+                    "help": "Adds a quad to the drawlist ( _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4, _col, [_thickness = 0.0] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_quad",
+                    "returnType": 2
+                },
+                {
+                    "id": "20632a00-128d-4b5a-b472-cfe123421229",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddQuadFilled",
+                    "help": "Adds a filled quad to the draw list ( _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4, _col )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_quad_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "c297bf95-d530-4374-b2d3-31a4ac3b0822",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddTriangle",
+                    "help": "Adds a triangle to the drawlist ( _x1, _y1, _x2, _y2, _x3, _y3, [thickness = 0.0] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_triangle",
+                    "returnType": 2
+                },
+                {
+                    "id": "93614a06-0095-4864-9c8c-f8787eba2ba7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddTriangleFilled",
+                    "help": "Adds a filled triangle to the drawlist ( _x1, _y2, _x2, _y2, _x3, _y3, _col )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_triangle_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "aad1a777-21be-4ed8-8c47-f6f94ebc740a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddCircle",
+                    "help": "Adds a circle to the drawlist ( _center_x, _center_y, _radius, _col, [ _num_segments = 12 ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_circle",
+                    "returnType": 2
+                },
+                {
+                    "id": "e6c2aa1a-5190-4d25-87a9-441e67efc204",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddCircleFilled",
+                    "help": "Adds a filled circle to the drawlist ( _center_x, _center_y, _radius, _col, [ _num_segments = 12 ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_circle_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "05273652-25c3-43c8-99df-66a4621739ca",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddText",
+                    "help": "Adds text to the drawlist ( _pos_x, _pos_y, _col, _text, _wrap_width ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "eaf6eff7-e12d-4661-a102-bc7e84f1a1bf",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddImage",
+                    "help": "Adds an image to the draw list ( texture_id, _x1, _y1, _x2, _y2, [ _u1 = 0 ], [ _v1 = 0 ], [ _u2 = 0], [ _v2 = 0 ], [_col = c_white] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_image",
+                    "returnType": 2
+                },
+                {
+                    "id": "ef86db70-8169-4db4-ad38-87bab4b51666",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddImageQuad",
+                    "help": "Adds an image quad to the draw list ( texture_id, _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4, [ _u1 = 0 ], [ _v1 = 0], [ _u2 = 0 ], [ _v2 = 0], [ _u3 = 0 ], [ _v3 = 0], [ _u4 = 0 ], [ _v4 = 0], [_col = c_white )  ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_image_quad",
+                    "returnType": 2
+                },
+                {
+                    "id": "3b2255b7-f213-405b-a629-0065d6c1edc4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddPolyline",
+                    "help": "Adds a polyline to the drawlist ( points_array, points_count, _col, _closed, _thickness, _use_aa )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_polyline",
+                    "returnType": 2
+                },
+                {
+                    "id": "0fc0082c-cd23-40c1-bc9f-63491401976f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddConvexPolyFilled",
+                    "help": "Adds filled convex poly to the drawlist ( points_array, points_count, _col, use_aa )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_convex_poly_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "56ad2af6-a10b-4739-89d5-690977a451e2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AddBezierCurve",
+                    "help": "Adds a bezier curve to the drawlist ( _pos_x1, _pos_y1, curve_x1, _curve_y1, _curve_x2, _curve_y2, _pos_x2, _pos_y2 , _col, _thickness, [ _num_segments = 0 ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_add_bezier_curve",
+                    "returnType": 2
+                },
+                {
+                    "id": "2a49b1fa-e022-4c74-a79d-85de2ce3c47b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathClear",
+                    "help": "Clears the path ( )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "b7d8c20a-1310-401a-af49-c2efbdc86e39",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathLineTo",
+                    "help": "Adds a point to a path? ( _pos_x, _pos_y ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_line_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "b0bd31dd-faaa-464e-8386-dc60fada5389",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathLineToMergeDuplicate",
+                    "help": "??? ( _pos_x, _pos_y ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_line_to_merge_duplicate",
+                    "returnType": 2
+                },
+                {
+                    "id": "0b971f57-a7ec-41f1-9c10-53c59fbdef26",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathFillConvex",
+                    "help": "Fills a convex path ( _col ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_fill_convex",
+                    "returnType": 2
+                },
+                {
+                    "id": "25178463-f1a4-4ff3-80e6-b669f57e6ab8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathStroke",
+                    "help": "Adds stroke to a path ( _col, closed, [thickness = 0.0] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_stroke",
+                    "returnType": 2
+                },
+                {
+                    "id": "a8427ea3-66d0-4f74-b6bb-e89f46c51e80",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathArcTo",
+                    "help": "Adds an arc to a path ( _center_x, _center_y, _radius, _min, _max, [ _num_segments = 10 ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_arc_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "fb697c3b-4dae-4b09-ab2c-60e0df1dbf06",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathArcToFast",
+                    "help": "More performant path_arc ( _center_x, _center_y, _radius, _min, _max, [ _num_segments = 10] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_arc_to_fast",
+                    "returnType": 2
+                },
+                {
+                    "id": "87ed4e14-eb27-48f9-9484-aad284750b39",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathBezierCurveTo",
+                    "help": "Curve path to ( _x1, _y1, _x2, _y2, _x3, _y3, [ _num_segments = 0 ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_bezier_curve_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "8a88bdbf-79bb-40f7-b8e4-b1c6b20c998e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PathRect",
+                    "help": "draw a rect on the path ( _x1, _x2, _y1, _y2, [rounding = 0.0], [rounding_corner_flags = ~0 ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_path_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "30183d51-fd59-4226-bf50-36cb22891f3b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ChannelsSplit",
+                    "help": "Split channels ( _channels_count ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_channels_split",
+                    "returnType": 2
+                },
+                {
+                    "id": "db0cb609-dfa3-46e6-b2a8-0efe08437aa0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ChannelsMerge",
+                    "help": "Merge channels ( ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_channels_merge",
+                    "returnType": 2
+                },
+                {
+                    "id": "17458a40-61da-4087-b860-d902c68fb732",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ChannelsSetCurrent",
+                    "help": "Sets current chanel ( _channel_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_channels_set_current",
+                    "returnType": 2
+                },
+                {
+                    "id": "55b92250-7b95-46e6-8ed3-d85c539117b5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "DrawPushClipRect",
+                    "help": "Render-level scissoring ( _x1, _y1, _x2, _y2, [ _intersect_with_current_clip_rect = false ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_push_clip_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "9ad5761d-caa2-4c43-812f-9a1424235115",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PushClipRectFullscreen",
+                    "help": "Push the clip rect for the fullscreen  ( ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_push_clip_rect_fullscreen",
+                    "returnType": 2
+                },
+                {
+                    "id": "67aa95c7-f84d-429a-ba85-fa78bf57ef37",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PushTextureID",
+                    "help": "Pushes texture ID to drawlist ( _texture_id ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_push_texture_id",
+                    "returnType": 2
+                },
+                {
+                    "id": "d685ef1b-78f7-4500-8c0c-ff46d07b69e5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "PopTextureID",
+                    "help": "Pops texture from drawlist ( ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_pop_texture_id",
+                    "returnType": 2
+                },
+                {
+                    "id": "14f4c6d8-1c5d-439c-9887-ea858e4a6b18",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "GetClipRectMin",
+                    "help": "Gets the min clipping rectangle ( )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_get_clip_rect_min",
+                    "returnType": 2
+                },
+                {
+                    "id": "4eff528c-ff3e-4c86-bbc2-20050f4081aa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "GetClipRectMax",
+                    "help": "Gets the max clipping rectangle ( ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_get_clip_rect_max",
+                    "returnType": 2
+                },
+                {
+                    "id": "15c158ff-f60d-418d-b7de-347d0176a1cb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "DrawPopClipRect",
+                    "help": "End Render-level scissoring ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_pop_clip_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "833d34ec-8ace-46c0-9d96-6fbc85f69a67",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorCreate",
+                    "help": "create a new texteditor ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_create",
+                    "returnType": 2
+                },
+                {
+                    "id": "7f9fa2d2-55ad-4fe7-aeac-152025e446f3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorsCleanup",
+                    "help": "Cleans up after the text editor (  )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditors_cleanup",
+                    "returnType": 2
+                },
+                {
+                    "id": "cd8f7775-8427-434a-a758-38740e97bf01",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetLanguageDefinition",
+                    "help": "Gets the current text editor language definition ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_language_definition",
+                    "returnType": 2
+                },
+                {
+                    "id": "ccec2822-e0af-4a58-b1f0-ee332ea5db8d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetLanguageDefinition",
+                    "help": "Sets the current text editor language definition ( _editor_index, _language_definition ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_language_definition",
+                    "returnType": 2
+                },
+                {
+                    "id": "edd1852e-f589-4725-96cc-6922c24255bf",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetPalette",
+                    "help": "Gets the palette of the current text editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "28e9d867-7016-4f1a-94af-0bb7d69b7ed5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetPalette",
+                    "help": "Sets the palette for the current text editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "2e89014b-5356-43bf-96a4-8a0913ca18a0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorRender",
+                    "help": "Renders the text editor ( _editor_index, _title, size_x, _size_y, _borde )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_render",
+                    "returnType": 2
+                },
+                {
+                    "id": "6d0a38d3-e57c-4f6e-bf1f-0e2ff6489817",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        1
+                    ],
+                    "externalName": "TextEditorSetText",
+                    "help": "Sets the text of the current editor ( _editor_index, text ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "493225ad-dad3-429c-9e95-3d75ab931b9e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "TextEditorGetText",
+                    "help": "Gets the text from the current text editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_text",
+                    "returnType": 1
+                },
+                {
+                    "id": "002bbb45-2695-4837-958d-eeb01e3f3e41",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetSelectedText",
+                    "help": "Gets the selected text from the current editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_selected_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "372d02af-64f0-4a0c-91c3-91769fc0b0c6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetTotalLines",
+                    "help": "Gets the total lines from the current text editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_total_lines",
+                    "returnType": 2
+                },
+                {
+                    "id": "71366ca9-9659-4ffc-9c0d-76538c548d58",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorIsOverwrite",
+                    "help": "Checks if current text editor is in overwrite mode ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_is_overwrite",
+                    "returnType": 2
+                },
+                {
+                    "id": "d00334d9-d9a8-48b3-9f94-8a487bf06faa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetReadOnly",
+                    "help": "Sets the text editor to read only ( _editor_index, _value ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_read_only",
+                    "returnType": 2
+                },
+                {
+                    "id": "659aa43a-9c50-4398-8264-b0b2bc1ee1a5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorIsReadOnly",
+                    "help": "Checks if the current editor is read only ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_is_read_only",
+                    "returnType": 2
+                },
+                {
+                    "id": "dfaf49b5-1a6c-47d4-b14f-2bcc1ac516e6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetCursorPosition",
+                    "help": "Gets the line and column from the current text editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_cursor_position",
+                    "returnType": 2
+                },
+                {
+                    "id": "e85acb2b-aa55-49db-9d15-d0fe98707b8e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetCursorPosition",
+                    "help": "Sets the cursor position using line and column ( _editor_index, _line, _col )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_cursor_position",
+                    "returnType": 2
+                },
+                {
+                    "id": "0837f759-332e-41bc-9f24-3744e423c095",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorInsertText",
+                    "help": "Inserts text at current pos in _editor_index ( _editor_index, _text ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_insert_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "bdbc55d9-2e12-448b-a949-1ee1f255009a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveUp",
+                    "help": "Moves up  lines in the text editor ( _editor_index, _amount, [select=false] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_up",
+                    "returnType": 2
+                },
+                {
+                    "id": "c654392c-26ff-490f-af2b-904e898bdcb1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveDown",
+                    "help": "Moves down lines in the text editor ( _editor_index, _amount, [ _select = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_down",
+                    "returnType": 2
+                },
+                {
+                    "id": "bb90e03a-5fce-4f4c-bc55-b21ae81a09e1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveLeft",
+                    "help": "Moves columns in the current text editor ( _editor_index, _amount, [ _select = false ] , [ _word_mode = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_left",
+                    "returnType": 2
+                },
+                {
+                    "id": "02f58de7-2829-4150-a410-fb51afbdfdc0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveRight",
+                    "help": "Moves columns in the current text editor ( _editor_index, _amount, [ _select = false ] , [ _word_mode = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_right",
+                    "returnType": 2
+                },
+                {
+                    "id": "16869769-dca1-4e60-b35e-0dcfd16bd7da",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveTop",
+                    "help": "Skips to top of current editor ( _editor_index, [ _select = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_top",
+                    "returnType": 2
+                },
+                {
+                    "id": "f75f797c-8ad0-4106-91e7-503f3868f521",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveBottom",
+                    "help": "Moves to the bottom of the current editor ( _editor_index, [ _select = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_bottom",
+                    "returnType": 2
+                },
+                {
+                    "id": "1943fdfd-48c7-4494-b30e-bdecf925a443",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveHome",
+                    "help": "Moves to the home position of the current editor ( _editor, [ _select = false ] ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_home",
+                    "returnType": 2
+                },
+                {
+                    "id": "0abd2e72-f771-4d11-bc50-ecc7f1828936",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorMoveEnd",
+                    "help": "Moves position to end of line in current editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_move_end",
+                    "returnType": 2
+                },
+                {
+                    "id": "b92cf839-ff53-4f23-9d6f-e416351e9771",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetSelectionStart",
+                    "help": "Sets the start select position in the current editor ( _editor_index, _line, _col ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_selection_start",
+                    "returnType": 2
+                },
+                {
+                    "id": "a30e64ae-7ca4-4103-8a76-82e24630f0d1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetSelectionEnd",
+                    "help": "Sets the end select position in the current editor ( _editor_index, _line, _col ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_selection_end",
+                    "returnType": 2
+                },
+                {
+                    "id": "5413fd41-1f5f-47f9-9205-c50c85148add",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSelectWordUnderCursor",
+                    "help": "Selects the word under the mouse cursor in the current editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_select_word_under_cursor",
+                    "returnType": 2
+                },
+                {
+                    "id": "00224191-c034-4adb-8e6c-5b95481a8354",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorHasSelection",
+                    "help": "Checks if current editor has selected text ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_has_selection",
+                    "returnType": 2
+                },
+                {
+                    "id": "50ab039f-0f15-439c-8855-0346932ea625",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorCopy",
+                    "help": "Copies the selected text ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_copy",
+                    "returnType": 2
+                },
+                {
+                    "id": "fd836342-bb71-48cc-8116-c5d4ec19eb64",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorCut",
+                    "help": "Cuts the selected text from the editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_cut",
+                    "returnType": 2
+                },
+                {
+                    "id": "f6c661ea-60e8-4c02-a3eb-106f6d3bf221",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorPaste",
+                    "help": "Pastes text from the clipboard into the current position in the editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_paste",
+                    "returnType": 2
+                },
+                {
+                    "id": "51c5b621-098c-491c-91c1-0984466cc98e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorDelete",
+                    "help": "Deletes from the current editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_delete",
+                    "returnType": 2
+                },
+                {
+                    "id": "2944d0ec-4d30-4300-ae16-6265463edd6f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorCanUndo",
+                    "help": "Check if there is undo history ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_can_undo",
+                    "returnType": 2
+                },
+                {
+                    "id": "18b3d6ac-b05f-4454-82f5-ebf9f3377930",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorCanRedo",
+                    "help": "Checks for redo history in the current editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_can_redo",
+                    "returnType": 2
+                },
+                {
+                    "id": "7e8a98ce-f2b2-402d-94c2-dbdb8862aefc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorUndo",
+                    "help": "Undo ( _editor_index, _steps ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_undo",
+                    "returnType": 2
+                },
+                {
+                    "id": "f036b056-e4a5-4b01-93e6-8a35d8a722b3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorRedo",
+                    "help": "Redo ( _editor_index, _steps ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_redo",
+                    "returnType": 2
+                },
+                {
+                    "id": "4ffa0cca-bb9e-4c97-9f6e-201033f317c6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetLightPalette",
+                    "help": "Gets the light palette that may be used with editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_light_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "a97d639f-7957-4182-b10c-2be48256c044",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorGetDarkPalette",
+                    "help": "Gets the dark palette that may be used with editor ( _editor_index ) ",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_get_dark_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "630858ba-2a50-47e3-9aee-0e8708093f69",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorSetSelection",
+                    "help": "Sets the editor selection ( _line1, _col1, _line2, _col2, [ word_mode = false ] )",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_set_selection",
+                    "returnType": 2
+                },
+                {
+                    "id": "0583685a-5f8c-41d2-beef-8e35f040d5b5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "TextEditorClose",
+                    "help": "close  text editor, freeing its index (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_texteditor_destroy",
+                    "returnType": 2
+                },
+                {
+                    "id": "22eab2e1-4179-4058-bcd3-505e5d75a8aa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "SetDisplaySize",
+                    "help": "set the display size for window clamping(_width, _height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_set_display_size",
+                    "returnType": 2
+                },
+                {
+                    "id": "6ad4ee6c-b243-4f7a-992e-43f442c3baa8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "GetDisplaySize",
+                    "help": "Get the display size ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_get_display_size",
+                    "returnType": 2
+                },
+                {
+                    "id": "4069423a-554d-4e09-b021-c8e44ee08ee6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "SetDrawlistFlags",
+                    "help": "Set anti-aliasing per primitive (_flags=0)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_set_flags",
+                    "returnType": 2
+                },
+                {
+                    "id": "6fcc207d-292a-4f25-bbae-78eb9efd1dda",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "GetDrawListFlags",
+                    "help": "Get anti-aliasing (_flags=0)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_get_flags",
+                    "returnType": 2
+                },
+                {
+                    "id": "4a02685d-7521-4417-b704-be692f685b7b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "UseOverlayDrawlist",
+                    "help": "Use the overlay drawlist ontop of windows ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_use_overlay",
+                    "returnType": 2
+                },
+                {
+                    "id": "e59e23ef-ced6-4742-918e-94577f722f29",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "UseWindowDrawList",
+                    "help": "Use the drawlist for the current window ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_drawlist_use_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "5659191e-bd1e-4f06-adbc-92332fa87349",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "IOGetOptCursorBlink",
+                    "help": "Get whether or not the cursor should blink ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_get_cursor_blink",
+                    "returnType": 2
+                },
+                {
+                    "id": "cf90c80f-8c6c-470d-a866-a1f7d9de8acb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "IOGetOptCursorBlink",
+                    "help": "Set whether or not the cursor should blink (_enabled)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_set_cursor_blink",
+                    "returnType": 2
+                },
+                {
+                    "id": "d93d4bb9-a26c-4bc0-baa4-fdd217e84ff9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "StyleColorsLight",
+                    "help": "Use light colors ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_style_colors_light",
+                    "returnType": 2
+                },
+                {
+                    "id": "83b8d868-6c14-4756-b182-a9eefe0d83a5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "GetFrameHeight",
+                    "help": "~ FontSize + style.FramePadding.y * 2",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_get_frame_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "78892183-a712-470e-8218-5a27caf8fe23",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "BeginCombo",
+                    "help": "begin a combo widget (_label, _preview_value, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_begin_combo",
+                    "returnType": 2
+                },
+                {
+                    "id": "ed1da062-27d9-447e-897a-807584f53049",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "EndCombo",
+                    "help": "End a combo widghet ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_end_combo",
+                    "returnType": 2
+                },
+                {
+                    "id": "06bf0549-6cf7-4acf-a2ea-03351ccf474f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowStyleSelector",
+                    "help": "Show the new style selector (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_show_style_selector",
+                    "returnType": 2
+                },
+                {
+                    "id": "e5dc4a87-36c9-456f-a643-e094328df235",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowMetricsWindow",
+                    "help": "show a metrics window ([_open=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_show_metrics_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "28c50629-e044-4425-bcb4-9368533b6592",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowUserGuide",
+                    "help": "add basic help\/info block [not a window]: how to manipulate ImGui as a end-user [mouse\/keyboard controls] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_show_user_guide",
+                    "returnType": 2
+                },
+                {
+                    "id": "015dfc99-af09-4cbd-9d3e-2f999a249436",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowDemoWindow",
+                    "help": "create demo\/test window. demonstrate most ImGui features. call this to learn about the library! try to make it always available in your application!",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_show_demo_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "918c2077-b396-46cb-ae68-e08147b8cbad",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "ShowFontSelector",
+                    "help": "shows a font selector (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_show_font_selector",
+                    "returnType": 2
+                },
+                {
+                    "id": "1f0bac73-1d6a-493b-9a95-b13d1d1dd53e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "BeginDragDropSource",
+                    "help": "call when the current item is active. If this return true, you can call SetDragDropPayload + EndDragDropSource ([_flags=0], [_mouse_button=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_begin_drag_drop_source",
+                    "returnType": 2
+                },
+                {
+                    "id": "43dd37e8-269c-4fc4-8fb4-997b57cba333",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "SetDragDropPayload",
+                    "help": "type is a user defined string of maximum 8 characters. Strings starting with '_' are reserved for dear imgui internal types. Data is copied and held by imgui. (_type, _payload_id, [_cond=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_set_drag_drop_payload",
+                    "returnType": 2
+                },
+                {
+                    "id": "566553eb-c26b-46af-af9b-454d37b990c1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "EndDragDropSource",
+                    "help": "end the drag drop source ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_end_drag_drop_source",
+                    "returnType": 2
+                },
+                {
+                    "id": "3b865286-c11c-4130-9595-7d7a8d527f56",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "BeginDragDropTarget",
+                    "help": "call after submitting an item that may receive an item. If this returns true, you can call AcceptDragDropPayload + EndDragDropTarget ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_begin_drop_target",
+                    "returnType": 2
+                },
+                {
+                    "id": "b61061a7-d30a-4275-b0ba-a52f5e0ebd60",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "AcceptDragDropPayload",
+                    "help": "accept contents of a given type. If ImGuiDragDropFlags_AcceptBeforeDelivery is set you can peek into the payload before the mouse button is released. (_type, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_accept_drag_drop_payload",
+                    "returnType": 2
+                },
+                {
+                    "id": "e634556b-67d8-43dd-8fc7-5b037c7fa8e0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "EndDragDropTarget",
+                    "help": "end drag drop target ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImguiGML_end_drag_drop_target",
+                    "returnType": 2
+                },
+                {
+                    "id": "917a2d10-cdc6-4f0b-a5d0-33d3f68fbaaa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "SetDebugBuffer",
+                    "help": "sets the buffer used for debug messages, first u32 is the amount of messages since last flush, followed by that many strings (_buffer_address, _buffer_size)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImGuiGML_set_debug_buffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "5e855ad2-2136-46aa-89a3-0e282ff3cffc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "FlushDebugBuffer",
+                    "help": "flushes the debug message counter to 0 ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "_extImGuiGML_flush_debug_buffer",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -4435,6 +6012,7 @@
                 "a5f87da5-63cf-4597-848b-4cebf77f3f1b",
                 "4b157507-376f-4011-9ade-77396a510fe7",
                 "90eb82d9-1e00-4bdf-b7f3-f9998dc32e33",
+                "22eab2e1-4179-4058-bcd3-505e5d75a8aa",
                 "48035199-16c7-49d6-814d-66e46cb564f1",
                 "4637674c-bd6d-4fee-be1a-b727139ddd51",
                 "181ac5f1-1462-4b4e-a3d3-f2c7627ed0e6",
@@ -4462,7 +6040,6 @@
                 "9c240008-d053-42b3-9782-825966d96ea5",
                 "8ae05abe-b68a-4bb6-b830-ea8db831be64",
                 "103b9a16-b1bd-4a4b-9cf1-0d0fb9b8d76c",
-                "97d9e43b-605f-4350-ac22-7820884917f3",
                 "3432aae9-76be-48b3-a705-3a60c928ebde",
                 "73fed998-e2f4-4dac-8a3c-d1ab232f9f73",
                 "c6e27bfb-beb5-413f-9709-fae29b553833",
@@ -4647,8 +6224,6 @@
                 "2cdd630e-7a15-4e2b-b6d1-e514d3ba9273",
                 "db700c73-d315-430d-860f-2f4127126444",
                 "a2a4f010-6971-417d-b36b-346b30722b78",
-                "5fcdbf71-a663-4fb6-b109-aeee0a738052",
-                "82e50bf7-865c-4e94-8799-fb665b4fb40f",
                 "efe97c9f-6d61-4653-bb50-6ed4a2d7604f",
                 "5086b920-4f26-452b-b94f-3845212dcf2f",
                 "5ca3ad28-13da-410b-a5db-bd1b07702b0f",
@@ -4721,7 +6296,114 @@
                 "4b93b2a7-6f82-48a6-b3c6-d4f44618e122",
                 "15576a15-8586-492d-a33b-7ac99f2e4d65",
                 "cfc8382b-0566-4a47-9a2a-c88b0624659f",
-                "5cb20f41-6c68-47a9-8da7-926dae1e3f4d"
+                "5cb20f41-6c68-47a9-8da7-926dae1e3f4d",
+                "b14133f5-d9b5-42c8-bf25-274eeb5dae59",
+                "50f820b4-c561-4fbd-921c-415e318f50cb",
+                "94d26af4-9322-4310-bc8b-decda4b68f7e",
+                "164caab9-ac13-43c7-a7ff-8d4b9b82fe11",
+                "ba65aa5b-d14e-49e1-89c8-9773a9eb99ca",
+                "6bb1c245-ca54-49ce-86db-8e09df0dc59a",
+                "35849655-e73c-47e4-9156-46e429e46649",
+                "d5a02e34-5ec5-4760-8c72-ccd1f8def957",
+                "2e66c56f-0079-4a39-ba94-f6820420410c",
+                "d6991798-3a2a-4b4d-94c2-3ae5eeed8d17",
+                "0f17f55c-e04f-4431-aa06-9c8d29bfb059",
+                "8c758fad-fab2-4521-8b31-a830befe784c",
+                "20632a00-128d-4b5a-b472-cfe123421229",
+                "c297bf95-d530-4374-b2d3-31a4ac3b0822",
+                "93614a06-0095-4864-9c8c-f8787eba2ba7",
+                "aad1a777-21be-4ed8-8c47-f6f94ebc740a",
+                "e6c2aa1a-5190-4d25-87a9-441e67efc204",
+                "05273652-25c3-43c8-99df-66a4621739ca",
+                "eaf6eff7-e12d-4661-a102-bc7e84f1a1bf",
+                "ef86db70-8169-4db4-ad38-87bab4b51666",
+                "3b2255b7-f213-405b-a629-0065d6c1edc4",
+                "0fc0082c-cd23-40c1-bc9f-63491401976f",
+                "56ad2af6-a10b-4739-89d5-690977a451e2",
+                "2a49b1fa-e022-4c74-a79d-85de2ce3c47b",
+                "b7d8c20a-1310-401a-af49-c2efbdc86e39",
+                "b0bd31dd-faaa-464e-8386-dc60fada5389",
+                "0b971f57-a7ec-41f1-9c10-53c59fbdef26",
+                "25178463-f1a4-4ff3-80e6-b669f57e6ab8",
+                "a8427ea3-66d0-4f74-b6bb-e89f46c51e80",
+                "fb697c3b-4dae-4b09-ab2c-60e0df1dbf06",
+                "87ed4e14-eb27-48f9-9484-aad284750b39",
+                "8a88bdbf-79bb-40f7-b8e4-b1c6b20c998e",
+                "30183d51-fd59-4226-bf50-36cb22891f3b",
+                "db0cb609-dfa3-46e6-b2a8-0efe08437aa0",
+                "17458a40-61da-4087-b860-d902c68fb732",
+                "55b92250-7b95-46e6-8ed3-d85c539117b5",
+                "15c158ff-f60d-418d-b7de-347d0176a1cb",
+                "9ad5761d-caa2-4c43-812f-9a1424235115",
+                "67aa95c7-f84d-429a-ba85-fa78bf57ef37",
+                "d685ef1b-78f7-4500-8c0c-ff46d07b69e5",
+                "14f4c6d8-1c5d-439c-9887-ea858e4a6b18",
+                "4eff528c-ff3e-4c86-bbc2-20050f4081aa",
+                "833d34ec-8ace-46c0-9d96-6fbc85f69a67",
+                "0583685a-5f8c-41d2-beef-8e35f040d5b5",
+                "7f9fa2d2-55ad-4fe7-aeac-152025e446f3",
+                "cd8f7775-8427-434a-a758-38740e97bf01",
+                "ccec2822-e0af-4a58-b1f0-ee332ea5db8d",
+                "edd1852e-f589-4725-96cc-6922c24255bf",
+                "28e9d867-7016-4f1a-94af-0bb7d69b7ed5",
+                "2e89014b-5356-43bf-96a4-8a0913ca18a0",
+                "6d0a38d3-e57c-4f6e-bf1f-0e2ff6489817",
+                "493225ad-dad3-429c-9e95-3d75ab931b9e",
+                "002bbb45-2695-4837-958d-eeb01e3f3e41",
+                "372d02af-64f0-4a0c-91c3-91769fc0b0c6",
+                "71366ca9-9659-4ffc-9c0d-76538c548d58",
+                "d00334d9-d9a8-48b3-9f94-8a487bf06faa",
+                "659aa43a-9c50-4398-8264-b0b2bc1ee1a5",
+                "dfaf49b5-1a6c-47d4-b14f-2bcc1ac516e6",
+                "e85acb2b-aa55-49db-9d15-d0fe98707b8e",
+                "0837f759-332e-41bc-9f24-3744e423c095",
+                "bdbc55d9-2e12-448b-a949-1ee1f255009a",
+                "c654392c-26ff-490f-af2b-904e898bdcb1",
+                "bb90e03a-5fce-4f4c-bc55-b21ae81a09e1",
+                "02f58de7-2829-4150-a410-fb51afbdfdc0",
+                "16869769-dca1-4e60-b35e-0dcfd16bd7da",
+                "f75f797c-8ad0-4106-91e7-503f3868f521",
+                "1943fdfd-48c7-4494-b30e-bdecf925a443",
+                "0abd2e72-f771-4d11-bc50-ecc7f1828936",
+                "b92cf839-ff53-4f23-9d6f-e416351e9771",
+                "a30e64ae-7ca4-4103-8a76-82e24630f0d1",
+                "5413fd41-1f5f-47f9-9205-c50c85148add",
+                "00224191-c034-4adb-8e6c-5b95481a8354",
+                "50ab039f-0f15-439c-8855-0346932ea625",
+                "fd836342-bb71-48cc-8116-c5d4ec19eb64",
+                "f6c661ea-60e8-4c02-a3eb-106f6d3bf221",
+                "51c5b621-098c-491c-91c1-0984466cc98e",
+                "2944d0ec-4d30-4300-ae16-6265463edd6f",
+                "18b3d6ac-b05f-4454-82f5-ebf9f3377930",
+                "7e8a98ce-f2b2-402d-94c2-dbdb8862aefc",
+                "f036b056-e4a5-4b01-93e6-8a35d8a722b3",
+                "4ffa0cca-bb9e-4c97-9f6e-201033f317c6",
+                "a97d639f-7957-4182-b10c-2be48256c044",
+                "630858ba-2a50-47e3-9aee-0e8708093f69",
+                "6ad4ee6c-b243-4f7a-992e-43f442c3baa8",
+                "4069423a-554d-4e09-b021-c8e44ee08ee6",
+                "6fcc207d-292a-4f25-bbae-78eb9efd1dda",
+                "4a02685d-7521-4417-b704-be692f685b7b",
+                "e59e23ef-ced6-4742-918e-94577f722f29",
+                "5659191e-bd1e-4f06-adbc-92332fa87349",
+                "cf90c80f-8c6c-470d-a866-a1f7d9de8acb",
+                "d93d4bb9-a26c-4bc0-baa4-fdd217e84ff9",
+                "83b8d868-6c14-4756-b182-a9eefe0d83a5",
+                "78892183-a712-470e-8218-5a27caf8fe23",
+                "ed1da062-27d9-447e-897a-807584f53049",
+                "06bf0549-6cf7-4acf-a2ea-03351ccf474f",
+                "e5dc4a87-36c9-456f-a643-e094328df235",
+                "28c50629-e044-4425-bcb4-9368533b6592",
+                "015dfc99-af09-4cbd-9d3e-2f999a249436",
+                "918c2077-b396-46cb-ae68-e08147b8cbad",
+                "1f0bac73-1d6a-493b-9a95-b13d1d1dd53e",
+                "43dd37e8-269c-4fc4-8fb4-997b57cba333",
+                "566553eb-c26b-46af-af9b-454d37b990c1",
+                "3b865286-c11c-4130-9595-7d7a8d527f56",
+                "b61061a7-d30a-4275-b0ba-a52f5e0ebd60",
+                "e634556b-67d8-43dd-8fc7-5b037c7fa8e0",
+                "917a2d10-cdc6-4f0b-a5d0-33d3f68fbaaa",
+                "5e855ad2-2136-46aa-89a3-0e282ff3cffc"
             ],
             "origname": "",
             "uncompress": false
@@ -4741,7 +6423,7 @@
             "final": "",
             "functions": [
                 {
-                    "id": "ade437f4-f093-4c0c-a742-4f04d8da35e7",
+                    "id": "9d5b88a2-5a65-40c2-89b2-ba253f35c57e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4749,14 +6431,14 @@
                         
                     ],
                     "externalName": "imguigml_activate",
-                    "help": "helper function to simply activate imguigml again (  )",
+                    "help": "helper function to simply activate imguigml again ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_activate",
                     "returnType": 2
                 },
                 {
-                    "id": "4e6508a7-d5b9-44f3-bddb-f82e2c6eb7b7",
+                    "id": "55eadc3f-d1a0-4014-bc69-bdd1208942b3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4764,14 +6446,14 @@
                         
                     ],
                     "externalName": "imguigml_deactivate",
-                    "help": "helper function to simply deactivate imguigml again (  )",
+                    "help": "helper function to simply deactivate imguigml again ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_deactivate",
                     "returnType": 2
                 },
                 {
-                    "id": "2bc1e6c5-d6f2-4497-aba2-03bd22e2e2f6",
+                    "id": "19a5ee4b-0294-4501-86a9-8de14eab44de",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4779,14 +6461,224 @@
                         
                     ],
                     "externalName": "imguigml_ready",
-                    "help": "returns true if imguigml is ready for commands to be called (  )",
+                    "help": "returns true if imguigml is ready for commands to be called ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_ready",
                     "returnType": 2
                 },
                 {
-                    "id": "7dcf96e4-1bbb-43d1-867a-519ea41cadcc",
+                    "id": "0f72244c-5fb5-4d42-8eb9-eb658d813b1e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_color_convert_gml_to_u32",
+                    "help": "get an ImGui color from a gml color (_color, [_alpha=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_color_convert_gml_to_u32",
+                    "returnType": 2
+                },
+                {
+                    "id": "2d3e4277-5928-42e4-91e0-305352872602",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_color_convert_gml_to_float4",
+                    "help": "get an ImGui color4 from a gml color (_color, [_alpha=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_color_convert_gml_to_float4",
+                    "returnType": 2
+                },
+                {
+                    "id": "2b9ad70c-c420-4943-9877-48a86c8b4395",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_color_convert_float4_to_gml",
+                    "help": "get an gml color from a ImGui color4 (_r_or_array4, [_g=undefined], [_b=undefined], [_a=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_color_convert_float4_to_gml",
+                    "returnType": 2
+                },
+                {
+                    "id": "5feba2fe-e1ad-4739-b728-9bb19bd9c846",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_color_convert_u32_to_gml",
+                    "help": "get an ImGui color from a gml color (_color)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_color_convert_u32_to_gml",
+                    "returnType": 2
+                },
+                {
+                    "id": "b5b12faa-9307-40f8-baeb-595e88139919",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_toggle_cursor",
+                    "help": "Toggle whether or not ImGui will touch the cursor or not ([_force])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_toggle_cursor",
+                    "returnType": 2
+                },
+                {
+                    "id": "05a0479f-6d17-4ad8-a079-dad645029d41",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_enable_depth",
+                    "help": "if enabled, setting the `depth` of the `imgui` instance will change the `z-value` imgui renders, otherwise it's at z=1.0 ([_enabled])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_enable_depth",
+                    "returnType": 2
+                },
+                {
+                    "id": "414a44a3-334c-47a3-ba4f-8523cb7091ef",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_set_display_mode",
+                    "help": "set the imguigml display mode - this affects how the window is resized \/ handled.      currently there's the 3 display modes:      *  GUIAspect     - ImGuiGML Draws on the GUI layer, but corrects for aspect ratio according to the viewport of view passed. **DEFAULT**      *  View          - ImGuiGML will Draw in a normal Draw call **NOT** Draw GUI, the mouse will scale to the view given. **Use if you want to Draw ImGuiGML during the Draw event [application surface].**      **NOTE: This should be set before or after `Begin Step` and `Draw` of the `imgui` object,      it affects both mouse [Begin Step] and rendering [Draw]**      _If you're using `EImGui_DisplayMode.View` you may want to experiment with [imguigml_set_display_scale][#imguigml_set_display_scale]_ (_display_mode, [_display_view=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_set_display_mode",
+                    "returnType": 2
+                },
+                {
+                    "id": "1a8d61ac-24ea-43a1-b74c-574773bbe439",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_display_mode",
+                    "help": "returns the current set display mode ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_display_mode",
+                    "returnType": 2
+                },
+                {
+                    "id": "09b07338-84ae-4149-b323-21ed97484552",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_display_view",
+                    "help": "returns the current set display view - the view who's viewport we respect the aspect ratio of with using `EImGui_DisplayMode.GUIWindowSize` or `EImGui_DisplayMode.GUIAspect` ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_display_view",
+                    "returnType": 2
+                },
+                {
+                    "id": "3dbb6b2b-3ea9-4bdc-813d-bd61f9504ed8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_set_display_scale",
+                    "help": "set the imguigml display scaling - it will scale the mouse and the vertex buffer ImGui passes ImGuiGML by this much.      if you pass no arguments, Scale will no longer be overriden (_x, _y)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_set_display_scale",
+                    "returnType": 2
+                },
+                {
+                    "id": "16d84c7a-9c14-4144-85f6-b88af0a59ffd",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_display_scale_width",
+                    "help": "get the scale % we scale the width of ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_display_scale_width",
+                    "returnType": 2
+                },
+                {
+                    "id": "c1461511-d4de-402d-a2c7-f2328bd23b9b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_display_scale_height",
+                    "help": "get the scale % we scale the height of ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_display_scale_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "609f2fc9-6f1f-4587-88bc-e69d0cb6238f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_set_display_size",
+                    "help": "set the display size [how imgui will clamp windows].      by default, ImGuiGML automatically sets the display size to the window size each step. using this function disables that behavior.      calling this fucntion with **NO** params, re-enables that functionality. ([_width], [_height])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_set_display_size",
+                    "returnType": 2
+                },
+                {
+                    "id": "271df248-31bb-48a3-ab91-2d98c4878969",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_display_size",
+                    "help": "get the display size [how imgui will clamp windows] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_display_size",
+                    "returnType": 2
+                },
+                {
+                    "id": "ddef1f8c-c07f-44d3-93f9-5ea2146ce433",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4794,14 +6686,14 @@
                         
                     ],
                     "externalName": "imguigml_separator",
-                    "help": "separator, generally horizontal. inside a menu bar or in horizontal layout mode, this becomes a vertical separator. (  )",
+                    "help": "separator, generally horizontal. inside a menu bar or in horizontal layout mode, this becomes a vertical separator. ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_separator",
                     "returnType": 2
                 },
                 {
-                    "id": "8ec68a66-06ad-4888-81a5-d55a79c64689",
+                    "id": "79e2fabd-fef6-4c12-b882-cc63b5d287c7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4809,14 +6701,14 @@
                         
                     ],
                     "externalName": "imguigml_same_line",
-                    "help": "call between widgets or groups to layout them horizontally ( [_pos_x=0.0] , [_spacing_w=-1.0] )",
+                    "help": "call between widgets or groups to layout them horizontally ([_pos_x=0.0], [_spacing_w=-1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_same_line",
                     "returnType": 2
                 },
                 {
-                    "id": "20efb853-5365-4e64-b1bb-a717e0fcd108",
+                    "id": "6196b5af-fc4f-4228-b0aa-4291b7220c4f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4824,14 +6716,14 @@
                         
                     ],
                     "externalName": "imguigml_new_line",
-                    "help": "undo a SameLine() (  )",
+                    "help": "undo a SameLine[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_new_line",
                     "returnType": 2
                 },
                 {
-                    "id": "33f06116-b51d-4641-988c-97bdb85c5165",
+                    "id": "cba7b4ad-2e88-4199-b962-9961857180bb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4839,14 +6731,14 @@
                         
                     ],
                     "externalName": "imguigml_spacing",
-                    "help": "add vertical spacing (  )",
+                    "help": "add vertical spacing ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_spacing",
                     "returnType": 2
                 },
                 {
-                    "id": "2e8a9163-dfc2-4dab-8301-835be4dd6f5b",
+                    "id": "e2c4f69f-54bd-452b-99e8-0bbe946ce28a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4854,14 +6746,14 @@
                         
                     ],
                     "externalName": "imguigml_dummy",
-                    "help": "add a dummy item of given size ( [_pos_x=0.0] , [_spacing_w=-1.0] )",
+                    "help": "add a dummy item of given size ([_pos_x=0.0], [_spacing_w=-1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_dummy",
                     "returnType": 2
                 },
                 {
-                    "id": "a4fef42a-ab1b-4541-beb1-d231df5cce34",
+                    "id": "ef84d791-0abe-4157-b675-036cc88c2752",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4869,14 +6761,14 @@
                         
                     ],
                     "externalName": "imguigml_indent",
-                    "help": "move content position toward the right, by style.IndentSpacing or indent_w if >0 ( [_index_w=0.0f] )",
+                    "help": "move content position toward the right, by style.IndentSpacing or indent_w if >0 ([_index_w=0.0f])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_indent",
                     "returnType": 2
                 },
                 {
-                    "id": "15981f86-137d-4b38-b9b1-aaedca15f0f9",
+                    "id": "387e0d99-8432-4444-b5a9-4b491f6be11a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4884,14 +6776,14 @@
                         
                     ],
                     "externalName": "imguigml_unindent",
-                    "help": "move content position back to the left, by style.IndentSpacing or indent_w if >0 ( [_index_w=0.0f] )",
+                    "help": "move content position back to the left, by style.IndentSpacing or indent_w if >0 ([_index_w=0.0f])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_unindent",
                     "returnType": 2
                 },
                 {
-                    "id": "aa4fa0e0-0a81-4a81-9c79-316c45477b47",
+                    "id": "b094accd-7c23-4162-b855-35ae8ba695a3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4899,14 +6791,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_group",
-                    "help": "lock horizontal starting position + capture group bounding box into one \"item\" (so you can use IsItemHovered() or layout primitives such as SameLine() on whole group, etc.) (  )",
+                    "help": "lock horizontal starting position + capture group bounding box into one \"item\" [so you can use IsItemHovered[] or layout primitives such as SameLine[] on whole group, etc.] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_group",
                     "returnType": 2
                 },
                 {
-                    "id": "e79e7191-0a97-4e5b-ab97-c56736f350bc",
+                    "id": "c09d7f92-d825-4d67-8103-ca76a9deb31d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4914,14 +6806,14 @@
                         
                     ],
                     "externalName": "imguigml_end_group",
-                    "help": "end horizontal capture group (  )",
+                    "help": "end horizontal capture group ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_group",
                     "returnType": 2
                 },
                 {
-                    "id": "e8164576-34b8-47bc-a8b5-8bbcb54b6c00",
+                    "id": "ffe54bf6-6b5b-452c-9f4d-0bdf9d9cf6df",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4929,14 +6821,14 @@
                         
                     ],
                     "externalName": "imguigml_get_cursor_pos",
-                    "help": "cursor position is relative to window position (  )",
+                    "help": "cursor position is relative to window position ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_cursor_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "17cec9fd-c19b-4b41-8297-f984def13c3f",
+                    "id": "169ce7cc-0ce8-41e6-abaa-a7b96c0cdc1a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4944,14 +6836,14 @@
                         
                     ],
                     "externalName": "imguigml_get_cursor_pos_x",
-                    "help": "cursor position is relative to window position (  )",
+                    "help": "cursor position is relative to window position ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_cursor_pos_x",
                     "returnType": 2
                 },
                 {
-                    "id": "6a73ee25-fb68-4ddb-a5f1-f531b1869fd6",
+                    "id": "66fa6865-cb51-44e8-a04b-67e5ec203a6c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4959,14 +6851,14 @@
                         
                     ],
                     "externalName": "imguigml_get_cursor_pos_y",
-                    "help": "cursor position is relative to window position (  )",
+                    "help": "cursor position is relative to window position ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_cursor_pos_y",
                     "returnType": 2
                 },
                 {
-                    "id": "c44f2970-d3c6-4746-b2f2-e17740d0710c",
+                    "id": "2229ea7b-0fd1-4b84-9d1c-fb1889a1a55c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4974,14 +6866,14 @@
                         
                     ],
                     "externalName": "imguigml_set_cursor_pos",
-                    "help": "set the imgui cursor position ( _x , _y )",
+                    "help": "set the imgui cursor position (_x, _y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_cursor_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "9c36c48e-b1a8-4eb1-8894-8d2e1f610f26",
+                    "id": "bbd6117a-7ae5-45f4-be30-4a79d8517c18",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -4989,14 +6881,14 @@
                         
                     ],
                     "externalName": "imguigml_set_cursor_pos_x",
-                    "help": "set the imgui cursor position x ( _x )",
+                    "help": "set the imgui cursor position x (_x)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_cursor_pos_x",
                     "returnType": 2
                 },
                 {
-                    "id": "1a714b67-96e9-4710-bd80-8cf931fac8ad",
+                    "id": "632d3067-e555-4894-a411-0afb8dabbd95",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5004,14 +6896,14 @@
                         
                     ],
                     "externalName": "imguigml_set_cursor_pos_y",
-                    "help": "set the imgui cursor position y ( _y )",
+                    "help": "set the imgui cursor position y (_y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_cursor_pos_y",
                     "returnType": 2
                 },
                 {
-                    "id": "4a0831d0-82fa-40f1-a7b8-6c3498416afe",
+                    "id": "d169a9f3-471e-4bc7-a421-31c898d94582",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5019,14 +6911,14 @@
                         
                     ],
                     "externalName": "imguigml_get_cursor_start_pos",
-                    "help": "initial cursor position (  )",
+                    "help": "initial cursor position ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_cursor_start_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "93fe489b-b5e3-4f36-bebb-a185381ef5bf",
+                    "id": "2d0b4d09-73ec-4a44-b335-45db6c7685c7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5034,14 +6926,14 @@
                         
                     ],
                     "externalName": "imguigml_get_cursor_screen_pos",
-                    "help": "cursor position in absolute screen coordinates [0..io.DisplaySize] (useful to work with ImDrawList API) (  )",
+                    "help": "cursor position in absolute screen coordinates [0..io.DisplaySize] [useful to work with ImDrawList API] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_cursor_screen_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "dcdbafee-52ab-4e7c-9ea7-de380fc8d720",
+                    "id": "c155acc8-9ddf-427a-a2b4-9c8aa3da7c8a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5049,14 +6941,14 @@
                         
                     ],
                     "externalName": "imguigml_set_cursor_screen_pos",
-                    "help": "cursor position in absolute screen coordinates [0..io.DisplaySize] ( _x , _y )",
+                    "help": "cursor position in absolute screen coordinates [0..io.DisplaySize] (_x, _y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_cursor_screen_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "c830c941-b28d-472a-a4ca-916fd8f01edb",
+                    "id": "74c3bbbe-34b5-49f4-92e9-b3b4660b1cf9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5064,14 +6956,14 @@
                         
                     ],
                     "externalName": "imguigml_align_text_to_frame_padding",
-                    "help": "vertically align\/lower upcoming text to FramePadding.y so that it will aligns to upcoming widgets (call if you have text on a line before regular widgets) (  )",
+                    "help": "vertically align\/lower upcoming text to FramePadding.y so that it will aligns to upcoming widgets [call if you have text on a line before regular widgets] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_align_text_to_frame_padding",
                     "returnType": 2
                 },
                 {
-                    "id": "fee6a83a-31fb-47b5-9637-bd225145d724",
+                    "id": "70998ce2-9713-4d33-916a-9bac805e29f6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5079,14 +6971,14 @@
                         
                     ],
                     "externalName": "imguigml_get_text_line_height",
-                    "help": "height of font == GetWindowFontSize() (  )",
+                    "help": "height of font == GetWindowFontSize[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_text_line_height",
                     "returnType": 2
                 },
                 {
-                    "id": "8fc6e3ac-7c5f-43e9-be38-b190231c8e43",
+                    "id": "7c6359a1-dd82-4472-b79f-926a01fbf2a0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5094,29 +6986,44 @@
                         
                     ],
                     "externalName": "imguigml_get_text_line_height_with_spacing",
-                    "help": "distance (in pixels) between 2 consecutive lines of text == GetWindowFontSize() + GetStyle().ItemSpacing.y (  )",
+                    "help": "distance [in pixels] between 2 consecutive lines of text == GetWindowFontSize[] + GetStyle[].ItemSpacing.y ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_text_line_height_with_spacing",
                     "returnType": 2
                 },
                 {
-                    "id": "8a266cb2-f5d6-4a39-8367-880c2b8e5bd2",
+                    "id": "1ae6889c-6283-45df-b631-5116ca04882c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "imguigml_get_items_line_height_with_spacing",
-                    "help": "distance (in pixels) between 2 consecutive lines of standard height widgets == GetWindowFontSize() + GetStyle().FramePadding.y*2 + GetStyle().ItemSpacing.y (  )",
+                    "externalName": "imguigml_get_frame_height",
+                    "help": "gets the height of the active frame [~ FontSize + style.FramePadding.y * 2] ()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "imguigml_get_items_line_height_with_spacing",
+                    "name": "imguigml_get_frame_height",
                     "returnType": 2
                 },
                 {
-                    "id": "dcd96f77-dcb6-4f64-bec1-de7d63f9edbf",
+                    "id": "bf3aa9bb-1c4d-4f16-9c32-c1bb9cf892f9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_get_frame_height_with_spacing",
+                    "help": "distance [in pixels] between 2 consecutive lines of standard height widgets == GetWindowFontSize[] + GetStyle[].FramePadding.y*2 + GetStyle[].ItemSpacing.y ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_get_frame_height_with_spacing",
+                    "returnType": 2
+                },
+                {
+                    "id": "e2c52b57-6fb2-4ec4-8fe2-52bee8c656fd",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5124,14 +7031,14 @@
                         
                     ],
                     "externalName": "imguigml_columns",
-                    "help": "You can also use SameLine(pos_x) for simplified columns. ( [_count=1] , [_id=undefined] , [_border=true] )",
+                    "help": "You can also use SameLine[pos_x] for simplified columns. ([_count=1], [_id=undefined], [_border=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_columns",
                     "returnType": 2
                 },
                 {
-                    "id": "3338d57d-182e-4459-a8a6-33066d15e9e0",
+                    "id": "a97732e6-87df-4db4-80d0-094a9f555a0b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5139,14 +7046,14 @@
                         
                     ],
                     "externalName": "imguigml_next_column",
-                    "help": "next column, defaults to current row or next row if the current row is finished (  )",
+                    "help": "next column, defaults to current row or next row if the current row is finished ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_next_column",
                     "returnType": 2
                 },
                 {
-                    "id": "cf7b4161-64cb-4b9f-975d-98c1842b2ae2",
+                    "id": "9c6242db-8ca3-43d9-aaaa-21bb94bb0bb8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5154,14 +7061,14 @@
                         
                     ],
                     "externalName": "imguigml_get_column_index",
-                    "help": "get current column index (  )",
+                    "help": "get current column index ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_column_index",
                     "returnType": 2
                 },
                 {
-                    "id": "6e341b8b-bd3d-4be0-b1b0-503684e0c4e4",
+                    "id": "7971731f-a191-4334-ad81-263983c32b06",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5169,14 +7076,14 @@
                         
                     ],
                     "externalName": "imguigml_get_column_width",
-                    "help": "get column width (in pixels). pass -1 to use current column ( [_column_index=-1] )",
+                    "help": "get column width [in pixels]. pass -1 to use current column ([_column_index=-1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_column_width",
                     "returnType": 2
                 },
                 {
-                    "id": "a42431f9-da6f-41b6-808e-4a444fc20498",
+                    "id": "3ca04485-3ce4-4c05-8896-e608543ebb85",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5184,14 +7091,14 @@
                         
                     ],
                     "externalName": "imguigml_set_column_width",
-                    "help": "set column width (in pixels). pass -1 to use current column ( _column_index , _width )",
+                    "help": "set column width [in pixels]. pass -1 to use current column (_column_index, _width)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_column_width",
                     "returnType": 2
                 },
                 {
-                    "id": "9654e0e3-0ccc-4825-bdc6-5c90cb11c58c",
+                    "id": "673f6ea3-d7d5-4267-8174-ed6085ca9aa8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5199,14 +7106,14 @@
                         
                     ],
                     "externalName": "imguigml_get_column_offset",
-                    "help": "get position of column line (in pixels, from the left side of the contents region). ( [_column_index=-1] )",
+                    "help": "get position of column line [in pixels, from the left side of the contents region]. ([_column_index=-1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_column_offset",
                     "returnType": 2
                 },
                 {
-                    "id": "0aa6e6ed-fb3a-4d22-8306-a39745c4468d",
+                    "id": "758b880f-5fe7-4d0b-a41f-39db48c2f023",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5214,14 +7121,14 @@
                         
                     ],
                     "externalName": "imguigml_set_column_offset",
-                    "help": "set position of column line (in pixels, from the left side of the contents region). ( _column_index , _offset_x )",
+                    "help": "set position of column line [in pixels, from the left side of the contents region]. (_column_index, _offset_x)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_column_offset",
                     "returnType": 2
                 },
                 {
-                    "id": "ab9e5fba-e26e-4d0a-8aa4-7651933034ed",
+                    "id": "c2f207ae-f5b3-48d3-8c69-509e81e45b74",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5229,14 +7136,14 @@
                         
                     ],
                     "externalName": "imguigml_get_columns_count",
-                    "help": "get amount of columns (  )",
+                    "help": "get amount of columns ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_columns_count",
                     "returnType": 2
                 },
                 {
-                    "id": "6829d6b3-c991-4202-b1a1-6339064f16bc",
+                    "id": "3605bfb0-5aa7-4f6f-b291-1699d57e47f1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5244,14 +7151,14 @@
                         
                     ],
                     "externalName": "imguigml_push_id",
-                    "help": "push identifier into the ID stack. IDs are hash of the entire stack! ( _id , [_end_id] )",
+                    "help": "push identifier into the ID stack. IDs are hash of the entire stack! (_id, [_end_id])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_id",
                     "returnType": 2
                 },
                 {
-                    "id": "7be3ff90-6d61-4d96-acf8-11d846b548b4",
+                    "id": "97bae617-2687-41c0-b801-903bfd64f2a6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5259,14 +7166,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_id",
-                    "help": "pop identifier from ID stack (  )",
+                    "help": "pop identifier from ID stack ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_id",
                     "returnType": 2
                 },
                 {
-                    "id": "39f1fa4e-ec6d-495f-a8b1-7bee2031b8e2",
+                    "id": "2a2c0777-2b7f-4bbd-a48f-8454247aa2cb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5274,29 +7181,14 @@
                         
                     ],
                     "externalName": "imguigml_get_id",
-                    "help": "push identifier into the ID stack. IDs are hash of the entire stack! ( _id , [_end_id] )",
+                    "help": "push identifier into the ID stack. IDs are hash of the entire stack! (_id, [_end_id])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_id",
                     "returnType": 2
                 },
                 {
-                    "id": "f98a2dda-44a2-4891-a31b-35e573e040db",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_get_version",
-                    "help": " (  )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_get_version",
-                    "returnType": 2
-                },
-                {
-                    "id": "96719838-1b96-4af0-91ce-42b3127faac3",
+                    "id": "cd7a87a7-6000-4665-96dc-671e01b52f1b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5304,14 +7196,14 @@
                         
                     ],
                     "externalName": "imguigml_get_clipboard_text",
-                    "help": "get the clipboard text (  )",
+                    "help": "get the clipboard text ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_clipboard_text",
                     "returnType": 2
                 },
                 {
-                    "id": "5349b35b-14a4-4840-869c-07d2dae80700",
+                    "id": "d038e395-eb35-4267-b089-c793814385eb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5319,14 +7211,14 @@
                         
                     ],
                     "externalName": "imguigml_set_clipboard_text",
-                    "help": "set the clipboard text (  )",
+                    "help": "set the clipboard text ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_clipboard_text",
                     "returnType": 2
                 },
                 {
-                    "id": "80a9a549-610e-4ebd-bb53-804ef6a33adf",
+                    "id": "d6ac6c1c-00e1-491a-a89a-d2ce212594c6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5334,14 +7226,14 @@
                         
                     ],
                     "externalName": "imguigml_get_key_index",
-                    "help": "get mapped index for imgui_key index, you really don't need this ( _key_index )",
+                    "help": "get mapped index for imgui_key index, you really don't need this (_key_index)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_key_index",
                     "returnType": 2
                 },
                 {
-                    "id": "a7c07f4c-4d3e-4ed3-a45b-33c7797614df",
+                    "id": "8405289c-5823-45cd-9fcd-b3fb8259b933",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5349,14 +7241,14 @@
                         
                     ],
                     "externalName": "imguigml_is_key_down",
-                    "help": "is key being held. == io.KeysDown[user_key_index]. note that imgui doesn't know the semantic of each entry of io.KeyDown[]. Use your own indices\/enums according to how your backend\/engine stored them into KeyDown[]! ( _key_index )",
+                    "help": "is key being held. == io.KeysDown[user_key_index]. note that imgui doesn't know the semantic of each entry of io.KeyDown[]. Use your own indices\/enums according to how your backend\/engine stored them into KeyDown[]! (_key_index)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_key_down",
                     "returnType": 2
                 },
                 {
-                    "id": "a9006d68-e36a-423b-b613-a520824b02d4",
+                    "id": "8e24a162-a795-44d4-8b29-0dc2afec127a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5364,14 +7256,14 @@
                         
                     ],
                     "externalName": "imguigml_is_key_pressed",
-                    "help": "was key pressed (went from !Down to Down) ( _key_index , [_repeat=true] )",
+                    "help": "was key pressed [went from !Down to Down] (_key_index, [_repeat=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_key_pressed",
                     "returnType": 2
                 },
                 {
-                    "id": "0480e794-9597-4ebd-afce-6c71d14737a4",
+                    "id": "0add4b30-f2b7-4590-9a3c-3cef11c39f82",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5379,14 +7271,14 @@
                         
                     ],
                     "externalName": "imguigml_is_key_released",
-                    "help": "is key released ( _key_index )",
+                    "help": "is key released (_key_index)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_key_released",
                     "returnType": 2
                 },
                 {
-                    "id": "70a4747a-5a68-4958-b7b6-a1c32f8610e2",
+                    "id": "25d26220-fd1c-46ca-8c53-116928bef49a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5394,14 +7286,14 @@
                         
                     ],
                     "externalName": "imguigml_get_key_pressed_amount",
-                    "help": "uses provided repeat rate\/delay. ( _key_index , _repeat_delay , _rate )",
+                    "help": "uses provided repeat rate\/delay. (_key_index, _repeat_delay, _rate)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_key_pressed_amount",
                     "returnType": 2
                 },
                 {
-                    "id": "532ed9ca-9f72-4227-bd17-efcdece96500",
+                    "id": "f7dc5ea5-d8da-46c1-929c-f64cb820fe0f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5409,14 +7301,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_down",
-                    "help": "is mouse button held ( _button )",
+                    "help": "is mouse button held (_button)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_down",
                     "returnType": 2
                 },
                 {
-                    "id": "3ac8420a-d06f-4f75-8656-a40f98aac8f0",
+                    "id": "106e53f5-62bc-4906-ab3e-e3ad6cafdc7e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5424,14 +7316,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_clicked",
-                    "help": "did mouse button clicked (went from !Down to Down) ( _button , [_repeat=false] )",
+                    "help": "did mouse button clicked [went from !Down to Down] (_button, [_repeat=false])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_clicked",
                     "returnType": 2
                 },
                 {
-                    "id": "5d1f3a10-da92-4e44-af46-03cd6db62c00",
+                    "id": "fd2550ff-45ae-4397-b053-d9e768f193e4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5439,14 +7331,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_double_clicked",
-                    "help": "did mouse button double-clicked. a double-click returns false in IsMouseClicked(). uses io.MouseDoubleClickTime. ( _button )",
+                    "help": "did mouse button double-clicked. a double-click returns false in IsMouseClicked[]. uses io.MouseDoubleClickTime. (_button)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_double_clicked",
                     "returnType": 2
                 },
                 {
-                    "id": "474c7613-3c7e-4c20-8c7a-6a4dacdb0f70",
+                    "id": "a8aa919f-49ac-4e2c-876c-685dfa24ace3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5454,14 +7346,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_released",
-                    "help": "did mouse button released (went from Down to !Down) ( _button )",
+                    "help": "did mouse button released [went from Down to !Down] (_button)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_released",
                     "returnType": 2
                 },
                 {
-                    "id": "3fdcae8b-c507-4cd8-9579-a1ea3df4147e",
+                    "id": "e90b8b82-de97-4d11-b6ae-0f554cf56191",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5469,14 +7361,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_dragging",
-                    "help": "is mouse dragging. ( [_button=0] , [_lock_threshold=-1.0] )",
+                    "help": "is mouse dragging. ([_button=0], [_lock_threshold=-1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_dragging",
                     "returnType": 2
                 },
                 {
-                    "id": "5588851f-682f-416a-b701-15932edc3c2f",
+                    "id": "eafbf70d-9ae1-4b41-be8e-4841bbce6a96",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5484,14 +7376,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_hovering_rect",
-                    "help": "is mouse hovering given bounding rect (in screen space). ( _min_x , _min_y , _max_x , _max_y , [_clip=true] )",
+                    "help": "is mouse hovering given bounding rect [in screen space]. (_min_x, _min_y, _max_x, _max_y, [_clip=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_hovering_rect",
                     "returnType": 2
                 },
                 {
-                    "id": "d5358b5f-85f8-4bfd-a9b8-e8e61fbeda4b",
+                    "id": "ada4d6b3-1d84-4b76-a9a0-5f5fe552f7ab",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5499,14 +7391,14 @@
                         
                     ],
                     "externalName": "imguigml_is_mouse_pos_valid",
-                    "help": "is the mouse position valid (  )",
+                    "help": "is the mouse position valid ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_mouse_pos_valid",
                     "returnType": 2
                 },
                 {
-                    "id": "7abccee0-d37b-441b-97b2-ea73af66c9cc",
+                    "id": "5c92b90b-a8de-4536-835d-d5faaf8ce637",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5514,14 +7406,14 @@
                         
                     ],
                     "externalName": "imguigml_get_mouse_pos",
-                    "help": "shortcut to ImGui::GetIO().MousePos provided by user, to be consistent with other calls (  )",
+                    "help": "shortcut to ImGui::GetIO[].MousePos provided by user, to be consistent with other calls ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_mouse_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "8e8ddffb-8036-422c-a6fe-2a808c9c1f3e",
+                    "id": "669206f8-2f1f-4f52-af9c-13d83f5bb378",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5529,14 +7421,14 @@
                         
                     ],
                     "externalName": "imguigml_get_mouse_pos_on_opening_current_popup",
-                    "help": "retrieve backup of mouse positioning at the time of opening popup we have BeginPopup() into (  )",
+                    "help": "retrieve backup of mouse positioning at the time of opening popup we have BeginPopup[] into ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_mouse_pos_on_opening_current_popup",
                     "returnType": 2
                 },
                 {
-                    "id": "1aede828-044f-4350-b0cf-b2d3df44bcde",
+                    "id": "ab6bc317-4229-4106-acbf-fbec871ca7ff",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5544,14 +7436,14 @@
                         
                     ],
                     "externalName": "imguigml_get_mouse_drag_delta",
-                    "help": "retrieve backup of mouse positioning at the time of opening popup we have BeginPopup() into (  )",
+                    "help": "retrieve backup of mouse positioning at the time of opening popup we have BeginPopup[] into ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_mouse_drag_delta",
                     "returnType": 2
                 },
                 {
-                    "id": "fa25ff24-6970-4004-831d-5c6ae57ce12f",
+                    "id": "e56472ab-2f7b-4e5f-a8a8-1e371937e223",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5559,14 +7451,14 @@
                         
                     ],
                     "externalName": "imguigml_reset_mouse_drag_delta",
-                    "help": "reset the drag delta ( [_button=0] )",
+                    "help": "reset the drag delta ([_button=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_reset_mouse_drag_delta",
                     "returnType": 2
                 },
                 {
-                    "id": "a4cf5493-f002-4d23-8aa0-7c4a0b94ac6d",
+                    "id": "91b604b3-538c-4636-8514-b034a18cd7fd",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5574,14 +7466,14 @@
                         
                     ],
                     "externalName": "imguigml_get_mouse_cursor",
-                    "help": "get desired cursor type, reset in ImGui::NewFrame(), this is updated during the frame. valid before Render(). If you use software rendering by setting io.MouseDrawCursor ImGui will render those for you (  )",
+                    "help": "get desired cursor type, reset in ImGui::NewFrame[], this is updated during the frame. valid before Render[]. If you use software rendering by setting io.MouseDrawCursor ImGui will render those for you ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_mouse_cursor",
                     "returnType": 2
                 },
                 {
-                    "id": "ecf4ec2b-93db-4f37-acab-e9c8587fb180",
+                    "id": "731a748c-140d-4fda-9017-af91560432a5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5589,14 +7481,14 @@
                         
                     ],
                     "externalName": "imguigml_set_mouse_cursor",
-                    "help": "set desired cursor type ( _type )",
+                    "help": "set desired cursor type (_type)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_mouse_cursor",
                     "returnType": 2
                 },
                 {
-                    "id": "f01f5bb4-9722-462d-bc8d-17aa6e506676",
+                    "id": "6146485f-7b40-4278-ba89-bca6c6578680",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5604,14 +7496,14 @@
                         
                     ],
                     "externalName": "imguigml_capture_keyboard_from_app",
-                    "help": "manually override io.WantCaptureKeyboard flag next frame (said flag is entirely left for your application handle). e.g. force capture keyboard when your widget is being hovered. ( [_capture=true] )",
+                    "help": "manually override io.WantCaptureKeyboard flag next frame [said flag is entirely left for your application handle]. e.g. force capture keyboard when your widget is being hovered. ([_capture=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_capture_keyboard_from_app",
                     "returnType": 2
                 },
                 {
-                    "id": "1ed0f80c-fde1-489f-97ed-cf818a4e180e",
+                    "id": "a725cb0b-d1c8-4722-8a76-6f6bd2555949",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5619,14 +7511,14 @@
                         
                     ],
                     "externalName": "imguigml_capture_mouse_from_app",
-                    "help": "manually override io.WantCaptureMouse flag next frame (said flag is entirely left for your application handle). ( [_capture=true] )",
+                    "help": "manually override io.WantCaptureMouse flag next frame [said flag is entirely left for your application handle]. ([_capture=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_capture_mouse_from_app",
                     "returnType": 2
                 },
                 {
-                    "id": "eface2da-5da8-432b-957d-d34a5b04d49e",
+                    "id": "7a1897de-49b9-4561-9791-d8597b034fdf",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5634,14 +7526,14 @@
                         
                     ],
                     "externalName": "imguigml_log_to_tty",
-                    "help": "start logging to tty ( [_max_depth=-1] )",
+                    "help": "start logging to tty ([_max_depth=-1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_to_tty",
                     "returnType": 2
                 },
                 {
-                    "id": "ef63aa65-922b-4346-9fbc-c3d3b570f6b2",
+                    "id": "4c636de2-ac74-4bda-8775-1b35318c0736",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5649,14 +7541,14 @@
                         
                     ],
                     "externalName": "imguigml_log_to_file",
-                    "help": "start logging to file ( [_max_depth=-1] , [_file_name=undefined] )",
+                    "help": "start logging to file ([_max_depth=-1], [_file_name=undefined])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_to_file",
                     "returnType": 2
                 },
                 {
-                    "id": "9228de64-7ef9-408f-a8d5-bc3e69aa35c7",
+                    "id": "b05f33cf-d3a5-4dc1-b7d1-e5ba37b1dabb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5664,14 +7556,14 @@
                         
                     ],
                     "externalName": "imguigml_log_to_clipboard",
-                    "help": "start logging to OS clipboard ( [_max_depth=-1] )",
+                    "help": "start logging to OS clipboard ([_max_depth=-1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_to_clipboard",
                     "returnType": 2
                 },
                 {
-                    "id": "0a46e3ba-ac76-49eb-aad8-fb3bd7290e5e",
+                    "id": "0ec22fd5-0fac-479b-8822-e47e035183a9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5679,14 +7571,14 @@
                         
                     ],
                     "externalName": "imguigml_log_finish",
-                    "help": "stop logging (close file, etc.) (  )",
+                    "help": "stop logging [close file, etc.] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_finish",
                     "returnType": 2
                 },
                 {
-                    "id": "69e1756b-c051-4d04-a321-23616c9cd633",
+                    "id": "2d557f36-97f9-4a82-9497-588aba4435fc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5694,14 +7586,14 @@
                         
                     ],
                     "externalName": "imguigml_log_buttons",
-                    "help": "helper to display buttons for logging to tty\/file\/clipboard (  )",
+                    "help": "helper to display buttons for logging to tty\/file\/clipboard ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_buttons",
                     "returnType": 2
                 },
                 {
-                    "id": "6a8c5632-2b69-4823-a477-a877d0398837",
+                    "id": "d32c169a-e3d4-44b7-aae7-fbb7d986aee9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5709,14 +7601,14 @@
                         
                     ],
                     "externalName": "imguigml_log_text",
-                    "help": "pass text data straight to log (without being displayed) ( _text )",
+                    "help": "pass text data straight to log [without being displayed] (_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_log_text",
                     "returnType": 2
                 },
                 {
-                    "id": "a3d64d79-cf8d-4ed4-8eed-2f3993fea037",
+                    "id": "a4db2aff-4a6d-46ea-bbef-2f580da5e463",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5724,14 +7616,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_main_menu_bar",
-                    "help": "create and append to a full screen menu-bar. only call EndMainMenuBar() if this returns true! (  )",
+                    "help": "create and append to a full screen menu-bar. only call EndMainMenuBar[] if this returns true! ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_main_menu_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "bb9dbdaf-c340-4bd1-8f0b-e3f4d58653ca",
+                    "id": "c0684d57-1bdd-4287-8960-46a1aa970a5a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5739,14 +7631,14 @@
                         
                     ],
                     "externalName": "imguigml_end_main_menu_bar",
-                    "help": "end main menu bar (  )",
+                    "help": "end main menu bar ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_main_menu_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "aca5bd0a-7b12-4c98-beee-283ee3763572",
+                    "id": "a75d3d48-34ff-4c8c-828e-676535524e69",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5754,14 +7646,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_menu_bar",
-                    "help": "append to menu-bar of current window (requires ImGuiWindowFlags_MenuBar flag set on parent window). only call EndMenuBar() if this returns true! (  )",
+                    "help": "append to menu-bar of current window [requires ImGuiWindowFlags_MenuBar flag set on parent window]. only call EndMenuBar[] if this returns true! ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_menu_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "f1b56dfd-ab5b-4d93-a96b-9b79271692da",
+                    "id": "d0a84c88-ae30-47fc-a3a5-58eed94a996d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5769,14 +7661,14 @@
                         
                     ],
                     "externalName": "imguigml_end_menu_bar",
-                    "help": "end menu bar (  )",
+                    "help": "end menu bar ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_menu_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "df15d79e-b74a-4cbb-8be9-b32c38708704",
+                    "id": "aa69959f-c357-4a08-a113-29d66243d3d4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5784,14 +7676,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_menu",
-                    "help": "create a sub-menu entry. only call EndMenu() if this returns true! ( _label , [_enabled=true] )",
+                    "help": "create a sub-menu entry. only call EndMenu[] if this returns true! (_label, [_enabled=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_menu",
                     "returnType": 2
                 },
                 {
-                    "id": "c61b77d0-646f-4bfd-aecc-23915f4bbfba",
+                    "id": "1ff87dfc-f31d-4b64-bcbd-7ee8c40da0f4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5799,14 +7691,14 @@
                         
                     ],
                     "externalName": "imguigml_end_menu",
-                    "help": "end sub-menu entry (  )",
+                    "help": "end sub-menu entry ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_menu",
                     "returnType": 2
                 },
                 {
-                    "id": "45d218b5-a943-4847-b07e-10334ab9a4c2",
+                    "id": "d394bdbf-eb92-4c4d-a26d-da2983fe23c1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5814,14 +7706,14 @@
                         
                     ],
                     "externalName": "imguigml_menu_item",
-                    "help": "show a sub-menu item ( _label , [_shortcut=\"\"] , [_selected=false] , [_enabled=true] )",
+                    "help": "show a sub-menu item (_label, [_shortcut=\"\"], [_selected=false], [_enabled=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_menu_item",
                     "returnType": 2
                 },
                 {
-                    "id": "20b70acf-584b-40ef-9c89-4e1237f06554",
+                    "id": "a4b513a8-32ed-461b-9bd9-3748311fe142",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5829,14 +7721,14 @@
                         
                     ],
                     "externalName": "imguigml_open_popup",
-                    "help": "call to mark popup as open (don't call every frame!). popups are closed when user click outside,      or if CloseCurrentPopup() is called within a BeginPopup()\/EndPopup() block. By default,      Selectable()\/MenuItem() are calling CloseCurrentPopup(). Popup identifiers are relative to the      current ID-stack (so OpenPopup and BeginPopup needs to be at the same level). ( _str_id )",
+                    "help": "call to mark popup as open [don't call every frame!]. popups are closed when user click outside,      or if CloseCurrentPopup[] is called within a BeginPopup[]\/EndPopup[] block. By default,      Selectable[]\/MenuItem[] are calling CloseCurrentPopup[]. Popup identifiers are relative to the      current ID-stack [so OpenPopup and BeginPopup needs to be at the same level]. (_str_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_open_popup",
                     "returnType": 2
                 },
                 {
-                    "id": "ce5fd961-f39c-46af-9f50-61880129b82f",
+                    "id": "ce34de40-3d93-4f45-b0f2-7a7950e9d09c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5844,14 +7736,14 @@
                         
                     ],
                     "externalName": "imguigml_open_popup_on_item_click",
-                    "help": "helper to open popup when clicked on last item. ( [_str_id=undefined] , [_mouse_button=1] )",
+                    "help": "helper to open popup when clicked on last item. ([_str_id=undefined], [_mouse_button=1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_open_popup_on_item_click",
                     "returnType": 2
                 },
                 {
-                    "id": "1c2f6586-a7a9-4a13-b496-92c1c2b5e4ab",
+                    "id": "a83aa74f-6c6e-4e40-9ff1-682a2fa6df75",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5859,14 +7751,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_popup",
-                    "help": "begin a pop up - only call EndPopup() if BeginPopup() returned true! ( _str_id )",
+                    "help": "begin a pop up - only call EndPopup[] if BeginPopup[] returned true! (_str_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_popup",
                     "returnType": 2
                 },
                 {
-                    "id": "13f17fb8-7b24-4d56-b45a-ea8564e61cfb",
+                    "id": "00e2b043-798c-4966-9936-b32da9e8f27c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5874,14 +7766,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_popup_modal",
-                    "help": "modal dialog (block interactions behind the modal window, can't close the modal window by clicking outside) ( _name , [_open=undefined] , [_extra_flags=0] )",
+                    "help": "modal dialog [block interactions behind the modal window, can't close the modal window by clicking outside] (_name, [_open=undefined], [_extra_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_popup_modal",
                     "returnType": 2
                 },
                 {
-                    "id": "77dbce31-cf57-46b3-b557-93b796461f44",
+                    "id": "5ad57013-5041-45e7-8814-0ad9e42698ff",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5889,14 +7781,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_popup_context_item",
-                    "help": "helper to open and begin popup when clicked on last item. if you can pass a NULL str_id only if the previous item had an id. If you want to use that on a non-interactive item such as Text() you need to pass in an explicit ID here. read comments in .cpp! ( [_str_id=undefined] , [_mouse_button=1] )",
+                    "help": "helper to open and begin popup when clicked on last item. if you can pass a NULL str_id only if the previous item had an id. If you want to use that on a non-interactive item such as Text[] you need to pass in an explicit ID here. read comments in .cpp! ([_str_id=undefined], [_mouse_button=1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_popup_context_item",
                     "returnType": 2
                 },
                 {
-                    "id": "338a8614-91f8-436d-8c80-66a7cde4d6b4",
+                    "id": "3c07ba02-5ade-405b-832a-5220445c62ef",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5904,14 +7796,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_popup_context_window",
-                    "help": "helper to open and begin popup when clicked on current window. ( [_str_id=undefined] , [_mouse_button=1] , [_also_over_items=true] )",
+                    "help": "helper to open and begin popup when clicked on current window. ([_str_id=undefined], [_mouse_button=1], [_also_over_items=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_popup_context_window",
                     "returnType": 2
                 },
                 {
-                    "id": "0108feb8-53dd-4adf-8bb0-7952881cfd95",
+                    "id": "038e27b4-3a6a-4e4f-926b-69f005f9b526",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5919,14 +7811,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_popup_context_void",
-                    "help": "helper to open and begin popup when clicked in void (where there are no imgui windows). ( [_str_id=undefined] , [_mouse_button=1] )",
+                    "help": "helper to open and begin popup when clicked in void [where there are no imgui windows]. ([_str_id=undefined], [_mouse_button=1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_popup_context_void",
                     "returnType": 2
                 },
                 {
-                    "id": "29775584-0b7b-49b7-9957-2a9a3b158e1a",
+                    "id": "abda1222-70d7-4247-bf38-0d8a525b283e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5934,14 +7826,14 @@
                         
                     ],
                     "externalName": "imguigml_end_popup",
-                    "help": "end the current pop up (  )",
+                    "help": "end the current pop up ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_popup",
                     "returnType": 2
                 },
                 {
-                    "id": "ff415607-554e-4f7c-812e-845b4346ea53",
+                    "id": "5bd994c6-9f68-44f5-b779-d0794000b4a8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5949,14 +7841,14 @@
                         
                     ],
                     "externalName": "imguigml_is_popup_open",
-                    "help": "return true if the popup is open ( _str_id )",
+                    "help": "return true if the popup is open (_str_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_popup_open",
                     "returnType": 2
                 },
                 {
-                    "id": "2762ad8a-0422-470f-a80c-8a74a4c1cb89",
+                    "id": "b9157ae0-522a-4e87-9697-51c4d5bb036a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5964,14 +7856,14 @@
                         
                     ],
                     "externalName": "imguigml_close_current_popup",
-                    "help": "close the popup we have begin-ed into. clicking on a MenuItem or Selectable automatically close the current popup. (  )",
+                    "help": "close the popup we have begin-ed into. clicking on a MenuItem or Selectable automatically close the current popup. ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_close_current_popup",
                     "returnType": 2
                 },
                 {
-                    "id": "84572d63-442b-48a3-abd4-74bc3c50ed50",
+                    "id": "c4df229f-cc11-4c17-9444-ea132fd0759c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5979,14 +7871,14 @@
                         
                     ],
                     "externalName": "imguigml_push_font",
-                    "help": "use undefined as a shortcut to push default font (  )",
+                    "help": "use undefined as a shortcut to push default font ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_font",
                     "returnType": 2
                 },
                 {
-                    "id": "0351be92-b925-4571-bf81-0ce42efd4ce4",
+                    "id": "ef5343bc-ada4-4364-9c3d-b2c201e0ede5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -5994,14 +7886,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_font",
-                    "help": "pop the font (  )",
+                    "help": "pop the font ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_font",
                     "returnType": 2
                 },
                 {
-                    "id": "001825bc-d506-4ece-af96-01b6cc615885",
+                    "id": "29fd7ef5-ceb1-4887-ac86-2ada24dc45c7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6009,14 +7901,14 @@
                         
                     ],
                     "externalName": "imguigml_push_style_color",
-                    "help": " ( _idx , _colOrR , [_g] , [_b] , [_a] )",
+                    "help": "(_idx, _colOrR, [_g], [_b], [_a])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_style_color",
                     "returnType": 2
                 },
                 {
-                    "id": "873d5fbc-4cf0-4f15-a06e-3f733b8ab125",
+                    "id": "0efba832-45e2-4c85-88ab-834d6c469e9a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6024,14 +7916,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_style_color",
-                    "help": "pop style colors ( [_count=1] )",
+                    "help": "pop style colors ([_count=1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_style_color",
                     "returnType": 2
                 },
                 {
-                    "id": "37c689c9-200f-4e96-b1a2-01b4c5fb544c",
+                    "id": "1fe1c719-240d-4569-ad40-0fa9682caa73",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6039,14 +7931,14 @@
                         
                     ],
                     "externalName": "imguigml_push_style_var",
-                    "help": "push a style var on the param stack ( _idx , _valOrX , [_y] )",
+                    "help": "push a style var on the param stack (_idx, _valOrX, [_y])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_style_var",
                     "returnType": 2
                 },
                 {
-                    "id": "f890d6c7-f3ea-4b27-a49a-36eb264652c0",
+                    "id": "c768bbb4-65c2-41db-be77-a7fb7a7d2d3a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6054,14 +7946,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_style_var",
-                    "help": "pop style colors ( [_count=1] )",
+                    "help": "pop style colors ([_count=1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_style_var",
                     "returnType": 2
                 },
                 {
-                    "id": "3f539e3a-ebbb-48e7-ba37-1f0ae3d962cb",
+                    "id": "8459cbfa-64a8-44db-a36a-dd91afd96023",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6069,14 +7961,14 @@
                         
                     ],
                     "externalName": "imguigml_get_style_color_vec4",
-                    "help": "retrieve style color as stored in ImGuiStyle structure. use to feed back into PushStyleColor(), otherwhise use GetColorU32() to get style color + style alpha. ( _idx )",
+                    "help": "retrieve style color as stored in ImGuiStyle structure. use to feed back into PushStyleColor[], otherwhise use GetColorU32[] to get style color + style alpha. (_idx)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_style_color_vec4",
                     "returnType": 2
                 },
                 {
-                    "id": "070da915-29dd-4521-ae37-9527d228c4e1",
+                    "id": "f0fe539e-8752-40a6-a8b4-382470bd4deb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6084,14 +7976,14 @@
                         
                     ],
                     "externalName": "imguigml_get_font",
-                    "help": "get current font (  )",
+                    "help": "get current font ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_font",
                     "returnType": 2
                 },
                 {
-                    "id": "b24e95e2-10c3-4d11-b4ae-598880fea8fd",
+                    "id": "3e451ed3-6611-480f-a30d-9e0412340227",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6099,14 +7991,14 @@
                         
                     ],
                     "externalName": "imguigml_get_font_size",
-                    "help": "get current font size (= height in pixels) of current font with current scale applied (  )",
+                    "help": "get current font size [= height in pixels] of current font with current scale applied ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_font_size",
                     "returnType": 2
                 },
                 {
-                    "id": "7ef798fd-ddbb-46dd-a071-246cee88a7d3",
+                    "id": "d35ebb5b-dba8-4aea-af51-abeda00e4098",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6114,14 +8006,14 @@
                         
                     ],
                     "externalName": "imguigml_get_font_tex_uv_white_pixel",
-                    "help": "get UV coordinate for a while pixel, useful to draw custom shapes via the ImDrawList API (  )",
+                    "help": "get UV coordinate for a while pixel, useful to draw custom shapes via the ImDrawList API ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_font_tex_uv_white_pixel",
                     "returnType": 2
                 },
                 {
-                    "id": "aa2711f1-bb48-457e-be39-c44e3a14cd0c",
+                    "id": "0d9881d8-f081-4e24-85e5-35b6cebe6241",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6129,14 +8021,14 @@
                         
                     ],
                     "externalName": "imguigml_get_color_u32",
-                    "help": "retrieve given style color with style alpha applied and optional extra alpha multiplier ( _colOrR , [_g] , [_b] , [_a] )",
+                    "help": "retrieve given style color with style alpha applied and optional extra alpha multiplier (_colOrR, [_g], [_b], [_a])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_color_u32",
                     "returnType": 2
                 },
                 {
-                    "id": "4b43ef11-1efd-43e8-994b-5b201cbc658e",
+                    "id": "d9c40ae5-ae7e-45e7-b430-03b19187c5e8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6144,14 +8036,14 @@
                         
                     ],
                     "externalName": "imguigml_get_color_u32_from_idx",
-                    "help": "retrieve given style color with style alpha applied and optional extra alpha multiplier ( _idx , [_alpha_mul=1.0] )",
+                    "help": "retrieve given style color with style alpha applied and optional extra alpha multiplier (_idx, [_alpha_mul=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_color_u32_from_idx",
                     "returnType": 2
                 },
                 {
-                    "id": "65d4d259-e4f2-437b-bd96-b170daa0760e",
+                    "id": "1138764e-4fda-49e9-9c95-7ea92e4e42ff",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6159,14 +8051,14 @@
                         
                     ],
                     "externalName": "imguigml_push_item_width",
-                    "help": "width of items for the common item+label case, pixels. ( _item_width )",
+                    "help": "width of items for the common item+label case, pixels. (_item_width)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_item_width",
                     "returnType": 2
                 },
                 {
-                    "id": "959092e1-3bde-4520-896d-e5dd9715e6a5",
+                    "id": "b4833ffb-4887-4fbd-afe9-d216100b5c31",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6174,14 +8066,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_item_width",
-                    "help": "pop item width (  )",
+                    "help": "pop item width ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_item_width",
                     "returnType": 2
                 },
                 {
-                    "id": "6522ad17-dbc4-4a14-80ce-f3dd33ae5822",
+                    "id": "2ccf801a-1198-4110-9a57-d9792a13f7d3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6189,14 +8081,14 @@
                         
                     ],
                     "externalName": "imguigml_calc_item_width",
-                    "help": "width of item given pushed settings and current cursor position (  )",
+                    "help": "width of item given pushed settings and current cursor position ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_calc_item_width",
                     "returnType": 2
                 },
                 {
-                    "id": "c1973a52-4b6d-4f13-b0cc-02919736709b",
+                    "id": "41461511-c043-4550-9914-528f75967210",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6204,14 +8096,14 @@
                         
                     ],
                     "externalName": "imguigml_push_text_wrap_pos",
-                    "help": "word-wrapping for Text*() commands. ( [_wrap_pos_x=0.0] )",
+                    "help": "word-wrapping for Text*[] commands. ([_wrap_pos_x=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_text_wrap_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "9fe7e162-105b-4ab4-a157-ad52bb680196",
+                    "id": "eccac0a9-1d17-4a3d-8bbc-727b8fdacf94",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6219,14 +8111,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_text_wrap_pos",
-                    "help": "pop text wrap pos (  )",
+                    "help": "pop text wrap pos ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_text_wrap_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "2338788e-ee00-4750-854c-8a2c5953d8a9",
+                    "id": "af6e6e6e-6815-4af5-85ab-e7801599cb4e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6234,14 +8126,14 @@
                         
                     ],
                     "externalName": "imguigml_push_allow_keyboard_focus",
-                    "help": "allow focusing using TAB\/Shift-TAB, enabled by default but you can disable it for certain widgets ( _allow_keyboard_focus )",
+                    "help": "allow focusing using TAB\/Shift-TAB, enabled by default but you can disable it for certain widgets (_allow_keyboard_focus)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_allow_keyboard_focus",
                     "returnType": 2
                 },
                 {
-                    "id": "c84ffaec-ade2-41e8-bc62-684b8f1cdb4a",
+                    "id": "c08761f1-20de-4944-8646-53d5f651efb9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6249,14 +8141,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_allow_keyboard_focus",
-                    "help": "pop allow keyboard focus (  )",
+                    "help": "pop allow keyboard focus ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_allow_keyboard_focus",
                     "returnType": 2
                 },
                 {
-                    "id": "2129c9f3-9a92-4baf-b5a2-4098eb256377",
+                    "id": "54b549f5-1f78-4c8a-8759-903b78dba7a1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6264,14 +8156,14 @@
                         
                     ],
                     "externalName": "imguigml_push_button_repeat",
-                    "help": "in 'repeat' mode, Button*() functions return repeated true in a typematic manner (using io.KeyRepeatDelay\/io.KeyRepeatRate setting). Note that you can call IsItemActive() after any Button() to tell if the button is held in the current frame. ( _repeat )",
+                    "help": "in 'repeat' mode, Button*[] functions return repeated true in a typematic manner [using io.KeyRepeatDelay\/io.KeyRepeatRate setting]. Note that you can call IsItemActive[] after any Button[] to tell if the button is held in the current frame. (_repeat)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_button_repeat",
                     "returnType": 2
                 },
                 {
-                    "id": "69fc7401-83ba-40e0-ac52-f0f2d4b2a220",
+                    "id": "56ffa389-69c6-4e0b-bb87-b03e3dbea1d9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6279,14 +8171,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_button_repeat",
-                    "help": "pop repeat mode (  )",
+                    "help": "pop repeat mode ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_button_repeat",
                     "returnType": 2
                 },
                 {
-                    "id": "c47f91d6-9844-48bf-9de2-a84bdb7e1ea3",
+                    "id": "3bdbf6bb-3c53-41ad-a3b3-533531a63c3e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6294,14 +8186,14 @@
                         
                     ],
                     "externalName": "imguigml_selectable",
-                    "help": "selectable element ( _label , [_selected=false] , [_selectable_flags=0] , [_size_x=0] , [_size_y=0] )",
+                    "help": "selectable element (_label, [_selected=false], [_selectable_flags=0], [_size_x=0], [_size_y=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_selectable",
                     "returnType": 2
                 },
                 {
-                    "id": "f99f4b7e-8079-4e03-8ea5-bb39f81e4980",
+                    "id": "a8babd99-7524-41aa-abec-41850607a995",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6309,14 +8201,14 @@
                         
                     ],
                     "externalName": "imguigml_list_box",
-                    "help": "create a list box ( _label , _current_item , _item_array , [_height_in_items=-1]) )",
+                    "help": "create a list box (_label, _current_item, _item_array, [_height_in_items=-1]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_list_box",
                     "returnType": 2
                 },
                 {
-                    "id": "0c5753c4-6b8c-40fa-aba9-a5d5dc763b5c",
+                    "id": "1e4f2d9b-4db9-4aaf-8006-4b4cc15e3af5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6324,14 +8216,14 @@
                         
                     ],
                     "externalName": "imguigml_list_box_header",
-                    "help": "use if you want to reimplement ListBox() will custom data or interactions. make sure to call ListBoxFooter() afterwards. ( _label , _size_x , _size_y )",
+                    "help": "use if you want to reimplement ListBox[] will custom data or interactions. make sure to call ListBoxFooter[] afterwards. (_label, _size_x, _size_y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_list_box_header",
                     "returnType": 2
                 },
                 {
-                    "id": "c9d9791c-dd63-49ff-9eec-69603145dc48",
+                    "id": "591f4a53-928c-4bff-a99c-d73674ba8bc7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6339,14 +8231,14 @@
                         
                     ],
                     "externalName": "imguigml_list_box_header_items",
-                    "help": "use if you want to reimplement ListBox() will custom data or interactions. make sure to call ListBoxFooter() afterwards. ( _label , _items_count , [_height_in_items=-1] )",
+                    "help": "use if you want to reimplement ListBox[] will custom data or interactions. make sure to call ListBoxFooter[] afterwards. (_label, _items_count, [_height_in_items=-1])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_list_box_header_items",
                     "returnType": 2
                 },
                 {
-                    "id": "d6a0edc6-453f-457d-8629-8e8600a0a156",
+                    "id": "e27b2e82-0ff3-4212-9b11-e168894cf3ef",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6354,14 +8246,14 @@
                         
                     ],
                     "externalName": "imguigml_list_box_footer",
-                    "help": "terminate the scrolling region (  )",
+                    "help": "terminate the scrolling region ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_list_box_footer",
                     "returnType": 2
                 },
                 {
-                    "id": "6d904a0d-0dfc-4782-96c1-215435754fc9",
+                    "id": "d6ddaea7-80be-4c00-9163-c060eaa12996",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6369,14 +8261,14 @@
                         
                     ],
                     "externalName": "imguigml_show_style_editor",
-                    "help": "add style editor block (not a window). you can pass in a reference ImGuiStyle structure to compare to, revert to and save to (else it uses the default style) (  )",
+                    "help": "add style editor block [not a window]. you can pass in a reference ImGuiStyle structure to compare to, revert to and save to [else it uses the default style] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_show_style_editor",
                     "returnType": 2
                 },
                 {
-                    "id": "8ce5799e-f39b-4811-b60c-10acd3de57d2",
+                    "id": "41d8f6f1-61da-427e-a948-47a49969a5ce",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6384,14 +8276,14 @@
                         
                     ],
                     "externalName": "imguigml_style_colors_classic",
-                    "help": "use classic colors (  )",
+                    "help": "use classic colors ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_style_colors_classic",
                     "returnType": 2
                 },
                 {
-                    "id": "4d6395ed-6ac1-4753-b648-082c79ef40dc",
+                    "id": "8b096d1f-5b8e-4e5d-b225-fa44353ec1ae",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6399,14 +8291,44 @@
                         
                     ],
                     "externalName": "imguigml_style_colors_dark",
-                    "help": "use dark colors (  )",
+                    "help": "use dark colors ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_style_colors_dark",
                     "returnType": 2
                 },
                 {
-                    "id": "1ae5cfaa-4483-4c37-9d73-a4db6bfb268d",
+                    "id": "fbc4c0cd-b535-444d-8919-ef23a366c4a9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_style_colors_light",
+                    "help": "use light colors ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_style_colors_light",
+                    "returnType": 2
+                },
+                {
+                    "id": "0da60899-1c16-49db-a54f-383be942aafc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_show_style_selector",
+                    "help": "show the style selector widget (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_show_style_selector",
+                    "returnType": 2
+                },
+                {
+                    "id": "cb2f7c0b-7ad7-4dec-8a8a-dd9aa01f3595",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6414,14 +8336,14 @@
                         
                     ],
                     "externalName": "imguigml_set_tooltip",
-                    "help": "set text tooltip under mouse-cursor, typically use with ImGui::IsItemHovered(). overidde any previous call to SetTooltip(). ( _tooltip_text )",
+                    "help": "set text tooltip under mouse-cursor, typically use with ImGui::IsItemHovered[]. overidde any previous call to SetTooltip[]. (_tooltip_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_tooltip",
                     "returnType": 2
                 },
                 {
-                    "id": "401e0e5b-cb63-486a-92b2-91b18a97e934",
+                    "id": "1feab42d-4b3b-4a8f-80a2-efead67868e5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6429,14 +8351,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_tooltip",
-                    "help": "begin\/append a tooltip window. to create full-featured tooltip (with any kind of contents). (  )",
+                    "help": "begin\/append a tooltip window. to create full-featured tooltip [with any kind of contents]. ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_tooltip",
                     "returnType": 2
                 },
                 {
-                    "id": "a0fa2e57-accd-49f2-af03-78a76ff28ab7",
+                    "id": "bf9588eb-7acf-4711-9b0c-4fea5270409f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6444,14 +8366,14 @@
                         
                     ],
                     "externalName": "imguigml_end_tooltip",
-                    "help": "end a tooltip window (  )",
+                    "help": "end a tooltip window ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_tooltip",
                     "returnType": 2
                 },
                 {
-                    "id": "5e808c29-4493-44e8-bb14-6188ea1a27b4",
+                    "id": "605fef96-469c-449f-b2d1-c00c8cb76573",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6459,14 +8381,14 @@
                         
                     ],
                     "externalName": "imguigml_value",
-                    "help": "Output single value in \"name: value\" format (tip: freely declare more in your code to handle your types. you can add functions to the ImGui namespace) ( _prefix , _val_type , _val , [_float_format] )",
+                    "help": "Output single value in \"name: value\" format [tip: freely declare more in your code to handle your types. you can add functions to the ImGui namespace] (_prefix, _val_type, _val, [_float_format])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_value",
                     "returnType": 2
                 },
                 {
-                    "id": "035f7aa0-a2be-46ee-b656-0ec54ea871ea",
+                    "id": "a09aca4b-7868-4dff-88a4-8365245022bb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6474,14 +8396,14 @@
                         
                     ],
                     "externalName": "imguigml_color_convert_u32_to_float4",
-                    "help": "convert a u32 color to a float 4 ( _color )",
+                    "help": "convert a u32 color to a float 4 (_color)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_convert_u32_to_float4",
                     "returnType": 2
                 },
                 {
-                    "id": "accb9a82-a541-4410-b70e-a49644e1e5b8",
+                    "id": "37323c85-9b4e-49e5-a015-8411a5e87d03",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6489,14 +8411,14 @@
                         
                     ],
                     "externalName": "imguigml_color_convert_float4_to_u32",
-                    "help": "convert a float4 color to a u32 ( _r , _g , _b , _a )",
+                    "help": "convert a float4 color to a u32 (_r_or_array4, [_g=undefined], [_b=undefined], [_a=undefined])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_convert_float4_to_u32",
                     "returnType": 2
                 },
                 {
-                    "id": "dceb4727-53d9-472c-8ef9-8ab0b0bd6e57",
+                    "id": "f50e766e-c454-46c8-af87-da64d55eb88c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6504,14 +8426,14 @@
                         
                     ],
                     "externalName": "imguigml_color_convert_rgb_to_hsv",
-                    "help": "convert rgb to hsv ( _r , _g , _b )",
+                    "help": "convert rgb to hsv (_r, _g, _b)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_convert_rgb_to_hsv",
                     "returnType": 2
                 },
                 {
-                    "id": "85364dbb-fd29-4d95-a839-5e7b8e2556df",
+                    "id": "6be114fe-c972-4511-8562-3da52fb591bc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6519,14 +8441,14 @@
                         
                     ],
                     "externalName": "imguigml_color_convert_hsv_to_rgb",
-                    "help": "convert rgb to hsv ( _h , _s , _b )",
+                    "help": "convert rgb to hsv (_h, _s, _b)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_convert_hsv_to_rgb",
                     "returnType": 2
                 },
                 {
-                    "id": "081a5f51-2f71-4475-8f60-0ca0cb08da85",
+                    "id": "f5a371a3-1d3b-467e-9e58-8be9bbd7fe93",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6534,14 +8456,14 @@
                         
                     ],
                     "externalName": "imguigml_is_item_hovered",
-                    "help": "is the last item hovered by mouse (and usable)? ( [_flags=0] )",
+                    "help": "is the last item hovered by mouse [and usable]? ([_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_item_hovered",
                     "returnType": 2
                 },
                 {
-                    "id": "7e67b563-eda7-470e-81af-04d0f02f1ce0",
+                    "id": "94b24c74-d22e-4cb4-b866-3f4de3528f1c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6549,14 +8471,14 @@
                         
                     ],
                     "externalName": "imguigml_is_item_active",
-                    "help": "is the last item active? (e.g. button being held, text field being edited- items that don't interact will always return false) (  )",
+                    "help": "is the last item active? [e.g. button being held, text field being edited- items that don't interact will always return false] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_item_active",
                     "returnType": 2
                 },
                 {
-                    "id": "50d3d5a5-23e5-4a01-a99f-37fc7fe266a9",
+                    "id": "fe4064e4-fee2-41a0-906f-9c42704d054b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6564,14 +8486,14 @@
                         
                     ],
                     "externalName": "imguigml_is_item_clicked",
-                    "help": "is the last item clicked? (e.g. button\/node just clicked on) ( [_button=0] )",
+                    "help": "is the last item clicked? [e.g. button\/node just clicked on] ([_button=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_item_clicked",
                     "returnType": 2
                 },
                 {
-                    "id": "57e9f40e-d27d-4036-908d-e5b2260172a7",
+                    "id": "77d378c4-202c-4a25-a37c-e63025be6061",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6579,14 +8501,14 @@
                         
                     ],
                     "externalName": "imguigml_is_item_visible",
-                    "help": "is the last item visible? (aka not out of sight due to clipping\/scrolling.) (  )",
+                    "help": "is the last item visible? [aka not out of sight due to clipping\/scrolling.] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_item_visible",
                     "returnType": 2
                 },
                 {
-                    "id": "6840e26c-2b5c-454a-80cf-f39daf9841cc",
+                    "id": "55c22a9f-d7c2-4859-877c-4e5464b1603f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6594,14 +8516,14 @@
                         
                     ],
                     "externalName": "imguigml_is_any_item_hovered",
-                    "help": "are any items hovered (  )",
+                    "help": "are any items hovered ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_any_item_hovered",
                     "returnType": 2
                 },
                 {
-                    "id": "55414a33-db7c-41d2-a9d9-bac9ce740b52",
+                    "id": "89f6d313-6138-4a8c-a28a-6abbf6b729bc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6609,14 +8531,14 @@
                         
                     ],
                     "externalName": "imguigml_is_any_item_active",
-                    "help": "are any items active (  )",
+                    "help": "are any items active ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_any_item_active",
                     "returnType": 2
                 },
                 {
-                    "id": "3ae798ff-f74e-4606-b7d2-4a86687cf229",
+                    "id": "3d0bb09e-8219-4b43-b774-b792272f0e35",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6624,14 +8546,14 @@
                         
                     ],
                     "externalName": "imguigml_get_item_rect_min",
-                    "help": "get bounding rect of last item in screen space (  )",
+                    "help": "get bounding rect of last item in screen space ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_item_rect_min",
                     "returnType": 2
                 },
                 {
-                    "id": "4927e463-57fb-47eb-bbf2-5932ea682e54",
+                    "id": "02040d6c-cfc3-4df2-abdc-a19b35bf4891",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6639,14 +8561,14 @@
                         
                     ],
                     "externalName": "imguigml_get_item_rect_max",
-                    "help": "get bounding rect of last item in screen space (  )",
+                    "help": "get bounding rect of last item in screen space ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_item_rect_max",
                     "returnType": 2
                 },
                 {
-                    "id": "ca304c71-1f76-4ae0-bc6d-f3561e0165f1",
+                    "id": "42f0810f-edc7-4a98-a1cf-0d3e3ed3f49b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6654,14 +8576,14 @@
                         
                     ],
                     "externalName": "imguigml_get_item_rect_size",
-                    "help": "get bounding rect of last item in screen space (  )",
+                    "help": "get bounding rect of last item in screen space ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_item_rect_size",
                     "returnType": 2
                 },
                 {
-                    "id": "1db21266-eb9b-4d85-9524-014388693a61",
+                    "id": "f20a9879-d158-410d-97dd-d1c8e196f3b7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6669,14 +8591,14 @@
                         
                     ],
                     "externalName": "imguigml_set_item_allow_overlap",
-                    "help": "allow last item to be overlapped by a subsequent item. sometimes useful with invisible buttons, selectables, etc. to catch unused area. (  )",
+                    "help": "allow last item to be overlapped by a subsequent item. sometimes useful with invisible buttons, selectables, etc. to catch unused area. ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_item_allow_overlap",
                     "returnType": 2
                 },
                 {
-                    "id": "8bc5ddc3-1fc8-48d2-af89-7f85d74bc8a8",
+                    "id": "6419f1e7-8068-430d-95c8-8001f1e75fe3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6684,14 +8606,14 @@
                         
                     ],
                     "externalName": "imguigml_is_window_focused",
-                    "help": "is current Begin()-ed window focused? (  )",
+                    "help": "is current Begin[]-ed window focused? ([_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_window_focused",
                     "returnType": 2
                 },
                 {
-                    "id": "aadb3e54-7ca8-40ff-a58e-312a25b4c343",
+                    "id": "4e7e3251-3316-4dbf-9791-1204d1d93d07",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6699,44 +8621,14 @@
                         
                     ],
                     "externalName": "imguigml_is_window_hovered",
-                    "help": "is current Begin()-ed window hovered (and typically: not blocked by a popup\/modal)? ( [_flags=0] )",
+                    "help": "is current Begin[]-ed window hovered [and typically: not blocked by a popup\/modal]? ([_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_window_hovered",
                     "returnType": 2
                 },
                 {
-                    "id": "9d47c408-77b5-4138-a831-01653dabd4fe",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_is_root_window_focused",
-                    "help": "is current Begin()-ed root window focused (root = top-most parent of a child, otherwise self)? (  )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_is_root_window_focused",
-                    "returnType": 2
-                },
-                {
-                    "id": "a44e62fd-3209-4389-9563-61faf1e7ec12",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_is_root_window_or_any_child_focused",
-                    "help": "is current Begin()-ed root window or any of its child (including current window) focused? (  )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_is_root_window_or_any_child_focused",
-                    "returnType": 2
-                },
-                {
-                    "id": "61e461a6-1010-4da3-a033-514d636e7235",
+                    "id": "72c3bf6e-77b5-464c-9aeb-94618d94c4dc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6744,14 +8636,14 @@
                         
                     ],
                     "externalName": "imguigml_is_any_window_hovered",
-                    "help": "is mouse hovering any visible window (  )",
+                    "help": "is mouse hovering any visible window ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_any_window_hovered",
                     "returnType": 2
                 },
                 {
-                    "id": "f8301af4-b2fd-4db5-8523-21bd0ff679b1",
+                    "id": "e487555a-ef39-41b8-b6ae-cbad86683bec",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6759,14 +8651,14 @@
                         
                     ],
                     "externalName": "imguigml_is_rect_visible",
-                    "help": "test if a rectangle is visible \/ not clipped ( _size_or_min_x , _size_or_min_y , [_max_x] , [_max_y] )",
+                    "help": "test if a rectangle is visible \/ not clipped (_size_or_min_x, _size_or_min_y, [_max_x], [_max_y])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_rect_visible",
                     "returnType": 2
                 },
                 {
-                    "id": "88030b42-21a3-4f56-82dd-2d5c56e64919",
+                    "id": "80c50a01-ce00-47ee-81c9-da3f5fcf86b8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6774,14 +8666,14 @@
                         
                     ],
                     "externalName": "imguigml_get_time",
-                    "help": "get the time (  )",
+                    "help": "get the time ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_time",
                     "returnType": 2
                 },
                 {
-                    "id": "afa63876-7a54-47ed-9013-a468e6ed2080",
+                    "id": "c4d32d9f-015b-4120-b5ba-eb6a08dc96fa",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6789,14 +8681,14 @@
                         
                     ],
                     "externalName": "imguigml_get_frame_count",
-                    "help": "get the time (  )",
+                    "help": "get the time ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_frame_count",
                     "returnType": 2
                 },
                 {
-                    "id": "096c457d-261e-4882-87b1-c3cada145bdc",
+                    "id": "57cd054c-850e-442f-b69e-fb8aa9081f19",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6804,14 +8696,14 @@
                         
                     ],
                     "externalName": "imguigml_get_style_color_name",
-                    "help": "get the style color's name ( _idx )",
+                    "help": "get the style color's name (_idx)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_style_color_name",
                     "returnType": 2
                 },
                 {
-                    "id": "bfc3e7af-42d0-4867-8f17-28a289a516a9",
+                    "id": "89ff34be-443b-41c1-85b4-12912ec469e7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6819,14 +8711,14 @@
                         
                     ],
                     "externalName": "imguigml_calc_item_rect_closest_point",
-                    "help": "utility to find the closest point the last item bounding rectangle edge. useful to visually link items ( _pos_x , _pos_y , [_on_edge=false] , [_outward=+0.0]) )",
+                    "help": "utility to find the closest point the last item bounding rectangle edge. useful to visually link items (_pos_x, _pos_y, [_on_edge=false], [_outward=+0.0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_calc_item_rect_closest_point",
                     "returnType": 2
                 },
                 {
-                    "id": "217474a6-1711-4862-93c4-6e86ed6ac6c3",
+                    "id": "42bac745-c050-49fd-b8a8-eac41e48f1c5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6834,14 +8726,14 @@
                         
                     ],
                     "externalName": "imguigml_calc_text_size",
-                    "help": "Calculate text size. Text can be multi-line. Optionally ignore text after a ## marker. ( _text , [_text_end=undefined] , [_hide_text_after_double_hash=false] , [_wrap_width=-1.0f]); )",
+                    "help": "Calculate text size. Text can be multi-line. Optionally ignore text after a ## marker. (_text, [_text_end=undefined], [_hide_text_after_double_hash=false], [_wrap_width=-1.0f]);)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_calc_text_size",
                     "returnType": 2
                 },
                 {
-                    "id": "4fd7cc70-ad44-4922-8a29-25edd2875373",
+                    "id": "792c95a8-57db-4c67-9942-378756fd0fdd",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6849,14 +8741,14 @@
                         
                     ],
                     "externalName": "imguigml_calc_list_clipping",
-                    "help": "calculate coarse clipping for large list of evenly sized items. Prefer using the ImGuiListClipper higher-level helper if you can. ( _items_count , _items_height )",
+                    "help": "calculate coarse clipping for large list of evenly sized items. Prefer using the ImGuiListClipper higher-level helper if you can. (_items_count, _items_height)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_calc_list_clipping",
                     "returnType": 2
                 },
                 {
-                    "id": "741fda3c-c66c-4ab6-a688-dccdee424319",
+                    "id": "519fc7fd-778f-4dd7-83e9-e15441c74381",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6864,14 +8756,14 @@
                         
                     ],
                     "externalName": "imguigml_push_clip_rect",
-                    "help": " ( _min_x , _min_y , _max_x , _max_y , _intersect_with_current_clip_rect )",
+                    "help": "(_min_x, _min_y, _max_x, _max_y, _intersect_with_current_clip_rect)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_push_clip_rect",
                     "returnType": 2
                 },
                 {
-                    "id": "e7ed537d-9845-44a8-b6b1-d29ce6193bf1",
+                    "id": "cc0208b3-530d-4653-b65b-f7e303959d11",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6879,14 +8771,14 @@
                         
                     ],
                     "externalName": "imguigml_pop_clip_rect",
-                    "help": "pop the clip rect (  )",
+                    "help": "pop the clip rect ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_pop_clip_rect",
                     "returnType": 2
                 },
                 {
-                    "id": "ac7af7c6-f25f-46d3-8b09-34b6e9248ee4",
+                    "id": "2abea250-a112-4369-b8c5-cc90736af8c1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6894,14 +8786,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_float",
-                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders ( _label , _val , _min , _max , [_display_fmt=\"%.3f\"] , [_power=1.0]) )",
+                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders (_label, _val, _min, _max, [_display_fmt=\"%.3f\"], [_power=1.0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_float",
                     "returnType": 2
                 },
                 {
-                    "id": "596e5021-0441-49fa-9bc4-b529234be1b5",
+                    "id": "b3d3e402-74c0-42be-96b1-c6f4b7e46b2b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6909,14 +8801,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_float2",
-                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders ( _label , _val , _val2 , _min , _max , [_display_fmt=\"%.3f\"] , [_power=1.0]) )",
+                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders (_label, _val, _val2, _min, _max, [_display_fmt=\"%.3f\"], [_power=1.0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_float2",
                     "returnType": 2
                 },
                 {
-                    "id": "fd881ac2-3919-4628-ad04-3a827908233c",
+                    "id": "13f6ad9b-0374-4e1c-a1b2-7a9994d49724",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6924,14 +8816,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_float3",
-                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders ( _label , _val , _val2 , _val3 , _min , _max , [_display_fmt=\"%.3f\"] , [_power=1.0]) )",
+                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders (_label, _val, _val2, _val3, _min, _max, [_display_fmt=\"%.3f\"], [_power=1.0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_float3",
                     "returnType": 2
                 },
                 {
-                    "id": "74e62394-3671-4e9b-96ae-4828894e73a4",
+                    "id": "565a761e-efba-4c04-95ef-723501d50307",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6939,14 +8831,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_float4",
-                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders ( _label , _val , _val2 , _val3 , _val4 , _min , _max , [_display_fmt=\"%.3f\"] , [_power=1.0]) )",
+                    "help": "adjust display_format to decorate the value with a prefix or a suffix for in-slider labels or unit display. Use power!=1.0 for logarithmic sliders (_label, _val, _val2, _val3, _val4, _min, _max, [_display_fmt=\"%.3f\"], [_power=1.0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_float4",
                     "returnType": 2
                 },
                 {
-                    "id": "4630f844-b070-4a50-b1d9-431474e79e25",
+                    "id": "67b77298-e73b-49dd-b46e-cb1236c37940",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6954,14 +8846,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_angle",
-                    "help": "angle slider ( _label , _rad , [_degree_min=-360.0] , [_degree_max=360.0] )",
+                    "help": "angle slider (_label, _rad, [_degree_min=-360.0], [_degree_max=360.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_angle",
                     "returnType": 2
                 },
                 {
-                    "id": "544c3e03-a026-406b-9ae2-867bae4c8af4",
+                    "id": "37c3d2a4-86ae-4175-bf5f-e5f702057983",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6969,14 +8861,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_int",
-                    "help": "add an integer slider ( _label , _v , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "add an integer slider (_label, _v, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_int",
                     "returnType": 2
                 },
                 {
-                    "id": "046ca232-cd83-40d2-824b-b512295b0aa2",
+                    "id": "4777c203-b22b-48b5-8101-79cb550d7ff1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6984,14 +8876,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_int2",
-                    "help": "add an integer slider ( _label , _v , _v2 , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "add an integer slider (_label, _v, _v2, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_int2",
                     "returnType": 2
                 },
                 {
-                    "id": "8f1a5843-85b8-44af-841d-2cbdd9cae6d6",
+                    "id": "9e78ff35-0a8b-4663-9ac7-3f17300f0147",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -6999,14 +8891,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_int3",
-                    "help": "add an integer slider ( _label , _v , _v2 , _v3 , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "add an integer slider (_label, _v, _v2, _v3, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_int3",
                     "returnType": 2
                 },
                 {
-                    "id": "5be5cc59-d0f1-4610-ad09-8eb6b7f27ae9",
+                    "id": "10526094-2100-410c-aac7-5ae1dbd53184",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7014,14 +8906,14 @@
                         
                     ],
                     "externalName": "imguigml_slider_int4",
-                    "help": "add an integer slider ( _label , _v , _v2 , _v3 , _v4 , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "add an integer slider (_label, _v, _v2, _v3, _v4, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_slider_int4",
                     "returnType": 2
                 },
                 {
-                    "id": "d3b585e9-1257-43c0-99de-212a7ff35574",
+                    "id": "0c153588-8f5b-47ac-bb94-9515fafd5f7c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7029,14 +8921,14 @@
                         
                     ],
                     "externalName": "imguigml_vslider_float",
-                    "help": "a vslider float? ( _label , _size_x , _size_y , _v , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "a vslider float? (_label, _size_x, _size_y, _v, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_vslider_float",
                     "returnType": 2
                 },
                 {
-                    "id": "06d6e4ce-9ba3-47c7-95e1-56ff26afe360",
+                    "id": "40378344-694a-4f68-ad51-4817e5445d60",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7044,14 +8936,14 @@
                         
                     ],
                     "externalName": "imguigml_vslider_int",
-                    "help": "a vslider int? ( _label , _size_x , _size_y , _v , _v_min , _v_max , [_display_fmt=\"%.0f\"] )",
+                    "help": "a vslider int? (_label, _size_x, _size_y, _v, _v_min, _v_max, [_display_fmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_vslider_int",
                     "returnType": 2
                 },
                 {
-                    "id": "347caff2-215d-4510-b66c-e65b4146388f",
+                    "id": "3bd46615-a8a5-47b9-9583-aeaa641d5356",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7059,14 +8951,14 @@
                         
                     ],
                     "externalName": "imguigml_color_edit3",
-                    "help": "show a color edit field ( _label , _r , _g , _b , [_flags=0] )",
+                    "help": "show a color edit field (_label, _r_or_array3, [_g=undefined], [_b=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_edit3",
                     "returnType": 2
                 },
                 {
-                    "id": "f9d08d98-8778-4d80-a3cd-7d459bc2c7b1",
+                    "id": "4c3dfd7a-e9c3-466b-9916-c5096ed38cbf",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7074,14 +8966,14 @@
                         
                     ],
                     "externalName": "imguigml_color_edit4",
-                    "help": "show a color edit field ( _label , _r , _g , _b , _a , [_flags=0] )",
+                    "help": "show a color edit field (_label, _r_or_array4, [_g=undefined], [_b=undefined], [_a=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_edit4",
                     "returnType": 2
                 },
                 {
-                    "id": "182932e2-d914-4b20-9575-b09d1fa669be",
+                    "id": "2284b65e-7b60-4581-8597-4da1e7cc59a6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7089,14 +8981,14 @@
                         
                     ],
                     "externalName": "imguigml_color_picker3",
-                    "help": "show a color edit field ( _label , _r , _g , _b , [_flags=0] )",
+                    "help": "show a color edit field (_label, _r_or_array4, [_g=undefined], [_b=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_picker3",
                     "returnType": 2
                 },
                 {
-                    "id": "d16427e5-d0aa-4ff8-b01d-cb803ce12afc",
+                    "id": "54b9432d-6e90-461c-ab50-91c72cfebe36",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7104,14 +8996,14 @@
                         
                     ],
                     "externalName": "imguigml_color_picker4",
-                    "help": "show a color edit field ( _label , _r , _g , _b , _a , [_flags=0] )",
+                    "help": "show a color edit field (_label, _r_or_array4, [_g=undefined], [_b=undefined], [_a=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_picker4",
                     "returnType": 2
                 },
                 {
-                    "id": "e731321f-5610-4a8a-a38f-5a0d36784e64",
+                    "id": "3983ce10-9f34-4ffa-b82a-104a1b8ec439",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7119,14 +9011,14 @@
                         
                     ],
                     "externalName": "imguigml_color_button",
-                    "help": "display a colored square\/button, hover for details, return true when pressed. ( _desc_id , _r , _g , _b , _a , [_flags=0] , [_size_x=0] , [_size_y=0]) )",
+                    "help": "display a colored square\/button, hover for details, return true when pressed. (_desc_id, _r, _g, _b, _a, [_flags=0], [_size_x=0], [_size_y=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_color_button",
                     "returnType": 2
                 },
                 {
-                    "id": "f01e8d37-d804-4654-b459-2220664d296e",
+                    "id": "81c60160-2ef1-4e9a-9689-1643c98fc94e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7134,14 +9026,14 @@
                         
                     ],
                     "externalName": "imguigml_set_color_edit_options",
-                    "help": "initialize current options (generally on application startup) if you want to select a default format, picker type, etc. User will be able to change many settings, unless you pass the _NoOptions flag to your calls. (  )",
+                    "help": "initialize current options [generally on application startup] if you want to select a default format, picker type, etc. User will be able to change many settings, unless you pass the _NoOptions flag to your calls. ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_color_edit_options",
                     "returnType": 2
                 },
                 {
-                    "id": "907dca7a-6e17-44bf-9924-d82aa59f9885",
+                    "id": "f5852993-5a91-433b-a0d7-db3b244a8db1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7149,14 +9041,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_float",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.3f\"] , [_power=1.0] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.3f\"], [_power=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_float",
                     "returnType": 2
                 },
                 {
-                    "id": "2aa6b72a-0db8-4cc4-87dd-8fb030a69c9d",
+                    "id": "a368c9a7-72d8-465a-add4-63efc2c59d69",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7164,14 +9056,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_float2",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.3f\"] , [_power=1.0] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.3f\"], [_power=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_float2",
                     "returnType": 2
                 },
                 {
-                    "id": "14995985-2714-4884-8720-1522c602bc6b",
+                    "id": "61f48def-823c-4755-9c90-a22515ef510c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7179,14 +9071,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_float3",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , _v3 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.3f\"] , [_power=1.0] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, _v3, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.3f\"], [_power=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_float3",
                     "returnType": 2
                 },
                 {
-                    "id": "2e46bef7-fc7c-499f-ac68-7e417c82ffea",
+                    "id": "cfe04e77-60b2-47e7-866b-5709b9d80e01",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7194,14 +9086,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_float4",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , _v3 , _v4 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.3f\"] , [_power=1.0] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, _v3, _v4, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.3f\"], [_power=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_float4",
                     "returnType": 2
                 },
                 {
-                    "id": "916dcd69-d861-4e93-b995-4b27f84b2479",
+                    "id": "55af3eff-16c1-4663-aa2c-0d4a3d36c20c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7209,14 +9101,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_float_range2",
-                    "help": "drag an integer range 2? ( _label , _v_current_min , _v_current_max , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.0f\"] , [_displayFmtMax=undefined] , [_power=1.0] )",
+                    "help": "drag an integer range 2? (_label, _v_current_min, _v_current_max, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.0f\"], [_displayFmtMax=undefined], [_power=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_float_range2",
                     "returnType": 2
                 },
                 {
-                    "id": "ec69c44f-0119-46d6-aea1-3a9e9c1bbba7",
+                    "id": "b654b95d-867d-4b3e-b751-3216e7c6b8e8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7224,14 +9116,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_int",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.0f\"] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_int",
                     "returnType": 2
                 },
                 {
-                    "id": "36bd5bb4-c435-433b-b648-e509b6d3d1e4",
+                    "id": "68b77543-de41-4efc-9969-1fb6b1fb1dd6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7239,14 +9131,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_int2",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.0f\"] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_int2",
                     "returnType": 2
                 },
                 {
-                    "id": "42ccb312-0d0d-468e-846c-160787ff3801",
+                    "id": "b08db182-b7a8-4018-898f-5c08110232a3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7254,14 +9146,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_int3",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , _v3 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.0f\"] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, _v3, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_int3",
                     "returnType": 2
                 },
                 {
-                    "id": "a657de8c-2f56-4329-94ae-e66d97d43489",
+                    "id": "25800f07-e49a-4723-a241-978227bf2f9e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7269,14 +9161,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_int4",
-                    "help": "If v_min >= v_max we have no bound ( _label , _v , _v2 , _v3 , _v4 , [_v_speed=1.0] , [_v_min=0.0] , [_v_max=0.0] , [_displayFmt=\"%.0f\"] )",
+                    "help": "If v_min >= v_max we have no bound (_label, _v, _v2, _v3, _v4, [_v_speed=1.0], [_v_min=0.0], [_v_max=0.0], [_displayFmt=\"%.0f\"])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_int4",
                     "returnType": 2
                 },
                 {
-                    "id": "430d33c3-a05d-4c88-894a-37c4ea689ca8",
+                    "id": "87df0cad-c701-4dc2-b972-8e13f114e29c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7284,14 +9176,14 @@
                         
                     ],
                     "externalName": "imguigml_drag_int_range2",
-                    "help": "drag an integer range 2? ( _label , _v_current_min , _v_current_max , [_v_speed=1.0] , [_v_min=0] , [_v_max=0] , [_displayFmt=\"%.0f\"] , [_displayFmtMax=undefined] )",
+                    "help": "drag an integer range 2? (_label, _v_current_min, _v_current_max, [_v_speed=1.0], [_v_min=0], [_v_max=0], [_displayFmt=\"%.0f\"], [_displayFmtMax=undefined])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_drag_int_range2",
                     "returnType": 2
                 },
                 {
-                    "id": "debf66a6-717c-4708-931e-31ab3c20293d",
+                    "id": "779ab2ca-5b45-4812-ba18-90de75eafbcc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7299,14 +9191,14 @@
                         
                     ],
                     "externalName": "imguigml_input_text",
-                    "help": "add an input text field ( _label , _text , _max_length , [_flags=0] , [_callback=noone] , [_userdata=undefined] )",
+                    "help": "add an input text field (_label, _text, _max_length, [_flags=0], [_callback=noone], [_userdata=undefined])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_text",
                     "returnType": 2
                 },
                 {
-                    "id": "c68a81d3-de93-47a7-bd8f-d30f98873bac",
+                    "id": "936dd994-11c4-411b-9ddc-4e44168d3c55",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7314,14 +9206,14 @@
                         
                     ],
                     "externalName": "imguigml_input_text_multiline",
-                    "help": "add an input text field ( _label , _text , _max_len , _size_x , _size_y , [_flags=0] , [_callback=noone] , [_userdata=undefined] )",
+                    "help": "add an input text field (_label, _text, _max_len, _size_x, _size_y, [_flags=0], [_callback=noone], [_userdata=undefined])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_text_multiline",
                     "returnType": 2
                 },
                 {
-                    "id": "83f4100a-c127-4f00-97f7-6f6c10fed021",
+                    "id": "fd06b5dd-f5f9-4e84-b84c-6bd4ef5b777d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7329,14 +9221,14 @@
                         
                     ],
                     "externalName": "imguigml_input_float",
-                    "help": "keyboard input field float ( _label , _val , [_step=0.0f] , [_step_fast=0.0f] , [_decimal_precision=-1] , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, [_step=0.0f], [_step_fast=0.0f], [_decimal_precision=-1], [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_float",
                     "returnType": 2
                 },
                 {
-                    "id": "2e4b6885-88ce-48b1-a8eb-0944e2768311",
+                    "id": "5db5ea04-5773-4718-b332-22cc4f7860d8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7344,14 +9236,14 @@
                         
                     ],
                     "externalName": "imguigml_input_float2",
-                    "help": "keyboard input field float ( _label , _val , _val2 , [_decimal_precision=-1] , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, [_decimal_precision=-1], [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_float2",
                     "returnType": 2
                 },
                 {
-                    "id": "2c2ea5a7-b03b-4f97-947e-61bdd987a174",
+                    "id": "dce4e787-eef4-4008-8e70-1f4e41eca1c3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7359,14 +9251,14 @@
                         
                     ],
                     "externalName": "imguigml_input_float3",
-                    "help": "keyboard input field float ( _label , _val , _val2 , _val3 , [_decimal_precision=-1] , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, _val3, [_decimal_precision=-1], [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_float3",
                     "returnType": 2
                 },
                 {
-                    "id": "c93eed2b-806d-438f-b6c7-0e230af72412",
+                    "id": "1b106a98-b41a-4d12-ae0c-f6b0fc5359b4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7374,14 +9266,14 @@
                         
                     ],
                     "externalName": "imguigml_input_float4",
-                    "help": "keyboard input field float ( _label , _val , _val2 , _val3 , _val4 , [_decimal_precision=-1] , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, _val3, _val4, [_decimal_precision=-1], [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_float4",
                     "returnType": 2
                 },
                 {
-                    "id": "f57153dd-4f8d-4956-a725-1d9c7b00809f",
+                    "id": "7f960ec6-81a7-4975-b27f-3383d2c36e74",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7389,14 +9281,14 @@
                         
                     ],
                     "externalName": "imguigml_input_int",
-                    "help": "keyboard input field float ( _label , _val , [_step=1] , [_step_fast=100] , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, [_step=1], [_step_fast=100], [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_int",
                     "returnType": 2
                 },
                 {
-                    "id": "9afb6005-46e6-4e4a-8a9f-b3fda3cf20ce",
+                    "id": "a0607e84-2edb-4f44-979b-f9f2cf16976d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7404,14 +9296,14 @@
                         
                     ],
                     "externalName": "imguigml_input_int2",
-                    "help": "keyboard input field float ( _label , _val , _val2 , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_int2",
                     "returnType": 2
                 },
                 {
-                    "id": "512760c6-2b58-4400-828d-f687d7ca1d8b",
+                    "id": "9facfb48-dc5b-4dea-b344-843bb58893ef",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7419,14 +9311,14 @@
                         
                     ],
                     "externalName": "imguigml_input_int3",
-                    "help": "keyboard input field float ( _label , _val , _val2 , _val3 , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, _val3, [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_int3",
                     "returnType": 2
                 },
                 {
-                    "id": "3f1090ff-17c0-4bbd-a8ef-87f3d4c83f58",
+                    "id": "48317145-5805-4bdc-893f-8d7031d6d21d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7434,14 +9326,14 @@
                         
                     ],
                     "externalName": "imguigml_input_int4",
-                    "help": "keyboard input field float ( _label , _val , _val2 , _val3 , _val4 , [_extra_flags=0]) )",
+                    "help": "keyboard input field float (_label, _val, _val2, _val3, _val4, [_extra_flags=0]))",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_input_int4",
                     "returnType": 2
                 },
                 {
-                    "id": "63eaa060-c7e1-4cc7-b63d-b02990cf4a4c",
+                    "id": "830e2310-0902-4485-bf47-a3bea1c51e46",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7449,14 +9341,14 @@
                         
                     ],
                     "externalName": "imguigml_button",
-                    "help": "ImGui::Button() ( _label , [_size_x=0.0] , [_size_y=0.0] )",
+                    "help": "ImGui::Button[] (_label, [_size_x=0.0], [_size_y=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_button",
                     "returnType": 2
                 },
                 {
-                    "id": "2e96574a-59c5-49f5-bd68-c33a39ea3149",
+                    "id": "1474924c-4ca8-450b-9d03-2b48a5ac4493",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7464,14 +9356,14 @@
                         
                     ],
                     "externalName": "imguigml_small_button",
-                    "help": "button with FramePadding=(0,0) to easily embed within text ( _label )",
+                    "help": "button with FramePadding=[0,0] to easily embed within text (_label)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_small_button",
                     "returnType": 2
                 },
                 {
-                    "id": "65a8ac0a-2c59-44ce-bb2a-8e720d9f701f",
+                    "id": "16cf74af-1731-4058-9e43-18291b07ddf5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7479,14 +9371,14 @@
                         
                     ],
                     "externalName": "imguigml_invisible_button",
-                    "help": "ImGui::InvisibleButton() ( _str_id , [_size_x=0.0] , [_size_y=0.0] )",
+                    "help": "ImGui::InvisibleButton[] (_str_id, [_size_x=0.0], [_size_y=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_invisible_button",
                     "returnType": 2
                 },
                 {
-                    "id": "001dd211-f07a-4c38-ab72-9eebf09c3568",
+                    "id": "15c68458-870f-4421-b568-99decf6c5f20",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7494,134 +9386,29 @@
                         
                     ],
                     "externalName": "imguigml_image",
-                    "help": "ImGui::Image() ( _texture_id , _size_x , _size_y , [_u0=0.0] , [_v0=0.0] , [_u1=1.0] , [_v1=1.0] , [_tint_r=1.0] , [_tint_g=1.0] , [_tint_b=1.0] , [_tint_a=1.0] , [_border_r=0.0] , [_border_g=0.0] , [_border_b=0.0] , [_border_a=0.0] )",
+                    "help": "ImGui::Image[] (_texture_id, _size_x, _size_y, [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0], [_border_r=0.0], [_border_g=0.0], [_border_b=0.0], [_border_a=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_image",
                     "returnType": 2
                 },
                 {
-                    "id": "865d6dc2-b66c-431b-b67e-0accbb126d0c",
+                    "id": "4fd8e240-2e74-4256-85ac-941fad02ffbf",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "imguigml_image_button",
-                    "help": "ImGui::ImageButton() ( _texture_id , _size_x , _size_y , [_u0=0.0] , [_v0=0.0] , [_u1=1.0] , [_v1=1.0] , [_frame_padding=-1] , [_bg_r=0.0] , [_bg_g=0.0] , [_bg_b=0.0] , [_bg_a=0.0] , [_tint_r=1.0] , [_tint_g=1.0] , [_tint_b=1.0] , [_tint_a=1.0] )",
+                    "externalName": "imguigml_surface",
+                    "help": "ImGui::Image[] (_surface, [width=undefined], [height=undefined], [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0], [_border_r=0.0], [_border_g=0.0], [_border_b=0.0], [_border_a=0.0])",
                     "hidden": false,
                     "kind": 1,
-                    "name": "imguigml_image_button",
+                    "name": "imguigml_surface",
                     "returnType": 2
                 },
                 {
-                    "id": "4f01bdaf-b1eb-4fed-8175-834bb572eee6",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_checkbox",
-                    "help": "ImGui::Checkbox() ( _label , _val )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_checkbox",
-                    "returnType": 2
-                },
-                {
-                    "id": "9e1c4bec-a79a-489d-937c-664c10fba0dd",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_checkbox_flags",
-                    "help": "ImGui::CheckboxFlags() ( _label , _flags , _flag_val )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_checkbox_flags",
-                    "returnType": 2
-                },
-                {
-                    "id": "5cbc46c1-6ac6-4fb9-ac4b-9f123b30a1b1",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_radio_button",
-                    "help": "ImGui::RadioButton() ( _label , _activeOrVal , _current_val )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_radio_button",
-                    "returnType": 2
-                },
-                {
-                    "id": "0e4553f7-70f6-4fcc-a30a-7873fbc9fcba",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_combo",
-                    "help": " ( _label , _current_item , _items )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_combo",
-                    "returnType": 2
-                },
-                {
-                    "id": "1d69b4a4-9fdc-4bb6-a78f-87acb30d9820",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_plot_lines",
-                    "help": "plot a line graph i guess ( _label , _values , [_values_offset=0] , [_overlay=undefined] , [_scale_min=undefined] , [_scale_max=undefined] , [_graph_size_x=0] , [_graph_size_y=0] , [_stride=sizeof(float)] )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_plot_lines",
-                    "returnType": 2
-                },
-                {
-                    "id": "2b598ad2-2459-4a71-ac8d-145f767a2bef",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_plot_histogram",
-                    "help": "plot a histogram graph i guess ( _label , _values , [_values_offset=0] , [_overlay=undefined] , [_scale_min=undefined] , [_scale_max=undefined] , [_graph_size_x=0] , [_graph_size_y=0] , [_stride=sizeof(float)] )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_plot_histogram",
-                    "returnType": 2
-                },
-                {
-                    "id": "477bbcba-232c-4fbf-8c51-facea7a10527",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_progress_bar",
-                    "help": " ( _fraction , [_size_x=-1.0] , [_size_y=0.0] , [_overlay=undefined] )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_progress_bar",
-                    "returnType": 2
-                },
-                {
-                    "id": "3b0bd455-debb-429b-8bdd-eab1a7342404",
+                    "id": "70109630-6b1e-472b-b4f0-85bd65476608",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7629,14 +9416,44 @@
                         
                     ],
                     "externalName": "imguigml_sprite",
-                    "help": "ImGui::Image() ( _sprite_index , _sub_img , _size_x , _size_y , [_tint_r=1.0] , [_tint_g=1.0] , [_tint_b=1.0] , [_tint_a=1.0] , [_border_r=0.0] , [_border_g=0.0] , [_border_b=0.0] , [_border_a=0.0] )",
+                    "help": "ImGui::Image[] (_sprite_index, _sub_img, [_width=undefined], [_height=undefined], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0], [_border_r=0.0], [_border_g=0.0], [_border_b=0.0], [_border_a=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_sprite",
                     "returnType": 2
                 },
                 {
-                    "id": "00680926-c00b-41ae-9586-3f5bb31f1857",
+                    "id": "9bbc5f44-9863-4fc8-82ad-7d88df554e3e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_image_button",
+                    "help": "ImGui::ImageButton[] (_texture_id, _size_x, _size_y, [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_frame_padding=-1], [_bg_r=0.0], [_bg_g=0.0], [_bg_b=0.0], [_bg_a=0.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_image_button",
+                    "returnType": 2
+                },
+                {
+                    "id": "79c29bac-8009-459a-a148-f0bac9befadb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_surface_button",
+                    "help": "Add an ImGui button that uses a surface for its appearance (_surface, [width=undefined], [height=undefined], [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_frame_padding=-1], [_bg_r=0.0], [_bg_g=0.0], [_bg_b=0.0], [_bg_a=0.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_surface_button",
+                    "returnType": 2
+                },
+                {
+                    "id": "64c31761-9a22-412c-8fd0-37557dc15ec1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7644,14 +9461,134 @@
                         
                     ],
                     "externalName": "imguigml_sprite_button",
-                    "help": "ImGui::ImageButton() ( _sprite_index , _sub_img , _size_x , _size_y , [_frame_padding=-1] , [_bg_r=0.0] , [_bg_g=0.0] , [_bg_b=0.0] , [_bg_a=0.0] , [_tint_r=1.0] , [_tint_g=1.0] , [_tint_b=1.0] , [_tint_a=1.0] )",
+                    "help": "ImGui::ImageButton[] (_sprite_index, _sub_img, [_width=undefined], [_height=undefined], [_frame_padding=-1], [_bg_r=0.0], [_bg_g=0.0], [_bg_b=0.0], [_bg_a=0.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_sprite_button",
                     "returnType": 2
                 },
                 {
-                    "id": "a59726fd-7091-4714-8049-cd12c643020f",
+                    "id": "ff5eea4c-5cf0-478d-8961-be01a3e64fb5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_checkbox",
+                    "help": "ImGui::Checkbox[] (_label, _val)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_checkbox",
+                    "returnType": 2
+                },
+                {
+                    "id": "5bde9863-d9c7-4e14-b407-7eebd2ab0011",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_checkbox_flags",
+                    "help": "Show a checkbox with multiple flags (_label, _flags, _flag_val)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_checkbox_flags",
+                    "returnType": 2
+                },
+                {
+                    "id": "f14a5e43-032f-4255-a81a-01eee8046311",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_radio_button",
+                    "help": "Show a radio button [multiple choice, single answer] (_label, _activeOrVal, _current_val)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_radio_button",
+                    "returnType": 2
+                },
+                {
+                    "id": "0a55a068-c8f6-4e56-99f4-756f7d4baf9f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_plot_lines",
+                    "help": "Plots a line graph, index as x axis values for y (_label, _values, [_values_offset=0], [_overlay=undefined], [_scale_min=undefined], [_scale_max=undefined], [_graph_size_x=0], [_graph_size_y=0], [_stride=sizeof(float)])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_plot_lines",
+                    "returnType": 2
+                },
+                {
+                    "id": "f7cf60c3-ebb2-43cb-af4f-e704d9fbf127",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_plot_histogram",
+                    "help": "Plots a histogram. (_label, _values, [_values_offset=0], [_overlay=undefined], [_scale_min=undefined], [_scale_max=undefined], [_graph_size_x=0], [_graph_size_y=0], [_stride=sizeof(float)])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_plot_histogram",
+                    "returnType": 2
+                },
+                {
+                    "id": "89cb1110-bd97-418d-9bf4-f943c2f8b74c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_progress_bar",
+                    "help": "(_fraction, [_size_x=-1.0], [_size_y=0.0], [_overlay=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_progress_bar",
+                    "returnType": 2
+                },
+                {
+                    "id": "df79bd98-be07-4dbd-966d-ece0ff3bcfd7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__imguigml_image",
+                    "help": "internal imguigml  call to draw an image using the `_texture_id` texture (_texture_id, _size_x, _size_y, [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0], [_border_r=0.0], [_border_g=0.0], [_border_b=0.0], [_border_a=0.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__imguigml_image",
+                    "returnType": 2
+                },
+                {
+                    "id": "f1a2b90b-fcc0-4e2d-8995-4c5e861bdcfd",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__imguigml_image_button",
+                    "help": "Add a button using the texture stored at `_texture_id` for the appearance (_texture_id, _size_x, _size_y, [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_frame_padding=-1], [_bg_r=0.0], [_bg_g=0.0], [_bg_b=0.0], [_bg_a=0.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__imguigml_image_button",
+                    "returnType": 2
+                },
+                {
+                    "id": "e5563a8d-ab80-4ad0-b849-6bbf2394468a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7659,14 +9596,14 @@
                         
                     ],
                     "externalName": "imguigml_text",
-                    "help": "simple formatted text ( _text )",
+                    "help": "simple formatted text (_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_text",
                     "returnType": 2
                 },
                 {
-                    "id": "4c36a517-4cb3-4e66-b477-16d7dd47f40c",
+                    "id": "028c3c95-f717-428e-8053-b3aeebde166d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7674,14 +9611,14 @@
                         
                     ],
                     "externalName": "imguigml_text_colored",
-                    "help": "shortcut for PushStyleColor(ImGuiCol_Text, style.Colors[ImGuiCol_TextDisabled]); Text(fmt, ...); PopStyleColor(); ( _r , _g , _b , _a , _text )",
+                    "help": "shortcut for PushStyleColor[ImGuiCol_Text, style.Colors[ImGuiCol_TextDisabled]]; Text[fmt, ...]; PopStyleColor[]; (_r, _g, _b, _a, _text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_text_colored",
                     "returnType": 2
                 },
                 {
-                    "id": "95262823-719a-45ba-befc-a47e0399e449",
+                    "id": "fc342bc7-2b36-4f81-a0bf-641119758cd6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7689,14 +9626,14 @@
                         
                     ],
                     "externalName": "imguigml_text_disabled",
-                    "help": "shortcut for PushStyleColor(ImGuiCol_Text, style.Colors[ImGuiCol_TextDisabled]); Text(fmt, ...); PopStyleColor(); ( _text )",
+                    "help": "shortcut for PushStyleColor[ImGuiCol_Text, style.Colors[ImGuiCol_TextDisabled]]; Text[fmt, ...]; PopStyleColor[]; (_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_text_disabled",
                     "returnType": 2
                 },
                 {
-                    "id": "f7f0c495-2972-45e4-a0ba-fdb910c2261c",
+                    "id": "63a7ae37-ce08-4780-815d-cf81f13215db",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7704,14 +9641,14 @@
                         
                     ],
                     "externalName": "imguigml_text_wrapped",
-                    "help": "shortcut for `imguigml_push_text_wrap_pos(0.0f); imguigml_text(_text); imguigml_pop_text_wrap_pos();`. ( _text )",
+                    "help": "shortcut for `imguigml_push_text_wrap_pos[0.0f]; imguigml_text[_text]; imguigml_pop_text_wrap_pos[];`. (_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_text_wrapped",
                     "returnType": 2
                 },
                 {
-                    "id": "c58cca2e-2144-4c77-a0b7-72b04a576dae",
+                    "id": "0036193a-4ada-41af-a97d-8475d8ef4058",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7719,14 +9656,14 @@
                         
                     ],
                     "externalName": "imguigml_label_text",
-                    "help": "display text+label aligned the same way as value+label widgets ( _label , _text )",
+                    "help": "display text+label aligned the same way as value+label widgets (_label, _text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_label_text",
                     "returnType": 2
                 },
                 {
-                    "id": "2cea700c-bd16-4ee8-bc0f-29f6fe062338",
+                    "id": "2e7bf97d-2ddb-4595-a4c4-abd899401191",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7734,14 +9671,14 @@
                         
                     ],
                     "externalName": "imguigml_bullet_text",
-                    "help": "shortcut for Bullet()+Text() ( _text )",
+                    "help": "shortcut for Bullet[]+Text[] (_text)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_bullet_text",
                     "returnType": 2
                 },
                 {
-                    "id": "1e70249f-7006-43cf-8343-71242bfc099a",
+                    "id": "4ed6e677-f502-4120-8914-aa812b106d54",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7749,14 +9686,14 @@
                         
                     ],
                     "externalName": "imguigml_bullet",
-                    "help": "draw a small circle and keep the cursor on the same line.       advance cursor x position by GetTreeNodeToLabelSpacing(), same distance that TreeNode() uses (  )",
+                    "help": "draw a small circle and keep the cursor on the same line.       advance cursor x position by GetTreeNodeToLabelSpacing[], same distance that TreeNode[] uses ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_bullet",
                     "returnType": 2
                 },
                 {
-                    "id": "4229e054-f5fb-464f-bf8f-16be0ac9724d",
+                    "id": "492358b1-8748-4d68-8468-eb53f4f9e971",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7764,14 +9701,14 @@
                         
                     ],
                     "externalName": "imguigml_tree_node",
-                    "help": " (  )",
+                    "help": "begin a tree node (_labelOrId)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_tree_node",
                     "returnType": 2
                 },
                 {
-                    "id": "34f5560c-157a-48e7-aebe-425e94ade853",
+                    "id": "c4dabc7d-b587-4368-89aa-35239e68ac97",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7779,14 +9716,14 @@
                         
                     ],
                     "externalName": "imguigml_tree_node_ex",
-                    "help": " (  )",
+                    "help": "begin a tree node (_labelOrId, [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_tree_node_ex",
                     "returnType": 2
                 },
                 {
-                    "id": "973b4a65-a96c-402b-8750-e500e15f472e",
+                    "id": "2634d5eb-a5cc-4342-bfc8-9e4a9f30cf5b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7794,14 +9731,14 @@
                         
                     ],
                     "externalName": "imguigml_tree_push",
-                    "help": " (  )",
+                    "help": "Indent[]+PushId[]. Already called by TreeNode[] when returning true, but you can call Push\/Pop yourself for layout purpose (_labelOrId)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_tree_push",
                     "returnType": 2
                 },
                 {
-                    "id": "c93ac56c-c5c5-4460-8670-6cf9ebab7de1",
+                    "id": "5852213f-5a81-4d40-987a-0edcbe1648fd",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7809,14 +9746,14 @@
                         
                     ],
                     "externalName": "imguigml_tree_pop",
-                    "help": "~ Unindent()+PopId() (  )",
+                    "help": "~ Unindent[]+PopId[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_tree_pop",
                     "returnType": 2
                 },
                 {
-                    "id": "800c9985-3b4e-4a37-b41e-657d85ee3ea0",
+                    "id": "08b72540-0385-47e8-bd6e-df0cc0f85fd6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7824,14 +9761,14 @@
                         
                     ],
                     "externalName": "imguigml_tree_advance_to_label_pos",
-                    "help": "advance cursor x position by GetTreeNodeToLabelSpacing() (  )",
+                    "help": "advance cursor x position by GetTreeNodeToLabelSpacing[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_tree_advance_to_label_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "e3609b4e-aa50-4932-821e-1874d075c885",
+                    "id": "de920adb-b47f-4c20-a010-1d80a66d22bb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7839,14 +9776,14 @@
                         
                     ],
                     "externalName": "imguigml_get_tree_node_to_label_spacing",
-                    "help": " (  )",
+                    "help": "()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_tree_node_to_label_spacing",
                     "returnType": 2
                 },
                 {
-                    "id": "5ca065bb-9932-4324-8482-95618f039794",
+                    "id": "3d186bcc-0f50-4a01-a8f7-30b5c6f5bb38",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7854,14 +9791,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_tree_node_open",
-                    "help": "set next TreeNode\/CollapsingHeader open state. ( _is_open , [_cond=0] )",
+                    "help": "set next TreeNode\/CollapsingHeader open state. (_is_open, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_tree_node_open",
                     "returnType": 2
                 },
                 {
-                    "id": "3637390c-6e5e-437e-a4c6-51f3ed3f5529",
+                    "id": "e6ac2b9e-b88c-402c-8e5b-20e108dca2cc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7869,14 +9806,14 @@
                         
                     ],
                     "externalName": "imguigml_collapsing_header",
-                    "help": "add a collapsing header ( _label , [_open=undefined] , [_flags=0] )",
+                    "help": "add a collapsing header (_label, [_open=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_collapsing_header",
                     "returnType": 2
                 },
                 {
-                    "id": "7268ef92-73a3-49fd-8f76-1379bd5eb69d",
+                    "id": "b43161dc-b253-4def-829d-1a9697ff82c8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7884,14 +9821,14 @@
                         
                     ],
                     "externalName": "imguigml_begin",
-                    "help": "Push a new ImGui window to add widgets to. ( _name , [_open=undefined] , [_flags=0] )",
+                    "help": "Push a new ImGui window to add widgets to. (_name, [_open=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin",
                     "returnType": 2
                 },
                 {
-                    "id": "0a0325b9-57bf-4eac-94fb-6427be88c92e",
+                    "id": "980c3535-e736-425d-9f37-f9637cf18bf4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7899,14 +9836,14 @@
                         
                     ],
                     "externalName": "imguigml_end",
-                    "help": "ImGui::End() (  )",
+                    "help": "ImGui::End[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end",
                     "returnType": 2
                 },
                 {
-                    "id": "3a073b4c-bc1b-4c28-af6d-d30188140d91",
+                    "id": "9bb92cfa-a819-447e-9e7b-403eaec3bec5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7914,14 +9851,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_child",
-                    "help": "begin a scrolling region. each axis can use a different mode, e.g. ImVec2(0,400). ( _id , [_size_x=0] , [_size_y=0] , [_border=false] , [_extra_flags=0] )",
+                    "help": "begin a scrolling region. each axis can use a different mode, e.g. ImVec2[0,400]. (_id, [_size_x=0], [_size_y=0], [_border=false], [_extra_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_child",
                     "returnType": 2
                 },
                 {
-                    "id": "51faf2f3-e307-45d4-9063-f08b419b4183",
+                    "id": "2f9973f6-8c03-41e0-b80e-3fd472523cd1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7929,14 +9866,14 @@
                         
                     ],
                     "externalName": "imguigml_end_child",
-                    "help": "end a scrolling region (  )",
+                    "help": "end a scrolling region ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_child",
                     "returnType": 2
                 },
                 {
-                    "id": "68a3d136-6f7d-44bf-b872-627bef17fdc5",
+                    "id": "31f4bc15-1e9d-4516-b068-ee951a18a2aa",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7944,14 +9881,14 @@
                         
                     ],
                     "externalName": "imguigml_get_content_region_max",
-                    "help": "current content boundaries (typically window boundaries including scrolling, or current column boundaries), in windows coordinates (  )",
+                    "help": "current content boundaries [typically window boundaries including scrolling, or current column boundaries], in windows coordinates ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_content_region_max",
                     "returnType": 2
                 },
                 {
-                    "id": "aa4e8ffd-33ed-4fed-96f4-2c7e4eb0bb76",
+                    "id": "09d06503-21c5-422a-9a42-dd2e68ba7a99",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7959,14 +9896,14 @@
                         
                     ],
                     "externalName": "imguigml_get_content_region_avail",
-                    "help": "== GetContentRegionMax() - GetCursorPos() (  )",
+                    "help": "== GetContentRegionMax[] - GetCursorPos[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_content_region_avail",
                     "returnType": 2
                 },
                 {
-                    "id": "9e4db72a-70f4-4745-b2f6-9296e2af3136",
+                    "id": "c5a693a4-72cf-459c-8029-660c25055c61",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7974,14 +9911,14 @@
                         
                     ],
                     "externalName": "imguigml_get_content_region_avail_width",
-                    "help": "get available width (  )",
+                    "help": "get available width ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_content_region_avail_width",
                     "returnType": 2
                 },
                 {
-                    "id": "60ae5536-fc50-4756-b482-320a1fbf0f8b",
+                    "id": "9d69fb5c-be6e-4750-8c4a-3f2e627ef627",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -7989,14 +9926,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_content_region_min",
-                    "help": "content boundaries min (roughly (0,0)-Scroll), in window coordinates (  )",
+                    "help": "content boundaries min [roughly [0,0]-Scroll], in window coordinates ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_content_region_min",
                     "returnType": 2
                 },
                 {
-                    "id": "c14f9c63-4ebb-47bd-aecf-73a4d2aef6c2",
+                    "id": "5c093095-cb14-4a89-b7f8-957fcd82eba4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8004,14 +9941,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_content_region_max",
-                    "help": "content boundaries max (roughly (0,0)+Size-Scroll) where Size can be override with SetNextWindowContentSize(), in window coordinates (  )",
+                    "help": "content boundaries max [roughly [0,0]+Size-Scroll] where Size can be override with SetNextWindowContentSize[], in window coordinates ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_content_region_max",
                     "returnType": 2
                 },
                 {
-                    "id": "908c9385-8dd7-4060-abd6-33fc3dada91c",
+                    "id": "7f084574-517d-4d40-948e-57ce96301c09",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8019,14 +9956,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_content_region_width",
-                    "help": "content width in windows coordinates (  )",
+                    "help": "content width in windows coordinates ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_content_region_width",
                     "returnType": 2
                 },
                 {
-                    "id": "dd7431bb-e5fd-4f1f-837c-91a56865c796",
+                    "id": "6912db62-8e62-4edb-9c04-5da129d91f56",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8034,14 +9971,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_pos",
-                    "help": "get current window position in screen space (useful if you want to do your own drawing via the DrawList api) (  )",
+                    "help": "get current window position in screen space [useful if you want to do your own drawing via the DrawList api] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "5dfebeae-c5be-4a74-95d7-a7ab3e984bbb",
+                    "id": "e72efe80-d298-46bd-bcfe-801cfe5fe6fe",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8049,14 +9986,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_size",
-                    "help": "get current window size (  )",
+                    "help": "get current window size ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_size",
                     "returnType": 2
                 },
                 {
-                    "id": "e650b179-6c0b-4235-be0b-292872fa5b71",
+                    "id": "195a314f-c631-460e-a4a9-22ffb1388f75",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8064,14 +10001,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_width",
-                    "help": "get current window width (  )",
+                    "help": "get current window width ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_width",
                     "returnType": 2
                 },
                 {
-                    "id": "f58e3022-c3b0-4313-a488-ab12de2b6beb",
+                    "id": "b3ce0819-ecce-4222-b92e-00d0b039baf3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8079,14 +10016,14 @@
                         
                     ],
                     "externalName": "imguigml_get_window_height",
-                    "help": "get current window height (  )",
+                    "help": "get current window height ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_window_height",
                     "returnType": 2
                 },
                 {
-                    "id": "c05bc54a-1f3c-4eee-887a-1933ab430dda",
+                    "id": "6ef64e64-7fca-4d7a-a696-18647d378d70",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8094,14 +10031,14 @@
                         
                     ],
                     "externalName": "imguigml_is_window_collapsed",
-                    "help": "is current window collapsed (  )",
+                    "help": "is current window collapsed ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_window_collapsed",
                     "returnType": 2
                 },
                 {
-                    "id": "402136c0-af35-4b50-a0d5-c3f21d4aef5e",
+                    "id": "58a994b8-ceb8-48f8-a44e-f4cbed79e0aa",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8109,14 +10046,14 @@
                         
                     ],
                     "externalName": "imguigml_is_window_appearing",
-                    "help": "is current window appearing (  )",
+                    "help": "is current window appearing ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_is_window_appearing",
                     "returnType": 2
                 },
                 {
-                    "id": "2f51e87b-4ee5-4114-8064-68d748e6b23f",
+                    "id": "5487f7fb-8606-4ffd-8a5b-811c61d8aef2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8124,14 +10061,14 @@
                         
                     ],
                     "externalName": "imguigml_set_window_font_scale",
-                    "help": "per-window font scale. Adjust IO.FontGlobalScale if you want to scale all windows ( _scale )",
+                    "help": "per-window font scale. Adjust IO.FontGlobalScale if you want to scale all windows (_scale)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_window_font_scale",
                     "returnType": 2
                 },
                 {
-                    "id": "8d05fb39-4fd7-42e4-9332-1bf0c967e7bc",
+                    "id": "12c49796-ec30-4d79-ab48-9a8a185ae9b9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8139,14 +10076,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_pos",
-                    "help": "set next window position. call before Begin(). use pivot=(0.5f,0.5f) to center on given point, etc. ( _x , _y , [_cond=0] , [_pivot_x , [_pivot_y )",
+                    "help": "set next window position. call before Begin[]. use pivot=[0.5f,0.5f] to center on given point, etc. (_x, _y, [_cond=0], [_pivot_x, [_pivot_y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "dd87c9f0-5e3c-47af-9581-f19b5d77fadb",
+                    "id": "9f9d46f9-d4df-4586-98d3-9cdba9f9b762",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8154,14 +10091,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_size",
-                    "help": "set next window size. set axis to 0.0f to force an auto-fit on this axis. call before Begin() ( _x , _y , [_cond=0] )",
+                    "help": "set next window size. set axis to 0.0f to force an auto-fit on this axis. call before Begin[] (_x, _y, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_size",
                     "returnType": 2
                 },
                 {
-                    "id": "0859a2da-3794-421a-8163-d1ccfaeb5813",
+                    "id": "83f626a3-9863-4070-a7da-8a8132b4e247",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8169,14 +10106,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_size_constraints",
-                    "help": "set next window size limits. use -1,-1 on either X\/Y axis to preserve the current size. ( _min_x , _min_y , _max_x , _max_y , [_cond=0] )",
+                    "help": "set next window size limits. use -1,-1 on either X\/Y axis to preserve the current size. (_min_x, _min_y, _max_x, _max_y, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_size_constraints",
                     "returnType": 2
                 },
                 {
-                    "id": "2055eada-ca0b-44af-a2e8-826bd78000c8",
+                    "id": "2bf2481c-5d3b-4b74-af8f-f94a90e54757",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8184,29 +10121,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_content_size",
-                    "help": "set next window content size (enforce the range of scrollbars). set axis to 0.0f to leave it automatic. call before Begin() ( _size_x , _size_y )",
+                    "help": "set next window content size [enforce the range of scrollbars]. set axis to 0.0f to leave it automatic. call before Begin[] (_size_x, _size_y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_content_size",
                     "returnType": 2
                 },
                 {
-                    "id": "a77e3f62-7b92-4e4a-924e-f33f5bbdf255",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "imguigml_set_next_window_content_width",
-                    "help": "set next window content width (enforce the range of horizontal scrollbar). call before Begin() ( _width )",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "imguigml_set_next_window_content_width",
-                    "returnType": 2
-                },
-                {
-                    "id": "514e79e2-8aa0-4c3d-b439-60e36dd2f160",
+                    "id": "f55c1e8c-da9a-4e68-a264-4115dfbe6723",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8214,14 +10136,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_collapsed",
-                    "help": "set next window collapsed state. call before Begin() ( _collapsed , [_cond=0] )",
+                    "help": "set next window collapsed state. call before Begin[] (_collapsed, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_collapsed",
                     "returnType": 2
                 },
                 {
-                    "id": "bbf75772-332e-437e-bbe9-7385698787f8",
+                    "id": "02fa5a16-9c4a-41cd-85bc-688198f77d75",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8229,14 +10151,14 @@
                         
                     ],
                     "externalName": "imguigml_set_next_window_focus",
-                    "help": "set next window to be focused \/ front-most. call before Begin() (  )",
+                    "help": "set next window to be focused \/ front-most. call before Begin[] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_next_window_focus",
                     "returnType": 2
                 },
                 {
-                    "id": "bb781d9c-2544-41ed-b9f0-43878a5e69b9",
+                    "id": "a38fed64-827b-468d-9c9e-d86dbaa69dee",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8244,14 +10166,14 @@
                         
                     ],
                     "externalName": "imguigml_set_window_pos",
-                    "help": "set named window position. ( _name , _pos_x , _pos_y , [_cond=0] )",
+                    "help": "set named window position. (_name, _pos_x, _pos_y, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_window_pos",
                     "returnType": 2
                 },
                 {
-                    "id": "c287b3dc-33b2-456a-874d-f910646d01b5",
+                    "id": "6ca57a4e-62d8-4e90-9922-0ce035ca3b51",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8259,14 +10181,14 @@
                         
                     ],
                     "externalName": "imguigml_set_window_size",
-                    "help": "set named window size. set axis to 0.0f to force an auto-fit on this axis. ( _name , _size_x , _size_y , [_cond=0] )",
+                    "help": "set named window size. set axis to 0.0f to force an auto-fit on this axis. (_name, _size_x, _size_y, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_window_size",
                     "returnType": 2
                 },
                 {
-                    "id": "56457966-acd4-4c65-b38f-ee875f81719d",
+                    "id": "1a6e78cd-7422-4ae3-a50f-4a78e7259772",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8274,14 +10196,14 @@
                         
                     ],
                     "externalName": "imguigml_set_window_collapsed",
-                    "help": "set named window collapsed state ( _name , _collapsed , [_cond=0] )",
+                    "help": "set named window collapsed state (_name, _collapsed, [_cond=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_window_collapsed",
                     "returnType": 2
                 },
                 {
-                    "id": "338e80e0-2cc4-42ab-9607-0166751d4dce",
+                    "id": "ab1123d8-ee87-4a46-b959-82e56793c7c0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8289,14 +10211,14 @@
                         
                     ],
                     "externalName": "imguigml_set_window_focus",
-                    "help": "set named window to be focused \/ front-most. use NULL to remove focus. ( _name )",
+                    "help": "set named window to be focused \/ front-most. use NULL to remove focus. (_name)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_window_focus",
                     "returnType": 2
                 },
                 {
-                    "id": "97796a69-730a-4216-9536-6704e92cd2fa",
+                    "id": "f739c3b5-fbdb-4118-b831-b962f27699be",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8304,14 +10226,14 @@
                         
                     ],
                     "externalName": "imguigml_get_scroll_x",
-                    "help": "get scrolling amount [0..GetScrollMaxX()] (  )",
+                    "help": "get scrolling amount [0..GetScrollMaxX[]] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_scroll_x",
                     "returnType": 2
                 },
                 {
-                    "id": "75c079bd-85b5-418b-82da-06ec6f386712",
+                    "id": "cf68bfe5-4fcc-484e-a00b-064a62700b7a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8319,14 +10241,14 @@
                         
                     ],
                     "externalName": "imguigml_get_scroll_y",
-                    "help": "get scrolling amount [0..GetScrollMaxY()] (  )",
+                    "help": "get scrolling amount [0..GetScrollMaxY[]] ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_scroll_y",
                     "returnType": 2
                 },
                 {
-                    "id": "cababa0a-02d5-41bd-9b6d-f6f7d66e06d4",
+                    "id": "d9ff8fa4-ec7c-4372-8b68-176b24eed7b5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8334,14 +10256,14 @@
                         
                     ],
                     "externalName": "imguigml_get_scroll_max_x",
-                    "help": "get maximum scrolling amount ~~ ContentSize.X - WindowSize.X (  )",
+                    "help": "get maximum scrolling amount ~~ ContentSize.X - WindowSize.X ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_scroll_max_x",
                     "returnType": 2
                 },
                 {
-                    "id": "50e55ba7-3923-4a21-bca7-082e56a30057",
+                    "id": "e907a17a-fbf0-46b7-b1b7-3a7f4166a296",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8349,14 +10271,14 @@
                         
                     ],
                     "externalName": "imguigml_get_scroll_max_y",
-                    "help": "get maximum scrolling amount ~~ ContentSize.Y - WindowSize.Y (  )",
+                    "help": "get maximum scrolling amount ~~ ContentSize.Y - WindowSize.Y ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_scroll_max_y",
                     "returnType": 2
                 },
                 {
-                    "id": "3ff5567c-e113-4127-90f2-989afc44b259",
+                    "id": "c6a9d3f0-aabb-4a81-98cd-3b449b81dac0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8364,14 +10286,14 @@
                         
                     ],
                     "externalName": "imguigml_set_scroll_x",
-                    "help": "set scrolling amount [0..GetScrollMaxX()] ( _scroll_x )",
+                    "help": "set scrolling amount [0..GetScrollMaxX[]] (_scroll_x)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_scroll_x",
                     "returnType": 2
                 },
                 {
-                    "id": "ebd3bd43-4b80-4336-8884-32a2c1d2c5ee",
+                    "id": "8e2807de-bff4-4f9a-8625-ff70968f215d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8379,14 +10301,14 @@
                         
                     ],
                     "externalName": "imguigml_set_scroll_y",
-                    "help": "set scrolling amount [0..GetScrollMaxY()] ( _scroll_y )",
+                    "help": "set scrolling amount [0..GetScrollMaxY[]] (_scroll_y)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_scroll_y",
                     "returnType": 2
                 },
                 {
-                    "id": "d16767c2-74de-4083-b919-cfab59aef923",
+                    "id": "4226b58f-7652-42d8-8827-bc32d58131f6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8394,14 +10316,14 @@
                         
                     ],
                     "externalName": "imguigml_set_scroll_here",
-                    "help": "adjust scrolling amount to make current cursor position visible. ( [_center_y_ratio=0.0] )",
+                    "help": "adjust scrolling amount to make current cursor position visible. ([_center_y_ratio=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_scroll_here",
                     "returnType": 2
                 },
                 {
-                    "id": "13f355dd-9215-438c-949d-e5c1b62cacbe",
+                    "id": "91eb1dc3-86b1-422a-9c61-b12db57f8093",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8409,14 +10331,14 @@
                         
                     ],
                     "externalName": "imguigml_set_scroll_from_pos_y",
-                    "help": "adjust scrolling amount to make given position valid. use GetCursorPos() or GetCursorStartPos()+offset to get valid positions. ( [_center_y_ratio=0.0] )",
+                    "help": "adjust scrolling amount to make given position valid. use GetCursorPos[] or GetCursorStartPos[]+offset to get valid positions. ([_center_y_ratio=0.0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_scroll_from_pos_y",
                     "returnType": 2
                 },
                 {
-                    "id": "bdc62bdc-5d4c-432c-b8e0-3a70384c57b6",
+                    "id": "e0d25505-5585-474e-8c8e-c3a3eadee5db",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8424,14 +10346,14 @@
                         
                     ],
                     "externalName": "imguigml_set_keyboard_focus_here",
-                    "help": "focus keyboard on the next widget. ( [_offset] )",
+                    "help": "focus keyboard on the next widget. ([_offset])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_keyboard_focus_here",
                     "returnType": 2
                 },
                 {
-                    "id": "a6f7bcdc-4293-410b-b9c3-fec0c9affc94",
+                    "id": "4d70fc73-2999-4431-8705-f92e00ede4e7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8439,14 +10361,14 @@
                         
                     ],
                     "externalName": "imguigml_set_state_storage",
-                    "help": "replace tree state storage with our own (if you want to manipulate it yourself, typically clear subsection of it) ( _tree )",
+                    "help": "replace tree state storage with our own [if you want to manipulate it yourself, typically clear subsection of it] (_tree)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_set_state_storage",
                     "returnType": 2
                 },
                 {
-                    "id": "b97d2db0-0770-4534-b079-19da9092d791",
+                    "id": "ecacf10c-9c45-4e96-94c5-d1b140548aab",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8454,14 +10376,14 @@
                         
                     ],
                     "externalName": "imguigml_get_state_storage",
-                    "help": "replace tree state storage with our own (if you want to manipulate it yourself, typically clear subsection of it) ( _tree )",
+                    "help": "replace tree state storage with our own [if you want to manipulate it yourself, typically clear subsection of it] (_tree)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_get_state_storage",
                     "returnType": 2
                 },
                 {
-                    "id": "45ae3b3a-d213-48a2-9490-d807f2bf3058",
+                    "id": "c18df92d-b64a-49fb-b2ee-38112e52df92",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8469,14 +10391,14 @@
                         
                     ],
                     "externalName": "imguigml_begin_child_frame",
-                    "help": "helper to create a child window \/ scrolling region that looks like a normal widget frame ( _guiID , _size_x , _size_y , [_extra_flags=0] )",
+                    "help": "helper to create a child window \/ scrolling region that looks like a normal widget frame (_guiID, _size_x, _size_y, [_extra_flags=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_begin_child_frame",
                     "returnType": 2
                 },
                 {
-                    "id": "e7608408-cc07-4eda-8011-851f7f6f1e13",
+                    "id": "f49abb77-1d7f-426d-869c-e3df48dbaadc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8484,14 +10406,239 @@
                         
                     ],
                     "externalName": "imguigml_end_child_frame",
-                    "help": "helper to create a child window \/ scrolling region that looks like a normal widget frame ( [_offset] )",
+                    "help": "helper to create a child window \/ scrolling region that looks like a normal widget frame ([_offset])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_end_child_frame",
                     "returnType": 2
                 },
                 {
-                    "id": "0bf89f24-b96f-4bf5-afcc-b85d5fe97dba",
+                    "id": "0e0f9fd3-89d6-47f9-9b44-29cae49a4aaa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_show_metrics_window",
+                    "help": "create metrics window. display ImGui internals: draw commands [with individual draw calls and vertices], window list, basic internal state, etc. ([_open=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_show_metrics_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "a2f16b1f-c154-4d64-bfbe-cc62e0919ca7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_show_user_guide",
+                    "help": "add basic help\/info block [not a window]: how to manipulate ImGui as a end-user [mouse\/keyboard controls]. ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_show_user_guide",
+                    "returnType": 2
+                },
+                {
+                    "id": "827ab042-1e07-4ae5-8f87-0cbd9f4b03a3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_show_demo_window",
+                    "help": "create demo\/test window [previously called ShowTestWindow]. demonstrate most ImGui features. call this to learn about the library! try to make it always available in your application! ([_open=undefined])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_show_demo_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "0457c440-030d-4e26-b4ea-b481e6de047b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_show_font_selector",
+                    "help": "show a font selector **NOTE:** Functionality is limited at this time until `ImGuiGML` has better font support (_label)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_show_font_selector",
+                    "returnType": 2
+                },
+                {
+                    "id": "bd1477e6-b164-4cf9-a236-37c64dad1255",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_begin_drag_drop_source",
+                    "help": "call when the current item is active. If this return true, you can call imguigml_set_drag_drop_payload[] + imguigml_end_drag_drop_target[] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_begin_drag_drop_source",
+                    "returnType": 2
+                },
+                {
+                    "id": "83d28cb0-b487-4e01-b11a-2f6b39520111",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_set_drag_drop_payload",
+                    "help": "pass an id to use to identify your payload data, or use the imgiugml_generate_payload \/ imguigml_set_payload_data \/ imguigml_release_payload_data helper functions (_type, _payload_id, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_set_drag_drop_payload",
+                    "returnType": 2
+                },
+                {
+                    "id": "2d279413-61f0-4c30-9f09-741fb248fcaa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_end_drag_drop_source",
+                    "help": "end the drag drop source ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_end_drag_drop_source",
+                    "returnType": 2
+                },
+                {
+                    "id": "11004f3f-f6b5-4ded-aeac-59a284034e80",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_begin_drop_target",
+                    "help": "call after submitting an item that may receive an item. If this returns true, you can call AcceptDragDropPayload[] + EndDragDropTarget[] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_begin_drop_target",
+                    "returnType": 2
+                },
+                {
+                    "id": "fa21e6ec-e616-4ef5-8b37-1cf3bde3f5ed",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_accept_drag_drop_payload",
+                    "help": "accept contents of a given type. If ImGuiDragDropFlags_AcceptBeforeDelivery is set you can peek into the payload before the mouse button is released. (_type, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_accept_drag_drop_payload",
+                    "returnType": 2
+                },
+                {
+                    "id": "a3e25ec5-52bf-4cd4-b000-8a006a1a4f73",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_end_drag_drop_target",
+                    "help": "end drag drop target ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_end_drag_drop_target",
+                    "returnType": 2
+                },
+                {
+                    "id": "5b8a94d0-3c0e-4a79-8a6f-03d1c42b0976",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_payload",
+                    "help": "if an id is passed, use this id when looking up the payload, otherwise, return a generated id.      these ids work by clearing each ImGui `NewFrame` and starting over again. generally, this should function fine, however, if you're having id misses in dragndrop,      try just using your own unique id. ([_id], _payload_data)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_payload",
+                    "returnType": 2
+                },
+                {
+                    "id": "87f900ae-8076-484c-b340-82bd31987175",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_payload_get",
+                    "help": "return a payload given a passed _id. (_id)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_payload_get",
+                    "returnType": 2
+                },
+                {
+                    "id": "668090c5-1a7c-4992-bf8c-006fd62e26ca",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_combo",
+                    "help": "(_label, _current_item, _items)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_combo",
+                    "returnType": 2
+                },
+                {
+                    "id": "c20cc4fe-8cd7-4ef2-93e9-7bf1d916fbb1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_begin_combo",
+                    "help": "begin a combo widget (_label, _preview_val, [_flags=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_begin_combo",
+                    "returnType": 2
+                },
+                {
+                    "id": "8f6dfdbb-8d35-41d2-9cd5-c9423fa43d1c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_end_combo",
+                    "help": "end a combo widget ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_end_combo",
+                    "returnType": 2
+                },
+                {
+                    "id": "2faafc23-5c65-4704-b1a5-e7fe40b2531d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8499,14 +10646,14 @@
                         
                     ],
                     "externalName": "imguigml_io_ini_saving_rate",
-                    "help": "Maximum time between saving positions\/sizes to .ini file, in seconds. ( [_time] , { )",
+                    "help": "Maximum time between saving positions\/sizes to .ini file, in seconds. ([_time], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_ini_saving_rate",
                     "returnType": 2
                 },
                 {
-                    "id": "533ac412-9d06-4901-b3e4-36c1412a0c95",
+                    "id": "9bf83375-8e1c-42fa-a138-382631e40a1f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8514,14 +10661,14 @@
                         
                     ],
                     "externalName": "imguigml_io_mouse_double_click_time",
-                    "help": "Time for a double-click, in seconds. ( [_time] , { )",
+                    "help": "Time for a double-click, in seconds. ([_time], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_mouse_double_click_time",
                     "returnType": 2
                 },
                 {
-                    "id": "69b6852f-0e74-4992-903c-d7c84eec0a29",
+                    "id": "ca470332-1eca-4044-b2a0-aa83f65a95d8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8529,14 +10676,14 @@
                         
                     ],
                     "externalName": "imguigml_io_mouse_double_click_max_dist",
-                    "help": "Distance threshold to stay in to validate a double-click, in pixels. ( [_distance] , { )",
+                    "help": "Distance threshold to stay in to validate a double-click, in pixels. ([_distance], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_mouse_double_click_max_dist",
                     "returnType": 2
                 },
                 {
-                    "id": "12d6faf4-288c-439d-8ec6-19353db1909e",
+                    "id": "7e0c32f4-575b-4868-851b-0db8fc4613aa",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8544,14 +10691,14 @@
                         
                     ],
                     "externalName": "imguigml_io_mouse_drag_threshold",
-                    "help": "Distance threshold before considering we are dragging ( [_distance] , { )",
+                    "help": "Distance threshold before considering we are dragging ([_distance], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_mouse_drag_threshold",
                     "returnType": 2
                 },
                 {
-                    "id": "120f9b8a-36f8-49a2-8704-c18b5bd884b3",
+                    "id": "27a70fe3-167f-44c3-a0f6-4465ef246dc8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8559,14 +10706,14 @@
                         
                     ],
                     "externalName": "imguigml_io_key_repeat_delay",
-                    "help": "When holding a key\/button, time before it starts repeating, in seconds (for buttons in Repeat mode, etc.). ( [_time] , { )",
+                    "help": "When holding a key\/button, time before it starts repeating, in seconds [for buttons in Repeat mode, etc.]. ([_time], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_key_repeat_delay",
                     "returnType": 2
                 },
                 {
-                    "id": "c2edb06b-24d5-4782-9765-3aec753d0a71",
+                    "id": "1b6f78ae-ba23-4933-b6ef-4a727c78130c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8574,14 +10721,14 @@
                         
                     ],
                     "externalName": "imguigml_io_key_repeat_rate",
-                    "help": "When holding a key\/button, rate at which it repeats, in seconds. ( [_time] , { )",
+                    "help": "When holding a key\/button, rate at which it repeats, in seconds. ([_time], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_key_repeat_rate",
                     "returnType": 2
                 },
                 {
-                    "id": "5b53f22f-6fe8-40a7-9830-6079f5c1c7f9",
+                    "id": "50f222b0-8474-4ea7-85b2-05685f76eaf0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8589,14 +10736,14 @@
                         
                     ],
                     "externalName": "imguigml_io_font_global_scale",
-                    "help": "Global scale all fonts ( [_scale] , { )",
+                    "help": "Global scale all fonts ([_scale], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_font_global_scale",
                     "returnType": 2
                 },
                 {
-                    "id": "52d38476-cdf3-4f74-8b36-db4eb34c86ae",
+                    "id": "28d0de14-7778-44d0-b886-feaba02cb086",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8604,14 +10751,14 @@
                         
                     ],
                     "externalName": "imguigml_io_font_allow_user_scaling",
-                    "help": "Allow user scaling text of individual window with CTRL+Wheel. ( [_boolean] , { )",
+                    "help": "Allow user scaling text of individual window with CTRL+Wheel. ([_boolean], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_font_allow_user_scaling",
                     "returnType": 2
                 },
                 {
-                    "id": "21f28d68-5473-415c-863a-0d1d096dd31f",
+                    "id": "f74d47a0-e3b4-4c59-a1a7-6c9b78af49a2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8619,14 +10766,14 @@
                         
                     ],
                     "externalName": "imguigml_io_display_framebuffer_scaling",
-                    "help": "For retina display or other situations where window coordinates are different from framebuffer coordinates. User storage only, presently not used by ImGui. ( [_x=1.0] , [_y=1.0] , { )",
+                    "help": "**NOTE: DOES NOTHING FOR NOW** For retina display or other situations where window coordinates are different from framebuffer coordinates. User storage only, presently not used by ImGui. ([_x=1.0], [_y=1.0], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_display_framebuffer_scaling",
                     "returnType": 2
                 },
                 {
-                    "id": "1fd14112-df7b-4fb8-a950-bce2a4f4e3a3",
+                    "id": "53d81703-43c7-4264-8546-75d37e740fa7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8634,14 +10781,14 @@
                         
                     ],
                     "externalName": "imguigml_io_display_visible_min",
-                    "help": "If you use DisplaySize as a virtual space larger than your screen, set DisplayVisibleMin\/Max to the visible area. ( [_x] , [_y] , { )",
+                    "help": "If you use DisplaySize as a virtual space larger than your screen, set DisplayVisibleMin\/Max to the visible area. ([_x], [_y], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_display_visible_min",
                     "returnType": 2
                 },
                 {
-                    "id": "fb8eea78-1696-4646-a1e4-234709bc6c80",
+                    "id": "fff5a1cb-6c3f-47af-b84b-64b687f432ba",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8649,14 +10796,14 @@
                         
                     ],
                     "externalName": "imguigml_io_display_visible_max",
-                    "help": "If the values are the same, we defaults to Min=(0.0f) and Max=DisplaySize ( [_x] , [_y] , { )",
+                    "help": "If the values are the same, we defaults to Min=[0.0f] and Max=DisplaySize ([_x], [_y], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_display_visible_max",
                     "returnType": 2
                 },
                 {
-                    "id": "54c6cb3f-2222-45b2-8ca4-58ca136862a9",
+                    "id": "dc2599ed-5ece-483e-b655-f9f0d063754f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8664,14 +10811,14 @@
                         
                     ],
                     "externalName": "imguigml_io_osx_behaviors",
-                    "help": "OS X style: Text editing cursor movement using Alt instead of Ctrl, Shortcuts using Cmd\/Super instead of Ctrl, Line\/Text Start and End using Cmd+Arrows instead of Home\/End, ouble click selects by word instead of selecting whole text, Multi-selection in lists uses Cmd\/Super instead of Ctrl ( [_boolean] , { )",
+                    "help": "OS X style: Text editing cursor movement using Alt instead of Ctrl, Shortcuts using Cmd\/Super instead of Ctrl, Line\/Text Start and End using Cmd+Arrows instead of Home\/End, ouble click selects by word instead of selecting whole text, Multi-selection in lists uses Cmd\/Super instead of Ctrl ([_boolean], {)",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_osx_behaviors",
                     "returnType": 2
                 },
                 {
-                    "id": "7f7b7d27-3ca1-4d23-9a99-4156e8489820",
+                    "id": "13a3f484-348c-472a-b00e-1f5f6d1c30c2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8679,14 +10826,14 @@
                         
                     ],
                     "externalName": "imguigml_io_ini_filename",
-                    "help": "Path to .ini file. NULL to disable .ini saving. ( [_filename] )",
+                    "help": "Path to .ini file. NULL to disable .ini saving. ([_filename])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_ini_filename",
                     "returnType": 2
                 },
                 {
-                    "id": "a8d61a5f-a4cc-47d8-b81d-785da2cad925",
+                    "id": "15616a78-bc16-45a8-9916-7ca4cc7a7353",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8694,14 +10841,659 @@
                         
                     ],
                     "externalName": "imguigml_io_log_filename",
-                    "help": "Path to .log file - default parameter to ImGui::LogToFile when no file is specified. defaults to \"imgui_log.txt ( [_path] )",
+                    "help": "Path to .log file - default parameter to ImGui::LogToFile when no file is specified. defaults to \"imgui_log.txt ([_path])",
                     "hidden": false,
                     "kind": 1,
                     "name": "imguigml_io_log_filename",
                     "returnType": 2
                 },
                 {
-                    "id": "e90f0a3b-714c-4b84-be80-642c0780b9fb",
+                    "id": "798f5788-87a7-4aac-86a1-e112c49023e9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_io_cursor_blink",
+                    "help": "allow input currsors to blink ([_enabled])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_io_cursor_blink",
+                    "returnType": 2
+                },
+                {
+                    "id": "4b877046-d9e0-4a80-9f18-1a1afaa74976",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_line",
+                    "help": "()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_line",
+                    "returnType": 2
+                },
+                {
+                    "id": "8d6defb0-3303-4a9e-8584-ee13a7747548",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_rect",
+                    "help": "Adds a rectangle to the drawlist (_x1, _y1, _x2, _y2, _col, [_rounding=0.0], [_rounding_corner_flags=-1], [_thickness=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "0053cf94-4e6f-4c2d-8739-05b26d72886b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_rect_filled",
+                    "help": "Adds a filled rectangle to the drawlist (_x1, _y1, _x2, _y2, _col, [_rounding=0.0], [_rounding_corner_flags=-1])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_rect_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "608f350a-f948-4740-bf7c-2ee81cd4fcc6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_rect_filled_multicolor",
+                    "help": "Adds a multicolored filled rectangle to the drawlist (_x1, _y1, _x2, _y2, _colUL, _colUR, _colBR, _colBL)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_rect_filled_multicolor",
+                    "returnType": 2
+                },
+                {
+                    "id": "f4a2ad5f-dcbd-4a47-93a7-5740005b975a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_quad",
+                    "help": "Adds a quad to the drawlist (_x1, _y1, _x2, _y2, _x3, _y3, _x4, _y5, _col, [_thickness=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_quad",
+                    "returnType": 2
+                },
+                {
+                    "id": "f03fc127-438a-4c42-9219-d434ef235ef5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_quad_filled",
+                    "help": "Adds a filled quad to the draw list (_x1, _y1, _x2, _y2, _x3, _y3, _x4, _y5, _col, [_thickness=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_quad_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "acbab564-35e1-4fe2-b4de-ba7c1a855da4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_triangle",
+                    "help": "Adds a triangle to the draw list (_x1, _y1, _x2, _y2, _x3, _y3, _col, [_thickness=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_triangle",
+                    "returnType": 2
+                },
+                {
+                    "id": "d4a86b2e-f64b-4050-a4e7-4929eed133e8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_triangle_filled",
+                    "help": "Adds a filled triangle to the draw list (_x1, _y1, _x2, _y2, _x3, _y3, _col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_triangle_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "353b8a7e-0ac1-43b9-9bd2-edcc3af2d2bb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_circle",
+                    "help": "Adds a circle to the drawlist (_center_x, _center_y, _radius, _col, [_num_segments=12], [_thickness)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_circle",
+                    "returnType": 2
+                },
+                {
+                    "id": "58946bd0-da3b-459b-aec9-c44719cdd525",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_circle_filled",
+                    "help": "Adds a circle to the drawlist (_center_x, _center_y, _radius, _col, [_num_segments=12])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_circle_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "c61f106c-9681-4f3f-b92c-76dc30bcaf78",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_text",
+                    "help": "Adds text to the drawlist (_pos_x, _pos_y, _col, _text, _wrap_width)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "1ff1aadc-c6ad-4212-ae4e-a86926a087d9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_surface",
+                    "help": "(_surface, _x, _y, [_width=undefined], [_height=undefined], [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_col=c_white])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_surface",
+                    "returnType": 2
+                },
+                {
+                    "id": "5592fba1-3d1a-472f-af9e-ad2d898fe53b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_surface_quad",
+                    "help": "Adds an image quad to the draw list (_surface, _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4, [_col=c_white], [_u1=0], [_v1=0], [_u2=1], [_v2=0], [_u3=1], [_v3=1], [_u4=0], [_v4=1])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_surface_quad",
+                    "returnType": 2
+                },
+                {
+                    "id": "a93bddd5-4eb1-4c10-baba-d91b38fe7824",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_sprite",
+                    "help": "Adds an image to the draw list (_sprite_index, _image_index, _x, _y, [_width=undefined], [_height=undefined], [_col=c_white])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_sprite",
+                    "returnType": 2
+                },
+                {
+                    "id": "f241925d-cb0f-4b5e-869b-46b334c329a6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_polyline",
+                    "help": "add a line in a polygonal shape to the draw list (_y]}, _col, [_closed=true], [_thickness=1.0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_polyline",
+                    "returnType": 2
+                },
+                {
+                    "id": "3b740686-0c2f-440b-8a92-044d879fe54a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_convex_poly_filled",
+                    "help": "add filled convex polygonal shape to the draw list (_points, _col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_convex_poly_filled",
+                    "returnType": 2
+                },
+                {
+                    "id": "433ced83-fa87-4187-ad05-eef4e598ba29",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_add_bezier_curve",
+                    "help": "Adds a bezier curve to the drawlist (_pos_x1, _pos_y1, _curve_x1, _curve_y1, _curve_x2, _curve_y2, _pos_x2, _pos_y2, _col, _thickness, [_num_segments=0]))",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_add_bezier_curve",
+                    "returnType": 2
+                },
+                {
+                    "id": "392282e1-2b71-40c5-baf6-c4d17d36cd9d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_clear",
+                    "help": "Clears the current path ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "61693fb9-fb63-4822-bdd1-9d629a611b3b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_line_to",
+                    "help": "add a line to the current path (_x, _y)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_line_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "65db7b07-f2df-44d4-8b83-370447062825",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_line_to_merge_duplicate",
+                    "help": "add a line to the current path, merging any duplicate lines this creates (_x, _y)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_line_to_merge_duplicate",
+                    "returnType": 2
+                },
+                {
+                    "id": "fd22de23-cc81-40cd-830a-b455799f4c9a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_fill_convex",
+                    "help": "add fill the current convex shape created bhy the path (_col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_fill_convex",
+                    "returnType": 2
+                },
+                {
+                    "id": "285f8a5a-4eb6-45a7-88c6-aa43cd8a4a90",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_stroke",
+                    "help": "set the stroke settings for drawing paths (_col, _closed, [_thickness=1.0]))",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_stroke",
+                    "returnType": 2
+                },
+                {
+                    "id": "9b34147c-0d94-4c40-a7b6-43f74ab6f6a1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_arc_to",
+                    "help": "Adds an arc to a path (_center_x, _center_y, _radius, _min, _max, [_num_segments=10])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_arc_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "3afc8085-7682-4e44-bac7-e533329335b4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_arc_to_fast",
+                    "help": "More performant path_arc (_center_x, _center_y, _radius, _min_of_12, _max_of_12)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_arc_to_fast",
+                    "returnType": 2
+                },
+                {
+                    "id": "2fbb590d-9eb5-45ec-8a73-a17001991406",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_bezier_curve_to",
+                    "help": "Curve path to (_x1, _y1, _x2, _y2, _x3, _y3, [_num_segments=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_bezier_curve_to",
+                    "returnType": 2
+                },
+                {
+                    "id": "88c54cec-75ef-47f0-95eb-72418bf55e5d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_path_rect",
+                    "help": "draw a rect on the path (_min_x, _min_y, _max_x, _max_y, [_rounding=0], [_round_corner_flags=-1)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_path_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "e500c259-5d57-49b9-be42-4b0bce54d090",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_channels_split",
+                    "help": "merge channels      Channels:      - Use to simulate layers. By switching channels to can render out-of-order [e.g. submit foreground primitives before background primitives]      - Use to minimize draw calls [e.g. if going back-and-forth between multiple non-overlapping clipping rectangles, prefer to append into separate channels then merge at the end] (_channels_count)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_channels_split",
+                    "returnType": 2
+                },
+                {
+                    "id": "0be2105a-5fab-4f78-af9e-98c587db5297",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_channels_merge",
+                    "help": "merge channels      Channels:      - Use to simulate layers. By switching channels to can render out-of-order [e.g. submit foreground primitives before background primitives]      - Use to minimize draw calls [e.g. if going back-and-forth between multiple non-overlapping clipping rectangles, prefer to append into separate channels then merge at the end] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_channels_merge",
+                    "returnType": 2
+                },
+                {
+                    "id": "a80d9ab1-0cc2-4b6d-9973-2f71b4a908ff",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_channels_set_current",
+                    "help": "merge channels      Channels:      - Use to simulate layers. By switching channels to can render out-of-order [e.g. submit foreground primitives before background primitives]      - Use to minimize draw calls [e.g. if going back-and-forth between multiple non-overlapping clipping rectangles, prefer to append into separate channels then merge at the end] (_channel_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_channels_set_current",
+                    "returnType": 2
+                },
+                {
+                    "id": "e4ace7c2-1d10-4641-9577-638488b48b78",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_push_clip_rect",
+                    "help": "Render-level scissoring (_min_x, _min_y, _max_x, _max_y, [_intersect_with_clip_plane=false])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_push_clip_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "8c130ff1-5c18-4029-bf4c-17ea0a2a2066",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_pop_clip_rect",
+                    "help": "End Render-level scissoring ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_pop_clip_rect",
+                    "returnType": 2
+                },
+                {
+                    "id": "0d4b91ba-cefb-4a5a-b069-0b3655dbf9ca",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_push_clip_rect_fullscreen",
+                    "help": "Push the clip rect for the fullscreen ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_push_clip_rect_fullscreen",
+                    "returnType": 2
+                },
+                {
+                    "id": "ba8e4ed2-657b-4370-b7c8-e13763efdbe8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_get_clip_rect_min",
+                    "help": "Gets the max pos of clipping rectangle ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_get_clip_rect_min",
+                    "returnType": 2
+                },
+                {
+                    "id": "b38f3feb-f4de-4d46-bf13-8081c6d422c3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_get_clip_rect_max",
+                    "help": "Gets the max pos of clipping rectangle ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_get_clip_rect_max",
+                    "returnType": 2
+                },
+                {
+                    "id": "34174a0a-06e7-4bec-8fd6-672de4a5989d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_push_texture_id",
+                    "help": "Pushes a texture to the drawlist (_tex_id)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_push_texture_id",
+                    "returnType": 2
+                },
+                {
+                    "id": "c410ae18-239c-41c5-8a06-2e0f9e799ee5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_pop_texture_id",
+                    "help": "Pops texture from drawlist ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_pop_texture_id",
+                    "returnType": 2
+                },
+                {
+                    "id": "acfc722f-7fec-4a0d-b4d9-8877b42efc8e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_set_flags",
+                    "help": "set the antialising flags [per primitive] (_flags)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_set_flags",
+                    "returnType": 2
+                },
+                {
+                    "id": "1f505cad-f864-46fa-9813-823e13f9e4c9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_get_flags",
+                    "help": "get the antialising flags [per primitive] ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_get_flags",
+                    "returnType": 2
+                },
+                {
+                    "id": "dc34bca0-e916-45bc-890c-f467da93131c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_use_overlay",
+                    "help": "use imgui's overlay drawlist ontop of the screen ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_use_overlay",
+                    "returnType": 2
+                },
+                {
+                    "id": "83170a4d-cb78-498c-9ca3-896056703005",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_drawlist_use_window",
+                    "help": "use imgui's active window drawlist with drawlist functions ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_drawlist_use_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "0294454f-104b-475f-8f34-a1b3b231cfd6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__imguigml_drawlist_add_image_quad",
+                    "help": "Adds an image quad to the draw list (_texture_id, _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4, [_u1=0], [_v1=0], [_u2=1], [_v2=1], [_u3=1], [_v3=1], [_u4=0], [_v4=1], [_col=c_white])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__imguigml_drawlist_add_image_quad",
+                    "returnType": 2
+                },
+                {
+                    "id": "2923417c-e1ac-4640-b4db-3c80212ad1b1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__imguigml_drawlist_add_image",
+                    "help": "Adds an image to the draw list (_texture_id, _x1, _y1, _x2, _y2, [_u1=0], [_v1=0], [_u2=1], [_v2=1], [_col=c_white])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__imguigml_drawlist_add_image",
+                    "returnType": 2
+                },
+                {
+                    "id": "225e7faf-7f84-4024-a628-b7d8111b19f8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8709,14 +11501,14 @@
                         
                     ],
                     "externalName": "__imguigml_draw",
-                    "help": "draw the imgui (  )",
+                    "help": "draw the imgui ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_draw",
                     "returnType": 2
                 },
                 {
-                    "id": "611a382d-d259-4014-9b5b-909ceebc0417",
+                    "id": "25d95e41-ef6b-48d9-8511-b3016b7ed09f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8724,14 +11516,14 @@
                         
                     ],
                     "externalName": "__imguigml_texture_id",
-                    "help": "return an index for a texture id so we can render this properly ( _texture_ptr )",
+                    "help": "return an index for a texture id so we can render this properly (_id\\u0009\\u0009\\u0009\\u0009\\u0009\\u0009, _texture_type_or_sub_img, [_texture_type])",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_texture_id",
                     "returnType": 2
                 },
                 {
-                    "id": "73410e7b-d406-4b56-8c5c-46b982b7e454",
+                    "id": "4c6343e3-bef4-4dc9-bf0d-36cbba47a36d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8739,14 +11531,14 @@
                         
                     ],
                     "externalName": "__imguigml_wrapper_buffer",
-                    "help": "prepare the wrapper buffer for next use (  )",
+                    "help": "prepare the wrapper buffer for next use ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_wrapper_buffer",
                     "returnType": 2
                 },
                 {
-                    "id": "318542c6-eca8-43f3-9b27-05fbdf01460e",
+                    "id": "4a29be88-c84c-4060-9fe2-8b25b0ab351a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8754,14 +11546,29 @@
                         
                     ],
                     "externalName": "__imguigml_handle_text_callback",
-                    "help": "handle text input callback functions, the script it supports is:      `real _text_input_callback({Array:EImguiGML_TextCallback}_data, [_user_data=_undefined])` - on CallbackCharFilter return 1 to discard. ignored elsewise. ( _call_id , _callback )",
+                    "help": "handle text input callback functions, the script it supports is:      `real _text_input_callback[{Array:EImguiGML_TextCallback}_data, [_user_data=_undefined]]` - on CallbackCharFilter return 1 to discard. ignored elsewise. (_call_id, _callback)",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_handle_text_callback",
                     "returnType": 2
                 },
                 {
-                    "id": "3c1d8225-4463-41b6-a79e-a6382560fddd",
+                    "id": "3f5d43bc-50dd-40f0-bd0f-36c3fa8e82ae",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__imguigml_ext_call",
+                    "help": "wrap a _extImguiGML call in this, handle returns or checking immediately after a call ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__imguigml_ext_call",
+                    "returnType": 2
+                },
+                {
+                    "id": "190bbab3-8928-4f0d-bef4-4bbc6b0b3a7c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8769,14 +11576,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_create",
-                    "help": "imguigml create event (  )",
+                    "help": "imguigml create event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_create",
                     "returnType": 2
                 },
                 {
-                    "id": "5b12fe92-84db-4157-9e0f-5cb6e9421e06",
+                    "id": "ccc9a39f-2630-4f17-8553-9488e332a2f8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8784,14 +11591,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_begin_step",
-                    "help": "imguigml begin step event (  )",
+                    "help": "imguigml begin step event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_begin_step",
                     "returnType": 2
                 },
                 {
-                    "id": "3355dc61-c3a9-409c-91e7-6b58644712df",
+                    "id": "a10e2279-8cd3-4e5e-b96d-0d423299d23a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8799,14 +11606,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_end_step",
-                    "help": "imguigml end step event (  )",
+                    "help": "imguigml end step event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_end_step",
                     "returnType": 2
                 },
                 {
-                    "id": "bc1b1885-c383-4765-b7f8-2f2108e69d55",
+                    "id": "91fda32d-a453-4547-b1f9-b3d73be79eb3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8814,14 +11621,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_clean_up",
-                    "help": "imguigml clean up event (  )",
+                    "help": "imguigml clean up event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_clean_up",
                     "returnType": 2
                 },
                 {
-                    "id": "4a97bcee-a813-4bd9-99b9-ee3d275448fb",
+                    "id": "3cb64ec2-ba67-43b4-8ef8-b957685b4ecd",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8829,14 +11636,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_draw",
-                    "help": "imguigml draw event (  )",
+                    "help": "imguigml draw event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_draw",
                     "returnType": 2
                 },
                 {
-                    "id": "b3b0d29d-0391-4642-966b-2b7bd31f477e",
+                    "id": "07e59808-5631-4106-a817-145c45f05c0e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8844,14 +11651,14 @@
                         
                     ],
                     "externalName": "__imguigml_event_draw_gui",
-                    "help": "imguigml draw gui event (  )",
+                    "help": "imguigml draw gui event ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_event_draw_gui",
                     "returnType": 2
                 },
                 {
-                    "id": "e0219dee-0f2c-4949-b4fd-00c5bdb5bf68",
+                    "id": "91b8632e-3196-4bc6-b56a-607784d331f9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8859,14 +11666,14 @@
                         
                     ],
                     "externalName": "__imguigml_init_rendering",
-                    "help": "called `with` imguigml - initialize the rendering (  )",
+                    "help": "called `with` imguigml - initialize the rendering ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_init_rendering",
                     "returnType": 2
                 },
                 {
-                    "id": "adcde8d1-4a9c-4e6f-ae66-a81af960e9f6",
+                    "id": "99511c59-26d1-4f70-8334-2d482a98ba50",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8874,14 +11681,14 @@
                         
                     ],
                     "externalName": "__imguigml_init_font",
-                    "help": "called `with` imguigml - load the font texture (  )",
+                    "help": "called `with` imguigml - load the font texture ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_init_font",
                     "returnType": 2
                 },
                 {
-                    "id": "333302b8-6d94-49c7-a91a-b09f85340e1d",
+                    "id": "af69e0ca-54e1-4df9-9397-19faf0566b35",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8889,14 +11696,14 @@
                         
                     ],
                     "externalName": "__imguigml_init_input",
-                    "help": "called `with` imguigml - initilaize the input stuff (  )",
+                    "help": "called `with` imguigml - initilaize the input stuff ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_init_input",
                     "returnType": 2
                 },
                 {
-                    "id": "4160ce95-75f4-43d7-8ffb-9fb717b55fff",
+                    "id": "df87eb87-b4f9-45f8-ac5b-bb6334b941bc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -8904,389 +11711,764 @@
                         
                     ],
                     "externalName": "__imguigml_init_wrapper",
-                    "help": "called `with` imguigml - initialize wrapper buffer (  )",
+                    "help": "called `with` imguigml - initialize wrapper buffer ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "__imguigml_init_wrapper",
                     "returnType": 2
                 },
                 {
-                    "id": "debfb055-67c0-4b3a-87ba-4f9ab1db4819",
+                    "id": "b33dacaa-be64-48e1-88d1-e608821a68f7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array",
-                    "help": "return an index, or set an index in a `_rousr_array` ( _rousr_array , _index , [_val] )",
+                    "externalName": "__imguigml_init_debug",
+                    "help": "called `with` imguigml - initialize debug buffer ()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array",
+                    "name": "__imguigml_init_debug",
                     "returnType": 2
                 },
                 {
-                    "id": "05ca156b-7732-4ff5-a817-39ffc0446153",
+                    "id": "f17259c5-e9d9-4932-8a94-700858d5e70e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_create",
-                    "help": "create a `rousr style` array, with the size as the first element, and the actual array as second ( [_array] , [_arraySize] )",
+                    "externalName": "imguigml_mem",
+                    "help": "()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_create",
+                    "name": "imguigml_mem",
                     "returnType": 2
                 },
                 {
-                    "id": "c7806edc-c79e-4f83-8156-4fe39facfdc0",
+                    "id": "0a0acfcf-4913-4cee-880f-78415afb678f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_data",
-                    "help": "return the data of the `rousr_array` ( - )",
+                    "externalName": "imguigml_memset",
+                    "help": "()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_data",
+                    "name": "imguigml_memset",
                     "returnType": 2
                 },
                 {
-                    "id": "bbabb016-1c3c-40e0-a76a-2f985d919c43",
+                    "id": "9ba4342b-7fac-4fce-9196-d919ebf4cb48",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_destroy",
-                    "help": "destroy a `rousr style` array - currently does nothing, but future proofing by including. ( _array )",
+                    "externalName": "imguigml_secure_save_mem",
+                    "help": "()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_destroy",
+                    "name": "imguigml_secure_save_mem",
                     "returnType": 2
                 },
                 {
-                    "id": "64db43c5-82db-4b74-953e-9e6c40104d2a",
+                    "id": "f9ab96b3-007b-4ae8-96c8-8ffea2395cd2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_find",
-                    "help": "returns the first occurence of _val beginning at _startIndex ( _rousr_array , _val , [_startIndex=0] )",
+                    "externalName": "imguigml_secure_load_mem",
+                    "help": "()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_find",
+                    "name": "imguigml_secure_load_mem",
                     "returnType": 2
                 },
                 {
-                    "id": "31ca4752-5656-4c9b-a7ae-b7331b684ebf",
+                    "id": "01a87f51-c8bd-4a28-90ee-397cf36c8aca",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_insert",
-                    "help": "insert a value into a rousr array ( _rousr_array , _index , _val )",
+                    "externalName": "imguigml_begin_tab_bar",
+                    "help": "start a tab bar (_std_id, [_flags=0])",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_insert",
+                    "name": "imguigml_begin_tab_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "05f2ebed-31a9-4f75-a3e1-0ae4c23127bb",
+                    "id": "3b99dcb2-ed7d-4e12-b160-0680dc791fb3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_pop_back",
-                    "help": "pop the back of a rousr array and return it ( _rousr_array )",
+                    "externalName": "imguigml_end_tab_bar",
+                    "help": "finish a tab bar ()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_pop_back",
+                    "name": "imguigml_end_tab_bar",
                     "returnType": 2
                 },
                 {
-                    "id": "1d55795a-3f56-4c42-96ea-2be9fd5abe57",
+                    "id": "0fdefe7c-92cd-4bab-b317-cd5802a1d09a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_pop_front",
-                    "help": "pop the front of an array and return it ( _rousr_array )",
+                    "externalName": "imguigml_tab_item",
+                    "help": "create a tab item (_name, [_open=undefined], [_flags=0])",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_pop_front",
+                    "name": "imguigml_tab_item",
                     "returnType": 2
                 },
                 {
-                    "id": "6218f35a-9e92-42e2-b9a9-1658165684da",
+                    "id": "bb38256c-fd9d-4d9d-9622-0286a2bcf7d7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_push_back",
-                    "help": "push a value on the end of a rousr_array ( _rousr_array , _val )",
+                    "externalName": "imguigml_set_tab_item_closed",
+                    "help": "set a tab item as closed (_name)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_push_back",
+                    "name": "imguigml_set_tab_item_closed",
                     "returnType": 2
                 },
                 {
-                    "id": "44606148-1e38-4b28-a0d4-499a41a9915d",
+                    "id": "95d75c17-f87e-4ea9-b790-4a5215211d99",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_push_front",
-                    "help": "push a value on the front of a rousr array ( _array , _val )",
+                    "externalName": "imguigml_set_tab_item_selected",
+                    "help": "set a tab item as selected (_name)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_push_front",
+                    "name": "imguigml_set_tab_item_selected",
                     "returnType": 2
                 },
                 {
-                    "id": "4b5faab3-5d0d-43d2-b231-d6a7f923d08a",
+                    "id": "160d27b1-b41c-4e42-b20e-3fd7c939ab01",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_push_unique",
-                    "help": "push a value on the end of a rousr array, but only if value isn't in the array already ( _rousr_array , _val , [_returnIndexOnExists=false] )",
+                    "externalName": "imguigml_show_tabs_demo",
+                    "help": "show the tabs demo (_name, [_open=undefined])",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_push_unique",
+                    "name": "imguigml_show_tabs_demo",
                     "returnType": 2
                 },
                 {
-                    "id": "dc6ba44c-85a0-40fd-a97c-6c4bc5fc6bb1",
+                    "id": "bcb96027-5b81-40fb-a466-a377cdaa0a9d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_remove",
-                    "help": "generate a new array with _index removed from the `_rousr_array` ( _rousr_array , _index )",
+                    "externalName": "imguigml_show_tabs_debug",
+                    "help": "show tabs debug pane ()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_remove",
+                    "name": "imguigml_show_tabs_debug",
                     "returnType": 2
                 },
                 {
-                    "id": "6dd9d046-f26c-44d8-8525-b7ea99e0c231",
+                    "id": "2476fb52-ef13-463f-8c94-a56675b3ad2a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_remove_multi",
-                    "help": "generate a new array with _index removed from the `_rousr_array` ( _rousr_array , _index_array , [_index_array_size] )",
+                    "externalName": "imguigml_texteditor_create",
+                    "help": "create a new texteditor ()",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_remove_multi",
+                    "name": "imguigml_texteditor_create",
                     "returnType": 2
                 },
                 {
-                    "id": "52a5866a-4894-484a-a1ed-8ecebad9e76b",
+                    "id": "bada6416-b040-4fb5-a955-584a8ac573b8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_array_size",
-                    "help": "return the size of the `rousr_array` ( - , [_new_size] )",
+                    "externalName": "imguigml_texteditor_destroy",
+                    "help": "destroy a texteditor (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_array_size",
+                    "name": "imguigml_texteditor_destroy",
                     "returnType": 2
                 },
                 {
-                    "id": "d6bc0e46-6cbd-4ad6-ac9d-2f51dbe7d562",
+                    "id": "e8c58316-43d5-4afc-8bee-42f152314e2e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_create",
-                    "help": "create a `rousr_stack_array` - a stack purely made of arrays (  )",
+                    "externalName": "imguigml_texteditor_set_language_definition",
+                    "help": "Sets the current text editor language definition (_editor_index, _lang)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_create",
+                    "name": "imguigml_texteditor_set_language_definition",
                     "returnType": 2
                 },
                 {
-                    "id": "8087d598-bd3a-4d9f-b79b-5f4b8deb54dc",
+                    "id": "c8ce2e30-b984-4e05-bb20-ab982daf5921",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_destroy",
-                    "help": "destroy a `rousr_stack_array` - since they're made up of arrays, this is unnecessary to call, but provided future API use or re-using stack arrays. ( _rousr_stack_array )",
+                    "externalName": "imguigml_texteditor_get_language_definition",
+                    "help": "Gets the current text editor language definition (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_destroy",
+                    "name": "imguigml_texteditor_get_language_definition",
                     "returnType": 2
                 },
                 {
-                    "id": "2821980e-b721-4c71-b364-711b50086bf7",
+                    "id": "c0193792-90e9-4818-b9f3-6a5c8f5cbd0d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_empty",
-                    "help": "check if a stack is empty ( _rousr_stack_array )",
+                    "externalName": "imguigml_texteditor_get_palette",
+                    "help": "Gets the palette of the current text editor (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_empty",
+                    "name": "imguigml_texteditor_get_palette",
                     "returnType": 2
                 },
                 {
-                    "id": "913ce05f-934f-41b2-8bc1-107efd47b0c4",
+                    "id": "3bd57a20-ecad-462e-97d1-1b5cc1f7e86b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_pop",
-                    "help": "pop the last `val`  from a `_rousr_stack_array` ( _rousr_stack_array )",
+                    "externalName": "imguigml_texteditor_set_palette",
+                    "help": "Sets the palette of the current text editor (_editor_index, _palette)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_pop",
+                    "name": "imguigml_texteditor_set_palette",
                     "returnType": 2
                 },
                 {
-                    "id": "712a1905-dbc3-437b-b0a3-eaa4bfcca62b",
+                    "id": "88e5463a-92d3-400e-9c46-e212b93b6cd5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_push",
-                    "help": "push a `_val` onto the stack of a `_rousr_stack_array` ( _rousr_stack_array , _val )",
+                    "externalName": "imguigml_texteditor_render",
+                    "help": "Renders the text editor (_editor_index, _label, [_size_x=0], [_size_y=0], [_border=false])",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_push",
+                    "name": "imguigml_texteditor_render",
                     "returnType": 2
                 },
                 {
-                    "id": "e6a58f64-97fc-46ac-bb74-681abc3908c7",
+                    "id": "e4d4c7a6-fc06-4eb0-9703-413ce4a79ca0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_stack_array_top",
-                    "help": "return the top index of a `rousr_stack_array` ( _rousr_stack_array )",
+                    "externalName": "imguigml_texteditor_set_text",
+                    "help": "Sets the text of the current editor (_editor_index, _text)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_stack_array_top",
+                    "name": "imguigml_texteditor_set_text",
                     "returnType": 2
                 },
                 {
-                    "id": "07f0e0ac-93d0-4d74-bffc-2dd90b2a8a00",
+                    "id": "7288fee2-44b2-422c-9184-2bff9cad9dcc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_buffer_defines",
-                    "help": "enums \/ macros for rousr buffer functions (no need to call) (  )",
+                    "externalName": "imguigml_texteditor_get_text",
+                    "help": "Gets the text from the current editor (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_buffer_defines",
+                    "name": "imguigml_texteditor_get_text",
                     "returnType": 2
                 },
                 {
-                    "id": "6cad8ca9-0226-40b4-ad4c-699db19ff6c1",
+                    "id": "5adaca03-a016-4248-b47c-d757e246e1f1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_buffer_rousr_type_to_buffer_type",
-                    "help": "return a buffer type from a luarousr data type ( _type )",
+                    "externalName": "imguigml_texteditor_get_selected_text",
+                    "help": "Gets the selected text of the current editor (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_buffer_rousr_type_to_buffer_type",
+                    "name": "imguigml_texteditor_get_selected_text",
                     "returnType": 2
                 },
                 {
-                    "id": "d0f5f828-8c51-4123-ba2d-5cfbeb782ae8",
+                    "id": "e28b624f-f113-4cc0-9bf2-319ad9e7515b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_buffer_read_val",
-                    "help": "Reads a value from a packed buffer, first reading data type to expect. ( _buffer )",
+                    "externalName": "imguigml_texteditor_get_total_lines",
+                    "help": "Gets the total lines from the current text editor (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_buffer_read_val",
+                    "name": "imguigml_texteditor_get_total_lines",
                     "returnType": 2
                 },
                 {
-                    "id": "e79d5ede-cb30-4950-b6e2-f2d0aa315e45",
+                    "id": "dfe357a7-5ae8-47ed-8ddb-c14d6812abe5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_buffer_write_val",
-                    "help": "writes a value to the buffer, but first writes the type ( _buffer , _val , [type=ERousrData.Invalid] )",
+                    "externalName": "imguigml_texteditor_is_overwrite",
+                    "help": "Checks if current text editor is in overwrite mode (_editor_index)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_buffer_write_val",
+                    "name": "imguigml_texteditor_is_overwrite",
                     "returnType": 2
                 },
                 {
-                    "id": "28d4ae9e-e47c-4695-ab93-83f63de56650",
+                    "id": "48de530e-adb3-40cb-90b3-36029baf8615",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "rousr_callstack_defines",
-                    "help": "(do not call) rousr callstack definitions and enums (  )",
+                    "externalName": "imguigml_texteditor_set_readonly",
+                    "help": "Sets the text editor to read only (_editor_index, _value)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "rousr_callstack_defines",
+                    "name": "imguigml_texteditor_set_readonly",
                     "returnType": 2
                 },
                 {
-                    "id": "4fac6479-8fb3-4311-ba4f-ec3d00b21279",
+                    "id": "0253f3b3-b382-4c30-88e5-4c5bec309b39",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_is_readonly",
+                    "help": "Checks if the current editor is read only (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_is_readonly",
+                    "returnType": 2
+                },
+                {
+                    "id": "862a422b-1656-4a08-a379-2472607d0327",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_set_cursor_position",
+                    "help": "Sets the cursor position using line and column (_editor_index, _line, _col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_set_cursor_position",
+                    "returnType": 2
+                },
+                {
+                    "id": "4268619a-6e94-4159-810b-c0f1d4b9da03",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_get_cursor_position",
+                    "help": "Gets the line and column from the current text editor (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_get_cursor_position",
+                    "returnType": 2
+                },
+                {
+                    "id": "dbfe5154-449d-49cc-95f8-4662ee59c386",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_insert_text",
+                    "help": "Inserts text at position in the current text editor (_editor_index, _text)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_insert_text",
+                    "returnType": 2
+                },
+                {
+                    "id": "d5a7e0fc-94ff-40ab-98b6-a2a061a209a8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_up",
+                    "help": "Moves up  lines in the text editor (_editor_index, _amount, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_up",
+                    "returnType": 2
+                },
+                {
+                    "id": "aef487df-ae10-4c91-8f5d-b247fc0b6205",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_down",
+                    "help": "Moves down  lines in the text editor (_editor_index, _amount, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_down",
+                    "returnType": 2
+                },
+                {
+                    "id": "c8ee1048-35cf-4348-9541-b6cbdc2bbcc0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_left",
+                    "help": "Moves left  lines in the text editor (_editor_index, _amount, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_left",
+                    "returnType": 2
+                },
+                {
+                    "id": "5833e739-543a-4e21-bb3d-f6281d5018b4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_right",
+                    "help": "Moves right  lines in the text editor (_editor_index, _amount, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_right",
+                    "returnType": 2
+                },
+                {
+                    "id": "335f4ccd-fdd3-44dd-91d1-c3fb6bd1fbba",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_top",
+                    "help": "Skips to top of current editor (_editor_index, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_top",
+                    "returnType": 2
+                },
+                {
+                    "id": "8bdd4ad5-447b-44eb-86e5-e1a742efbf16",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_bottom",
+                    "help": "Skips to bottom of current editor (_editor_index, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_bottom",
+                    "returnType": 2
+                },
+                {
+                    "id": "f8612cfd-9fdc-41e6-aeb5-4f1c145fceee",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_home",
+                    "help": "Moves to the home position of the current editor (_editor_index, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_home",
+                    "returnType": 2
+                },
+                {
+                    "id": "5dc9abf7-40d4-4476-8754-f88e41fff7bc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_move_end",
+                    "help": "Moves to the end position of the current editor (_editor_index, [_select)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_move_end",
+                    "returnType": 2
+                },
+                {
+                    "id": "5a81dc3a-12ee-46fb-ab1b-343074137ce3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_set_selection_start",
+                    "help": "Sets the start select position in the current editor (_editor_index, _line, _col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_set_selection_start",
+                    "returnType": 2
+                },
+                {
+                    "id": "29345d1e-2576-4af1-8a68-0d24ddf024b9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_set_selection_end",
+                    "help": "Sets the end select position in the current editor (_editor_index, _line, _col)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_set_selection_end",
+                    "returnType": 2
+                },
+                {
+                    "id": "1785b9c4-2b0b-4fdf-9fef-0c10e2039803",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_set_selection",
+                    "help": "Sets selection value in current editor (_editor_index, _line1, _col1, _line2, _col2, [word_mode)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_set_selection",
+                    "returnType": 2
+                },
+                {
+                    "id": "064fab1f-05e7-4226-86b2-3db5029d1710",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_select_word_under_cursor",
+                    "help": "Selects the word under the mouse cursor in the current editor (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_select_word_under_cursor",
+                    "returnType": 2
+                },
+                {
+                    "id": "66f3dba0-f105-4867-b8d2-84298f17c196",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_has_selection",
+                    "help": "Checks if current editor has selected text (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_has_selection",
+                    "returnType": 2
+                },
+                {
+                    "id": "300c95e7-e5a9-43e8-b4ba-e1eee38280c2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_copy",
+                    "help": "Copies the selected tex (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_copy",
+                    "returnType": 2
+                },
+                {
+                    "id": "fb2d709f-8163-4907-bb50-ca9140e824e8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_cut",
+                    "help": "Cuts the selected text (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_cut",
+                    "returnType": 2
+                },
+                {
+                    "id": "985e8cca-884b-45a3-a61a-6a47575be5bf",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_paste",
+                    "help": "pastes the selected text (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_paste",
+                    "returnType": 2
+                },
+                {
+                    "id": "2b9a991f-ca41-49a9-98e6-ab01aa353702",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_delete",
+                    "help": "deletes the selected text (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_delete",
+                    "returnType": 2
+                },
+                {
+                    "id": "161a674a-1582-4627-8da4-871e1caaef9b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_can_undo",
+                    "help": "Check if there is undo history (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_can_undo",
+                    "returnType": 2
+                },
+                {
+                    "id": "91d61196-a18b-4a42-9178-d3a05bb6bd4f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_can_redo",
+                    "help": "Check if there is redo history (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_can_redo",
+                    "returnType": 2
+                },
+                {
+                    "id": "960a9295-11a9-46e7-919a-ff43126dbd2a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_get_dark_palette",
+                    "help": "Gets the dark palette that may be used with editor (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_get_dark_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "a48889a6-fc57-416b-8af8-96989b118a39",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "imguigml_texteditor_get_light_palette",
+                    "help": "Gets the light palette that may be used with editor (_editor_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "imguigml_texteditor_get_light_palette",
+                    "returnType": 2
+                },
+                {
+                    "id": "8810645c-8f90-419e-aab7-d851a111ae20",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9294,14 +12476,14 @@
                         
                     ],
                     "externalName": "rousr_callstack_init",
-                    "help": "Initial rousr_callstack data (  )",
+                    "help": "Initial rousr_callstack data ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "rousr_callstack_init",
                     "returnType": 2
                 },
                 {
-                    "id": "b2877fac-7318-442f-ad90-96144dd71727",
+                    "id": "68da92cc-5665-4332-a095-74de205d6fdb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9309,14 +12491,14 @@
                         
                     ],
                     "externalName": "rousr_callstack_clean_up",
-                    "help": "delete all the buffers in the rousr callstack system - call before you 'reset' anything using the callstacks (  )",
+                    "help": "delete all the buffers in the rousr callstack system - call before you 'reset' anything using the callstacks ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "rousr_callstack_clean_up",
                     "returnType": 2
                 },
                 {
-                    "id": "729a1a29-be7b-4d50-a857-c354ae3f140b",
+                    "id": "f7dc2666-6701-4237-adbb-ab3cdfe8ff9c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9324,14 +12506,14 @@
                         
                     ],
                     "externalName": "rousr_callstack_process",
-                    "help": "allow passing back and forth between DLL and GML ( _call_id )",
+                    "help": "allow passing back and forth between DLL and GML (_call_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "rousr_callstack_process",
                     "returnType": 2
                 },
                 {
-                    "id": "3b7a24ea-372e-4951-b35c-342b4f8adb68",
+                    "id": "8a527d2d-1ed5-465a-a93c-2a424b52e8ec",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9339,14 +12521,14 @@
                         
                     ],
                     "externalName": "rousr_callstack_out",
-                    "help": "read data OUT of the DLL - get the output buffer for the `_call_id` ( [_call_id=last )",
+                    "help": "read data OUT of the DLL - get the output buffer for the `_call_id` ([_call_id=last)",
                     "hidden": false,
                     "kind": 1,
                     "name": "rousr_callstack_out",
                     "returnType": 2
                 },
                 {
-                    "id": "a8b6dcc7-f294-48d2-a374-03a13d1c1e39",
+                    "id": "8bc4bb99-5cfb-4a7d-8fb4-e2ad54cc5ca2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9354,14 +12536,14 @@
                         
                     ],
                     "externalName": "rousr_callstack_in",
-                    "help": "write data IN to the DLL - get the input buffer for the `_call_id`      **NOTE:** Don't call this until after you're finished with `out` - they're the same buffer. ( [_call_id=last , [_seek_start=true] )",
+                    "help": "write data IN to the DLL - get the input buffer for the `_call_id`      **NOTE:** Don't call this until after you're finished with `out` - they're the same buffer. ([_call_id=last, [_seek_start=true])",
                     "hidden": false,
                     "kind": 1,
                     "name": "rousr_callstack_in",
                     "returnType": 2
                 },
                 {
-                    "id": "f2c26dda-37bf-4311-aea9-740f237c906a",
+                    "id": "f4bb7d4d-1bec-4600-8100-e85bd3c0caee",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -9369,325 +12551,745 @@
                         
                     ],
                     "externalName": "_rousr_callstack_call",
-                    "help": "return a call struct for a call id, if the id doesn't currently exist, assign it a buffer and return ( _call_id )",
+                    "help": "return a call struct for a call id, if the id doesn't currently exist, assign it a buffer and return (_call_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "_rousr_callstack_call",
+                    "returnType": 2
+                },
+                {
+                    "id": "10b05c19-f3a8-4906-8a61-5248f207215f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_create",
+                    "help": "create a new sprite cache ([_width=2048], [_height=2048])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_create",
+                    "returnType": 2
+                },
+                {
+                    "id": "72872b81-0c6a-4169-9977-a71da4d3666b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_destroy",
+                    "help": "clean up a sprite cache (_cache)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_destroy",
+                    "returnType": 2
+                },
+                {
+                    "id": "667ccf31-bde8-47a9-b108-65d10091557d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_push_sprite",
+                    "help": "push a sprite onto the sprite cache, returns an id for the packed sprite (_sprite_cache, _sprite, _image_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_push_sprite",
+                    "returnType": 2
+                },
+                {
+                    "id": "5b7cbf17-ae92-4ebd-82f5-b21ed8783f22",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_flush",
+                    "help": "flush the sprites to a texture (_bin)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_flush",
+                    "returnType": 2
+                },
+                {
+                    "id": "d60c10ad-ce7b-4a95-9691-0be576a6b0e3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_get_uvs",
+                    "help": "returns uvs [0-1] for each of the four corner ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_get_uvs",
+                    "returnType": 2
+                },
+                {
+                    "id": "edfbd8f7-f347-44bb-8373-55cb4ca79cd6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_cache_get_surface",
+                    "help": "get the surface for the cached sprite (_cache, _cached_sprite)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_cache_get_surface",
+                    "returnType": 2
+                },
+                {
+                    "id": "fb83bbba-d556-4cb3-a389-39114ee41fe6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_create",
+                    "help": "creaete a lazy bin packer bin (_width, _height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_create",
+                    "returnType": 2
+                },
+                {
+                    "id": "dc698b3b-c40e-4dd3-b5c2-ef7502893620",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_destroy",
+                    "help": "clean up a lazy bin (_bin)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_destroy",
+                    "returnType": 2
+                },
+                {
+                    "id": "bfa3bee7-16b0-4487-a13c-d5311c87b580",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_pack",
+                    "help": "just try to fit a rectangle next to this one, if it fits :confetti: (_bin, _width, _height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_pack",
+                    "returnType": 2
+                },
+                {
+                    "id": "252a1ecd-837e-4f2f-8885-f95873f0abcc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_get",
+                    "help": "return the rect at the id given (_bin, _packed_id)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_get",
+                    "returnType": 2
+                },
+                {
+                    "id": "2b021ec0-8370-4b4d-8863-2eca9027ab81",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_width",
+                    "help": "return the rect at the id given (_bin)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_width",
+                    "returnType": 2
+                },
+                {
+                    "id": "967f889f-b365-4ecc-a969-c6347892e594",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_height",
+                    "help": "return the rect at the id given (_bin)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "dc349f01-079e-4ba2-aac8-470c1485672e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_lazy_bin_clear",
+                    "help": "clear a lazy bin packer (_bin_pack)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_lazy_bin_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "1300a3cf-8bb7-49b7-8ea7-f4144e81d077",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_create",
+                    "help": "create a sprite atlas (_width, _height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_create",
+                    "returnType": 2
+                },
+                {
+                    "id": "44492d2c-8a20-4839-850b-28ff2b0e53dc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_destroy",
+                    "help": "free resources used by `_sprite_atlas` ()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_destroy",
+                    "returnType": 2
+                },
+                {
+                    "id": "b092a90c-8595-4498-8101-5dff7a9b4155",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_pack",
+                    "help": "pack a sprite - note that this just packs a sprite and returns an id, duplicates are allowed, etc. (_sprite_atlas, _sprite, [_image_num=0])",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_pack",
+                    "returnType": 2
+                },
+                {
+                    "id": "0ede0133-ff6d-4c9c-9b52-abf076f5f20e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_get",
+                    "help": "return an atlas sprite (_sprite_atlas, _atlas_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_get",
+                    "returnType": 2
+                },
+                {
+                    "id": "f06d230f-4454-438c-9796-104f9ad1f804",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_flush",
+                    "help": "draw all the added sprites to the surface (_sprite_atlas)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_flush",
+                    "returnType": 2
+                },
+                {
+                    "id": "2077b7c1-269d-4aa6-84ca-5bd33055b6b6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "sr_sprite_atlas_clear",
+                    "help": "clear all the sprites from an atlas (_sprite_atlas)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "sr_sprite_atlas_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "f9308c25-183d-4ae8-81f6-d48ca0c8ff37",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "__extimguigml_script_index",
+                    "help": "Returns the actual runtime script index because YYG doesn't know how to do that apparently (ext_script_index)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "__extimguigml_script_index",
                     "returnType": 2
                 }
             ],
             "init": "",
             "kind": 2,
             "order": [
-                "ade437f4-f093-4c0c-a742-4f04d8da35e7",
-                "4e6508a7-d5b9-44f3-bddb-f82e2c6eb7b7",
-                "2bc1e6c5-d6f2-4497-aba2-03bd22e2e2f6",
-                "7dcf96e4-1bbb-43d1-867a-519ea41cadcc",
-                "8ec68a66-06ad-4888-81a5-d55a79c64689",
-                "20efb853-5365-4e64-b1bb-a717e0fcd108",
-                "33f06116-b51d-4641-988c-97bdb85c5165",
-                "2e8a9163-dfc2-4dab-8301-835be4dd6f5b",
-                "a4fef42a-ab1b-4541-beb1-d231df5cce34",
-                "15981f86-137d-4b38-b9b1-aaedca15f0f9",
-                "aa4fa0e0-0a81-4a81-9c79-316c45477b47",
-                "e79e7191-0a97-4e5b-ab97-c56736f350bc",
-                "e8164576-34b8-47bc-a8b5-8bbcb54b6c00",
-                "17cec9fd-c19b-4b41-8297-f984def13c3f",
-                "6a73ee25-fb68-4ddb-a5f1-f531b1869fd6",
-                "c44f2970-d3c6-4746-b2f2-e17740d0710c",
-                "9c36c48e-b1a8-4eb1-8894-8d2e1f610f26",
-                "1a714b67-96e9-4710-bd80-8cf931fac8ad",
-                "4a0831d0-82fa-40f1-a7b8-6c3498416afe",
-                "93fe489b-b5e3-4f36-bebb-a185381ef5bf",
-                "dcdbafee-52ab-4e7c-9ea7-de380fc8d720",
-                "c830c941-b28d-472a-a4ca-916fd8f01edb",
-                "fee6a83a-31fb-47b5-9637-bd225145d724",
-                "8fc6e3ac-7c5f-43e9-be38-b190231c8e43",
-                "8a266cb2-f5d6-4a39-8367-880c2b8e5bd2",
-                "dcd96f77-dcb6-4f64-bec1-de7d63f9edbf",
-                "3338d57d-182e-4459-a8a6-33066d15e9e0",
-                "cf7b4161-64cb-4b9f-975d-98c1842b2ae2",
-                "6e341b8b-bd3d-4be0-b1b0-503684e0c4e4",
-                "a42431f9-da6f-41b6-808e-4a444fc20498",
-                "9654e0e3-0ccc-4825-bdc6-5c90cb11c58c",
-                "0aa6e6ed-fb3a-4d22-8306-a39745c4468d",
-                "ab9e5fba-e26e-4d0a-8aa4-7651933034ed",
-                "6829d6b3-c991-4202-b1a1-6339064f16bc",
-                "7be3ff90-6d61-4d96-acf8-11d846b548b4",
-                "39f1fa4e-ec6d-495f-a8b1-7bee2031b8e2",
-                "f98a2dda-44a2-4891-a31b-35e573e040db",
-                "96719838-1b96-4af0-91ce-42b3127faac3",
-                "5349b35b-14a4-4840-869c-07d2dae80700",
-                "80a9a549-610e-4ebd-bb53-804ef6a33adf",
-                "a7c07f4c-4d3e-4ed3-a45b-33c7797614df",
-                "a9006d68-e36a-423b-b613-a520824b02d4",
-                "0480e794-9597-4ebd-afce-6c71d14737a4",
-                "70a4747a-5a68-4958-b7b6-a1c32f8610e2",
-                "532ed9ca-9f72-4227-bd17-efcdece96500",
-                "3ac8420a-d06f-4f75-8656-a40f98aac8f0",
-                "5d1f3a10-da92-4e44-af46-03cd6db62c00",
-                "474c7613-3c7e-4c20-8c7a-6a4dacdb0f70",
-                "3fdcae8b-c507-4cd8-9579-a1ea3df4147e",
-                "5588851f-682f-416a-b701-15932edc3c2f",
-                "d5358b5f-85f8-4bfd-a9b8-e8e61fbeda4b",
-                "7abccee0-d37b-441b-97b2-ea73af66c9cc",
-                "8e8ddffb-8036-422c-a6fe-2a808c9c1f3e",
-                "1aede828-044f-4350-b0cf-b2d3df44bcde",
-                "fa25ff24-6970-4004-831d-5c6ae57ce12f",
-                "a4cf5493-f002-4d23-8aa0-7c4a0b94ac6d",
-                "ecf4ec2b-93db-4f37-acab-e9c8587fb180",
-                "f01f5bb4-9722-462d-bc8d-17aa6e506676",
-                "1ed0f80c-fde1-489f-97ed-cf818a4e180e",
-                "eface2da-5da8-432b-957d-d34a5b04d49e",
-                "ef63aa65-922b-4346-9fbc-c3d3b570f6b2",
-                "9228de64-7ef9-408f-a8d5-bc3e69aa35c7",
-                "0a46e3ba-ac76-49eb-aad8-fb3bd7290e5e",
-                "69e1756b-c051-4d04-a321-23616c9cd633",
-                "6a8c5632-2b69-4823-a477-a877d0398837",
-                "a3d64d79-cf8d-4ed4-8eed-2f3993fea037",
-                "bb9dbdaf-c340-4bd1-8f0b-e3f4d58653ca",
-                "aca5bd0a-7b12-4c98-beee-283ee3763572",
-                "f1b56dfd-ab5b-4d93-a96b-9b79271692da",
-                "df15d79e-b74a-4cbb-8be9-b32c38708704",
-                "c61b77d0-646f-4bfd-aecc-23915f4bbfba",
-                "45d218b5-a943-4847-b07e-10334ab9a4c2",
-                "20b70acf-584b-40ef-9c89-4e1237f06554",
-                "ce5fd961-f39c-46af-9f50-61880129b82f",
-                "1c2f6586-a7a9-4a13-b496-92c1c2b5e4ab",
-                "13f17fb8-7b24-4d56-b45a-ea8564e61cfb",
-                "77dbce31-cf57-46b3-b557-93b796461f44",
-                "338a8614-91f8-436d-8c80-66a7cde4d6b4",
-                "0108feb8-53dd-4adf-8bb0-7952881cfd95",
-                "29775584-0b7b-49b7-9957-2a9a3b158e1a",
-                "ff415607-554e-4f7c-812e-845b4346ea53",
-                "2762ad8a-0422-470f-a80c-8a74a4c1cb89",
-                "84572d63-442b-48a3-abd4-74bc3c50ed50",
-                "0351be92-b925-4571-bf81-0ce42efd4ce4",
-                "001825bc-d506-4ece-af96-01b6cc615885",
-                "873d5fbc-4cf0-4f15-a06e-3f733b8ab125",
-                "37c689c9-200f-4e96-b1a2-01b4c5fb544c",
-                "f890d6c7-f3ea-4b27-a49a-36eb264652c0",
-                "3f539e3a-ebbb-48e7-ba37-1f0ae3d962cb",
-                "070da915-29dd-4521-ae37-9527d228c4e1",
-                "b24e95e2-10c3-4d11-b4ae-598880fea8fd",
-                "7ef798fd-ddbb-46dd-a071-246cee88a7d3",
-                "aa2711f1-bb48-457e-be39-c44e3a14cd0c",
-                "4b43ef11-1efd-43e8-994b-5b201cbc658e",
-                "65d4d259-e4f2-437b-bd96-b170daa0760e",
-                "959092e1-3bde-4520-896d-e5dd9715e6a5",
-                "6522ad17-dbc4-4a14-80ce-f3dd33ae5822",
-                "c1973a52-4b6d-4f13-b0cc-02919736709b",
-                "9fe7e162-105b-4ab4-a157-ad52bb680196",
-                "2338788e-ee00-4750-854c-8a2c5953d8a9",
-                "c84ffaec-ade2-41e8-bc62-684b8f1cdb4a",
-                "2129c9f3-9a92-4baf-b5a2-4098eb256377",
-                "69fc7401-83ba-40e0-ac52-f0f2d4b2a220",
-                "c47f91d6-9844-48bf-9de2-a84bdb7e1ea3",
-                "f99f4b7e-8079-4e03-8ea5-bb39f81e4980",
-                "0c5753c4-6b8c-40fa-aba9-a5d5dc763b5c",
-                "c9d9791c-dd63-49ff-9eec-69603145dc48",
-                "d6a0edc6-453f-457d-8629-8e8600a0a156",
-                "6d904a0d-0dfc-4782-96c1-215435754fc9",
-                "8ce5799e-f39b-4811-b60c-10acd3de57d2",
-                "4d6395ed-6ac1-4753-b648-082c79ef40dc",
-                "1ae5cfaa-4483-4c37-9d73-a4db6bfb268d",
-                "401e0e5b-cb63-486a-92b2-91b18a97e934",
-                "a0fa2e57-accd-49f2-af03-78a76ff28ab7",
-                "5e808c29-4493-44e8-bb14-6188ea1a27b4",
-                "035f7aa0-a2be-46ee-b656-0ec54ea871ea",
-                "accb9a82-a541-4410-b70e-a49644e1e5b8",
-                "dceb4727-53d9-472c-8ef9-8ab0b0bd6e57",
-                "85364dbb-fd29-4d95-a839-5e7b8e2556df",
-                "081a5f51-2f71-4475-8f60-0ca0cb08da85",
-                "7e67b563-eda7-470e-81af-04d0f02f1ce0",
-                "50d3d5a5-23e5-4a01-a99f-37fc7fe266a9",
-                "57e9f40e-d27d-4036-908d-e5b2260172a7",
-                "6840e26c-2b5c-454a-80cf-f39daf9841cc",
-                "55414a33-db7c-41d2-a9d9-bac9ce740b52",
-                "3ae798ff-f74e-4606-b7d2-4a86687cf229",
-                "4927e463-57fb-47eb-bbf2-5932ea682e54",
-                "ca304c71-1f76-4ae0-bc6d-f3561e0165f1",
-                "1db21266-eb9b-4d85-9524-014388693a61",
-                "8bc5ddc3-1fc8-48d2-af89-7f85d74bc8a8",
-                "aadb3e54-7ca8-40ff-a58e-312a25b4c343",
-                "9d47c408-77b5-4138-a831-01653dabd4fe",
-                "a44e62fd-3209-4389-9563-61faf1e7ec12",
-                "61e461a6-1010-4da3-a033-514d636e7235",
-                "f8301af4-b2fd-4db5-8523-21bd0ff679b1",
-                "88030b42-21a3-4f56-82dd-2d5c56e64919",
-                "afa63876-7a54-47ed-9013-a468e6ed2080",
-                "096c457d-261e-4882-87b1-c3cada145bdc",
-                "bfc3e7af-42d0-4867-8f17-28a289a516a9",
-                "217474a6-1711-4862-93c4-6e86ed6ac6c3",
-                "4fd7cc70-ad44-4922-8a29-25edd2875373",
-                "741fda3c-c66c-4ab6-a688-dccdee424319",
-                "e7ed537d-9845-44a8-b6b1-d29ce6193bf1",
-                "ac7af7c6-f25f-46d3-8b09-34b6e9248ee4",
-                "596e5021-0441-49fa-9bc4-b529234be1b5",
-                "fd881ac2-3919-4628-ad04-3a827908233c",
-                "74e62394-3671-4e9b-96ae-4828894e73a4",
-                "4630f844-b070-4a50-b1d9-431474e79e25",
-                "544c3e03-a026-406b-9ae2-867bae4c8af4",
-                "046ca232-cd83-40d2-824b-b512295b0aa2",
-                "8f1a5843-85b8-44af-841d-2cbdd9cae6d6",
-                "5be5cc59-d0f1-4610-ad09-8eb6b7f27ae9",
-                "d3b585e9-1257-43c0-99de-212a7ff35574",
-                "06d6e4ce-9ba3-47c7-95e1-56ff26afe360",
-                "347caff2-215d-4510-b66c-e65b4146388f",
-                "f9d08d98-8778-4d80-a3cd-7d459bc2c7b1",
-                "182932e2-d914-4b20-9575-b09d1fa669be",
-                "d16427e5-d0aa-4ff8-b01d-cb803ce12afc",
-                "e731321f-5610-4a8a-a38f-5a0d36784e64",
-                "f01e8d37-d804-4654-b459-2220664d296e",
-                "907dca7a-6e17-44bf-9924-d82aa59f9885",
-                "2aa6b72a-0db8-4cc4-87dd-8fb030a69c9d",
-                "14995985-2714-4884-8720-1522c602bc6b",
-                "2e46bef7-fc7c-499f-ac68-7e417c82ffea",
-                "916dcd69-d861-4e93-b995-4b27f84b2479",
-                "ec69c44f-0119-46d6-aea1-3a9e9c1bbba7",
-                "36bd5bb4-c435-433b-b648-e509b6d3d1e4",
-                "42ccb312-0d0d-468e-846c-160787ff3801",
-                "a657de8c-2f56-4329-94ae-e66d97d43489",
-                "430d33c3-a05d-4c88-894a-37c4ea689ca8",
-                "debf66a6-717c-4708-931e-31ab3c20293d",
-                "c68a81d3-de93-47a7-bd8f-d30f98873bac",
-                "83f4100a-c127-4f00-97f7-6f6c10fed021",
-                "2e4b6885-88ce-48b1-a8eb-0944e2768311",
-                "2c2ea5a7-b03b-4f97-947e-61bdd987a174",
-                "c93eed2b-806d-438f-b6c7-0e230af72412",
-                "f57153dd-4f8d-4956-a725-1d9c7b00809f",
-                "9afb6005-46e6-4e4a-8a9f-b3fda3cf20ce",
-                "512760c6-2b58-4400-828d-f687d7ca1d8b",
-                "3f1090ff-17c0-4bbd-a8ef-87f3d4c83f58",
-                "63eaa060-c7e1-4cc7-b63d-b02990cf4a4c",
-                "2e96574a-59c5-49f5-bd68-c33a39ea3149",
-                "65a8ac0a-2c59-44ce-bb2a-8e720d9f701f",
-                "001dd211-f07a-4c38-ab72-9eebf09c3568",
-                "865d6dc2-b66c-431b-b67e-0accbb126d0c",
-                "4f01bdaf-b1eb-4fed-8175-834bb572eee6",
-                "9e1c4bec-a79a-489d-937c-664c10fba0dd",
-                "5cbc46c1-6ac6-4fb9-ac4b-9f123b30a1b1",
-                "0e4553f7-70f6-4fcc-a30a-7873fbc9fcba",
-                "1d69b4a4-9fdc-4bb6-a78f-87acb30d9820",
-                "2b598ad2-2459-4a71-ac8d-145f767a2bef",
-                "477bbcba-232c-4fbf-8c51-facea7a10527",
-                "3b0bd455-debb-429b-8bdd-eab1a7342404",
-                "00680926-c00b-41ae-9586-3f5bb31f1857",
-                "a59726fd-7091-4714-8049-cd12c643020f",
-                "4c36a517-4cb3-4e66-b477-16d7dd47f40c",
-                "95262823-719a-45ba-befc-a47e0399e449",
-                "f7f0c495-2972-45e4-a0ba-fdb910c2261c",
-                "c58cca2e-2144-4c77-a0b7-72b04a576dae",
-                "2cea700c-bd16-4ee8-bc0f-29f6fe062338",
-                "1e70249f-7006-43cf-8343-71242bfc099a",
-                "4229e054-f5fb-464f-bf8f-16be0ac9724d",
-                "34f5560c-157a-48e7-aebe-425e94ade853",
-                "973b4a65-a96c-402b-8750-e500e15f472e",
-                "c93ac56c-c5c5-4460-8670-6cf9ebab7de1",
-                "800c9985-3b4e-4a37-b41e-657d85ee3ea0",
-                "e3609b4e-aa50-4932-821e-1874d075c885",
-                "5ca065bb-9932-4324-8482-95618f039794",
-                "3637390c-6e5e-437e-a4c6-51f3ed3f5529",
-                "7268ef92-73a3-49fd-8f76-1379bd5eb69d",
-                "0a0325b9-57bf-4eac-94fb-6427be88c92e",
-                "3a073b4c-bc1b-4c28-af6d-d30188140d91",
-                "51faf2f3-e307-45d4-9063-f08b419b4183",
-                "68a3d136-6f7d-44bf-b872-627bef17fdc5",
-                "aa4e8ffd-33ed-4fed-96f4-2c7e4eb0bb76",
-                "9e4db72a-70f4-4745-b2f6-9296e2af3136",
-                "60ae5536-fc50-4756-b482-320a1fbf0f8b",
-                "c14f9c63-4ebb-47bd-aecf-73a4d2aef6c2",
-                "908c9385-8dd7-4060-abd6-33fc3dada91c",
-                "dd7431bb-e5fd-4f1f-837c-91a56865c796",
-                "5dfebeae-c5be-4a74-95d7-a7ab3e984bbb",
-                "e650b179-6c0b-4235-be0b-292872fa5b71",
-                "f58e3022-c3b0-4313-a488-ab12de2b6beb",
-                "c05bc54a-1f3c-4eee-887a-1933ab430dda",
-                "402136c0-af35-4b50-a0d5-c3f21d4aef5e",
-                "2f51e87b-4ee5-4114-8064-68d748e6b23f",
-                "8d05fb39-4fd7-42e4-9332-1bf0c967e7bc",
-                "dd87c9f0-5e3c-47af-9581-f19b5d77fadb",
-                "0859a2da-3794-421a-8163-d1ccfaeb5813",
-                "2055eada-ca0b-44af-a2e8-826bd78000c8",
-                "a77e3f62-7b92-4e4a-924e-f33f5bbdf255",
-                "514e79e2-8aa0-4c3d-b439-60e36dd2f160",
-                "bbf75772-332e-437e-bbe9-7385698787f8",
-                "bb781d9c-2544-41ed-b9f0-43878a5e69b9",
-                "c287b3dc-33b2-456a-874d-f910646d01b5",
-                "56457966-acd4-4c65-b38f-ee875f81719d",
-                "338e80e0-2cc4-42ab-9607-0166751d4dce",
-                "97796a69-730a-4216-9536-6704e92cd2fa",
-                "75c079bd-85b5-418b-82da-06ec6f386712",
-                "cababa0a-02d5-41bd-9b6d-f6f7d66e06d4",
-                "50e55ba7-3923-4a21-bca7-082e56a30057",
-                "3ff5567c-e113-4127-90f2-989afc44b259",
-                "ebd3bd43-4b80-4336-8884-32a2c1d2c5ee",
-                "d16767c2-74de-4083-b919-cfab59aef923",
-                "13f355dd-9215-438c-949d-e5c1b62cacbe",
-                "bdc62bdc-5d4c-432c-b8e0-3a70384c57b6",
-                "a6f7bcdc-4293-410b-b9c3-fec0c9affc94",
-                "b97d2db0-0770-4534-b079-19da9092d791",
-                "45ae3b3a-d213-48a2-9490-d807f2bf3058",
-                "e7608408-cc07-4eda-8011-851f7f6f1e13",
-                "0bf89f24-b96f-4bf5-afcc-b85d5fe97dba",
-                "533ac412-9d06-4901-b3e4-36c1412a0c95",
-                "69b6852f-0e74-4992-903c-d7c84eec0a29",
-                "12d6faf4-288c-439d-8ec6-19353db1909e",
-                "120f9b8a-36f8-49a2-8704-c18b5bd884b3",
-                "c2edb06b-24d5-4782-9765-3aec753d0a71",
-                "5b53f22f-6fe8-40a7-9830-6079f5c1c7f9",
-                "52d38476-cdf3-4f74-8b36-db4eb34c86ae",
-                "21f28d68-5473-415c-863a-0d1d096dd31f",
-                "1fd14112-df7b-4fb8-a950-bce2a4f4e3a3",
-                "fb8eea78-1696-4646-a1e4-234709bc6c80",
-                "54c6cb3f-2222-45b2-8ca4-58ca136862a9",
-                "7f7b7d27-3ca1-4d23-9a99-4156e8489820",
-                "a8d61a5f-a4cc-47d8-b81d-785da2cad925",
-                "e90f0a3b-714c-4b84-be80-642c0780b9fb",
-                "611a382d-d259-4014-9b5b-909ceebc0417",
-                "73410e7b-d406-4b56-8c5c-46b982b7e454",
-                "318542c6-eca8-43f3-9b27-05fbdf01460e",
-                "3c1d8225-4463-41b6-a79e-a6382560fddd",
-                "5b12fe92-84db-4157-9e0f-5cb6e9421e06",
-                "3355dc61-c3a9-409c-91e7-6b58644712df",
-                "bc1b1885-c383-4765-b7f8-2f2108e69d55",
-                "4a97bcee-a813-4bd9-99b9-ee3d275448fb",
-                "b3b0d29d-0391-4642-966b-2b7bd31f477e",
-                "e0219dee-0f2c-4949-b4fd-00c5bdb5bf68",
-                "adcde8d1-4a9c-4e6f-ae66-a81af960e9f6",
-                "333302b8-6d94-49c7-a91a-b09f85340e1d",
-                "4160ce95-75f4-43d7-8ffb-9fb717b55fff",
-                "debfb055-67c0-4b3a-87ba-4f9ab1db4819",
-                "05ca156b-7732-4ff5-a817-39ffc0446153",
-                "c7806edc-c79e-4f83-8156-4fe39facfdc0",
-                "bbabb016-1c3c-40e0-a76a-2f985d919c43",
-                "64db43c5-82db-4b74-953e-9e6c40104d2a",
-                "31ca4752-5656-4c9b-a7ae-b7331b684ebf",
-                "05f2ebed-31a9-4f75-a3e1-0ae4c23127bb",
-                "1d55795a-3f56-4c42-96ea-2be9fd5abe57",
-                "6218f35a-9e92-42e2-b9a9-1658165684da",
-                "44606148-1e38-4b28-a0d4-499a41a9915d",
-                "4b5faab3-5d0d-43d2-b231-d6a7f923d08a",
-                "dc6ba44c-85a0-40fd-a97c-6c4bc5fc6bb1",
-                "6dd9d046-f26c-44d8-8525-b7ea99e0c231",
-                "52a5866a-4894-484a-a1ed-8ecebad9e76b",
-                "d6bc0e46-6cbd-4ad6-ac9d-2f51dbe7d562",
-                "8087d598-bd3a-4d9f-b79b-5f4b8deb54dc",
-                "2821980e-b721-4c71-b364-711b50086bf7",
-                "913ce05f-934f-41b2-8bc1-107efd47b0c4",
-                "712a1905-dbc3-437b-b0a3-eaa4bfcca62b",
-                "e6a58f64-97fc-46ac-bb74-681abc3908c7",
-                "07f0e0ac-93d0-4d74-bffc-2dd90b2a8a00",
-                "6cad8ca9-0226-40b4-ad4c-699db19ff6c1",
-                "d0f5f828-8c51-4123-ba2d-5cfbeb782ae8",
-                "e79d5ede-cb30-4950-b6e2-f2d0aa315e45",
-                "28d4ae9e-e47c-4695-ab93-83f63de56650",
-                "4fac6479-8fb3-4311-ba4f-ec3d00b21279",
-                "b2877fac-7318-442f-ad90-96144dd71727",
-                "729a1a29-be7b-4d50-a857-c354ae3f140b",
-                "3b7a24ea-372e-4951-b35c-342b4f8adb68",
-                "a8b6dcc7-f294-48d2-a374-03a13d1c1e39",
-                "f2c26dda-37bf-4311-aea9-740f237c906a"
+                "9d5b88a2-5a65-40c2-89b2-ba253f35c57e",
+                "55eadc3f-d1a0-4014-bc69-bdd1208942b3",
+                "19a5ee4b-0294-4501-86a9-8de14eab44de",
+                "0f72244c-5fb5-4d42-8eb9-eb658d813b1e",
+                "2d3e4277-5928-42e4-91e0-305352872602",
+                "2b9ad70c-c420-4943-9877-48a86c8b4395",
+                "5feba2fe-e1ad-4739-b728-9bb19bd9c846",
+                "b5b12faa-9307-40f8-baeb-595e88139919",
+                "05a0479f-6d17-4ad8-a079-dad645029d41",
+                "414a44a3-334c-47a3-ba4f-8523cb7091ef",
+                "1a8d61ac-24ea-43a1-b74c-574773bbe439",
+                "09b07338-84ae-4149-b323-21ed97484552",
+                "3dbb6b2b-3ea9-4bdc-813d-bd61f9504ed8",
+                "16d84c7a-9c14-4144-85f6-b88af0a59ffd",
+                "c1461511-d4de-402d-a2c7-f2328bd23b9b",
+                "609f2fc9-6f1f-4587-88bc-e69d0cb6238f",
+                "271df248-31bb-48a3-ab91-2d98c4878969",
+                "ddef1f8c-c07f-44d3-93f9-5ea2146ce433",
+                "79e2fabd-fef6-4c12-b882-cc63b5d287c7",
+                "6196b5af-fc4f-4228-b0aa-4291b7220c4f",
+                "cba7b4ad-2e88-4199-b962-9961857180bb",
+                "e2c4f69f-54bd-452b-99e8-0bbe946ce28a",
+                "ef84d791-0abe-4157-b675-036cc88c2752",
+                "387e0d99-8432-4444-b5a9-4b491f6be11a",
+                "b094accd-7c23-4162-b855-35ae8ba695a3",
+                "c09d7f92-d825-4d67-8103-ca76a9deb31d",
+                "ffe54bf6-6b5b-452c-9f4d-0bdf9d9cf6df",
+                "169ce7cc-0ce8-41e6-abaa-a7b96c0cdc1a",
+                "66fa6865-cb51-44e8-a04b-67e5ec203a6c",
+                "2229ea7b-0fd1-4b84-9d1c-fb1889a1a55c",
+                "bbd6117a-7ae5-45f4-be30-4a79d8517c18",
+                "632d3067-e555-4894-a411-0afb8dabbd95",
+                "d169a9f3-471e-4bc7-a421-31c898d94582",
+                "2d0b4d09-73ec-4a44-b335-45db6c7685c7",
+                "c155acc8-9ddf-427a-a2b4-9c8aa3da7c8a",
+                "74c3bbbe-34b5-49f4-92e9-b3b4660b1cf9",
+                "70998ce2-9713-4d33-916a-9bac805e29f6",
+                "7c6359a1-dd82-4472-b79f-926a01fbf2a0",
+                "1ae6889c-6283-45df-b631-5116ca04882c",
+                "bf3aa9bb-1c4d-4f16-9c32-c1bb9cf892f9",
+                "e2c52b57-6fb2-4ec4-8fe2-52bee8c656fd",
+                "a97732e6-87df-4db4-80d0-094a9f555a0b",
+                "9c6242db-8ca3-43d9-aaaa-21bb94bb0bb8",
+                "7971731f-a191-4334-ad81-263983c32b06",
+                "3ca04485-3ce4-4c05-8896-e608543ebb85",
+                "673f6ea3-d7d5-4267-8174-ed6085ca9aa8",
+                "758b880f-5fe7-4d0b-a41f-39db48c2f023",
+                "c2f207ae-f5b3-48d3-8c69-509e81e45b74",
+                "3605bfb0-5aa7-4f6f-b291-1699d57e47f1",
+                "97bae617-2687-41c0-b801-903bfd64f2a6",
+                "2a2c0777-2b7f-4bbd-a48f-8454247aa2cb",
+                "cd7a87a7-6000-4665-96dc-671e01b52f1b",
+                "d038e395-eb35-4267-b089-c793814385eb",
+                "d6ac6c1c-00e1-491a-a89a-d2ce212594c6",
+                "8405289c-5823-45cd-9fcd-b3fb8259b933",
+                "8e24a162-a795-44d4-8b29-0dc2afec127a",
+                "0add4b30-f2b7-4590-9a3c-3cef11c39f82",
+                "25d26220-fd1c-46ca-8c53-116928bef49a",
+                "f7dc5ea5-d8da-46c1-929c-f64cb820fe0f",
+                "106e53f5-62bc-4906-ab3e-e3ad6cafdc7e",
+                "fd2550ff-45ae-4397-b053-d9e768f193e4",
+                "a8aa919f-49ac-4e2c-876c-685dfa24ace3",
+                "e90b8b82-de97-4d11-b6ae-0f554cf56191",
+                "eafbf70d-9ae1-4b41-be8e-4841bbce6a96",
+                "ada4d6b3-1d84-4b76-a9a0-5f5fe552f7ab",
+                "5c92b90b-a8de-4536-835d-d5faaf8ce637",
+                "669206f8-2f1f-4f52-af9c-13d83f5bb378",
+                "ab6bc317-4229-4106-acbf-fbec871ca7ff",
+                "e56472ab-2f7b-4e5f-a8a8-1e371937e223",
+                "91b604b3-538c-4636-8514-b034a18cd7fd",
+                "731a748c-140d-4fda-9017-af91560432a5",
+                "6146485f-7b40-4278-ba89-bca6c6578680",
+                "a725cb0b-d1c8-4722-8a76-6f6bd2555949",
+                "7a1897de-49b9-4561-9791-d8597b034fdf",
+                "4c636de2-ac74-4bda-8775-1b35318c0736",
+                "b05f33cf-d3a5-4dc1-b7d1-e5ba37b1dabb",
+                "0ec22fd5-0fac-479b-8822-e47e035183a9",
+                "2d557f36-97f9-4a82-9497-588aba4435fc",
+                "d32c169a-e3d4-44b7-aae7-fbb7d986aee9",
+                "a4db2aff-4a6d-46ea-bbef-2f580da5e463",
+                "c0684d57-1bdd-4287-8960-46a1aa970a5a",
+                "a75d3d48-34ff-4c8c-828e-676535524e69",
+                "d0a84c88-ae30-47fc-a3a5-58eed94a996d",
+                "aa69959f-c357-4a08-a113-29d66243d3d4",
+                "1ff87dfc-f31d-4b64-bcbd-7ee8c40da0f4",
+                "d394bdbf-eb92-4c4d-a26d-da2983fe23c1",
+                "a4b513a8-32ed-461b-9bd9-3748311fe142",
+                "ce34de40-3d93-4f45-b0f2-7a7950e9d09c",
+                "a83aa74f-6c6e-4e40-9ff1-682a2fa6df75",
+                "00e2b043-798c-4966-9936-b32da9e8f27c",
+                "5ad57013-5041-45e7-8814-0ad9e42698ff",
+                "3c07ba02-5ade-405b-832a-5220445c62ef",
+                "038e27b4-3a6a-4e4f-926b-69f005f9b526",
+                "abda1222-70d7-4247-bf38-0d8a525b283e",
+                "5bd994c6-9f68-44f5-b779-d0794000b4a8",
+                "b9157ae0-522a-4e87-9697-51c4d5bb036a",
+                "c4df229f-cc11-4c17-9444-ea132fd0759c",
+                "ef5343bc-ada4-4364-9c3d-b2c201e0ede5",
+                "29fd7ef5-ceb1-4887-ac86-2ada24dc45c7",
+                "0efba832-45e2-4c85-88ab-834d6c469e9a",
+                "1fe1c719-240d-4569-ad40-0fa9682caa73",
+                "c768bbb4-65c2-41db-be77-a7fb7a7d2d3a",
+                "8459cbfa-64a8-44db-a36a-dd91afd96023",
+                "f0fe539e-8752-40a6-a8b4-382470bd4deb",
+                "3e451ed3-6611-480f-a30d-9e0412340227",
+                "d35ebb5b-dba8-4aea-af51-abeda00e4098",
+                "0d9881d8-f081-4e24-85e5-35b6cebe6241",
+                "d9c40ae5-ae7e-45e7-b430-03b19187c5e8",
+                "1138764e-4fda-49e9-9c95-7ea92e4e42ff",
+                "b4833ffb-4887-4fbd-afe9-d216100b5c31",
+                "2ccf801a-1198-4110-9a57-d9792a13f7d3",
+                "41461511-c043-4550-9914-528f75967210",
+                "eccac0a9-1d17-4a3d-8bbc-727b8fdacf94",
+                "af6e6e6e-6815-4af5-85ab-e7801599cb4e",
+                "c08761f1-20de-4944-8646-53d5f651efb9",
+                "54b549f5-1f78-4c8a-8759-903b78dba7a1",
+                "56ffa389-69c6-4e0b-bb87-b03e3dbea1d9",
+                "3bdbf6bb-3c53-41ad-a3b3-533531a63c3e",
+                "a8babd99-7524-41aa-abec-41850607a995",
+                "1e4f2d9b-4db9-4aaf-8006-4b4cc15e3af5",
+                "591f4a53-928c-4bff-a99c-d73674ba8bc7",
+                "e27b2e82-0ff3-4212-9b11-e168894cf3ef",
+                "d6ddaea7-80be-4c00-9163-c060eaa12996",
+                "41d8f6f1-61da-427e-a948-47a49969a5ce",
+                "8b096d1f-5b8e-4e5d-b225-fa44353ec1ae",
+                "fbc4c0cd-b535-444d-8919-ef23a366c4a9",
+                "0da60899-1c16-49db-a54f-383be942aafc",
+                "cb2f7c0b-7ad7-4dec-8a8a-dd9aa01f3595",
+                "1feab42d-4b3b-4a8f-80a2-efead67868e5",
+                "bf9588eb-7acf-4711-9b0c-4fea5270409f",
+                "605fef96-469c-449f-b2d1-c00c8cb76573",
+                "a09aca4b-7868-4dff-88a4-8365245022bb",
+                "37323c85-9b4e-49e5-a015-8411a5e87d03",
+                "f50e766e-c454-46c8-af87-da64d55eb88c",
+                "6be114fe-c972-4511-8562-3da52fb591bc",
+                "f5a371a3-1d3b-467e-9e58-8be9bbd7fe93",
+                "94b24c74-d22e-4cb4-b866-3f4de3528f1c",
+                "fe4064e4-fee2-41a0-906f-9c42704d054b",
+                "77d378c4-202c-4a25-a37c-e63025be6061",
+                "55c22a9f-d7c2-4859-877c-4e5464b1603f",
+                "89f6d313-6138-4a8c-a28a-6abbf6b729bc",
+                "3d0bb09e-8219-4b43-b774-b792272f0e35",
+                "02040d6c-cfc3-4df2-abdc-a19b35bf4891",
+                "42f0810f-edc7-4a98-a1cf-0d3e3ed3f49b",
+                "f20a9879-d158-410d-97dd-d1c8e196f3b7",
+                "6419f1e7-8068-430d-95c8-8001f1e75fe3",
+                "4e7e3251-3316-4dbf-9791-1204d1d93d07",
+                "72c3bf6e-77b5-464c-9aeb-94618d94c4dc",
+                "e487555a-ef39-41b8-b6ae-cbad86683bec",
+                "80c50a01-ce00-47ee-81c9-da3f5fcf86b8",
+                "c4d32d9f-015b-4120-b5ba-eb6a08dc96fa",
+                "57cd054c-850e-442f-b69e-fb8aa9081f19",
+                "89ff34be-443b-41c1-85b4-12912ec469e7",
+                "42bac745-c050-49fd-b8a8-eac41e48f1c5",
+                "792c95a8-57db-4c67-9942-378756fd0fdd",
+                "519fc7fd-778f-4dd7-83e9-e15441c74381",
+                "cc0208b3-530d-4653-b65b-f7e303959d11",
+                "2abea250-a112-4369-b8c5-cc90736af8c1",
+                "b3d3e402-74c0-42be-96b1-c6f4b7e46b2b",
+                "13f6ad9b-0374-4e1c-a1b2-7a9994d49724",
+                "565a761e-efba-4c04-95ef-723501d50307",
+                "67b77298-e73b-49dd-b46e-cb1236c37940",
+                "37c3d2a4-86ae-4175-bf5f-e5f702057983",
+                "4777c203-b22b-48b5-8101-79cb550d7ff1",
+                "9e78ff35-0a8b-4663-9ac7-3f17300f0147",
+                "10526094-2100-410c-aac7-5ae1dbd53184",
+                "0c153588-8f5b-47ac-bb94-9515fafd5f7c",
+                "40378344-694a-4f68-ad51-4817e5445d60",
+                "3bd46615-a8a5-47b9-9583-aeaa641d5356",
+                "4c3dfd7a-e9c3-466b-9916-c5096ed38cbf",
+                "2284b65e-7b60-4581-8597-4da1e7cc59a6",
+                "54b9432d-6e90-461c-ab50-91c72cfebe36",
+                "3983ce10-9f34-4ffa-b82a-104a1b8ec439",
+                "81c60160-2ef1-4e9a-9689-1643c98fc94e",
+                "f5852993-5a91-433b-a0d7-db3b244a8db1",
+                "a368c9a7-72d8-465a-add4-63efc2c59d69",
+                "61f48def-823c-4755-9c90-a22515ef510c",
+                "cfe04e77-60b2-47e7-866b-5709b9d80e01",
+                "55af3eff-16c1-4663-aa2c-0d4a3d36c20c",
+                "b654b95d-867d-4b3e-b751-3216e7c6b8e8",
+                "68b77543-de41-4efc-9969-1fb6b1fb1dd6",
+                "b08db182-b7a8-4018-898f-5c08110232a3",
+                "25800f07-e49a-4723-a241-978227bf2f9e",
+                "87df0cad-c701-4dc2-b972-8e13f114e29c",
+                "779ab2ca-5b45-4812-ba18-90de75eafbcc",
+                "936dd994-11c4-411b-9ddc-4e44168d3c55",
+                "fd06b5dd-f5f9-4e84-b84c-6bd4ef5b777d",
+                "5db5ea04-5773-4718-b332-22cc4f7860d8",
+                "dce4e787-eef4-4008-8e70-1f4e41eca1c3",
+                "1b106a98-b41a-4d12-ae0c-f6b0fc5359b4",
+                "7f960ec6-81a7-4975-b27f-3383d2c36e74",
+                "a0607e84-2edb-4f44-979b-f9f2cf16976d",
+                "9facfb48-dc5b-4dea-b344-843bb58893ef",
+                "48317145-5805-4bdc-893f-8d7031d6d21d",
+                "830e2310-0902-4485-bf47-a3bea1c51e46",
+                "1474924c-4ca8-450b-9d03-2b48a5ac4493",
+                "16cf74af-1731-4058-9e43-18291b07ddf5",
+                "15c68458-870f-4421-b568-99decf6c5f20",
+                "4fd8e240-2e74-4256-85ac-941fad02ffbf",
+                "70109630-6b1e-472b-b4f0-85bd65476608",
+                "9bbc5f44-9863-4fc8-82ad-7d88df554e3e",
+                "79c29bac-8009-459a-a148-f0bac9befadb",
+                "64c31761-9a22-412c-8fd0-37557dc15ec1",
+                "ff5eea4c-5cf0-478d-8961-be01a3e64fb5",
+                "5bde9863-d9c7-4e14-b407-7eebd2ab0011",
+                "f14a5e43-032f-4255-a81a-01eee8046311",
+                "0a55a068-c8f6-4e56-99f4-756f7d4baf9f",
+                "f7cf60c3-ebb2-43cb-af4f-e704d9fbf127",
+                "89cb1110-bd97-418d-9bf4-f943c2f8b74c",
+                "df79bd98-be07-4dbd-966d-ece0ff3bcfd7",
+                "f1a2b90b-fcc0-4e2d-8995-4c5e861bdcfd",
+                "e5563a8d-ab80-4ad0-b849-6bbf2394468a",
+                "028c3c95-f717-428e-8053-b3aeebde166d",
+                "fc342bc7-2b36-4f81-a0bf-641119758cd6",
+                "63a7ae37-ce08-4780-815d-cf81f13215db",
+                "0036193a-4ada-41af-a97d-8475d8ef4058",
+                "2e7bf97d-2ddb-4595-a4c4-abd899401191",
+                "4ed6e677-f502-4120-8914-aa812b106d54",
+                "492358b1-8748-4d68-8468-eb53f4f9e971",
+                "c4dabc7d-b587-4368-89aa-35239e68ac97",
+                "2634d5eb-a5cc-4342-bfc8-9e4a9f30cf5b",
+                "5852213f-5a81-4d40-987a-0edcbe1648fd",
+                "08b72540-0385-47e8-bd6e-df0cc0f85fd6",
+                "de920adb-b47f-4c20-a010-1d80a66d22bb",
+                "3d186bcc-0f50-4a01-a8f7-30b5c6f5bb38",
+                "e6ac2b9e-b88c-402c-8e5b-20e108dca2cc",
+                "b43161dc-b253-4def-829d-1a9697ff82c8",
+                "980c3535-e736-425d-9f37-f9637cf18bf4",
+                "9bb92cfa-a819-447e-9e7b-403eaec3bec5",
+                "2f9973f6-8c03-41e0-b80e-3fd472523cd1",
+                "31f4bc15-1e9d-4516-b068-ee951a18a2aa",
+                "09d06503-21c5-422a-9a42-dd2e68ba7a99",
+                "c5a693a4-72cf-459c-8029-660c25055c61",
+                "9d69fb5c-be6e-4750-8c4a-3f2e627ef627",
+                "5c093095-cb14-4a89-b7f8-957fcd82eba4",
+                "7f084574-517d-4d40-948e-57ce96301c09",
+                "6912db62-8e62-4edb-9c04-5da129d91f56",
+                "e72efe80-d298-46bd-bcfe-801cfe5fe6fe",
+                "195a314f-c631-460e-a4a9-22ffb1388f75",
+                "b3ce0819-ecce-4222-b92e-00d0b039baf3",
+                "6ef64e64-7fca-4d7a-a696-18647d378d70",
+                "58a994b8-ceb8-48f8-a44e-f4cbed79e0aa",
+                "5487f7fb-8606-4ffd-8a5b-811c61d8aef2",
+                "12c49796-ec30-4d79-ab48-9a8a185ae9b9",
+                "9f9d46f9-d4df-4586-98d3-9cdba9f9b762",
+                "83f626a3-9863-4070-a7da-8a8132b4e247",
+                "2bf2481c-5d3b-4b74-af8f-f94a90e54757",
+                "f55c1e8c-da9a-4e68-a264-4115dfbe6723",
+                "02fa5a16-9c4a-41cd-85bc-688198f77d75",
+                "a38fed64-827b-468d-9c9e-d86dbaa69dee",
+                "6ca57a4e-62d8-4e90-9922-0ce035ca3b51",
+                "1a6e78cd-7422-4ae3-a50f-4a78e7259772",
+                "ab1123d8-ee87-4a46-b959-82e56793c7c0",
+                "f739c3b5-fbdb-4118-b831-b962f27699be",
+                "cf68bfe5-4fcc-484e-a00b-064a62700b7a",
+                "d9ff8fa4-ec7c-4372-8b68-176b24eed7b5",
+                "e907a17a-fbf0-46b7-b1b7-3a7f4166a296",
+                "c6a9d3f0-aabb-4a81-98cd-3b449b81dac0",
+                "8e2807de-bff4-4f9a-8625-ff70968f215d",
+                "4226b58f-7652-42d8-8827-bc32d58131f6",
+                "91eb1dc3-86b1-422a-9c61-b12db57f8093",
+                "e0d25505-5585-474e-8c8e-c3a3eadee5db",
+                "4d70fc73-2999-4431-8705-f92e00ede4e7",
+                "ecacf10c-9c45-4e96-94c5-d1b140548aab",
+                "c18df92d-b64a-49fb-b2ee-38112e52df92",
+                "f49abb77-1d7f-426d-869c-e3df48dbaadc",
+                "0e0f9fd3-89d6-47f9-9b44-29cae49a4aaa",
+                "a2f16b1f-c154-4d64-bfbe-cc62e0919ca7",
+                "827ab042-1e07-4ae5-8f87-0cbd9f4b03a3",
+                "0457c440-030d-4e26-b4ea-b481e6de047b",
+                "bd1477e6-b164-4cf9-a236-37c64dad1255",
+                "83d28cb0-b487-4e01-b11a-2f6b39520111",
+                "2d279413-61f0-4c30-9f09-741fb248fcaa",
+                "11004f3f-f6b5-4ded-aeac-59a284034e80",
+                "fa21e6ec-e616-4ef5-8b37-1cf3bde3f5ed",
+                "a3e25ec5-52bf-4cd4-b000-8a006a1a4f73",
+                "5b8a94d0-3c0e-4a79-8a6f-03d1c42b0976",
+                "87f900ae-8076-484c-b340-82bd31987175",
+                "668090c5-1a7c-4992-bf8c-006fd62e26ca",
+                "c20cc4fe-8cd7-4ef2-93e9-7bf1d916fbb1",
+                "8f6dfdbb-8d35-41d2-9cd5-c9423fa43d1c",
+                "2faafc23-5c65-4704-b1a5-e7fe40b2531d",
+                "9bf83375-8e1c-42fa-a138-382631e40a1f",
+                "ca470332-1eca-4044-b2a0-aa83f65a95d8",
+                "7e0c32f4-575b-4868-851b-0db8fc4613aa",
+                "27a70fe3-167f-44c3-a0f6-4465ef246dc8",
+                "1b6f78ae-ba23-4933-b6ef-4a727c78130c",
+                "50f222b0-8474-4ea7-85b2-05685f76eaf0",
+                "28d0de14-7778-44d0-b886-feaba02cb086",
+                "f74d47a0-e3b4-4c59-a1a7-6c9b78af49a2",
+                "53d81703-43c7-4264-8546-75d37e740fa7",
+                "fff5a1cb-6c3f-47af-b84b-64b687f432ba",
+                "dc2599ed-5ece-483e-b655-f9f0d063754f",
+                "13a3f484-348c-472a-b00e-1f5f6d1c30c2",
+                "15616a78-bc16-45a8-9916-7ca4cc7a7353",
+                "798f5788-87a7-4aac-86a1-e112c49023e9",
+                "4b877046-d9e0-4a80-9f18-1a1afaa74976",
+                "8d6defb0-3303-4a9e-8584-ee13a7747548",
+                "0053cf94-4e6f-4c2d-8739-05b26d72886b",
+                "608f350a-f948-4740-bf7c-2ee81cd4fcc6",
+                "f4a2ad5f-dcbd-4a47-93a7-5740005b975a",
+                "f03fc127-438a-4c42-9219-d434ef235ef5",
+                "acbab564-35e1-4fe2-b4de-ba7c1a855da4",
+                "d4a86b2e-f64b-4050-a4e7-4929eed133e8",
+                "353b8a7e-0ac1-43b9-9bd2-edcc3af2d2bb",
+                "58946bd0-da3b-459b-aec9-c44719cdd525",
+                "c61f106c-9681-4f3f-b92c-76dc30bcaf78",
+                "1ff1aadc-c6ad-4212-ae4e-a86926a087d9",
+                "5592fba1-3d1a-472f-af9e-ad2d898fe53b",
+                "a93bddd5-4eb1-4c10-baba-d91b38fe7824",
+                "f241925d-cb0f-4b5e-869b-46b334c329a6",
+                "3b740686-0c2f-440b-8a92-044d879fe54a",
+                "433ced83-fa87-4187-ad05-eef4e598ba29",
+                "392282e1-2b71-40c5-baf6-c4d17d36cd9d",
+                "61693fb9-fb63-4822-bdd1-9d629a611b3b",
+                "65db7b07-f2df-44d4-8b83-370447062825",
+                "fd22de23-cc81-40cd-830a-b455799f4c9a",
+                "285f8a5a-4eb6-45a7-88c6-aa43cd8a4a90",
+                "9b34147c-0d94-4c40-a7b6-43f74ab6f6a1",
+                "3afc8085-7682-4e44-bac7-e533329335b4",
+                "2fbb590d-9eb5-45ec-8a73-a17001991406",
+                "88c54cec-75ef-47f0-95eb-72418bf55e5d",
+                "e500c259-5d57-49b9-be42-4b0bce54d090",
+                "0be2105a-5fab-4f78-af9e-98c587db5297",
+                "a80d9ab1-0cc2-4b6d-9973-2f71b4a908ff",
+                "e4ace7c2-1d10-4641-9577-638488b48b78",
+                "8c130ff1-5c18-4029-bf4c-17ea0a2a2066",
+                "0d4b91ba-cefb-4a5a-b069-0b3655dbf9ca",
+                "ba8e4ed2-657b-4370-b7c8-e13763efdbe8",
+                "b38f3feb-f4de-4d46-bf13-8081c6d422c3",
+                "34174a0a-06e7-4bec-8fd6-672de4a5989d",
+                "c410ae18-239c-41c5-8a06-2e0f9e799ee5",
+                "acfc722f-7fec-4a0d-b4d9-8877b42efc8e",
+                "1f505cad-f864-46fa-9813-823e13f9e4c9",
+                "dc34bca0-e916-45bc-890c-f467da93131c",
+                "83170a4d-cb78-498c-9ca3-896056703005",
+                "0294454f-104b-475f-8f34-a1b3b231cfd6",
+                "2923417c-e1ac-4640-b4db-3c80212ad1b1",
+                "225e7faf-7f84-4024-a628-b7d8111b19f8",
+                "25d95e41-ef6b-48d9-8511-b3016b7ed09f",
+                "4c6343e3-bef4-4dc9-bf0d-36cbba47a36d",
+                "4a29be88-c84c-4060-9fe2-8b25b0ab351a",
+                "3f5d43bc-50dd-40f0-bd0f-36c3fa8e82ae",
+                "190bbab3-8928-4f0d-bef4-4bbc6b0b3a7c",
+                "ccc9a39f-2630-4f17-8553-9488e332a2f8",
+                "a10e2279-8cd3-4e5e-b96d-0d423299d23a",
+                "91fda32d-a453-4547-b1f9-b3d73be79eb3",
+                "3cb64ec2-ba67-43b4-8ef8-b957685b4ecd",
+                "07e59808-5631-4106-a817-145c45f05c0e",
+                "91b8632e-3196-4bc6-b56a-607784d331f9",
+                "99511c59-26d1-4f70-8334-2d482a98ba50",
+                "af69e0ca-54e1-4df9-9397-19faf0566b35",
+                "df87eb87-b4f9-45f8-ac5b-bb6334b941bc",
+                "b33dacaa-be64-48e1-88d1-e608821a68f7",
+                "f17259c5-e9d9-4932-8a94-700858d5e70e",
+                "0a0acfcf-4913-4cee-880f-78415afb678f",
+                "9ba4342b-7fac-4fce-9196-d919ebf4cb48",
+                "f9ab96b3-007b-4ae8-96c8-8ffea2395cd2",
+                "01a87f51-c8bd-4a28-90ee-397cf36c8aca",
+                "3b99dcb2-ed7d-4e12-b160-0680dc791fb3",
+                "0fdefe7c-92cd-4bab-b317-cd5802a1d09a",
+                "bb38256c-fd9d-4d9d-9622-0286a2bcf7d7",
+                "95d75c17-f87e-4ea9-b790-4a5215211d99",
+                "160d27b1-b41c-4e42-b20e-3fd7c939ab01",
+                "bcb96027-5b81-40fb-a466-a377cdaa0a9d",
+                "2476fb52-ef13-463f-8c94-a56675b3ad2a",
+                "bada6416-b040-4fb5-a955-584a8ac573b8",
+                "e8c58316-43d5-4afc-8bee-42f152314e2e",
+                "c8ce2e30-b984-4e05-bb20-ab982daf5921",
+                "c0193792-90e9-4818-b9f3-6a5c8f5cbd0d",
+                "3bd57a20-ecad-462e-97d1-1b5cc1f7e86b",
+                "88e5463a-92d3-400e-9c46-e212b93b6cd5",
+                "e4d4c7a6-fc06-4eb0-9703-413ce4a79ca0",
+                "7288fee2-44b2-422c-9184-2bff9cad9dcc",
+                "5adaca03-a016-4248-b47c-d757e246e1f1",
+                "e28b624f-f113-4cc0-9bf2-319ad9e7515b",
+                "dfe357a7-5ae8-47ed-8ddb-c14d6812abe5",
+                "48de530e-adb3-40cb-90b3-36029baf8615",
+                "0253f3b3-b382-4c30-88e5-4c5bec309b39",
+                "862a422b-1656-4a08-a379-2472607d0327",
+                "4268619a-6e94-4159-810b-c0f1d4b9da03",
+                "dbfe5154-449d-49cc-95f8-4662ee59c386",
+                "d5a7e0fc-94ff-40ab-98b6-a2a061a209a8",
+                "aef487df-ae10-4c91-8f5d-b247fc0b6205",
+                "c8ee1048-35cf-4348-9541-b6cbdc2bbcc0",
+                "5833e739-543a-4e21-bb3d-f6281d5018b4",
+                "335f4ccd-fdd3-44dd-91d1-c3fb6bd1fbba",
+                "8bdd4ad5-447b-44eb-86e5-e1a742efbf16",
+                "f8612cfd-9fdc-41e6-aeb5-4f1c145fceee",
+                "5dc9abf7-40d4-4476-8754-f88e41fff7bc",
+                "5a81dc3a-12ee-46fb-ab1b-343074137ce3",
+                "29345d1e-2576-4af1-8a68-0d24ddf024b9",
+                "1785b9c4-2b0b-4fdf-9fef-0c10e2039803",
+                "064fab1f-05e7-4226-86b2-3db5029d1710",
+                "66f3dba0-f105-4867-b8d2-84298f17c196",
+                "300c95e7-e5a9-43e8-b4ba-e1eee38280c2",
+                "fb2d709f-8163-4907-bb50-ca9140e824e8",
+                "985e8cca-884b-45a3-a61a-6a47575be5bf",
+                "2b9a991f-ca41-49a9-98e6-ab01aa353702",
+                "161a674a-1582-4627-8da4-871e1caaef9b",
+                "91d61196-a18b-4a42-9178-d3a05bb6bd4f",
+                "960a9295-11a9-46e7-919a-ff43126dbd2a",
+                "a48889a6-fc57-416b-8af8-96989b118a39",
+                "8810645c-8f90-419e-aab7-d851a111ae20",
+                "68da92cc-5665-4332-a095-74de205d6fdb",
+                "f7dc2666-6701-4237-adbb-ab3cdfe8ff9c",
+                "8a527d2d-1ed5-465a-a93c-2a424b52e8ec",
+                "8bc4bb99-5cfb-4a7d-8fb4-e2ad54cc5ca2",
+                "f4bb7d4d-1bec-4600-8100-e85bd3c0caee",
+                "10b05c19-f3a8-4906-8a61-5248f207215f",
+                "72872b81-0c6a-4169-9977-a71da4d3666b",
+                "667ccf31-bde8-47a9-b108-65d10091557d",
+                "5b7cbf17-ae92-4ebd-82f5-b21ed8783f22",
+                "d60c10ad-ce7b-4a95-9691-0be576a6b0e3",
+                "edfbd8f7-f347-44bb-8373-55cb4ca79cd6",
+                "fb83bbba-d556-4cb3-a389-39114ee41fe6",
+                "dc698b3b-c40e-4dd3-b5c2-ef7502893620",
+                "bfa3bee7-16b0-4487-a13c-d5311c87b580",
+                "252a1ecd-837e-4f2f-8885-f95873f0abcc",
+                "2b021ec0-8370-4b4d-8863-2eca9027ab81",
+                "967f889f-b365-4ecc-a969-c6347892e594",
+                "dc349f01-079e-4ba2-aac8-470c1485672e",
+                "1300a3cf-8bb7-49b7-8ea7-f4144e81d077",
+                "44492d2c-8a20-4839-850b-28ff2b0e53dc",
+                "b092a90c-8595-4498-8101-5dff7a9b4155",
+                "0ede0133-ff6d-4c9c-9b52-abf076f5f20e",
+                "f06d230f-4454-438c-9796-104f9ad1f804",
+                "2077b7c1-269d-4aa6-84ca-5bd33055b6b6",
+                "f9308c25-183d-4ae8-81f6-d48ca0c8ff37"
             ],
             "origname": "",
             "uncompress": false
@@ -9711,5 +13313,5 @@
     "packageID": "",
     "productID": "",
     "sourcedir": "",
-    "version": "0.9.0"
+    "version": "1.80.0"
 }

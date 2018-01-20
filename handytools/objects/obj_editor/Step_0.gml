@@ -119,38 +119,55 @@ if ( window_show ) {
                 imguigml_new_line();
                 
                 #region EDITOR TOGGLES
-                if ( imguigml_checkbox( "Fly"          , global.editor_fly             ) ) global.editor_fly         = !global.editor_fly;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Noclip"       , global.editor_noclip          ) ) global.editor_noclip      = !global.editor_noclip;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Click Surface", global.screen_show_click      ) ) global.screen_show_click  = !global.screen_show_click;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Lighting"     , global.screen_do_lighting     ) ) global.screen_do_lighting = !global.screen_do_lighting;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Dither"       , global.screen_do_dither       ) ) global.screen_do_dither   = !global.screen_do_dither;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "DoF"          , global.screen_do_dof          ) ) global.screen_do_dof      = !global.screen_do_dof;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Culling"      , global.screen_do_culling      ) ) global.screen_do_culling  = !global.screen_do_culling;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Show Context Hints"   , show_hints            ) ) show_hints            = !show_hints;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Show Selected Details", show_selected_readout ) ) show_selected_readout = !show_selected_readout;
+                
+                var _result = imguigml_checkbox( "Fly", global.editor_fly ); imguigml_same_line();
+                if ( _result[0] ) global.editor_fly = _result[1];
+                
+                var _result = imguigml_checkbox( "Noclip", global.editor_noclip ); imguigml_same_line();
+                if ( _result[0] ) global.editor_noclip = !_result[1];
+                
+                var _result = imguigml_checkbox( "Click Surface", global.screen_show_click ); imguigml_same_line();
+                if ( _result[0] ) global.screen_show_click = _result[1];
+                
+                var _result = imguigml_checkbox( "Lighting", global.screen_do_lighting ); imguigml_same_line();
+                if ( _result[0] ) global.screen_do_lighting = _result[1];
+                
+                var _result = imguigml_checkbox( "Dither", global.screen_do_dither ); imguigml_same_line();
+                if ( _result[0] ) global.screen_do_dither = _result[1];
+                
+                var _result = imguigml_checkbox( "DoF", global.screen_do_dof ); imguigml_same_line();
+                if ( _result[0] ) global.screen_do_dof = _result[1];
+                
+                var _result = imguigml_checkbox( "Culling", global.screen_do_culling ); imguigml_same_line();
+                if ( _result[0] ) global.screen_do_culling = _result[1];
+                
+                var _result = imguigml_checkbox( "Show Context Hints", show_hints ); imguigml_same_line();
+                if ( _result[0] ) show_hints = _result[1];
+                
+                var _result = imguigml_checkbox( "Show Selected Details", show_selected_readout ) imguigml_same_line();
+                if ( _result[0] ) show_selected_readout = _result[1];
+                
                 imguigml_separator();
                 #endregion
                 
                 #region CUSTOM TOGGLES
                 imguigml_new_line();
-                if ( imguigml_checkbox( "Menu", instance_exists( obj_menu ) ) ) {
+                
+                var _result = imguigml_checkbox( "Menu", instance_exists( obj_menu ) ); imguigml_same_line();
+                if ( _result[0] ) {
                     tr_instance_destroy( obj_subtitle );
                     if ( instance_exists( obj_menu ) ) tr_instance_destroy( obj_menu ) else tr_instance_create( 0, 0, obj_menu );
                 }
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Draw Walls"   , global.do_walls      ) ) global.do_walls      = !global.do_walls;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Draw Ceiling" , global.do_ceiling    ) ) global.do_ceiling    = !global.do_ceiling;
-                imguigml_same_line();
-                if ( imguigml_checkbox( "Show Spawners", global.show_spawners ) ) global.show_spawners = !global.show_spawners;
+                
+                var _result = imguigml_checkbox( "Draw Walls", global.do_walls ); imguigml_same_line();
+                if ( _result[0] ) global.do_walls = _result[1];
+                
+                var _result = imguigml_checkbox( "Draw Ceiling", global.do_ceiling ); imguigml_same_line();
+                if ( _result[0] ) global.do_ceiling = _result[1];
+                
+                var _result = imguigml_checkbox( "Show Spawners", global.do_ceiling );
+                if ( _result[0] ) global.do_spawners = _result[1];
+                
                 imguigml_new_line();
                 #endregion
                 
@@ -343,7 +360,9 @@ if ( window_show ) {
                     
                     var _fine_step = 0.1;
                     var _coarse_step = 2;
-                    if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
+                    
+                    var _result = imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected );
+                    if ( _result[0] ) mouse_selected = _result[1];
                     
                     imguigml_next_column();
                     var _result = imguigml_input_float( concat( "##x", id ), x, _fine_step, _coarse_step, 1 ); if ( _result[0] ) x = _result[1];
@@ -387,8 +406,10 @@ if ( window_show ) {
                     imguigml_end_popup();
                 }
                 
-                if ( imguigml_checkbox( "Filter by selected", instances_selected_filter ) ) instances_selected_filter = !instances_selected_filter;
+                var _result = imguigml_checkbox( "Filter by selected", instances_selected_filter );
+                if ( _result[0] ) instances_selected_filter = _result[1];
                 imguigml_same_line();
+                
                 if ( instances_object_filter == undefined ) {
                     if ( imguigml_button( "Filter by object" ) ) imguigml_open_popup( "Object Filter Pop-up" );
                 } else {
@@ -436,7 +457,9 @@ if ( window_show ) {
                         _coarse_step = 2;
                     }
                     
-                    if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
+                    var _result = imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected );
+                    if ( _result[0] ) mouse_selected = _result[1];
+                    
                     if ( imguigml_is_item_hovered( true ) ) {
                         other.instances_over = id;
                         _fine_step = 0.1;
@@ -470,7 +493,8 @@ if ( window_show ) {
                 
                 imguigml_text( "Filtering by selected" );
                 imguigml_same_line();
-                if ( imguigml_checkbox( "Can right-click delete without selecting the instance", delete_fast ) ) delete_fast = !delete_fast;
+                var _result = imguigml_checkbox( "Can right-click delete without selecting the instance", delete_fast );
+                if ( _result[0] ) delete_fast = _result[1];
                 imguigml_same_line( 0, 150 );
                 if ( imguigml_button( "Delete All Selected" ) ) imguigml_open_popup( "Confirm Pop-up" );
                 imguigml_new_line();
@@ -491,7 +515,8 @@ if ( window_show ) {
                 imguigml_separator();
                 with( obj_par_3d ) {
                     if ( mouse_selected ) {
-                        if ( imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected ) ) mouse_selected = !mouse_selected;
+                        var _result = imguigml_checkbox( concat( object_get_pretty_name( object_index ), ":", id ), mouse_selected );
+                        if ( _result[0] ) mouse_selected = _result[1];
                         imguigml_next_column();
                         imguigml_text( x );
                         imguigml_next_column();

@@ -1,8 +1,8 @@
 {
-    "id": "13a264e2-83f6-4961-b16d-63792ab83aee",
+    "id": "5ec5071b-6ee8-40f7-9067-495de1a2f285",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "imguigml_config",
+    "name": "rousr_bin_pack_definitions",
     "IsCompatibility": false,
     "IsDnD": false
 }

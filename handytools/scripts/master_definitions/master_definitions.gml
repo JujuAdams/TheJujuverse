@@ -1,9 +1,9 @@
 /// @description Internal master definitions
 
 //handytools build information
-#macro HANDYTOOLS_VERSION "v0.6.3"
-#macro HANDYTOOLS_DATE "2017.12.26" //always use YYYY/MM/DD
-#macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI implementation by @babyj3ans, JIFFY by @net8floz"
+#macro HANDYTOOLS_VERSION "v0.7.0"
+#macro HANDYTOOLS_DATE "2018.01.20" //always use YYYY/MM/DD
+#macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI v1.80.0 implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, SCREEN with assistance from kraifpatrik"
 
 //abbreviations
 #macro UNIQUE_NAME object_get_name( object_index ) + ":" + string( id )
