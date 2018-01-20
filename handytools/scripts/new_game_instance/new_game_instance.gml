@@ -1,7 +1,7 @@
 var _str = "";
 _str += "\nset _folder_=%1";
 _str += "\nset _file_=\\handytools.win";
-_str += "\nC:\\ProgramData\\GameMakerStudio2\\Cache\\runtimes\\runtime-2.1.1.158\\windows\\Runner.exe  -game %_folder_%%_file_%";
+_str += "\nC:\\ProgramData\\GameMakerStudio2\\Cache\\runtimes\\runtime-2.1.3.273\\windows\\Runner.exe  -game %_folder_%%_file_%";
 
 string_save( "new_game_instance.bat", _str );
 

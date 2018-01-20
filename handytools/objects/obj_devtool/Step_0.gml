@@ -55,12 +55,14 @@ if ( window_show ) {
     switch( window_page ) {
         case E_TRACKER_PAGE.HOME:
             #region HOME
-                imguigml_text( RELEASE?"Release mode":"Test mode" );
+                imguigml_text( RELEASE? "Release mode" : "Test mode" );
                 imguigml_text( TITLE + ", " + VERSION + " " + QU + VERSION_NOMIKER + QU );
                 imguigml_text( "Built " + DATE + " by " + BUILDER );
                 imguigml_new_line();
+                repeat( 5 ) imguigml_spacing();
                 imguigml_text( CREDITS );
                 imguigml_new_line();
+                repeat( 5 ) imguigml_spacing();
                 devtool_imguigml_home();
             #endregion
         break;

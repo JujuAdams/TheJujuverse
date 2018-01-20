@@ -1,8 +1,8 @@
 {
-    "id": "13a264e2-83f6-4961-b16d-63792ab83aee",
+    "id": "4ef705e3-3823-447a-bd5b-3da1f3374a1e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "imguigml_config",
+    "name": "rousr_sprite_atlas_defintiions",
     "IsCompatibility": false,
     "IsDnD": false
 }

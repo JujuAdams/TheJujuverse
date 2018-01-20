@@ -1,1 +1,1 @@
-if (imguigml_ready()) __imguigml_event_end_step();
+__imguigml_event_end_step();

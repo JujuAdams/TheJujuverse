@@ -1,14 +1,14 @@
 /*
-    VERSION   v0.6.3
-    DATE      2017.12.26
+    VERSION   v0.7.0
+    DATE      2018.01.20
     CREDITS   handytools by @jujuadams
               ImGUI implementation by @babyj3ans
               JIFFY by @net8floz
-              SCREEN with assistance from kraifpatrik
               Logo by @stefanvonranda
+              SCREEN with assistance from kraifpatrik
     
-    # "handytools" v0.6.3
-    ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz
+    # "handytools" v0.7.0
+    ### Written by @jujuadams, ImGUI v1.80.2 implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, WinDev.dll by @YellowAfterlife, SCREEN with assistance from kraifpatrik
     A series of libraries and tools to assist with game creation.
         
     Press F12 to open DEVTOOL.
