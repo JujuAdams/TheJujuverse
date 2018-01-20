@@ -24,12 +24,16 @@ var _yup    = argument8;
 var _zup    = argument9;
 
 var _matrix = matrix_build_lookat( _xfrom, _yfrom, _zfrom,
-                                     _xto,   _yto,   _zto,
-                                     _xup,   _yup,   _zup );
+                                   _xto  , _yto  , _zto  ,
+                                   _xup  , _yup  , _zup   );
                                      
 var _map = global.grip_cameras_map[? _name ];
 _map[? "view matrix" ] = _matrix;
 _map[? "xfrom"       ] = _xfrom;
 _map[? "yfrom"       ] = _yfrom;
 _map[? "zfrom"       ] = _zfrom;
+_map[? "xdir"        ] = _xto - _xfrom;
+_map[? "ydir"        ] = _yto - _yfrom;
+_map[? "zdir"        ] = _zto - _zfrom;
+
 camera_set_view_mat( _map[? "camera" ], _matrix );

@@ -46,7 +46,7 @@ surface_set_target( _composite_surface );
     #endregion
     
     #region SHADOW MAPPED DIRECTIONAL LIGHTS
-    s_shader_begin( shd_shadowmap );
+    s_shader_begin( shd_shadow_mapped_light );
         s_shader_float(           "u_fZFar"         , DEFAULT_Z_FAR   );
         s_shader_surface_sampler( "u_sDepth"        , _depth_surface  );
         s_shader_surface_sampler( "u_sNormal"       , _normal_surface );
@@ -60,8 +60,8 @@ surface_set_target( _composite_surface );
             s_shader_matrix(          "u_mLightViewProj", matrix_multiply( _map[? "view matrix" ], _map[? "proj matrix" ] ) );
             s_shader_surface_sampler( "u_sLightDepth"   , grip_get_surface( UNIQUE_NAME ) );
             s_shader_rgb(             "u_vColour"       , colour );
-            s_shader_float(           "u_vAspect"       , grip_get_aspect( UNIQUE_NAME ), 1 );
             s_shader_sprite_uv_ltwh(  "u_vSpriteUVs"    , light_sprite, light_image );
+            s_shader_float(           "u_vLightDir"     , _map[? "xdir" ], _map[? "ydir" ], _map[? "zdir" ] );
             draw_sprite_stretched( light_sprite, light_image, _x, _y, _w, _h );
         }
     s_shader_end();

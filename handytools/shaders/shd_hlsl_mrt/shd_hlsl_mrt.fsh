@@ -29,6 +29,18 @@ float4 DepthToRGBA( float depth ) {
 				   frac(  depth * 255.0 * 255.0 * 255.0 ) );
 }
 */
+/*
+float RGBToDepth( vec3 colour ) {
+	colour /= vec3( 1., 255., 255.*255. );
+    return clamp( colour.r + colour.g + colour.b,    0.0, 1.0 );
+}
+*/
+/*
+float RGBAToDepth( vec3 colour ) {
+	colour /= vec3( 1., 255., 255.*255., 255.*255.*255. );
+    return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
+}
+*/
 OUTPUT main(PS In) {
     OUTPUT Out;
     Out.Colour0  = lerp( In.Colour, float4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );

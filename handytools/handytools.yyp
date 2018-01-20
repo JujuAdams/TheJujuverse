@@ -42,7 +42,7 @@
             "Key": "00509bf9-2ade-469b-928b-410ff7affb4e",
             "Value": {
                 "id": "4d5e6d1d-68bb-4928-baf2-e8e9c1bca576",
-                "resourcePath": "shaders\\shd_shadowmap\\shd_shadowmap.yy",
+                "resourcePath": "shaders\\shd_shadow_mapped_light\\shd_shadow_mapped_light.yy",
                 "resourceType": "GMShader"
             }
         },
