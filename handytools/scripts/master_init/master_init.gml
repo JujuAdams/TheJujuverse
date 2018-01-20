@@ -25,6 +25,11 @@ global.vbf_sphere = vertex_buffer_build_sphere( -1, -1, -1,
                                                  1,  1,  1,
                                                  1,  1, 16 );
 
+global.vbf_cone = vertex_buffer_build_cone( -1, -1, -1,
+                                             1,  1,  1,
+                                             16, 16,
+                                             true, 24 );
+
 trace_f( "Initialising services" );
 
    tracker_init();

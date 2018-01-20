@@ -9,10 +9,13 @@ if ( !GRIP_ON ) return undefined;
 //Keep view grip surfaces alive
 var _size = ds_list_size( global.grip_view_list );
 for( var _i = GRIP_VIEWS_START; _i <= GRIP_VIEWS_END; _i++ ) {
+    
     var _name = global.grip_view_list[| _i ];
     if ( _name == undefined ) continue;
+    
     grip_set_surface( _name, tr_surface_check_auto( grip_get_surface( _name ) ) );
     view_surface_id[_i] = grip_get_surface( _name );
+    
 }
 
 //Only bother faffing around with matrices if we have to

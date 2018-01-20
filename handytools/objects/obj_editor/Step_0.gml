@@ -512,7 +512,7 @@ if ( window_show ) {
             #region LIGHT
                 imguigml_text( "SELECTED" );
                 var _any = false;
-                with( obj_light ) if ( mouse_selected ) _any = true;
+                with( obj_parent_light ) if ( mouse_selected ) _any = true;
                 if ( _any ) {
                     imguigml_columns( 6, "Columns", true );
                     imguigml_text( "Instance" );
@@ -528,7 +528,7 @@ if ( window_show ) {
                     imguigml_text( "range" );
                     imguigml_next_column();
                     imguigml_separator();
-                    with( obj_light ) {
+                    with( obj_parent_light ) {
                         if ( mouse_selected ) {
                             if ( imguigml_button( concat( object_get_pretty_name( object_index ), ":", id ) ) ) mouse_selected = !mouse_selected;
                             imguigml_next_column();

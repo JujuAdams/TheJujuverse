@@ -6,7 +6,8 @@ event_user( DRAW_USER_EVENT );
 mouse_active_reset_colour();
 
 if ( !global.screen_click_render ) {
-    shader_reset();
+    
+    s_shader_end();
     
     matrix_chain_begin();
     matrix_chain_rotate_z( image_angle );
@@ -15,5 +16,6 @@ if ( !global.screen_click_render ) {
     vertex_submit( mirror_model, pr_trianglestrip, surface_get_texture( grip_get_surface( concat( "mirror", mirror_index ) ) ) );
     matrix_reset_world();
     
-    shader_set( SCREEN_3D_SHADER );
+    s_shader_begin( grip_get_shader( grip_current() ) );
+    
 }

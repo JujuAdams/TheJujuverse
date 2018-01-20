@@ -23,5 +23,5 @@ if ( TRACKER_ON ) {
 }
 
 __tr_surface_unregister( _index );
-surface_free( _index );
+if ( _index != undefined ) surface_free( _index );
 return true;

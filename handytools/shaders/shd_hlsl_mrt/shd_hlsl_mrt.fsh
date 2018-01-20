@@ -15,19 +15,42 @@ struct OUTPUT {
 };
 
 uniform float4 u_vForceColour;
+uniform float2 u_vClickIndex;
 
+float3 DepthToRGB( float depth ) {
+    return float3( floor( depth * 255.0 ) / 255.0,
+	               frac(  depth * 255.0 ),
+				   frac(  depth * 255.0 * 255.0 ) );
+}
+/*
 float4 DepthToRGBA( float depth ) {
     return float4( floor( depth * 255.0 ) / 255.0,
 	               frac(  depth * 255.0 ),
 				   frac(  depth * 255.0 * 255.0 ),
 				   frac(  depth * 255.0 * 255.0 * 255.0 ) );
 }
-
+*/
+/*
+float RGBToDepth( vec3 colour ) {
+	colour /= vec3( 1., 255., 255.*255. );
+    return clamp( colour.r + colour.g + colour.b,    0.0, 1.0 );
+}
+*/
+/*
+float RGBAToDepth( vec3 colour ) {
+	colour /= vec3( 1., 255., 255.*255., 255.*255.*255. );
+    return clamp( colour.r + colour.g + colour.b + colour.a,    0.0, 1.0 );
+}
+*/
 OUTPUT main(PS In) {
+    
+    float4 sample = gm_BaseTextureObject.Sample( gm_BaseTexture, In.Texcoord );
+    if ( sample.a <= 0. ) discard;
+    
     OUTPUT Out;
-    Out.Colour0  = lerp( In.Colour, float4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );
-    Out.Colour0 *= gm_BaseTextureObject.Sample( gm_BaseTexture, In.Texcoord );
-    Out.Colour1  = DepthToRGBA( In.Depth );
-    Out.Colour2  = float4( .5 + .5*In.NormalWS, 1. );
+    Out.Colour0 = float4( lerp( In.Colour.rgb * sample.rgb, u_vForceColour.rgb, u_vForceColour.a ), u_vClickIndex.x );
+    Out.Colour1 = float4( DepthToRGB( In.Depth ), u_vForceColour.a );
+    Out.Colour2 = float4( .5 + .5*In.NormalWS, u_vClickIndex.y );
     return Out;
+    
 }

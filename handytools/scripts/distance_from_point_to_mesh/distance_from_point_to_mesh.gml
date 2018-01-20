@@ -1,3 +1,4 @@
+/// @description Finds the distance from a point to a mesh (sequential xyz data for triplets of points, making a sequential list of triangles)
 /// @param triangle_array
 /// @param x
 /// @param y
@@ -104,9 +105,6 @@ for( var _tri = 0; _tri < _size; _tri += 9 ) {
     } else if ( _check_i + _check_j > 1 ) {
         
         //Outside (remember that y=1-x defines the hypotenuese)
-        //Shortest distance is always on the line y=x+c
-        //Closest point satisfies both equations
-        
         // L = J-I
         var _lx = _jx - _ix;
         var _ly = _jy - _iy;
@@ -116,6 +114,10 @@ for( var _tri = 0; _tri < _size; _tri += 9 ) {
         // (S-I).L
         var _t = clamp( dot_product_3d( _sx-_ix, _sy-_iy, _sz-_iz,   _lx, _ly, _lz ) / _l_sqr_dist, 0, 1 );
         _dist = point_distance_3d( _vx, _vy, _vz,   _t*_lx + _ix, _t*_ly + _iy, _t*_lz + _iz );
+        
+    } else {
+        
+        //Outside the triangle
         
     }
     
