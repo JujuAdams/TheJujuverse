@@ -1,9 +1,9 @@
-///surface_blur( source surface, transfer surface, destination surface, shader, [transfer surface] )
+///surface_blur( source surface, transfer surface, destination surface, shader )
 
-var _source      = argument0;
-var _transfer    = argument1;
-var _destination = argument2;
-var _shader      = argument3;
+var _source       = argument0;
+var _transfer     = argument1;
+var _destination  = argument2;
+var _shader       = argument3;
 
 var _width  = surface_get_width(  _source );
 var _height = surface_get_height( _source );
@@ -21,4 +21,3 @@ surface_set_target( _destination );
         draw_surface( _transfer, 0, 0 );
     shader_reset();
 surface_reset_target();
-

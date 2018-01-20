@@ -6,6 +6,8 @@ if ( !GRIP_ON ) {
     exit;
 }
 
+grip_deactivate( argument0 );
+
 var _map = global.grip_cameras_map[? argument0 ];
 
 var _surface        = _map[? "surface"        ];

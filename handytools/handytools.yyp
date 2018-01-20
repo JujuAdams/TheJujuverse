@@ -3551,6 +3551,14 @@
             }
         },
         {
+            "Key": "7c241b46-7689-462b-ad2b-dbecb592b443",
+            "Value": {
+                "id": "066432be-e0f3-45b1-ae4a-a5eae3451808",
+                "resourcePath": "sprites\\spr_tex_spiral2\\spr_tex_spiral2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7c4c09af-744d-4b5a-bbb6-f1f68eae9247",
             "Value": {
                 "id": "705c3baa-25be-4cc6-acd3-6368e08ca4ab",
@@ -4916,14 +4924,6 @@
                 "id": "e6a57655-f5b5-4903-b56e-a3ac3fdfbbe3",
                 "resourcePath": "scripts\\control_get_released\\control_get_released.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "ab22589d-d63f-4826-8885-36c3a6f2dc2c",
-            "Value": {
-                "id": "98b295d2-0855-4e74-93f2-e6e8ad54acea",
-                "resourcePath": "sprites\\spr_tex_spiral2\\spr_tex_spiral2.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

@@ -22,7 +22,7 @@ switch( grip_current() ) {
 		*/
     break;
     
-    case "click":
+    case "click": //A screenspace click detection render. Only used for forward rendering
     break;
     
 }
