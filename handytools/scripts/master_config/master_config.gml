@@ -45,7 +45,7 @@
 #macro TIMED_SPRITE_THRESHOLD 1000
 
 //graphics
-#macro ALLOW_MRT false
+#macro ALLOW_MRT true
 #macro FORCE_VSYNC true
 #macro FORCE_NO_CURSOR true
 #macro FORCE_NO_INTERPOLATION true
