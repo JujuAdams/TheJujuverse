@@ -8,7 +8,7 @@
         "954fb9b3-3baf-462c-b12b-df9fb58995a7"
     ],
     "filterType": "GMShader",
-    "folderName": "imguigml",
+    "folderName": "babyjeans - imguigml",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

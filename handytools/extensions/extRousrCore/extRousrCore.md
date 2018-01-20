@@ -2,7 +2,7 @@
 | | | 
 | ----------------- | --------------------------------------------- |   
 **_singleton_name** | {String} global name to use for the singleton   
-**returns**:       | {Boolean} false if an existing instance is destroyed - be sure to check CleanUp / Destroys   
+**returns**: |     {Boolean} false if an existing instance is destroyed - be sure to check CleanUp / Destroys   
 ```
 sr_ensure_singleton(_singleton_name)
 ```   
@@ -51,7 +51,7 @@ sr_color_hex(color)
 | -------------- | ------------------------------------------------------ |   
 **_color**       | {Real} color to convert   
 **[_out_array]** | {Array} optional out array to not allocate a new array   
-**returns**:    | unrs {Array} array of colors in float range   
+**returns**: |  {Array} array of colors in float range   
 ```
 sr_color_glsl(_color, [_out_array])
 ```   
@@ -131,51 +131,17 @@ Log wrapper (eventual logging system)
 
 ---
 
-#### `sr_game_quit`   
-**returns**: | None   
-```
-sr_game_quit()
-```   
-generic callback to use for quits (button callbacks mainly)
-
----
-
 #### `sr_execute`   
 | | | 
-| --------------- | ------------------------------------------------------------------------------- |   
-**_script_index** | {Real} - script to execute   
-**_params**       | {Array} - parameters to call, in an array   
-**[paramCount]**  | {Real} - if you've already got the count ready, pass it, or else it's computed.   
-**returns**:     | {*} return value from script call   
+| --------------- | ----------------------------------------------------------------------------- |   
+**_script_index** | {Real} script to execute   
+**_params**       | {Array} parameters to call, in an array   
+**[paramCount]**  | {Real} if you've already got the count ready, pass it, or else it's computed.   
+**returns**: |   {*} return value from script call   
 ```
 sr_execute(_script_index, _params, [paramCount])
 ```   
 rousr_execute - call a function with variadic argument support
-
----
-
-#### `sr_ds_safe_destroy`   
-| | | 
-| ---------- | -------------------------------------------------------------------- |   
-**_type**    | {Real} - type of data structure, i.e., `ds_type_map`, `ds_type_list`   
-**_ds_id**   | {Real} - id for the datastructure   
-**returns**: | {Real} undefined on success, otherwise the same id. useful for chaining calls - `ds = rousr_ds_safe_destroy(type, ds);`   
-```
-sr_ds_safe_destroy(_type, _ds_id)
-```   
-check if `_ds_id` is a valid `_type` and destroy it if it is, returning the new id to use for _ds_id (undefined in most cases)
-
----
-
-#### `sr_dummy`   
-| | | 
-| ---------- | ---------------------------------------------------------------- |   
-**[_any]**   | {*} accepts a param optionally so its usable with or without 'em   
-**returns**: | None   
-```
-sr_dummy([_any])
-```   
-it does nothing - used for placeholders in callback systems
 
 ---
 
@@ -190,37 +156,11 @@ it does nothing - used for placeholders in callback systems
 **_rect_min_y** | {Real}    
 **_rect_max_x** | {Real}    
 **_rect_max_y** | {Real}    
-**returns**:   | {Boolean} true if an aabb and line intersect   
+**returns**: | {Boolean} true if an aabb and line intersect   
 ```
 sr_aabb_contains_line(_line_x1, _line_y1, _line_x2, _line_y2, _rect_min_x, _rect_min_y, _rect_max_x, _rect_max_y)
 ```   
 courtesy of https://stackoverflow.com/questions/1585525/how-to-find-the-intersection-point-between-a-line-and-a-rectangle
-
----
-
-#### `sr_sort_quick`   
-| | | 
-| ------------ | ---- |   
-**list**       | false    
-**comparison** | false    
-**returns**:  | None   
-```
-sr_sort_quick(list, comparison)
-```   
-implement a quicksort you can pass a predicate to port from http://www.algolist.net/Algorithms/Sorting/Quicksort
-
----
-
-#### `sr_sort_insert`   
-| | | 
-| ----------- | ---- |   
-**list**      | false    
-**predicate** | false    
-**returns**: | None   
-```
-sr_sort_insert(list, predicate)
-```   
-an insertion sort with a predicateported from http://www.algolist.net/Algorithms/Sorting/Insertion_sortcause why not?
 
 ---
 

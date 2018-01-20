@@ -10,7 +10,7 @@
         "091ed4fe-ee28-4624-88d6-aa1a822e9ed1"
     ],
     "filterType": "GMSprite",
-    "folderName": "rousr (required)",
+    "folderName": "babyjeans - rousr",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

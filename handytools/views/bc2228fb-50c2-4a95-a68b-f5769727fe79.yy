@@ -11,7 +11,7 @@
         "5ec5071b-6ee8-40f7-9067-495de1a2f285"
     ],
     "filterType": "GMScript",
-    "folderName": "rousr (required)",
+    "folderName": "rousr",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

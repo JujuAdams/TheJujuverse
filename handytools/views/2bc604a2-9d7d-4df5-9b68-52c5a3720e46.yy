@@ -14,7 +14,7 @@
         "bc2228fb-50c2-4a95-a68b-f5769727fe79"
     ],
     "filterType": "GMScript",
-    "folderName": "ImGUI",
+    "folderName": "babyjeans - ImGUI",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

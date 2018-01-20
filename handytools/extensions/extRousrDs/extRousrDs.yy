@@ -37,7 +37,7 @@
             "final": "",
             "functions": [
                 {
-                    "id": "78eed42d-f348-42f7-8261-1da555207850",
+                    "id": "4207d1ed-185f-4d29-86fb-31481a8abc14",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -45,14 +45,14 @@
                         
                     ],
                     "externalName": "sr_array",
-                    "help": "(_rousr_array, _index, [_val])",
+                    "help": "return an index, or set an index in a `_rousr_array` (_rousr_array, _index, [_val])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array",
                     "returnType": 2
                 },
                 {
-                    "id": "a984738d-afd3-4e8b-ba29-18c8b6dff543",
+                    "id": "8c048012-23b6-40d1-b6cf-71bbddca60ae",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -60,14 +60,14 @@
                         
                     ],
                     "externalName": "sr_array_create",
-                    "help": "([_array], [_arraySize])",
+                    "help": "create a `rousr style` array, with the size as the first element, and the actual array as second ([_array], [_arraySize])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_create",
                     "returnType": 2
                 },
                 {
-                    "id": "8f1b6ad4-a45f-4949-8fec-6cd602bec90c",
+                    "id": "a0492f1d-d4b0-4496-92e5-386ee2e99d44",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -75,14 +75,14 @@
                         
                     ],
                     "externalName": "sr_array_data",
-                    "help": "(-)",
+                    "help": "return the data of the `rousr_array` (_rousr_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_data",
                     "returnType": 2
                 },
                 {
-                    "id": "8b6a9095-d53e-4b95-80d5-b3d8b0a6a769",
+                    "id": "122d69c2-2e16-4638-b1bc-50b9747a3e2a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -90,14 +90,14 @@
                         
                     ],
                     "externalName": "sr_array_destroy",
-                    "help": "(_array)",
+                    "help": "destroy a `rousr style` array - currently does nothing, but future proofing by including. (_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_destroy",
                     "returnType": 2
                 },
                 {
-                    "id": "6fc0c2a8-32a9-4f8e-a6b9-62c525260f5d",
+                    "id": "3a885111-29cc-491d-9924-028386294a41",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -105,14 +105,14 @@
                         
                     ],
                     "externalName": "sr_array_find",
-                    "help": "(_rousr_array, _val, [_startIndex=0])",
+                    "help": "returns the first occurence of _val beginning at _startIndex (_rousr_array, _val, [_startIndex=0])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_find",
                     "returnType": 2
                 },
                 {
-                    "id": "d58b5e59-9e5d-4c58-8258-8b95ebf62727",
+                    "id": "ba557421-306d-46fd-83a8-3cb33988386c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -120,14 +120,14 @@
                         
                     ],
                     "externalName": "sr_array_insert",
-                    "help": "(_rousr_array, _index, _val)",
+                    "help": "insert a value into a rousr array (_rousr_array, _index, _val)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_insert",
                     "returnType": 2
                 },
                 {
-                    "id": "7eadaff1-4ffb-49bd-b674-d7c1cbe48dd4",
+                    "id": "01e875be-f142-487e-a346-26073f9054c2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -135,14 +135,14 @@
                         
                     ],
                     "externalName": "sr_array_pop_back",
-                    "help": "(_rousr_array)",
+                    "help": "pop the back of a rousr array and return it (_rousr_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_pop_back",
                     "returnType": 2
                 },
                 {
-                    "id": "b944ee4b-749a-4ef0-85e6-0dc94552e999",
+                    "id": "3a2dc115-e5ff-4bd6-9748-0720cd06ae31",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -150,14 +150,14 @@
                         
                     ],
                     "externalName": "sr_array_pop_front",
-                    "help": "(_rousr_array)",
+                    "help": "pop the front of an array and return it (_rousr_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_pop_front",
                     "returnType": 2
                 },
                 {
-                    "id": "1ca5d79d-c2f6-41d6-af7f-a7707606fabf",
+                    "id": "44b21ad3-aafb-4e5a-b520-0e7885c781db",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -165,14 +165,14 @@
                         
                     ],
                     "externalName": "sr_array_push_back",
-                    "help": "(_rousr_array, _val)",
+                    "help": "push a value on the end of a `rousr_array` (_rousr_array, _val)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_push_back",
                     "returnType": 2
                 },
                 {
-                    "id": "3d9efbde-eec9-4ad7-b609-a40a93c64bc0",
+                    "id": "aaae5860-276e-4c85-965a-075443309d3f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -180,14 +180,14 @@
                         
                     ],
                     "externalName": "sr_array_push_front",
-                    "help": "(_array, _val)",
+                    "help": "push a value on the front of a rousr array (_array, _val)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_push_front",
                     "returnType": 2
                 },
                 {
-                    "id": "0c6ec45f-87ca-4259-8e18-aefce483deec",
+                    "id": "e988c54b-c763-413b-83c7-e8822a42e717",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -195,14 +195,14 @@
                         
                     ],
                     "externalName": "sr_array_push_unique",
-                    "help": "(_rousr_array, _val, [_returnIndexOnExists=false])",
+                    "help": "push a value on the end of a rousr array, but only if value isn't in the array already (_rousr_array, _val, [_returnIndexOnExists=false])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_push_unique",
                     "returnType": 2
                 },
                 {
-                    "id": "1ee50f7f-dc19-4a76-bebb-1066da991b40",
+                    "id": "53199d3a-40bd-432d-8a1f-d7b3a65499fc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -210,14 +210,14 @@
                         
                     ],
                     "externalName": "sr_array_remove",
-                    "help": "(_rousr_array, _index)",
+                    "help": "generate a new array with _index removed from the `_rousr_array` (_rousr_array, _index)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_remove",
                     "returnType": 2
                 },
                 {
-                    "id": "a9fdb147-6dcb-4993-ad96-9ac54fcecb83",
+                    "id": "3de92501-7955-40e9-87a4-a119998ee3c9",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -225,14 +225,14 @@
                         
                     ],
                     "externalName": "sr_array_remove_multi",
-                    "help": "(_rousr_array, _index_array, [_index_array_size])",
+                    "help": "generate a new array with _index removed from the `_rousr_array` (_rousr_array, _index_array, [_index_array_size])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_remove_multi",
                     "returnType": 2
                 },
                 {
-                    "id": "c0f5ef6a-a341-4977-9ee3-89bc8ae2671e",
+                    "id": "9e58fce7-61cd-4a31-93b1-fc2c73d34e88",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -240,14 +240,14 @@
                         
                     ],
                     "externalName": "sr_array_size",
-                    "help": "(-, [_new_size])",
+                    "help": "return the size of the `rousr_array` (`rousr_array`, [_new_size])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_size",
                     "returnType": 2
                 },
                 {
-                    "id": "8c84bfb6-5257-4e53-b2b2-70b4ff9c3acb",
+                    "id": "1a35b88f-be6b-432a-90b2-7ef9773f24fb",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -255,14 +255,14 @@
                         
                     ],
                     "externalName": "sr_array_clear",
-                    "help": "(_rousr_array, [_flush_mem=false])",
+                    "help": "emtpy a rousr_array (_rousr_array, [_flush_mem=false])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_array_clear",
                     "returnType": 2
                 },
                 {
-                    "id": "6c4990e3-8f22-41cb-b17b-958da4b69e54",
+                    "id": "79965d1d-299a-409b-9abb-ef5de8d65db5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -270,14 +270,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_create",
-                    "help": "()",
+                    "help": "create a `rousr_stack_array` - a stack purely made of arrays ()",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_create",
                     "returnType": 2
                 },
                 {
-                    "id": "c6aebf7a-2efb-485b-adbb-797129754788",
+                    "id": "90873bf2-9982-4a09-98a1-4ca287e26768",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -285,14 +285,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_destroy",
-                    "help": "(_rousr_stack_array)",
+                    "help": "destroy a `rousr_stack_array` - since they're made up of arrays, this is unnecessary to call, but provided future API use or re-using stack arrays. (_rousr_stack_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_destroy",
                     "returnType": 2
                 },
                 {
-                    "id": "a5b69533-8fb0-4b22-9d5a-77dd3a6f98c4",
+                    "id": "83e9cb8e-6f52-4c54-8cf0-5275c3bf1002",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -300,14 +300,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_empty",
-                    "help": "(_rousr_stack_array)",
+                    "help": "check if a stack is empty (_rousr_stack_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_empty",
                     "returnType": 2
                 },
                 {
-                    "id": "4786eb02-347b-434a-875f-f806c0de7601",
+                    "id": "a74b7b4a-42bb-462b-b66e-08eb179177bc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -315,14 +315,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_pop",
-                    "help": "(_rousr_stack_array)",
+                    "help": "pop the last `val`  from a `_rousr_stack_array` (_rousr_stack_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_pop",
                     "returnType": 2
                 },
                 {
-                    "id": "1d62dd6e-7243-482d-a66f-63b3cbc8f5a4",
+                    "id": "045513ad-5895-4774-b69f-007f0deef232",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -330,14 +330,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_push",
-                    "help": "(_rousr_stack_array, _val)",
+                    "help": "push a `_val` onto the stack of a `_rousr_stack_array` (_rousr_stack_array, _val)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_push",
                     "returnType": 2
                 },
                 {
-                    "id": "e90bd32b-e45c-4c8a-8ed8-3d1237425c3d",
+                    "id": "f713264d-12fb-406b-81f8-a66dd5d76249",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -345,14 +345,14 @@
                         
                     ],
                     "externalName": "sr_stack_array_top",
-                    "help": "(_rousr_stack_array)",
+                    "help": "return the top index of a `rousr_stack_array` (_rousr_stack_array)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_stack_array_top",
                     "returnType": 2
                 },
                 {
-                    "id": "9bdb299f-11e4-428b-8769-49d254e58ebc",
+                    "id": "7cf9466c-6c77-4b38-9130-fca2422fab7e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -360,14 +360,14 @@
                         
                     ],
                     "externalName": "sr_buffer_read_val",
-                    "help": "(_buffer)",
+                    "help": "Reads a value from a packed buffer, first reading data type to expect. (_buffer)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_buffer_read_val",
                     "returnType": 2
                 },
                 {
-                    "id": "980307ab-40d7-4672-a542-976145835ba9",
+                    "id": "6463b868-39c6-48e4-aff4-d579df8eef7a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -375,14 +375,14 @@
                         
                     ],
                     "externalName": "sr_buffer_write_val",
-                    "help": "(_buffer, _val, [type=ERousrData.Invalid])",
+                    "help": "writes a value to the buffer, but first writes the type (_buffer, _val, [type=ERousrData.Invalid])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_buffer_write_val",
                     "returnType": 2
                 },
                 {
-                    "id": "f9c4b29b-f4ab-4d69-ba8f-794ea3962ee1",
+                    "id": "dfbf77ae-8775-41c8-9c29-94e0163324b0",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -390,14 +390,14 @@
                         
                     ],
                     "externalName": "sr_buffer_rousr_type_to_buffer_type",
-                    "help": "(_type)",
+                    "help": "return a buffer type from a luarousr data type (_type)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_buffer_rousr_type_to_buffer_type",
                     "returnType": 2
                 },
                 {
-                    "id": "e98d4fc0-055f-4b45-9219-d9b900226e3c",
+                    "id": "a2860417-8881-4864-bc2a-57347cd2391d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -405,14 +405,14 @@
                         
                     ],
                     "externalName": "sr_pool_create_pool",
-                    "help": "(_alloc_script, [_destroy_script], [_reset_script], [_constructor])",
+                    "help": "create a `rousr_pool`, using the `_alloc_script` to create them. use `_destroy_script` to remove datastructures that are pooled. `rousr_pools` allow you to create generic pools of similiar objects for pooling resources, rather than allocating brand new ones at run-time. (_alloc_script, [_destroy_script], [_reset_script], [_constructor])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_pool_create_pool",
                     "returnType": 2
                 },
                 {
-                    "id": "6a6224cf-768c-46e0-8eea-f488e060be5d",
+                    "id": "3c621290-dc5c-48f2-83db-9c8721d9d6b8",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -420,14 +420,14 @@
                         
                     ],
                     "externalName": "sr_pool_destroy_pool",
-                    "help": "(_rousr_pool)",
+                    "help": "destroy a `rousr_pool` and free its memory use [data structures] (_rousr_pool)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_pool_destroy_pool",
                     "returnType": 2
                 },
                 {
-                    "id": "3c56aa33-72d2-4924-8307-6fded4c0d8ad",
+                    "id": "0fe7cd58-6b63-4e2c-b1fd-52fae89adf30",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -435,14 +435,14 @@
                         
                     ],
                     "externalName": "sr_pool_create",
-                    "help": "(_rousr_pool, [_countructor])",
+                    "help": "get a fresh item, optionally call the passed constructor on the object. (_rousr_pool, [_countructor])",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_pool_create",
                     "returnType": 2
                 },
                 {
-                    "id": "c2d385c9-f0b2-465c-8dec-ada1c24e293b",
+                    "id": "f9aa9a5c-484a-416b-aeb0-8982aff75b76",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -450,14 +450,14 @@
                         
                     ],
                     "externalName": "sr_pool_release",
-                    "help": "(_rousr_pool, _element)",
+                    "help": "returns element to the pool to be stored and reused (_rousr_pool, _element)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_pool_release",
                     "returnType": 2
                 },
                 {
-                    "id": "0d7fda9b-c089-4e3e-927d-6e9b06b8f3f9",
+                    "id": "af016396-3de7-4ca2-8cc8-915b4c1172b3",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -465,14 +465,14 @@
                         
                     ],
                     "externalName": "sr_buffer_pool",
-                    "help": "(_buffer_size, _buffer_type, _buffer_alignment)",
+                    "help": "helper function to create a `rousr_pool` of buffers (_buffer_size, _buffer_type, _buffer_alignment)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_buffer_pool",
                     "returnType": 2
                 },
                 {
-                    "id": "ec143be9-be26-4134-afb8-1aace4bc47b8",
+                    "id": "8a971147-68ee-4dae-a036-2e35e5e99c6a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -480,14 +480,14 @@
                         
                     ],
                     "externalName": "__sr_buffer_pool_alloc",
-                    "help": "(_rousr_pool)",
+                    "help": "create a new buffer (_rousr_pool)",
                     "hidden": false,
                     "kind": 1,
                     "name": "__sr_buffer_pool_alloc",
                     "returnType": 2
                 },
                 {
-                    "id": "84584cc3-45c7-4818-a99d-4dbb77f9dff1",
+                    "id": "9fe974e3-c39f-4591-8ccd-50bf637ff47d",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -495,14 +495,14 @@
                         
                     ],
                     "externalName": "__sr_buffer_pool_destroy",
-                    "help": "(_rousr_pool, _buffer)",
+                    "help": "destroy a pooled buffer (_rousr_pool, _buffer)",
                     "hidden": false,
                     "kind": 1,
                     "name": "__sr_buffer_pool_destroy",
                     "returnType": 2
                 },
                 {
-                    "id": "2dc76d73-00fc-4d37-947b-956421c89eb9",
+                    "id": "49b45f5f-cebe-48f4-b2ee-678f5d9e9bf2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -510,14 +510,14 @@
                         
                     ],
                     "externalName": "__sr_buffer_pool_reset",
-                    "help": "(_rousr_pool, _buffer)",
+                    "help": "reset a buffer, after being returned to the pool (_rousr_pool, _buffer)",
                     "hidden": false,
                     "kind": 1,
                     "name": "__sr_buffer_pool_reset",
                     "returnType": 2
                 },
                 {
-                    "id": "e083348f-e226-47fb-9bce-7f4de569380b",
+                    "id": "27cb9083-70eb-45ea-8ee5-2f080fbb65a6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -532,7 +532,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "76519d9a-346e-4a9c-b42e-0ad74d12ff4f",
+                    "id": "56cfee1b-bfed-4c38-bc10-c9c892d13f88",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -547,7 +547,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "e7adc492-fe13-436a-94cc-cda4e76947b9",
+                    "id": "50d34a58-483e-487a-b804-2daab87fb18a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -562,7 +562,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "acdf851a-e5b6-4a0c-80d3-02ccc2566133",
+                    "id": "6d3c4e81-1e31-4656-8508-7e697c3f5d62",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -570,14 +570,14 @@
                         
                     ],
                     "externalName": "sr_sort_quick",
-                    "help": "(list, comparison)",
+                    "help": "implement a quicksort you can pass a predicate to port from http:\/\/www.algolist.net\/Algorithms\/Sorting\/Quicksort (list, comparison)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_sort_quick",
                     "returnType": 2
                 },
                 {
-                    "id": "c60c1fb9-359e-4e15-93f0-4d5b604c524d",
+                    "id": "fa7abfcc-5779-41d4-94d7-c2a9ca4e2520",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -585,14 +585,14 @@
                         
                     ],
                     "externalName": "sr_sort_insert",
-                    "help": "(list, predicate)",
+                    "help": "an insertion sort with a predicateported from http:\/\/www.algolist.net\/Algorithms\/Sorting\/Insertion_sortcause why not? (list, predicate)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_sort_insert",
                     "returnType": 2
                 },
                 {
-                    "id": "af580218-90b1-41db-a0db-1490831c5486",
+                    "id": "8559ea63-fb59-4ce7-8584-87f16bd1b80b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -600,14 +600,14 @@
                         
                     ],
                     "externalName": "sr_ds_safe_destroy",
-                    "help": "(_type, _ds_id)",
+                    "help": "check if `_ds_id` is a valid `_type` and destroy it if it is, returning the new id to use for _ds_id [undefined in most cases] (_type, _ds_id)",
                     "hidden": false,
                     "kind": 1,
                     "name": "sr_ds_safe_destroy",
                     "returnType": 2
                 },
                 {
-                    "id": "a05bafe5-a200-467c-8983-d1c7b506f241",
+                    "id": "60e67ca1-fce0-4052-8419-67864384dbce",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -622,7 +622,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "b1bde8e0-ddc3-4491-a1ef-2aee512bc814",
+                    "id": "78775be9-1a9f-465f-9f1c-3cdf87e83617",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -637,7 +637,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "0f983f15-166d-4723-9283-7df0bd6ef928",
+                    "id": "8754b997-3bd3-45cf-8451-e938bc4109c7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -652,7 +652,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "5646e8af-b792-42c4-b903-2a53aab8f68a",
+                    "id": "a6b83bd8-2cba-47c7-99c5-946e8a9b4cb4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -667,7 +667,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "359b8bce-4ccd-485f-8569-c787cf1121f9",
+                    "id": "9a3f6b34-3dce-4956-8189-6adf2ff3fb18",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -682,7 +682,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "a60bb5aa-6d97-4f6d-9e0b-61ab65f07f11",
+                    "id": "d03a6813-ca65-4fa9-8b33-170b0f563fba",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -697,7 +697,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "fb4d36f1-f897-4d15-a462-44f533cf54ee",
+                    "id": "649cdf5a-2650-48ef-a2e8-0602066ce978",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -712,7 +712,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "22fcf34f-84e2-4f27-8e1d-6e64c502d06a",
+                    "id": "775f6807-9060-4368-8203-e2c96f12bb49",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -727,7 +727,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "fcf4bc32-4319-4c09-8d06-5fb98c7f7058",
+                    "id": "18520d85-3d35-4ee0-a435-7ab5bc67f4b1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -742,7 +742,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "847b07ee-ddf2-4fd4-8dd0-214dd5504c37",
+                    "id": "eb1e7118-3a55-4dc3-8016-a97119fd0db6",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -757,7 +757,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "0c4f93d6-fb7b-4d61-9729-665b624ef6f8",
+                    "id": "1c9c3326-7a3b-4fee-bee1-4b618a22f086",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -772,7 +772,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "917bf56e-a69e-4ad7-a8f6-e3a0314f8ecb",
+                    "id": "f970469b-90a3-4375-b1da-c20fc6cd7fb7",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -787,7 +787,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "41c39eea-ed76-4bff-839f-7b85ed65ef2c",
+                    "id": "bece1d9e-b6a0-4802-b234-f53071945208",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -802,7 +802,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "3bb2f069-07fc-425b-a80f-ee78dc55688f",
+                    "id": "4a7ef532-1b9c-4139-afea-c2fa3038ee0b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -817,7 +817,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "8cd86969-0b00-494e-9190-f5c8fe9e5789",
+                    "id": "bccab3a2-c24c-44a8-840a-709c81682247",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -832,7 +832,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "231e203e-1d71-4d68-aca9-e8d8b7ef5788",
+                    "id": "3ff7d7dc-bf45-44d5-a6ab-f77e887d26da",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -847,7 +847,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "23537b42-4f91-45de-8cc0-feea3c7fe9da",
+                    "id": "d6355b71-53f7-47e0-9629-8c99d3e72335",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -862,7 +862,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "73eaad5f-1ac8-4089-b57b-71cef3d6ef0e",
+                    "id": "b9c7c0ff-4d5a-48e3-8951-159f62fe9ff5",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -877,7 +877,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "79db76a9-e905-4a02-998b-759c993885b5",
+                    "id": "ea86abd3-22b0-410d-8b68-2974281d3d1f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -892,7 +892,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "ad42a7ca-3289-479e-b60b-4fc7d2987743",
+                    "id": "0818fd24-4ac8-4f83-b8e7-d99606487d65",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -907,7 +907,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "2abe7315-45a2-4996-b01f-faf6fdb6b392",
+                    "id": "519726d7-9fee-42f9-9bd3-18e7e6fef935",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -925,65 +925,65 @@
             "init": "",
             "kind": 2,
             "order": [
-                "78eed42d-f348-42f7-8261-1da555207850",
-                "a984738d-afd3-4e8b-ba29-18c8b6dff543",
-                "8f1b6ad4-a45f-4949-8fec-6cd602bec90c",
-                "8b6a9095-d53e-4b95-80d5-b3d8b0a6a769",
-                "6fc0c2a8-32a9-4f8e-a6b9-62c525260f5d",
-                "d58b5e59-9e5d-4c58-8258-8b95ebf62727",
-                "7eadaff1-4ffb-49bd-b674-d7c1cbe48dd4",
-                "b944ee4b-749a-4ef0-85e6-0dc94552e999",
-                "1ca5d79d-c2f6-41d6-af7f-a7707606fabf",
-                "3d9efbde-eec9-4ad7-b609-a40a93c64bc0",
-                "0c6ec45f-87ca-4259-8e18-aefce483deec",
-                "1ee50f7f-dc19-4a76-bebb-1066da991b40",
-                "a9fdb147-6dcb-4993-ad96-9ac54fcecb83",
-                "c0f5ef6a-a341-4977-9ee3-89bc8ae2671e",
-                "8c84bfb6-5257-4e53-b2b2-70b4ff9c3acb",
-                "6c4990e3-8f22-41cb-b17b-958da4b69e54",
-                "c6aebf7a-2efb-485b-adbb-797129754788",
-                "a5b69533-8fb0-4b22-9d5a-77dd3a6f98c4",
-                "4786eb02-347b-434a-875f-f806c0de7601",
-                "1d62dd6e-7243-482d-a66f-63b3cbc8f5a4",
-                "e90bd32b-e45c-4c8a-8ed8-3d1237425c3d",
-                "9bdb299f-11e4-428b-8769-49d254e58ebc",
-                "980307ab-40d7-4672-a542-976145835ba9",
-                "f9c4b29b-f4ab-4d69-ba8f-794ea3962ee1",
-                "e98d4fc0-055f-4b45-9219-d9b900226e3c",
-                "6a6224cf-768c-46e0-8eea-f488e060be5d",
-                "3c56aa33-72d2-4924-8307-6fded4c0d8ad",
-                "c2d385c9-f0b2-465c-8dec-ada1c24e293b",
-                "0d7fda9b-c089-4e3e-927d-6e9b06b8f3f9",
-                "ec143be9-be26-4134-afb8-1aace4bc47b8",
-                "84584cc3-45c7-4818-a99d-4dbb77f9dff1",
-                "2dc76d73-00fc-4d37-947b-956421c89eb9",
-                "e083348f-e226-47fb-9bce-7f4de569380b",
-                "76519d9a-346e-4a9c-b42e-0ad74d12ff4f",
-                "e7adc492-fe13-436a-94cc-cda4e76947b9",
-                "acdf851a-e5b6-4a0c-80d3-02ccc2566133",
-                "c60c1fb9-359e-4e15-93f0-4d5b604c524d",
-                "af580218-90b1-41db-a0db-1490831c5486",
-                "a05bafe5-a200-467c-8983-d1c7b506f241",
-                "b1bde8e0-ddc3-4491-a1ef-2aee512bc814",
-                "0f983f15-166d-4723-9283-7df0bd6ef928",
-                "5646e8af-b792-42c4-b903-2a53aab8f68a",
-                "359b8bce-4ccd-485f-8569-c787cf1121f9",
-                "a60bb5aa-6d97-4f6d-9e0b-61ab65f07f11",
-                "fb4d36f1-f897-4d15-a462-44f533cf54ee",
-                "22fcf34f-84e2-4f27-8e1d-6e64c502d06a",
-                "fcf4bc32-4319-4c09-8d06-5fb98c7f7058",
-                "847b07ee-ddf2-4fd4-8dd0-214dd5504c37",
-                "0c4f93d6-fb7b-4d61-9729-665b624ef6f8",
-                "917bf56e-a69e-4ad7-a8f6-e3a0314f8ecb",
-                "41c39eea-ed76-4bff-839f-7b85ed65ef2c",
-                "3bb2f069-07fc-425b-a80f-ee78dc55688f",
-                "8cd86969-0b00-494e-9190-f5c8fe9e5789",
-                "231e203e-1d71-4d68-aca9-e8d8b7ef5788",
-                "23537b42-4f91-45de-8cc0-feea3c7fe9da",
-                "73eaad5f-1ac8-4089-b57b-71cef3d6ef0e",
-                "79db76a9-e905-4a02-998b-759c993885b5",
-                "ad42a7ca-3289-479e-b60b-4fc7d2987743",
-                "2abe7315-45a2-4996-b01f-faf6fdb6b392"
+                "4207d1ed-185f-4d29-86fb-31481a8abc14",
+                "8c048012-23b6-40d1-b6cf-71bbddca60ae",
+                "a0492f1d-d4b0-4496-92e5-386ee2e99d44",
+                "122d69c2-2e16-4638-b1bc-50b9747a3e2a",
+                "3a885111-29cc-491d-9924-028386294a41",
+                "ba557421-306d-46fd-83a8-3cb33988386c",
+                "01e875be-f142-487e-a346-26073f9054c2",
+                "3a2dc115-e5ff-4bd6-9748-0720cd06ae31",
+                "44b21ad3-aafb-4e5a-b520-0e7885c781db",
+                "aaae5860-276e-4c85-965a-075443309d3f",
+                "e988c54b-c763-413b-83c7-e8822a42e717",
+                "53199d3a-40bd-432d-8a1f-d7b3a65499fc",
+                "3de92501-7955-40e9-87a4-a119998ee3c9",
+                "9e58fce7-61cd-4a31-93b1-fc2c73d34e88",
+                "1a35b88f-be6b-432a-90b2-7ef9773f24fb",
+                "79965d1d-299a-409b-9abb-ef5de8d65db5",
+                "90873bf2-9982-4a09-98a1-4ca287e26768",
+                "83e9cb8e-6f52-4c54-8cf0-5275c3bf1002",
+                "a74b7b4a-42bb-462b-b66e-08eb179177bc",
+                "045513ad-5895-4774-b69f-007f0deef232",
+                "f713264d-12fb-406b-81f8-a66dd5d76249",
+                "7cf9466c-6c77-4b38-9130-fca2422fab7e",
+                "6463b868-39c6-48e4-aff4-d579df8eef7a",
+                "dfbf77ae-8775-41c8-9c29-94e0163324b0",
+                "a2860417-8881-4864-bc2a-57347cd2391d",
+                "3c621290-dc5c-48f2-83db-9c8721d9d6b8",
+                "0fe7cd58-6b63-4e2c-b1fd-52fae89adf30",
+                "f9aa9a5c-484a-416b-aeb0-8982aff75b76",
+                "af016396-3de7-4ca2-8cc8-915b4c1172b3",
+                "8a971147-68ee-4dae-a036-2e35e5e99c6a",
+                "9fe974e3-c39f-4591-8ccd-50bf637ff47d",
+                "49b45f5f-cebe-48f4-b2ee-678f5d9e9bf2",
+                "27cb9083-70eb-45ea-8ee5-2f080fbb65a6",
+                "56cfee1b-bfed-4c38-bc10-c9c892d13f88",
+                "50d34a58-483e-487a-b804-2daab87fb18a",
+                "6d3c4e81-1e31-4656-8508-7e697c3f5d62",
+                "fa7abfcc-5779-41d4-94d7-c2a9ca4e2520",
+                "8559ea63-fb59-4ce7-8584-87f16bd1b80b",
+                "60e67ca1-fce0-4052-8419-67864384dbce",
+                "78775be9-1a9f-465f-9f1c-3cdf87e83617",
+                "8754b997-3bd3-45cf-8451-e938bc4109c7",
+                "a6b83bd8-2cba-47c7-99c5-946e8a9b4cb4",
+                "9a3f6b34-3dce-4956-8189-6adf2ff3fb18",
+                "d03a6813-ca65-4fa9-8b33-170b0f563fba",
+                "649cdf5a-2650-48ef-a2e8-0602066ce978",
+                "775f6807-9060-4368-8203-e2c96f12bb49",
+                "18520d85-3d35-4ee0-a435-7ab5bc67f4b1",
+                "eb1e7118-3a55-4dc3-8016-a97119fd0db6",
+                "1c9c3326-7a3b-4fee-bee1-4b618a22f086",
+                "f970469b-90a3-4375-b1da-c20fc6cd7fb7",
+                "bece1d9e-b6a0-4802-b234-f53071945208",
+                "4a7ef532-1b9c-4139-afea-c2fa3038ee0b",
+                "bccab3a2-c24c-44a8-840a-709c81682247",
+                "3ff7d7dc-bf45-44d5-a6ab-f77e887d26da",
+                "d6355b71-53f7-47e0-9629-8c99d3e72335",
+                "b9c7c0ff-4d5a-48e3-8951-159f62fe9ff5",
+                "ea86abd3-22b0-410d-8b68-2974281d3d1f",
+                "0818fd24-4ac8-4f83-b8e7-d99606487d65",
+                "519726d7-9fee-42f9-9bd3-18e7e6fef935"
             ],
             "origname": "",
             "uncompress": false

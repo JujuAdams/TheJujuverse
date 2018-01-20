@@ -625,7 +625,7 @@
         {
             "Key": "13a264e2-83f6-4961-b16d-63792ab83aee",
             "Value": {
-                "id": "e6c94c76-7842-492e-b70a-99ab086749cc",
+                "id": "8b5f2594-f310-470b-af59-661d06ff2210",
                 "resourcePath": "scripts\\imguigml_config\\imguigml_config.yy",
                 "resourceType": "GMScript"
             }
@@ -1863,14 +1863,6 @@
             }
         },
         {
-            "Key": "3b7cf8c0-ae12-4bc9-895b-a2214923a347",
-            "Value": {
-                "id": "d1f30007-f523-4561-af67-6b86e9261950",
-                "resourcePath": "views\\3b7cf8c0-ae12-4bc9-895b-a2214923a347.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "3ccec204-7bbe-4b9b-9f74-033aad2df7fb",
             "Value": {
                 "id": "247a65d7-ad9c-40c7-ad86-04726380475e",
@@ -2049,7 +2041,7 @@
         {
             "Key": "41aa7af4-8ff0-4c74-b128-a0ebf7e056c1",
             "Value": {
-                "id": "f0c2e947-6c45-4d25-a60c-5d799a8102cd",
+                "id": "e620d9e2-6d95-4767-a958-a7b8cbad841f",
                 "resourcePath": "extensions\\extRousrCore\\extRousrCore.yy",
                 "resourceType": "GMExtension"
             }
@@ -2545,7 +2537,7 @@
         {
             "Key": "53dc0120-24ca-4982-875b-b61a29b8e918",
             "Value": {
-                "id": "4dc4f756-868e-4273-9b53-cd29f637ce3a",
+                "id": "4febfa46-1478-419a-acf9-b06395a1cdd8",
                 "resourcePath": "extensions\\extRousrDs\\extRousrDs.yy",
                 "resourceType": "GMExtension"
             }
@@ -2593,7 +2585,7 @@
         {
             "Key": "54d4842c-6dfd-41a3-b54b-55744d940586",
             "Value": {
-                "id": "1eb12c31-3436-4e47-90d4-a51d714cfbda",
+                "id": "e22e8cca-936b-4e62-b7b4-91225a24b561",
                 "resourcePath": "scripts\\imguigml_definitions\\imguigml_definitions.yy",
                 "resourceType": "GMScript"
             }
@@ -3535,14 +3527,6 @@
             }
         },
         {
-            "Key": "77ee286f-74b8-4d7c-a5f3-ac9e42266ae9",
-            "Value": {
-                "id": "e40ad6b3-baff-4443-b0cd-a0f049ef4f53",
-                "resourcePath": "views\\77ee286f-74b8-4d7c-a5f3-ac9e42266ae9.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "781bbd53-49c6-4176-a5d5-ffc63b567dba",
             "Value": {
                 "id": "df669b93-6ef8-414f-972e-c168bda1fa42",
@@ -3769,7 +3753,7 @@
         {
             "Key": "81b8662b-1eb8-416c-8cad-6b3602cdacb4",
             "Value": {
-                "id": "ba47e761-e565-48ad-951e-194680d65b94",
+                "id": "97a2b117-f99a-4810-9512-96ecb366481a",
                 "resourcePath": "scripts\\imguigml_read_me\\imguigml_read_me.yy",
                 "resourceType": "GMScript"
             }
@@ -4857,7 +4841,7 @@
         {
             "Key": "a6dced37-cc0f-4b20-81b3-d6cf39a2c09d",
             "Value": {
-                "id": "76f3484a-ffca-4555-a922-8b76454757ec",
+                "id": "11a6123a-495e-497f-b992-27868e5c0a9f",
                 "resourcePath": "extensions\\extImguiGML\\extImguiGML.yy",
                 "resourceType": "GMExtension"
             }
@@ -5659,6 +5643,14 @@
             "Value": {
                 "id": "f49e92a4-78c2-435b-a228-6e0f848ca74b",
                 "resourcePath": "views\\c09ebac8-1730-4898-92f2-3fcd33500437.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c13a1d51-2183-409d-bafd-2e6358cc4339",
+            "Value": {
+                "id": "90ec6356-256e-4afe-8190-5e877ea21783",
+                "resourcePath": "views\\c13a1d51-2183-409d-bafd-2e6358cc4339.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -7474,6 +7466,11 @@
         "c04a921c-1582-4c66-866c-67702e074aef",
         "b288c5fa-9959-4643-afa6-8627280830d9",
         "0636c1e2-2d62-475a-80b9-2e7a489ea110",
+        "b84ebe76-26a8-4253-a559-58627ded0fa9",
+        "0fb1ccfc-c922-4078-a837-05e2c3fa4a35",
+        "083c9710-1675-404a-a14b-b803f1bbc7e8",
+        "4ef705e3-3823-447a-bd5b-3da1f3374a1e",
+        "5ec5071b-6ee8-40f7-9067-495de1a2f285",
         "5f5235ea-22d8-4473-ba27-e4ef07b4a1f7",
         "fb6b7a9a-f7b2-4e95-9dda-a50efac74d7a",
         "82d7b3d0-bd9d-4766-baf8-6992a28cbb8a",
@@ -7874,12 +7871,7 @@
         "137eefda-b1ba-40cb-9807-785c58cfa693",
         "56debf2b-9683-4c48-af2d-613605ec1e6d",
         "0389765f-dd45-4d65-848f-3129c81aa890",
-        "88cdf51e-ef83-4445-82db-07a9d8df6525",
-        "b84ebe76-26a8-4253-a559-58627ded0fa9",
-        "0fb1ccfc-c922-4078-a837-05e2c3fa4a35",
-        "083c9710-1675-404a-a14b-b803f1bbc7e8",
-        "4ef705e3-3823-447a-bd5b-3da1f3374a1e",
-        "5ec5071b-6ee8-40f7-9067-495de1a2f285"
+        "88cdf51e-ef83-4445-82db-07a9d8df6525"
     ],
     "tutorial": ""
 }

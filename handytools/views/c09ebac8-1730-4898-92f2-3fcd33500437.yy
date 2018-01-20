@@ -9,7 +9,7 @@
         "296e81a8-ee51-415d-bd55-d509ed168012"
     ],
     "filterType": "GMObject",
-    "folderName": "imgui",
+    "folderName": "babyjeans - imgui",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

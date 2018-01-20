@@ -57,7 +57,7 @@ return (_hex_color & $FF) << 16 | (_hex_color & $FF00) | (_hex_color & $FF0000) 
 ///@desc convert a color to an array float values [0.0 - 1.0]
 ///@param {Real} _color          color to convert
 ///@param {Array} [_out_array]   optional out array to not allocate a new array
-///@retunrs {Array} array of colors in float range
+///@returns {Array} array of colors in float range
 var _color     = argument[0],
     _out_array = argument_count > 1 ? argument[1] : array_create(3);
 
@@ -158,11 +158,6 @@ else
 
 show_debug_message(_txt);
 
-#define sr_game_quit
-///@function sr_game_quit()
-///@desc generic callback to use for quits (button callbacks mainly)
-game_end();
-
 #define sr_execute
 ///@description rousr_execute - call a function with variadic argument support
 ///@param {Real}  _script_index - script to execute
@@ -212,38 +207,6 @@ switch (_paramCount) {
 
 return ret;
 
-#define sr_ds_safe_destroy
-///@func rousr_ds_safe_destroy(_type, _ds_id)
-///@desc check if `_ds_id` is a valid `_type` and destroy it if it is, returning the new id to use for _ds_id (undefined in most cases)
-///@param {Real} _type - type of data structure, i.e., `ds_type_map`, `ds_type_list`
-///@param {Real} _ds_id - id for the datastructure
-///@returns {Real} undefined on success, otherwise the same id. useful for chaining calls - `ds = rousr_ds_safe_destroy(type, ds);`
-gml_pragma("forceinline");
-
-var _type  = argument0;
-var _ds_id = argument1;
-
-if (is_real(_ds_id)) {
-  switch(_type) {
-    case ds_type_grid:     ds_grid_destroy(_ds_id);     break;
-    case ds_type_list:     ds_list_destroy(_ds_id);     break;
-    case ds_type_map:      ds_map_destroy(_ds_id);      break;
-    case ds_type_priority: ds_priority_destroy(_ds_id); break;
-    case ds_type_queue:    ds_queue_destroy(_ds_id);    break;
-    case ds_type_stack:    ds_stack_destroy(_ds_id);    break;
-    default: return _ds_id;
-  }
-  return undefined;
-}
-
-return _ds_id;
-
-#define sr_dummy
-///@function sr_dummy([_any])
-///@desc it does nothing - used for placeholders in callback systems
-///@param {*} [_any]   accepts a param optionally so its usable with or without 'em
-var _dummy = argument_count > 0 ? argument[0] : false;  // support not syntax erroring on arguments
-
 #define sr_aabb_contains_line
 ///@function sr_aabb_contains_line(_line_x1, _line_y1, line_x2, line_y2, _rect_min_x, rect_min_y, _rect_max_x, _rect_max_y)
 ///@desc courtesy of https://stackoverflow.com/questions/1585525/how-to-find-the-intersection-point-between-a-line-and-a-rectangle
@@ -290,73 +253,13 @@ if (xx > _minX && xx < _maxX)
 
 return false;
 
-#define sr_sort_quick
-///@desc implement a quicksort you can pass a predicate to
-/// port from http://www.algolist.net/Algorithms/Sorting/Quicksort
-///@param list
-///@param comparison
-var _list    = argument0;
-var _compare = argument1;
+#define __extrousrcore_script_index
+///@function __extrousrcore_script_index(ext_script_index)
+///@desc Returns the actual runtime script index because YYG doesn't know how to do that apparently
+///@param {Real} ext_script_index
+///@extensionizer { "docs": false, "export": true} 
+///@returns {Real} script_index
+gml_pragma("forceinline")
+gml_pragma("global", "global.__extrousrcore_script_index_lookup = array_create(0);global.__extrousrcore_script_index_lookup[@ sr_ensure_singleton] = asset_get_index(\"sr_ensure_singleton\");global.__extrousrcore_script_index_lookup[@ sr_ensure_font] = asset_get_index(\"sr_ensure_font\");global.__extrousrcore_script_index_lookup[@ sr_ensure_color] = asset_get_index(\"sr_ensure_color\");global.__extrousrcore_script_index_lookup[@ sr_color_hex] = asset_get_index(\"sr_color_hex\");global.__extrousrcore_script_index_lookup[@ sr_color_glsl] = asset_get_index(\"sr_color_glsl\");global.__extrousrcore_script_index_lookup[@ sr_next_pot] = asset_get_index(\"sr_next_pot\");global.__extrousrcore_script_index_lookup[@ sr_shadow_text] = asset_get_index(\"sr_shadow_text\");global.__extrousrcore_script_index_lookup[@ sr_outline_text] = asset_get_index(\"sr_outline_text\");global.__extrousrcore_script_index_lookup[@ sr_error] = asset_get_index(\"sr_error\");global.__extrousrcore_script_index_lookup[@ sr_log] = asset_get_index(\"sr_log\");global.__extrousrcore_script_index_lookup[@ sr_execute] = asset_get_index(\"sr_execute\");global.__extrousrcore_script_index_lookup[@ sr_aabb_contains_line] = asset_get_index(\"sr_aabb_contains_line\");");
 
-var size = ds_list_size(_list);
-var sortStack = array_create(size); //floor(j/4)); // guesstimate
-var stackHeight = 0;
-sortStack[0] = 0;
-sortStack[1] = size - 1;
-stackHeight = 2;
-
-while (stackHeight > 0) {
-  var i = sortStack[stackHeight - 2];
-  var j = sortStack[stackHeight - 1];
-  var left = i, right = j;
-  var pivot = _list[| floor((left + right) / 2)];
-  stackHeight -= 2;
-  
-  // i do believe we can swap a BST in here
-  while (i <= j) {
-    while (script_execute(_compare, _list[| i], pivot) < 0) // if (_list[|i] < pivot)
-      i++;
-    while (script_execute(_compare, _list[| j], pivot) > 0) // if (_list[|j] > pivot)
-      j--;
-    if (i <= j) {
-      var tmp = _list[|i];
-      _list[|i] = _list[|j];
-      _list[|j] = tmp;
-      i++;
-      j--; 
-    }
-  }
-
-  /* "recursion" */
-  if (i < right) {
-    sortStack[stackHeight] = i;
-    sortStack[stackHeight + 1] = right;
-    stackHeight+=2;
-  }
-
-  if (left < j) {
-    sortStack[stackHeight] = left;
-    sortStack[stackHeight + 1] = j;
-    stackHeight+=2;
-  }   
-}
-
-#define sr_sort_insert
-///@desc an insertion sort with a predicate
-///ported from http://www.algolist.net/Algorithms/Sorting/Insertion_sort
-///cause why not?
-///@param list
-///@param predicate
-var _list = argument0, _compare = argument1;
-
-var len = ds_list_size(_list);
-for (var i = 1;  i < len; ++i) {
-  var j = i;
-  while (j > 0 && script_execute(_compare, _list[| j - 1], _list[| j]) > 0) {
-    var tmp = _list[| j];
-    _list[| j] = _list[|j - 1];
-    _list[| j - 1] = tmp;
-    j--;
-  }
-}
-
+var _index = argument0;return global.__extrousrcore_script_index_lookup[@ _index];

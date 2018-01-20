@@ -8,7 +8,7 @@
               SCREEN with assistance from kraifpatrik
     
     # "handytools" v0.7.0
-    ### Written by @jujuadams, ImGUI Implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, SCREEN with assistance from kraifpatrik
+    ### Written by @jujuadams, ImGUI v1.80.2 implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, WinDev.dll by @YellowAfterlife, SCREEN with assistance from kraifpatrik
     A series of libraries and tools to assist with game creation.
         
     Press F12 to open DEVTOOL.

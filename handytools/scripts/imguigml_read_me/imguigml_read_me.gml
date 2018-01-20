@@ -5017,6 +5017,14 @@ Gets the light palette that may be used with editor
 
 ### Changelist
 
+* **v1.80.2** 
+  * Updated `extRousrDs` 
+  * Added more options to `imguigml_config` for overriding the cursor and reporting errors without aborting.
+* **v1.80.1**
+  * Fixed up the `required` / `not required`
+* **v1.80.0**
+  * Adds `show_error` calls when ImGui asserts due to a misuse of imgui functions.
+  
 * **v1.75.1** 
   Fixed drawlist sprite drawing to work like the other sprite imguigml items. 
   * Fixed `imguigml_drawlist_add_sprite`, removed uv params
@@ -5049,8 +5057,7 @@ Gets the light palette that may be used with editor
       * Added `EImGui_FocusedFlags` to pass to `imguigml_is_window_focused`, replacing the obsolete root_window functions
       * Added `EImGui_HoveredFlags` `RootWindow` and `ChildWindow` to include in hovered tests
       * Added `EImGui_DrawCornerFlags` for rounding flags
-
-  
+    
 * **v1.3.0** - BIG update, here's a list of some of the fixes:
   * **v1.3.1** Hot Fix: Fixed a few scaling display issues, fixed texteditor buffer size limitations
   * **v1.3.2** Hot Fix: Add sprite caching
@@ -5065,7 +5072,7 @@ Gets the light palette that may be used with editor
      *  Fixed ImGuiGML bashing the cursor so that resize cursors, etc, didn't function properly.
      *  **Fixed ImGuiGML Display Issues when resizing the window or GUI Layer... more to come on this**
   *  Various doc fixes!
-
+  
 * **v1.2.3**
   * API
     * Added `imguigml_surface` and refactored how sprite and 'image' works. `imguigml_image` still takes a texture pointer, but there's rarely a reason to use it.
@@ -5074,7 +5081,7 @@ Gets the light palette that may be used with editor
     * Automatically multiply the normalized pixel percent trimmed from sprites when useing `imguigml_sprite`
     * `imguigml_button` now accepts 1 param for size
     * Fix `imguigml_color_convert_` gml / u32 functions being backwards
-    
+     
 * **v1.1.3: Extras!**
   * Features
       * Added: ImDrawList, ImGui_Tabs, and ImGuiColorTextEdit

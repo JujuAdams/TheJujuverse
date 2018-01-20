@@ -11,7 +11,8 @@ if ( TRACKER_ON ) {
 }
 imguigml_new_line();
 if ( FPS_ON ) {
-    if ( imguigml_checkbox( "Show FPS", global.fps_show ) ) global.fps_show = !global.fps_show;
+    var _result = imguigml_checkbox( "Show FPS", global.fps_show );
+    if ( _result[0] ) global.fps_show = _result[1];
 }
 imguigml_separator();
 

@@ -1,7 +1,7 @@
 #define sr_array
 ///@function sr_array(_rousr_array, _index, [_val]) 
 ///@description return an index, or set an index in a `_rousr_array`
-///@param {Array} _rousr_array   rousr_array to read / write
+///@param {Array:ERourArray} _rousr_array   rousr_array to read / write
 ///@param {Real}        _index   index to read or write to
 ///@param {*}           [_val]   if passed, value to set element to, same as insert.
 var _rousr_array = argument[0],
@@ -47,7 +47,7 @@ return [
 #define sr_array_data
 ///@function sr_array_data(_rousr_array)
 ///@description return the data of the `rousr_array`
-///@param _rousr_array - `rousr_array` to get the data from
+///@param {Array:ERousrArray} _rousr_array   `rousr_array` to get the data from
 ///@returns {Array} data in the `rousr_array`
 gml_pragma("forceinline");
 var _rousr_array = argument0;
@@ -56,7 +56,7 @@ return _rousr_array[ERousrArray.Data];
 #define sr_array_destroy
 ///@function sr_array_destroy(_array)
 ///@description destroy a `rousr style` array - currently does nothing, but future proofing by including.
-///@param {Array} _array  - array to destroy
+///@param {Array:ERourArray} _array  array to destroy
 gml_pragma("forceinline");
 var _array = argument0;
 _array[@ ERousrArray.Size]  = 0;
@@ -65,9 +65,9 @@ _array[@ ERousrArray.Array] = [ ];
 #define sr_array_find
 ///@function sr_array_find(_rousr_array, _val, [_startIndex=0])
 ///@description returns the first occurence of _val beginning at _startIndex
-///@param {Array}   _rousr_array - rousr_array to search
-///@param {*}               _val - value to search for
-///@param {Real} [_startIndex=0] - index to start searching from
+///@param {Array:ERourArray} _rousr_array   rousr_array to search
+///@param {*} _val   value to search for
+///@param {Real} [_startIndex=0]   index to start searching from
 ///@returns {Real} index or -1 if not found
 gml_pragma("forceinline");
 
@@ -124,7 +124,7 @@ return false;
 #define sr_array_pop_back
 ///@function sr_array_pop_back(_rousr_array)
 ///@description pop the back of a rousr array and return it
-///@param {Array} _rousr_array - rousr array to pop last value of
+///@param {Array:ERourArray} _rousr_array   rousr array to pop last value of
 ///@returns {*} back, or undefined on failure
 gml_pragma("forceinline");
 
@@ -140,7 +140,7 @@ return sr_array_remove(_array, _size - 1);
 #define sr_array_pop_front
 ///@function sr_array_pop_front(_rousr_array)
 ///@description pop the front of an array and return it
-///@param {Array} _rousr_array - rousr array to pop last value of
+///@param {Array:ERourArray} _rousr_array   rousr array to pop last value of
 ///@returns {*} front or undefined
 gml_pragma("forceinline");
 
@@ -155,9 +155,9 @@ return sr_array_remove(_array, 0);
 
 #define sr_array_push_back
 ///@function sr_array_push_back(_rousr_array, _val)
-///@description push a value on the end of a rousr_array
-///@param {Array} _rousr_array - _rousr_array to push data to
-///@param {*}       _val       - value to push onto the array
+///@description push a value on the end of a `rousr_array`
+///@param {Array:ERourArray} _rousr_array   `_rousr_array` to push data to
+///@param {*}                        _val   value to push onto the array
 ///@returns {Real} index pushed or -1 on error
 gml_pragma("forceinline");
 

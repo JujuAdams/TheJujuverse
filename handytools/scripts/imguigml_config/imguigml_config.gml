@@ -1,12 +1,15 @@
 ///@function imguigml_config()
 ///@desc imguigml configuration
 
-#macro IMGUI_TRANSPARENCY 1.15
+#macro IMGUI_TRANSPARENCY 0.9
 
 /// Input configuration
-#macro Show_ImGui_cursor            (true)  // if this is false, we won't touch the GMS cursor while ImGui is active.
+#macro Imguigml_Show_ImGui_cursor            (false)  // if this is false, we won't touch the GMS cursor while ImGui is active.
+#macro Imguigml_User_override                (true)  // if this is true, ImGuiGML will not call `window_set_cursor()` at the end of the step.
 
-/// Debug Configuration (wip: not implemented)
+/// Debug Configuration
+#macro Show_Error_on_ImGui_error    (true)  // use a `show_error()` call when an error occurs 
+#macro Abort_on_ImGui_error         (true)  // if true, passed "true" to exit game on imgui error
 #macro Show_message_on_ImGui_error  (false) // use a `show_message()` call when an error occurs 
 #macro Call_script_on_ImGui_error   (noone) // call the script passed, passing it a string on error.
 
@@ -32,6 +35,6 @@
 #macro ImGuiGML_UseFloat                 (!ImGuiGML_UseUByte4)
 
 // ImGui can draw a cursor itself, which is almost never desired.
-#macro Use_GM_cursor                     (true)
+#macro Imguigml_Use_GM_cursor            (true)
 
 #endregion

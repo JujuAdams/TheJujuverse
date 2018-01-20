@@ -5618,10 +5618,19 @@ with (ImGuiGML) {
 		var msg = "";
 		for (var i = 0; i < count; ++i)
 			msg += buffer_read(Debug_buffer, buffer_string) + "\n";
-		show_error(msg, true);
 		
 		buffer_seek(Debug_buffer, buffer_seek_start, 0);
 		_extImGuiGML_flush_debug_buffer();
+
+		show_debug_message(msg);
+		if (Call_script_on_ImGui_error != noone)
+			script_execute(Call_script_on_ImGui_error, msg);
+			
+		if (Show_Error_on_ImGui_error || Abort_on_ImGui_error)
+			show_error(msg, Abort_on_ImGui_error);
+		else if (Show_message_on_ImGui_error)
+			show_message(msg);
+	
 	}	
 }
 
@@ -5629,6 +5638,7 @@ with (ImGuiGML) {
 
 // no errors, so continue execution. 
 return true;
+
 
 #define __imguigml_event_create
 ///@function __imguigml_event_create()
@@ -5822,7 +5832,7 @@ NewFrame = false;
 
 //If imgui is not rendering mouse cursor then
 //set native gml cursor icon
-if (Should_update_cursor && Using_GM_cursor) {
+if (Should_update_cursor && Using_GM_cursor && !User_cursor_override) {
 
 	var new_cursor = Last_set_cursor;
 	switch (imguigml_get_mouse_cursor()) {
@@ -5842,6 +5852,7 @@ if (Should_update_cursor && Using_GM_cursor) {
 		window_set_cursor(new_cursor);
 	}
 }
+
 
 
 #define __imguigml_event_clean_up
@@ -6079,8 +6090,9 @@ global.__imgui_keys = [
 ];
   
 Input_buffer = buffer_create(ImGuiGML_InputBufferSize, buffer_fixed, buffer_u8);
-Using_GM_cursor      = Use_GM_cursor;
-Should_update_cursor = Show_ImGui_cursor;
+Using_GM_cursor      = Imguigml_Use_GM_cursor;
+Should_update_cursor = Imguigml_Show_ImGui_cursor;
+User_cursor_override = Imguigml_User_override;
 
 DidWantTextInput    = false;
 WantCaptureMouse    = false;  // When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application. This is set by ImGui when it wants to use your mouse (e.g. unclicked mouse is hovering a window, or a widget is active). 
@@ -6093,6 +6105,7 @@ MetricsRenderVertices   = 0;  // Vertices output during last call to Render()
 MetricsRenderIndices    = 0;  // Indices output during last call to Render() = number of triangles * 3
 MetricsActiveWindows    = 0;  // Number of visible root windows (exclude child windows)
 MouseDelta       = [ 0, 0 ];  // Mouse delta. Note that this is zero if either current or previous position are invalid (undefined, undefined), so a disappearing/reappearing mouse won't have a huge delta.
+
 
 
 #define __imguigml_init_wrapper
