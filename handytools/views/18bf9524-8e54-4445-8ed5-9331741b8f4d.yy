@@ -11,7 +11,8 @@
         "eb134ed4-2e2a-4bff-b38e-d27286e3bbef",
         "6419c236-e495-44f1-9bc0-8677e990970f",
         "ad6ad644-3c65-4c59-abd1-4948844144b4",
-        "59da05ac-a174-4f08-bd29-f3c88e4413de"
+        "59da05ac-a174-4f08-bd29-f3c88e4413de",
+        "78091a36-6b27-4abd-9e66-eb758adaf02f"
     ],
     "filterType": "GMScript",
     "folderName": "JSON",

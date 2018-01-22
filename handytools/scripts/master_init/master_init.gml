@@ -8,6 +8,18 @@
 
 trace_f( "Initialising vertex formats/default models" );
 
+var _map_r = ds_map_create();
+global.test_json = _map_r;
+var _list_r = ds_list_create();
+ds_map_add_list( _map_r, "children", _list_r );
+_map_r[? "name" ] = "Root";
+_map_r[? "x" ] = 0;
+_map_r[? "y" ] = 0;
+_map_r[? "z" ] = 0;
+_map_r[? "absolute x" ] = 0;
+_map_r[? "absolute y" ] = 0;
+_map_r[? "absolute z" ] = 0;
+
 vertex_format_begin();
 vertex_format_add_position_3d(); //12
 vertex_format_add_texcoord();    // 8
