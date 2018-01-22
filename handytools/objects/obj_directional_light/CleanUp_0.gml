@@ -1,3 +1,3 @@
 event_inherited();
 
-grip_destroy( UNIQUE_NAME );
+if ( SCREEN_ALLOW_DEFERRED ) grip_destroy( UNIQUE_NAME );

@@ -126,7 +126,7 @@ if ( window_show ) {
                 if ( _result[0] ) global.editor_fly = _result[1];
                 
                 var _result = imguigml_checkbox( "Noclip", global.editor_noclip ); imguigml_same_line();
-                if ( _result[0] ) global.editor_noclip = !_result[1];
+                if ( _result[0] ) global.editor_noclip = _result[1];
                 
                 var _result = imguigml_checkbox( "Click Surface", global.screen_show_click ); imguigml_same_line();
                 if ( _result[0] ) global.screen_show_click = _result[1];

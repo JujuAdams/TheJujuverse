@@ -1,10 +1,16 @@
+attribute vec3 in_Position;
+attribute vec2 in_TextureCoord;
+attribute vec4 in_Colour;
+attribute vec3 in_Normal;
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-varying vec4 v_vPosWS;
-varying vec4 v_vNormalWS;
+varying vec4 v_vLightColour;
+
+uniform float u_fVibrate;
+uniform float u_fGarbage;
 
 uniform vec4 u_vAmbientColour;
-uniform vec4 u_vForceColour;
 uniform vec4 u_vLightPosRange0;
 uniform vec4 u_vLightPosRange1;
 uniform vec4 u_vLightPosRange2;
@@ -21,6 +27,11 @@ uniform vec4 u_vLightColour4;
 uniform vec4 u_vLightColour5;
 uniform vec4 u_vLightColour6;
 uniform vec4 u_vLightColour7;
+
+float rand(vec2 co){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
 
 float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
     vec3 delta = ws_pos - posrange.xyz;
@@ -42,6 +53,17 @@ vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
 }
 
 void main() {
-    gl_FragColor = mix( v_vColour*vec4( DoLightingCustom( u_vAmbientColour.rgb, v_vPosWS.xyz, v_vNormalWS.xyz ), 1.0 ), vec4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a )
-                   * texture2D( gm_BaseTexture, v_vTexcoord );
+    
+    vec4 object_space_pos = vec4( in_Position.xyz, 1.0 );
+    object_space_pos.xyz += u_fVibrate*rand( (gm_Matrices[MATRIX_WORLD] * (object_space_pos + u_fGarbage) ).xy );
+    gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos; 
+    
+    vec4 posWS     = gm_Matrices[MATRIX_WORLD] * object_space_pos;
+    vec4 normalWS  = gm_Matrices[MATRIX_WORLD] * vec4( in_Normal, 0.0 );
+         normalWS /= -length( normalWS );
+    
+    v_vColour   = in_Colour;
+    v_vTexcoord = in_TextureCoord;
+    v_vLightColour = vec4( DoLightingCustom( u_vAmbientColour.rgb, posWS.xyz, normalWS.xyz ), 1.0 );
+    
 }

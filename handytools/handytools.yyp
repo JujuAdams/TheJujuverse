@@ -7002,7 +7002,7 @@
             "Key": "f0971bd4-2b5f-4bd7-9edf-3eb32b7a789e",
             "Value": {
                 "id": "345c9217-684f-4d74-b388-3e7754dbecc1",
-                "resourcePath": "shaders\\__shd_glsles_vertex_lighting\\__shd_glsles_vertex_lighting.yy",
+                "resourcePath": "shaders\\shd_glsles_vertex_lighting\\shd_glsles_vertex_lighting.yy",
                 "resourceType": "GMShader"
             }
         },

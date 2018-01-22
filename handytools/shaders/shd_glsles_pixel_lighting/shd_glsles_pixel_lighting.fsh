@@ -42,6 +42,7 @@ vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
 }
 
 void main() {
-    gl_FragColor = mix( v_vColour*vec4( DoLightingCustom( u_vAmbientColour.rgb, v_vPosWS.xyz, v_vNormalWS.xyz ), 1.0 ), vec4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a )
-                   * texture2D( gm_BaseTexture, v_vTexcoord );
+    gl_FragColor  = vec4( DoLightingCustom( u_vAmbientColour.rgb, v_vPosWS.xyz, v_vNormalWS.xyz ), 1.0 );
+    gl_FragColor  = mix( gl_FragColor, vec4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );
+    gl_FragColor *= v_vColour*texture2D( gm_BaseTexture, v_vTexcoord );
 }
