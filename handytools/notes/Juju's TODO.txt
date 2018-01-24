@@ -25,5 +25,6 @@ SCRIBBLE - Output word index
          
 JIFFY - Check with Kyle for updates
       - Update AMIASP to use delta timing
+	  - Update to fix-your-timestep latest version
       
 Use Nabil's primitives system

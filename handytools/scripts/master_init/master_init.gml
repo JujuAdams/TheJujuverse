@@ -12,6 +12,7 @@ var _map_r = ds_map_create();
 global.test_json = _map_r;
 var _list_r = ds_list_create();
 ds_map_add_list( _map_r, "children", _list_r );
+_map_r[? "##selected" ] = false;
 _map_r[? "name" ] = "Root";
 _map_r[? "x" ] = 0;
 _map_r[? "y" ] = 0;

@@ -18,17 +18,10 @@ if ( FPS_ON ) {
 repeat( 5 ) imguigml_spacing();
 imguigml_separator();
 
-ds_list_clear( global.imguigml_build_tree_from_json_clicked );
 if ( imguigml_tree_node_ex( "Scene Graph", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
     imguigml_build_tree_from_json( global.test_json, "" );
     imguigml_tree_pop();
     imguigml_text( "" );
-}
-
-if ( ds_list_size( global.imguigml_build_tree_from_json_clicked ) > 0 ) {
-    global.imguigml_build_tree_from_json_focus     = global.imguigml_build_tree_from_json_clicked[| 0 ];
-    global.imguigml_build_tree_from_json_focus_map = global.imguigml_build_tree_from_json_clicked[| 1 ];
-    ds_list_clear( global.imguigml_build_tree_from_json_clicked );
 }
 
 if ( imguigml_tree_node_ex( "Node Details", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
@@ -58,6 +51,7 @@ if ( imguigml_tree_node_ex( "Node Details", EImGui_TreeNodeFlags.Framed | EImGui
         
             if ( imguigml_button( "+" ) ) {
                 var _map = ds_map_create();
+				_map[? "##selected" ] = false;
                 _map[? "name" ] = concat( "New Child ", irandom( 999999 ) );
                 _map[? "x" ] = 0;
                 _map[? "y" ] = 0;
@@ -87,12 +81,6 @@ if ( imguigml_tree_node_ex( "Node Details", EImGui_TreeNodeFlags.Framed | EImGui
     }
     
     imguigml_tree_pop();
-}
-
-if ( ds_list_size( global.imguigml_build_tree_from_json_clicked ) > 0 ) {
-    global.imguigml_build_tree_from_json_focus     = global.imguigml_build_tree_from_json_clicked[| 0 ];
-    global.imguigml_build_tree_from_json_focus_map = global.imguigml_build_tree_from_json_clicked[| 1 ];
-    ds_list_clear( global.imguigml_build_tree_from_json_clicked );
 }
 
 repeat( 5 ) imguigml_spacing();
