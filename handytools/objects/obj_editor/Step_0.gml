@@ -46,6 +46,7 @@ if ( window_show ) {
         }
         if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.DELETE;
         if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.LIGHT;
+        if ( keyboard_check_released( ord("8") ) ) window_page = E_EDITOR_PAGE.SCENE_GRAPH;
     }
     
     if ( keyboard_check_released( vk_tab ) ) {
@@ -84,23 +85,122 @@ if ( window_show ) {
         
         #region TABS
         imguigml_begin_menu_bar();
-        if ( imguigml_menu_item( "1.Home"      ) ) window_page = E_EDITOR_PAGE.HOME;
-        if ( imguigml_menu_item( "2.Place"     ) ) window_page = E_EDITOR_PAGE.PLACE;
-        if ( imguigml_menu_item( "3.Instances" ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-        if ( imguigml_menu_item( "4.Move"      ) ) {
+        if ( imguigml_menu_item( "1.Home"        ) ) window_page = E_EDITOR_PAGE.HOME;
+        if ( imguigml_menu_item( "2.Place"       ) ) window_page = E_EDITOR_PAGE.PLACE;
+        if ( imguigml_menu_item( "3.Instances"   ) ) window_page = E_EDITOR_PAGE.INSTANCES;
+        if ( imguigml_menu_item( "4.Move"        ) ) {
             window_page = E_EDITOR_PAGE.MOVE;
             with( obj_par_3d ) mouse_active_set_relative_values();
         }
-        if ( imguigml_menu_item( "5.Rotate"    ) ) {
+        if ( imguigml_menu_item( "5.Rotate"      ) ) {
             window_page = E_EDITOR_PAGE.ROTATE;
             with( obj_par_3d ) mouse_active_set_relative_values();
         }
-        if ( imguigml_menu_item( "6.Delete"    ) ) window_page = E_EDITOR_PAGE.DELETE;
-        if ( imguigml_menu_item( "7.Light"     ) ) window_page = E_EDITOR_PAGE.LIGHT;
+        if ( imguigml_menu_item( "6.Delete"      ) ) window_page = E_EDITOR_PAGE.DELETE;
+        if ( imguigml_menu_item( "7.Light"       ) ) window_page = E_EDITOR_PAGE.LIGHT;
+        if ( imguigml_menu_item( "8.Scene Graph" ) ) window_page = E_EDITOR_PAGE.SCENE_GRAPH;
         imguigml_end_menu_bar();
         #endregion
         
         switch( editor_get_page() ) {
+			
+			#region SCENE GRAPH
+			case E_EDITOR_PAGE.SCENE_GRAPH:
+				
+				var _multiselect = scene_multiselect || keyboard_check( vk_shift );
+				var _result = imguigml_checkbox( "Multiple selection", _multiselect );
+				if ( _result[0] ) scene_multiselect = _result[1];
+				
+				imguigml_same_line();
+				if ( imguigml_button( "Deselect all" ) ) {
+					
+					var _focus_count = ds_map_size( global.imguigml_build_tree_from_json_focus_map );
+					var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+					repeat( _focus_count ) {
+						_map[? "##selected" ] = false;
+						_map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _map );
+					}
+					
+				}
+				
+				if ( imguigml_tree_node_ex( "Scene Graph", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
+				    imguigml_build_tree_from_json( global.editor_scene_graph, "", global.imguigml_build_tree_from_json_focus_map, _multiselect );
+				    imguigml_tree_pop();
+				    imguigml_text( "" );
+				}
+
+				if ( imguigml_tree_node_ex( "Node Details", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
+	
+					var _focus_count = ds_map_size( global.imguigml_build_tree_from_json_focus_map );
+				    if ( _focus_count > 0 ) {
+		
+						var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+		
+						#region Properties
+						var _property_map = ds_map_create();
+		
+						repeat( _focus_count ) {
+			
+					        var _key = ds_map_find_first( _root_map );
+							var _size = ds_map_size( _root_map );
+					        repeat( _size ) {
+					            _property_map[? _key ] = 1 + ds_map_get_safe( _property_map, _key, 0 );
+					            var _key = ds_map_find_next( _root_map, _key );
+					        }
+			
+							_root_map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _root_map );
+						}
+		
+					    var _key = ds_map_find_first( _property_map );
+						var _size = ds_map_size( _property_map );
+					    repeat( _size ) {
+							if ( _property_map[? _key ] == _focus_count ) {
+						        if ( _key != "##children" ) && ( _key != "name" ) && ( _key != "##selected" ) imguigml_text( _key );
+							}
+					        var _key = ds_map_find_next( _property_map, _key );
+					    }
+		
+						ds_map_destroy( _property_map );
+						#endregion
+						#region Children
+						/*
+						if ( _focus_count == 1 ) {
+							_root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+			
+					        if ( imguigml_tree_node( "Children" ) ) {
+					            var _list = _root_map[? "##children" ];
+					            var _size = ds_list_size( _list );
+            
+					            if ( _size <= 0 ) {
+					                if ( imguigml_tree_node_ex( "<empty>", EImGui_TreeNodeFlags.Leaf ) ) imguigml_tree_pop();
+					            } else {
+					                var _delete = undefined;
+					                for( var _i = 0; _i < _size; _i++ ) {
+					                    var _map = _list[| _i ];
+					                    if ( imguigml_button( concat( "X ", _map[? "name" ] ) ) ) _delete = _i;
+					                }
+					                if ( _delete != undefined ) ds_list_delete( _list, _delete );
+					            }
+        
+					            if ( imguigml_button( "+" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( concat( "New Child ", irandom( 999999 ) ) ) );
+            
+					            imguigml_tree_pop();
+					        }
+			
+						}
+						*/
+						#endregion
+				    } else {
+        
+				        imguigml_text( "No node is selected!" );
+        
+				    }
+    
+				    imguigml_tree_pop();
+				}
+				
+			break;
+			#endregion
             case E_EDITOR_PAGE.HOME:
             #region HOME
                 

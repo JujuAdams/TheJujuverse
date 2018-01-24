@@ -1,5 +1,7 @@
 persistent = true;
 
+scene_multiselect = false;
+
 show_hints = true;
 show_selected_readout = true;
 
