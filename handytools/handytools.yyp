@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "105b70c0-0828-48b0-b294-5263686e1626",
+            "Value": {
+                "id": "6dac10e1-bf50-4648-b131-34e5c04d40fe",
+                "resourcePath": "scripts\\editor_property_set_value\\editor_property_set_value.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "106ba031-059c-4579-8124-7c7116016666",
             "Value": {
                 "id": "b2e6957b-a0e6-4b29-b4d9-bdec228fc074",
@@ -772,6 +780,14 @@
                 "id": "47c809dc-b9e3-4e53-9643-fda768180100",
                 "resourcePath": "datafiles_yy\\models\\vase2.obj.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1703031c-8731-4e9b-a9e1-744b1764dac9",
+            "Value": {
+                "id": "49cb2501-72c8-48d1-8e06-59f0b5e2a03b",
+                "resourcePath": "scripts\\editor_property_type\\editor_property_type.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5927,6 +5943,14 @@
             }
         },
         {
+            "Key": "cbd2d6fc-2cf9-49c6-8906-cdbfac11e69b",
+            "Value": {
+                "id": "a3d6fbfd-190b-4073-9069-3d3217128b4b",
+                "resourcePath": "scripts\\editor_property_value\\editor_property_value.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc45bbe9-7924-468b-9195-af322fb51af7",
             "Value": {
                 "id": "0c8e9f6b-d741-4827-baef-5770d35e6cac",
@@ -7634,6 +7658,9 @@
         "650b9133-d181-4134-bc44-a82d8b9f020e",
         "5a90ce10-7925-4501-9414-5ece09121877",
         "f1e04ff1-5484-43ab-a964-a173d6361eee",
+        "cbd2d6fc-2cf9-49c6-8906-cdbfac11e69b",
+        "1703031c-8731-4e9b-a9e1-744b1764dac9",
+        "105b70c0-0828-48b0-b294-5263686e1626",
         "9f7965dc-5626-4cea-a938-45610146808a",
         "70b4b8a0-f4bb-434e-8c6e-96968cf34d48",
         "27a69ecc-21ee-405e-bdb5-d51757d2867f",

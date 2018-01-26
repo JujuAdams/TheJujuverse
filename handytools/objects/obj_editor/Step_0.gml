@@ -106,44 +106,45 @@ if ( window_show ) {
 			
 			#region SCENE GRAPH
 			case E_EDITOR_PAGE.SCENE_GRAPH:
-				
-				var _multiselect = scene_multiselect || keyboard_check( vk_shift );
-				var _result = imguigml_checkbox( "Multiple selection", _multiselect );
-				if ( _result[0] ) scene_multiselect = _result[1];
-				
-				imguigml_same_line();
-				if ( imguigml_button( "Deselect all" ) ) ds_map_clear( global.imguigml_build_tree_from_json_focus_map );
                 
                 imguigml_separator();
 				
 				if ( imguigml_tree_node_ex( "Scene Graph", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
-                    imguigml_begin_child( "child", 0, 250, false,
+                    imguigml_begin_child( "child", 0, 210, false,
                                           EImGui_WindowFlags.NoTitleBar | 
                                           EImGui_WindowFlags.NoResize |
                                           EImGui_WindowFlags.NoMove |
                                           EImGui_WindowFlags.NoCollapse );
+				
+					var _multiselect = scene_multiselect || keyboard_check( vk_shift );
+					var _result = imguigml_checkbox( "Multiple selection", _multiselect );
+					if ( _result[0] ) scene_multiselect = _result[1];
+					imguigml_same_line();
+					if ( imguigml_button( "Deselect all" ) ) ds_map_clear( global.imguigml_build_tree_from_json_focus_map );
+					
 				    imguigml_build_tree_from_json( global.editor_scene_graph, "", global.imguigml_build_tree_from_json_focus_map, _multiselect );
                     imguigml_end_child();
 				    imguigml_tree_pop();
 				}
                 
                 imguigml_separator();
-
-				if ( imguigml_tree_node_ex( "Node Details", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
-                    imguigml_begin_child( "child", 0, 250, false,
+				
+				var _focus_count = ds_map_size( global.imguigml_build_tree_from_json_focus_map );
+				
+				if ( imguigml_tree_node_ex( "Properties", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
+                    imguigml_begin_child( "child", 0, 210, false,
                                           EImGui_WindowFlags.NoTitleBar | 
                                           EImGui_WindowFlags.NoResize |
                                           EImGui_WindowFlags.NoMove |
                                           EImGui_WindowFlags.NoCollapse );
-	
-					var _focus_count = ds_map_size( global.imguigml_build_tree_from_json_focus_map );
+					
 				    if ( _focus_count > 0 ) {
-		
-						var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
-		
+						
 						#region Properties
-						var _property_map = ds_map_create();
-		                
+						var _collect_name_list  = ds_list_create();
+		                var _collect_count_list = ds_list_create();
+						
+						var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
 						repeat( _focus_count ) {
 			                
 							var _properties_list = _root_map[? "##properties" ];
@@ -151,51 +152,57 @@ if ( window_show ) {
                             var _size = ds_list_size( _properties_list );
                             for( var _i = 0; _i < _size; _i++ ) {
                                 var _property_map = _properties_list[| _i ];
-                                var _property_name = concat( _property_map[? "name" ] + "_" + _property_map[? "type" ] );
-					            _property_map[? _property_name ] = 1 + ds_map_get_safe( _property_map, _property_name, 0 );
+                                var _property_name = concat( _property_map[? "name" ], "_", _property_map[? "type" ] );
+								var _index = ds_list_find_index( _collect_name_list, _property_name );
+								if ( _index < 0 ) {
+									ds_list_add( _collect_name_list, _property_name );
+									ds_list_add( _collect_count_list, 1 );
+								} else {
+									_collect_count_list[| _index ]++;
+								}
                             }
                             
 							_root_map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _root_map );
 						}
-		
-					    var _key = ds_map_find_first( _property_map );
-						var _size = ds_map_size( _property_map );
-					    repeat( _size ) {
-							if ( _property_map[? _key ] == _focus_count ) {
-						        if ( _key != "##children" ) && ( _key != "name" ) && ( _key != "##selected" ) imguigml_text( _key );
+						
+						_root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+						
+						var _size = ds_list_size( _collect_name_list );
+						for( var _i = 0; _i < _size; _i++ ) {
+							if ( _collect_count_list[| _i ] != _focus_count ) continue;
+							var _name = _collect_name_list[| _i ];
+							_name = string_copy( _name, 1, string_pos( "_", _name ) - 1 );
+							
+							if ( _focus_count == 1 ) {
+								var _result = [ false, editor_property_value( _root_map, _name ) ];
+								switch( editor_property_type( _root_map, _name ) ) {
+									case E_EDITOR_PROPERTY.FLOAT:
+										_result = imguigml_input_float( _name, _result[1] );
+									break;
+									case E_EDITOR_PROPERTY.INT:
+										_result = imguigml_input_int( _name, _result[1] );
+									break;
+									case E_EDITOR_PROPERTY.STRING:
+										_result = imguigml_input_text( _name, _result[1], 30 );
+									break;
+									case E_EDITOR_PROPERTY.COLOUR:
+										if ( imguigml_tree_node( "Colour Picker" ) ) {
+											_result = imguigml_color_picker3( "##_", colour_get_red( _result[1] )/255, colour_get_green( _result[1] )/255, colour_get_blue( _result[1] )/255 );
+											_result[1] = make_colour_rgb( _result[1]*255, _result[2]*255, _result[3]*255 );
+											imguigml_tree_pop();
+										}
+									break;
+								}
+								if ( _result[0] ) editor_property_set_value( _root_map, _name, _result[1] );
+							} else {
+								imguigml_text( _name );
 							}
-					        var _key = ds_map_find_next( _property_map, _key );
-					    }
-		
-						ds_map_destroy( _property_map );
-						#endregion
-						#region Children
-						//*
-						if ( _focus_count == 1 ) {
-							_root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
-			
-					        if ( imguigml_tree_node( "Children" ) ) {
-					            var _list = _root_map[? "##children" ];
-					            var _size = ds_list_size( _list );
-                                
-					            if ( imguigml_button( "+" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( concat( "New Child ", irandom( 999999 ) ) ) );
-                                
-					            if ( _size <= 0 ) {
-					                if ( imguigml_tree_node_ex( "<empty>", EImGui_TreeNodeFlags.Leaf ) ) imguigml_tree_pop();
-					            } else {
-					                var _delete = undefined;
-					                for( var _i = 0; _i < _size; _i++ ) {
-					                    var _map = _list[| _i ];
-					                    if ( imguigml_button( concat( "X ", _map[? "name" ] ) ) ) _delete = _i;
-					                }
-					                if ( _delete != undefined ) ds_list_delete( _list, _delete );
-					            }
-        
-					            imguigml_tree_pop();
-					        }
-			
+							
 						}
-						//*/
+						
+						
+						ds_list_destroy( _collect_name_list );
+						ds_list_destroy( _collect_count_list );
 						#endregion
 				    } else {
         
@@ -207,7 +214,46 @@ if ( window_show ) {
 				    imguigml_tree_pop();
 				}
                 
-                imguigml_separator();
+				#region Children
+				if ( _focus_count == 1 ) {
+					
+	                imguigml_separator();
+					var _state = imguigml_tree_node_ex( "Children", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen | EImGui_TreeNodeFlags.NoTreePushOnOpen );
+					
+					if ( _state ) {
+						_root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+						
+						imguigml_tree_push( "Children" );
+	                    imguigml_begin_child( "child", 0, 130, false,
+	                                          EImGui_WindowFlags.NoTitleBar | 
+	                                          EImGui_WindowFlags.NoResize |
+	                                          EImGui_WindowFlags.NoMove |
+	                                          EImGui_WindowFlags.NoCollapse );
+						
+						if ( imguigml_button( "+ new child" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( concat( "New Child ", irandom( 999999 ) ) ) );
+						if ( imguigml_button( "select all" ) ) {}
+						
+						var _list = _root_map[? "##children" ];
+						var _size = ds_list_size( _list );
+                                
+						if ( _size <= 0 ) {
+						    if ( imguigml_tree_node_ex( "<empty>", EImGui_TreeNodeFlags.Leaf ) ) imguigml_tree_pop();
+						} else {
+						    var _delete = undefined;
+						    for( var _i = 0; _i < _size; _i++ ) {
+						        var _map = _list[| _i ];
+						        if ( imguigml_button( concat( "X ", editor_property_value( _map, "name" ) ) ) ) _delete = _i;
+						    }
+						    if ( _delete != undefined ) ds_list_delete( _list, _delete );
+						}
+        
+						imguigml_end_child();
+						imguigml_tree_pop();
+							
+					}
+					
+				}
+				#endregion
 				
 			break;
 			#endregion

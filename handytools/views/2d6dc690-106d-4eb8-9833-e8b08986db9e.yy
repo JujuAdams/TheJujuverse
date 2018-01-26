@@ -14,7 +14,10 @@
         "7a183f05-b16c-46e5-9009-890b80efe47c",
         "650b9133-d181-4134-bc44-a82d8b9f020e",
         "5a90ce10-7925-4501-9414-5ece09121877",
-        "f1e04ff1-5484-43ab-a964-a173d6361eee"
+        "f1e04ff1-5484-43ab-a964-a173d6361eee",
+        "cbd2d6fc-2cf9-49c6-8906-cdbfac11e69b",
+        "1703031c-8731-4e9b-a9e1-744b1764dac9",
+        "105b70c0-0828-48b0-b294-5263686e1626"
     ],
     "filterType": "GMScript",
     "folderName": "editor",

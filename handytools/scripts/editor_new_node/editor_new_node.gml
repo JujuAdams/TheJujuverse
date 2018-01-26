@@ -3,11 +3,11 @@
 
 var _map = ds_map_create();
 _map[? "##selected" ] = false;
-_map[? "name" ] = argument0;
 ds_map_add_list( _map, "##properties", ds_list_create() );
 ds_map_add_list( _map, "##children", ds_list_create() );
-editor_add_property( _map, "x", 0, 100 );
-editor_add_property( _map, "y", 0, 200 );
-editor_add_property( _map, "z", 0, 300 );
+editor_add_property( _map, "name", E_EDITOR_PROPERTY.STRING, argument0 );
+editor_add_property( _map, "x", E_EDITOR_PROPERTY.FLOAT, 100 );
+editor_add_property( _map, "y", E_EDITOR_PROPERTY.FLOAT, 200 );
+editor_add_property( _map, "z", E_EDITOR_PROPERTY.FLOAT, 300 );
 
 return _map;
