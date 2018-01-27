@@ -1,6 +1,15 @@
 persistent = true;
 
+scene_window_name = "Scene Graph";
 scene_multiselect = false;
+scene_window_show = true;
+scene_window_collapsed = false;
+scene_window_has_set_size = false;
+scene_window_width = 300;
+scene_window_height = 700;
+scene_window_state[0] = false;
+scene_window_state[1] = false;
+
 
 show_hints = true;
 show_selected_readout = true;
@@ -9,7 +18,7 @@ window_show = EDITOR_START_OPEN;
 window_collapsed = false;
 window_has_set_size = false;
 window_has_set_columns = false;
-window_width = 940; //300;
+window_width = 630;
 window_height = 700;
 window_page = E_EDITOR_PAGE.HOME;
 window_page_return = window_page;
