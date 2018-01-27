@@ -31,7 +31,7 @@ imguigml_same_line();
 imguigml_text( " " );
 imguigml_same_line();
 
-var _result = imguigml_checkbox( _name, ds_map_get_safe( _map, "##selected" ) );
+var _result = imguigml_checkbox( _name + ( editor_property_value( _map, "visible" )? "" : " (inv)"), ds_map_get_safe( _map, "##selected" ) );
 if ( _result[0] ) {
 	_map[? "##selected" ] = _result[1];
 	if ( _result[1] ) {

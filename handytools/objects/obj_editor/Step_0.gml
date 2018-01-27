@@ -41,7 +41,7 @@ if ( instance_exists( obj_camera ) ) {
 var _last_instances_over = instances_over;
 instances_over = noone;
 
-#region SCENE GRAPH OPEN
+#region SCENE GRAPH
 
 if ( scene_window_show ) {
     
@@ -58,9 +58,7 @@ if ( scene_window_show ) {
         scene_window_width = _w;
         scene_window_height = _h;
     }
-    
-	#region SCENE GRAPH
-				
+    		
 	var _multiselect = scene_multiselect || keyboard_check( vk_shift );
 	var _result = imguigml_checkbox( "Multiple selection", _multiselect );
 	if ( _result[0] ) scene_multiselect = _result[1];
@@ -142,6 +140,9 @@ if ( scene_window_show ) {
 								imguigml_tree_pop();
 							}
 						break;
+						case E_EDITOR_PROPERTY.BOOLEAN:
+							_result = imguigml_checkbox( _name, _result[1] );
+						break;
 					}
 					if ( _result[0] ) editor_property_set_value( _root_map, _name, _result[1] );
 				} else {
@@ -205,15 +206,13 @@ if ( scene_window_show ) {
         
     }
     
-	#endregion
-    
     imguigml_end();
     
 }
 
 #endregion
 
-#region WINDOW OPEN
+#region MAIN WINDOW
 if ( window_show ) {
     
     #region KEYBOARD SHORTCUTS
