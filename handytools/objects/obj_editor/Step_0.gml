@@ -50,7 +50,7 @@ if ( scene_window_show ) {
                                    EImGui_WindowFlags.NoMove );
      
     if ( !scene_window_has_set_size ) {
-        imguigml_set_window_pos( scene_window_name, 640, 10 );
+        imguigml_set_window_pos( scene_window_name, window_width+10, 10 );
         imguigml_set_window_size( scene_window_name, scene_window_width, scene_window_height );
     } else {
         var _w = imguigml_get_window_width( scene_window_name );
