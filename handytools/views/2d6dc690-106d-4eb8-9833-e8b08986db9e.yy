@@ -18,7 +18,12 @@
         "f1e04ff1-5484-43ab-a964-a173d6361eee",
         "cbd2d6fc-2cf9-49c6-8906-cdbfac11e69b",
         "1703031c-8731-4e9b-a9e1-744b1764dac9",
-        "105b70c0-0828-48b0-b294-5263686e1626"
+        "105b70c0-0828-48b0-b294-5263686e1626",
+        "2aa7748d-b8d8-4af2-8be6-b7e5c9b13784",
+        "3253ee53-7ee1-4cc9-8837-ee99641febcd",
+        "6e5eb3af-4cb4-4061-8210-ac3aadc568cd",
+        "5ed31b58-5a95-423c-b4be-9ab21e0cccba",
+        "7020cc98-f57d-41a7-8946-e69ad8442f0d"
     ],
     "filterType": "GMScript",
     "folderName": "editor",

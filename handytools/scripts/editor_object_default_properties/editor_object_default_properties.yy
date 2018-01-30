@@ -1,8 +1,8 @@
 {
-    "id": "7020cc98-f57d-41a7-8946-e69ad8442f0d",
+    "id": "5ed31b58-5a95-423c-b4be-9ab21e0cccba",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "object_add_property_fast",
+    "name": "editor_object_default_properties",
     "IsCompatibility": false,
     "IsDnD": false
 }

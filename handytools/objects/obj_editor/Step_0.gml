@@ -220,16 +220,16 @@ if ( window_show ) {
         if ( keyboard_check_released( ord("1") ) ) window_page = E_EDITOR_PAGE.HOME;
         if ( keyboard_check_released( ord("2") ) ) window_page = E_EDITOR_PAGE.PLACE;
         if ( keyboard_check_released( ord("3") ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-        if ( keyboard_check_released( ord("4") ) ) {
-            window_page = E_EDITOR_PAGE.MOVE;
-            with( obj_par_3d ) mouse_active_set_relative_values();
-        }
-        if ( keyboard_check_released( ord("5") ) ) {
-            window_page = E_EDITOR_PAGE.ROTATE;
-            with( obj_par_3d ) mouse_active_set_relative_values();
-        }
-        if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.DELETE;
-        if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.LIGHT;
+        //if ( keyboard_check_released( ord("4") ) ) {
+        //    window_page = E_EDITOR_PAGE.MOVE;
+        //    with( obj_par_3d ) mouse_active_set_relative_values();
+        //}
+        //if ( keyboard_check_released( ord("5") ) ) {
+        //    window_page = E_EDITOR_PAGE.ROTATE;
+        //    with( obj_par_3d ) mouse_active_set_relative_values();
+        //}
+        //if ( keyboard_check_released( ord("6") ) ) window_page = E_EDITOR_PAGE.DELETE;
+        //if ( keyboard_check_released( ord("7") ) ) window_page = E_EDITOR_PAGE.LIGHT;
     }
     
     if ( keyboard_check_released( vk_tab ) ) {
@@ -271,16 +271,16 @@ if ( window_show ) {
         if ( imguigml_menu_item( "1.Home"        ) ) window_page = E_EDITOR_PAGE.HOME;
         if ( imguigml_menu_item( "2.Place"       ) ) window_page = E_EDITOR_PAGE.PLACE;
         if ( imguigml_menu_item( "3.Instances"   ) ) window_page = E_EDITOR_PAGE.INSTANCES;
-        if ( imguigml_menu_item( "4.Move"        ) ) {
-            window_page = E_EDITOR_PAGE.MOVE;
-            with( obj_par_3d ) mouse_active_set_relative_values();
-        }
-        if ( imguigml_menu_item( "5.Rotate"      ) ) {
-            window_page = E_EDITOR_PAGE.ROTATE;
-            with( obj_par_3d ) mouse_active_set_relative_values();
-        }
-        if ( imguigml_menu_item( "6.Delete"      ) ) window_page = E_EDITOR_PAGE.DELETE;
-        if ( imguigml_menu_item( "7.Light"       ) ) window_page = E_EDITOR_PAGE.LIGHT;
+        //if ( imguigml_menu_item( "4.Move"        ) ) {
+        //    window_page = E_EDITOR_PAGE.MOVE;
+        //    with( obj_par_3d ) mouse_active_set_relative_values();
+        //}
+        //if ( imguigml_menu_item( "5.Rotate"      ) ) {
+        //    window_page = E_EDITOR_PAGE.ROTATE;
+        //    with( obj_par_3d ) mouse_active_set_relative_values();
+        //}
+        //if ( imguigml_menu_item( "6.Delete"      ) ) window_page = E_EDITOR_PAGE.DELETE;
+        //if ( imguigml_menu_item( "7.Light"       ) ) window_page = E_EDITOR_PAGE.LIGHT;
         imguigml_end_menu_bar();
         #endregion
         

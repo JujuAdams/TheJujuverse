@@ -14,7 +14,7 @@ var _list = global.editor_object_properties_map[? _object_name ];
 if ( _list == undefined ) {
     _list = tr_list_create( concat( "EDITOR ", _object_name, " properties" ), true );
     tr_map_add_list( global.editor_object_properties_map, _object_name, _list );
-    object_default_properties( argument0, _list );
+    editor_object_default_properties( argument0, _list );
 }
 
 var _map = tr_map_create( concat( "EDITOR ", _object_name, " ", QU, argument0, QU, " property" ), true );

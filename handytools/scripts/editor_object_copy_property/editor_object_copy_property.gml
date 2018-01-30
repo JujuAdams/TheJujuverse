@@ -3,7 +3,7 @@
 
 if ( is_array( argument1 ) ) {
     var _size = array_length_1d( argument1 );
-    for( var _i = 0; _i < _size; _i++ ) object_copy_property( argument0, argument1[_i] );
+    for( var _i = 0; _i < _size; _i++ ) editor_object_copy_property( argument0, argument1[_i] );
     exit;
 }
 
@@ -30,7 +30,7 @@ var _dest_list = global.editor_object_properties_map[? _dest_object_name ];
 if ( _dest_list == undefined ) {
     _dest_list = tr_list_create( concat( "EDITOR ", _dest_object_name, " properties" ), true );
     tr_map_add_list( global.editor_object_properties_map, _dest_object_name, _dest_list );
-    object_default_properties( argument1, _dest_list );
+    editor_object_default_properties( argument1, _dest_list );
 }
 
 var _src_size = ds_list_size( _src_list );
