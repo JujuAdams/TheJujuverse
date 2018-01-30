@@ -3,7 +3,7 @@
 /// @param object
 
 var _root_map = argument0;
-var _object   = (( argument1 != undefined) && object_exists( argument1 ))? object_get_name( _object ) : "<null>";
+var _object   = (( argument1 != undefined) && object_exists( argument1 ))? object_get_name( argument1 ) : "<null>";
 
 var _src_list = global.editor_object_properties_map[? _object ];
 if ( _src_list == undefined ) {

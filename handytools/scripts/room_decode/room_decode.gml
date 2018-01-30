@@ -7,6 +7,8 @@ var _string = argument0;
 var _root_map = json_decode( _string );
 var _objects_map = _root_map[? "objects" ];
 
+var _node_root_list = global.editor_scene_graph[? "##children" ];
+
 for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undefined; _object_name = ds_map_find_next( _objects_map, _object_name ) ) {
     
     var _object = asset_get_index( _object_name );
@@ -51,7 +53,10 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 }
             break;
             default:
-                tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                var _id = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                var _node_map = editor_new_node( _object, object_get_name( _object ) + "##" + string( _id ), _id );
+                ds_list_add_map( _node_root_list, _node_map );
+                editor_property_serialise( _node_map, _id );
             break;
         }
         

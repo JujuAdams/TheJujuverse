@@ -12,7 +12,7 @@ editor_object_declare_default( [ obj_sphere, obj_cone, obj_tri_a, obj_tri_b, obj
 editor_object_add_property( obj_player_spawn, "rotation", E_EDITOR_PROPERTY.FLOAT, 0, "image_angle" );
 
 //Basically all objects in the game inherit from the player spawner
-editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_dummy_phone, obj_cube,
+editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_dummy_phone, obj_cube, obj_block,
                                                  obj_chair, obj_table, obj_pedestal, obj_bottle, obj_cup, obj_couch, obj_bookshelf, obj_open_book,
                                                  obj_floor_lamp, obj_desk_lamp, obj_hanging_bulb,
                                                  obj_spiral1, obj_spiral1_ceiling, obj_spiral2, obj_spiral2_ceiling,
@@ -25,7 +25,7 @@ editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_
                                                  obj_skele ] );
 
 //...apart from lights which have additional properties
-editor_object_add_property( obj_light, "colour", E_EDITOR_PROPERTY.COLOUR, c_white, UD );
-editor_object_add_property( obj_light, "range" , E_EDITOR_PROPERTY.FLOAT ,     200, UD );
+editor_object_add_property( obj_light, "colour", E_EDITOR_PROPERTY.COLOUR, c_white, "colour" );
+editor_object_add_property( obj_light,  "range", E_EDITOR_PROPERTY.FLOAT ,     200,  "range" );
 
 return global.editor_object_properties_map;

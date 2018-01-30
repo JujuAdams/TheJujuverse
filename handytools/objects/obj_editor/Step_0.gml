@@ -178,8 +178,8 @@ if ( scene_window_show ) {
 	        #region Children
             var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
             
-			if ( imguigml_button( "+ new child" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( concat( "New Child ", irandom( 999999 ) ) ) );
-			if ( imguigml_button( "select all" ) ) {}
+			if ( imguigml_button( "+ new child" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( UD, concat( "New Child ", irandom( 999999 ) ) ) );
+			//if ( imguigml_button( "select all" ) ) {}
 			
 			var _list = _root_map[? "##children" ];
 			var _size = ds_list_size( _list );
@@ -467,6 +467,16 @@ if ( window_show ) {
                     if ( _filename != "" ) {
                         var _file = file_text_open_write( _filename );
                         file_text_write_string( _file, room_encode() );
+                        file_text_close( _file );
+                        trace_loud( _filename + " SAVED!" );
+                    }
+                }
+                imguigml_same_line();
+                if ( imguigml_button( "Save Room (Old)" ) ) {
+                    var _filename = get_save_filename( "JSON|*.json", "room " + string( global.game_room ) + ".json" );
+                    if ( _filename != "" ) {
+                        var _file = file_text_open_write( _filename );
+                        file_text_write_string( _file, room_encode_old() );
                         file_text_close( _file );
                         trace_loud( _filename + " SAVED!" );
                     }
