@@ -42,6 +42,10 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
                 _inst.range = _map[? "range" ];
                 _inst.colour = _map[? "colour" ];
+                
+                var _node_map = editor_new_node( _object, object_get_name( _object ) + "##" + string( _inst ), _inst );
+                ds_list_add_map( _node_root_list, _node_map );
+                editor_property_serialise( _node_map, _inst );
             break;
             case obj_directional_light:
                 var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
@@ -53,10 +57,11 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 }
             break;
             default:
-                var _id = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
-                var _node_map = editor_new_node( _object, object_get_name( _object ) + "##" + string( _id ), _id );
+                var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                
+                var _node_map = editor_new_node( _object, object_get_name( _object ) + "##" + string( _inst ), _inst );
                 ds_list_add_map( _node_root_list, _node_map );
-                editor_property_serialise( _node_map, _id );
+                editor_property_serialise( _node_map, _inst );
             break;
         }
         

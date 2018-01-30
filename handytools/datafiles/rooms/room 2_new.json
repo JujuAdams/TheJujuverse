@@ -1406,6 +1406,475 @@
             },
             {
                 "##children": [],
+                "##instance": 100039,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100039",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 109.06552,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 35.03833,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 67.4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 255,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 160,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 1
+            },
+            {
+                "##children": [],
+                "##instance": 100040,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100040",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 206.06634,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 168.0203,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 85.4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 3330815,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 200,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
+                "##instance": 100041,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100041",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 49.0393,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 250.715942,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 45.4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 65535,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 80,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
+                "##instance": 100042,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100042",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 248.80886,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 253.79866,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 45.4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 16776960,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 80,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
+                "##instance": 100043,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100043",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 142.131226,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 204.472763,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 87.4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 13827840,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 100,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
+                "##instance": 100044,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100044",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 137.881195,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 92.332527,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 4,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 13827840,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 100,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
+                "##instance": 100045,
+                "##properties": [
+                    {
+                        "name": "name",
+                        "type": 2,
+                        "value": "obj_light##100045",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 4,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 0,
+                        "value": 275.839478,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 0,
+                        "value": 29.96350,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 0,
+                        "value": 6,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 0,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 3,
+                        "value": 13827840,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 0,
+                        "value": 100,
+                        "variable name": "range"
+                    }
+                ],
+                "##selected": 0
+            },
+            {
+                "##children": [],
                 "##instance": 100050,
                 "##properties": [
                     {
@@ -3166,5 +3635,5 @@
         ],
         "##selected": 0
     },
-    "time": "30/01/2018 23:41:12"
+    "time": "30/01/2018 23:43:28"
 }
