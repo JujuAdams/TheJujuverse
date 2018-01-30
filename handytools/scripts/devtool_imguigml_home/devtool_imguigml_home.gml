@@ -14,6 +14,12 @@ if ( FPS_ON ) {
     var _result = imguigml_checkbox( "Show FPS", global.fps_show );
     if ( _result[0] ) global.fps_show = _result[1];
 }
+imguigml_same_line();
+var _result = imguigml_checkbox( "Master audio on", global.audio_master_on );
+if ( _result[0] ) {
+    global.audio_master_on = _result[1];
+    audio_master_gain( global.audio_master_volume * global.audio_master_on );
+}
 
 repeat( 5 ) imguigml_spacing();
 imguigml_separator();

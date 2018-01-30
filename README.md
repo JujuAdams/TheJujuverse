@@ -1,8 +1,9 @@
-<h1 align="center">"handytools" v0.6.6</h1>
+<h1 align="center">"handytools" v0.7.0</h1>
 <p align="center"><img src="https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png" style="display:block; margin:auto; width:300px"></p>
 
 <h3 align="center">Written by @jujuadams</h3>
-<h3 align="center">ImGUI Implementation by @babyj3ans, JIFFY by @net8floz</h3>
+<h3 align="center">ImGUI Implementation v1.80.2 by @babyj3ans, JIFFY by @net8floz</h3>
+<h3 align="center">WinDev.dll by @YellowAfterlife, SCREEN with assistance from kraifpatrik</h3>
 <h3 align="center">Logo by @stefanvonranda</h3>
 
 
