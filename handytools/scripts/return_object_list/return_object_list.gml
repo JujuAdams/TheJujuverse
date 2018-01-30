@@ -2,8 +2,8 @@ var _list = tr_list_create();
 ds_list_add( _list, "GENERAL"              );
 ds_list_add( _list, obj_player_spawn       );
 ds_list_add( _list, obj_door_spawn         );
-ds_list_add( _list, obj_light              );
-ds_list_add( _list, obj_directional_light  );
+//ds_list_add( _list, obj_light              );
+//ds_list_add( _list, obj_directional_light  );
 ds_list_add( _list, obj_phone              );
 ds_list_add( _list, obj_dummy_phone        );
 ds_list_add( _list, obj_cube               );
@@ -41,9 +41,9 @@ ds_list_add( _list, obj_spiral2            );
 ds_list_add( _list, obj_spiral2_ceiling    );
 ds_list_add( _list, "SEP"                  );
 
-ds_list_add( _list, "MIRROR ROOM"          );
-ds_list_add( _list, obj_mirror_frame       );
-ds_list_add( _list, obj_dummy_mirror_frame );
+//ds_list_add( _list, "MIRROR ROOM"          );
+//ds_list_add( _list, obj_mirror_frame       );
+//ds_list_add( _list, obj_dummy_mirror_frame );
 
 ds_list_add( _list, ""                     );
 ds_list_add( _list, "ROPE ROOM"            );

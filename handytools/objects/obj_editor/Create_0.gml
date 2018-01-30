@@ -30,7 +30,7 @@ instances_selected_filter = false;
 instances_object_filter = undefined;
 instances_object_list = tr_list_create();
 
-preview_surface = tr_surface_create( 600, 600, "Editor 3D preview" );
+preview_surface = tr_surface_create( 400, 400, "Editor 3D preview" );
 preview_object = undefined;
 preview_instance = noone;
 

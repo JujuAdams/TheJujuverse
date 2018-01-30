@@ -50,7 +50,7 @@ if ( scene_window_show ) {
                                    EImGui_WindowFlags.NoMove );
      
     if ( !scene_window_has_set_size ) {
-        imguigml_set_window_pos( scene_window_name, window_width+10, 10 );
+        imguigml_set_window_pos( scene_window_name, window_width+20, 10 );
         imguigml_set_window_size( scene_window_name, scene_window_width, scene_window_height );
     } else {
         var _w = imguigml_get_window_width( scene_window_name );
@@ -494,7 +494,7 @@ if ( window_show ) {
                 imguigml_columns( 2, "Columns", true );
                 
                 imguigml_new_line();
-                imguigml_image( surface_get_texture( preview_surface ), 600, 600 );
+                imguigml_image( surface_get_texture( preview_surface ), 400, 400 );
                 if ( imguigml_button( "Deselect placement object" ) ) selected_object = undefined;
                 imguigml_next_column();
                 
@@ -520,7 +520,7 @@ if ( window_show ) {
                 }
                 imguigml_end_child( "child" );
                 
-                imguigml_set_column_width( 0, 620 );
+                imguigml_set_column_width( 0, 420 );
             
             #endregion
             break;

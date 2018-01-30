@@ -1,7 +1,7 @@
 ///@function imguigml_config()
 ///@desc imguigml configuration
 
-#macro IMGUI_TRANSPARENCY 1
+#macro IMGUI_TRANSPARENCY 1.1
 
 /// Input configuration
 #macro Imguigml_Show_ImGui_cursor            (true)  // if this is false, we won't touch the GMS cursor while ImGui is active.

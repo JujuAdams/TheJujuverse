@@ -10,4 +10,5 @@ if ( EDITOR_ON ) {
     global.editor_fly    = false;
 }
 
+global.editor_object_properties_map = editor_object_properties();
 global.editor_scene_graph = editor_new_node( "Root" );
