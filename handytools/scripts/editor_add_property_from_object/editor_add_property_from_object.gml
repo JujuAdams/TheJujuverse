@@ -10,7 +10,7 @@ if ( _src_list == undefined ) {
     trace_error( false, "No object properties exist for ", _object, " (", argument1, ")" );
     exit;
 }
-var _dest_list = _root_map[? "##properties" ];
+var _dest_list = _root_map[? "properties" ];
 
 var _size = ds_list_size( _src_list );
 for( var _i = 0; _i < _size; _i++ ) {

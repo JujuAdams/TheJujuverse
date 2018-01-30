@@ -7,7 +7,7 @@ var _string = argument0;
 var _root_map = json_decode( _string );
 var _objects_map = _root_map[? "objects" ];
 
-var _node_root_list = global.editor_scene_graph[? "##children" ];
+var _node_root_list = global.editor_scene_graph[? "children" ];
 
 for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undefined; _object_name = ds_map_find_next( _objects_map, _object_name ) ) {
     

@@ -7,7 +7,7 @@
 
 var _list = argument[0];
 var _map = ds_map_create();
-ds_list_add_map( _list[? "##properties" ], _map );
+ds_list_add_map( _list[? "properties" ], _map );
 _map[? "name"          ] = argument[1];
 _map[? "type"          ] = argument[2];
 _map[? "value"         ] = argument[3];

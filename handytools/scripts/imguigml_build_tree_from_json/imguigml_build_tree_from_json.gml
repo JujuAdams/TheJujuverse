@@ -10,7 +10,7 @@ var _multiselect  = argument3;
 
 var _focused = ds_map_get_safe( _selected_map, _map ); //( global.imguigml_build_tree_from_json_focus_map == _map );
 
-var _list = _map[? "##children" ];
+var _list = _map[? "children" ];
 var _has_children = ( _list != undefined ) && ( ds_list_size( _list ) > 0 );
 var _name = editor_property_value( _map, "name" );
 
@@ -18,7 +18,7 @@ var _flags = EImGui_TreeNodeFlags.NoTreePushOnOpen | EImGui_TreeNodeFlags.Defaul
 var _state = imguigml_tree_node_ex( "---##" + _name, _flags );
 
 if ( imguigml_is_item_clicked() && !_has_children ) {
-	_map[? "##selected" ] = !_focused;
+	_map[? "selected" ] = !_focused;
 	if ( _focused )	{
 		ds_map_delete( _selected_map, _map );
 	} else {
@@ -31,9 +31,9 @@ imguigml_same_line();
 imguigml_text( " " );
 imguigml_same_line();
 
-var _result = imguigml_checkbox( _name + ( editor_property_value( _map, "visible" )? "" : " (inv)"), ds_map_get_safe( _map, "##selected" ) );
+var _result = imguigml_checkbox( _name + ( editor_property_value( _map, "visible" )? "" : " (inv)"), ds_map_get_safe( _map, "selected" ) );
 if ( _result[0] ) {
-	_map[? "##selected" ] = _result[1];
+	_map[? "selected" ] = _result[1];
 	if ( _result[1] ) {
 		if ( !_multiselect ) ds_map_clear( _selected_map );
 		_selected_map[? _map ] = true;
@@ -41,7 +41,7 @@ if ( _result[0] ) {
 		ds_map_delete( _selected_map, _map );
 	}
 } else {
-	_map[? "##selected" ] = _focused;
+	_map[? "selected" ] = _focused;
 }
 
 if ( _state ) {

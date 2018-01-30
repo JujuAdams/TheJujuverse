@@ -95,7 +95,7 @@ if ( scene_window_show ) {
 			var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
 			repeat( _focus_count ) {
 			                
-				var _properties_list = _root_map[? "##properties" ];
+				var _properties_list = _root_map[? "properties" ];
                             
                 var _size = ds_list_size( _properties_list );
                 for( var _i = 0; _i < _size; _i++ ) {
@@ -178,10 +178,10 @@ if ( scene_window_show ) {
 	        #region Children
             var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
             
-			if ( imguigml_button( "+ new child" ) ) ds_list_add_map( _root_map[? "##children" ], editor_new_node( UD, concat( "New Child ", irandom( 999999 ) ) ) );
+			if ( imguigml_button( "+ new child" ) ) ds_list_add_map( _root_map[? "children" ], editor_new_node( UD, concat( "New Child ", irandom( 999999 ) ) ) );
 			//if ( imguigml_button( "select all" ) ) {}
 			
-			var _list = _root_map[? "##children" ];
+			var _list = _root_map[? "children" ];
 			var _size = ds_list_size( _list );
                                 
 			if ( _size <= 0 ) {
