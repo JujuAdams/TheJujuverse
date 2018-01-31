@@ -25,6 +25,7 @@ if ( SCREEN_3D ) {
     } else {
 		s_shader_begin( SCREEN_3D_FORWARD_SHADER );
         s_shader_float( "u_fZFar", DEFAULT_Z_FAR );
+        s_shader_float( "u_fSpecular", 1 );
         screen_set_shader_ambient_light();
         screen_set_shader_lights_nearest( grip_get_xfrom( "3d" ), grip_get_yfrom( "3d" ), grip_get_zfrom( "3d" ), light_priority );
         s_shader_rgba( "u_vForceColour", c_white, 0 );

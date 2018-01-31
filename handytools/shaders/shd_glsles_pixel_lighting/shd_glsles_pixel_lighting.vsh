@@ -19,7 +19,7 @@ float rand(vec2 co){
 void main() {
     
     vec4 posOS = vec4( in_Position.xyz, 1.0 );
-    object_space_pos.xyz += u_fVibrate*rand( (gm_Matrices[MATRIX_WORLD]*(posOS + u_fGarbage) ).xy );
+    posOS.xyz += u_fVibrate*rand( (gm_Matrices[MATRIX_WORLD]*(posOS + u_fGarbage) ).xy );
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION]*posOS; 
     
     v_vColour   = in_Colour;

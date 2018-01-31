@@ -7,9 +7,6 @@ uniform sampler2D u_sDepth;
 uniform sampler2D u_sNormal;
 uniform mat4      u_mInverseView;
 
-//uniform vec3 u_vFogColour; //RGB
-//uniform vec3 u_vFogRange; //.x = start, .y = (end-start), .z = enable
-//uniform vec4 u_vAmbientColour;
 uniform vec4 u_vLightPosRange0;
 uniform vec4 u_vLightPosRange1;
 uniform vec4 u_vLightPosRange2;
