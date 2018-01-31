@@ -1,13 +1,13 @@
 /*
-    VERSION   v0.7.0
-    DATE      2018.01.20
+    VERSION   v0.8.0
+    DATE      2018.01.31
     CREDITS   handytools by @jujuadams
               ImGUI implementation by @babyj3ans
               JIFFY by @net8floz
               Logo by @stefanvonranda
               SCREEN with assistance from kraifpatrik
     
-    # "handytools" v0.7.0
+    # "handytools" v0.8.0
     ### Written by @jujuadams, ImGUI v1.80.2 implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, WinDev.dll by @YellowAfterlife, SCREEN with assistance from kraifpatrik
     A series of libraries and tools to assist with game creation.
         

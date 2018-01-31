@@ -1,4 +1,4 @@
-<h1 align="center">"handytools" v0.7.0</h1>
+<h1 align="center">"handytools" v0.8.0</h1>
 <p align="center"><img src="https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png" style="display:block; margin:auto; width:300px"></p>
 
 <h3 align="center">Written by @jujuadams</h3>
