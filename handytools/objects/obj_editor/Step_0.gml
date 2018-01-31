@@ -124,6 +124,12 @@ if ( scene_window_show ) {
 				if ( _focus_count == 1 ) {
 					var _result = [ false, editor_property_value( _root_map, _name ) ];
 					switch( editor_property_type( _root_map, _name ) ) {
+						case E_EDITOR_PROPERTY.STATIC:
+						case E_EDITOR_PROPERTY.SPRITE:
+						case E_EDITOR_PROPERTY.OBJECT:
+						case E_EDITOR_PROPERTY.SOUND:
+							_result = imguigml_text( _name, _result[1] );
+						break;
 						case E_EDITOR_PROPERTY.FLOAT:
 							_result = imguigml_input_float( _name, _result[1] );
 						break;

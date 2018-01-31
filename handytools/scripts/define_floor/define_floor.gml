@@ -13,7 +13,7 @@ var _z         = argument4;
 var _tile_size = argument5;
 var _sprite    = argument6;
 
-var _inst = tr_instance_create( _x1, _y1, obj_floor );
+if ( object_index == obj_floor ) var _inst = id else var _inst = tr_instance_create( _x1, _y1, obj_floor );
 with( _inst ) {
     
     x = _x1;
@@ -26,6 +26,7 @@ with( _inst ) {
     y2 = _y2;
     tile_size = _tile_size;
     sprite = _sprite;
+    sprite_asset_name = sprite_get_name( _sprite );
     texture = sprite_get_texture( _sprite, 0 );
     
     vbf_floor = tr_vertex_create_buffer( "floor" );

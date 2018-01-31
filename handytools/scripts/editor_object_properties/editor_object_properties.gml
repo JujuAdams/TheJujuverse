@@ -8,10 +8,13 @@ editor_object_default_properties( "<null>", _list );
 //Define debug primitives
 editor_object_declare_default( [ obj_sphere, obj_cone, obj_tri_a, obj_tri_b, obj_tri_c, obj_tri_sphere, obj_line_a, obj_line_b ] );
 
-//Define a typical basic object
-editor_object_add_property( obj_player_spawn, "rotation", E_EDITOR_PROPERTY.FLOAT, 0, "image_angle" );
+editor_object_add_property( obj_floor,        "x2", E_EDITOR_PROPERTY.FLOAT ,                                 0,                "x2" );
+editor_object_add_property( obj_floor,        "y2", E_EDITOR_PROPERTY.FLOAT ,                                 0,                "y2" );
+editor_object_add_property( obj_floor, "tile size", E_EDITOR_PROPERTY.INT   ,                                32,         "tile_size" );
+editor_object_add_property( obj_floor,    "sprite", E_EDITOR_PROPERTY.STATIC, sprite_get_name( spr_tex_floor1 ), "sprite_asset_name" );
 
-//Basically all objects in the game inherit from the player spawner
+//Basically all objects in the game have the same properties so we inherit from the player spawner
+editor_object_add_property( obj_player_spawn, "rotation", E_EDITOR_PROPERTY.FLOAT, 0, "image_angle" );
 editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_dummy_phone, obj_cube, obj_block,
                                                  obj_chair, obj_table, obj_pedestal, obj_bottle, obj_cup, obj_couch, obj_bookshelf, obj_open_book,
                                                  obj_floor_lamp, obj_desk_lamp, obj_hanging_bulb,
@@ -27,5 +30,6 @@ editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_
 //...apart from lights which have additional properties
 editor_object_add_property( obj_light, "colour", E_EDITOR_PROPERTY.COLOUR, c_white, "colour" );
 editor_object_add_property( obj_light,  "range", E_EDITOR_PROPERTY.FLOAT ,     200,  "range" );
+editor_object_copy_property( obj_light, obj_directional_light );
 
 return global.editor_object_properties_map;
