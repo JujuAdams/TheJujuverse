@@ -1,0 +1,4255 @@
+{
+    "scene graph": {
+        "children": [
+            {
+                "children": [],
+                "instance": 100026,
+                "object": "obj_directional_light",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_directional_light##100026",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 101.403,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 186.0703,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 50,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "colour",
+                        "type": 4,
+                        "value": 4099390,
+                        "variable name": "colour"
+                    },
+                    {
+                        "name": "range",
+                        "type": 1,
+                        "value": 397.828217,
+                        "variable name": "range"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [],
+                "instance": 100027,
+                "object": "obj_block",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_block##100027",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 99.0502,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 249.695343,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0.2,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "rotation",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "image_angle"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [],
+                "instance": 100028,
+                "object": "obj_block",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_block##100028",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 36.884712,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 48.832764,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0.2,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "rotation",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "image_angle"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [],
+                "instance": 100029,
+                "object": "obj_block",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_block##100029",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 186.8770,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 100.264984,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0.2,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "rotation",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "image_angle"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [],
+                "instance": 100030,
+                "object": "obj_block",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_block##100030",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 247.391357,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 181.84205,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0.2,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "rotation",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "image_angle"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [],
+                "instance": 100031,
+                "object": "obj_floor",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "obj_floor##100031",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "x2",
+                        "type": 1,
+                        "value": 300,
+                        "variable name": "x2"
+                    },
+                    {
+                        "name": "y2",
+                        "type": 1,
+                        "value": 300,
+                        "variable name": "y2"
+                    },
+                    {
+                        "name": "tile size",
+                        "type": 2,
+                        "value": 32,
+                        "variable name": "tile_size"
+                    },
+                    {
+                        "name": "sprite",
+                        "type": 0,
+                        "value": "spr_tex_floor3",
+                        "variable name": "sprite_asset_name"
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100016,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100016",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 69.473312,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 136.2500,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 382.008,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100019,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100019",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 102.77780,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 256.5058,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 159.0808,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100015,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100015",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 160.471252,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 236.78048,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 30.596512,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100023,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100023",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 301.788391,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 90.547432,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 516.39904,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100018,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100018",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 102.12067,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 184.864395,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 161.16452,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100024,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100024",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 2.843815,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": -2.962563,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 697.468811,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100017,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100017",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 227.40539,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 239.39840,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 93.125,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100025,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100025",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 303.1058,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 17.31701,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 606.515625,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100021,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100021",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 123.936256,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 91.648277,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": -4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 382.008,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100014,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100014",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 45.17302,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 254.921951,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 159.0808,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100022,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100022",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 160.858643,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 261.438141,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 469.6503,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100020,
+                        "object": "obj_spiral1",
+                        "parent": 517,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1##100020",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 247.23291,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 270.99017,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 71.82052,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Spiral1",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100068,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100068",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 70.08554,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 234.03218,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100067,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100067",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 202.589844,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 218.48606,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100075,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100075",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 291.315186,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 191.255173,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 150.794174,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100071,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100071",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 151.879883,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 57.0029,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100066,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100066",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 141.48764,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 210.843796,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100074,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100074",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 154.926544,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 207.754257,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100073,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100073",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 210.462646,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 71.77802,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.137451,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100072,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100072",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 296.543945,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 202.07641,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100070,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100070",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 59.833122,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 181.5500,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100076,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100076",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 201.50355,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 58.57033,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 199.75116,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100069,
+                        "object": "obj_spiral2_ceiling",
+                        "parent": 551,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2_ceiling##100069",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 62.0103,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 212.1750,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 245.112366,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Spiral2 Ceiling",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100034,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100034",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 113.6500,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 97.992355,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 131.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100033,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100033",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 201.80879,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 65.483749,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 31.793745,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100036,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100036",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 296.41861,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 194.349472,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 100.6,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 126.838516,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100038,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100038",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 144.744858,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 207.171478,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 131.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100037,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100037",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 127.0591,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 150.3490,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 131.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100035,
+                        "object": "obj_spiral1_ceiling",
+                        "parent": 569,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral1_ceiling##100035",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 232.08787,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 276.33026,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 99.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 131.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Spiral1 Ceiling",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100061,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100061",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 182.164581,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 79.623352,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100064,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100064",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 260.03588,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 115.73077,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100053,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100053",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 303.229919,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 5.818356,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 198.556259,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100058,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100058",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 135.04734,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 95.281425,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": -4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 350.27810,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100054,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100054",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 235.775436,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 306.30511,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 122.824516,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100050,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100050",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 51.0110,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 249.564987,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0.2,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 236.298264,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100060,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100060",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 221.17320,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 31.846333,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100051,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100051",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 64.837769,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 253.123596,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0.2,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 236.298264,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100063,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100063",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 304.186798,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 119.4009,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 196.38913,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100062,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100062",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 299.122192,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 12.887722,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": -2.8,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 214.381287,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100052,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100052",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 259.42083,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 185.297516,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100057,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100057",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 136.39202,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 110.318733,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100056,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100056",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 77.15045,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 141.62602,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100059,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100059",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 112.883392,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 59.747757,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100055,
+                        "object": "obj_spiral2",
+                        "parent": 587,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_spiral2##100055",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 234.0505,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 252.73819,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 151.75,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Spiral2",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100041,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100041",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 49.0393,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 250.715942,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 45.4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 65535,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 80,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100045,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100045",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 275.839478,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 29.96350,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 6,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 13827840,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 100,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100039,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100039",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 109.06552,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 35.03833,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 67.4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 255,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 160,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100043,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100043",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 142.131226,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 204.472763,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 87.4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 13827840,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 100,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100042,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100042",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 248.80886,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 253.79866,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 45.4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 16776960,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 80,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100040,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100040",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 206.06634,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 168.0203,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 85.4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 3330815,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 200,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100044,
+                        "object": "obj_light",
+                        "parent": 605,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_light##100044",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 137.881195,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 92.332527,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 4,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "colour",
+                                "type": 4,
+                                "value": 13827840,
+                                "variable name": "colour"
+                            },
+                            {
+                                "name": "range",
+                                "type": 1,
+                                "value": 100,
+                                "variable name": "range"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Lights",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "instance": 100078,
+                        "object": "obj_door_spawn",
+                        "parent": 623,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_door_spawn##100078",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 222.828995,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 181.90287,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": -180.0074,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100077,
+                        "object": "obj_phone",
+                        "parent": 623,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_phone##100077",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 287.397369,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 206.628448,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 99.83204,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    },
+                    {
+                        "children": [],
+                        "instance": 100032,
+                        "object": "obj_player_spawn",
+                        "parent": 623,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "type": 3,
+                                "value": "obj_player_spawn##100032",
+                                "variable name": ""
+                            },
+                            {
+                                "name": "visible",
+                                "type": 5,
+                                "value": 1,
+                                "variable name": "visible"
+                            },
+                            {
+                                "name": "x",
+                                "type": 1,
+                                "value": 16.726885,
+                                "variable name": "x"
+                            },
+                            {
+                                "name": "y",
+                                "type": 1,
+                                "value": 142.688232,
+                                "variable name": "y"
+                            },
+                            {
+                                "name": "z",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "z"
+                            },
+                            {
+                                "name": "x world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "y world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "z world",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": ""
+                            },
+                            {
+                                "name": "rotation",
+                                "type": 1,
+                                "value": 0,
+                                "variable name": "image_angle"
+                            }
+                        ],
+                        "selected": 0
+                    }
+                ],
+                "instance": null,
+                "object": "<null>",
+                "parent": 484,
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": 3,
+                        "value": "Flow",
+                        "variable name": ""
+                    },
+                    {
+                        "name": "visible",
+                        "type": 5,
+                        "value": 1,
+                        "variable name": "visible"
+                    },
+                    {
+                        "name": "x",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "x"
+                    },
+                    {
+                        "name": "y",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "y"
+                    },
+                    {
+                        "name": "z",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": "z"
+                    },
+                    {
+                        "name": "x world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "y world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    },
+                    {
+                        "name": "z world",
+                        "type": 1,
+                        "value": 0,
+                        "variable name": ""
+                    }
+                ],
+                "selected": 0
+            }
+        ],
+        "instance": null,
+        "object": "<null>",
+        "parent": null,
+        "properties": [
+            {
+                "name": "name",
+                "type": 3,
+                "value": "Root",
+                "variable name": ""
+            },
+            {
+                "name": "visible",
+                "type": 5,
+                "value": 1,
+                "variable name": "visible"
+            },
+            {
+                "name": "x",
+                "type": 1,
+                "value": 0,
+                "variable name": "x"
+            },
+            {
+                "name": "y",
+                "type": 1,
+                "value": 0,
+                "variable name": "y"
+            },
+            {
+                "name": "z",
+                "type": 1,
+                "value": 0,
+                "variable name": "z"
+            },
+            {
+                "name": "x world",
+                "type": 1,
+                "value": 0,
+                "variable name": ""
+            },
+            {
+                "name": "y world",
+                "type": 1,
+                "value": 0,
+                "variable name": ""
+            },
+            {
+                "name": "z world",
+                "type": 1,
+                "value": 0,
+                "variable name": ""
+            }
+        ],
+        "selected": 0
+    },
+    "time": "31/01/2018 11:32:51"
+}

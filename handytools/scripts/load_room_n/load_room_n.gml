@@ -58,7 +58,7 @@ switch( _n ) {
 
 var _str = file_open_string( "rooms/room " + string( global.game_room ) + ".json" );
 if ( _str == undefined ) return false;
-room_decode( _str );
+room_decode_old( _str );
 
 if ( global.game_room == 0 ) with( obj_door_spawn ) door_spawn_time = current_time + 800;
 

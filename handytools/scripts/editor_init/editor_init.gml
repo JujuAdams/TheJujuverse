@@ -11,4 +11,5 @@ if ( EDITOR_ON ) {
 }
 
 global.editor_object_properties_map = editor_object_properties();
-global.editor_scene_graph = editor_new_node( UD, "Root" );
+global.editor_scene_graph = editor_new_node( UD, UD, "Root" );
+global.editor_scene_clipboard = editor_new_node( UD, UD, "Clipboard" );

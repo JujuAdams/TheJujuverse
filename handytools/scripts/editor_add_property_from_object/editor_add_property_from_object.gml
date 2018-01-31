@@ -16,7 +16,7 @@ var _size = ds_list_size( _src_list );
 for( var _i = 0; _i < _size; _i++ ) {
     
     var _dest_map = ds_map_create();
-    ds_list_add_map( _dest_list, _dest_map );
+    tr_list_add_map( _dest_list, _dest_map );
     
     var _src_map = _src_list[| _i ];
     for( var _key = ds_map_find_first( _src_map ); _key != undefined; _key = ds_map_find_next( _src_map, _key ) ) _dest_map[? _key ] = _src_map[? _key ];

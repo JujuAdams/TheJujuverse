@@ -9,6 +9,7 @@ scene_window_width = 280;
 scene_window_height = 700;
 scene_window_state[0] = false;
 scene_window_state[1] = false;
+scene_has_cut = false;
 
 
 show_hints = true;
