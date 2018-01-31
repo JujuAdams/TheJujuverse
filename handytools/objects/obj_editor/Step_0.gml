@@ -169,185 +169,38 @@ if ( scene_window_show ) {
 	}
     
 	imguigml_separator();
-    
-	/*if ( _focus_count <= 1 ) {
             
-        if ( imguigml_tree_node_ex( "Children", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
-        	imguigml_tree_push( "Children" );
-        	imguigml_begin_child( "child", 0, 120, false,
-        	                        EImGui_WindowFlags.NoTitleBar | 
-        	                        EImGui_WindowFlags.NoResize |
-        	                        EImGui_WindowFlags.NoMove |
-        	                        EImGui_WindowFlags.NoCollapse );
-                                    
-            if ( _focus_count == 0 ) {
-    			imguigml_text( "No node selected" );
-            } else {
-        	    #region Children
-                var _root_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+    if ( imguigml_tree_node_ex( "Operations", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
+    	#region Operations
+        imguigml_begin_child( "child", 0, 120, false,
+        	                    EImGui_WindowFlags.NoTitleBar | 
+        	                    EImGui_WindowFlags.NoResize |
+        	                    EImGui_WindowFlags.NoMove |
+        	                    EImGui_WindowFlags.NoCollapse );
             
-        		if ( imguigml_button( "+ new child" ) ) editor_new_node( _root_map, UD, concat( "New Child ", irandom( 999999 ) ) );
-        		//if ( imguigml_button( "select all" ) ) {}
-			
-        		var _list = _root_map[? "children" ];
-        		var _size = ds_list_size( _list );
-                                
-        		if ( _size <= 0 ) {
-        			if ( imguigml_tree_node_ex( "<empty>", EImGui_TreeNodeFlags.Leaf ) ) imguigml_tree_pop();
-        		} else {
-        			var _delete = undefined;
-        			for( var _i = 0; _i < _size; _i++ ) {
-        				var _map = _list[| _i ];
-        				if ( imguigml_button( concat( "X ", editor_property_value( _map, "name" ) ) ) ) _delete = _i;
-        			}
-        			if ( _delete != undefined ) ds_list_delete( _list, _delete );
-        		}
-        	    #endregion
+        if ( _focus_count == 1 ) {
+                
+            var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+            if ( imguigml_button( "New child" ) ) editor_new_node( _map, UD, concat( "New Child ", irandom( 999999 ) ) );
+            if ( imguigml_button( "Duplicate" ) ) {
+                var _new_map = tr_map_create();
+                ds_map_copy( _new_map, _map );
+                var _parent_map = _map[? "parent" ];
+                var _parent_list = _parent_map[? "children" ];
+                tr_list_add_map( _parent_list, _new_map );
             }
-            
-        	imguigml_end_child();
-        	imguigml_tree_pop();
-            
+            imguigml_spacing();
+                
         }
             
-    } else*/ {
-            
-        if ( imguigml_tree_node_ex( "Operations", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
-            
-        	imguigml_begin_child( "child", 0, 120, false,
-        	                        EImGui_WindowFlags.NoTitleBar | 
-        	                        EImGui_WindowFlags.NoResize |
-        	                        EImGui_WindowFlags.NoMove |
-        	                        EImGui_WindowFlags.NoCollapse );
-    	    #region Operations
-            
-        	if ( _focus_count == 1 ) {
+        #region Cut And Paste
+        if ( !scene_has_cut ) {
                 
-                var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
-                if ( imguigml_button( "New child" ) ) editor_new_node( _map, UD, concat( "New Child ", irandom( 999999 ) ) );
-                if ( imguigml_button( "Duplicate" ) ) {
-                    var _new_map = tr_map_create();
-                    ds_map_copy( _new_map, _map );
-                    var _parent_map = _map[? "parent" ];
-                    var _parent_list = _parent_map[? "children" ];
-                    tr_list_add_map( _parent_list, _new_map );
-                }
-                imguigml_spacing();
+        	if ( imguigml_button( "Cut" ) ) {
                 
-            }
-            
-            #region Cut And Paste
-            if ( !scene_has_cut ) {
-                
-        		if ( imguigml_button( "Cut" ) ) {
-                
-                    scene_has_cut = true;
+                scene_has_cut = true;
                     
-                    var _clipboard_list = global.editor_scene_clipboard[? "children" ];
-        			var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
-        			repeat( _focus_count ) {
-                    
-                        var _parent_map = _map[? "parent" ];
-                        var _parent_list = _parent_map[? "children" ];
-                    
-                        var _size = ds_list_size( _parent_list );
-                        for( var _i = 0; _i < _size; _i++ ) {
-                        
-                            if ( _parent_list[| _i ] == _map ) {
-                                _parent_list[| _i ] = undefined;
-                                ds_list_delete( _parent_list, _i );
-                                break;
-                            }
-                        
-                        }
-                        
-                        //Move this map to the clipboard
-                        _map[? "selected" ] = false;
-                        _map[? "parent"   ] = global.editor_scene_clipboard;
-                        tr_list_add_map( _clipboard_list, _map );
-                        
-                        _map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _map );
-                    }
-                
-                }
-                
-            } else {
-                
                 var _clipboard_list = global.editor_scene_clipboard[? "children" ];
-                var _clipboard_size = ds_list_size( _clipboard_list );
-                
-        		if ( _focus_count == 1 ) {
-                    if ( imguigml_button( "Paste" ) ) {
-                        
-                        scene_has_cut = false;
-                        
-                        //Transfer from the clipboard to the new host map
-                        var _parent_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
-                        var _parent_list = _parent_map[? "children" ];
-                        
-                        for( var _i = 0; _i < _clipboard_size; _i++ ) {
-                            var _map = _clipboard_list[| _i ];
-                            _map[? "parent" ] = _parent_map;
-                            tr_list_add_map( _parent_list, _map );
-                        }
-                        
-                        //Wipe the clipboard
-                        for( var _i = 0; _i < _clipboard_size; _i++ ) _clipboard_list[| _i ] = undefined;
-                        ds_list_clear( _clipboard_list );
-                        _clipboard_size = 0;
-                        
-                    }
-                }
-                
-                //Draw contents of the clipboard
-                for( var _i = 0; _i < _clipboard_size; _i++ ) {
-                    var _map = _clipboard_list[| _i ];
-                    imguigml_text( editor_property_value( _map, "name" ) );
-                }
-                
-            }
-            #endregion
-            
-            imguigml_spacing();
-            
-        	if ( _focus_count == 1 ) {
-                if ( !scene_has_cut ) {
-                    #region Move
-                    var _move = false;
-                    var _move_offset = 0;
-                    if ( imguigml_button( "Move up"     ) ) { _move = true; _move_offset = -1;            }
-                    if ( imguigml_button( "Move down"   ) ) { _move = true; _move_offset =  1;            }
-                    if ( imguigml_button( "Move top"    ) ) { _move = true; _move_offset = VERY_NEGATIVE; }
-                    if ( imguigml_button( "Move bottom" ) ) { _move = true; _move_offset = VERY_LARGE;    }
-                
-                    if ( _move ) {
-                        var _parent_map = _map[? "parent" ];
-                        var _parent_list = _parent_map[? "children" ];
-                    
-                        var _size = ds_list_size( _parent_list );
-                        for( var _i = 0; _i < _size; _i++ ) {
-                        
-                            if ( _parent_list[| _i ] == _map ) {
-                                _parent_list[| _i ] = undefined;
-                                ds_list_delete( _parent_list, _i );
-                                break;
-                            }
-                        
-                        }
-                    
-                        _i = clamp( _i+_move_offset, 0, _size-1 );
-                        ds_list_insert( _parent_list, _i, _map );
-                        ds_list_mark_as_map( _parent_list, _i );
-                    }
-                    #endregion
-                }
-            }
-            
-            imguigml_spacing();
-            
-            #region Delete
-            if ( imguigml_button( "Delete" ) ) {
-                
         		var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
         		repeat( _focus_count ) {
                     
@@ -358,23 +211,124 @@ if ( scene_window_show ) {
                     for( var _i = 0; _i < _size; _i++ ) {
                         
                         if ( _parent_list[| _i ] == _map ) {
+                            _parent_list[| _i ] = undefined;
                             ds_list_delete( _parent_list, _i );
                             break;
                         }
                         
                     }
                         
+                    //Move this map to the clipboard
+                    _map[? "selected" ] = false;
+                    _map[? "parent"   ] = global.editor_scene_clipboard;
+                    tr_list_add_map( _clipboard_list, _map );
+                        
                     _map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _map );
                 }
+                
             }
+                
+        } else {
+                
+            var _clipboard_list = global.editor_scene_clipboard[? "children" ];
+            var _clipboard_size = ds_list_size( _clipboard_list );
+                
+        	if ( _focus_count == 1 ) {
+                if ( imguigml_button( "Paste" ) ) {
+                        
+                    scene_has_cut = false;
+                        
+                    //Transfer from the clipboard to the new host map
+                    var _parent_map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+                    var _parent_list = _parent_map[? "children" ];
+                        
+                    for( var _i = 0; _i < _clipboard_size; _i++ ) {
+                        var _map = _clipboard_list[| _i ];
+                        _map[? "parent" ] = _parent_map;
+                        tr_list_add_map( _parent_list, _map );
+                    }
+                        
+                    //Wipe the clipboard
+                    for( var _i = 0; _i < _clipboard_size; _i++ ) _clipboard_list[| _i ] = undefined;
+                    ds_list_clear( _clipboard_list );
+                    _clipboard_size = 0;
+                        
+                }
+            }
+                
+            //Draw contents of the clipboard
+            for( var _i = 0; _i < _clipboard_size; _i++ ) {
+                var _map = _clipboard_list[| _i ];
+                imguigml_text( editor_property_value( _map, "name" ) );
+            }
+                
+        }
+        #endregion
             
-    	    #endregion
+        imguigml_spacing();
             
-            imguigml_end_child();
-            imguigml_tree_pop();
-            
+        if ( _focus_count == 1 ) && ( !scene_has_cut ) {
+            #region Move
+            var _move = false;
+            var _move_offset = 0;
+            if ( imguigml_button( "Move up"     ) ) { _move = true; _move_offset = -1;            }
+            if ( imguigml_button( "Move down"   ) ) { _move = true; _move_offset =  1;            }
+            if ( imguigml_button( "Move top"    ) ) { _move = true; _move_offset = VERY_NEGATIVE; }
+            if ( imguigml_button( "Move bottom" ) ) { _move = true; _move_offset = VERY_LARGE;    }
+                
+            if ( _move ) {
+                var _parent_map = _map[? "parent" ];
+                var _parent_list = _parent_map[? "children" ];
+                    
+                var _size = ds_list_size( _parent_list );
+                for( var _i = 0; _i < _size; _i++ ) {
+                        
+                    if ( _parent_list[| _i ] == _map ) {
+                        _parent_list[| _i ] = undefined;
+                        ds_list_delete( _parent_list, _i );
+                        break;
+                    }
+                        
+                }
+                    
+                _i = clamp( _i+_move_offset, 0, _size-1 );
+                ds_list_insert( _parent_list, _i, _map );
+                ds_list_mark_as_map( _parent_list, _i );
+            }
+            #endregion
         }
             
+        imguigml_spacing();
+            
+        #region Delete
+        if ( imguigml_button( "Delete" ) ) {
+                
+        	var _map = ds_map_find_first( global.imguigml_build_tree_from_json_focus_map );
+        	repeat( _focus_count ) {
+                    
+                var _parent_map = _map[? "parent" ];
+                var _parent_list = _parent_map[? "children" ];
+                    
+                var _size = ds_list_size( _parent_list );
+                for( var _i = 0; _i < _size; _i++ ) {
+                        
+                    if ( _parent_list[| _i ] == _map ) {
+                        ds_list_delete( _parent_list, _i );
+                        break;
+                    }
+                        
+                }
+                        
+                _map = ds_map_find_next( global.imguigml_build_tree_from_json_focus_map, _map );
+            }
+        }
+            
+    	#endregion
+            
+        imguigml_end_child();
+        imguigml_tree_pop();
+            
+        #endregion
     }
     
     imguigml_end();

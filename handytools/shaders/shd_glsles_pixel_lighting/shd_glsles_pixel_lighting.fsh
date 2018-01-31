@@ -1,7 +1,8 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-varying vec4 v_vPosWS;
-varying vec4 v_vNormalWS;
+varying vec3 v_vPosVS;
+varying vec3 v_vNormalVS;
+varying mat4 v_mView;
 
 uniform vec4 u_vAmbientColour;
 uniform vec4 u_vForceColour;
@@ -22,27 +23,35 @@ uniform vec4 u_vLightColour5;
 uniform vec4 u_vLightColour6;
 uniform vec4 u_vLightColour7;
 
-float DoLight( vec3 ws_pos, vec3 ws_normal, vec4 posrange ) {
-    vec3 delta = ws_pos - posrange.xyz;
+float DoLight( vec4 posrange ) {
+    vec3 delta = (v_mView*vec4( posrange.xyz, 1. )).xyz - v_vPosVS;
     float dist = length( delta );
-    return max( 0.0, dot( ws_normal, delta/dist ) ) * clamp( ( 1.0 - ( dist / posrange.w ) ), 0.0, 1.0 );
+    return max( 0., dot( v_vNormalVS, delta/dist ) ) * clamp( 1. - dist/posrange.w, 0., 1. );
 }
 
-vec3 DoLightingCustom( vec3 ambient_colour, vec3 ws_pos, vec3 ws_norm ) {
-    vec3 colour = ambient_colour;
-    colour += u_vLightColour0.a * u_vLightColour0.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange0 );
-    colour += u_vLightColour1.a * u_vLightColour1.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange1 );
-    colour += u_vLightColour2.a * u_vLightColour2.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange2 );
-    colour += u_vLightColour3.a * u_vLightColour3.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange3 );
-    colour += u_vLightColour4.a * u_vLightColour4.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange4 );
-    colour += u_vLightColour5.a * u_vLightColour5.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange5 );
-    colour += u_vLightColour6.a * u_vLightColour6.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange6 );
-    colour += u_vLightColour7.a * u_vLightColour7.rgb * DoLight( ws_pos, ws_norm, u_vLightPosRange7 );
-    return min( colour, vec3(1.0) );
+vec3 DoLightingCustom() {
+    vec3 colour  = u_vLightColour0.a * u_vLightColour0.rgb * DoLight( u_vLightPosRange0 );
+         colour += u_vLightColour1.a * u_vLightColour1.rgb * DoLight( u_vLightPosRange1 );
+         colour += u_vLightColour2.a * u_vLightColour2.rgb * DoLight( u_vLightPosRange2 );
+         colour += u_vLightColour3.a * u_vLightColour3.rgb * DoLight( u_vLightPosRange3 );
+         colour += u_vLightColour4.a * u_vLightColour4.rgb * DoLight( u_vLightPosRange4 );
+         colour += u_vLightColour5.a * u_vLightColour5.rgb * DoLight( u_vLightPosRange5 );
+         colour += u_vLightColour6.a * u_vLightColour6.rgb * DoLight( u_vLightPosRange6 );
+         colour += u_vLightColour7.a * u_vLightColour7.rgb * DoLight( u_vLightPosRange7 );
+    return min( colour, vec3(1.) );
 }
 
 void main() {
-    gl_FragColor  = vec4( DoLightingCustom( u_vAmbientColour.rgb, v_vPosWS.xyz, v_vNormalWS.xyz ), 1.0 );
-    gl_FragColor  = mix( gl_FragColor, vec4( u_vForceColour.rgb, 1.0 ), u_vForceColour.a );
-    gl_FragColor *= v_vColour*texture2D( gm_BaseTexture, v_vTexcoord );
+    
+    vec3 eye       = normalize( -v_vPosVS );
+    vec3 light     = normalize( (v_mView*vec4( u_vLightPosRange0.xyz, 1. )).xyz - v_vPosVS );
+    vec3 reflected = reflect( -light, v_vNormalVS );
+    
+    gl_FragColor      = vec4( u_vAmbientColour.rgb, 1. );
+    gl_FragColor.rgb += DoLightingCustom();
+    gl_FragColor.rgb += pow( max( dot( reflected, eye ), 0. ), 1. );
+    
+    gl_FragColor   = mix( gl_FragColor, vec4( u_vForceColour.rgb, 1. ), u_vForceColour.a );
+    gl_FragColor  *= v_vColour*texture2D( gm_BaseTexture, v_vTexcoord );
+    
 }
