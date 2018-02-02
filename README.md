@@ -1,5 +1,6 @@
 # Handytools (v0.7.0)
 ![Handytools logo](https://raw.githubusercontent.com/GameMakerDiscord/handytools/master/LOGO_small.png)
+
 A series of libraries and tools to assist with game creation in Game Maker Studio 2.
 
 ## Controls
