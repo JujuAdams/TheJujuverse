@@ -10,6 +10,7 @@ if ( _obj_map != undefined ) {
     //Add to quick name lookup map
     var _name = _obj_map[? "name" ];
     global.obj_vertex_buffer_map[? _name ] = _vertex_buffer;
+    global.obj_texture_map[? _name ] = _obj_map[? "texture" ];
     
     //Add to global .obj map
     tr_map_add_map( global.obj_map, _name, _obj_map );

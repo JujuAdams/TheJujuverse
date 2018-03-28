@@ -3,8 +3,15 @@
 /// @param [value...]
 
 if ( TRACE_ON ) {
-    var _str = CURRENT_TIME_PADDED + TRACE_DIV + object_get_name( object_index ) + ":" + string( id ) + TRACE_DIV;
+    var _str = object_get_name( object_index ) + ":" + string( id ) + TRACE_DIV;
     for( var _i = 0; _i < argument_count; _i++ ) _str += string_ext( argument[_i] );
-    __trace_master( _str );
+    
+    if ( TRACE_CACHE_MESSAGES ) {
+        var _time = global.trace_cache_map[? _str ];
+        if ( ( _time != undefined ) && !time_has_passed( _time, TRACE_CACHE_TIMEOUT ) ) return "";
+        global.trace_cache_map[? _str ] = current_time;
+    }
+    
+    __trace_master( CURRENT_TIME_PADDED + TRACE_DIV + _str );
     return _str;
 }

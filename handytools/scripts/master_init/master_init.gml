@@ -32,6 +32,7 @@ global.vbf_cone = vertex_buffer_build_cone( -1, -1, -1,
 
 trace_f( "Initialising services" );
 
+     trace_init();
    tracker_init();
   imguigml_init();
    control_init();

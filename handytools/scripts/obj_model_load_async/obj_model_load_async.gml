@@ -18,6 +18,8 @@ var _offset_x     = argument5;
 var _offset_y     = argument6;
 var _offset_z     = argument7;
 var _scale        = argument8;
+var _sprite       = argument9;
+var _image        = argument10;
 
 var _buffer = buffer_create( 1024*1024, buffer_fast, 1 );
 var _id = buffer_load_async( _buffer, _filename, 0, -1 );
@@ -35,6 +37,9 @@ _map[? "scale"         ] = _scale;
 _map[? "vertex buffer" ] = undefined; //Set in obj_model_load_async_process()
 _map[? "buffer"        ] = _buffer;
 _map[? "load id"       ] = _id;
+_map[? "sprite"        ] = _sprite;
+_map[? "image"         ] = _image;
+_map[? "texture"       ] = sprite_get_texture( _sprite, _image );
 
 tr_map_add_map( global.obj_load_map, _id, _map );
 return _id;

@@ -18,6 +18,14 @@ var _offset_y      = _map[? "offset y"     ];
 var _offset_z      = _map[? "offset z"     ];
 var _scale         = _map[? "scale"        ];
 var _buffer        = _map[? "buffer"       ];
+var _sprite        = _map[? "sprite"       ];
+var _image         = _map[? "image"        ];
+
+var _uvs = sprite_get_uvs( _sprite, _image );
+var _sprite_uv_l = _uvs[0];
+var _sprite_uv_t = _uvs[1];
+var _sprite_uv_r = _uvs[2];
+var _sprite_uv_b = _uvs[3];
 
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 
@@ -206,6 +214,9 @@ vertex_begin( _vbuff, _format );
             _ty = _texture_list[| _t_index+1 ];
             if ( _flip_UVs ) _ty = 1 - _ty;
         }
+        
+        var _tx = lerp( _sprite_uv_l, _sprite_uv_r, _tx );
+        var _ty = lerp( _sprite_uv_t, _sprite_uv_b, _ty );
         
         vertex_position_3d( _vbuff,   _vx, _vy, _vz );
         vertex_texcoord(    _vbuff,   _tx, _ty );
