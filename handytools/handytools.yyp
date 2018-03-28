@@ -6495,6 +6495,14 @@
             }
         },
         {
+            "Key": "d7b7d513-e86b-47e1-be05-5987423c2e92",
+            "Value": {
+                "id": "624bb1b3-a7af-430d-8600-dacfd029d070",
+                "resourcePath": "datafiles_yy\\models\\qubicle.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "d7b84028-74f9-4315-af60-84e14e22ec77",
             "Value": {
                 "id": "f60d3b67-a1fc-4191-9e5b-09eca12fe9c1",

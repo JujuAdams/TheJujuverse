@@ -6,6 +6,10 @@ if ( DEVELOPMENT ) {
 } else {
     z = 50;
 }
+if ( keyboard_check( ord( "J" ) ) ) {
+    instance_create_z( x, y, z, random( 360 ), obj_qubicle );
+    trace( "Deer count=", instance_number( obj_qubicle ), ", FPS=", fps );
+}
 
 if ( global.editor_fly ) {
     if ( control_get_on( 0, "state", "ascend"  ) ) z += 2 * _debug_factor;

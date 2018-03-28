@@ -21,11 +21,17 @@ var _buffer        = _map[? "buffer"       ];
 var _sprite        = _map[? "sprite"       ];
 var _image         = _map[? "image"        ];
 
-var _uvs = sprite_get_uvs( _sprite, _image );
-var _sprite_uv_l = _uvs[0];
-var _sprite_uv_t = _uvs[1];
-var _sprite_uv_r = _uvs[2];
-var _sprite_uv_b = _uvs[3];
+var _sprite_uv_l = 0;
+var _sprite_uv_t = 0;
+var _sprite_uv_r = 1;
+var _sprite_uv_b = 1;
+if ( _sprite != undefined ) {
+    var _uvs = sprite_get_uvs( _sprite, _image );
+    _sprite_uv_l = _uvs[0];
+    _sprite_uv_t = _uvs[1];
+    _sprite_uv_r = _uvs[2];
+    _sprite_uv_b = _uvs[3];
+}
 
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 
@@ -227,7 +233,7 @@ vertex_begin( _vbuff, _format );
 
 vertex_end( _vbuff );
 
-
+_map[? "triangles" ] = ds_list_size( _faces_list );
 
 tr_list_destroy( _vertex_list  );
 tr_list_destroy( _normal_list  );
@@ -241,7 +247,7 @@ if ( _delete_buffer ) {
 }
 
 _total_time = get_timer() - _total_time;
-//trace( _filename, "    total time=", _total_time );
+if ( DOTOBJ_VERBOSE_LOAD ) trace( QU, _name, QU, " loaded: ", _map[? "triangles" ], " tris in ", _total_time, "us (", _filename, ")" );
 global.dotobj_total_time += _total_time;
 
 return _vbuff;

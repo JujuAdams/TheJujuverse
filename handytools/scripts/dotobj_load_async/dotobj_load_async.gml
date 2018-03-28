@@ -23,6 +23,20 @@ var _scale        = argument8;
 var _sprite       = argument9;
 var _image        = argument10;
 
+if ( !is_real( _sprite ) ) || ( _sprite == "" ) {
+    
+    var _extension = filename_ext( _filename );
+    var _sprite_path = string_copy( _filename, 1, string_length( _filename ) - string_length( _extension ) ) + ".png";
+    
+    if ( file_exists( _sprite_path ) ) {
+        _sprite = sprite_add( _sprite_path, 1, false, false, 0, 0 );
+        if ( DOTOBJ_VERBOSE_LOAD ) trace( "Loaded ", _sprite_path, " for ", QU, _name, QU, " (", _filename, ")" );
+    } else {
+        if ( DOTOBJ_VERBOSE_LOAD ) trace( QU, _name, QU, " has no internal nor external texture (", _filename, ")" );
+    }
+    
+}
+
 var _buffer = buffer_create( 1024*1024, buffer_fast, 1 );
 var _id = buffer_load_async( _buffer, _filename, 0, -1 );
 
@@ -41,7 +55,8 @@ _map[? "buffer"        ] = _buffer;
 _map[? "load id"       ] = _id;
 _map[? "sprite"        ] = _sprite;
 _map[? "image"         ] = _image;
-_map[? "texture"       ] = sprite_get_texture( _sprite, _image );
+_map[? "texture"       ] = (_sprite != undefined)? sprite_get_texture( _sprite, _image ) : undefined;
+_map[? "triangles"     ] = undefined;
 
 tr_map_add_map( global.obj_load_map, _id, _map );
 return _id;
