@@ -6,7 +6,7 @@ if ( mouse_clicked ) {
         var _inst = tr_instance_create_z( x+0.5, y+0.5, z + random_range( -2.5, 7 ), 0, obj_shard );
         with( _inst ) {
             sprite = spr_tex_vase2;
-            model = choose( obj_model( "shard3" ), obj_model( "shard4" ) );
+            model = choose( dotobj_model( "shard3" ), dotobj_model( "shard4" ) );
             var _angle = random( 360 );
             var _v = random_range( 2, 3 );
             velocity_x = lengthdir_x( _v, _angle );

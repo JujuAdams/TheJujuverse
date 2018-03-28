@@ -21,7 +21,7 @@ trace( "Creating service instances" );
 resolution_start_service();
       grip_start_service();
     editor_start_service();
- obj_model_start_service();
+    dotobj_start_service();
   scribble_start_service();
 transition_start_service();
      jiffy_start_service();

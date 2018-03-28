@@ -18,7 +18,7 @@
         "881e6fd1-7e44-49ad-97db-be929a5092a2"
     ],
     "filterType": "GMScript",
-    "folderName": "objmodel",
+    "folderName": "dotobj",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

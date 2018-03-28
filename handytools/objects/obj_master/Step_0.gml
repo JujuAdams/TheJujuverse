@@ -36,14 +36,14 @@ switch( load_phase ) {
     case E_MASTER.AUDIO:
         if ( audio_group_is_loaded_all() ) {
             trace_f( "Audio groups loaded" );
-            obj_model_load_all_models();
+            dotobj_load_all_models();
             load_phase = E_MASTER.OBJ;
         }
     break;
     
     case E_MASTER.OBJ:
-        if ( !OBJMODEL_ON || ds_map_empty( global.obj_load_map ) ) {
-            if ( OBJMODEL_ON ) trace_f( ".obj models loaded, time taken=", global.obj_model_total_time );
+        if ( !DOTOBJ_ON || ds_map_empty( global.obj_load_map ) ) {
+            if ( DOTOBJ_ON ) trace_f( ".obj models loaded, time taken=", global.dotobj_total_time );
             trace_f( "--------------------", NL,
                      "   STARTING  GAME", NL,
                      "--------------------" );

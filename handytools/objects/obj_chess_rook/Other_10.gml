@@ -3,5 +3,5 @@ matrix_chain_rotate_x( -90 );
 matrix_chain_rotate_z( image_angle );
 matrix_chain_translate( x, y, z );
 matrix_chain_end( matrix_world );
-vertex_submit( obj_model( "chess_rook" ), pr_trianglelist, sprite_get_texture( spr_tex_chess_pink, 0 ) );
+vertex_submit( dotobj_model( "chess_rook" ), pr_trianglelist, sprite_get_texture( spr_tex_chess_pink, 0 ) );
 matrix_reset_world();

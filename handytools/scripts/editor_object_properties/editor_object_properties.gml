@@ -15,7 +15,7 @@ editor_object_add_property( obj_floor,    "sprite", E_EDITOR_PROPERTY.STATIC, sp
 
 //Basically all objects in the game have the same properties so we inherit from the player spawner
 editor_object_add_property( obj_player_spawn, "rotation", E_EDITOR_PROPERTY.FLOAT, 0, "image_angle" );
-editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_dummy_phone, obj_cube, obj_block,
+editor_object_copy_property( obj_player_spawn, [ obj_door_spawn, obj_phone, obj_dummy_phone, obj_cube, obj_block, obj_qubicle,
                                                  obj_chair, obj_table, obj_pedestal, obj_bottle, obj_cup, obj_couch, obj_bookshelf, obj_open_book,
                                                  obj_floor_lamp, obj_desk_lamp, obj_hanging_bulb,
                                                  obj_spiral1, obj_spiral1_ceiling, obj_spiral2, obj_spiral2_ceiling,

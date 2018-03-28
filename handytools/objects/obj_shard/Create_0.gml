@@ -14,4 +14,4 @@ rot_axis_y *= _d;
 rot_axis_z *= _d;
 
 sprite = spr_tex_white;
-model = obj_model( "shard1" );
+model = dotobj_model( "shard1" );

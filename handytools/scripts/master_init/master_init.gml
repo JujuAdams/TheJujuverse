@@ -46,7 +46,7 @@ trace_f( "Initialising services" );
 resolution_init();
       grip_init();
     editor_init();
- obj_model_init();
+    dotobj_init();
   scribble_init();
 transition_init();
      jiffy_init();

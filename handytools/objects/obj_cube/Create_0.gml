@@ -2,7 +2,7 @@ event_inherited();
 
 z = 0;
 /*
-var _mesh_array = vertex_buffer_triangle_array( obj_model( "cube" ) );
+var _mesh_array = vertex_buffer_triangle_array( dotobj_model( "cube" ) );
 
 var _px = 0.5;
 var _py = 0.5;

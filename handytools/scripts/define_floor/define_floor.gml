@@ -1,7 +1,7 @@
 ///define_floor( x1, y1, x2, y2, z, tile size, texture sprite )
 
-if ( !OBJMODEL_ON ) {
-    trace_error_q( false, "Can't build floor - turn OBJMODEL on" );
+if ( !DOTOBJ_ON ) {
+    trace_error_q( false, "Can't build floor - turn DOTOBJ on" );
     exit;
 }
 

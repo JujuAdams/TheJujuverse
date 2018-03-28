@@ -29,7 +29,7 @@
 #macro RESOLUTION_ON  false
 #macro GRIP_ON         true
 #macro EDITOR_ON       true
-#macro OBJMODEL_ON     true
+#macro DOTOBJ_ON       true
 #macro SCRIBBLE_ON     true
 #macro TRANSITION_ON   true
 #macro JIFFY_ON       false

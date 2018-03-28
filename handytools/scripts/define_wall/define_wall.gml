@@ -1,7 +1,7 @@
 ///define_wall( x1, y1, z1, x2, y2, z2, texture sprite )
 
-if ( !OBJMODEL_ON ) {
-    trace_error_q( false, "Can't build wall - turn OBJMODEL on" );
+if ( !DOTOBJ_ON ) {
+    trace_error_q( false, "Can't build wall - turn DOTOBJ on" );
     exit;
 }
 
