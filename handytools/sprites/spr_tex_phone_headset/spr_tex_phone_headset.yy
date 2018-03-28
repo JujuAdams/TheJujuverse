@@ -3,7 +3,7 @@
     "modelName": "GMSprite",
     "mvc": "1.12",
     "name": "spr_tex_phone_headset",
-    "For3D": true,
+    "For3D": false,
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 1023,
