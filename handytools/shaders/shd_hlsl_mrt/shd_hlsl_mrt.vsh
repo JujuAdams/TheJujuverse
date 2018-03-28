@@ -11,7 +11,7 @@ struct PS {
     float4 Colour     : COLOR0;
     float3 Normal     : NORMAL0;
     float4 PositionWS : POSITION1;
-    float3 NormalWS   : NORMAL1;
+    float3 NormalVS   : NORMAL1;
     float  Depth      : TEXCOORD1;
 };
 
@@ -25,6 +25,6 @@ PS main(VS In) {
     Out.Colour     = In.Colour;
     Out.Normal     = In.Normal;
     Out.PositionWS = mul( gm_Matrices[MATRIX_WORLD], In.Position );
-    Out.NormalWS   = normalize( mul( gm_Matrices[MATRIX_WORLD], float4( In.Normal, 0.0 ) ).xyz );
+    Out.NormalVS   = normalize( mul( gm_Matrices[MATRIX_WORLD_VIEW], float4( In.Normal, 0. ) ).xyz );
     return Out;
 }

@@ -4,7 +4,7 @@ struct PS {
     float4 Colour     : COLOR0;
     float3 Normal     : NORMAL0;
     float4 PositionWS : POSITION1;
-    float3 NormalWS   : NORMAL1;
+    float3 NormalVS   : NORMAL1;
     float  Depth      : TEXCOORD1;
 };
 
@@ -50,7 +50,7 @@ OUTPUT main(PS In) {
     OUTPUT Out;
     Out.Colour0 = float4( lerp( In.Colour.rgb * sample.rgb, u_vForceColour.rgb, u_vForceColour.a ), u_vClickIndex.x );
     Out.Colour1 = float4( DepthToRGB( In.Depth ), u_vForceColour.a );
-    Out.Colour2 = float4( .5 + .5*In.NormalWS, u_vClickIndex.y );
+    Out.Colour2 = float4( .5 + .5*In.NormalVS, u_vClickIndex.y );
     return Out;
     
 }

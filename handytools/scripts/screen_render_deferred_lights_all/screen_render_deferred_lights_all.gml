@@ -19,7 +19,8 @@ var _depth_surface  = grip_get_depth_surface( _camera );
 var _normal_surface = grip_get_normal_surface( _camera );
 var _tan_aspect_y   = -dtan( DEFAULT_FOV/2 );
 var _tan_aspect_x   = -_tan_aspect_y*grip_get_aspect( _camera );
-var _matrix_inverse = matrix_inverse( grip_get_view_matrix( _camera ) );
+var _matrix         = grip_get_view_matrix( _camera );
+var _matrix_inverse = matrix_inverse( _matrix );
 
 var _light_count    = instance_number( obj_light );
 
@@ -34,7 +35,8 @@ surface_set_target( _composite_surface );
         s_shader_float(           "u_fZFar"       , DEFAULT_Z_FAR   );
         s_shader_surface_sampler( "u_sDepth"      , _depth_surface  );
         s_shader_surface_sampler( "u_sNormal"     , _normal_surface );
-        s_shader_matrix(          "u_mInverseView", _matrix_inverse );
+        s_shader_matrix(          "u_mView"       , _matrix         );
+        //s_shader_matrix(          "u_mInverseView", _matrix_inverse );
         s_shader_float(           "u_vTanAspect"  , _tan_aspect_x,
                                                     _tan_aspect_y   );
     

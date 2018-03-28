@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "0b0f93d1-1372-4741-8bcc-a600c914f4c5",
+            "Value": {
+                "id": "6155b657-c245-41d2-86dc-99c93466c02c",
+                "resourcePath": "shaders\\shd_shadow_mapped_light__\\shd_shadow_mapped_light__.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "0b135248-9fa8-4997-b69c-72bab1d01bd4",
             "Value": {
                 "id": "93ee6d45-b065-4e67-8ec1-28f5b4e87370",
@@ -4228,6 +4236,14 @@
                 "id": "d263a63a-8766-4d75-8dde-6fd935d2edcb",
                 "resourcePath": "scripts\\screen_set_shader_lights_nearest\\screen_set_shader_lights_nearest.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8b6bebcc-b072-4082-9ccf-b72cce21ce4a",
+            "Value": {
+                "id": "6190bdc6-3b68-4f93-a343-8fb88bb7ea08",
+                "resourcePath": "shaders\\shd_deferred_lighting__\\shd_deferred_lighting__.yy",
+                "resourceType": "GMShader"
             }
         },
         {

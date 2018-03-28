@@ -38,10 +38,10 @@ void main() {
     vec2 adjTexcoord = ( v_vTexcoord - u_vSpriteUVs.xy ) / u_vSpriteUVs.zw;
     vec4 sample = texture2D( u_sDepth, adjTexcoord );
     float depth = RGBToDepth( sample.rgb );
-    vec3 viewPos = InferViewPosition( adjTexcoord, depth ).xyz;
-    vec3 normalVS = normalize( 2.*texture2D( u_sNormal, adjTexcoord ).rgb - 1. );
-    /*
+    vec3 worldPos = ( u_mInverseView * InferViewPosition( adjTexcoord, depth ) ).xyz;
+    
     ///Lots of branching.... :( :( :(
+    vec3 normalWS = normalize( 2.*texture2D( u_sNormal, adjTexcoord ).rgb - 1. );
 	float NdotL = max( 0., dot( normalWS, -normalize( u_vLightDir ) ) ); //Find the normal between the surface and the light source
     if ( NdotL > 0. ) { //If we're on a front-facing surface
         
@@ -66,5 +66,5 @@ void main() {
         }
         
     }
-    */
+    
 }
