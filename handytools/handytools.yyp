@@ -1919,6 +1919,14 @@
             }
         },
         {
+            "Key": "3b90d199-f5b3-40d4-a111-402ddda8ab72",
+            "Value": {
+                "id": "2290bebc-4788-498d-aaca-da174cafc201",
+                "resourcePath": "scripts\\vertex_submit_texture\\vertex_submit_texture.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3ccec204-7bbe-4b9b-9f74-033aad2df7fb",
             "Value": {
                 "id": "247a65d7-ad9c-40c7-ad86-04726380475e",
@@ -6935,6 +6943,14 @@
             }
         },
         {
+            "Key": "e535d634-a44d-408c-8c2e-2f2e89e2b67f",
+            "Value": {
+                "id": "8fa39262-634b-4847-a5d5-edf56b917d98",
+                "resourcePath": "scripts\\vertex_submit_sprite\\vertex_submit_sprite.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e541b1b4-adb6-4c50-adce-03d284632243",
             "Value": {
                 "id": "a4622655-b878-4cca-8ccb-419ad4eb3237",
@@ -7387,6 +7403,14 @@
             "Value": {
                 "id": "a7da0a93-fa79-490b-943c-bebae18a5775",
                 "resourcePath": "scripts\\s_shader_float\\s_shader_float.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f3382972-c6aa-4c01-936b-77005f2bcb65",
+            "Value": {
+                "id": "865bc32c-f5a8-4352-b4fc-9552d96627ef",
+                "resourcePath": "scripts\\vertex_submit_surface\\vertex_submit_surface.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8182,6 +8206,9 @@
         "4bdf52ae-20bd-47be-bdad-fc9ea5811b84",
         "ca40e4e7-9b5d-4b09-9372-e3a2cf1ba113",
         "acff9419-81ad-47ce-8d6a-b262246554fd",
+        "e535d634-a44d-408c-8c2e-2f2e89e2b67f",
+        "f3382972-c6aa-4c01-936b-77005f2bcb65",
+        "3b90d199-f5b3-40d4-a111-402ddda8ab72",
         "e85bffff-7d83-4775-b997-691d849cecd3",
         "8babd2e0-a3fa-4ba1-8b43-6f79afef3bd0",
         "4e668c57-b7ef-4b7a-97fa-13579ed4b7c4",

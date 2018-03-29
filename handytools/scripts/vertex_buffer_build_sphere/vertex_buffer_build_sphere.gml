@@ -17,6 +17,10 @@ var _z2      = argument5;
 var _hrepeat = argument6;
 var _vrepeat = argument7;
 var _steps   = argument8;
+var _uv_l    = argument9;
+var _uv_t    = argument10;
+var _uv_r    = argument11;
+var _uv_b    = argument12;
 
 _steps = clamp( 3, 128, _steps );
 var _rows = 0.5*_steps + 0.5;
@@ -78,13 +82,13 @@ for( var _j = 0; _j < _rows; _j++ ) {
                                      c_white,                     1,
                                 _rd2*_cc[_i],          _rd2*_ss[_i],         _rh2 ];
         
-        vertex_position_3d( _vbuff, _prev_a[0], _prev_a[1], _prev_a[2] ); vertex_texcoord( _vbuff, _prev_a[3], _prev_a[4] ); vertex_colour( _vbuff, _prev_a[5], _prev_a[6] ); vertex_normal( _vbuff, _prev_a[7], _prev_a[8], _prev_a[9] );
-        vertex_position_3d( _vbuff, _prev_b[0], _prev_b[1], _prev_b[2] ); vertex_texcoord( _vbuff, _prev_b[3], _prev_b[4] ); vertex_colour( _vbuff, _prev_b[5], _prev_b[6] ); vertex_normal( _vbuff, _prev_b[7], _prev_b[8], _prev_b[9] );
-        vertex_position_3d( _vbuff, _this_a[0], _this_a[1], _this_a[2] ); vertex_texcoord( _vbuff, _this_a[3], _this_a[4] ); vertex_colour( _vbuff, _this_a[5], _this_a[6] ); vertex_normal( _vbuff, _this_a[7], _this_a[8], _this_a[9] );
+        vertex_position_3d( _vbuff, _prev_a[0], _prev_a[1], _prev_a[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _prev_a[3] ), lerp( _uv_t, _uv_b, _prev_a[4] ) ); vertex_colour( _vbuff, _prev_a[5], _prev_a[6] ); vertex_normal( _vbuff, _prev_a[7], _prev_a[8], _prev_a[9] );
+        vertex_position_3d( _vbuff, _prev_b[0], _prev_b[1], _prev_b[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _prev_b[3] ), lerp( _uv_t, _uv_b, _prev_b[4] ) ); vertex_colour( _vbuff, _prev_b[5], _prev_b[6] ); vertex_normal( _vbuff, _prev_b[7], _prev_b[8], _prev_b[9] );
+        vertex_position_3d( _vbuff, _this_a[0], _this_a[1], _this_a[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _this_a[3] ), lerp( _uv_t, _uv_b, _this_a[4] ) ); vertex_colour( _vbuff, _this_a[5], _this_a[6] ); vertex_normal( _vbuff, _this_a[7], _this_a[8], _this_a[9] );
         
-        vertex_position_3d( _vbuff, _prev_b[0], _prev_b[1], _prev_b[2] ); vertex_texcoord( _vbuff, _prev_b[3], _prev_b[4] ); vertex_colour( _vbuff, _prev_b[5], _prev_b[6] ); vertex_normal( _vbuff, _prev_b[7], _prev_b[8], _prev_b[9] );
-        vertex_position_3d( _vbuff, _this_b[0], _this_b[1], _this_b[2] ); vertex_texcoord( _vbuff, _this_b[3], _this_b[4] ); vertex_colour( _vbuff, _this_b[5], _this_b[6] ); vertex_normal( _vbuff, _this_b[7], _this_b[8], _this_b[9] );
-        vertex_position_3d( _vbuff, _this_a[0], _this_a[1], _this_a[2] ); vertex_texcoord( _vbuff, _this_a[3], _this_a[4] ); vertex_colour( _vbuff, _this_a[5], _this_a[6] ); vertex_normal( _vbuff, _this_a[7], _this_a[8], _this_a[9] );
+        vertex_position_3d( _vbuff, _prev_b[0], _prev_b[1], _prev_b[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _prev_b[3] ), lerp( _uv_t, _uv_b, _prev_b[4] ) ); vertex_colour( _vbuff, _prev_b[5], _prev_b[6] ); vertex_normal( _vbuff, _prev_b[7], _prev_b[8], _prev_b[9] );
+        vertex_position_3d( _vbuff, _this_b[0], _this_b[1], _this_b[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _this_b[3] ), lerp( _uv_t, _uv_b, _this_b[4] ) ); vertex_colour( _vbuff, _this_b[5], _this_b[6] ); vertex_normal( _vbuff, _this_b[7], _this_b[8], _this_b[9] );
+        vertex_position_3d( _vbuff, _this_a[0], _this_a[1], _this_a[2] ); vertex_texcoord( _vbuff, lerp( _uv_l, _uv_r, _this_a[3] ), lerp( _uv_t, _uv_b, _this_a[4] ) ); vertex_colour( _vbuff, _this_a[5], _this_a[6] ); vertex_normal( _vbuff, _this_a[7], _this_a[8], _this_a[9] );
         
     }
     

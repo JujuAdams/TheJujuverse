@@ -7,6 +7,6 @@ matrix_chain_begin();
 matrix_chain_rotate_z( image_angle );
 matrix_chain_translate( x1 + swell_x, y1 + swell_y, z );
 matrix_chain_end( matrix_world );
-vertex_submit( vbf_wall, pr_trianglelist, texture );
+vertex_submit_texture( vbf_wall, texture );
 
 mouse_active_reset_colour();

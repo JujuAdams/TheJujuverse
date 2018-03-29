@@ -21,14 +21,20 @@ vertex_format_add_texcoord(); //8
 vertex_format_add_colour();   //4 = 20
 global.vft_simple_2d = vertex_format_end();
 
+var _uvs = sprite_get_uvs( DEFAULT_TEXTURE_SPRITE, 0 );
 global.vbf_sphere = vertex_buffer_build_sphere( -1, -1, -1,
                                                  1,  1,  1,
-                                                 1,  1, 16 );
+                                                 1,  1, 16,
+                                                 _uvs[0], _uvs[1],
+                                                 _uvs[2], _uvs[3] );
 
+var _uvs = sprite_get_uvs( DEFAULT_TEXTURE_SPRITE, 0 );
 global.vbf_cone = vertex_buffer_build_cone( -1, -1, -1,
                                              1,  1,  1,
                                              16, 16,
-                                             true, 24 );
+                                             true, 24,
+                                             _uvs[0], _uvs[1],
+                                             _uvs[2], _uvs[3] );
 
 trace_f( "Initialising services" );
 

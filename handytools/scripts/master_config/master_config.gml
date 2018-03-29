@@ -57,6 +57,7 @@
 #macro DEFAULT_APP_SURF_H DEFAULT_WINDOW_HEIGHT
 #macro DEFAULT_WINDOW_X 0.5*( display_get_width()  - DEFAULT_WINDOW_WIDTH  )
 #macro DEFAULT_WINDOW_Y 0.5*( display_get_height() - DEFAULT_WINDOW_HEIGHT )
+#macro DEFAULT_TEXTURE_SPRITE spr_tex_white
 
 //3d
 #macro DEFAULT_FOV 50
