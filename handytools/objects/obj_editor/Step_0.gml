@@ -66,7 +66,7 @@ if ( scene_window_show ) {
 	if ( imguigml_button( "Deselect all" ) ) ds_map_clear( global.imguigml_build_tree_from_json_focus_map );
     imguigml_separator();
     
-    imguigml_begin_child( "child", 0, 240, false,
+    imguigml_begin_child( "child", 0, 0.50*( scene_window_height - 130 ), false,
                             EImGui_WindowFlags.NoTitleBar | 
                             EImGui_WindowFlags.NoResize |
                             EImGui_WindowFlags.NoMove |
@@ -80,7 +80,7 @@ if ( scene_window_show ) {
     imguigml_separator();
 	
 	if ( imguigml_tree_node_ex( "Properties", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
-        imguigml_begin_child( "child", 0, 200, false,
+        imguigml_begin_child( "child", 0, 0.25*( scene_window_height - 130 ), false,
                                 EImGui_WindowFlags.NoTitleBar | 
                                 EImGui_WindowFlags.NoResize |
                                 EImGui_WindowFlags.NoMove |
@@ -172,7 +172,7 @@ if ( scene_window_show ) {
             
     if ( imguigml_tree_node_ex( "Operations", EImGui_TreeNodeFlags.Framed | EImGui_TreeNodeFlags.DefaultOpen ) ) {
     	#region Operations
-        imguigml_begin_child( "child", 0, 120, false,
+        imguigml_begin_child( "child", 0, 0.25*( scene_window_height - 130 ), false,
         	                    EImGui_WindowFlags.NoTitleBar | 
         	                    EImGui_WindowFlags.NoResize |
         	                    EImGui_WindowFlags.NoMove |
@@ -629,7 +629,7 @@ if ( window_show ) {
                 imguigml_columns( 2, "Columns", true );
                 
                 imguigml_new_line();
-                imguigml_image( surface_get_texture( preview_surface ), 400, 400 );
+                imguigml_image( surface_get_texture( preview_surface ), preview_surface_size, preview_surface_size );
                 if ( imguigml_button( "Deselect placement object" ) ) selected_object = undefined;
                 imguigml_next_column();
                 
@@ -655,7 +655,7 @@ if ( window_show ) {
                 }
                 imguigml_end_child( "child" );
                 
-                imguigml_set_column_width( 0, 420 );
+                imguigml_set_column_width( 0, preview_surface_size + 20 );
             
             #endregion
             break;

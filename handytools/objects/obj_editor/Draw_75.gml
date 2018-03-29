@@ -127,7 +127,8 @@ if ( ( _object != undefined ) && instance_exists( _instance ) ) {
     gpu_set_ztestenable( false );
     gpu_set_cullmode( global.screen_do_culling? cull_counterclockwise : cull_noculling );
     draw_set_lighting( false );
-
+    
+    matrix_reset_world();
     matrix_set( matrix_view, _old_view );
     matrix_set( matrix_projection, _old_proj );
 

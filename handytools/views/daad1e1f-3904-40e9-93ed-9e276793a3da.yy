@@ -18,7 +18,7 @@
         "5ed31b58-5a95-423c-b4be-9ab21e0cccba"
     ],
     "filterType": "GMScript",
-    "folderName": "additional config",
+    "folderName": "additional",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
