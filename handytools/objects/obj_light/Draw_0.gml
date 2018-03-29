@@ -4,10 +4,10 @@ screen_click_handle_fog( global.mirror_render? 128 : 0 );
 
 s_shader_rgba( "u_vForceColour", colour, 1 );
 
-var _m = matrix_build( 0, 0, 0,   0, 0, 0,   2+range/100, 2+range/100, 2+range/100 );
-_m = matrix_multiply( _m, matrix_build( x, y, z,   0, 0, 0,   1, 1, 1 ) );
-matrix_set_world( _m );
+matrix_chain_begin();
+matrix_chain_scale( 2+range/100, 2+range/100, 2+range/100 );
+matrix_chain_translate( x, y, z );
+matrix_chain_end( matrix_world );
 vertex_submit( global.vbf_sphere, pr_trianglelist, sprite_get_texture( spr_tex_white, 0 ) );
-matrix_reset_world();
 
 s_shader_rgba( "u_vForceColour", c_white, 0 );

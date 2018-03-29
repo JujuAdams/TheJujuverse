@@ -4,4 +4,3 @@ matrix_chain_rotate_z( image_angle );
 matrix_chain_translate( x, y, z );
 matrix_chain_end( matrix_world );
 dotobj_submit( "rope_pole" );
-matrix_reset_world();

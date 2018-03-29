@@ -1,4 +1,5 @@
 s_shader_end();
+matrix_reset_world();
 gpu_set_ztestenable( false );
 gpu_set_zwriteenable( false );
 gpu_set_ztestenable( false );

@@ -11,5 +11,3 @@
     matrix_chain_end( matrix_world );
     vertex_submit( collision_model, pr_trianglelist, sprite_get_texture( spr_tex_white, 0 ) );
 }*/
-
-matrix_reset_world();

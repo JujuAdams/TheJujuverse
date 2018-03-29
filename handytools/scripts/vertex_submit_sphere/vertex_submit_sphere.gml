@@ -15,4 +15,3 @@ matrix_chain_scale( _scale, _scale, _scale );
 matrix_chain_translate( _x, _y, _z );
 matrix_chain_end( matrix_world );
 vertex_submit( global.vbf_sphere, pr_trianglelist, _texture );
-matrix_reset_world();

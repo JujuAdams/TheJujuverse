@@ -14,7 +14,6 @@ if ( !global.screen_click_render ) {
     matrix_chain_translate( x + swell_x, y + swell_y, z );
     matrix_chain_end( matrix_world );
     vertex_submit( mirror_model, pr_trianglestrip, surface_get_texture( grip_get_surface( concat( "mirror", mirror_index ) ) ) );
-    matrix_reset_world();
     
     s_shader_begin( grip_get_shader( grip_current() ) );
     

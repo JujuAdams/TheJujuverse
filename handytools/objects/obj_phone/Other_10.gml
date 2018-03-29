@@ -23,4 +23,3 @@ if ( global.game_room != 6 ) matrix_chain_translate( 0, 0, global.game_swell );
 if ( global.game_room == 6 ) matrix_chain_translate( 0, 0, -global.game_swell );
 matrix_chain_end( matrix_world );
 dotobj_submit( "phoneheadset" );
-matrix_reset_world();

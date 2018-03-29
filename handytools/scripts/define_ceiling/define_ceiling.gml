@@ -28,6 +28,12 @@ with( _inst ) {
     sprite = _sprite;
     texture = sprite_get_texture( _sprite, 0 );
     
+    var _uvs = sprite_get_uvs( sprite, 0 );
+    var _uv_l = _uvs[0];
+    var _uv_t = _uvs[1];
+    var _uv_r = _uvs[2];
+    var _uv_b = _uvs[3];
+    
     vbf_ceiling = tr_vertex_create_buffer( "ceiling" );
     var _vbuff = vbf_ceiling;
     vertex_begin( _vbuff, global.vft_simple_3d );
@@ -40,13 +46,13 @@ with( _inst ) {
             var _p_r = _x + _tile_size;
             var _p_b = _y + _tile_size;
             
-            vertex_position_3d( _vbuff, _p_l, _p_t, _z ); vertex_texcoord( _vbuff, 0, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
-            vertex_position_3d( _vbuff, _p_l, _p_b, _z ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
-            vertex_position_3d( _vbuff, _p_r, _p_t, _z ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_l, _p_t, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_t ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_l, _p_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_r, _p_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
             
-            vertex_position_3d( _vbuff, _p_r, _p_t, _z ); vertex_texcoord( _vbuff, 1, 0 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
-            vertex_position_3d( _vbuff, _p_l, _p_b, _z ); vertex_texcoord( _vbuff, 0, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
-            vertex_position_3d( _vbuff, _p_r, _p_b, _z ); vertex_texcoord( _vbuff, 1, 1 ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_r, _p_t, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_t ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_l, _p_b, _z ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
+            vertex_position_3d( _vbuff, _p_r, _p_b, _z ); vertex_texcoord( _vbuff, _uv_r, _uv_b ); vertex_colour( _vbuff, c_white, 1 ); vertex_normal( _vbuff, 0, 0, -1 );
             
         }
     }
