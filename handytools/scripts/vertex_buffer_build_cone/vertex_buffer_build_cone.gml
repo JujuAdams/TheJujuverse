@@ -17,10 +17,12 @@ var _z1      = argument2;
 var _x2      = argument3;
 var _y2      = argument4;
 var _z2      = argument5;
-var _hrepeat = argument6;
-var _vrepeat = argument7;
-var _closed  = argument8;
-var _steps   = argument9;
+var _closed  = argument6;
+var _steps   = argument7;
+var _uv_l    = argument8;
+var _uv_t    = argument9;
+var _uv_r    = argument10;
+var _uv_b    = argument11;
 
 _steps = clamp( _steps, 3, 128 );
 
@@ -47,7 +49,7 @@ vertex_begin( _vbuff, global.vft_simple_3d );
 
 var _i = 0;
 var _this = [ _mx + _cc[_i]*_rx,  _my + _ss[_i]*_ry, _z1,
-                                 _hrepeat*_i/_steps,   0,
+                                              _uv_l,   0,
                                             c_white,   1,
                         _cc[_i],            _ss[_i],   0 ];
 
@@ -55,13 +57,13 @@ for( var _i = 1; _i <= _steps; _i++ ) {
     
     var _prev = _this;
     var _this = [ _mx + _cc[_i]*_rx,  _my + _ss[_i]*_ry, _z1,
-                                     _hrepeat*_i/_steps,   0,
+                        lerp( _uv_l, _uv_r, _i/_steps ),   0,
                                                 c_white,   1,
                             _cc[_i],            _ss[_i],   0 ];
     
-    vertex_position_3d( _vbuff,      _mx,      _my,      _z2 ); vertex_texcoord( _vbuff, _hrepeat*_i/_steps, _vrepeat ); vertex_colour( _vbuff,  c_white,        1 ); vertex_normal( _vbuff,        0,        0,        1 );
-    vertex_position_3d( _vbuff, _prev[0], _prev[1], _prev[2] ); vertex_texcoord( _vbuff,           _prev[3], _prev[4] ); vertex_colour( _vbuff, _prev[5], _prev[6] ); vertex_normal( _vbuff, _prev[7], _prev[8], _prev[9] );
-    vertex_position_3d( _vbuff, _this[0], _this[1], _this[2] ); vertex_texcoord( _vbuff,           _this[3], _this[4] ); vertex_colour( _vbuff, _this[5], _this[6] ); vertex_normal( _vbuff, _this[7], _this[8], _this[9] );
+    vertex_position_3d( _vbuff,      _mx,      _my,      _z2 ); vertex_texcoord( _vbuff, _this[3], _uv_t ); vertex_colour( _vbuff,  c_white,        1 ); vertex_normal( _vbuff,        0,        0,        1 );
+    vertex_position_3d( _vbuff, _prev[0], _prev[1], _prev[2] ); vertex_texcoord( _vbuff, _prev[3], _uv_b ); vertex_colour( _vbuff, _prev[5], _prev[6] ); vertex_normal( _vbuff, _prev[7], _prev[8], _prev[9] );
+    vertex_position_3d( _vbuff, _this[0], _this[1], _this[2] ); vertex_texcoord( _vbuff, _this[3], _uv_b ); vertex_colour( _vbuff, _this[5], _this[6] ); vertex_normal( _vbuff, _this[7], _this[8], _this[9] );
     
 }
 
@@ -80,10 +82,10 @@ if ( _closed ) {
                                                      0,   0,
                                                c_white,   1,
                                     0,               0,  -1 ];
-    
-        vertex_position_3d( _vbuff,      _mx,      _my,      _z1 ); vertex_texcoord( _vbuff,        0,        0 ); vertex_colour( _vbuff,  c_white,        1 ); vertex_normal( _vbuff,        0,        0,       -1 );
-        vertex_position_3d( _vbuff, _prev[0], _prev[1], _prev[2] ); vertex_texcoord( _vbuff, _prev[3], _prev[4] ); vertex_colour( _vbuff, _prev[5], _prev[6] ); vertex_normal( _vbuff, _prev[7], _prev[8], _prev[9] );
-        vertex_position_3d( _vbuff, _this[0], _this[1], _this[2] ); vertex_texcoord( _vbuff, _this[3], _this[4] ); vertex_colour( _vbuff, _this[5], _this[6] ); vertex_normal( _vbuff, _this[7], _this[8], _this[9] );
+        
+        vertex_position_3d( _vbuff,      _mx,      _my,      _z1 ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff,  c_white,        1 ); vertex_normal( _vbuff,        0,        0,       -1 );
+        vertex_position_3d( _vbuff, _prev[0], _prev[1], _prev[2] ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _prev[5], _prev[6] ); vertex_normal( _vbuff, _prev[7], _prev[8], _prev[9] );
+        vertex_position_3d( _vbuff, _this[0], _this[1], _this[2] ); vertex_texcoord( _vbuff, _uv_l, _uv_b ); vertex_colour( _vbuff, _this[5], _this[6] ); vertex_normal( _vbuff, _this[7], _this[8], _this[9] );
     
     }
     

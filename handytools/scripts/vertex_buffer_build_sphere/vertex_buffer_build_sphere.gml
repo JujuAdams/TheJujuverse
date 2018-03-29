@@ -14,13 +14,11 @@ var _z1      = argument2;
 var _x2      = argument3;
 var _y2      = argument4;
 var _z2      = argument5;
-var _hrepeat = argument6;
-var _vrepeat = argument7;
-var _steps   = argument8;
-var _uv_l    = argument9;
-var _uv_t    = argument10;
-var _uv_r    = argument11;
-var _uv_b    = argument12;
+var _steps   = argument6;
+var _uv_l    = argument7;
+var _uv_t    = argument8;
+var _uv_r    = argument9;
+var _uv_b    = argument10;
 
 _steps = clamp( 3, 128, _steps );
 var _rows = 0.5*_steps + 0.5;
@@ -58,13 +56,13 @@ for( var _j = 0; _j < _rows; _j++ ) {
     
     var _i = 0;
     var _this_a = [ _mx+_rx*_rd1*_cc[_i],  _my+_ry*_rd1*_ss[_i], _mz+_rz*_rh1,
-                        _hrepeat*_i/_steps,     _j*_vrepeat/_rows,
-                                    c_white,                     1,
+                               _i/_steps,              _j/_rows,
+                                 c_white,                     1,
                             _rd1*_cc[_i],          _rd1*_ss[_i],         _rh1 ];
         
     var _this_b = [ _mx+_rx*_rd2*_cc[_i],  _my+_ry*_rd2*_ss[_i], _mz+_rz*_rh2,
-                        _hrepeat*_i/_steps, (_j+1)*_vrepeat/_rows,
-                                    c_white,                     1,
+                               _i/_steps,          (_j+1)/_rows,
+                                 c_white,                     1,
                             _rd2*_cc[_i],          _rd2*_ss[_i],         _rh2 ];
     
     for( var _i = 1; _i <= _steps; _i++ ) {
@@ -73,12 +71,12 @@ for( var _j = 0; _j < _rows; _j++ ) {
         var _prev_b = _this_b;
         
         var _this_a = [ _mx+_rx*_rd1*_cc[_i],  _my+_ry*_rd1*_ss[_i], _mz+_rz*_rh1,
-                          _hrepeat*_i/_steps,     _j*_vrepeat/_rows,
+                                   _i/_steps,              _j/_rows,
                                      c_white,                     1,
                                 _rd1*_cc[_i],          _rd1*_ss[_i],         _rh1 ];
         
         var _this_b = [ _mx+_rx*_rd2*_cc[_i],  _my+_ry*_rd2*_ss[_i], _mz+_rz*_rh2,
-                          _hrepeat*_i/_steps, (_j+1)*_vrepeat/_rows,
+                                   _i/_steps,          (_j+1)/_rows,
                                      c_white,                     1,
                                 _rd2*_cc[_i],          _rd2*_ss[_i],         _rh2 ];
         
