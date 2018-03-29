@@ -3663,14 +3663,6 @@
             }
         },
         {
-            "Key": "74965e0b-4c44-40e3-b2f0-24ab7a06e36b",
-            "Value": {
-                "id": "22840674-7745-433e-9f14-cb77a4072cd4",
-                "resourcePath": "datafiles_yy\\models\\coil.obj.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "759620c6-2b19-4e22-bfcb-92761e8daf19",
             "Value": {
                 "id": "5ea6ba77-8541-472e-b703-d6d74ad91bac",
@@ -6535,14 +6527,6 @@
             }
         },
         {
-            "Key": "d9356b46-673e-4b00-9ee6-e140a395ae11",
-            "Value": {
-                "id": "c22efbde-327c-4150-8960-9ab2bfb3454f",
-                "resourcePath": "datafiles_yy\\models\\square_frame.obj.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "d9cda3cc-d526-47ca-93be-80db53ceb34e",
             "Value": {
                 "id": "8a375882-8ec8-4a0f-a903-2570de7058e5",
@@ -6956,14 +6940,6 @@
                 "id": "a4622655-b878-4cca-8ccb-419ad4eb3237",
                 "resourcePath": "views\\e541b1b4-adb6-4c50-adce-03d284632243.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "e5833c55-cc98-4481-b529-05737d4c2471",
-            "Value": {
-                "id": "ce9d8a06-ca76-4984-a2c5-05225233c09b",
-                "resourcePath": "datafiles_yy\\models\\spiral3.obj.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {

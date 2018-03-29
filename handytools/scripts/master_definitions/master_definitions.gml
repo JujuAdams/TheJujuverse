@@ -1,8 +1,8 @@
 /// @description Internal master definitions
 
 //handytools build information
-#macro HANDYTOOLS_VERSION "v0.8.0"
-#macro HANDYTOOLS_DATE "2018.01.31" //always use YYYY/MM/DD
+#macro HANDYTOOLS_VERSION "v0.8.1"
+#macro HANDYTOOLS_DATE "2018.03.29" //always use YYYY/MM/DD
 #macro HANDYTOOLS_CREDITS "handytools by @jujuadams, ImGUI v1.80.2 implementation by @babyj3ans, JIFFY by @net8floz, Logo by @stefanvanranda, WinDev.dll by @YellowAfterlife, SCREEN with assistance from kraifpatrik"
 
 //abbreviations

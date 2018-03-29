@@ -24,18 +24,23 @@ if ( DOTOBJ_ON ) {
     dotobj_load_async( "spiral2"        , "models\\spiral2.obj"     , global.vft_simple_3d,   false, false,   1, 0  , -1,  5   ,   spr_tex_spiral2      , 0 );                                          
     dotobj_load_async( "mirror_frame"   , "models\\mirrorframe.obj" , global.vft_simple_3d,   false, false,   0, 0  ,  0, 10   ,   spr_tex_mirror_frame , 0 );
     dotobj_load_async( "bookshelf"      , "models\\bookshelf.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0, 18   ,   spr_tex_bookshelf    , 0 );
-    dotobj_load_async( "open_book"      , "models\\open_book.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0,  9   ,   spr_tex_open_book    , 0 );                                          
+    dotobj_load_async( "open_book"      , "models\\open_book.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0,  9   ,   spr_tex_open_book    , 0 );       
+    
     dotobj_load_async( "scissors"       , "models\\scissors.obj"    , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_red          , 0 );
     dotobj_load_async( "rope"           , "models\\rope.obj"        , global.vft_simple_3d,   false, false,   0, 0  ,  0, 10   ,   spr_tex_rope         , 0 );
     dotobj_load_async( "rope_cut"       , "models\\rope_cut.obj"    , global.vft_simple_3d,   false, false,   0, 0  ,  0, 10   ,   spr_tex_rope         , 0 );
-    dotobj_load_async( "rope_pole"      , "models\\rope_pole.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0, 16   ,   spr_tex_rope_pole    , 0 );                                          
+    dotobj_load_async( "rope_pole"      , "models\\rope_pole.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0, 16   ,   spr_tex_rope_pole    , 0 );      
+    
     dotobj_load_async( "vase1"          , "models\\vase1.obj"       , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_vase1        , 0 );
     dotobj_load_async( "vase2"          , "models\\vase2.obj"       , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_vase2        , 0 );
     dotobj_load_async( "hammer"         , "models\\hammer.obj"      , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_hammer       , 0 );
-    dotobj_load_async( "shard1"         , "models\\shard1.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   UD                   , 0 );
-    dotobj_load_async( "shard2"         , "models\\shard2.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   UD                   , 0 );
-    dotobj_load_async( "shard3"         , "models\\shard3.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   UD                   , 0 );
-    dotobj_load_async( "shard4"         , "models\\shard4.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   UD                   , 0 );                                          
+    dotobj_load_async( "shard1"         , "models\\shard1.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_shard_yellow , 0 );
+    dotobj_load_async( "shard2"         , "models\\shard2.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_shard_yellow , 0 );
+    dotobj_load_async( "shard3_vase1"   , "models\\shard3.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_vase1        , 0 );
+    dotobj_load_async( "shard4_vase1"   , "models\\shard4.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_vase1        , 0 );
+    dotobj_load_async( "shard3_vase2"   , "models\\shard3.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_vase2        , 0 );
+    dotobj_load_async( "shard4_vase2"   , "models\\shard4.obj"      , global.vft_simple_3d,   false, false,   0, 0  ,  0,  3   ,   spr_tex_vase2        , 0 );
+    
     dotobj_load_async( "dead_tree"      , "models\\tree.obj"        , global.vft_simple_3d,   false, false,   0, 0  ,  0, 10   ,   spr_tex_red          , 0 );
     dotobj_load_async( "flowerpot"      , "models\\flowerpot.obj"   , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_flowerpot    , 0 );
     dotobj_load_async( "flower1"        , "models\\flower1.obj"     , global.vft_simple_3d,   false, false,   1, 0  , -1,  3   ,   spr_tex_flower1      , 0 );
@@ -53,8 +58,4 @@ if ( DOTOBJ_ON ) {
     dotobj_load_async( "chess_queen_alt", "models\\chess_queen.obj" , global.vft_simple_3d,   false, false,   0, 0  ,  0,  1   ,   spr_tex_chess_green  , 0 );
     dotobj_load_async( "chess_rook_alt" , "models\\chess_rook.obj"  , global.vft_simple_3d,   false, false,   0, 0  ,  0,  0.9 ,   spr_tex_chess_green  , 0 );
     
-    dotobj_load_async( "spiral3"        , "models\\spiral3.obj"     , global.vft_simple_3d,   false, false,   1, 0  , -1,  6   ,   UD                   , 0 );
-    dotobj_load_async( "coil"           , "models\\coil.obj"        , global.vft_simple_3d,   false, false,   1, 0  , -1, 12   ,   UD                   , 0 );
-    dotobj_load_async( "square_frame"   , "models\\square_frame.obj", global.vft_simple_3d,   false, false,   0, 0  ,  0,  1   ,   UD                   , 0 );
-
 }
