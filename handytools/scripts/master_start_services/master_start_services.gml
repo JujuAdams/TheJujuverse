@@ -23,6 +23,5 @@ resolution_start_service();
     dotobj_start_service();
   scribble_start_service();
 transition_start_service();
-     jiffy_start_service();
 
 instantiate_protected( obj_gameflow );

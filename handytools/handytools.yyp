@@ -1127,14 +1127,6 @@
             }
         },
         {
-            "Key": "29f9be9a-6f2c-470a-ba78-071dfbeb01b2",
-            "Value": {
-                "id": "e413442c-ed2e-41e5-b71e-47af0cbeb50a",
-                "resourcePath": "scripts\\jiffy_unregister\\jiffy_unregister.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "2a084f5d-0ccb-4e04-b31b-da2d26a919bf",
             "Value": {
                 "id": "82db3abb-4eba-494e-8612-93c97ffc5b7f",
@@ -1548,14 +1540,6 @@
                 "id": "fb5cf4e9-3881-4da6-97b0-35f5b23d4bf5",
                 "resourcePath": "views\\3a866ecc-92d9-40cc-8316-af4e6de4d1a3.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "3a94b104-bf5f-4eb0-a7a9-1401aee5b5ed",
-            "Value": {
-                "id": "7466ff20-ccef-4f5e-92f6-cd441486557a",
-                "resourcePath": "scripts\\jiffy_init\\jiffy_init.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -2091,14 +2075,6 @@
             "Value": {
                 "id": "f65d1946-2fad-4bae-a002-6d9586958078",
                 "resourcePath": "scripts\/json_prettify\/json_prettify.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "4dfb5650-081f-4f9a-add6-02549dc1bab4",
-            "Value": {
-                "id": "8e53eede-d68e-4008-8f0b-762ecb62ebc8",
-                "resourcePath": "scripts\\jiffy_config\\jiffy_config.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2895,14 +2871,6 @@
             }
         },
         {
-            "Key": "709f8a4f-8416-4717-8b59-7ccbe374a5f4",
-            "Value": {
-                "id": "264fab53-3e55-4d04-b0b7-649f175831ed",
-                "resourcePath": "scripts\\jiffy_start_service\\jiffy_start_service.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "70b4b8a0-f4bb-434e-8c6e-96968cf34d48",
             "Value": {
                 "id": "34cb02ca-c9e0-4c0b-ad71-3a6abf43d88d",
@@ -3244,14 +3212,6 @@
                 "id": "4afbdd59-b582-4273-ae69-2bdcb06e7483",
                 "resourcePath": "scripts\\screen_definitions\\screen_definitions.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "8284b65f-12e0-4f18-a39f-5303afe2a35d",
-            "Value": {
-                "id": "4abe7c8b-6ff1-4837-b371-3f47bca20f62",
-                "resourcePath": "objects\\obj_jiffy\\obj_jiffy.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -3991,14 +3951,6 @@
             }
         },
         {
-            "Key": "a0456147-10d8-4705-b59b-4b8ce3aed4e8",
-            "Value": {
-                "id": "b944e5d8-4072-44a3-b0a4-0060d11f777e",
-                "resourcePath": "scripts\\jiffy_register\\jiffy_register.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a0f66a2c-32e9-4002-ab53-8f5e6867f0d1",
             "Value": {
                 "id": "456953ed-0049-4d66-9f5e-08d592fd5e09",
@@ -4111,14 +4063,6 @@
             }
         },
         {
-            "Key": "a4abe958-44ab-41cb-bafd-1b956f9ddef4",
-            "Value": {
-                "id": "e174579e-b0ed-41c1-b3eb-8dac16b1e2b7",
-                "resourcePath": "scripts\\jiffy_draw_self\\jiffy_draw_self.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a4b097fe-b0b1-4fdf-8ae1-e1ecc3a3b42b",
             "Value": {
                 "id": "713eb6c9-7282-475c-b446-a88ba0d5aa7c",
@@ -4187,14 +4131,6 @@
             "Value": {
                 "id": "9cbc721d-2890-40a3-8da9-56cc45f10f2d",
                 "resourcePath": "scripts\\grip_activate\\grip_activate.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "a6bf4fc6-cf50-4da4-909c-21cf75dc3ad1",
-            "Value": {
-                "id": "5480dd78-d96f-4308-a9cc-e797558046dc",
-                "resourcePath": "scripts\\jiffy_update\\jiffy_update.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5439,14 +5375,6 @@
             }
         },
         {
-            "Key": "dc05f9e4-b8fe-442d-9907-d11a69330ea7",
-            "Value": {
-                "id": "8fa7bc10-999a-4b63-8aac-1d2219511672",
-                "resourcePath": "scripts\\jiffy_destroy\\jiffy_destroy.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "dc3ce236-307d-4b30-aa45-89c5ae142919",
             "Value": {
                 "id": "989012e8-6fba-4bf6-aca9-a6c1bf1c9d82",
@@ -5492,14 +5420,6 @@
                 "id": "7afa6949-b40e-4d9c-950f-44e59f6db612",
                 "resourcePath": "scripts\\trace_v\\trace_v.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "dcd9d29c-98c4-4c2a-b7b9-784c396b7c2c",
-            "Value": {
-                "id": "92471676-b25d-4072-a073-d4feeaa76eca",
-                "resourcePath": "views\\dcd9d29c-98c4-4c2a-b7b9-784c396b7c2c.yy",
-                "resourceType": "GMFolder"
             }
         },
         {
@@ -6071,14 +5991,6 @@
             }
         },
         {
-            "Key": "f25b1b10-5fe1-4b79-9b16-0d775bcc97d7",
-            "Value": {
-                "id": "b4623da2-372f-4da9-9a7e-c4f0cdd26722",
-                "resourcePath": "scripts\\jiffy_definitions\\jiffy_definitions.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "f2f3155b-6e2f-4f62-8a6b-d7bd85bd53aa",
             "Value": {
                 "id": "32c58597-5f1a-4786-9bf0-4fea8cba3e4b",
@@ -6276,14 +6188,6 @@
                 "id": "ddd3e942-a6ed-4305-a3b3-5cd6e8107361",
                 "resourcePath": "datafiles_yy\\rooms\\room 2.json.yy",
                 "resourceType": "GMIncludedFile"
-            }
-        },
-        {
-            "Key": "fd30aef3-d0ec-47c3-9cb7-cc0864db4769",
-            "Value": {
-                "id": "65bde517-6b8f-433c-b1bc-c6051c2d04e2",
-                "resourcePath": "notes\\Juju's TODO.yy",
-                "resourceType": "GMNotes"
             }
         },
         {
@@ -6598,15 +6502,6 @@
         "34bc447e-dcfb-44ef-aa2e-34932b8bd0c5",
         "c5589499-86d6-4976-a57c-e706fe34bc63",
         "046ffce9-f4b4-4902-b676-9d3582ce616f",
-        "4dfb5650-081f-4f9a-add6-02549dc1bab4",
-        "3a94b104-bf5f-4eb0-a7a9-1401aee5b5ed",
-        "709f8a4f-8416-4717-8b59-7ccbe374a5f4",
-        "f25b1b10-5fe1-4b79-9b16-0d775bcc97d7",
-        "a6bf4fc6-cf50-4da4-909c-21cf75dc3ad1",
-        "a0456147-10d8-4705-b59b-4b8ce3aed4e8",
-        "dc05f9e4-b8fe-442d-9907-d11a69330ea7",
-        "a4abe958-44ab-41cb-bafd-1b956f9ddef4",
-        "29f9be9a-6f2c-470a-ba78-071dfbeb01b2",
         "35b8a3ec-934c-4f15-902c-4893f3b55097",
         "dd6c079b-9744-4f54-8918-e3d9cb1b9972",
         "824cce43-73bf-4183-95c1-ea718c0002d8",

@@ -31,7 +31,6 @@
 #macro DOTOBJ_ON       true
 #macro SCRIBBLE_ON     true
 #macro TRANSITION_ON  false
-#macro JIFFY_ON       false
 
 //miscellaneous
 #macro DATAFILES_LOCATION "F:\\GameMakerDevsSlack GitHub\\handytools\\handytools\\datafiles\\"

@@ -24,7 +24,6 @@ resolution_init();
     dotobj_init();
   scribble_init();
 transition_init();
-     jiffy_init();
 
 trace_f( "Initialising vertex formats/default models" );
 
