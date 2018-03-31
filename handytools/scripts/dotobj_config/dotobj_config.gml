@@ -1,6 +1,6 @@
 /// @description DOTOBJ configuration
 
-#macro DOTOBJ_VERBOSE_LOAD      true
+#macro DOTOBJ_VERBOSE_LOAD      false
 
 #macro DOTOBJ_Z_UP              true //TODO - make this work so we won't need rotation operations bloody everywhere
 
