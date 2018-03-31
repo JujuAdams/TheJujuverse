@@ -21,5 +21,5 @@ var _array = dotobj_animations[? _animation ];
 _array[ DOTOBJ_ANIMATION_METADATA.NAME       ] = _animation;
 _array[ DOTOBJ_ANIMATION_METADATA.TIME       ] = current_time;
 _array[ DOTOBJ_ANIMATION_METADATA.INDEX      ] = 0;
-_array[ DOTOBJ_ANIMATION_METADATA.TRANSITION ] = 0;
+_array[ DOTOBJ_ANIMATION_METADATA.TRANSITION ] = _transition;
 dotobj_animation_containers[? _container ] = _array;

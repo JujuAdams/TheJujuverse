@@ -3199,14 +3199,6 @@
             }
         },
         {
-            "Key": "6372c394-17fc-42b2-b739-00ea4541692d",
-            "Value": {
-                "id": "ac1ed7a5-4409-4821-adf7-3b27fcf3d213",
-                "resourcePath": "objects\\obj_qubicle1\\obj_qubicle1.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "637cd831-f650-493a-b2f9-67d35a05879d",
             "Value": {
                 "id": "b172e31c-0f5f-48d3-aff9-11c2df02e17f",
@@ -4826,7 +4818,7 @@
             "Key": "9c6dd784-b298-43eb-878a-32f1eef5764b",
             "Value": {
                 "id": "96455cd0-afa3-49f8-be4a-fe9b52b6a40c",
-                "resourcePath": "datafiles_yy\\models\\qubicle.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\deer.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -6602,7 +6594,7 @@
             "Key": "d7b7d513-e86b-47e1-be05-5987423c2e92",
             "Value": {
                 "id": "624bb1b3-a7af-430d-8600-dacfd029d070",
-                "resourcePath": "datafiles_yy\\models\\qubicle.png.yy",
+                "resourcePath": "datafiles_yy\\models\\deer.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },

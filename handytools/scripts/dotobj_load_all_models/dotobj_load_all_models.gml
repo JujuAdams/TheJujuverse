@@ -3,9 +3,10 @@
 if ( DOTOBJ_ON ) {
     
     global.dotobj_total_time = 0;
-
+    
+    dotobj_load_async( "deer 0"         , "models\\deer.obj"        , global.vft_simple_3d,   false,  true,   0, 0  ,  0,  1   ,   undefined            , 0 );
+    
     dotobj_load_async( "cube"           , "models\\old_cube.obj"    , global.vft_simple_3d,   false, false,   4, 0  ,  4,  1   ,   spr_tex_white        , 0 );
-    dotobj_load_async( "qubicle"        , "models\\qubicle.obj"     , global.vft_simple_3d,   false,  true,   0, 0  ,  0,  1   ,   UD                   , 0 );
     dotobj_load_async( "prism"          , "models\\prism.obj"       , global.vft_simple_3d,   false, false,   0, 2.2,  0, 12   ,   spr_tex_white        , 0 );
     dotobj_load_async( "door"           , "models\\door.obj"        , global.vft_simple_3d,   false, false,   0, 0  ,  0,  2.77,   spr_tex_door         , 0 );                                                                                                               
     dotobj_load_async( "phonebase"      , "models\\phonebase.obj"   , global.vft_simple_3d,   false, false,   0, 0  ,  0,  5   ,   spr_tex_phone_base   , 0 );

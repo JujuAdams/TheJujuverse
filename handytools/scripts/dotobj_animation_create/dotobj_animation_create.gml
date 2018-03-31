@@ -1,8 +1,8 @@
 /// @param name
 /// @param [dotobj_model]
-/// @param [duration]
+/// @param [duration_ms]
 /// @param [dotobj_model...]
-/// @param [duration...]
+/// @param [duration_ms...]
 
 if ( !variable_instance_exists( id, "dotobj_animations" ) ) {
 	dotobj_animations = tr_map_create( "dotobj animations", false );
