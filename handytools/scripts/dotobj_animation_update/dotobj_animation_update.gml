@@ -33,10 +33,10 @@ while( true ) {
 			} else {
 				
 				dotobj_animation_play( _container, _transition );
-				_array[@ DOTOBJ_ANIMATION_METADATA.TIME ] = _time;
-				
+                
 				_array  = dotobj_animation_containers[? _container ];
 				_frames = dotobj_animation_frames( _array );
+				_array[@ DOTOBJ_ANIMATION_METADATA.TIME ] = _time;
 				
 				_name   = _transition;
 				_index  = 0;
