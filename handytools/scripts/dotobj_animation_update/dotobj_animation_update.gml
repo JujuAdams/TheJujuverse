@@ -10,11 +10,17 @@ var _name       = _array[ DOTOBJ_ANIMATION_METADATA.NAME       ];
 var _time       = _array[ DOTOBJ_ANIMATION_METADATA.TIME       ];
 var _index      = _array[ DOTOBJ_ANIMATION_METADATA.INDEX      ];
 var _transition = _array[ DOTOBJ_ANIMATION_METADATA.TRANSITION ];
+var _speed      = _array[ DOTOBJ_ANIMATION_METADATA.SPEED      ];
+
+_array[@ DOTOBJ_ANIMATION_METADATA.FINISHED ] = false;
+
+if ( _speed <= 0 ) return false;
 
 while( true ) {
 	
-	var _duration = _array[ DOTOBJ_ANIMATION_METADATA.SIZE + _index*2 + 1 ];
-	
+	var _duration = _array[ DOTOBJ_ANIMATION_METADATA.SIZE + _index*2 + 1 ]/_speed;
+	if ( _duration == 0 ) break;
+    
 	var _passed = time_has_passed( _time, _duration );
 	if ( _passed ) {
 		
@@ -32,14 +38,14 @@ while( true ) {
 				
 			} else {
 				
-				dotobj_animation_play( _container, _transition );
+				dotobj_animation_play( _container, _transition, _speed );
                 
 				_array  = dotobj_animation_containers[? _container ];
 				_frames = dotobj_animation_frames( _array );
 				_array[@ DOTOBJ_ANIMATION_METADATA.TIME ] = _time;
 				
-				_name   = _transition;
-				_index  = 0;
+				_name  = _transition;
+				_index = 0;
 				
 			}
 			
@@ -55,4 +61,4 @@ while( true ) {
 	
 }
 
-return _animation_finished;
+_array[@ DOTOBJ_ANIMATION_METADATA.FINISHED ] = _animation_finished;

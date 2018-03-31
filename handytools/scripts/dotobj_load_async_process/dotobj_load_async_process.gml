@@ -16,7 +16,9 @@ var _flip_UVs      = _map[? "flip UVs"     ];
 var _offset_x      = _map[? "offset x"     ];
 var _offset_y      = _map[? "offset y"     ];
 var _offset_z      = _map[? "offset z"     ];
-var _scale         = _map[? "scale"        ];
+var _scale_x       = _map[? "scale x"      ];
+var _scale_y       = _map[? "scale y"      ];
+var _scale_z       = _map[? "scale z"      ];
 var _buffer        = _map[? "buffer"       ];
 var _sprite        = _map[? "sprite"       ];
 var _image         = _map[? "image"        ];
@@ -74,9 +76,9 @@ while( !file_text_eof( _file ) ) {
         
         var _z = real( string_delete( _row_string, 1, _pos ) );
         
-        ds_list_add( _vertex_list,   ( _x + _offset_x ) * _scale,
-                                     ( _y + _offset_y ) * _scale,
-                                     ( _z + _offset_z ) * _scale );
+        ds_list_add( _vertex_list,   ( _x + _offset_x ) * _scale_x,
+                                     ( _y + _offset_y ) * _scale_y,
+                                     ( _z + _offset_z ) * _scale_z );
         
     }
     

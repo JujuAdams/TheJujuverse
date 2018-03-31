@@ -52,7 +52,10 @@
         "22fb2451-9ac1-4384-afb6-3fa8f8dc2553",
         "6c12aaf8-8cc6-4e7b-b1d5-26ae0e493d25",
         "22e7cff0-98fa-4cbb-b69d-76eced28b32f",
-        "b4f8960c-a061-4c5b-a032-8658e10138f0"
+        "b4f8960c-a061-4c5b-a032-8658e10138f0",
+        "17e01b26-2206-41a7-ad8d-c1db9f2848c2",
+        "aada492e-7cb4-433d-8b3e-918c7e08d39e",
+        "4a2dd1e5-4777-4e94-a742-e0751d7dfe4d"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "models",

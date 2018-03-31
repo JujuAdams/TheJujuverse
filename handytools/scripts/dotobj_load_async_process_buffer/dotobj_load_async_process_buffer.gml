@@ -16,7 +16,9 @@ var _flip_UVs      = _map[? "flip UVs"     ];
 var _offset_x      = _map[? "offset x"     ];
 var _offset_y      = _map[? "offset y"     ];
 var _offset_z      = _map[? "offset z"     ];
-var _scale         = _map[? "scale"        ];
+var _scale_x       = _map[? "scale x"      ];
+var _scale_y       = _map[? "scale y"      ];
+var _scale_z       = _map[? "scale z"      ];
 var _buffer        = _map[? "buffer"       ];
 
 if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
@@ -58,9 +60,9 @@ repeat( _size ) {
             switch( _mode ) {
                 case 1:
                     switch( _entry_count ) {
-                        case 0: ds_list_add( _vertex_list, ( _value + _offset_x ) * _scale ); break;
-                        case 1: ds_list_add( _vertex_list, ( _value + _offset_y ) * _scale ); break;
-                        case 2: ds_list_add( _vertex_list, ( _value + _offset_z ) * _scale ); break;
+                        case 0: ds_list_add( _vertex_list, ( _value + _offset_x ) * _scale_x ); break;
+                        case 1: ds_list_add( _vertex_list, ( _value + _offset_y ) * _scale_y ); break;
+                        case 2: ds_list_add( _vertex_list, ( _value + _offset_z ) * _scale_z ); break;
                     }
                     _entry_count++;
                 break;

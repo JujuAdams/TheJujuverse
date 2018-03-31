@@ -1,0 +1,2 @@
+g marker parsing for .obj files
+different masks for click rendering

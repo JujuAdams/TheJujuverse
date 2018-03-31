@@ -17,5 +17,5 @@ if ( !variable_instance_exists( id, "dotobj_animation_containers_index" ) ) {
 var _array;
 for( var _i = argument_count-1; _i >= 1; _i-- ) _array[ DOTOBJ_ANIMATION_METADATA.SIZE + _i-1] = argument[_i];
 
-ds_map_add( dotobj_animations, argument[0], _array );
+dotobj_animations[? argument[0] ] = _array;
 return true;

@@ -19,9 +19,11 @@ var _flip_UVs     = argument4;
 var _offset_x     = argument5;
 var _offset_y     = argument6;
 var _offset_z     = argument7;
-var _scale        = argument8;
-var _sprite       = argument9;
-var _image        = argument10;
+var _scale_x      = argument8;
+var _scale_y      = argument9;
+var _scale_z      = argument10;
+var _sprite       = argument11;
+var _image        = argument12;
 
 if ( !is_real( _sprite ) ) || ( _sprite == "" ) {
     
@@ -49,7 +51,9 @@ _map[? "flip UVs"      ] = _flip_UVs;
 _map[? "offset x"      ] = _offset_x;
 _map[? "offset y"      ] = _offset_y;
 _map[? "offset z"      ] = _offset_z;
-_map[? "scale"         ] = _scale;
+_map[? "scale x"       ] = _scale_x;
+_map[? "scale y"       ] = _scale_y;
+_map[? "scale z"       ] = _scale_z;
 _map[? "vertex buffer" ] = undefined; //Set in dotobj_load_async_process()
 _map[? "buffer"        ] = _buffer;
 _map[? "load id"       ] = _id;

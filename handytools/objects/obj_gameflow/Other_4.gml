@@ -1,14 +1,23 @@
 if ( room != rm_init ) {
     
-    var _inst = tr_instance_create( 0, 120, obj_camera );
-    _inst.z = 150;
-    _inst.look_xy_angle =  90;
-    _inst.look_pz_angle = -70;
-    with( _inst ) event_perform( ev_step, ev_step_normal );
+    var _inst = tr_instance_create( GRID_CELL_W*(GRID_W-1)/2 - 25, 110, obj_camera );
+    with( _inst ) {
+        z = 160;
+        look_xy_angle = 90;
+        look_pz_angle = point_direction( -y, -z, -GRID_CELL_H*(GRID_H-1)/2, 0 );
+        event_perform( ev_step, ev_step_normal );
+    }
     
-    tr_instance_create_z( 0, 0, 0,   0,   obj_cassette );
-    
-    var _inst = tr_instance_create_z( 0, 0, 50, 0, obj_light );
-    _inst.range = 300;
+    var _inst = tr_instance_create_z( GRID_CELL_W*(GRID_W-1)/2, GRID_CELL_H*(GRID_H-1)/2, 100, 0, obj_light );
+    _inst.range = 1000;
     _inst.colour = c_white
+    
+    var _inst = tr_instance_create_z( 25, 70, 0, 0, obj_boomy );
+    /*
+    for( var _y = 0; _y < GRID_H; _y++ ) {
+        for ( var _x = 0; _x < GRID_W; _x++ ) {
+            cassette_spawn( _x, _y, UD );
+        }
+    }
+    */
 }

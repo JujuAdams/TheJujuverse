@@ -1,2 +1,8 @@
 #macro C_OFF_WHITE $F7F7F7
 #macro C_AMBIENT $211A1A
+#macro CASSETTE_INDEX_MAX 5
+#macro GRID_CELL_W 30
+#macro GRID_CELL_H 20
+#macro GRID_W 5
+#macro GRID_H 6
+#macro Z_GRAVITY -0.2
