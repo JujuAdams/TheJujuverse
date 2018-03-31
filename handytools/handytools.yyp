@@ -367,6 +367,14 @@
             }
         },
         {
+            "Key": "0ca198a3-b60d-43e9-b621-ec2909b6e386",
+            "Value": {
+                "id": "4bf55514-5e17-4a5b-bb93-f65d034924e2",
+                "resourcePath": "views\\0ca198a3-b60d-43e9-b621-ec2909b6e386.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0cb8e586-c6ff-4152-8dba-b4a70580da71",
             "Value": {
                 "id": "9e0f8b72-7880-47ca-a425-0157c8d7da91",
@@ -884,6 +892,14 @@
                 "id": "b3c7d414-5ee5-41b2-ba16-4bf69ad87e6d",
                 "resourcePath": "objects\\obj_dotobj\\obj_dotobj.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1b68efe8-2117-41c2-9f57-d64637078256",
+            "Value": {
+                "id": "d6d62f86-1e61-4554-8a4c-69dc45bc1717",
+                "resourcePath": "scripts\\dotobj_animation_free_all\\dotobj_animation_free_all.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1927,6 +1943,22 @@
             }
         },
         {
+            "Key": "3c1f313b-8c56-4603-9fa8-bb96da8ea32b",
+            "Value": {
+                "id": "9bd459ec-9a86-45b2-8981-7665ab3a993a",
+                "resourcePath": "scripts\\dotobj_animation_frames\\dotobj_animation_frames.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3cc329f7-47ed-49d9-b93d-e27c3904d8ef",
+            "Value": {
+                "id": "1b550102-fd6a-48eb-8597-fbfffd379464",
+                "resourcePath": "scripts\\dotobj_animation_update_all\\dotobj_animation_update_all.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3ccec204-7bbe-4b9b-9f74-033aad2df7fb",
             "Value": {
                 "id": "247a65d7-ad9c-40c7-ad86-04726380475e",
@@ -2183,14 +2215,6 @@
             }
         },
         {
-            "Key": "43f1a777-c43e-4bdc-8ef7-89e819bf81a3",
-            "Value": {
-                "id": "c1f23dab-e01e-477e-a5bd-191be163eb56",
-                "resourcePath": "objects\\obj_scribble_example\\obj_scribble_example.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "4422cb4a-3007-48e7-a2bc-c68ea7bf148d",
             "Value": {
                 "id": "6436594b-a31c-41eb-b9f1-5c0179551db0",
@@ -2347,6 +2371,14 @@
             "Value": {
                 "id": "913af631-5dab-4c7b-802b-bff0d53e588b",
                 "resourcePath": "scripts\\scribble_init\\scribble_init.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "49942dc0-e7df-4f7e-9b86-f4724bab0a26",
+            "Value": {
+                "id": "692c4e6f-fa98-4c69-9f1f-72cf4a0ef64e",
+                "resourcePath": "scripts\\dotobj_animation_create\\dotobj_animation_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2983,6 +3015,14 @@
             }
         },
         {
+            "Key": "5f386369-e3df-4278-91e7-51f50efa0f94",
+            "Value": {
+                "id": "550d4afa-73d8-445a-9906-e2ccda2220bf",
+                "resourcePath": "scripts\\dotobj_animation_play\\dotobj_animation_play.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5f41f866-3bbe-430d-941b-4f4bb431041c",
             "Value": {
                 "id": "0e0c791c-81fc-4bc5-8ab1-ef689a034dca",
@@ -3132,6 +3172,14 @@
                 "id": "e87f224e-e355-4769-b814-fe5fb80506b9",
                 "resourcePath": "scripts\\tr_surface_create\\tr_surface_create.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6372c394-17fc-42b2-b739-00ea4541692d",
+            "Value": {
+                "id": "ac1ed7a5-4409-4821-adf7-3b27fcf3d213",
+                "resourcePath": "objects\\obj_qubicle1\\obj_qubicle1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3991,6 +4039,14 @@
             }
         },
         {
+            "Key": "82aa4f58-91b2-4a7d-839d-1cf4f0bba753",
+            "Value": {
+                "id": "423483bf-bcbf-4be2-af4f-da7e3028acf7",
+                "resourcePath": "scripts\\dotobj_submit_animation\\dotobj_submit_animation.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "82cfb673-82e0-416f-bc31-9832fd10e52b",
             "Value": {
                 "id": "83d5af6f-1b90-47cc-9c1f-9ed58cc9e24b",
@@ -4468,6 +4524,14 @@
                 "id": "cbb214ee-8c97-44f9-930a-63bea5ec436c",
                 "resourcePath": "objects\\obj_desk_lamp\\obj_desk_lamp.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "91f268ee-3a75-46ec-82be-17233211c49b",
+            "Value": {
+                "id": "daa5bc88-3703-4c41-bc64-19f953410419",
+                "resourcePath": "scripts\\dotobj_animation_update\\dotobj_animation_update.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6855,6 +6919,14 @@
             }
         },
         {
+            "Key": "e35e7610-1eb4-4a45-a6fa-2c44c235a443",
+            "Value": {
+                "id": "f5d01bda-167b-49e9-81cf-87dd3a055838",
+                "resourcePath": "scripts\\dotobj_animation_get_model\\dotobj_animation_get_model.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e377404d-4e8a-40c5-a194-f005c6fa0ad3",
             "Value": {
                 "id": "7936b497-49aa-42a2-b413-a50d35e52f08",
@@ -7917,7 +7989,15 @@
         "cae9bbbd-e37c-4670-8128-fb85ec36a712",
         "ad309a0a-f0fc-4294-a3d5-8d284ed4032f",
         "d7b84028-74f9-4315-af60-84e14e22ec77",
+        "82aa4f58-91b2-4a7d-839d-1cf4f0bba753",
         "881e6fd1-7e44-49ad-97db-be929a5092a2",
+        "49942dc0-e7df-4f7e-9b86-f4724bab0a26",
+        "3c1f313b-8c56-4603-9fa8-bb96da8ea32b",
+        "1b68efe8-2117-41c2-9f57-d64637078256",
+        "5f386369-e3df-4278-91e7-51f50efa0f94",
+        "3cc329f7-47ed-49d9-b93d-e27c3904d8ef",
+        "91f268ee-3a75-46ec-82be-17233211c49b",
+        "e35e7610-1eb4-4a45-a6fa-2c44c235a443",
         "f0556f0e-af87-4ad4-8998-437bcbb16546",
         "a8cc1594-6150-4635-8385-cfd73fe695c7",
         "26e101ea-d981-47b0-a9a5-a24cf536461e",
