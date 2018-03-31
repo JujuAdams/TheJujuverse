@@ -45,14 +45,11 @@ while( !ds_queue_empty( _queue_x ) ) {
 }
 
 var _size = ds_list_size( _destroy_x );
-if ( _size >= 3 ) {
-    for( var _i = 0; _i < _size; _i++ ) {
-        cassette_pop( cassette_find( _destroy_x[| _i ], _destroy_y[| _i ] ) );
-    }
-}
 
 ds_queue_destroy( _queue_x );
 ds_queue_destroy( _queue_y );
 tr_list_destroy( _destroy_x );
 tr_list_destroy( _destroy_y );
 tr_grid_destroy( _visited_grid );
+
+return _size;

@@ -1,5 +1,5 @@
 {
-    "id": "e755cc9b-8375-48c1-97b0-0da49696e64a",
+    "id": "088c012f-478c-4471-a644-d08051d72ed6",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "White_Cassette.png",

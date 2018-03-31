@@ -41,4 +41,15 @@ if ( DOTOBJ_ON ) {
     dotobj_load_async( "boomy )", "models\\boomy\\Head_2.obj"   , global.vft_simple_3d,   false, true,   0.5, 2, 4,   2, -2, 2,   UD, 0 );
     dotobj_load_async( "boomy D", "models\\boomy\\Head_3.obj"   , global.vft_simple_3d,   false, true,   0.5, 2, 4,   2, -2, 2,   UD, 0 );
     
+    dotobj_load_async( "0", "models\\digits\\0.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "1", "models\\digits\\1.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "2", "models\\digits\\2.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "3", "models\\digits\\3.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "4", "models\\digits\\4.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "5", "models\\digits\\5.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "6", "models\\digits\\6.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "7", "models\\digits\\7.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "8", "models\\digits\\8.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "9", "models\\digits\\9.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    
 }

@@ -1,5 +1,7 @@
 if ( room != rm_init ) {
     
+    score = 0;
+    
     var _inst = tr_instance_create( GRID_CELL_W*(GRID_W-1)/2 - 25, 110, obj_camera );
     with( _inst ) {
         z = 160;
@@ -15,16 +17,29 @@ if ( room != rm_init ) {
     var _inst = tr_instance_create_z( -50, 70, 0, 0, obj_boomy );
     
     ds_grid_clear( global.cassette_grid, UD );
+    /*
     for( var _y = 0; _y < GRID_H; _y++ ) {
         for ( var _x = 0; _x < GRID_W; _x++ ) {
             global.cassette_grid[# _x, _y ] = irandom( CASSETTE_INDEX_MAX-1 );
         }
     }
-    
+    */
     for( var _y = 0; _y < GRID_H; _y++ ) {
         for ( var _x = 0; _x < GRID_W; _x++ ) {
+                
+            repeat( 100 ) {
+                global.cassette_grid[# _x, _y ] = irandom( CASSETTE_INDEX_MAX-1 );
+                if ( check_for_match( _x, _y ) < 3 ) break;
+            }
+            
             cassette_spawn( _x, _y, global.cassette_grid[# _x, _y ] );
+            
         }
     }
+    
+    var _inst = tr_instance_create_z( obj_camera.x, GRID_CELL_H*(GRID_H-0.5), 0, 0, obj_score );
+    
+    var _inst = tr_instance_create_z( 0, -30, 0, 0, obj_barline );
+    _inst.grid_x = check_x;
     
 }

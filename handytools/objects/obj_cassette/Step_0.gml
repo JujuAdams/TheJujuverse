@@ -23,7 +23,7 @@ if ( z_drop <= 0 ) {
 
 //check for matches
 if ( check_wait ) && ( !any_cassettes_animating() ) {
-    check_for_match( grid_x, grid_y );
+    perform_match( grid_x, grid_y );
     check_wait = false;
 }
 

@@ -12,8 +12,12 @@
         "a0c22066-9356-406a-b642-b88f96399b9c",
         "81a09231-c5ca-4e14-b124-859e81b1cce7",
         "d37ead18-b0e1-456b-9823-fab39556cb69",
-        "3bef8efe-3a6e-4639-97a4-aeacfaf015bb",
-        "677303bd-27ce-4e4c-9ee6-6b138722d1f3"
+        "677303bd-27ce-4e4c-9ee6-6b138722d1f3",
+        "8b31f800-a538-4114-a84c-c39b12a173b2",
+        "5112125f-a1e4-42ee-a0e5-6816fbe090d4",
+        "5c3695a8-5692-4c6e-815a-8496d7227f3b",
+        "1cd989e6-7eaf-4169-b267-f5d4128e294c",
+        "4210d45c-0bc2-4a8a-9bc2-1f38a6423131"
     ],
     "filterType": "GMScript",
     "folderName": "game",

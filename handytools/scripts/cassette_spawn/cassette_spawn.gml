@@ -11,8 +11,8 @@ if ( _index == undefined ) {
     global.cassette_grid[# _grid_x, _grid_y ] = _index;
 }
 
-var _x = _grid_x*GRID_CELL_W;
-var _y = _grid_y*GRID_CELL_H - 10;
+var _x = grid_x_to_x( _grid_x );
+var _y = grid_y_to_y( _grid_y );
 with( tr_instance_create_z( _x, _y, 0, 0, obj_cassette ) ) {
     
     grid_x = _grid_x;
