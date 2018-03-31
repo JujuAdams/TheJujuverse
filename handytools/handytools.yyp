@@ -986,7 +986,7 @@
             "Key": "238c25c1-2c4d-4220-a5da-980b903d4833",
             "Value": {
                 "id": "fd36f94b-0666-4c73-9f7b-f5bd84fef18c",
-                "resourcePath": "datafiles_yy\\models\\Black_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Black_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -2599,6 +2599,14 @@
             }
         },
         {
+            "Key": "6601549c-f5e1-4e1a-99d3-5757a79a3c7e",
+            "Value": {
+                "id": "f1ad7d9b-2ff9-43ef-a02f-a49e5f058e20",
+                "resourcePath": "objects\\obj_cassette\\obj_cassette.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "66184121-da27-4283-802e-5936c25a7685",
             "Value": {
                 "id": "abceaaab-1d84-41b7-b69c-54535f86267c",
@@ -2730,7 +2738,7 @@
             "Key": "6c40be75-1a28-4542-9159-dc242f535830",
             "Value": {
                 "id": "65f25059-fdf0-4959-abdc-981dfa972296",
-                "resourcePath": "datafiles_yy\\models\\Blue_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Blue_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -2946,7 +2954,7 @@
             "Key": "75e734f8-b02b-4be7-aa77-854b903d7e51",
             "Value": {
                 "id": "894258ef-7662-47e0-9bb1-5ccb5c71ce0b",
-                "resourcePath": "datafiles_yy\\models\\Red_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Red_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -3314,7 +3322,7 @@
             "Key": "85e8cdbd-e643-41de-aaf1-b6b75b23e0b4",
             "Value": {
                 "id": "272093e9-3fcb-4599-8257-5602abd2abeb",
-                "resourcePath": "datafiles_yy\\models\\White_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\White_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -3482,7 +3490,7 @@
             "Key": "8bb6461e-3573-4176-988d-8bc96e69592a",
             "Value": {
                 "id": "724cd3c0-5c3d-461d-8d92-7fda6732d23c",
-                "resourcePath": "datafiles_yy\\models\\Black_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Black_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -3807,14 +3815,6 @@
             }
         },
         {
-            "Key": "9c6dd784-b298-43eb-878a-32f1eef5764b",
-            "Value": {
-                "id": "96455cd0-afa3-49f8-be4a-fe9b52b6a40c",
-                "resourcePath": "datafiles_yy\\models\\deer.obj.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "9cd32f43-f704-4508-a431-1a4fd334ead6",
             "Value": {
                 "id": "65437537-02c3-431c-b07d-a802d84cdee6",
@@ -4106,7 +4106,7 @@
             "Key": "a68cea7f-f180-4602-9673-d7b637be5341",
             "Value": {
                 "id": "5486fafa-1238-4319-9a5c-dd58c03e88d5",
-                "resourcePath": "datafiles_yy\\models\\Red_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Red_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -4194,7 +4194,7 @@
             "Key": "a932c80f-c435-4a54-85d7-710dae5e46a8",
             "Value": {
                 "id": "94f57bf9-50c1-423b-bb65-296bdd4117ce",
-                "resourcePath": "datafiles_yy\\models\\Blue_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Blue_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -4442,7 +4442,7 @@
             "Key": "b2704a8e-4e86-4b8d-91da-a08a7e0a0484",
             "Value": {
                 "id": "0217e725-d874-43a5-a5da-e48256412713",
-                "resourcePath": "datafiles_yy\\models\\Grey_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Grey_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -4458,7 +4458,7 @@
             "Key": "b2ad5781-b5f4-40b6-993d-a24da4b8861b",
             "Value": {
                 "id": "e5875792-e8cf-4c7f-b8ee-508b06470160",
-                "resourcePath": "datafiles_yy\\models\\Grey_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Grey_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -4508,6 +4508,14 @@
                 "id": "d0564394-a7d0-4f2a-ae00-46e9975054b4",
                 "resourcePath": "scripts\\tr_vertex_dump\\tr_vertex_dump.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b4f8960c-a061-4c5b-a032-8658e10138f0",
+            "Value": {
+                "id": "c52b4b83-827d-4f0d-a2d6-1aa724b213c2",
+                "resourcePath": "views\\b4f8960c-a061-4c5b-a032-8658e10138f0.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4890,7 +4898,7 @@
             "Key": "c388c6a6-d21d-4a3c-b058-9465669977b6",
             "Value": {
                 "id": "196305f3-7565-499b-90ba-06542cc00d40",
-                "resourcePath": "datafiles_yy\\models\\Yellow_Cassette.obj.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Yellow_Cassette.obj.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -5260,14 +5268,6 @@
                 "id": "ee324ade-ec8b-4c2f-9174-eb54f8b45f95",
                 "resourcePath": "objects\\obj_parent_light\\obj_parent_light.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "d7b7d513-e86b-47e1-be05-5987423c2e92",
-            "Value": {
-                "id": "624bb1b3-a7af-430d-8600-dacfd029d070",
-                "resourcePath": "datafiles_yy\\models\\deer.png.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -5674,7 +5674,7 @@
             "Key": "e755cc9b-8375-48c1-97b0-0da49696e64a",
             "Value": {
                 "id": "78323a1c-5097-475c-ab4e-963597ed133b",
-                "resourcePath": "datafiles_yy\\models\\White_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\White_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
@@ -6250,7 +6250,7 @@
             "Key": "ffcdccb9-9bc9-4525-b711-fd4836a20a0d",
             "Value": {
                 "id": "819f7939-af84-4910-b4de-2a0b5cdcf66a",
-                "resourcePath": "datafiles_yy\\models\\Yellow_Cassette.png.yy",
+                "resourcePath": "datafiles_yy\\models\\cassettes\\Yellow_Cassette.png.yy",
                 "resourceType": "GMIncludedFile"
             }
         }

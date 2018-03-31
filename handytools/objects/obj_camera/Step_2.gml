@@ -1,4 +1,4 @@
-if ( ALLOW_MOUSELOOK ) {
+if ( ALLOW_MOUSELOOK && keyboard_check( vk_shift ) ) {
     look_xy_angle -= control_get( 0, "mouse", "dx" )/8;
     look_xy_angle = (look_xy_angle+720) mod 360;
     look_pz_angle = clamp( look_pz_angle - control_get( 0, "mouse", "dy" )/5, -89, 89 );
