@@ -28,7 +28,7 @@
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
 #macro GRIP_ON         true
-#macro EDITOR_ON       true
+#macro EDITOR_ON      false
 #macro DOTOBJ_ON       true
 #macro SCRIBBLE_ON     true
 #macro TRANSITION_ON   true
