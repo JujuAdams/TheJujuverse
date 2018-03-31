@@ -55,7 +55,7 @@ if ( SCREEN_3D ) {
         
     } else {
 	
-    	if ( SCREEN_ALLOW_DOF && global.screen_do_dof && !editor_is_open() ) {
+    	if ( SCREEN_ALLOW_DOF && global.screen_do_dof ) {
 		
     		if ( SCREEN_ALLOW_DEFERRED && global.screen_do_deferred ) {
 			
@@ -99,9 +99,4 @@ if ( SCREEN_3D ) {
     
     //2D lol
     
-}
-
-if ( global.game_room != 0 ) && ( global.game_room != 10 ) {
-    var _scale = 10;
-    draw_sprite_ext( spr_white_pixel, 0, _draw_x + _draw_w div 2 + _scale div 2, _draw_y + _draw_h div 2 + _scale div 2, _scale, _scale, 0, c_white, 0.3 );
 }

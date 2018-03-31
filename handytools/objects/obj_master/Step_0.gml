@@ -56,7 +56,7 @@ switch( load_phase ) {
 
 if ( QUIT_ON_ESCAPE && keyboard_check_pressed( vk_escape ) ) game_end();
 
-if ( FORCE_NO_CURSOR && ( !imguigml_any_window_open() || ( editor_is_open() && editor_is_collapsed() ) ) ) {
+if ( FORCE_NO_CURSOR && !imguigml_any_window_open() ) {
     window_set_cursor( cr_none );
 } else {
     window_set_cursor( cr_default );

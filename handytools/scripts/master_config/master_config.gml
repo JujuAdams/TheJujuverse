@@ -24,11 +24,10 @@
 #macro SCREEN_ON       true
 #macro OPTIONS_ON    (false || !DEVELOPMENT)
 #macro FPS_ON        (false && !RELEASE)
-#macro DEVTOOL_ON    (false && IMGUI_ON && DEVELOPMENT)
+#macro DEVTOOL_ON    ( true && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
 #macro GRIP_ON         true
-#macro EDITOR_ON      false
 #macro DOTOBJ_ON       true
 #macro SCRIBBLE_ON     true
 #macro TRANSITION_ON  false
@@ -45,9 +44,11 @@
 #macro TIMED_SPRITE_THRESHOLD 1000
 
 //graphics
+#macro DEFAULT_LOCK_MOUSE false
+#macro ALLOW_MOUSELOOK true
 #macro ALLOW_MRT true
 #macro FORCE_VSYNC true
-#macro FORCE_NO_CURSOR true
+#macro FORCE_NO_CURSOR false
 #macro FORCE_NO_INTERPOLATION true
 #macro FORCE_WINDOW_SCALE_INTEGER !DEVELOPMENT
 #macro DEFAULT_FONT fnt_default

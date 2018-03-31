@@ -1,4 +1,8 @@
-///instance_create_z( x, y, z, rotation, object )
+/// @param x
+/// @param y
+/// @param z
+/// @param rotation
+/// @param object
 
 var _x   = argument0;
 var _y   = argument1;

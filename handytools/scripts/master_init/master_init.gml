@@ -21,7 +21,6 @@ trace_f( "Initialising services" );
     rumble_init();
 resolution_init();
       grip_init();
-    editor_init();
     dotobj_init();
   scribble_init();
 transition_init();

@@ -20,11 +20,9 @@ trace( "Creating service instances" );
     rumble_start_service();
 resolution_start_service();
       grip_start_service();
-    editor_start_service();
     dotobj_start_service();
   scribble_start_service();
 transition_start_service();
      jiffy_start_service();
 
 instantiate_protected( obj_gameflow );
-unload_current_room();

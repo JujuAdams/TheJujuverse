@@ -1,6 +1,8 @@
-look_xy_angle -= control_get( 0, "mouse", "dx" )/8;
-look_xy_angle = (look_xy_angle+720) mod 360;
-look_pz_angle = clamp( look_pz_angle - control_get( 0, "mouse", "dy" )/5, -89, 89 );
+if ( ALLOW_MOUSELOOK ) {
+    look_xy_angle -= control_get( 0, "mouse", "dx" )/8;
+    look_xy_angle = (look_xy_angle+720) mod 360;
+    look_pz_angle = clamp( look_pz_angle - control_get( 0, "mouse", "dy" )/5, -89, 89 );
+}
 
 var _xy_cos = dcos( look_xy_angle );
 var _xy_sin = dsin( look_xy_angle );

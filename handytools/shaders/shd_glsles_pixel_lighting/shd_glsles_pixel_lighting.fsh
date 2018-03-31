@@ -65,7 +65,7 @@ float DoLightingSpecular() {
 void main() {
     gl_FragColor      = vec4( u_vAmbientColour.rgb, 1. );
     gl_FragColor.rgb += DoLightingCustom();
-    gl_FragColor      = mix( gl_FragColor, vec4( u_vForceColour.rgb, 1. ), u_vForceColour.a );
     gl_FragColor     *= v_vColour*texture2D( gm_BaseTexture, v_vTexcoord );
+    gl_FragColor      = mix( gl_FragColor, vec4( u_vForceColour.rgb, 1. ), u_vForceColour.a );
     gl_FragColor.rgb += u_fSpecular*DoLightingSpecular();
 }
