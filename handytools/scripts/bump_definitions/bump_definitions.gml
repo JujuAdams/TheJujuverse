@@ -1,0 +1,1 @@
+enum BUMP_SHAPE { SPHERE, BOX }
