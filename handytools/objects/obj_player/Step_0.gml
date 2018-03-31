@@ -45,64 +45,40 @@ if ( _vperp != 0 ) {
 velocity_x *= damping;
 velocity_y *= damping;
 
-if ( !obj_gameflow.transition_do ) {
-    if ( !place_meeting( x + velocity_x, y + velocity_y, obj_par_solid ) ) || editor_is_open() {
+if ( !place_meeting( x + velocity_x, y + velocity_y, obj_par_solid ) ) || editor_is_open() {
         
-        x += velocity_x;
-        y += velocity_y;
+    x += velocity_x;
+    y += velocity_y;
         
-        if ( global.game_room < 10 ) {
-            
-            if ( _is_moving ) {
-                
-                if ( current_time > footstep_time + 470 ) {
-                    footstep_flipflop = !footstep_flipflop;
-                    footstep_time = current_time;
-                    if ( footstep_flipflop ) audio_play_sound( snd_footstep_0, 1, false ) else audio_play_sound( snd_footstep_1, 1, false );
-                }
-                
-                view_bob_size = clamp( view_bob_size + 0.05, 0, 1 );
-                
-            } else {
-            
-                view_bob_size = clamp( view_bob_size - 0.05, 0, 1 );
-                
-            }
-            
-            view_bob_z = view_bob_size*0.9*sqr( dsin( ( current_time - view_bob_start_time )/3 ) );
-            
+} else if ( global.editor_noclip ) {
+        
+    x += velocity_x;
+    y += velocity_y;
+        
+} else {
+        
+    var _sign_x = sign( velocity_x );
+    repeat( abs( velocity_x ) ) {
+        if ( !place_meeting( x + _sign_x, y, obj_par_solid ) ) {
+            x += _sign_x;
+        } else {
+            break;
         }
-        
-    } else if ( global.editor_noclip ) {
-        
-        x += velocity_x;
-        y += velocity_y;
-        
-    } else {
-        
-        var _sign_x = sign( velocity_x );
-        repeat( abs( velocity_x ) ) {
-            if ( !place_meeting( x + _sign_x, y, obj_par_solid ) ) {
-                x += _sign_x;
-            } else {
-                break;
-            }
-        }
-        
-        var _sign_y = sign( velocity_y );
-        repeat( abs( velocity_y ) ) {
-            if ( !place_meeting( x, y + _sign_y, obj_par_solid ) ) {
-                y += _sign_y;
-            } else {
-                break;
-            }
-        }
-        
     }
+        
+    var _sign_y = sign( velocity_y );
+    repeat( abs( velocity_y ) ) {
+        if ( !place_meeting( x, y + _sign_y, obj_par_solid ) ) {
+            y += _sign_y;
+        } else {
+            break;
+        }
+    }
+        
 }
 
 with( obj_camera ) {
     x = other.x;
     y = other.y;
-    z = other.z + (global.editor_fly? 0 : other.view_bob_z);
+    z = other.z;
 }

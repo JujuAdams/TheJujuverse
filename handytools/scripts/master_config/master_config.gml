@@ -16,22 +16,22 @@
 
 //services
 #macro TRACE_ON        true
-#macro IMGUI_ON      ( true && DEVELOPMENT)
-#macro TRACKER_ON    ( true && DEVELOPMENT && !RELEASE)
+#macro IMGUI_ON      (false && DEVELOPMENT)
+#macro TRACKER_ON    (false && DEVELOPMENT && !RELEASE)
 #macro AUDIO_ON       false
 #macro WAN_ON         false
-#macro CONTROLS_ON     true
+#macro CONTROLS_ON    false
 #macro SCREEN_ON       true
 #macro OPTIONS_ON    (false || !DEVELOPMENT)
 #macro FPS_ON        (false && !RELEASE)
-#macro DEVTOOL_ON    ( true && IMGUI_ON && DEVELOPMENT)
+#macro DEVTOOL_ON    (false && IMGUI_ON && DEVELOPMENT)
 #macro RUMBLE_ON      false
 #macro RESOLUTION_ON  false
 #macro GRIP_ON         true
 #macro EDITOR_ON      false
 #macro DOTOBJ_ON       true
 #macro SCRIBBLE_ON     true
-#macro TRANSITION_ON   true
+#macro TRANSITION_ON  false
 #macro JIFFY_ON       false
 
 //miscellaneous

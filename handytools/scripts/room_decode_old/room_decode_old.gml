@@ -10,7 +10,6 @@ var _objects_map = _root_map[? "objects" ];
 for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undefined; _object_name = ds_map_find_next( _objects_map, _object_name ) ) {
     
     var _object = asset_get_index( _object_name );
-    if ( global.game_room != 0 ) && ( _object == obj_door ) continue;
     
     var _list = _objects_map[? _object_name ];
     var _size = ds_list_size( _list );
@@ -19,26 +18,6 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
         var _map = _list[| _i ];
         
         switch( _object ) {
-            case obj_wall:
-                var _sprite = _map[? "sprite" ];
-                if ( _sprite == undefined ) _sprite = spr_tex_wall6 else _sprite = asset_get_index( _sprite );
-                define_wall( _map[? "x1" ], _map[? "y1" ], _map[? "z1" ],
-                             _map[? "x2" ], _map[? "y2" ], _map[? "z2" ],
-                             _sprite );
-            break;
-            case obj_floor:
-                var _inst = define_floor( _map[? "x1" ], _map[? "y1" ],
-                                          _map[? "x2" ], _map[? "y2" ],
-                                          _map[? "z"  ], _map[? "tile_size" ], asset_get_index( _map[? "sprite" ] ) );
-                
-                var _node_map = editor_new_node( global.editor_scene_graph, _object, object_get_name( _object ) + "##" + string( _inst ), _inst );
-                editor_property_serialise( _node_map, _inst );
-            break;
-            case obj_ceiling:
-                define_ceiling( _map[? "x1" ], _map[? "y1" ],
-                                _map[? "x2" ], _map[? "y2" ],
-                                _map[? "z"  ], _map[? "tile_size" ], asset_get_index( _map[? "sprite" ] ) );
-            break;
             case obj_light:
                 var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
                 _inst.range = _map[? "range" ];
@@ -60,10 +39,14 @@ for( var _object_name = ds_map_find_first( _objects_map ); _object_name != undef
                 editor_property_serialise( _node_map, _inst );
             break;
             default:
-                var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
+                if ( !object_exists( _object ) ) {
+                    trace_error_q( false, _object_name, " does not exist!" );
+                } else {
+                    var _inst = tr_instance_create_z( _map[? "x" ], _map[? "y" ], _map[? "z" ], _map[? "image_angle" ], _object );
                 
-                var _node_map = editor_new_node( global.editor_scene_graph, _object, object_get_name( _object ) + "##" + string( _inst ), _inst );
-                editor_property_serialise( _node_map, _inst );
+                    var _node_map = editor_new_node( global.editor_scene_graph, _object, object_get_name( _object ) + "##" + string( _inst ), _inst );
+                    editor_property_serialise( _node_map, _inst );
+                }
             break;
         }
         

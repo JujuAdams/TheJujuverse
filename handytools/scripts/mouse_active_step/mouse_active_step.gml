@@ -8,7 +8,7 @@ mouse_over = false;
 mouse_clicked = false;
 
 if ( ( global.click_instance_over == id ) && !imguigml_any_window_open( [obj_editor] ) && ( !editor_is_open() || editor_is_collapsed() ) && ( instance_exists( obj_player ) ) )
-&& ( ( _dist < mouse_range ) || editor_is_open() || ( ( object_index == obj_phone ) && global.click_through_mirror && ( global.game_room == 4 ) ) ) {
+&& ( ( _dist < mouse_range ) || editor_is_open() ) {
     if ( mouse_glow == 0 ) mouse_glow_start = current_time;
     mouse_over = true;
 }

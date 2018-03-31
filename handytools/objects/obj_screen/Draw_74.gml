@@ -105,7 +105,3 @@ if ( global.game_room != 0 ) && ( global.game_room != 10 ) {
     var _scale = 10;
     draw_sprite_ext( spr_white_pixel, 0, _draw_x + _draw_w div 2 + _scale div 2, _draw_y + _draw_h div 2 + _scale div 2, _scale, _scale, 0, c_white, 0.3 );
 }
-
-//Handle transitions
-if ( obj_gameflow.transition_do ) draw_sprite_stretched_ext( spr_white_pixel, 0, _draw_x, _draw_y, _draw_w, _draw_h,
-                                                             obj_gameflow.transition_colour, obj_gameflow.transition_t );

@@ -3,6 +3,6 @@
 */
 
 if ( !instance_exists( obj_menu ) ) {
-    audio_play_sound( snd_flower, 1, false );
+    //phon_play( snd_flower );
     tr_instance_create( 0, 0, obj_menu );
 }

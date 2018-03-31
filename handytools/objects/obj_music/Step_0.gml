@@ -12,11 +12,11 @@ if ( _in_game ) {
     
     if ( !game_intro_played ) {
         audio_sound_gain( menu_song, 0, 400 );
-        game_song = audio_play_sound( snd_bossa_nova_intro, 100, false );
+        game_song = phon_play( snd_bossa_nova_intro, 100, false );
         game_intro_played = true;
     } else if ( !audio_is_playing( game_song ) ) {
         if ( audio_sound_get_gain( menu_song ) < 0.05 ) audio_stop_sound( menu_song );
-        game_song = audio_play_sound( snd_bossa_nova_loop, 100, true );
+        game_song = phon_play( snd_bossa_nova_loop, 100, true );
     }
     
 } else {
@@ -29,7 +29,7 @@ if ( _in_game ) {
         if ( audio_is_playing( menu_song ) ) {
             audio_sound_gain( menu_song, 1, 1000 );
         } else {
-            menu_song = audio_play_sound( snd_menu_loop, 100, true );
+            menu_song = phon_play( snd_menu_loop, 100, true );
             audio_sound_gain( menu_song, 0, 0 );
             audio_sound_gain( menu_song, 1, 2000 );
         }

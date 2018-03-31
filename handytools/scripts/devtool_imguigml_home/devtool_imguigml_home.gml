@@ -18,7 +18,7 @@ imguigml_same_line();
 var _result = imguigml_checkbox( "Master audio on", global.audio_master_on );
 if ( _result[0] ) {
     global.audio_master_on = _result[1];
-    audio_master_gain( global.audio_master_volume * global.audio_master_on );
+    phon_master_gain( global.audio_master_volume * global.audio_master_on );
 }
 
 repeat( 5 ) imguigml_spacing();
