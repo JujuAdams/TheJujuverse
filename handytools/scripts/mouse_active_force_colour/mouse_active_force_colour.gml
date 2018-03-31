@@ -2,4 +2,4 @@
 
 if ( global.screen_click_render ) exit;
 
-if ( mouse_over ) s_shader_rgba( "u_vForceColour", c_white, lerp( 0.5, 0.8, mouse_glow ) );
+if ( mouse_over ) s_shader_rgba( "u_vForceColour", c_white, lerp( 0.0, 0.8, mouse_glow ) );

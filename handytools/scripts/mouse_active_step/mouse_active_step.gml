@@ -1,10 +1,12 @@
 ///mouse_active_step()
 
+var _prev_mouse_over = mouse_over;
+
 mouse_over = false;
 mouse_clicked = false;
 
 if ( global.click_instance_over == id ) {
-    if ( mouse_glow == 0 ) mouse_glow_start = current_time;
+    if ( !_prev_mouse_over ) mouse_glow_start = current_time;
     mouse_over = true;
 }
 
