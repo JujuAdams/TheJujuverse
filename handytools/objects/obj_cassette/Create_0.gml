@@ -24,6 +24,18 @@ move_y_target = y;
 move_duration = 400;
 move_old_grid_y = grid_y;
 
+swap_do = false;
+swap_phase = 0;
+swap_t = 0;
+swap_state = current_time;
+swap_x_start = x;
+swap_y_start = y;
+swap_x_target = x;
+swap_y_target = y;
+swap_duration = 200;
+
+check_wait = false;
+
 cassette_index = 0;
 dotobj_animation_create( "static", concat( "cassette ", cassette_index ), 0 );
 dotobj_animation_play( "main", "static" );

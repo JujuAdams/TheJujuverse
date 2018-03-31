@@ -6,12 +6,12 @@ if ( DOTOBJ_ON ) {
     
     dotobj_load_async( "cube", "models\\old_cube.obj", global.vft_simple_3d,   false, false,   4, 0, 4,   1, 1, 1,   spr_tex_white, 0 );
     
-    dotobj_load_async( "cassette 0", "models\\cassettes\\White_Cassette.obj" , global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
-    dotobj_load_async( "cassette 1", "models\\cassettes\\Black_Cassette.obj" , global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
-    dotobj_load_async( "cassette 4", "models\\cassettes\\Grey_Cassette.obj"  , global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
-    dotobj_load_async( "cassette 2", "models\\cassettes\\Yellow_Cassette.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
-    dotobj_load_async( "cassette 3", "models\\cassettes\\Red_Cassette.obj"   , global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
-    dotobj_load_async( "cassette 5", "models\\cassettes\\Blue_Cassette.obj"  , global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 0", "models\\cassettes\\White_Cassette.obj" , global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 1", "models\\cassettes\\Black_Cassette.obj" , global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 4", "models\\cassettes\\Grey_Cassette.obj"  , global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 2", "models\\cassettes\\Yellow_Cassette.obj", global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 3", "models\\cassettes\\Red_Cassette.obj"   , global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
+    dotobj_load_async( "cassette 5", "models\\cassettes\\Blue_Cassette.obj"  , global.vft_simple_3d,   false, true,   0, 0, 2,   1, -1, 1,   UD, 0 );
     
     dotobj_load_async( "poof 0", "models\\poof\\Match_P_1.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );
     dotobj_load_async( "poof 1", "models\\poof\\Match_P_2.obj", global.vft_simple_3d,   false, true,   0, 0, 0,   1, -1, 1,   UD, 0 );

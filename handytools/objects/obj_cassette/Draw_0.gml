@@ -1,4 +1,4 @@
-mouse_active_force_colour();
+mouse_active_force_colour( global.cassette_selected == id );
 screen_click_handle_fog();
 
 matrix_chain_begin();

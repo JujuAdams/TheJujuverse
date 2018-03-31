@@ -6,8 +6,10 @@ var _grid_x = argument0;
 var _grid_y = argument1;
 var _index  = argument2;
 
-if ( _index == undefined ) _index = irandom( CASSETTE_INDEX_MAX-1 );
-global.cassette_grid[# _grid_x, _grid_y ] = _index;
+if ( _index == undefined ) {
+    _index = irandom( CASSETTE_INDEX_MAX-1 );
+    global.cassette_grid[# _grid_x, _grid_y ] = _index;
+}
 
 var _x = _grid_x*GRID_CELL_W;
 var _y = _grid_y*GRID_CELL_H - 10;

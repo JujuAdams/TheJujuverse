@@ -1671,6 +1671,14 @@
             }
         },
         {
+            "Key": "3bef8efe-3a6e-4639-97a4-aeacfaf015bb",
+            "Value": {
+                "id": "f1be639c-d7ea-40bb-85e9-f5265bfc3f99",
+                "resourcePath": "scripts\\check_for_match\\check_for_match.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3c1f313b-8c56-4603-9fa8-bb96da8ea32b",
             "Value": {
                 "id": "9bd459ec-9a86-45b2-8981-7665ab3a993a",
@@ -2847,6 +2855,14 @@
             }
         },
         {
+            "Key": "677303bd-27ce-4e4c-9ee6-6b138722d1f3",
+            "Value": {
+                "id": "9fb8b61a-89cf-4210-aaa0-68a85cce0594",
+                "resourcePath": "scripts\\any_cassettes_animating\\any_cassettes_animating.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "678e2f5f-c9fa-44ac-a6cf-b679d181f4ce",
             "Value": {
                 "id": "7b18340f-69a0-43f5-8780-85cbb0c7bcc2",
@@ -3420,6 +3436,14 @@
                 "id": "3b84c914-54ed-4f70-ba86-2fb0d99c4e82",
                 "resourcePath": "fonts\/fnt_tnr_41_italics\/fnt_tnr_41_italics.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "81a09231-c5ca-4e14-b124-859e81b1cce7",
+            "Value": {
+                "id": "53325837-3888-4524-ae61-8213d5c32b25",
+                "resourcePath": "scripts\\cassette_pop\\cassette_pop.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5559,6 +5583,14 @@
             }
         },
         {
+            "Key": "d37ead18-b0e1-456b-9823-fab39556cb69",
+            "Value": {
+                "id": "037be60f-0a3f-4bf1-83d8-65c173e97d20",
+                "resourcePath": "scripts\\cassette_find\\cassette_find.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d3be9d14-4e60-46c7-a6df-4e3f95aa9bf1",
             "Value": {
                 "id": "f276e91c-9df0-44e7-8aaa-7d3ff347de5b",
@@ -7163,7 +7195,11 @@
         "efeaf08b-81cc-4736-b4ef-99c524cfed7c",
         "56debf2b-9683-4c48-af2d-613605ec1e6d",
         "0389765f-dd45-4d65-848f-3129c81aa890",
-        "a0c22066-9356-406a-b642-b88f96399b9c"
+        "a0c22066-9356-406a-b642-b88f96399b9c",
+        "81a09231-c5ca-4e14-b124-859e81b1cce7",
+        "d37ead18-b0e1-456b-9823-fab39556cb69",
+        "3bef8efe-3a6e-4639-97a4-aeacfaf015bb",
+        "677303bd-27ce-4e4c-9ee6-6b138722d1f3"
     ],
     "tutorial": ""
 }

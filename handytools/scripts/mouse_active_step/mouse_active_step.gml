@@ -11,7 +11,6 @@ if ( global.click_instance_over == id ) {
 }
 
 if ( mouse_over ) {
-    mouse_glow = 0.5 + 0.5*dsin( ( current_time - mouse_glow_start )/5 );
     if ( mouse_check_button_pressed( mb_left ) ) {
         mouse_down = true;
     } else if ( mouse_down && !mouse_check_button( mb_left ) ) {
