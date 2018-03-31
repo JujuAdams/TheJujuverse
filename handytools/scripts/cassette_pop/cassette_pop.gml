@@ -15,6 +15,8 @@ with( argument0 ) {
         y_scale = _scale;
         z_scale = _scale;
     }
+    
+    score++;
     /*
     var _inst = tr_instance_create_z( x, y, z, 0, obj_note );
     var _index = cassette_index;

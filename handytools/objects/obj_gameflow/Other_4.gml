@@ -1,5 +1,6 @@
 if ( room != rm_init ) {
     
+    phon_play_loop( snd_loop );
     score = 0;
     
     var _inst = tr_instance_create( GRID_CELL_W*(GRID_W-1)/2 - 25, 110, obj_camera );
@@ -17,13 +18,7 @@ if ( room != rm_init ) {
     var _inst = tr_instance_create_z( -50, 70, 0, 0, obj_boomy );
     
     ds_grid_clear( global.cassette_grid, UD );
-    /*
-    for( var _y = 0; _y < GRID_H; _y++ ) {
-        for ( var _x = 0; _x < GRID_W; _x++ ) {
-            global.cassette_grid[# _x, _y ] = irandom( CASSETTE_INDEX_MAX-1 );
-        }
-    }
-    */
+    
     for( var _y = 0; _y < GRID_H; _y++ ) {
         for ( var _x = 0; _x < GRID_W; _x++ ) {
                 
