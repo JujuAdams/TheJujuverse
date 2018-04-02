@@ -42,7 +42,7 @@ switch( load_phase ) {
     break;
     
     case E_MASTER.OBJ:
-        if ( !DOTOBJ_ON || ds_map_empty( global.obj_load_map ) ) {
+        if ( !DOTOBJ_ON || ds_map_empty( global.dotobj_load_map ) ) {
             if ( DOTOBJ_ON ) trace_f( ".obj models loaded, time taken=", global.dotobj_total_time );
             trace_f( "--------------------", NL,
                      "   STARTING  GAME", NL,

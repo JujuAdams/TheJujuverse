@@ -1,8 +1,5 @@
 if ( room != rm_init ) {
     
-    phon_play_loop( snd_loop );
-    score = 0;
-    
     var _inst = tr_instance_create( GRID_CELL_W*(GRID_W-1)/2 - 25, 110, obj_camera );
     with( _inst ) {
         z = 160;
@@ -15,6 +12,8 @@ if ( room != rm_init ) {
     _inst.range = 1000;
     _inst.colour = c_white
     
+    tr_instance_create_z( 40, 90, 60, 0, obj_popcicle );
+    /*
     var _inst = tr_instance_create_z( -50, 70, 0, 0, obj_boomy );
     
     ds_grid_clear( global.cassette_grid, UD );
@@ -37,4 +36,7 @@ if ( room != rm_init ) {
     var _inst = tr_instance_create_z( 0, -30, 0, 0, obj_barline );
     _inst.grid_x = check_x;
     
+    phon_play_loop( snd_loop );
+    score = 0;
+    */
 }

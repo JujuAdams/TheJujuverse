@@ -3,8 +3,8 @@
 /// @param value
 /// @param [value...]
 
-var _abort = is_real(argument[0])?argument[0]:false;
-var _start = is_real(argument[0])?1:0;
+var _abort = is_real(argument[0])? argument[0] : false;
+var _start = is_real(argument[0])?           1 :     0;
     
 if ( TRACE_SHOW_ERROR ) {
     var _str = "";

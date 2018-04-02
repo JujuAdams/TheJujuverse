@@ -8,7 +8,7 @@ var _total_time = get_timer();
 var _map           = argument0;
 var _delete_buffer = argument1;
 
-var _name          = _map[? "name"         ];
+var _root_name     = _map[? "name"         ];
 var _filename      = _map[? "filename"     ];
 var _format        = _map[? "format"       ];
 var _flip_normals  = _map[? "flip normals" ];
@@ -22,6 +22,7 @@ var _scale_z       = _map[? "scale z"      ];
 var _buffer        = _map[? "buffer"       ];
 var _sprite        = _map[? "sprite"       ];
 var _image         = _map[? "image"        ];
+var _ignore_groups = _map[? "ignore groups" ];
 
 var _sprite_uv_l = 0;
 var _sprite_uv_t = 0;
@@ -40,7 +41,9 @@ if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
 var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
 var _normal_list  = tr_list_create(); ds_list_add( _normal_list,   0,0,0 );
 var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
+var _group_map    = tr_map_create();
 var _faces_list   = tr_list_create();
+tr_map_add_list( _group_map, "__DEFAULT", _faces_list );
 
 var _first_character = true;
 var _string = "";
@@ -50,19 +53,12 @@ var _negative = 1;
 var _mode = 0;
 buffer_save( _buffer, "_" );
 
-if ( _flip_normals ) _flip_normals = -1 else _flip_normals = 1;
-
-var _vertex_list  = tr_list_create(); ds_list_add( _vertex_list,   0,0,0 );
-var _normal_list  = tr_list_create(); ds_list_add( _normal_list,   0,0,0 );
-var _texture_list = tr_list_create(); ds_list_add( _texture_list,  0,0   );
-var _faces_list   = tr_list_create();
-
 var _file = file_text_open_read( "_" );
 var _inner_time = get_timer();
 while( !file_text_eof( _file ) ) {
 
     var _row_string = file_text_read_string( _file );
-    _row = string_replace_all( _row_string, "  ", " " );
+    var _row = string_replace_all( _row_string, "  ", " " );
     
     if ( string_copy( _row_string, 1, 2 ) == "v " ) {
         
@@ -113,6 +109,17 @@ while( !file_text_eof( _file ) ) {
         
     }
     
+    if ( !_ignore_groups ) {
+        if ( string_copy( _row_string, 1, 2 ) == "g " ) {
+            _row_string = string_replace_all( _row_string, "  ", " " );
+            _row_string = string_delete( _row_string, 1, string_pos( " ", _row_string ) );
+            if ( string_char_at( _row_string, string_length( _row_string ) ) == " " ) _row_string = string_copy( _row_string, 1, string_length( _row_string )-1 );
+        
+            var _faces_list = tr_list_create();
+            tr_map_add_list( _group_map, _row_string, _faces_list );
+        }
+    }
+    
     if ( string_copy( _row_string, 1, 2 ) == "f " ) {
         
         _row_string = string_replace_all( _row_string, "  ", " " );
@@ -157,11 +164,26 @@ trace( _filename, "    inner time=", _inner_time,
 file_text_close( _file );
 file_delete( "_" );
 
-var _vbuff = tr_vertex_create_buffer( ".obj: " + _name, true );
-vertex_begin( _vbuff, _format );
+var _array;
+var _a = 0;
+
+var _group_size = ds_map_size( _group_map );
+for( var _key = ds_map_find_first( _group_map ); _key != undefined; _key = ds_map_find_next( _group_map, _key ) ) {
     
-    var _size = ds_list_size( _faces_list );
-    for( var _i = 0; _i < _size; _i++ ) {
+    _faces_list = _group_map[? _key ];
+    if ( ds_list_size( _faces_list ) <= 0 ) continue;
+    
+    if ( _ignore_groups || ( _key == "__DEFAULT" ) || ( ( _group_size <= 2 ) && DOTOBJ_IGNORE_SINGLE_GROUPS ) ) {
+        var _name = _root_name;
+    } else {
+        var _name = _root_name + "." + _key;
+    }
+    
+    var _vbuff = tr_vertex_create_buffer( ".obj: " + _name, true );
+    vertex_begin( _vbuff, _format );
+    
+    var _faces_size = ds_list_size( _faces_list );
+    for( var _i = 0; _i < _faces_size; _i++ ) {
     
         var _face_string = _faces_list[| _i ];
         
@@ -232,24 +254,28 @@ vertex_begin( _vbuff, _format );
         vertex_normal(      _vbuff,   _nx, _ny, _nz );
          
     }
+    
+    vertex_end( _vbuff );
+    _array[ _a   ] = _name;
+    _array[ _a+1 ] = _vbuff;
+    _array[ _a+2 ] = ds_list_size( _faces_list );
+    _a += 3;
+    
+}
 
-vertex_end( _vbuff );
-
-_map[? "triangles" ] = ds_list_size( _faces_list );
 
 tr_list_destroy( _vertex_list  );
 tr_list_destroy( _normal_list  );
 tr_list_destroy( _texture_list );
-tr_list_destroy( _faces_list   );
+tr_map_destroy(  _group_map    );
 
-_map[? "vertex buffer" ] = _vbuff;
 if ( _delete_buffer ) {
     buffer_delete( _buffer );
     _map[? "buffer" ] = undefined;
 }
 
 _total_time = get_timer() - _total_time;
-if ( DOTOBJ_VERBOSE_LOAD ) trace( QU, _name, QU, " loaded: ", _map[? "triangles" ], " tris in ", _total_time, "us (", _filename, ")" );
+if ( DOTOBJ_VERBOSE_LOAD ) trace( QU, _root_name, QU, " loaded in ", _total_time, "us" );
 global.dotobj_total_time += _total_time;
 
-return _vbuff;
+return _array;

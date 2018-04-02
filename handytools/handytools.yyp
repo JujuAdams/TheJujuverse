@@ -3087,6 +3087,14 @@
             }
         },
         {
+            "Key": "6b401d4f-ecf0-4dad-8fc9-fa6e463a9c8c",
+            "Value": {
+                "id": "09a4bd28-a07d-4368-897a-2c49bbb61f72",
+                "resourcePath": "datafiles_yy\\models\\popcicle.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "6b959e91-10d9-4daa-8b11-0010d5e16747",
             "Value": {
                 "id": "3004d35b-da63-4fdb-89d0-345797779548",
@@ -3491,6 +3499,14 @@
             "Value": {
                 "id": "58aabca6-502b-4795-88a9-4cef3bed2ae3",
                 "resourcePath": "scripts\\gamepad_button_check_released_any\\gamepad_button_check_released_any.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7eca533d-33aa-4032-acee-fa99bcf8ef23",
+            "Value": {
+                "id": "2168a343-e0fe-405d-82d3-6dced9d90183",
+                "resourcePath": "scripts\\dotobj_load_async_ext\\dotobj_load_async_ext.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5191,6 +5207,14 @@
             }
         },
         {
+            "Key": "ba18d2ca-847b-4be3-b1a5-6e1213882bcc",
+            "Value": {
+                "id": "c9bee36f-624a-492e-99a1-0f7e7b469949",
+                "resourcePath": "objects\\obj_popcicle\\obj_popcicle.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ba9a65f1-c765-4114-9294-4a47e7fbcfbd",
             "Value": {
                 "id": "541e35cd-6ced-4653-924d-6a9bf5d663cc",
@@ -5388,6 +5412,14 @@
                 "id": "f49e92a4-78c2-435b-a228-6e0f848ca74b",
                 "resourcePath": "views\\c09ebac8-1730-4898-92f2-3fcd33500437.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c11568f6-4430-40eb-b66f-8e917c949f23",
+            "Value": {
+                "id": "1098e583-ff3e-49f7-9a96-5af97c4451fc",
+                "resourcePath": "datafiles_yy\\models\\popcicle.obj.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -7134,6 +7166,7 @@
         "eae570bd-2ac6-425a-be02-bb176554915f",
         "dad2e592-565d-4c10-9f86-861c33d0526c",
         "540a59de-1e3b-4dd1-bda9-8330c46c6712",
+        "7eca533d-33aa-4032-acee-fa99bcf8ef23",
         "facd32dd-6948-486a-bffe-e9a8d3c8c49e",
         "bc5af8ec-c3ce-4667-9d6a-48f9515aebcf",
         "cae9bbbd-e37c-4670-8128-fb85ec36a712",

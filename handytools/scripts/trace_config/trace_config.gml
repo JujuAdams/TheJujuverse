@@ -4,4 +4,4 @@
 #macro TRACE_TO_GAME_OUTPUT true
 
 #macro TRACE_CACHE_MESSAGES true
-#macro TRACE_CACHE_TIMEOUT 5000 //in milliseconds
+#macro TRACE_CACHE_TIMEOUT 1000 //in milliseconds
