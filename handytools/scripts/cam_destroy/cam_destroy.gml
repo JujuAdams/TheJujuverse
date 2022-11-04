@@ -1,1 +1,0 @@
-tr_list_destroy( camera_focus_list );

@@ -1,1 +1,0 @@
-return cam_window_y_to_world( window_mouse_get_y() );

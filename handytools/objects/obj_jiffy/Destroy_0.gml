@@ -1,1 +1,0 @@
-jiffy_destroy();

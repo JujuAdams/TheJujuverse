@@ -1,1 +1,0 @@
-global.master_game_frames++;

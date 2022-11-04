@@ -1,1 +1,0 @@
-if ( ds_exists( argument0, ds_type_map ) ) tr_map_destroy( argument0 );

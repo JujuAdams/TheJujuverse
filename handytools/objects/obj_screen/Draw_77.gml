@@ -1,1 +1,0 @@
-if ( FPS_ON ) smoothed_timer = lerp( smoothed_timer, get_timer() - frame_start_time, 0.008 );

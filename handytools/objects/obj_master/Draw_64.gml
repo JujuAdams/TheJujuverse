@@ -1,1 +1,0 @@
-if ( room == rm_init ) draw_text( 10, 10, "Loading..." );

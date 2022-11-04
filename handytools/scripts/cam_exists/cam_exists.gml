@@ -1,1 +1,0 @@
-return instance_exists( obj_camera );

@@ -1,1 +1,0 @@
-global.matrix_chain = matrix_build_identity();

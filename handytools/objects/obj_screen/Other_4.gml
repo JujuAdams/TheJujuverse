@@ -1,1 +1,0 @@
-grip_reactivate_all();
