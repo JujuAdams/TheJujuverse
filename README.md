@@ -18,3 +18,10 @@
 |`Snitch`      |Logging and bug tracking                                   |
 |`Sphinx`      |Buffer encryption                                          |
 |`Texan`       |Texture page management                                    |
+
+&nbsp;
+
+|Yet to come...|                   |
+|--------------|-------------------|
+|`Bento`       |Reactive UI layouts|
+|`Vinyl`       |Interactive audio  |
