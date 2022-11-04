@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "__DynamoBuildScripts",
+    "path": "extensions/__DynamoBuildScripts/__DynamoBuildScripts.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}
