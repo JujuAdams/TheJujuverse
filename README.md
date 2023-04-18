@@ -1,6 +1,5 @@
 <h1 align="center">The Jujuverse</h1>
-<h3 align="center">For GameMaker 2023.2 (and later)</h3>
-<h3 align="center">@jujuadams</h3>
+<h3 align="center">Game starter pack, for GameMaker 2023.2 (and later), by @jujuadams</h3>
 
 &nbsp;
 
@@ -32,8 +31,8 @@
     </tr>
     <tr>
         <td></td>
-        <td><a href="https://github.com/JujuAdams/SNAP">SNAP</a><br>Struct and array export/import and utilities</td>
-        <td>v5.7.0</td>
+        <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
+        <td>v4.0.0</td>
     </tr>
     <tr>
         <td></td>
@@ -47,12 +46,12 @@
     </tr>
     <tr>
         <td></td>
-        <td><a href="https://github.com/JujuAdams/Texan">Texan</a><br>Texture group manager</td>
-        <td>v2.0.1</td>
+        <td><a href="https://github.com/JujuAdams/SNAP">SNAP</a><br>Struct and array export/import and utilities</td>
+        <td>v5.7.0</td>
     </tr>
     <tr>
         <td></td>
-        <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
-        <td>v4.0.0</td>
+        <td><a href="https://github.com/JujuAdams/Texan">Texan</a><br>Texture group manager</td>
+        <td>v2.0.1</td>
     </tr>
 </table>
