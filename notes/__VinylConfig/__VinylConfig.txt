@@ -1,0 +1,27 @@
+// Please see https://jujuadams.github.io/Vinyl for documentation
+
+{
+    stacks: {
+        
+    }
+    
+    knobs: {
+        
+    }
+    
+    labels: {
+        
+    }
+    
+    assets: {
+        
+    }
+    
+    patterns: {
+        
+    }
+    
+    effect chains: {
+        
+    }
+}
