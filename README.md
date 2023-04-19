@@ -3,6 +3,8 @@
 
 &nbsp;
 
+<p align="center">Contains these libraries:</p>
+
 <table align="center">
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/scribble"><img src="https://raw.githubusercontent.com/JujuAdams/scribble/master/LOGO.png" style="width:120px"></a></td>
@@ -53,5 +55,24 @@
         <td></td>
         <td><a href="https://github.com/JujuAdams/Texan">Texan</a><br>Texture group manager</td>
         <td>v2.0.1</td>
+    </tr>
+</table>
+
+&nbsp;
+
+<p align="center">You may also be interested in:</p>
+
+<table align="center">
+    <tr>
+        <td align="right"><a href="https://github.com/JujuAdams/chatterbox"><img src="https://raw.githubusercontent.com/JujuAdams/chatterbox/master/LOGO.png" style="width:120px"></a></td>
+        <td><a href="https://github.com/JujuAdams/chatterbox">Chatterbox</a><br>Narrative scripting tool</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/JujuAdams/Bulb">Bulb</a><br>2D lighting and shadows</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/JujuAdams/Clean-Shapes">Clean Shapes</a><br>Antialiased primitive drawing</td>
     </tr>
 </table>
