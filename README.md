@@ -56,12 +56,10 @@
     <tr>
         <td></td>
         <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
-        <td>v4.0.0</td>
     </tr>
     <tr>
         <td></td>
         <td><a href="https://github.com/JujuAdams/iota">iota</a><br>Miniature fixed timestep library</td>
-        <td>v3.0.0</td>
     </tr>
     <tr>
         <td></td>
