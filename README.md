@@ -33,16 +33,6 @@
     </tr>
     <tr>
         <td></td>
-        <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
-        <td>v4.0.0</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td><a href="https://github.com/JujuAdams/iota">iota</a><br>Miniature fixed timestep library</td>
-        <td>v3.0.0</td>
-    </tr>
-    <tr>
-        <td></td>
         <td><a href="https://github.com/JujuAdams/Snitch">Snitch</a><br>Logging and crash handling system</td>
         <td>v3.1.0</td>
     </tr>
@@ -64,15 +54,25 @@
 
 <table align="center">
     <tr>
-        <td align="right"><a href="https://github.com/JujuAdams/chatterbox"><img src="https://raw.githubusercontent.com/JujuAdams/chatterbox/master/LOGO.png" style="width:120px"></a></td>
-        <td><a href="https://github.com/JujuAdams/chatterbox">Chatterbox</a><br>Narrative scripting tool</td>
+        <td></td>
+        <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
+        <td>v4.0.0</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/JujuAdams/iota">iota</a><br>Miniature fixed timestep library</td>
+        <td>v3.0.0</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/JujuAdams/Clean-Shapes">Clean Shapes</a><br>Antialiased primitive drawing</td>
     </tr>
     <tr>
         <td></td>
         <td><a href="https://github.com/JujuAdams/Bulb">Bulb</a><br>2D lighting and shadows</td>
     </tr>
     <tr>
-        <td></td>
-        <td><a href="https://github.com/JujuAdams/Clean-Shapes">Clean Shapes</a><br>Antialiased primitive drawing</td>
+        <td align="right"><a href="https://github.com/JujuAdams/chatterbox"><img src="https://raw.githubusercontent.com/JujuAdams/chatterbox/master/LOGO.png" style="width:120px"></a></td>
+        <td><a href="https://github.com/JujuAdams/chatterbox">Chatterbox</a><br>Narrative scripting tool</td>
     </tr>
 </table>
