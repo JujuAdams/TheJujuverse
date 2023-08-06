@@ -37,7 +37,7 @@
         <td>v5.7.0</td>
     </tr>
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/Snitch"><img src="https://raw.githubusercontent.com/JujuAdams/Snitch/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Snitch">Snitch</a><br>Logging and crash handling system</td>
         <td>v3.1.0</td>
     </tr>
@@ -58,7 +58,7 @@
         <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
     </tr>
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/iota"><img src="https://raw.githubusercontent.com/JujuAdams/iota/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/iota">iota</a><br>Miniature fixed timestep library</td>
     </tr>
     <tr>
