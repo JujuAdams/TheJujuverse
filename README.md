@@ -66,7 +66,7 @@
         <td><a href="https://github.com/JujuAdams/Clean-Shapes">Clean Shapes</a><br>Antialiased primitive drawing</td>
     </tr>
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/Bulb"><img src="https://raw.githubusercontent.com/JujuAdams/Bulb/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Bulb">Bulb</a><br>2D lighting and shadows</td>
     </tr>
     <tr>
