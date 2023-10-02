@@ -42,7 +42,7 @@
         <td>v3.1.0</td>
     </tr>
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/Texan"><img src="https://raw.githubusercontent.com/JujuAdams/Texan/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Texan">Texan</a><br>Texture group manager</td>
         <td>v2.0.1</td>
     </tr>
@@ -54,7 +54,7 @@
 
 <table align="center">
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/DoLater"><img src="https://raw.githubusercontent.com/JujuAdams/DoLater/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/DoLater">DoLater</a><br><code>call_later</code> but with arguments</td>
     </tr>
     <tr>
