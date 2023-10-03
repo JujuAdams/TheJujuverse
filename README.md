@@ -3,7 +3,7 @@
 
 &nbsp;
 
-<p align="center">Contains these libraries:</p>
+<p align="center">Contains these libraries (please check each repo individually for updates):</p>
 
 <table align="center">
     <tr>
