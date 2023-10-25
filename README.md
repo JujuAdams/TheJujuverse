@@ -64,7 +64,7 @@
         <td><a href="https://github.com/JujuAdams/iota">iota</a><br>Miniature fixed timestep library</td>
     </tr>
     <tr>
-        <td></td>
+        <td align="right"><a href="https://github.com/JujuAdams/Clean-Shapes"><img src="https://raw.githubusercontent.com/JujuAdams/Clean-Shapes/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Clean-Shapes">Clean Shapes</a><br>Antialiased primitive drawing</td>
     </tr>
     <tr>
