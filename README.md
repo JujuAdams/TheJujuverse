@@ -14,7 +14,7 @@
         <td>v9.0.0</td>
     </tr>
     <tr>
-        <td align="right"><a href="https://github.com/JujuAdams/scribble"><img src="https://raw.githubusercontent.com/JujuAdams/scribblejr/master/LOGO.png" style="width:120px"></a></td>
+        <td align="right"><a href="https://github.com/JujuAdams/ScribbleJunior"><img src="https://raw.githubusercontent.com/JujuAdams/ScribbleJunior/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/ScribbleJunior">Scribble Jr.</a><br>Fast and lightweight text renderer</td>
         <td>v1.3.0</td>
     </tr>
@@ -41,7 +41,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/SNAP"><img src="https://raw.githubusercontent.com/JujuAdams/SNAP/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/SNAP">SNAP</a><br>Struct and array export/import and utilities</td>
-        <td>v5.7.0</td>
+        <td>v6.1.2</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Snitch"><img src="https://raw.githubusercontent.com/JujuAdams/Snitch/master/LOGO.png" style="width:120px"></a></td>
