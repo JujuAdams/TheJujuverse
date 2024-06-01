@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"TexanFetchSprite",
+  "%Name":"__TexanTrace",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"TexanFetchSprite",
+  "name":"__TexanTrace",
   "parent":{
-    "name":"Texan",
-    "path":"folders/Texan.yy",
+    "name":"(System)",
+    "path":"folders/Texan/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"TexanFetchAll",
+  "%Name":"__TexanSystem",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"TexanFetchAll",
+  "name":"__TexanSystem",
   "parent":{
-    "name":"API",
-    "path":"folders/Texan/API.yy",
+    "name":"(System)",
+    "path":"folders/Texan/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

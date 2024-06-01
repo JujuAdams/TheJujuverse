@@ -1,25 +1,40 @@
-/// Queues texture groups to be flushed the next time texan_commit() is called
-/// (If a texture group is queued to be both fetched and flushed then the flush command is ignored)
+// Feather disable all
+
+/// Queues texture groups to be flushed the next time TexanCommit() is called. (If a texture group
+/// is queued to be both fetched and flushed then the flush command is ignored.
 ///
 /// @param textureGroup
 /// @param [textureGroup...]
 
 function TexanFlush()
 {
-    var _i = 0;
-    repeat(argument_count)
+    static _global = __TexanInitialize();
+    with(_global)
     {
-        var _texture_group = argument[_i];
-        
-        if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Trying to queue flush \"", _texture_group, "\"          ", debug_get_callstack());
-        
-        if ((ds_list_find_index(global.__texanFetch, _texture_group) < 0)
-        &&  (ds_list_find_index(global.__texanFlush, _texture_group) < 0))
+        //Copy across the always fetch array
+        if ((array_length(__fetchArray) <= 0) && (array_length(__alwaysFetchArray) >= 1))
         {
-            if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Queued flush for \"", _texture_group, "\"");
-            ds_list_add(global.__texanFlush, argument[_i]);
+            array_copy(__fetchArray, 0, __alwaysFetchArray, 0, array_length(__alwaysFetchArray));
         }
         
-        ++_i;
+        var _i = 0;
+        repeat(argument_count)
+        {
+            var _textureGroup = argument[_i];
+            
+            if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Trying to queue flush \"", _textureGroup, "\"          ", debug_get_callstack());
+            
+            if ((array_get_index(__fetchArray, _textureGroup) < 0) && (array_get_index(__flushArray, _textureGroup) < 0))
+            {
+                if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Queued flush for \"", _textureGroup, "\"");
+                array_push(__flushArray, argument[_i]);
+            }
+            else
+            {
+                if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("\"", _textureGroup, "\" is being fetched, ignoring flush");
+            }
+            
+            ++_i;
+        }
     }
 }

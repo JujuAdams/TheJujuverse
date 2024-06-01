@@ -1,31 +1,43 @@
-/// Queues texture groups to be fetched the next time texan_commit() is called
-/// (If a texture group is queued to be both fetched and flushed then the flush command is ignored)
+// Feather disable all
+
+/// Queues texture groups to be fetched the next time TexanCommit() is called. If a texture group
+/// is queued to be both fetched and flushed then the flush command is ignored.
 ///
 /// @param textureGroup
 /// @param [textureGroup...]
 
 function TexanFetch()
 {
-    var _i = 0;
-    repeat(argument_count)
+    static _global = __TexanInitialize();
+    with(_global)
     {
-        var _texture_group = argument[_i];
-        
-        if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Trying to queue fetch \"", _texture_group, "\"          ", debug_get_callstack());
-        
-        var _index = ds_list_find_index(global.__texanFlush, _texture_group);
-        if (_index >= 0)
+        //Copy across the always fetch array
+        if ((array_length(__fetchArray) <= 0) && (array_length(__alwaysFetchArray) >= 1))
         {
-            if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Fetch collides with flush for \"", _texture_group, "\", removing flush");
-            ds_list_delete(global.__texanFlush, _index);
+            array_copy(__fetchArray, 0, __alwaysFetchArray, 0, array_length(__alwaysFetchArray));
         }
         
-        if (ds_list_find_index(global.__texanFetch, _texture_group) < 0)
+        var _i = 0;
+        repeat(argument_count)
         {
-            if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Queued fetch for \"", _texture_group, "\"");
-            ds_list_add(global.__texanFetch, _texture_group);
+            var _textureGroup = argument[_i];
+            
+            if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Trying to queue fetch \"", _textureGroup, "\"          ", debug_get_callstack());
+            
+            var _index = array_get_index(__flushArray, _textureGroup);
+            if (_index >= 0)
+            {
+                if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Fetch collides with flush for \"", _textureGroup, "\", removing flush");
+                array_delete(__flushArray, _index, 1);
+            }
+            
+            if (array_get_index(__fetchArray, _textureGroup) < 0)
+            {
+                if (TEXAN_DEBUG_LEVEL >= 2) __TexanTrace("Queued fetch for \"", _textureGroup, "\"");
+                array_push(__fetchArray, _textureGroup);
+            }
+            
+            ++_i;
         }
-        
-        ++_i;
     }
 }

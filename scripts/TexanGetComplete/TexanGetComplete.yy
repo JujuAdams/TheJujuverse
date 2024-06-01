@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"TexanCommitStep",
+  "%Name":"TexanGetComplete",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"TexanCommitStep",
+  "name":"TexanGetComplete",
   "parent":{
-    "name":"Texan",
-    "path":"folders/Texan.yy",
+    "name":"API",
+    "path":"folders/Texan/API.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

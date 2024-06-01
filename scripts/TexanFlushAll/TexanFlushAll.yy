@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"TexanFlushAll",
   "parent":{
-    "name":"Texan",
-    "path":"folders/Texan.yy",
+    "name":"API",
+    "path":"folders/Texan/API.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
