@@ -1,3 +1,4 @@
+// Feather disable all
 /// Creates a new font with an outline based on a given source font
 ///
 /// @param sourceFontName       Name, as a string, of the font to use as a basis for the effect
@@ -40,9 +41,9 @@ function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _
         return undefined;
     }
     
-    if (_src_font_data.__msdf)
+    if (_src_font_data.__sdf)
     {
-        __scribble_error("Source font cannot be an MSDF font");
+        __scribble_error("Source font cannot be an SDF font");
         return undefined;
     }
     

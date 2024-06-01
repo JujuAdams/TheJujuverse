@@ -1,3 +1,4 @@
+// Feather disable all
 /// @param string
 /// @param uniqueID
 
@@ -95,15 +96,6 @@ function __scribble_class_element(_string, _unique_id) constructor
     __tw_reveal              = undefined;
     __tw_reveal_window_array = array_create(2*__SCRIBBLE_WINDOW_COUNT, 0.0);
     
-    if (!SCRIBBLE_WARNING_LEGACY_TYPEWRITER)
-    {
-        //If we're permitting use of legacy typewriter functions, create a private typist for this specific text element
-        __tw_legacy_typist = scribble_typist();
-        __tw_legacy_typist.__associate(self);
-        
-        __tw_legacy_typist_use = false;
-    }
-    
     __animation_time        = current_time;
     __animation_speed       = 1;
     __animation_blink_state = true;
@@ -113,16 +105,14 @@ function __scribble_class_element(_string, _unique_id) constructor
     __padding_r = 0;
     __padding_b = 0;
     
-    __msdf_shadow_colour   = c_black;
-    __msdf_shadow_alpha    = 0.0;
-    __msdf_shadow_xoffset  = 0;
-    __msdf_shadow_yoffset  = 0;
-    __msdf_shadow_softness = 0;
+    __sdf_shadow_colour   = c_black;
+    __sdf_shadow_alpha    = 0.0;
+    __sdf_shadow_xoffset  = 0;
+    __sdf_shadow_yoffset  = 0;
+    __sdf_shadow_softness = 0;
     
-    __msdf_border_colour    = c_black;
-    __msdf_border_thickness = 0.0;
-    
-    __msdf_feather_thickness = 1.0;
+    __sdf_border_colour    = c_black;
+    __sdf_border_thickness = 0.0;
     
     __bidi_hint = undefined;
     
@@ -170,11 +160,6 @@ function __scribble_class_element(_string, _unique_id) constructor
         
         var _function_scope = other;
         
-        if (!SCRIBBLE_WARNING_LEGACY_TYPEWRITER)
-        {
-            if (__tw_legacy_typist_use && (_typist == undefined)) _typist = __tw_legacy_typist;
-        }
-        
         //Get our model, and create one if needed
         var _model = __get_model(true);
         if (!is_struct(_model)) return undefined;
@@ -198,8 +183,8 @@ function __scribble_class_element(_string, _unique_id) constructor
             __animation_blink_state = true;
         }
         
-        if (_model.__uses_standard_font) __set_standard_uniforms(_typist, _function_scope);
-        if (_model.__uses_msdf_font) __set_msdf_uniforms(_typist, _function_scope);
+        shader_set(__shd_scribble);
+        __set_standard_uniforms(_typist, _function_scope);
         
         //...aaaand set the matrix
         var _old_matrix = matrix_get(matrix_world);
@@ -207,10 +192,11 @@ function __scribble_class_element(_string, _unique_id) constructor
         matrix_set(matrix_world, _matrix);
         
         //Submit the model
-        _model.__submit(__page, __msdf_feather_thickness, (__msdf_border_thickness > 0) || (__msdf_shadow_alpha > 0));
+        _model.__submit(__page, (__sdf_border_thickness > 0) || (__sdf_shadow_alpha > 0));
         
         //Make sure we reset the world matrix
         matrix_set(matrix_world, _old_matrix);
+        shader_reset();
         
         if (SCRIBBLE_SHOW_WRAP_BOUNDARY) debug_draw_bbox(_x, _y);
         
@@ -638,7 +624,9 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     static region_detect = function(_element_x, _element_y, _pointer_x, _pointer_y)
     {
-        var _model        = __get_model(true);
+        var _model = __get_model(true);
+        if (!is_struct(_model)) return undefined;
+        
         var _page         = _model.__pages_array[__page];
         var _region_array = _page.__region_array;
         
@@ -687,7 +675,9 @@ function __scribble_class_element(_string, _unique_id) constructor
             return;
         }
         
-        var _model        = __get_model(true);
+        var _model = __get_model(true);
+        if (!is_struct(_model)) return undefined;
+        
         var _page         = _model.__pages_array[__page];
         var _region_array = _page.__region_array;
         
@@ -1191,31 +1181,42 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     
     
-    #region MSDF
+    #region SDF
     
-    static msdf_shadow = function(_colour, _alpha, _x_offset, _y_offset, _softness = 1)
+    static sdf_shadow = function(_colour, _alpha, _x_offset, _y_offset, _softness = 0.25)
     {
-        __msdf_shadow_colour   = _colour;
-        __msdf_shadow_alpha    = _alpha;
-        __msdf_shadow_xoffset  = _x_offset;
-        __msdf_shadow_yoffset  = _y_offset;
-        __msdf_shadow_softness = max(0, _softness);
+        __sdf_shadow_colour   = _colour;
+        __sdf_shadow_alpha    = _alpha;
+        __sdf_shadow_xoffset  = _x_offset;
+        __sdf_shadow_yoffset  = _y_offset;
+        __sdf_shadow_softness = max(0, _softness);
         
+        return self;
+    }
+    
+    static sdf_border = function(_colour, _thickness)
+    {
+        __sdf_border_colour    = _colour;
+        __sdf_border_thickness = _thickness;
+        
+        return self;
+    }
+    
+    static msdf_shadow = function(_colour, _alpha, _x_offset, _y_offset, _softness = 0.25)
+    {
+        __scribble_error(".msdf_shadow(), and MSDF fonts as a whole, have been removed from Scribble\nInstead, please use GameMaker's native SDF fonts");
         return self;
     }
     
     static msdf_border = function(_colour, _thickness)
     {
-        __msdf_border_colour    = _colour;
-        __msdf_border_thickness = _thickness;
-        
+        __scribble_error(".msdf_border(), and MSDF fonts as a whole, have been removed from Scribble\nInstead, please use GameMaker's native SDF fonts");
         return self;
     }
     
     static msdf_feather = function(_thickness)
     {
-        __msdf_feather_thickness = _thickness;
-        
+        __scribble_error(".msdf_feather(), and MSDF fonts as a whole, have been removed from Scribble\nInstead, please use GameMaker's native SDF fonts");
         return self;
     }
     
@@ -1279,16 +1280,6 @@ function __scribble_class_element(_string, _unique_id) constructor
         
         //Set as __flushed
         __flushed = true;
-        
-        if (SCRIBBLE_FLUSH_RETURNS_SELF)
-        {
-            return self;
-        }
-        else
-        {
-            static _null = new __scribble_class_null_element();
-            return _null;
-        }
     }
     
     #endregion
@@ -1523,16 +1514,16 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     static __set_standard_uniforms = function(_typist, _function_scope)
     {
-        static _u_fTime         = shader_get_uniform(__shd_scribble, "u_fTime"                   );
-        static _u_vColourBlend  = shader_get_uniform(__shd_scribble, "u_vColourBlend"            );
-        static _u_fBlinkState   = shader_get_uniform(__shd_scribble, "u_fBlinkState"             );
-        static _u_vGradient     = shader_get_uniform(__shd_scribble, "u_vGradient"               );
-        static _u_vSkew         = shader_get_uniform(__shd_scribble, "u_vSkew"                   );
-        static _u_vFlash        = shader_get_uniform(__shd_scribble, "u_vFlash"                  );
-        static _u_vRegionActive = shader_get_uniform(__shd_scribble, "u_vRegionActive"           );
-        static _u_vRegionColour = shader_get_uniform(__shd_scribble, "u_vRegionColour"           );
-        static _u_aDataFields   = shader_get_uniform(__shd_scribble, "u_aDataFields"             );
-        static _u_aBezier       = shader_get_uniform(__shd_scribble, "u_aBezier"                 );
+        static _u_fTime         = shader_get_uniform(__shd_scribble, "u_fTime"        );
+        static _u_vColourBlend  = shader_get_uniform(__shd_scribble, "u_vColourBlend" );
+        static _u_fBlinkState   = shader_get_uniform(__shd_scribble, "u_fBlinkState"  );
+        static _u_vGradient     = shader_get_uniform(__shd_scribble, "u_vGradient"    );
+        static _u_vSkew         = shader_get_uniform(__shd_scribble, "u_vSkew"        );
+        static _u_vFlash        = shader_get_uniform(__shd_scribble, "u_vFlash"       );
+        static _u_vRegionActive = shader_get_uniform(__shd_scribble, "u_vRegionActive");
+        static _u_vRegionColour = shader_get_uniform(__shd_scribble, "u_vRegionColour");
+        static _u_aDataFields   = shader_get_uniform(__shd_scribble, "u_aDataFields"  );
+        static _u_aBezier       = shader_get_uniform(__shd_scribble, "u_aBezier"      );
         
         static _u_iTypewriterUseLines      = shader_get_uniform(__shd_scribble, "u_iTypewriterUseLines"     );
         static _u_iTypewriterMethod        = shader_get_uniform(__shd_scribble, "u_iTypewriterMethod"       );
@@ -1543,6 +1534,11 @@ function __scribble_class_element(_string, _unique_id) constructor
         static _u_vTypewriterStartScale    = shader_get_uniform(__shd_scribble, "u_vTypewriterStartScale"   );
         static _u_fTypewriterStartRotation = shader_get_uniform(__shd_scribble, "u_fTypewriterStartRotation");
         static _u_fTypewriterAlphaDuration = shader_get_uniform(__shd_scribble, "u_fTypewriterAlphaDuration");
+    
+        static _u_vShadowOffsetAndSoftness = shader_get_uniform(__shd_scribble, "u_vShadowOffsetAndSoftness");
+        static _u_vShadowColour            = shader_get_uniform(__shd_scribble, "u_vShadowColour"           );
+        static _u_vBorderColour            = shader_get_uniform(__shd_scribble, "u_vBorderColour"           );
+        static _u_fBorderThickness         = shader_get_uniform(__shd_scribble, "u_fBorderThickness"        );
         
         static _scribble_state        = __scribble_get_state();
         static _anim_properties_array = __scribble_get_anim_properties();
@@ -1550,14 +1546,12 @@ function __scribble_class_element(_string, _unique_id) constructor
         static _shader_uniforms_dirty    = true;
         static _shader_set_to_use_bezier = false;
         
-        shader_set(__shd_scribble);
         shader_set_uniform_f(_u_fTime, __animation_time);
         
         //TODO - Optimise
-        var _blend_colour = __blend_colour;
-        shader_set_uniform_f(_u_vColourBlend, colour_get_red(  _blend_colour)/255,
-                                              colour_get_green(_blend_colour)/255,
-                                              colour_get_blue( _blend_colour)/255,
+        shader_set_uniform_f(_u_vColourBlend, colour_get_red(  __blend_colour)/255,
+                                              colour_get_green(__blend_colour)/255,
+                                              colour_get_blue( __blend_colour)/255,
                                               __blend_alpha);
         
         shader_set_uniform_f(_u_fBlinkState, __animation_blink_state);
@@ -1584,7 +1578,6 @@ function __scribble_class_element(_string, _unique_id) constructor
                                                    colour_get_green(__region_colour)/255,
                                                    colour_get_blue( __region_colour)/255,
                                                    __region_blend);
-            
         }
         else if (_shader_uniforms_dirty)
         {
@@ -1598,12 +1591,12 @@ function __scribble_class_element(_string, _unique_id) constructor
         }
         
         //Update the animation properties for this shader if they've changed since the last time we drew an element
-        if (_scribble_state.__standard_anim_desync)
+        if (_scribble_state.__shader_anim_desync)
         {
             with(_scribble_state)
             {
-                __standard_anim_desync  = false;
-                __standard_anim_default = __standard_anim_desync_to_default;
+                __shader_anim_desync  = false;
+                __shader_anim_default = __shader_anim_desync_to_default;
             }
             
             shader_set_uniform_f_array(_u_aDataFields, _anim_properties_array);
@@ -1652,172 +1645,18 @@ function __scribble_class_element(_string, _unique_id) constructor
             shader_set_uniform_i(_u_iTypewriterMethod, SCRIBBLE_EASE.NONE);
         }
         
-        shader_reset();
-    }
-   
-    static __set_msdf_uniforms = function(_typist, _function_scope)
-    {
-        static _msdf_u_fTime         = shader_get_uniform(__shd_scribble_msdf, "u_fTime"        );
-        static _msdf_u_vColourBlend  = shader_get_uniform(__shd_scribble_msdf, "u_vColourBlend" );
-        static _msdf_u_fBlinkState   = shader_get_uniform(__shd_scribble_msdf, "u_fBlinkState"  );
-        static _msdf_u_vGradient     = shader_get_uniform(__shd_scribble_msdf, "u_vGradient"    );
-        static _msdf_u_vSkew         = shader_get_uniform(__shd_scribble_msdf, "u_vSkew"        );
-        static _msdf_u_vFlash        = shader_get_uniform(__shd_scribble_msdf, "u_vFlash"       );
-        static _msdf_u_vRegionActive = shader_get_uniform(__shd_scribble_msdf, "u_vRegionActive");
-        static _msdf_u_vRegionColour = shader_get_uniform(__shd_scribble_msdf, "u_vRegionColour");
-        static _msdf_u_aDataFields   = shader_get_uniform(__shd_scribble_msdf, "u_aDataFields"  );
-        static _msdf_u_aBezier       = shader_get_uniform(__shd_scribble_msdf, "u_aBezier"      );
+        shader_set_uniform_f(_u_vShadowOffsetAndSoftness, __sdf_shadow_xoffset, __sdf_shadow_yoffset, __sdf_shadow_softness);
         
-        static _msdf_u_iTypewriterUseLines      = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterUseLines"     );
-        static _msdf_u_iTypewriterMethod        = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterMethod"       );
-        static _msdf_u_iTypewriterCharMax       = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterCharMax"      );
-        static _msdf_u_fTypewriterWindowArray   = shader_get_uniform(__shd_scribble_msdf, "u_fTypewriterWindowArray"  );
-        static _msdf_u_fTypewriterSmoothness    = shader_get_uniform(__shd_scribble_msdf, "u_fTypewriterSmoothness"   );
-        static _msdf_u_vTypewriterStartPos      = shader_get_uniform(__shd_scribble_msdf, "u_vTypewriterStartPos"     );
-        static _msdf_u_vTypewriterStartScale    = shader_get_uniform(__shd_scribble_msdf, "u_vTypewriterStartScale"   );
-        static _msdf_u_fTypewriterStartRotation = shader_get_uniform(__shd_scribble_msdf, "u_fTypewriterStartRotation");
-        static _msdf_u_fTypewriterAlphaDuration = shader_get_uniform(__shd_scribble_msdf, "u_fTypewriterAlphaDuration");
-    
-        static _msdf_u_vShadowOffsetAndSoftness = shader_get_uniform(__shd_scribble_msdf, "u_vShadowOffsetAndSoftness");
-        static _msdf_u_vShadowColour            = shader_get_uniform(__shd_scribble_msdf, "u_vShadowColour"           );
-        static _msdf_u_vBorderColour            = shader_get_uniform(__shd_scribble_msdf, "u_vBorderColour"           );
-        static _msdf_u_fBorderThickness         = shader_get_uniform(__shd_scribble_msdf, "u_fBorderThickness"        );
-        static _msdf_u_vOutputSize              = shader_get_uniform(__shd_scribble_msdf, "u_vOutputSize"             );
+        shader_set_uniform_f(_u_vShadowColour, colour_get_red(  __sdf_shadow_colour)/255,
+                                               colour_get_green(__sdf_shadow_colour)/255,
+                                               colour_get_blue( __sdf_shadow_colour)/255,
+                                               __sdf_shadow_alpha);
         
-        static _scribble_state        = __scribble_get_state();
-        static _anim_properties_array = __scribble_get_anim_properties();
+        shader_set_uniform_f(_u_vBorderColour, colour_get_red(  __sdf_border_colour)/255,
+                                               colour_get_green(__sdf_border_colour)/255,
+                                               colour_get_blue( __sdf_border_colour)/255);
         
-        static _shader_uniforms_dirty    = true;
-        static _shader_set_to_use_bezier = false;
-        
-        shader_set(__shd_scribble_msdf);
-        shader_set_uniform_f(_msdf_u_fTime, __animation_time);
-        
-        //TODO - Optimise
-        shader_set_uniform_f(_msdf_u_vColourBlend, colour_get_red(  __blend_colour)/255,
-                                                   colour_get_green(__blend_colour)/255,
-                                                   colour_get_blue( __blend_colour)/255,
-                                                   __blend_alpha);
-        
-        shader_set_uniform_f(_msdf_u_fBlinkState, __animation_blink_state);
-        
-        if ((__gradient_alpha != 0) || (__skew_x != 0) || (__skew_y != 0) || (__flash_alpha != 0) || (__region_blend != 0))
-        {
-            _shader_uniforms_dirty = true;
-            
-            shader_set_uniform_f(_msdf_u_vGradient, colour_get_red(  __gradient_colour)/255,
-                                                    colour_get_green(__gradient_colour)/255,
-                                                    colour_get_blue( __gradient_colour)/255,
-                                                    __gradient_alpha);
-            
-            shader_set_uniform_f(_msdf_u_vSkew, __skew_x, __skew_y);
-            
-            shader_set_uniform_f(_msdf_u_vFlash, colour_get_red(  __flash_colour)/255,
-                                                 colour_get_green(__flash_colour)/255,
-                                                 colour_get_blue( __flash_colour)/255,
-                                                 __flash_alpha);
-            
-            shader_set_uniform_f(_msdf_u_vRegionActive, __region_glyph_start, __region_glyph_end);
-            
-            shader_set_uniform_f(_msdf_u_vRegionColour, colour_get_red(  __region_colour)/255,
-                                                        colour_get_green(__region_colour)/255,
-                                                        colour_get_blue( __region_colour)/255,
-                                                        __region_blend);
-        }
-        else if (_shader_uniforms_dirty)
-        {
-            _shader_uniforms_dirty = false;
-            
-            shader_set_uniform_f(_msdf_u_vGradient, 0, 0, 0, 0);
-            shader_set_uniform_f(_msdf_u_vSkew, 0, 0);
-            shader_set_uniform_f(_msdf_u_vFlash, 0, 0, 0, 0);
-            shader_set_uniform_f(_msdf_u_vRegionActive, 0, 0);
-            shader_set_uniform_f(_msdf_u_vRegionColour, 0, 0, 0, 0);
-        }
-        
-        //Update the animation properties for this shader if they've changed since the last time we drew an element
-        if (_scribble_state.__msdf_anim_desync)
-        {
-            with(_scribble_state)
-            {
-                __msdf_anim_desync  = false;
-                __msdf_anim_default = __msdf_anim_desync_to_default;
-            }
-            
-            shader_set_uniform_f_array(_msdf_u_aDataFields, _anim_properties_array);
-        }
-        
-        if (__bezier_using)
-        {
-            //If we're using a Bezier curve for this element, push that value into the shader
-            _shader_set_to_use_bezier = true;
-            shader_set_uniform_f_array(_msdf_u_aBezier, __bezier_array);
-        }
-        else if (_shader_set_to_use_bezier)
-        {
-            //If we're *not* using a Bezier curve but we have a previous Bezier curve cached, reset the curve in the shader
-            _shader_set_to_use_bezier = false;
-            
-            static _null_array = array_create(6, 0);
-            shader_set_uniform_f_array(_msdf_u_aBezier, _null_array);
-        }
-        
-        if (_typist != undefined)
-        {
-            with(_typist)
-            {
-                //Tick over the typist
-                __tick(other, _function_scope);
-                
-                //Let the typist set the shader uniforms
-                __set_msdf_shader_uniforms();
-            }
-        }
-        else if (__tw_reveal != undefined)
-        {
-            shader_set_uniform_i(_msdf_u_iTypewriterUseLines,          0);
-            shader_set_uniform_i(_msdf_u_iTypewriterMethod,            SCRIBBLE_EASE.LINEAR);
-            shader_set_uniform_i(_msdf_u_iTypewriterCharMax,           0);
-            shader_set_uniform_f(_msdf_u_fTypewriterSmoothness,        0);
-            shader_set_uniform_f(_msdf_u_vTypewriterStartPos,          0, 0);
-            shader_set_uniform_f(_msdf_u_vTypewriterStartScale,        1, 1);
-            shader_set_uniform_f(_msdf_u_fTypewriterStartRotation,     0);
-            shader_set_uniform_f(_msdf_u_fTypewriterAlphaDuration,     1.0);
-            shader_set_uniform_f_array(_msdf_u_fTypewriterWindowArray, __tw_reveal_window_array);
-        }
-        else
-        {
-            shader_set_uniform_i(_msdf_u_iTypewriterMethod, SCRIBBLE_EASE.NONE);
-        }
-        
-        shader_set_uniform_f(_msdf_u_vShadowOffsetAndSoftness, __msdf_shadow_xoffset, __msdf_shadow_yoffset, __msdf_shadow_softness);
-        
-        shader_set_uniform_f(_msdf_u_vShadowColour, colour_get_red(  __msdf_shadow_colour)/255,
-                                                    colour_get_green(__msdf_shadow_colour)/255,
-                                                    colour_get_blue( __msdf_shadow_colour)/255,
-                                                    __msdf_shadow_alpha);
-        
-        shader_set_uniform_f(_msdf_u_vBorderColour, colour_get_red(  __msdf_border_colour)/255,
-                                                    colour_get_green(__msdf_border_colour)/255,
-                                                    colour_get_blue( __msdf_border_colour)/255);
-        
-        shader_set_uniform_f(_msdf_u_fBorderThickness, __msdf_border_thickness);
-        
-        var _surface = surface_get_target();
-        if (_surface >= 0)
-        {
-            var _surface_width  = surface_get_width( _surface);
-            var _surface_height = surface_get_height(_surface);
-        }
-        else
-        {
-            var _surface_width  = window_get_width();
-            var _surface_height = window_get_height();
-        }
-        
-        shader_set_uniform_f(_msdf_u_vOutputSize, _surface_width, _surface_height);
-        
-        shader_reset();
+        shader_set_uniform_f(_u_fBorderThickness, __sdf_border_thickness);
     }
     
     static __update_scale_to_box_scale = function()
@@ -1826,6 +1665,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         __scale_to_box_dirty = false;
         
         var _model = __get_model(true);
+        if (!is_struct(_model)) return undefined;
         
         var _xscale = 1.0;
         var _yscale = 1.0;
@@ -1898,162 +1738,6 @@ function __scribble_class_element(_string, _unique_id) constructor
         }
         
         return __matrix;
-    }
-    
-    #endregion
-    
-    
-    
-    #region Legacy Typewriter
-    
-    static typewriter_off = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        if (__tw_legacy_typist_use) __tw_legacy_typist.reset();
-        __tw_legacy_typist_use = false;
-        
-        return self;
-    }
-    
-    static typewriter_reset = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        
-        __tw_legacy_typist = scribble_typist();
-        __tw_legacy_typist.__associate(self);
-        
-        return self;
-    }
-    
-    /// @param speed
-    /// @param smoothness
-    static typewriter_in = function(_speed, _smoothness)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist_use = true;
-        __tw_legacy_typist.in(_speed, _smoothness);
-        
-        return self;
-    }
-    
-    /// @param speed
-    /// @param smoothness
-    /// @param [backwards=false]
-    static typewriter_out = function(_speed, _smoothness, _backwards = false)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist_use = true;
-        __tw_legacy_typist.out(_speed, _smoothness, _backwards);
-        
-        return self;
-    }
-    
-    static typewriter_skip = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.skip();
-        
-        return self;
-    }
-    
-    /// @param soundArray
-    /// @param overlap
-    /// @param pitchMin
-    /// @param pitchMax
-    static typewriter_sound = function(_sound_array, _overlap, _pitch_min, _pitch_max)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.sound(_sound_array, _overlap, _pitch_min, _pitch_max);
-        
-        return self;
-    }
-    
-    /// @param soundArray
-    /// @param pitchMin
-    /// @param pitchMax
-    static typewriter_sound_per_char = function(_sound_array, _pitch_min, _pitch_max)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.sound_per_char(_sound_array, _pitch_min, _pitch_max);
-        
-        return self;
-    }
-    
-    static typewriter_function = function(_function)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.function_per_char(_function);
-        
-        return self;
-    }
-    
-    static typewriter_pause = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.pause();
-        
-        return self;
-    }
-    
-    static typewriter_unpause = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.unpause();
-        
-        return self;
-    }
-    
-    /// @param easeMethod
-    /// @param dx
-    /// @param dy
-    /// @param xscale
-    /// @param yscale
-    /// @param rotation
-    /// @param alphaDuration
-    static typewriter_ease = function(_ease_method, _dx, _dy, _xscale, _yscale, _rotation, _alpha_duration)
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        __tw_legacy_typist.ease(_ease_method, _dx, _dy, _xscale, _yscale, _rotation, _alpha_duration);
-        
-        return self;
-    }
-    
-    static get_typewriter_state = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        if (!__tw_legacy_typist_use) return 1.0;
-        
-        return __tw_legacy_typist.get_state();
-    }
-    
-    static get_typewriter_paused = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        if (!__tw_legacy_typist_use) return false;
-        
-        return __tw_legacy_typist.get_paused();
-    }
-    
-    static get_typewriter_pos = function()
-    {
-        if (SCRIBBLE_WARNING_LEGACY_TYPEWRITER) __scribble_error(".typewriter_*() methods have been deprecated\nIt is recommend you move to the new \"typist\" system\nPlease visit https://www.jujuadams.com/Scribble/\n \n(Set SCRIBBLE_WARNING_LEGACY_TYPEWRITER to <false> to turn off this warning)");
-        
-        if (!__tw_legacy_typist_use) return 0;
-        
-        return __tw_legacy_typist.get_position();
     }
     
     #endregion

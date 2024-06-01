@@ -1,3 +1,4 @@
+// Feather disable all
 /// Scribble's macros, used to customise and control behaviour throughout the library
 ///
 /// N.B. You never need to run this script yourself! All of these macros are handled automatically when Scribble is compiled into your project
@@ -8,7 +9,6 @@
 #macro SCRIBBLE_ADD_SPRITE_ORIGINS            false  //Whether to use sprite origins. Setting this to <false> will vertically centre sprites on the line of text
 #macro SCRIBBLE_MISSING_CHARACTER             "?"    //Character to use when another character is missing from a font
 #macro SCRIBBLE_BGR_COLOR_HEX_CODES           false  //Set to <true> to use GameMaker's #BBGGRR format for in-line hex code colors. <false> uses the web standard #RRGGBB format
-#macro SCRIBBLE_INCLUDED_FILES_SUBDIRECTORY   ""     //The directory to look in for font .yy files, relative to the root folder that Included Files are stored in
 #macro SCRIBBLE_BOUNDING_BOX_USES_PAGE        true   //Whether to use text element sizes (false) or page sizes (true) for bounding box calculations
 #macro SCRIBBLE_TAB_WIDTH                     4      //Width of a horizontal tab, as a number of spaces
 #macro SCRIBBLE_FLEXIBLE_WHITESPACE_WIDTH     true   //Controls if spaces and tabs have a fixed, unchanging size. Setting this to <false> will ensure that spaces are always the same size, which is useful for monospaced fonts
@@ -37,8 +37,8 @@
 #macro SCRIBBLE_INCREMENTAL_FREEZE             true       //Whether text models should freeze their vertex buffers one frame after the text model is created. This leads to increased performance, especially with large amounts of text
 #macro SCRIBBLE_SPRITEFONT_IGNORE_ORIGIN       false      //Set to <true> to ignore a sprite origin's contribution to its spritefont glyph x/y offsets
 #macro SCRIBBLE_SPRITEFONT_LEGACY_HEIGHT       false      //Version 8 uses GameMaker's native spritefont dimensions. Older versions used the tight bounding box leading to narrower lines. Set this macro to <true> to use the tighter legacy behaviour
-#macro SCRIBBLE_MSDF_BORDER_TRIM               0          //Edge trimming around the bounding box for MSDF glyphs (in pixels). This is useful for tidying up any glitches when scaling
-#macro SCRIBBLE_ALWAYS_DOUBLE_DRAW             false      //Whether to force double-draw behaviour. This is useful for fixing problems with MSDF glyph border overlap
+#macro SCRIBBLE_SDF_BORDER_TRIM                0          //Edge trimming around the bounding box for SDF glyphs (in pixels). This is useful for tidying up any glitches when scaling
+#macro SCRIBBLE_ALWAYS_DOUBLE_DRAW             false      //Whether to force double-draw behaviour. This is useful for fixing problems with SDF glyph border overlap
 
 #macro SCRIBBLE_COMMAND_TAG_OPEN          ord("[") //Character used to open a command tag. First 127 ASCII chars only
 #macro SCRIBBLE_COMMAND_TAG_CLOSE         ord("]") //Character used to close a command tag. First 127 ASCII chars only
@@ -46,7 +46,6 @@
 
 #macro SCRIBBLE_DRAW_RETURNS_SELF         false    //Whether the .draw() method for text element returns <self>. This defaults to <false> to avoid unintentional misuse
 #macro SCRIBBLE_BUILD_RETURNS_SELF        false    //Whether the .build() method for text element returns <self>. This defaults to <false> to avoid unintentional misuse
-#macro SCRIBBLE_FLUSH_RETURNS_SELF        false    //Whether the .flush() method for text element returns <self>. This defaults to <false> to avoid unintentional misuse
 #macro SCRIBBLE_SHOW_WRAP_BOUNDARY        false    //Controls the drawing of a rectangle that indicates the boundaries of the .wrap(), .fit_to_box(), and .scale_to_box() methods
 #macro SCRIBBLE_ATTEMPT_FONT_SCALING_FIX  true     //Whether to try to fix font scaling due to the font texture being too big for the texture page
 
@@ -66,14 +65,5 @@
 // High double quote   ‟ U+201F   ->   Double quote     " U+0022
 // Greek question mark ; U+037E   ->   Semicolon        ; U+003B
 #macro SCRIBBLE_UNDO_UNICODE_SUBSTITUTIONS  false
-
-#endregion
-
-
-
-#region Warnings
-
-//Various warning messages. Please do not turn these off unless you have to!
-#macro SCRIBBLE_WARNING_LEGACY_TYPEWRITER  true
 
 #endregion

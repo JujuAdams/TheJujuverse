@@ -1,3 +1,4 @@
+// Feather disable all
 /// @param font
 
 function __scribble_font_add_from_project(_font)
@@ -55,6 +56,8 @@ function __scribble_font_add_from_project(_font)
         var _texture_l  = round(_texture_uvs[0] / _texture_tw);
         var _texture_t  = round(_texture_uvs[1] / _texture_th);
         
+        var _sdf = _font_info.sdfEnabled;
+        
         if (SCRIBBLE_VERBOSE)
         {
             __scribble_trace("  \"" + _name +"\""
@@ -72,6 +75,23 @@ function __scribble_font_add_from_project(_font)
         var _font_glyph_data_grid = _font_data.__glyph_data_grid;
         var _font_kerning_map     = _font_data.__kerning_map;
         if (_is_krutidev) _font_data.__is_krutidev = true;
+        
+        if (_sdf)
+        {
+            var _sdf_pxrange          = 2*_font_info.sdfSpread;
+            var _sdf_thickness_offset = 0;
+            var _bilinear             = true;
+            var _sdf_offset           = -_sdf_pxrange;
+            var _sdf_height_offset    = -_sdf_pxrange + 2; //idk why
+        }
+        else
+        {
+            var _sdf_pxrange          = undefined;
+            var _sdf_thickness_offset = undefined;
+            var _bilinear             = undefined;
+            var _sdf_offset           = 0;
+            var _sdf_height_offset    = 0;
+        }
         
         var _i = 0;
         repeat(_size)
@@ -148,6 +168,21 @@ function __scribble_font_add_from_project(_font)
                 _y += _texture_t;
             }
             
+            var _xoffset = _glyph_dict.offset + 0.5*_sdf_offset;
+            var _yoffset = 0.5*_sdf_offset;
+            
+            if (_sdf && (SCRIBBLE_SDF_BORDER_TRIM > 0))
+            {
+                _x += SCRIBBLE_SDF_BORDER_TRIM;
+                _y += SCRIBBLE_SDF_BORDER_TRIM;
+                
+                _w -= 2*SCRIBBLE_SDF_BORDER_TRIM;
+                _h -= 2*SCRIBBLE_SDF_BORDER_TRIM;
+                
+                _xoffset += SCRIBBLE_SDF_BORDER_TRIM;
+                _yoffset += SCRIBBLE_SDF_BORDER_TRIM;
+            }
+            
             var _u0 = _x*_texture_tw;
             var _v0 = _y*_texture_th;
             var _u1 = _u0 + _w*_texture_tw;
@@ -158,11 +193,11 @@ function __scribble_font_add_from_project(_font)
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.UNICODE              ] = _unicode;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.BIDI                 ] = _bidi;
             
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.X_OFFSET             ] = _glyph_dict.offset;
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.Y_OFFSET             ] = 0;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.X_OFFSET             ] = _xoffset;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.Y_OFFSET             ] = _yoffset;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.WIDTH                ] = _w;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.HEIGHT               ] = _h;
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.FONT_HEIGHT          ] = _h;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.FONT_HEIGHT          ] = _h + _sdf_height_offset;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.SEPARATION           ] = _glyph_dict.shift;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.LEFT_OFFSET          ] = -_glyph_dict.offset;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.FONT_SCALE           ] = 1;
@@ -173,9 +208,9 @@ function __scribble_font_add_from_project(_font)
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.V0                   ] = _v0;
             _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.V1                   ] = _v1;
             
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.MSDF_PXRANGE         ] = undefined;
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.MSDF_THICKNESS_OFFSET] = undefined;
-            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.BILINEAR             ] = undefined;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.SDF_PXRANGE         ] = _sdf_pxrange;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.SDF_THICKNESS_OFFSET] = _sdf_thickness_offset;
+            _font_glyph_data_grid[# _i, SCRIBBLE_GLYPH.BILINEAR            ] = _bilinear;
             
             _font_glyphs_map[? _unicode] = _i;
             

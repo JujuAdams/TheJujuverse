@@ -1,3 +1,4 @@
+// Feather disable all
 /// @param speed       Cycle speed. Larger numbers cause characters to change colour more rapidly
 /// @param saturation  Cycle colour saturation, from 0 to 255. Colour cycles using the HSV model to create colours
 /// @param value       Cycle colour value, from 0 to 255. Colour cycles using the HSV model to create colours
@@ -17,10 +18,8 @@ function scribble_anim_cycle(_speed, _saturation, _value)
         static _scribble_state = __scribble_get_state();
         with(_scribble_state)
         {
-            __standard_anim_desync            = true;
-            __standard_anim_desync_to_default = false;
-            __msdf_anim_desync                = true;
-            __msdf_anim_desync_to_default     = false;
+            __shader_anim_desync            = true;
+            __shader_anim_desync_to_default = false;
         }
     }
 }
