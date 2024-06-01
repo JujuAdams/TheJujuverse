@@ -51,7 +51,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Texan"><img src="https://raw.githubusercontent.com/JujuAdams/Texan/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Texan">Texan</a><br>Texture group manager</td>
-        <td>v2.0.1</td>
+        <td>v4.0.0</td>
     </tr>
 </table>
 
