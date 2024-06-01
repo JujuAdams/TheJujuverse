@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__DynamoClassScript",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Classes",
-    "path": "folders/Dynamo/(System)/Classes.yy",
+  "$GMScript":"",
+  "%Name":"__DynamoClassScript",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__DynamoClassScript",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Dynamo/(System)/Classes.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

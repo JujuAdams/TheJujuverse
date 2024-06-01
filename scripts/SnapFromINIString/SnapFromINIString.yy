@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapFromINIString",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "INI",
-    "path": "folders/SNAP/INI.yy",
+  "$GMScript":"",
+  "%Name":"SnapFromINIString",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapFromINIString",
+  "parent":{
+    "name":"INI",
+    "path":"folders/SNAP/INI.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

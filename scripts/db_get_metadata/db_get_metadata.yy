@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "db_get_metadata",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Properties",
-    "path": "folders/db/Properties.yy",
+  "$GMScript":"",
+  "%Name":"db_get_metadata",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"db_get_metadata",
+  "parent":{
+    "name":"Properties",
+    "path":"folders/db/Properties.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylLoopSet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Looping",
-    "path": "folders/Vinyl/Looping.yy",
+  "$GMScript":"",
+  "%Name":"VinylLoopSet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylLoopSet",
+  "parent":{
+    "name":"Looping",
+    "path":"folders/Vinyl/Looping.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

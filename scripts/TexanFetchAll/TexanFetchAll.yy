@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "TexanFetchAll",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Texan",
-    "path": "folders/Texan.yy",
+  "$GMScript":"",
+  "%Name":"TexanFetchAll",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TexanFetchAll",
+  "parent":{
+    "name":"Texan",
+    "path":"folders/Texan.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

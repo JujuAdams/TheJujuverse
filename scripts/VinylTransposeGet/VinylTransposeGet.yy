@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylTransposeGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Transposition",
-    "path": "folders/Vinyl/Transposition.yy",
+  "$GMScript":"",
+  "%Name":"VinylTransposeGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylTransposeGet",
+  "parent":{
+    "name":"Transposition",
+    "path":"folders/Vinyl/Transposition.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

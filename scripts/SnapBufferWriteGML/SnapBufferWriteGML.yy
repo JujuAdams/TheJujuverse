@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapBufferWriteGML",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "GML",
-    "path": "folders/SNAP/GML.yy",
+  "$GMScript":"",
+  "%Name":"SnapBufferWriteGML",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBufferWriteGML",
+  "parent":{
+    "name":"GML",
+    "path":"folders/SNAP/GML.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

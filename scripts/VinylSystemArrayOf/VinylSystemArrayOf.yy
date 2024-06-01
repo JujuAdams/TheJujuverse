@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylSystemArrayOf",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Other",
-    "path": "folders/Vinyl/Other.yy",
+  "$GMScript":"",
+  "%Name":"VinylSystemArrayOf",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylSystemArrayOf",
+  "parent":{
+    "name":"Other",
+    "path":"folders/Vinyl/Other.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

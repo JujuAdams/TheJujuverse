@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_swap_gamepad_ab",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Other",
-    "path": "folders/Input/Other.yy",
+  "$GMScript":"",
+  "%Name":"input_swap_gamepad_ab",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_swap_gamepad_ab",
+  "parent":{
+    "name":"Other",
+    "path":"folders/Input/Other.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

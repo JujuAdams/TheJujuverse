@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylStackPatternGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Stacks",
-    "path": "folders/Vinyl/Stacks.yy",
+  "$GMScript":"",
+  "%Name":"VinylStackPatternGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylStackPatternGet",
+  "parent":{
+    "name":"Stacks",
+    "path":"folders/Vinyl/Stacks.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

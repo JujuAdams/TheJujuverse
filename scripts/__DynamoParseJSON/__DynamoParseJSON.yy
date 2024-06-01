@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__DynamoParseJSON",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "(System)",
-    "path": "folders/Dynamo/(System).yy",
+  "$GMScript":"",
+  "%Name":"__DynamoParseJSON",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__DynamoParseJSON",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Dynamo/(System).yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

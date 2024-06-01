@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "db_sort_by_timestamp",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "db",
-    "path": "folders/db.yy",
+  "$GMScript":"",
+  "%Name":"db_sort_by_timestamp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"db_sort_by_timestamp",
+  "parent":{
+    "name":"db",
+    "path":"folders/db.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

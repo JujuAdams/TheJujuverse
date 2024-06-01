@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_cursor_translate",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Cursor",
-    "path": "folders/Input/Cursor.yy",
+  "$GMScript":"",
+  "%Name":"input_cursor_translate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_cursor_translate",
+  "parent":{
+    "name":"Cursor",
+    "path":"folders/Input/Cursor.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

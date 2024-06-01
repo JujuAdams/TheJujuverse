@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapToJSON",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "JSON",
-    "path": "folders/SNAP/JSON.yy",
+  "$GMScript":"",
+  "%Name":"SnapToJSON",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapToJSON",
+  "parent":{
+    "name":"JSON",
+    "path":"folders/SNAP/JSON.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

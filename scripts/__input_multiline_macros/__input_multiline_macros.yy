@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__input_multiline_macros",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "(System)",
-    "path": "folders/Input/(System).yy",
+  "$GMScript":"",
+  "%Name":"__input_multiline_macros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__input_multiline_macros",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Input/(System).yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

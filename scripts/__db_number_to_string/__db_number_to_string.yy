@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__db_number_to_string",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "(System)",
-    "path": "folders/db/(System).yy",
+  "$GMScript":"",
+  "%Name":"__db_number_to_string",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__db_number_to_string",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/db/(System).yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

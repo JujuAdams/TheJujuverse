@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylBPMPulseGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "BPM",
-    "path": "folders/Vinyl/BPM.yy",
+  "$GMScript":"",
+  "%Name":"VinylBPMPulseGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylBPMPulseGet",
+  "parent":{
+    "name":"BPM",
+    "path":"folders/Vinyl/BPM.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

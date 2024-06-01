@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__VinylConfigDebug",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Vinyl",
-    "path": "folders/Vinyl.yy",
+  "$GMScript":"",
+  "%Name":"__VinylConfigDebug",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylConfigDebug",
+  "parent":{
+    "name":"Vinyl",
+    "path":"folders/Vinyl.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

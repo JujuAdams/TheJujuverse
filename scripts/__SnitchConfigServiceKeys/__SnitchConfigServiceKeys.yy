@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__SnitchConfigServiceKeys",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Configuration - Please edit these scripts!",
-    "path": "folders/Snitch/Configuration - Please edit these scripts!.yy",
+  "$GMScript":"",
+  "%Name":"__SnitchConfigServiceKeys",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__SnitchConfigServiceKeys",
+  "parent":{
+    "name":"Configuration - Please edit these scripts!",
+    "path":"folders/Snitch/Configuration - Please edit these scripts!.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

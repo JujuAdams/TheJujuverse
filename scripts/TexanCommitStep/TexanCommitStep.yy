@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "TexanCommitStep",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Texan",
-    "path": "folders/Texan.yy",
+  "$GMScript":"",
+  "%Name":"TexanCommitStep",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TexanCommitStep",
+  "parent":{
+    "name":"Texan",
+    "path":"folders/Texan.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

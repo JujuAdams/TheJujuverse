@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_motion_data_get",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Gyro",
-    "path": "folders/Input/Gyro.yy",
+  "$GMScript":"",
+  "%Name":"input_motion_data_get",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_motion_data_get",
+  "parent":{
+    "name":"Gyro",
+    "path":"folders/Input/Gyro.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

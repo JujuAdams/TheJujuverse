@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "DynamoForceScan",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Dynamo",
-    "path": "folders/Dynamo.yy",
+  "$GMScript":"",
+  "%Name":"DynamoForceScan",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DynamoForceScan",
+  "parent":{
+    "name":"Dynamo",
+    "path":"folders/Dynamo.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

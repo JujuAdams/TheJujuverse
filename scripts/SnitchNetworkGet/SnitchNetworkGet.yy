@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnitchNetworkGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Feature Toggles",
-    "path": "folders/Snitch/Feature Toggles.yy",
+  "$GMScript":"",
+  "%Name":"SnitchNetworkGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnitchNetworkGet",
+  "parent":{
+    "name":"Feature Toggles",
+    "path":"folders/Snitch/Feature Toggles.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylStackMaxVoiceGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Stacks",
-    "path": "folders/Vinyl/Stacks.yy",
+  "$GMScript":"",
+  "%Name":"VinylStackMaxVoiceGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylStackMaxVoiceGet",
+  "parent":{
+    "name":"Stacks",
+    "path":"folders/Vinyl/Stacks.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

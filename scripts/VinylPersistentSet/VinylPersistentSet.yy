@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylPersistentSet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Persistence",
-    "path": "folders/Vinyl/Persistence.yy",
+  "$GMScript":"",
+  "%Name":"VinylPersistentSet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylPersistentSet",
+  "parent":{
+    "name":"Persistence",
+    "path":"folders/Vinyl/Persistence.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

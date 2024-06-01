@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__IotaConfig",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "iota",
-    "path": "folders/iota.yy",
+  "$GMScript":"",
+  "%Name":"__IotaConfig",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__IotaConfig",
+  "parent":{
+    "name":"iota",
+    "path":"folders/iota.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

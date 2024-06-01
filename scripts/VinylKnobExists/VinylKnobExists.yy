@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylKnobExists",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Knobs",
-    "path": "folders/Vinyl/Knobs.yy",
+  "$GMScript":"",
+  "%Name":"VinylKnobExists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylKnobExists",
+  "parent":{
+    "name":"Knobs",
+    "path":"folders/Vinyl/Knobs.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

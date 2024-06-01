@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "DoLaterLoop",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "DoLater",
-    "path": "folders/DoLater.yy",
+  "$GMScript":"",
+  "%Name":"DoLaterLoop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DoLaterLoop",
+  "parent":{
+    "name":"DoLater",
+    "path":"folders/DoLater.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

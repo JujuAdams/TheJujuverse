@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_verb_group_active",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Verbs",
-    "path": "folders/Input/Verbs.yy",
+  "$GMScript":"",
+  "%Name":"input_verb_group_active",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_verb_group_active",
+  "parent":{
+    "name":"Verbs",
+    "path":"folders/Input/Verbs.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

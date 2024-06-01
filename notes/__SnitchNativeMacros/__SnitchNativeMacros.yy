@@ -1,9 +1,11 @@
 {
-  "resourceType": "GMNotes",
-  "resourceVersion": "1.1",
-  "name": "__SnitchNativeMacros",
-  "parent": {
-    "name": "Configuration - Please edit these scripts!",
-    "path": "folders/Snitch/Configuration - Please edit these scripts!.yy",
+  "$GMNotes":"",
+  "%Name":"__SnitchNativeMacros",
+  "name":"__SnitchNativeMacros",
+  "parent":{
+    "name":"Configuration - Please edit these scripts!",
+    "path":"folders/Snitch/Configuration - Please edit these scripts!.yy",
   },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
 }

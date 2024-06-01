@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "IotaIsAlarm",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "iota",
-    "path": "folders/iota.yy",
+  "$GMScript":"",
+  "%Name":"IotaIsAlarm",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"IotaIsAlarm",
+  "parent":{
+    "name":"iota",
+    "path":"folders/iota.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

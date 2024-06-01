@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnitchSendStringToNetwork",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Advanced",
-    "path": "folders/Snitch/Advanced.yy",
+  "$GMScript":"",
+  "%Name":"SnitchSendStringToNetwork",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnitchSendStringToNetwork",
+  "parent":{
+    "name":"Advanced",
+    "path":"folders/Snitch/Advanced.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

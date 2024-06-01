@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "TexanFlushAll",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Texan",
-    "path": "folders/Texan.yy",
+  "$GMScript":"",
+  "%Name":"TexanFlushAll",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TexanFlushAll",
+  "parent":{
+    "name":"Texan",
+    "path":"folders/Texan.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

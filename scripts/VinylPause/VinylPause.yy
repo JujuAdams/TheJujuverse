@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylPause",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Pausing",
-    "path": "folders/Vinyl/Pausing.yy",
+  "$GMScript":"",
+  "%Name":"VinylPause",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylPause",
+  "parent":{
+    "name":"Pausing",
+    "path":"folders/Vinyl/Pausing.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

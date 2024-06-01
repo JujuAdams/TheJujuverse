@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylMultiSyncGet",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Multi Patterns",
-    "path": "folders/Vinyl/Multi Patterns.yy",
+  "$GMScript":"",
+  "%Name":"VinylMultiSyncGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylMultiSyncGet",
+  "parent":{
+    "name":"Multi Patterns",
+    "path":"folders/Vinyl/Multi Patterns.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

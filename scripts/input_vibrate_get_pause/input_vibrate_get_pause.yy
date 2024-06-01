@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_vibrate_get_pause",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Vibration",
-    "path": "folders/Input/Vibration.yy",
+  "$GMScript":"",
+  "%Name":"input_vibrate_get_pause",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_vibrate_get_pause",
+  "parent":{
+    "name":"Vibration",
+    "path":"folders/Input/Vibration.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapDeepCopy",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Utility",
-    "path": "folders/SNAP/Utility.yy",
+  "$GMScript":"",
+  "%Name":"SnapDeepCopy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapDeepCopy",
+  "parent":{
+    "name":"Utility",
+    "path":"folders/SNAP/Utility.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

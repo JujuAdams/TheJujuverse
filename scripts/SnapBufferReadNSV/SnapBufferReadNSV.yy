@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapBufferReadNSV",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "NSV",
-    "path": "folders/SNAP/NSV.yy",
+  "$GMScript":"",
+  "%Name":"SnapBufferReadNSV",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBufferReadNSV",
+  "parent":{
+    "name":"NSV",
+    "path":"folders/SNAP/NSV.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

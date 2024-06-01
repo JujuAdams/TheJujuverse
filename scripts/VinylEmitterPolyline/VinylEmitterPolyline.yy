@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "VinylEmitterPolyline",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Positional",
-    "path": "folders/Vinyl/Positional.yy",
+  "$GMScript":"",
+  "%Name":"VinylEmitterPolyline",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylEmitterPolyline",
+  "parent":{
+    "name":"Positional",
+    "path":"folders/Vinyl/Positional.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

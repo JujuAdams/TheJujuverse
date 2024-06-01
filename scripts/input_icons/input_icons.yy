@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "input_icons",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Other",
-    "path": "folders/Input/Other.yy",
+  "$GMScript":"",
+  "%Name":"input_icons",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_icons",
+  "parent":{
+    "name":"Other",
+    "path":"folders/Input/Other.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

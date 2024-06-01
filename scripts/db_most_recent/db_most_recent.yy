@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "db_most_recent",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "db",
-    "path": "folders/db.yy",
+  "$GMScript":"",
+  "%Name":"db_most_recent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"db_most_recent",
+  "parent":{
+    "name":"db",
+    "path":"folders/db.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

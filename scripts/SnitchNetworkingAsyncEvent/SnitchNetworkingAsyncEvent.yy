@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnitchNetworkingAsyncEvent",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Snitch",
-    "path": "folders/Snitch.yy",
+  "$GMScript":"",
+  "%Name":"SnitchNetworkingAsyncEvent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnitchNetworkingAsyncEvent",
+  "parent":{
+    "name":"Snitch",
+    "path":"folders/Snitch.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

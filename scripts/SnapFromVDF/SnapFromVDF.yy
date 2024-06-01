@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapFromVDF",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "VDF",
-    "path": "folders/SNAP/VDF.yy",
+  "$GMScript":"",
+  "%Name":"SnapFromVDF",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapFromVDF",
+  "parent":{
+    "name":"VDF",
+    "path":"folders/SNAP/VDF.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "SnapBufferWriteBinary",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Custom Binary",
-    "path": "folders/SNAP/Custom Binary.yy",
+  "$GMScript":"",
+  "%Name":"SnapBufferWriteBinary",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBufferWriteBinary",
+  "parent":{
+    "name":"Custom Binary",
+    "path":"folders/SNAP/Custom Binary.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__SnitchExceptionHandler",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "THE SNITCH SEES ALL",
-    "path": "folders/Snitch/(System)/THE SNITCH SEES ALL.yy",
+  "$GMScript":"",
+  "%Name":"__SnitchExceptionHandler",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__SnitchExceptionHandler",
+  "parent":{
+    "name":"THE SNITCH SEES ALL",
+    "path":"folders/Snitch/(System)/THE SNITCH SEES ALL.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
