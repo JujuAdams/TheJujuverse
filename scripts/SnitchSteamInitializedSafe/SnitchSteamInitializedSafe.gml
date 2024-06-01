@@ -1,3 +1,4 @@
+// Feather disable all
 /// Returns whether the Steam API has been initialized...
 /// ...without crashing the game if the Steam API isn't in use to begin with
 

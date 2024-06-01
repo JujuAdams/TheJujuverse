@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"__SnitchSystem",
+  "%Name":"__SnitchTrace",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"__SnitchSystem",
+  "name":"__SnitchTrace",
   "parent":{
     "name":"THE SNITCH SEES ALL",
     "path":"folders/Snitch/(System)/THE SNITCH SEES ALL.yy",

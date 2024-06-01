@@ -1,3 +1,4 @@
+// Feather disable all
 // https://develop.sentry.dev/sdk/overview/
 // https://develop.sentry.dev/sdk/event-payloads/
 
@@ -60,6 +61,8 @@ function __SnitchConfigPayloadSentry(_uuid, _message, _longMessage, _callstack, 
                 parameters:       SNITCH_BOOT_PARAMETERS,
                 steam:            bool(SnitchSteamInitializedSafe()),
             },
-        }
+        },
+        
+        breadcrumbs: SnitchSentryBreadcrumbsGet()
     };
 }

@@ -1,10 +1,11 @@
+// Feather disable all
 //Bug tracking services open up potential security risks.
 //  1. Never share access keys with anyone
 //  2. Use .gitignore to ignore __SnitchConfigServiceKeys.gml if hosting your work publicly
 //  3. Do your absolute best to protect the privacy of your players
 //
 //Set this macro to <true> to acknowledge this warning
-#macro SNITCH_SERVICE_WARNING_READ  true
+#macro SNITCH_SERVICE_WARNING_READ  false
 
 //Which service to use
 //There are 4 modes:
@@ -12,6 +13,7 @@
 //   1:  Use the sentry.io service
 //   2:  Use the GameAnalytics service
 //   3:  Use the Bugsnag service
+//   4:  Send payload to a generic HTTP endpoint
 #macro SNITCH_SERVICE_MODE  0
 
 //Whether to boot the game with services turned on or off. Logging can be turned on/off manually by calling SnitchServiceSet()
@@ -29,10 +31,10 @@
 
 //Name of the request backup manifest
 //This file records how many request backups exist and where to find them on disk
-#macro SNITCH_REQUEST_BACKUP_MANIFEST_FILENAME  "event_manifest.dat"
+#macro SNITCH_REQUEST_BACKUP_MANIFEST_FILENAME  "eventManifest.dat"
 
 //Name of request backup files. Use a # symbol for UUID position
-#macro SNITCH_REQUEST_BACKUP_FILENAME  "event_#.dat"
+#macro SNITCH_REQUEST_BACKUP_FILENAME  "event#.dat"
 
 //How many request backups to keep
 #macro SNITCH_REQUEST_BACKUP_COUNT  10
@@ -59,5 +61,11 @@
 //If logging is enabled, this information will also be outputted to the log file
 //   N.B. HTTP warnings/failures will always be reported
 #macro SNITCH_OUTPUT_HTTP_SUCCESS  (SNITCH_RUNNING_FROM_IDE)
+
+//How many breadcrumbs to keep
+//Settings this to 0 will disable breadcrumbs entirely
+//
+//https://develop.sentry.dev/sdk/event-payloads/breadcrumbs
+#macro SNITCH_BREADCRUMBS_MAX 20
 
 #endregion

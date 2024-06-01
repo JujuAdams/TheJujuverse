@@ -1,7 +1,8 @@
+// Feather disable all
 function __SnitchExceptionHandler(_struct)
 {
     __SnitchTrace("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    var _event = new __SnitchClassError();
+    var _event = new __SnitchClassSoftError();
     _event.__SetException(_struct);
     __SnitchTrace("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     
@@ -10,7 +11,7 @@ function __SnitchExceptionHandler(_struct)
     //Call the exception handler defined by the native exception_unhandled_handler() function
     try
     {
-        if (global.__snitchGMExceptionHandler != undefined) global.__snitchGMExceptionHandler(_struct);
+        if (__SnitchState().__GMExceptionHandler != undefined) __SnitchState().__GMExceptionHandler(_struct);
     }
     catch(_error)
     {
@@ -64,7 +65,7 @@ function __SnitchExceptionHandler(_struct)
                     case 3: _text = _event.__GetCompressedExceptionString(); break;
                 }
                 
-                clipboard_set_text("#####" + _text + "#####"); break;
+                clipboard_set_text("#####" + _text + "#####");
                 show_message(SNITCH_CRASH_CLIPBOARD_ACCEPT_MESSAGE);
             }
         }

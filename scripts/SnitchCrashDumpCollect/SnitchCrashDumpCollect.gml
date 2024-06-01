@@ -1,3 +1,4 @@
+// Feather disable all
 /// Checks whether a crash dump exists on disk and returns it if so
 /// 
 /// If a crash dump exists, this function returns the exception struct that was generated
@@ -5,8 +6,6 @@
 
 function SnitchCrashDumpCollect()
 {
-    __SnitchInit();
-    
     var _struct = undefined;
     
     if ((SNITCH_CRASH_DUMP_FILENAME != "") && file_exists(SNITCH_CRASH_DUMP_FILENAME))

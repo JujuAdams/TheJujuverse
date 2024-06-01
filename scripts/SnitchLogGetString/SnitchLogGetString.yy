@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"SnitchHTTPAsyncEvent",
+  "%Name":"SnitchLogGetString",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SnitchHTTPAsyncEvent",
+  "name":"SnitchLogGetString",
   "parent":{
-    "name":"Snitch",
-    "path":"folders/Snitch.yy",
+    "name":"Advanced",
+    "path":"folders/Snitch/Advanced.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,3 +1,4 @@
+// Feather disable all
 function __SnitchProcessRawCallstack(_rawCallstack, _serviceMode)
 {
     var _callstack = [];

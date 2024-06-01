@@ -1,3 +1,4 @@
+// Feather disable all
 // https://bugsnagerrorreportingapi.docs.apiary.io/#reference/0/notify/send-error-reports
 
 function __SnitchConfigPayloadBugsnag(_uuid, _message, _longMessage, _callstack, _fatal)

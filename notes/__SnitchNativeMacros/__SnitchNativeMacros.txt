@@ -15,7 +15,7 @@ SNITCH_SESSION_TIME
 SNITCH_FOCUS_FRAMES
   How many rendering frames have been drawn whilst the game window has been in focus.
 
-SNTICH_FOCUS_TIME
+SNITCH_FOCUS_TIME
   How long the game has been running in focus in milliseconds.
   
 SNITCH_VERSION

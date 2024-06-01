@@ -1,3 +1,4 @@
+// Feather disable all
 /// Sets whether Snitch should enable network transmission
 ///   N.B. Network transmission cannot be enabled unless the relevant macros in __SnitchConfigNetwork() are set to <true>
 /// 
@@ -8,46 +9,45 @@
 
 function SnitchNetworkSet(_state, _outgoingPort = SNITCH_NETWORK_DEFAULT_OUTGOING_PORT, _receiverPort = SNITCH_NETWORK_DEFAULT_RECEIVER_PORT, _receiverIP = SNITCH_NETWORK_DEFAULT_RECEIVER_IP)
 {
-    __SnitchInit();
+    static _snitchState = __SnitchState();
     
     if (SnitchNetworkGet() != _state)
     {
         var _funcCloseSocket = function()
         {
-            if (global.__snitchNetworkSocket != undefined)
+            if (_snitchState.__NetworkSocket != undefined)
             {
-                __SnitchTrace("Destroying socket ", global.__snitchNetworkSocket);
-                network_destroy(global.__snitchNetworkSocket);
-                global.__snitchNetworkSocket = undefined;
-                global.__snitchNetworkTestTime = undefined;
-                global.__snitchNetworkConnected = false;
+                __SnitchTrace("Destroying socket ", _snitchState.__NetworkSocket);
+                network_destroy(_snitchState.__NetworkSocket);
+                _snitchState.__NetworkSocket = undefined;
+                _snitchState.__NetworkConnected = false;
             }
         }
         
         var _funcOpenSocket = function()
         {
-            if (global.__snitchNetworkSocket == undefined)
+            if (_snitchState.__NetworkSocket == undefined)
             {
                 var _type = (SNITCH_NETWORK_MODE == 1)? network_socket_udp : network_socket_tcp;
-                if (global.__snitchNetworkOutgoingPort == undefined)
+                if (_snitchState.__NetworkOutgoingPort == undefined)
                 {
-                    global.__snitchNetworkSocket = network_create_socket(_type);
+                    _snitchState.__NetworkSocket = network_create_socket(_type);
                 }
                 else
                 {
-                    global.__snitchNetworkSocket = network_create_socket_ext(_type, global.__snitchNetworkOutgoingPort);
+                    _snitchState.__NetworkSocket = network_create_socket_ext(_type, _snitchState.__NetworkOutgoingPort);
                 }
                 
-                if (global.__snitchNetworkSocket >= 0)
+                if (_snitchState.__NetworkSocket >= 0)
                 {
-                    __SnitchTrace("Created socket ", global.__snitchNetworkSocket, " for ", (SNITCH_NETWORK_MODE == 1)? "UDP" : "TCP", " traffic");
+                    __SnitchTrace("Created socket ", _snitchState.__NetworkSocket, " for ", (SNITCH_NETWORK_MODE == 1)? "UDP" : "TCP", " traffic");
                     __SnitchTrace("Attempting TCP connection");
                     __SnitchAttemptTCPConnection();
                 }
                 else
                 {
                     __SnitchTrace("Failed to create socket");
-                    global.__snitchNetworkConnected = false;
+                    _snitchState.__NetworkConnected = false;
                 }
             }
         }
@@ -56,10 +56,10 @@ function SnitchNetworkSet(_state, _outgoingPort = SNITCH_NETWORK_DEFAULT_OUTGOIN
         {
             if (SNITCH_NETWORK_MODE > 0)
             {
-                global.__snitchNetworkEnabled      = true;
-                global.__snitchNetworkOutgoingPort = _outgoingPort;
-                global.__snitchNetworkTargetPort   = _receiverPort;
-                global.__snitchNetworkTargetIP     = _receiverIP;
+                _snitchState.__NetworkEnabled      = true;
+                _snitchState.__NetworkOutgoingPort = _outgoingPort;
+                _snitchState.__NetworkTargetPort   = _receiverPort;
+                _snitchState.__NetworkTargetIP     = _receiverIP;
                 
                 _funcCloseSocket();
                 _funcOpenSocket();
@@ -75,20 +75,20 @@ function SnitchNetworkSet(_state, _outgoingPort = SNITCH_NETWORK_DEFAULT_OUTGOIN
         {
             _funcCloseSocket();
             
-            global.__snitchNetworkEnabled = false;
+            _snitchState.__NetworkEnabled = false;
             __SnitchTrace("Network transmission turned off");
         }
     }
     else if (_state)
     {
-        if ((_receiverPort != global.__snitchNetworkOutgoingPort) || (_receiverPort != global.__snitchNetworkTargetPort) || (_receiverIP != global.__snitchNetworkTargetIP))
+        if ((_receiverPort != _snitchState.__NetworkOutgoingPort) || (_receiverPort != _snitchState.__NetworkTargetPort) || (_receiverIP != _snitchState.__NetworkTargetIP))
         {
             _funcCloseSocket();
             _funcOpenSocket();
             
-            global.__snitchNetworkOutgoingPort = _outgoingPort;
-            global.__snitchNetworkTargetPort   = _receiverPort;
-            global.__snitchNetworkTargetIP     = _receiverIP;
+            _snitchState.__NetworkOutgoingPort = _outgoingPort;
+            _snitchState.__NetworkTargetPort   = _receiverPort;
+            _snitchState.__NetworkTargetIP     = _receiverIP;
             
             __SnitchTrace("Networking details changed, using ", (SNITCH_NETWORK_MODE == 1)? "UDP" : "TCP", ", outgoing port ", _outgoingPort, ", target port ", _receiverPort, ", target IP ", _receiverIP);
         }

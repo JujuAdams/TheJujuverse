@@ -1,3 +1,4 @@
+// Feather disable all
 //SNITCH_CRASH_CAPTURE_COMPILED controls whether to capture crashes using Snitch's own exception handler
 //Snitch's exception handler is *not* mutually exclusive with exception_unhandled_handler() (Snitch hijacks calls to that function and executes the handler itself)
 //The crash handler can save a crash dump, can prompt the user to copy error data onto their clipboard, and can immediately send events to bug tracking services

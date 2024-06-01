@@ -1,3 +1,4 @@
+// Feather disable all
 /// @param time
 
 function SnitchFormatTimestamp(_time)

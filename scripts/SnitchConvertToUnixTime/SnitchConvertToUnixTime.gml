@@ -1,3 +1,4 @@
+// Feather disable all
 function SnitchConvertToUnixTime(_inTime)
 {
     var _oldTimezone = date_get_timezone();

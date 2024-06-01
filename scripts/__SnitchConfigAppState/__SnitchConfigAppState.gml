@@ -1,3 +1,4 @@
+// Feather disable all
 // Used for log header info and crash data
 
 function __SnitchConfigAppState()

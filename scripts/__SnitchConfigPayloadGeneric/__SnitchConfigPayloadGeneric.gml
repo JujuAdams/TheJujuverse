@@ -1,0 +1,40 @@
+// Feather disable all
+
+function __SnitchConfigPayloadGeneric(_uuid, _message, _longMessage, _callstack, _fatal)
+{
+    return {
+        UUID:             _uuid,
+        errorClass:       _message,
+        message:          _longMessage,
+        stacktrace:       _callstack,
+        fatal:            _fatal,
+        runningFromIDE:   SNITCH_RUNNING_FROM_IDE,
+        frames:           SNITCH_FRAMES,
+        sessionTime:      SNITCH_SESSION_TIME,
+        focusFrames:      SNITCH_FOCUS_FRAMES,
+        focusTime:        SNITCH_FOCUS_TIME,
+        snitchVersion:    SNITCH_VERSION,
+        sessionID:        SNITCH_SESSION_ID,
+        sessionStartTime: SNITCH_SESSION_START_TIME,
+        osName:           SNITCH_OS_NAME,
+        osVersion:        SNITCH_OS_VERSION,
+        browser:          SNITCH_BROWSER,
+        environment:      SNITCH_ENVIRONMENT_NAME,
+        osInfo:           SNITCH_OS_INFO,
+        bootParams:       SNITCH_BOOT_PARAMETERS,
+        gameName:         game_project_name,
+        gameVersion:      GM_version,
+        inForeground:     bool(!os_is_paused()),
+        time:             SnitchFormatTimestamp(date_current_datetime()),
+        buildDate:        date_datetime_string(GM_build_date),
+        config:           os_get_config(),
+        gmRuntime:        GM_runtime_version,
+        networkConnected: bool(os_is_network_connected(false)),
+        osInfo:           SNITCH_OS_INFO,
+        osLanguage:       os_get_language(),
+        osRegion:         os_get_region(),
+        runningFromIDE:   bool(SNITCH_RUNNING_FROM_IDE),
+        steamConnected:   bool(SnitchSteamInitializedSafe()),
+        yyc:              bool(code_is_compiled()),
+    };
+}

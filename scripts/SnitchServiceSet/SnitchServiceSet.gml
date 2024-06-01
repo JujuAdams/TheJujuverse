@@ -1,3 +1,4 @@
+// Feather disable all
 /// Sets whether Snitch should enable services
 ///   N.B. Services cannot be enabled unless the relevant macros in __SnitchConfigServices() are set to <true>
 /// 
@@ -5,7 +6,7 @@
 
 function SnitchServiceSet(_state)
 {
-    __SnitchInit();
+    static _snitchState = __SnitchState();
     
     if (SnitchServiceGet() != _state)
     {
@@ -13,13 +14,13 @@ function SnitchServiceSet(_state)
         {
             if (SNITCH_SERVICE_MODE > 0)
             {
-                global.__snitchServiceEnabled = _state;
-                __SnitchTrace(__SnitchServiceName(), " service turned ", global.__snitchServiceEnabled? "on" : "off");
+                _snitchState.__ServiceEnabled = _state;
+                __SnitchTrace(__SnitchServiceName(), " service turned ", _snitchState.__ServiceEnabled? "on" : "off");
             }
-        }
-        else
-        {
-            __SnitchTrace("Service cannot be toggled as no service has been enabled (see SNITCH_SERVICE_MODE)");
+            else
+            {
+                __SnitchTrace("Service cannot be toggled as no service has been enabled (see SNITCH_SERVICE_MODE)");
+            }
         }
     }
 }

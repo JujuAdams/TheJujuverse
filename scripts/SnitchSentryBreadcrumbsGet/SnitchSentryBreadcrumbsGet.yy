@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"SnitchSentryBreadcrumbsGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnitchSentryBreadcrumbsGet",
+  "parent":{
+    "name":"Advanced",
+    "path":"folders/Snitch/Advanced.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

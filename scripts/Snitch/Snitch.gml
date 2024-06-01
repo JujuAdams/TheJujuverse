@@ -1,4 +1,5 @@
-/// Concatenates a series of values into a single string and outputs it
+// Feather disable all
+/// Concatenates a series of values into a single string and outputs it to logging endpoints
 ///
 /// The final string is outputted to three destinations:
 ///   1. The console output (show_debug_message())
@@ -19,7 +20,7 @@ function Snitch()
         ++_i;
     }
     
-    show_debug_message(_string);
+    __SnitchShowDebugMessage(_string);
     SnitchSendStringToLogFile(_string);
     SnitchSendStringToNetwork(_string); //TODO - Format this string for consumption (LogCat?)
 }

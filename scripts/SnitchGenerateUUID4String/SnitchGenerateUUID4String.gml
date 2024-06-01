@@ -1,3 +1,4 @@
+// Feather disable all
 function SnitchGenerateUUID4String(_hyphenate = false)
 {
     //As per https://www.cryptosys.net/pki/uuid-rfc4122.html (though without the hyphens)
@@ -15,7 +16,7 @@ function SnitchGenerateUUID4String(_hyphenate = false)
 
 ////Set up the XORShift32 starting seed
 ////Can throw in a randomize() / random() call here too if you'd like but 1) that might mess up other stuff? 2) feels unnecessary
-//global.__snitchXORShift32State = floor(1000000*date_current_datetime() + display_mouse_get_x() + display_get_width()*display_mouse_get_y());
+//__SnitchState().__XORShift32State = floor(1000000*date_current_datetime() + display_mouse_get_x() + display_get_width()*display_mouse_get_y());
 
 //Basic XORShift32, nothing fancy
 function __SnitchXORShift32Random(_value)
@@ -24,7 +25,7 @@ function __SnitchXORShift32Random(_value)
     _state ^= _state << 13;
     _state ^= _state >> 17;
     _state ^= _state <<  5;
-	return _value * abs(_state) / (real(0x7FFFFFFFFFFFFFFF) + 1.0);
+    return _value * abs(_state) / (real(0x7FFFFFFFFFFFFFFF) + 1.0);
 }
 
 function __SnitchXORShift32Choose()

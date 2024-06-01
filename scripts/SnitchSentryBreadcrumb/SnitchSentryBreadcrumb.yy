@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"SnitchNetworkingAsyncEvent",
+  "%Name":"SnitchSentryBreadcrumb",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SnitchNetworkingAsyncEvent",
+  "name":"SnitchSentryBreadcrumb",
   "parent":{
-    "name":"Snitch",
-    "path":"folders/Snitch.yy",
+    "name":"Advanced",
+    "path":"folders/Snitch/Advanced.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

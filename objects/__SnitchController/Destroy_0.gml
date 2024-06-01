@@ -1,0 +1,1 @@
+__SnitchError("__SnitchController instance has been destroyed\nPlease ensure that this instance always exists");

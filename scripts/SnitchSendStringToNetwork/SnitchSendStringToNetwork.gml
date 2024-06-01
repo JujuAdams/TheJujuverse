@@ -1,19 +1,20 @@
+// Feather disable all
 /// Transmits a string over a network connection, either UDP or TCP. Useful for transmitting packets manually
 /// 
 /// @param string  String to transmit
 
 function SnitchSendStringToNetwork(_string)
 {
-    __SnitchInit();
+    static _snitchState = __SnitchState();
     
     if (SnitchNetworkGet())
     {
-        if ((SNITCH_NETWORK_MODE == 2) && (!global.__snitchNetworkConnected || (array_length(global.__snitchNetworkPendingMessages) > 0)))
+        if ((SNITCH_NETWORK_MODE == 2) && (!_snitchState.__NetworkConnected || (array_length(_snitchState.__NetworkPendingMessages) > 0)))
         {
-            if (!global.__snitchNetworkAbandoned)
+            if (!_snitchState.__NetworkAbandoned)
             {
-                array_push(global.__snitchNetworkPendingMessages, _string);
-                array_delete(global.__snitchNetworkPendingMessages, 0, max(0, array_length(global.__snitchNetworkPendingMessages) - SNITCH_NETWORK_PENDING_MESSAGE_LIMIT));
+                array_push(_snitchState.__NetworkPendingMessages, _string);
+                array_delete(_snitchState.__NetworkPendingMessages, 0, max(0, array_length(_snitchState.__NetworkPendingMessages) - SNITCH_NETWORK_PENDING_MESSAGE_LIMIT));
             }
         }
         else
@@ -25,6 +26,8 @@ function SnitchSendStringToNetwork(_string)
 
 function __SnitchSendStringToNetwork(_string)
 {
+    static _snitchState = __SnitchState();
+    
     //https://logging.apache.org/log4j/2.x/manual/layouts.html
     //https://logging.apache.org/log4j/2.x/log4j-1.2-api/apidocs/src-html/org/apache/log4j/layout/Log4j1XmlLayout.html
     
@@ -39,18 +42,18 @@ function __SnitchSendStringToNetwork(_string)
         break;
         
         case 1:
-            if (global.__snitchNetworkTargetIP == undefined)
+            if (_snitchState.__NetworkTargetIP == undefined)
             {
-            	network_send_broadcast(global.__snitchNetworkSocket, global.__snitchNetworkTargetPort, _buffer, buffer_tell(_buffer));
+                network_send_broadcast(_snitchState.__NetworkSocket, _snitchState.__NetworkTargetPort, _buffer, buffer_tell(_buffer));
             }
             else
             {
-            	network_send_udp_raw(global.__snitchNetworkSocket, global.__snitchNetworkTargetIP, global.__snitchNetworkTargetPort, _buffer, buffer_tell(_buffer));
+                network_send_udp_raw(_snitchState.__NetworkSocket, _snitchState.__NetworkTargetIP, _snitchState.__NetworkTargetPort, _buffer, buffer_tell(_buffer));
             }
         break;
         
         case 2:
-            network_send_raw(global.__snitchNetworkSocket, _buffer, buffer_tell(_buffer));
+            network_send_raw(_snitchState.__NetworkSocket, _buffer, buffer_tell(_buffer));
         break;
     }
 }

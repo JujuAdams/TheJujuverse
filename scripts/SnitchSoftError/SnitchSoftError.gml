@@ -1,4 +1,5 @@
-/// Concatenates a series of values into a single string and shows it as a showstopper error (show_error())
+// Feather disable all
+/// Concatenates a series of values into a single string and outputs it as a serious (but not fatal) error
 ///
 /// The error message is outputted to four destinations:
 ///   1. The console output (show_debug_message())
@@ -9,7 +10,7 @@
 /// @param value
 /// @param [value]...
 
-function SnitchError()
+function SnitchSoftError()
 {
     var _string = "";
     var _i = 0;
@@ -19,6 +20,6 @@ function SnitchError()
         ++_i;
     }
     
-    var _event = new __SnitchClassError();
+    var _event = new __SnitchClassSoftError();
     _event.__SetMessage(_string);
 }

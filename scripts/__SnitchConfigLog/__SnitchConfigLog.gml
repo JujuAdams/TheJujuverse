@@ -1,3 +1,8 @@
+// Feather disable all
+//How many strings to store in the in-game copy of the log
+//You can fetch strings using SnitchLogGetString()
+#macro SNITCH_IN_GAME_LOG_SIZE  20
+
 //Controls whether logging to file should be allowed at all
 #macro SNITCH_LOG_PERMITTED  true
 
@@ -14,7 +19,7 @@
 #macro SNITCH_LOG_BOOT_PARAMETER_CONFIRMATION  ("Logging enabled! You can find the logs in " + string(game_save_id))
 
 //Name of the log files to save. Use a # symbol for number position
-#macro SNITCH_LOG_FILENAME  "log_#.txt"
+#macro SNITCH_LOG_FILENAME  "log#.txt"
 
 //Number of log files to store on disk
 //A new log file is created every time the game is run. The 0th log file is always the most recent

@@ -1,3 +1,4 @@
+// Feather disable all
 //What kind of networking connection to use for transmitting log packets
 //There are 2 modes:
 //   0:  No network transmission permitted
