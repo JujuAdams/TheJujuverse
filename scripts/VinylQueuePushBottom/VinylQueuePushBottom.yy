@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylQueuePushBottom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylQueuePushBottom",
+  "parent":{
+    "name":"Queues",
+    "path":"folders/Vinyl/Queues.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

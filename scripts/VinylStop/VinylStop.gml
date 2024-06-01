@@ -1,19 +1,23 @@
-/// Instantly stops a voice, or all voices assigned to the given label
-/// 
-/// This function CANNOT be used with audio played using VinylPlaySimple()
-/// 
-/// @param vinylID/labelName
+// Feather disable all
 
-function VinylStop(_id)
+/// Immediately stops playback of a voice.
+/// 
+/// @param voice
+
+function VinylStop(_voice)
 {
-    static _globalData = __VinylGlobalData();
-    static _idToVoiceDict = _globalData.__idToVoiceDict;
+    static _voiceToStructMap = __VinylSystem().__voiceToStructMap;
     
-    var _voice = _idToVoiceDict[? _id];
-    if (is_struct(_voice)) return _voice.__Stop();
-    
-    var _label = _globalData.__labelDict[$ _id];
-    if (is_struct(_label)) return _label.__Stop();
-    
-    __VinylTrace("Warning! Failed to execute VinylStop() for ", _id);
+    var _voiceStruct = _voiceToStructMap[? _voice];
+    if (_voiceStruct == undefined)
+    {
+        if (_voice != undefined)
+        {
+            audio_stop_sound(_voice);
+        }
+    }
+    else
+    {
+        _voiceStruct.__Stop();
+    }
 }

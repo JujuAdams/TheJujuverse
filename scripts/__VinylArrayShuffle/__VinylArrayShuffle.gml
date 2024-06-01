@@ -1,7 +1,15 @@
+
 function __VinylArrayShuffle(_array)
 {
-    array_sort(_array, function()
+    var _i = array_length(_array) - 1;
+    repeat(_i)
     {
-        return 2*__VinylRandomBool() - 1;
-    });
+        var _index = __VinylIRandom(_i);
+        var _oldValue = _array[@ _index];
+        
+        _array[@ _index] = _array[_i];
+        _array[@ _i    ] = _oldValue;
+        
+        --_i;
+    }
 }

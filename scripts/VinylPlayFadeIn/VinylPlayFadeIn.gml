@@ -1,13 +1,19 @@
-/// Starts playing a sound by fading it in, and returns an ID to identify the voice
+// Feather disable all
+
+/// Convenience function to play a new sound or pattern and fade it in. Please see VinylPlay() for
+/// more information. The rate of change for this function is measured in "gain units per second".
 /// 
-/// @param sound
+/// @param sound/pattern
 /// @param [loop]
 /// @param [targetGain=1]
-/// @param [rate=VINYL_DEFAULT_GAIN_RATE]
+/// @oaram [rateOfChange]
+/// @param [pitch=1]
+/// @param [duckerName]
+/// @param [duckPriority=0]
 
-function VinylPlayFadeIn(_sound, _loop = undefined, _targetGain = 1, _rate = VINYL_DEFAULT_GAIN_RATE)
+function VinylPlayFadeIn(_pattern, _loop = undefined, _gain = 1, _rateOfChange = VINYL_DEFAULT_FADE_IN_RATE, _pitch = 1, _duckerName = undefined, _duckPrio = undefined)
 {
-    var _id = VinylPlay(_sound, _loop, 0);
-    VinylGainTargetSet(_id, _targetGain, _rate);
-    return _id;
+    var _voice = VinylPlay(_pattern, _loop, 0, _pitch, _duckerName, _duckPrio);
+    VinylSetGain(_voice, _gain, _rateOfChange);
+    return _voice;
 }

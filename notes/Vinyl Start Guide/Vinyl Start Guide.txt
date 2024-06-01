@@ -1,0 +1,74 @@
+Vinyl 6.0 Start Guide
+
+
+
+Vinyl supports a wide range of feature that cover the most common use cases for audio:
+
+  - Easy functions for fade in, fade out, and playback control
+  - Shuffle patterns to choose random sounds, pitches, and gains for playback
+  - Head-loop-tail patterns to implement smoother background music
+  - Blend patterns to mix between multiple sounds at the same time with a single parameter
+  - Queues to create in-game playlists or dynamic scores
+  - Mix groups to easily adjust the gain of multiple sounds and patterns at the same time
+  - Duckers to handle crossfades and ducking
+  - Live update of all the above using a simple JSON format
+  - Easier gain control that allow you to exceed GameMaker's normal maximum gain
+
+But at its core, Vinyl is a wrapper around GameMaker's native audio functions. Vinyl saves the
+hassle of setting up data structures that you'd typically use to adjust gains, set up pitch
+randomisation, create audio queues, etc.  Its main job is to take configuration data and make sense
+of that when you want to play some audio.
+
+As a result, Vinyl is, at its core, a system for storing and recalling audio data. No matter what
+Vinyl functions you call, at the case level Vinyl is reading data from some struct somewhere that
+you've defined. Vinyl offers multiple ways to manipulate the audio data it holds internally with
+the idea being that different use cases will want a different interface for setting up audio. There
+are three ways to interact with Vinyl's audio data:
+
+    1. On boot, call some VinylSetup*() functions to create patterns
+    2. Edit __VinylConfigJSON() to define patterns
+    3. Store some JSON externally and call VinylSetupImportJSON() to import that JSON
+
+You can combine these in any way you want but for the sake of simplicity I'd stick to one approach.
+
+
+
+=== 1. VinylSetup*() functions ===
+
+If you've been making your own audio system previously then the most natural point of entry is
+probably to use the VinylSetup*() functions. These are straight-forward global function calls that
+set up sounds, mixes, and patterns. You can technically call them at any point but you should try
+to call these functions once on boot, or at least very soon after boot. Each function has their own
+description in the script themselves.
+
+However, if you opt to use VinylSetup*() functions then you will be missing out on a major features
+of Vinyl, which is live editing of your audio setup. If you're just looking for something simple
+then this is likely not a concern.
+
+
+
+=== 2. Edit __VinylConfigJSON() ===
+
+If you're a JSON sicko like myself then you'll likely enjoy the option of using __VinylConfigJSON()
+to set up Vinyl. This JSON expects a specific format. Please read the "Vinyl JSON Format" note
+included with the library for more information.
+
+Using __VinylConfigJSON() opens up the possibility of live editing audio properties. If
+VINYL_LIVE_EDIT is set to <true> and you're running your game on Windows, Mac, or Linux then you
+will be able to modify the contents of __VinylConfigJSON() at runtime and hear the results. This is
+great for quickly fixing problems without having to reboot the game.
+
+N.B. The parser that I wrote to handle live update for __VinylConfigJSON() is very simple and
+     cannot handle most GML syntax. If you intend to use the live updating feature you should
+     treat the JSON written in this file as "pure JSON" and you should not use functions,
+     conditionals, if-statements, or any logic at all.
+
+
+
+=== 3. External JSON ===
+
+If you'd like to write some external tooling or make the JSON file used to determine audio setup
+externally available then you can use VinylSetupImportJSON() and VinylSetupExportJSON() to move
+JSON in and out of the game at runtime. Live updating will work if you use external JSON, though
+of course you are responsible for importing JSON yourself if something changes. For information on
+what format JSON Vinyl expects, please see the "Vinyl JSON Format" note included with the library.

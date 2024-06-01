@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__VinylFindMatchingAudioAssets",
   "parent":{
-    "name":"VIPs only in the green room",
-    "path":"folders/Vinyl/(Internals)/VIPs only in the green room.yy",
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylQueueGetArray",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylQueueGetArray",
+  "parent":{
+    "name":"Queues",
+    "path":"folders/Vinyl/Queues.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylDuckerGetVoice",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylDuckerGetVoice",
+  "parent":{
+    "name":"Ducker",
+    "path":"folders/Vinyl/Ducker.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"__VinylVoiceMoveMix",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylVoiceMoveMix",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

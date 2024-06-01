@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__VinylClassVoiceQueue",
   "parent":{
-    "name":"Voices",
-    "path":"folders/Vinyl/(Internals)/VIPs only in the green room/Classes/Voices.yy",
+    "name":"Voice",
+    "path":"folders/Vinyl/(Internals)/Classes/Voice.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

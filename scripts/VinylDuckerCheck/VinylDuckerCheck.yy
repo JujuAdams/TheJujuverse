@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylDuckerCheck",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylDuckerCheck",
+  "parent":{
+    "name":"Ducker",
+    "path":"folders/Vinyl/Ducker.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

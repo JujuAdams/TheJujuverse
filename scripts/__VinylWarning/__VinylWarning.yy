@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"__VinylWarning",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylWarning",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

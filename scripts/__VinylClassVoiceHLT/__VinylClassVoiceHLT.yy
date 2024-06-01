@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"__VinylClassVoiceHLT",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylClassVoiceHLT",
+  "parent":{
+    "name":"Voice",
+    "path":"folders/Vinyl/(Internals)/Classes/Voice.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

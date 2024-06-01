@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__VinylArrayShuffle",
   "parent":{
-    "name":"VIPs only in the green room",
-    "path":"folders/Vinyl/(Internals)/VIPs only in the green room.yy",
+    "name":"PRNG",
+    "path":"folders/Vinyl/(Internals)/PRNG.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

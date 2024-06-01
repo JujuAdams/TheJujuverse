@@ -1,0 +1,150 @@
+Vinyl 6.0 JSON Format
+
+
+
+=== Introduction and Simple Examples ===
+
+Vinyl can import and export JSON which represents the audio setup for your game. These features can
+be accessed via the VinylSetupImportJSON() and VinylSetupExportJSON() functions. Additionally,
+macros can be exported with __VinylSetupExportGMLMacros(). A macro is created for each mix and named
+pattern and are convenient for referencing those Vinyl resources in your code. Alternate function
+__VinylSetupExportGML() will export the JSON in a GML-compatible format so that it can be copy-pasted
+directly into your project's codebase.
+
+JSON import and export is not essential to using Vinyl and is offered as a way to more easily set
+up live editing. If you don't want to use JSON, you can use the VinylSetup*() functions without
+any loss in functionality (internally, Vinyl JSON executes VinylSetup*() functions anyway).
+
+Vinyl JSON can define mixes, sound properties, and patterns. The root of a Vinyl JSON should be an
+array. This array should contain structs with each struct being a definition for a mix, a sound, or
+a pattern. Sound and pattern definitions are "leaf nodes" insofar that they contain no deeper
+definitions. However, mix definition structs can further contain definitions for sounds and
+patterns.
+
+Here is an example of a simple Vinyl JSON:
+
+[
+    {
+        "sound": "sndCat",
+        "gain": 2
+    },
+    {
+        "sound": "sndBleep1",
+        "pitch": 0.6,
+    },
+    {
+        "shuffle": "Footsteps",
+        "pitch": [0.9, 1.1],
+        "sounds": ["sndFootstep0", "sndFootstep1", "sndFootstep2", "sndFootstep3"]
+    }
+}
+
+In this JSON we see three Vinyl definitions. Two of these resources are sound assets that have been
+imported to the project's IDE, they are called sndBleep1 and sndCat. sndCat is defined to play with
+a gain of 2 (200% of the original amplitude). sndBleep is defined to play with a pitch of 0.6 (60%
+of the original pitch). There is additionally a definition for a shuffle pattern called
+"Footsteps". When played, this pattern will vary the pitch of playback between 90% and 110% and
+will choose a sound to play from a selection (sndFootstep0, sndFootstep1, sndFootstep2, and
+sndFootstep3).
+
+Sound and patterns definitions can be assigned to a mix by creating a mix definition and placing
+the sound/pattern definition inside the mix struct. Any sound or pattern not placed inside a mix
+struct will be assigned to the value of the config macro VINYL_DEFAULT_MIX (out of the box, this
+macro is set to VINYL_NO_MIX).
+
+Here is an example of a mix JSON definition:
+
+[
+    {
+        "mix": "music",
+        "baseGain": 1.1,
+        "members": [
+            {
+                "sound": "sndOverworld"
+            },
+            {
+                "sound": "sndBossFight"
+            }
+        ]
+    },
+    {
+        "sound": "sndWarning",
+        "pitch": [0.8, 1.2]
+    }
+]
+
+In this JSON we see four Vinyl definitions: three sounds and one mix. Two of these sounds,
+"sndOverworld" and "sndBossFight" are assigned to the "music" mix. The "music" mix has a slight
+gain boost of 1.1 so that sounds assigned to this mix are played slightly louder. The third sound
+is not placed inside a mix definition therefore it is assigned to the default mix.
+
+
+
+=== Definition Types ===
+
+Sounds:
+{
+    "sound": <sound asset>, required
+    "gain": <number> or <2-element array>, defaults to 1
+    "pitch": <number> or <2-element array>, defaults to 1
+    "loop": <boolean>, defaults to false
+    "duckOn": <ducker name>
+    "duckPrio", <number>, default to 0
+    "metadata": <any>
+}
+
+Shuffle Patterns:
+{
+    "shuffle": <pattern name>, required
+    "sounds": <array of sound assets, or wildcard pattern to match against>, required
+    "gain": <number> or <2-element array>, defaults to 1
+    "pitch": <number> or <2-element array>, defaults to 1
+    "duckOn": <ducker name>
+    "duckPrio", <number>, default to 0
+    "metadata": <any>
+}
+
+Head-Loop-Tail Patterns:
+{
+    "hlt": <pattern name>, required
+    "head": <sound asset>, optional, defaults to no asset
+    "loop": <sound asset>, required
+    "tail": <sound asset>, optional, defaults to no asset
+    "gain": <number>, defaults to 1
+    "duckOn": <ducker name>
+    "duckPrio", <number>, default to 0
+    "metadata": <any>
+}
+
+Blend Patterns:
+    {
+        "blend": <pattern name>, required
+        "sounds": <array of sound assets>, required
+        "loop": <boolean>, defaults to true
+        "gain": <number>, defaults to 1
+        "duckOn": <ducker name>
+        "duckPrio", <number>, default to 0
+        "metadata": <any>
+    }
+
+Mixes:
+{
+    "mix": <mix name>, required
+    "baseGain": <number>, defaults to 1
+    "membersLoop": <boolean>, defaults to <undefined>
+    "members": <array of definitions>, defaults to no assets
+    "metadata": <any>
+}
+
+Duckers:
+{
+    "ducker": <ducker name>, required
+    "duckedGain": <number>, defaults to 1
+    "rateOfChange": <number>, defaults to 1
+}
+
+Global Metadata:
+{
+    "metadata": <mix name>, required
+    "data": <any>, required
+}

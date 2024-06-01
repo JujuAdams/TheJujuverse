@@ -1,20 +1,46 @@
-/// Starts playing a sound and returns an ID to identify the voice
+// Feather disable all
+
+/// Plays a sound or pattern. Sound playback works the same as native GameMaker functions. If you
+/// are playing a pattern, the exact playback behaviour will change depending on the type of
+/// pattern:
 /// 
-/// Vinyl IDs are separate from GameMaker's native audio voices IDs and the two sets of
-/// IDs cannot be used interchangeably
+///   - Shuffle chooses a random sound from an array of sounds
+///   - Blend plays multiple sounds whose balance can be adjusted by setting the blend factor
+///   - Head-Loop-Tail plays a head, then a loop (until the end loop function is called), then a tail
 /// 
-/// There is a perfomance overhead when creating and maintaining Vinyl audio voices. In
-/// resource-constrained situations, you may want to consider using VinylPlaySimple() for some
-/// of your audio
+/// This function returns a voice index which can be used with other Vinyl functions to adjust
+/// playback and trigger pattern behaviours where relevant.
 /// 
-/// @param sound
+/// @param sound/pattern
 /// @param [loop]
 /// @param [gain=1]
 /// @param [pitch=1]
-/// @param [pan]
+/// @param [duckerName]
+/// @param [duckPriority=0]
 
-function VinylPlay(_sound, _loop = undefined, _gain = 1, _pitch = 1, _pan)
+function VinylPlay(_pattern, _loop = undefined, _gain = 1, _pitch = 1, _duckerName = undefined, _duckPrio = undefined)
 {
-    var _voice = __VinylPatternGet(_sound).__Play(_sound, undefined, undefined, _sound, _loop, _gain, _pitch, _pan);
-    return _voice.__id;
+    static _soundDict   = __VinylSystem().__soundDict;
+    static _patternDict = __VinylSystem().__patternDict;
+    
+    if (is_handle(_pattern))
+    {
+        return struct_get_from_hash(_soundDict, int64(_pattern)).__Play(_loop, _gain, _pitch, _duckerName, _duckPrio);
+    }
+    else if (is_string(_pattern))
+    {
+        var _patternStruct = _patternDict[$ _pattern];
+        if (_patternStruct != undefined)
+        {
+            return _patternStruct.__Play(_loop, _gain, _pitch, _duckerName, _duckPrio);
+        }
+        else
+        {
+            __VinylError("Pattern \"", _pattern, "\" not found");
+        }
+    }
+    else
+    {
+        __VinylError("Datatype not supported (", typeof(_pattern), ")");
+    }
 }

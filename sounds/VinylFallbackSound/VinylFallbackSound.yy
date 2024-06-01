@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"VinylFallbackSound",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.586091,
+  "name":"VinylFallbackSound",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"VinylFallbackSound.wav",
+  "type":0,
+  "volume":1.0,
+}

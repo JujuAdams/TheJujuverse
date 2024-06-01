@@ -6,7 +6,7 @@
   "name":"__VinylClassPatternShuffle",
   "parent":{
     "name":"Patterns",
-    "path":"folders/Vinyl/(Internals)/VIPs only in the green room/Classes/Patterns.yy",
+    "path":"folders/Vinyl/(Internals)/Classes/Patterns.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

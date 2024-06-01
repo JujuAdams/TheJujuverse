@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"__VinylImportSound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylImportSound",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"__VinylSetupExportGMLMacros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylSetupExportGMLMacros",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

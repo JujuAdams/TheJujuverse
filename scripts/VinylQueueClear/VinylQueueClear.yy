@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylQueueClear",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylQueueClear",
+  "parent":{
+    "name":"Queues",
+    "path":"folders/Vinyl/Queues.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

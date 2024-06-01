@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"VinylGetGlobalMetadata",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylGetGlobalMetadata",
+  "parent":{
+    "name":"Metadata",
+    "path":"folders/Vinyl/Metadata.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
