@@ -14,6 +14,11 @@
         <td>v9.0.0</td>
     </tr>
     <tr>
+        <td align="right"><a href="https://github.com/JujuAdams/scribble"><img src="https://raw.githubusercontent.com/JujuAdams/scribblejr/master/LOGO.png" style="width:120px"></a></td>
+        <td><a href="https://github.com/JujuAdams/ScribbleJunior">Scribble Jr.</a><br>Fast and lightweight text renderer</td>
+        <td>v1.3.0</td>
+    </tr>
+    <tr>
         <td align="right"><a href="https://github.com/JujuAdams/input"><img src="https://raw.githubusercontent.com/JujuAdams/input/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/input">Input</a><br>Comprehensive cross-platform input</td>
         <td>v5.6.1</td>
