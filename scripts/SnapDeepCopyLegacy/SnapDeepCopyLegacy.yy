@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"SnapFromConfigJSON",
+  "%Name":"SnapDeepCopyLegacy",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SnapFromConfigJSON",
+  "name":"SnapDeepCopyLegacy",
   "parent":{
-    "name":"Config JSON",
-    "path":"folders/SNAP/Config JSON.yy",
+    "name":"Utility",
+    "path":"folders/SNAP/Utility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

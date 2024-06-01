@@ -1,3 +1,4 @@
+// Feather disable all
 /// @return Nested struct/array data that represents the contents of the JSON string. The root node will always be a struct
 /// 
 /// @param buffer  The GML string to be decoded
@@ -126,7 +127,15 @@ function __SnapBufferReadGMLParser(_buffer, _buffer_size) constructor
                             }
                             else
                             {
-                                show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                var _asset_index = try_to_find_asset_index(token);
+                                if (_asset_index >= 0)
+                                {
+                                    token = _asset_index;
+                                }
+                                else
+                                {
+                                    show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                }
                             }
                         }
                         
@@ -216,7 +225,15 @@ function __SnapBufferReadGMLParser(_buffer, _buffer_size) constructor
                             }
                             else
                             {
-                                show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                var _asset_index = try_to_find_asset_index(token);
+                                if (_asset_index >= 0)
+                                {
+                                    token = _asset_index;
+                                }
+                                else
+                                {
+                                    show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                }
                             }
                         }
                         
@@ -355,7 +372,15 @@ function __SnapBufferReadGMLParser(_buffer, _buffer_size) constructor
                             }
                             else
                             {
-                                show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                var _asset_index = try_to_find_asset_index(token);
+                                if (_asset_index >= 0)
+                                {
+                                    token = _asset_index;
+                                }
+                                else
+                                {
+                                    show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                }
                             }
                         }
                         
@@ -467,6 +492,45 @@ function __SnapBufferReadGMLParser(_buffer, _buffer_size) constructor
                 }
             }
         }
+    }
+    
+    static try_to_find_asset_index = function(_asset)
+    {
+        static _constantStruct = {
+            noone: noone,
+            all: all,
+            
+            //Colours
+            c_black:   c_black,
+            c_blue:    c_blue,
+            c_dkgray:  c_dkgray,
+            c_dkgrey:  c_dkgrey,
+            c_fuchsia: c_fuchsia,
+            c_gray:    c_gray,
+            c_grey:    c_grey,
+            c_green:   c_green,
+            c_lime:    c_lime,
+            c_ltgray:  c_ltgray,
+            c_ltgrey:  c_ltgrey,
+            c_maroon:  c_maroon,
+            c_navy:    c_navy,
+            c_olive:   c_olive,
+            c_purple:  c_purple,
+            c_red:     c_red,
+            c_silver:  c_silver,
+            c_teal:    c_teal,
+            c_white:   c_white,
+            c_yellow:  c_yellow,
+            c_orange:  c_orange,
+        };
+        
+        if (!is_string(_asset)) return _asset;
+        
+        var _index = asset_get_index(_asset);
+        if (_index >= 0) return _index;
+        
+        if (!variable_struct_exists(_constantStruct, _asset)) return -1;
+        return _constantStruct[$ _asset];
     }
     
     read_root();

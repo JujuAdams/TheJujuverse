@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"SnapFromLooseJSON",
+  "%Name":"SnapVisualize",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SnapFromLooseJSON",
+  "name":"SnapVisualize",
   "parent":{
-    "name":"Loose JSON",
-    "path":"folders/SNAP/Loose JSON.yy",
+    "name":"Utility",
+    "path":"folders/SNAP/Utility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
