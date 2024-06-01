@@ -11,7 +11,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/scribble"><img src="https://raw.githubusercontent.com/JujuAdams/scribble/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/scribble">Scribble</a><br>Powerful, fully featured text renderer</td>
-        <td>v8.7.0</td>
+        <td>v9.0.0</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/input"><img src="https://raw.githubusercontent.com/JujuAdams/input/master/LOGO.png" style="width:120px"></a></td>
