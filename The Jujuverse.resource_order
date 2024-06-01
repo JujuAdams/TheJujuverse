@@ -6,7 +6,7 @@
     {"name":"Export & Import","order":3,"path":"folders/db/Export & Import.yy",},
     {"name":"Properties","order":4,"path":"folders/db/Properties.yy",},
     {"name":"DoLater","order":10,"path":"folders/DoLater.yy",},
-    {"name":"Dynamo","order":4,"path":"folders/Dynamo.yy",},
+    {"name":"Dynamo","order":15,"path":"folders/Dynamo.yy",},
     {"name":"(System)","order":1,"path":"folders/Dynamo/(System).yy",},
     {"name":"Classes","order":1,"path":"folders/Dynamo/(System)/Classes.yy",},
     {"name":"Input","order":14,"path":"folders/Input.yy",},

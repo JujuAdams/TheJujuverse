@@ -364,7 +364,15 @@ function __DynamoParseGMLParser(_buffer, _buffer_size) constructor
                             }
                             else
                             {
-                                show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                var _asset_index = try_to_find_asset_index(token);
+                                if (_asset_index >= 0)
+                                {
+                                    token = _asset_index;
+                                }
+                                else
+                                {
+                                    show_error("SNAP:\n\nLine " + string(line) + ", unexpected token " + string(token) + "\nis_string = " + string(token_is_string) + "\nis_real = " + string(token_is_real) + "\nis_symbol = " + string(token_is_symbol) + "\n ", true);
+                                }
                             }
                         }
                         
