@@ -1,6 +1,14 @@
 //Maximum number of alternate bindings per verb per profile
 #macro INPUT_MAX_ALTERNATE_BINDINGS  2
 
+//Whether to tolerate missing verb names when importing
+//This should typically be left as <false> to detect errors and such
+//
+//Set to <true> if you've added verbs between builds and don't want
+//to see error messages. Please note that we don't recommend this - you should instead reset player
+//bindings in this situation - but the option is there if you need it
+#macro INPUT_FLEXIBLE_VERB_IMPORT  false
+
 //Whether to tolerate incorrect number of alternate bindings when importing
 //This should typically be left as <false> to detect errors and such
 //
@@ -33,6 +41,14 @@
 //Default time limit between the first and last key press for chord activation
 //(Whether this is in frames or milliseconds is controlled by INPUT_TIMER_MILLISECONDS)
 #macro INPUT_CHORD_DEFAULT_TIME  4
+
+//The default value for "mostRecent" parameters for opposing checkers
+//This value is used when the "mostRecent" parameter is not specified
+#macro INPUT_DEFAULT_OPPOSING_MOST_RECENT  false
+
+//The default value for "mostRecent" parameters for 2D checkers
+//This value is used when the "mostRecent" parameter is not specified
+#macro INPUT_DEFAULT_2D_MOST_RECENT  false
 
 //Whether to clamp 2D input to a maximum distance of 1 unit
 //This affects input_x(), input_y(), input_xy(), input_direction(), and input_distance()

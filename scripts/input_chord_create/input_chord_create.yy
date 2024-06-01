@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_chord_create",
   "parent":{
-    "name":"Extended Verbs",
-    "path":"folders/Input/Extended Verbs.yy",
+    "name":"04  Further Verb Functions",
+    "path":"folders/Input/04  Further Verb Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

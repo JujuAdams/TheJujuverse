@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Reads a JSON (string or struct) that contains profile data and verifies if it can be imported without error
 /// @param   stringOrStruct
 /// @param   profileName
@@ -5,7 +6,7 @@
 
 function input_profile_verify(_json, _profile_name, _player_index = 0)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     //Make a clone of the current settings
@@ -14,7 +15,7 @@ function input_profile_verify(_json, _profile_name, _player_index = 0)
     var _error = undefined;
     try
     {
-        global.__input_players[_player_index].__profile_import(_json, _profile_name);
+        _global.__players[_player_index].__profile_import(_json, _profile_name);
     }
     catch(_error)
     {

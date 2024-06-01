@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Creates a chord verb that is considered active when all of its constituent verbs are active
 ///          The maxTimeBetweenPresses argument determines how far apart each verb activation is allowed to be
 ///          The units for maxTimeBetweenPresses is determined by INPUT_TIMER_MILLISECONDS
@@ -7,12 +8,9 @@
 /// @param   verb2
 /// @param   ...
 
-function input_chord_create()
+function input_chord_create(_name, _max_time = INPUT_CHORD_DEFAULT_TIME)
 {
-    __input_initialize();
-    
-    var _name     = argument[0];
-    var _max_time = argument[1] ?? INPUT_CHORD_DEFAULT_TIME;
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     __input_ensure_unique_verb_name(_name);
     
@@ -28,17 +26,22 @@ function input_chord_create()
     var _chord_definition = new __input_class_chord_definition(_name, _max_time, _verb_array);
     
     //Store this globally for uniqueness checks later
-    global.__input_all_verb_dict[$ _name] = true;
-    array_push(global.__input_all_verb_array, _name);
+    _global.__all_verb_dict[$ _name] = true;
+    array_push(_global.__all_verb_array, _name);
     
-    global.__input_chord_verb_dict[$ _name] = _chord_definition;
-    array_push(global.__input_chord_verb_array, _name);
+    _global.__chord_verb_dict[$ _name] = _chord_definition;
+    array_push(_global.__chord_verb_array, _name);
     
     //Add this chord definition to all players
     var _p = 0;
     repeat(INPUT_MAX_PLAYERS)
     {
-        global.__input_players[_p].__add_chord(_name);
+        with(_global.__players[_p])
+        {
+            __add_chord_state(_name, _chord_definition);
+            __add_complex_verb(_name, __INPUT_VERB_TYPE.__CHORD);
+        }
+        
         ++_p;
     }
 }

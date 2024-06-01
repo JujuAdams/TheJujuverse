@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Returns a boolean indicating whether the given verb had been double-tapped and was deactivated this frame
 ///          If an array of verbs is given then this function will return <true> if ANY verb was double-tapped and then deactivated this frame
 ///          If a buffer duration is specified then this function will return <true> if the verb double-tapped and then deactivated at any point within that timeframe
@@ -7,6 +8,7 @@
 
 function input_check_double_released(_verb, _player_index = 0, _buffer_duration = 0)
 {
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     if (is_array(_verb))
@@ -27,7 +29,7 @@ function input_check_double_released(_verb, _player_index = 0, _buffer_duration 
     
     if (_buffer_duration <= 0)
     {
-        return ((global.__input_cleared)? false : _verb_struct.double_release);
+        return ((_global.__cleared)? false : _verb_struct.double_release);
     }
     else
     {

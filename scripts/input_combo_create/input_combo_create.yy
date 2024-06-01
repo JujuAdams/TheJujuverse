@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_combo_create",
   "parent":{
-    "name":"Extended Verbs",
-    "path":"folders/Input/Extended Verbs.yy",
+    "name":"27  Combos",
+    "path":"folders/Input/27  Combos.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

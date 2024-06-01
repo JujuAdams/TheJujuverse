@@ -1,5 +1,9 @@
+// Feather disable all
+
 function __input_class_binding() constructor
 {
+    __INPUT_GLOBAL_STATIC_VARIABLE  //Set static __global
+    
     __set_empty();
     
     static __set_empty = function()
@@ -171,13 +175,13 @@ function __input_class_binding() constructor
         {
             switch(_value)
             {
-                case __INPUT_LEGACY_GP_GUIDE:    _value = gp_guide;    __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_MISC1:    _value = gp_misc1;    __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_TOUCHPAD: _value = gp_touchpad; __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_PADDLE1:  _value = gp_paddle1;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_PADDLE2:  _value = gp_paddle2;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_PADDLE3:  _value = gp_paddle3;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
-                case __INPUT_LEGACY_GP_PADDLE4:  _value = gp_paddle4;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_GUIDE:    case __INPUT_LEGACY_GP_ALT_GUIDE:    _value = gp_guide;    __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_MISC1:    case __INPUT_LEGACY_GP_ALT_MISC1:    _value = gp_misc1;    __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_TOUCHPAD: case __INPUT_LEGACY_GP_ALT_TOUCHPAD: _value = gp_touchpad; __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_PADDLE1:  case __INPUT_LEGACY_GP_ALT_PADDLE1:  _value = gp_paddle1;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_PADDLE2:  case __INPUT_LEGACY_GP_ALT_PADDLE2:  _value = gp_paddle2;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_PADDLE3:  case __INPUT_LEGACY_GP_ALT_PADDLE3:  _value = gp_paddle3;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
+                case __INPUT_LEGACY_GP_PADDLE4:  case __INPUT_LEGACY_GP_ALT_PADDLE4:  _value = gp_paddle4;  __input_trace("Warning! Legacy gamepad constant found, updating value (= ", _value, ")"); break;
             }
         }
         
@@ -192,9 +196,9 @@ function __input_class_binding() constructor
         if (__gamepad_description != undefined)
         {
             var _g = 0;
-            repeat(array_length(global.__input_gamepads))
+            repeat(array_length(__global.__gamepads))
             {
-                var _gamepad = global.__input_gamepads[_g];
+                var _gamepad = __global.__gamepads[_g];
                 
                 if (is_struct(_gamepad) && (_gamepad.description == __gamepad_description))
                 {
@@ -213,7 +217,7 @@ function __input_class_binding() constructor
     static __set_android_lowercase = function()
     {
         //If we're on Android
-        if ((os_type == os_android) && (type == __INPUT_BINDING_KEY))
+        if (__INPUT_ON_ANDROID && (type == __INPUT_BINDING_KEY))
         {
             //Force binding to uppercase
             value = ord(string_upper(chr(value)));
@@ -258,7 +262,7 @@ function __input_class_binding() constructor
         {
             if (INPUT_MERGE_CONTROL_KEYS)
             {
-                switch (_key)
+                switch(_key)
                 {
                     //Combine player-bound control keys
                     case vk_lcontrol: case vk_rcontrol:  _key = vk_control; break;
@@ -269,7 +273,7 @@ function __input_class_binding() constructor
         }
         else
         {
-            if ((os_type == os_switch) || (os_type == os_linux) || (os_type == os_macosx))
+            if (__INPUT_ON_SWITCH || __INPUT_ON_LINUX || __INPUT_ON_MACOS)
             {
                 //Fix F11 and F12 constants
                 if      (_key == vk_f11)  _key = 128;
@@ -368,7 +372,7 @@ function __input_class_binding() constructor
     {
         if (_label == undefined)
         {
-            __label = __input_binding_get_label(type, value, axis_negative)
+            __label = __input_binding_get_label(type, value, axis_negative);
         }
         else
         {

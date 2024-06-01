@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_source_mode_set",
   "parent":{
-    "name":"Sources",
-    "path":"folders/Input/Sources.yy",
+    "name":"17  Source Modes",
+    "path":"folders/Input/17  Source Modes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

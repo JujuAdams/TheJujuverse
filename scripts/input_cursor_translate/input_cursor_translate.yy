@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_cursor_translate",
   "parent":{
-    "name":"Cursor",
-    "path":"folders/Input/Cursor.yy",
+    "name":"10  Cursor Control",
+    "path":"folders/Input/10  Cursor Control.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

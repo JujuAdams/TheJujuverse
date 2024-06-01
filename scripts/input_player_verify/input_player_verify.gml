@@ -1,10 +1,11 @@
+// Feather disable all
 /// @desc    Reads a JSON (string or struct) that contains player data and verifies if it can be imported without error
 /// @param   stringOrJSON
 /// @param   [playerIndex=0]
 
 function input_player_verify(_json, _player_index = 0)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     //Make a clone of the current settings
@@ -13,7 +14,7 @@ function input_player_verify(_json, _player_index = 0)
     var _error = undefined;
     try
     {
-        global.__input_players[_player_index].__import(_json);
+        _global.__players[_player_index].__import(_json);
     }
     catch(_error)
     {

@@ -1,10 +1,11 @@
+// Feather disable all
 /// @desc    Gets gamepad trigger effect state for a player
 /// @param   trigger
 /// @param   [playerIndex=0]
 
 function input_trigger_effect_get_state(_trigger, _player_index = 0)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
 
     if not ((_trigger == gp_shoulderlb) || (_trigger == gp_shoulderrb))
@@ -12,7 +13,7 @@ function input_trigger_effect_get_state(_trigger, _player_index = 0)
         __input_error("Value ", _trigger ," not a gamepad trigger");
     }
 
-    var _player  = global.__input_players[_player_index];
+    var _player  = _global.__players[_player_index];
     var _gamepad = input_player_get_gamepad(_player_index);
     if (_gamepad < 0) return undefined;
     

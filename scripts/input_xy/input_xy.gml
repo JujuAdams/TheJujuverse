@@ -1,34 +1,26 @@
+// Feather disable all
 /// @desc    Returns the vector represented by the sum of the verb values
 /// @param   leftVerb
 /// @param   rightVerb
 /// @param   upVerb
 /// @param   downVerb
 /// @param   [playerIndex=0]
-/// @param   [mostRecent=false]
+/// @param   [mostRecent]
 
-function input_xy(_verb_l, _verb_r, _verb_u, _verb_d, _player_index = 0, _most_recent = false)
+function input_xy(_verb_l, _verb_r, _verb_u, _verb_d, _player_index = 0, _most_recent = INPUT_DEFAULT_2D_MOST_RECENT)
 {
-    if (__INPUT_2D_CHECKER_STATIC_RESULT)
-    {
-        static _result = {
-            x: 0,
-            y: 0,
-        };
-    }
-    else
-    {
-        var _result = {
-            x: 0,
-            y: 0,
-        };
-    }
+    static _result = {
+        x: 0,
+        y: 0,
+    };
     
     if (!is_struct(_player_index))
     {
+        __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
         __INPUT_VERIFY_PLAYER_INDEX
         
         //Grab the player's verbs
-        var _player_verbs_struct = global.__input_players[_player_index].__verb_state_dict;
+        var _player_verbs_struct = _global.__players[_player_index].__verb_state_dict;
     }
     else
     {

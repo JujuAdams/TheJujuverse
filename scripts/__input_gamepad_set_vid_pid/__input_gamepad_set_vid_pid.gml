@@ -1,8 +1,9 @@
+// Feather disable all
 /// This function should be called in the scope of a gamepad class
 
 function __input_gamepad_set_vid_pid()
 {    
-    if (__INPUT_ON_WEB)
+    if (INPUT_ON_WEB)
     {
         vendor  = "";
         product = "";
@@ -80,7 +81,7 @@ function __input_gamepad_set_vid_pid()
                     product     = _product_slice;
                     description = _work_string;
                 }
-                else
+                else if (!__INPUT_SILENT) 
                 {
                     __input_trace("Gamepad description could not be parsed. Bindings for this gamepad may be incorrect (was \"", description, "\")");
                 }
@@ -94,15 +95,15 @@ function __input_gamepad_set_vid_pid()
     else if (__INPUT_SDL2_SUPPORT)
     {
        //Unpack the vendor/product IDs from the gamepad's GUID
-        if (os_type == os_windows)
+        if (__INPUT_ON_WINDOWS)
         {
-            var _legacy = __input_string_contains(guid, "000000000000504944564944");
+            var _legacy = __input_string_contains(guid, "000000000000504944564944"); //"PIDVID"
             var _result = __input_gamepad_guid_parse(guid, _legacy, false);
             vendor  = _result.vendor;
             product = _result.product;
             xinput  = (index < 4);
         }
-        else if ((os_type == os_macosx) || (os_type == os_linux) || (os_type == os_android))
+        else if (__INPUT_ON_MACOS || __INPUT_ON_LINUX || __INPUT_ON_ANDROID)
         {
             var _result = __input_gamepad_guid_parse(guid, false, false);
             vendor  = _result.vendor;
@@ -111,7 +112,7 @@ function __input_gamepad_set_vid_pid()
         }
         else
         {
-            __input_trace("Warning! OS type check fell through unexpectedly (os_type = ", os_type, ")");
+            if (!__INPUT_SILENT) __input_trace("Warning! OS type check fell through unexpectedly (os_type = ", os_type, ")");
             description = gamepad_get_description(index);
             vendor  = "";
             product = "";

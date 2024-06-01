@@ -1,9 +1,15 @@
+// Feather disable all
 /// @desc    Returns whether the given mouse button is newly deactivated this frame.
 /// @param   binding
 
 function input_mouse_check_released(_binding)
-{    
-    if (!global.__input_mouse_allowed_on_platform || global.__input_window_focus_block_mouse)
+{
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if (!_global.__mouse_allowed 
+    ||  !_global.__game_input_allowed 
+    ||   _global.__window_focus_block_mouse 
+    ||   _global.__cleared)
     {
         return (_binding == mb_none);
     }
@@ -15,15 +21,21 @@ function input_mouse_check_released(_binding)
     }
     
     var _left = false;
-    if (global.__input_pointer_index > 0)
+    if (_global.__pointer_index_previous == 0)
     {
-        //Touch
-        _left = global.__input_pointer_released;
+        //Mouse and touchpad
+        _left = device_mouse_check_button_released(0, mb_left);
     }
     else
     {
-        //Mouse and touchpad
-        _left = device_mouse_check_button_released(0, mb_left) && !global.__input_tap_click;
+        //Touch
+        _left = _global.__pointer_released;
+    }    
+    
+    if (_global.__tap_click)
+    {
+        //Trackpad
+        _left = true;
     }
     
     switch(_binding)

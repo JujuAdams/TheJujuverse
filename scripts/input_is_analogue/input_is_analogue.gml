@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Returns whether the given verb is currently received analogue input (e.g. from a gamepad thumbstick)
 ///          If an array of verbs is provided, this function will return <true> if ANY of the verbs have analogue input
 /// @param   verb/array
@@ -5,6 +6,7 @@
 
 function input_is_analogue(_verb, _player_index = 0)
 {
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     if (is_array(_verb))

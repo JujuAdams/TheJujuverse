@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_mouse_capture_get",
   "parent":{
-    "name":"Mouse (Direct)",
-    "path":"folders/Input/Mouse (Direct).yy",
+    "name":"11  Mouse Capture",
+    "path":"folders/Input/11  Mouse Capture.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

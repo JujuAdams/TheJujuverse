@@ -26,7 +26,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Vinyl"><img src="https://raw.githubusercontent.com/JujuAdams/Vinyl/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Vinyl">Vinyl</a><br>Live updating modular audio system</td>
-        <td>v5.3.1</td>
+        <td>v6.0.6</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Dynamo"><img src="https://raw.githubusercontent.com/JujuAdams/Dynamo/master/LOGO.png" style="width:120px"></a></td>

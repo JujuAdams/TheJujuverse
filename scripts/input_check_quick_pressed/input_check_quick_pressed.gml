@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Returns a boolean indicating whether the given verb has been actived by a quick tap on an analogue (thumbstick/trigger) axis this frame
 ///          Behaviour of this function can be customised using the INPUT_QUICK_BUFFER macro
 ///          If an array of verbs is given then this function will return <true> if ANY verb has crossed the long-hold threshold this frame
@@ -8,6 +9,7 @@
 
 function input_check_quick_pressed(_verb, _player_index = 0, _buffer_duration = 0)
 {
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     if (is_array(_verb))
@@ -28,7 +30,7 @@ function input_check_quick_pressed(_verb, _player_index = 0, _buffer_duration = 
     
     if (_buffer_duration <= 0)
     {
-        return ((global.__input_cleared)? false : _verb_struct.__quick_press);
+        return ((_global.__cleared)? false : _verb_struct.__quick_press);
     }
     else
     {

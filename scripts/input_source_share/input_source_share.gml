@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Assigns a source to two or more players. All other players using the source will have it unassigned
 ///          If the players had any other sources assigned then they will be unassigned
 /// @param   source
@@ -7,7 +8,7 @@
 
 function input_source_share(_source, _array, _auto_profile = true, _exclusive = true)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_SOURCE
     __INPUT_VERIFY_SOURCE_ASSIGNABLE
     
@@ -19,7 +20,7 @@ function input_source_share(_source, _array, _auto_profile = true, _exclusive = 
         var _player_index = _array[_i];
         __INPUT_VERIFY_PLAYER_INDEX
         
-        with(global.__input_players[_player_index])
+        with(_global.__players[_player_index])
         {
             __sources_clear();
             __source_add(_source);

@@ -1,10 +1,11 @@
+// Feather disable all
 /// @desc    Sets whether cooldown behaviour is enabled for a verb
 /// @param   verb
 /// @param   state
 
 function input_accessibility_verb_cooldown_set(_verb_name, _state)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     if (is_array(_verb_name))
     {
@@ -22,10 +23,10 @@ function input_accessibility_verb_cooldown_set(_verb_name, _state)
     
     if (_state)
     {
-        global.__input_cooldown_dict[$ _verb_name] = true;
+        _global.__cooldown_dict[$ _verb_name] = true;
     }
     else
     {
-        variable_struct_remove(global.__input_cooldown_dict, _verb_name);
+        variable_struct_remove(_global.__cooldown_dict, _verb_name);
     }
 }

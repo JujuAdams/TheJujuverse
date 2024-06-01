@@ -1,14 +1,15 @@
-/// @desc    Returns the number of phases for a combo verb
-/// @param   name
+// Feather disable all
+
+/// Returns the number of phases for the given combo
+/// 
+/// @param   comboName
 
 function input_combo_get_phase_count(_name)
 {
-    var _combo_definition = global.__input_combo_verb_dict[$ _name];
-    if (!is_struct(_combo_definition))
-    {
-        __input_error("Combo not recognised (", _name, ")");
-        return undefined;
-    }
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
-    return array_length(_combo_definition.__phase_array);
+    var _combo_def = _global.__combo_verb_dict[$ _name];
+    if (not is_struct(_combo_def)) __input_error("Combo with name \"", _name, "\" doesn't exist");
+    
+    return array_length(_combo_def.__phase_array);
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__input_finalize_verb_groups",
   "parent":{
-    "name":"(System)",
-    "path":"folders/Input/(System).yy",
+    "name":"Initialization",
+    "path":"folders/Input/(System)/Initialization.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

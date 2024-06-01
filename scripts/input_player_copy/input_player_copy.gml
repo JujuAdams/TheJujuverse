@@ -1,10 +1,12 @@
+// Feather disable all
+
 /// @desc    Duplicates one player's bindings, profiles and axis thresholds and copies them to another
 /// @param   playerIndexSrc
 /// @param   playerIndexDst
 
 function input_player_copy(_player_index_src, _player_index_dst)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     //Verify source player
     if (_player_index_src < 0)

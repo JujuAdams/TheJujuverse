@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Returns a boolean indicating whether the given verb was newly activated this frame (a button was pressed etc.)
 ///          If the keyword <all> is used then this function will return <true> if ANY verb whatsoever was newly activated
 ///          If an array of verbs is given then this function will return <true> if ANY of the verbs in the array were newly activated
@@ -8,11 +9,12 @@
 
 function input_check_pressed(_verb, _player_index = 0, _buffer_duration = 0)
 {
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     __INPUT_VERIFY_PLAYER_INDEX
     
     if (_verb == all)
     {
-        return input_check_pressed(global.__input_basic_verb_array, _player_index, _buffer_duration);
+        return input_check_pressed(_global.__basic_verb_array, _player_index, _buffer_duration);
     }
     
     if (is_array(_verb))
@@ -33,7 +35,7 @@ function input_check_pressed(_verb, _player_index = 0, _buffer_duration = 0)
     
     if (_buffer_duration <= 0)
     {
-        return ((global.__input_cleared)? false : _verb_struct.press);
+        return ((_global.__cleared)? false : _verb_struct.press);
     }
     else
     {

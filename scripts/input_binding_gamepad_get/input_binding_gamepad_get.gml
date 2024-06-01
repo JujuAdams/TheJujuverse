@@ -1,10 +1,11 @@
+// Feather disable all
 /// @desc    Returns the target gamepad index for the binding. This is only relevant in the MULTIDEVICE source mode
 ///          If no target gamepad has been set for the binding then this function returns <undefined>
 /// @param   binding
 
 function input_binding_gamepad_get(_binding)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     if (!input_value_is_binding(_binding))
     {

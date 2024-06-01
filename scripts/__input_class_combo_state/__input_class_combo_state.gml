@@ -1,267 +1,450 @@
-function __input_class_combo_state(_name, _combo_definition_struct) constructor
+// Feather disable all
+
+function __input_class_combo_state(_name, _combo_def) constructor
 {
-    __name = _name;
+    __INPUT_GLOBAL_STATIC_VARIABLE
+    static __combo_params = __global.__combo_params;
     
-    __definition_struct = _combo_definition_struct;
-    __phase_array = __definition_struct.__phase_array;
-    
-    __success = false;
-    
-    __held_verbs_array    = [];
-    __held_verbs_struct   = {};
-    __pressed_verbs_array = [];
-    __pressed_verbs_dict  = {};
+    __name  = _name;
+    __combo = _combo_def;
     
     __phase = 0;
-    __phase_start_time = infinity;
-    __initialized = false;
+    __reset();
+    
+    
+    
+    
     
     static __reset = function()
     {
-        if (__phase != 0)
-        {
-            array_resize(__held_verbs_array, 0);
-            __held_verbs_struct  = {};
-            array_resize(__pressed_verbs_array, 0);
-            __pressed_verbs_dict = {};
-            
-            __phase = 0;
-            __initialize_phase();
-        }
+        __success   = false;
+        __direction = undefined;
         
-        __success = false;
-        __phase_start_time = infinity;
+        __new_phase   = (__phase != 0);
+        __phase       = 0;
+        __start_time  = __input_get_time();
+        
+        __charge_trigger    = true;
+        __charge_measure    = false;
+        __charge_start_time = undefined;
+        __charge_end_time   = undefined;
+        
+        __allow_hold_dict    = {};
+        __require_hold_array = [];
+        
+        __direction         = undefined;
+        __direction_mapping = {};
     }
     
-    static __tick = function(_player_verbs_struct)
+    static __evaluate = function(_player_verb_struct)
     {
-        var _phase_count = array_length(__phase_array);
-        if (_phase_count <= 0) __input_error("Combo \"", __definition_struct.__name, "\" has no phases\nPlease add phases with either the .press() or .hold_start() method");
+        static _all_verb_array = __global.__all_verb_array;
         
-        if (!__initialized) __initialize_phase();
+        __new_phase = false;
+        if (__success) __reset();
         
-        if (__success)
+        var _phase_array = __combo.__phase_array;
+        var _combo_length = array_length(_phase_array);
+        if (_combo_length <= 0) return false;
+        
+        var _phase_data = _phase_array[__phase];
+        var _phase_type = _phase_data.__type;
+        var _phase_verb = _phase_data.__verb;
+        
+        if ((__direction == undefined) && __combo.__directional)
         {
-            //Report success until any of the verbs are released
-            if (array_length(__held_verbs_array) <= 0)
-            {
-                __reset();
-                return __INPUT_COMBO_STATE.__FAIL;
-            }
-            else
-            {
-                var _i = 0;
-                repeat(array_length(__held_verbs_array))
-                {
-                    if (!_player_verbs_struct[$ __held_verbs_array[_i]].held)
-                    {
-                        __reset();
-                        return __INPUT_COMBO_STATE.__FAIL;
-                    }
-                    
-                    ++_i;
-                }
-            }
-            
-            return __INPUT_COMBO_STATE.__SUCCESS;
+            __determine_direction(_player_verb_struct, _phase_verb);
+        }
+        
+        //Remap verbs based on directionality
+        _phase_verb = __direction_mapping[$ _phase_verb] ?? _phase_verb;
+        
+        //Keep measuring the length of a charge until
+        if (__charge_measure)
+        {
+            __charge_end_time = __input_get_time();
         }
         else
         {
-            var _state = __evaluate_phase(_player_verbs_struct);
-            switch(_state)
+            if ((__phase > 0) && (__input_get_time() - __start_time > __combo.__phase_timeout))
             {
-                case __INPUT_COMBO_STATE.__FAIL:
-                    __reset();
-                    return __INPUT_COMBO_STATE.__FAIL;
+                if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" timeout failed (phase=", __phase, ")");
+                __reset();
+                return false;
+            }
+        }
+        
+        var _verb_state = _player_verb_struct[$ _phase_verb];
+        if (not _verb_state.__inactive)
+        {
+            switch(_phase_type)
+            {
+                case __INPUT_COMBO_PHASE.__PRESS:
+                    if (_verb_state.press)
+                    {
+                        if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (press \"", _phase_verb, "\")");
+                        __add_to_allow_hold_dict(_phase_verb);
+                        __next_phase(_phase_array, true);
+                    }
                 break;
                 
-                case __INPUT_COMBO_STATE.__SUCCESS:
-                    ++__phase;
-                    __phase_start_time = __input_get_time();
-                    
-                    if (__phase < _phase_count)
+                case __INPUT_COMBO_PHASE.__RELEASE:
+                    if (not _verb_state.held)
                     {
-                        __initialize_phase();
+                        if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (release \"", _phase_verb, "\")");
+                        __remove_from_allow_hold_dict(_phase_verb);
+                        __remove_from_require_hold_array(_phase_verb);
+                        __next_phase(_phase_array, true);
                     }
-                    else
+                break;
+                
+                case __INPUT_COMBO_PHASE.__PRESS_OR_RELEASE:
+                    if (_verb_state.press)
                     {
-                        //Success!
-                        __success = true;
-                        __phase = _phase_count;
-                        
-                        return __INPUT_COMBO_STATE.__SUCCESS;
+                        if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (PRESS or release \"", _phase_verb, "\")");
+                        __add_to_allow_hold_dict(_phase_verb);
+                        __next_phase(_phase_array, true);
+                    }
+                    else if (_verb_state.release)
+                    {
+                        if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (press or RELEASE \"", _phase_verb, "\")");
+                        __remove_from_allow_hold_dict(_phase_verb);
+                        __remove_from_require_hold_array(_phase_verb);
+                        __next_phase(_phase_array, true);
+                    }
+                break;
+                
+                case __INPUT_COMBO_PHASE.__HOLD:
+                    if (_verb_state.held)
+                    {
+                        if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (hold \"", _phase_verb, "\")");
+                        __add_to_allow_hold_dict(_phase_verb);
+                        __add_to_require_hold_array(_phase_verb);
+                        __next_phase(_phase_array, true);
+                    }
+                break;
+                
+                case __INPUT_COMBO_PHASE.__CHARGE:
+                    if (_verb_state.held)
+                    {
+                        if (__charge_trigger)
+                        {
+                            __charge_trigger = false;
+                            __charge_measure = true;
+                            
+                            if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " charge started (verb \"", _phase_verb, "\")");
+                            
+                            __add_to_allow_hold_dict(_phase_verb);
+                            __add_to_require_hold_array(_phase_verb);
+                            
+                            __charge_start_time = __input_get_time();
+                            __charge_end_time   = __input_get_time();
+                        }
+                        else
+                        {
+                            if (__input_get_time() - __charge_start_time > _phase_data.__min_time)
+                            {
+                                if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (charge \"", _phase_verb, "\" for over ", _phase_data.__min_time, (INPUT_TIMER_MILLISECONDS? "ms" : " frames"), ")");
+                                __next_phase(_phase_array, false);
+                            }
+                        }
                     }
                 break;
             }
         }
         
-        return __INPUT_COMBO_STATE.__WAITING;
-    }
-    
-    static __initialize_phase = function()
-    {
-        __initialized = true;
-        
-        var _phase      = __phase_array[__phase];
-        var _phase_type = _phase.__type;
-        
-        //For release-type phases, we want to remove verbs from the dictionary that we're using to track which verbs should be held
-        if ((_phase_type == __INPUT_COMBO_PHASE_TYPE.__PRESS_OR_RELEASE) || (_phase_type == __INPUT_COMBO_PHASE_TYPE.__RELEASE))
+        if (__check_valid(_player_verb_struct))
         {
-            var _phase_verb = _phase.__verb;
-            
-            var _i = 0;
-            repeat(array_length(__held_verbs_array))
+            if (__phase >= _combo_length)
             {
-                if (__held_verbs_array[_i] == _phase_verb)
-                {
-                    array_delete(__held_verbs_array, _i, 1);
-                    variable_struct_remove(__held_verbs_struct, _phase_verb);
-                }
-                else
-                {
-                    ++_i;
-                }
+                if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" success");
+                    
+                __success = true;
+                return true;
             }
         }
-    }
-    
-    static __capture_all_presses = function(_player_verbs_struct)
-    {
-        var _basic_verb_array = global.__input_basic_verb_array;
-        var _i = 0;
-        repeat(array_length(_basic_verb_array))
+        else
         {
-            var _verb_name = _basic_verb_array[_i];
-            if ((_player_verbs_struct[$ _verb_name].press) 
-            &&  !variable_struct_exists(__held_verbs_struct, _verb_name)
-            &&  !variable_struct_exists(__pressed_verbs_dict, _verb_name))
-            {
-                array_push(__pressed_verbs_array, _verb_name);
-                __pressed_verbs_dict[$ _verb_name] = true;
-            }
-            
-            ++_i;
+            __reset();
         }
+        
+        return false;
     }
     
-    static __capture_all_holds = function(_player_verbs_struct)
+    static __next_phase = function(_phase_array, _reset_charge)
     {
-        var _basic_verb_array = global.__input_basic_verb_array;
-        var _i = 0;
-        repeat(array_length(_basic_verb_array))
+        if (__charge_measure)
         {
-            var _verb_name = _basic_verb_array[_i];
-            if ((_player_verbs_struct[$ _verb_name].press) 
-            &&  !variable_struct_exists(__held_verbs_struct, _verb_name)
-            &&  !variable_struct_exists(__pressed_verbs_dict, _verb_name))
+            //Stop measuring the length of the charge
+            if (_reset_charge) 
             {
-                array_push(__held_verbs_array, _verb_name);
-                __held_verbs_struct[$ _verb_name] = true;
-            }
-            
-            ++_i;
-        }
-    }
-    
-    static __evaluate_phase = function(_player_verbs_struct)
-    {
-        var _phase         = __phase_array[__phase];
-        var _phase_type    = _phase.__type;
-        var _phase_verb    = _phase.__verb;
-        var _phase_timeout = _phase.__timeout;
-        
-        if (__input_get_time() - __phase_start_time > _phase_timeout) return __INPUT_COMBO_STATE.__FAIL;
-        
-        //Check to see if any verbs have been released
-        var _i = 0;
-        repeat(array_length(__pressed_verbs_array))
-        {
-            var _verb_name = __pressed_verbs_array[_i];
-            if (!_player_verbs_struct[$ _verb_name].held)
-            {
-                array_delete(__pressed_verbs_array, _i, 1);
-                variable_struct_remove(__pressed_verbs_dict, _verb_name);
+                __charge_measure = false;
             }
             else
             {
-                ++_i;
+                var _verb = _phase_array[__phase].__verb;
+                _verb = __direction_mapping[$ _verb] ?? _verb;
+                
+                //Remove hold requirement when charge isn't reset
+                __remove_from_require_hold_array(_verb);
             }
         }
         
-        switch(_phase_type)
+        //Allow retriggering of a charge phase if that's the next type we're going to evaluate
+        if ((__phase < array_length(_phase_array))
+        &&  (_phase_array[__phase].__type == __INPUT_COMBO_PHASE.__CHARGE))
         {
-            case __INPUT_COMBO_PHASE_TYPE.__PRESS:
-                if (_player_verbs_struct[$ _phase_verb].press)
+            __charge_trigger = true;
+        }
+        
+        ++__phase;
+        __new_phase = true;
+        __start_time = __input_get_time();
+    }
+    
+    static __check_valid = function(_player_verb_struct)
+    {
+        static _all_verb_array = __global.__all_verb_array;
+        var _ignore_dict = __combo.__ignore_dict;
+        
+        //Check everything that's meant to be pressed is being pressed
+        var _i = 0;
+        repeat(array_length(__require_hold_array))
+        {
+            var _verb = __require_hold_array[_i];
+            if (not _player_verb_struct[$ _verb].held)
+            {
+                if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" failed, verb \"", _verb, "\" not held (phase=", __phase, ")");
+                return false;
+            }
+            
+            ++_i;
+        }
+        
+        //Check that nothing that shouldn't be pressed isn't being pressed
+        var _i = 0;
+        repeat(array_length(_all_verb_array))
+        {
+            var _verb = _all_verb_array[_i];
+            
+            var _state = _player_verb_struct[$ _verb];
+            if (not _state.__inactive)
+            {
+                if (variable_struct_exists(__allow_hold_dict, _verb))
                 {
-                    __capture_all_presses(_player_verbs_struct);
-                    return __INPUT_COMBO_STATE.__SUCCESS;
+                    //Once a verb has been released, don't allow it to be retriggered
+                    if (not _state.held) variable_struct_remove(__allow_hold_dict, _verb);
                 }
+                else if (not variable_struct_exists(_ignore_dict, __direction_mapping[$ _verb] ?? _verb)) //Don't trigger a failure if this verb has been ignored
+                {
+                    if (_state.held)
+                    {
+                        if (INPUT_COMBO_DEBUG && (__phase != 0)) __input_trace("Combo \"", __name, "\" failed, verb \"", _verb, "\" pressed erroneously (phase=", __phase, ")");
+                        return false;
+                    }
+                }
+            }
+            
+            ++_i;
+        }
+        
+        return true;
+    }
+    
+    
+    
+    static __add_to_allow_hold_dict = function(_verb)
+    {
+        __allow_hold_dict[$ _verb] = true;
+    }
+    
+    static __remove_from_allow_hold_dict = function(_verb)
+    {
+        variable_struct_remove(__allow_hold_dict, _verb);
+    }
+    
+    static __add_to_require_hold_array = function(_verb)
+    {
+        var _i = 0;
+        repeat(array_length(__require_hold_array))
+        {
+            if (__require_hold_array[_i] == _verb) return;            
+            ++_i;
+        }
+        
+        array_push(__require_hold_array, _verb);
+    }
+    
+    static __remove_from_require_hold_array = function(_verb)
+    {
+        var _i = 0;
+        repeat(array_length(__require_hold_array))
+        {
+            if (__require_hold_array[_i] == _verb)
+            {
+                array_delete(__require_hold_array, _i, 1);
+                return;
+            }
+            
+            ++_i;
+        }
+    }
+    
+    
+    
+    static __determine_direction = function(_player_verb_struct, _phase_verb)
+    {
+        if (not __combo_params.__reset)
+        {
+            var _forward_verb          = __combo_params.__forward_verb;
+            var _counterclockwise_verb = __combo_params.__counterclockwise_verb;
+            var _backward_verb         = __combo_params.__backward_verb;
+            var _clockwise_verb        = __combo_params.__clockwise_verb;
+            
+            var _forward_struct           = (_forward_verb          == undefined)? undefined : _player_verb_struct[$ _forward_verb];
+            var _counterclockwise_struct  = (_counterclockwise_verb == undefined)? undefined : _player_verb_struct[$ _counterclockwise_verb];
+            var _backward_struct          = (_backward_verb         == undefined)? undefined : _player_verb_struct[$ _backward_verb];
+            var _clockwise_struct         = (_clockwise_verb        == undefined)? undefined : _player_verb_struct[$ _clockwise_verb];
+            
+            var _forward_state          = is_struct(_forward_struct         ) && (not           _forward_struct.__inactive) && _forward_struct.held;
+            var _counterclockwise_state = is_struct(_counterclockwise_struct) && (not  _counterclockwise_struct.__inactive) && _counterclockwise_struct.held;
+            var _backward_state         = is_struct(_backward_struct        ) && (not          _backward_struct.__inactive) && _backward_struct.held;
+            var _clockwise_state        = is_struct(_clockwise_struct       ) && (not         _clockwise_struct.__inactive) && _clockwise_struct.held;
+            
+            if (_phase_verb == _forward_verb)
+            {
+                if (_forward_state)
+                {
+                    __set_direction(0);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _forward_verb, "\" used as forward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_counterclockwise_state)
+                {
+                    __set_direction(90);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _counterclockwise_verb, "\" used as forward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_backward_state)
+                {
+                    __set_direction(180);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _backward_verb, "\" used as forward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_clockwise_state)
+                {
+                    __set_direction(270);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _clockwise_verb, "\" used as forward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+            }
+            else if (_phase_verb == _counterclockwise_verb)
+            {
+                if (_counterclockwise_state)
+                {
+                    __set_direction(0);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _counterclockwise_verb, "\" used as counter-clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_backward_state)
+                {
+                    __set_direction(90);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _backward_verb, "\" used as counter-clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_clockwise_state)
+                {
+                    __set_direction(180);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _clockwise_verb, "\" used as counter-clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_forward_state)
+                {
+                    __set_direction(270);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _forward_verb, "\" used as counter-clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+            }
+            else if (_phase_verb == _backward_verb)
+            {
+                if (_backward_state)
+                {
+                    __set_direction(0);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _backward_verb, "\" used as backward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_clockwise_state)
+                {
+                    __set_direction(90);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _clockwise_verb, "\" used as backward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_forward_state)
+                {
+                    __set_direction(180);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _forward_verb, "\" used as backward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_counterclockwise_state)
+                {
+                    __set_direction(270);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _counterclockwise_verb, "\" used as backward verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+            }
+            else if (_phase_verb == _clockwise_verb)
+            {
+                if (_clockwise_state)
+                {
+                    __set_direction(0);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _clockwise_verb, "\" used as clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_forward_state)
+                {
+                    __set_direction(90);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _forward_verb, "\" used as clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_counterclockwise_state)
+                {
+                    __set_direction(180);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _counterclockwise_verb, "\" used as clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+                else if (_backward_state)
+                {
+                    __set_direction(270);
+                    if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" direction determined from verb \"", _backward_verb, "\" used as clockwise verb \"", _phase_verb, "\", direction=", __direction, " (phase=", __phase, ")");
+                }
+            }
+        }
+    }
+    
+    static __set_direction = function(_direction)
+    {
+        var _forward_verb          = __combo_params.__forward_verb;
+        var _counterclockwise_verb = __combo_params.__counterclockwise_verb;
+        var _backward_verb         = __combo_params.__backward_verb;
+        var _clockwise_verb        = __combo_params.__clockwise_verb;
+        
+        switch(_direction)
+        {
+            case 0:
+                //No direction mapping needed
             break;
             
-            case __INPUT_COMBO_PHASE_TYPE.__HOLD_START:
-                if (_player_verbs_struct[$ _phase_verb].press)
-                {
-                    __capture_all_holds(_player_verbs_struct);
-                    return __INPUT_COMBO_STATE.__SUCCESS;
-                }
+            case 90:
+                if (_forward_verb          != undefined) __direction_mapping[$ _forward_verb         ] = _counterclockwise_verb;
+                if (_counterclockwise_verb != undefined) __direction_mapping[$ _counterclockwise_verb] = _backward_verb;
+                if (_backward_verb         != undefined) __direction_mapping[$ _backward_verb        ] = _clockwise_verb;
+                if (_clockwise_verb        != undefined) __direction_mapping[$ _clockwise_verb       ] = _forward_verb;
             break;
-            
-            case __INPUT_COMBO_PHASE_TYPE.__RELEASE:
-                var _verb_struct = _player_verbs_struct[$ _phase_verb];
-                if (_verb_struct.release || !_verb_struct.held)
-                {
-                    return __INPUT_COMBO_STATE.__SUCCESS;
-                }
+           
+            case 180:
+                if (_forward_verb          != undefined) __direction_mapping[$ _forward_verb         ] = _backward_verb;
+                if (_counterclockwise_verb != undefined) __direction_mapping[$ _counterclockwise_verb] = _clockwise_verb;
+                if (_backward_verb         != undefined) __direction_mapping[$ _backward_verb        ] = _forward_verb;
+                if (_clockwise_verb        != undefined) __direction_mapping[$ _clockwise_verb       ] = _counterclockwise_verb;
             break;
-            
-            case __INPUT_COMBO_PHASE_TYPE.__PRESS_OR_RELEASE:
-                var _verb_struct = _player_verbs_struct[$ _phase_verb];
-                if (_verb_struct.press)
-                {
-                    __capture_all_presses(_player_verbs_struct);
-                    return __INPUT_COMBO_STATE.__SUCCESS;
-                }
-                else if (_verb_struct.release)
-                {
-                    return __INPUT_COMBO_STATE.__SUCCESS;
-                }
+           
+            case 270:
+                if (_forward_verb          != undefined) __direction_mapping[$ _forward_verb         ] = _clockwise_verb;
+                if (_counterclockwise_verb != undefined) __direction_mapping[$ _counterclockwise_verb] = _forward_verb;
+                if (_backward_verb         != undefined) __direction_mapping[$ _backward_verb        ] = _counterclockwise_verb;
+                if (_clockwise_verb        != undefined) __direction_mapping[$ _clockwise_verb       ] = _backward_verb;
             break;
             
             default:
-                __input_error("Combo phase type \"", _phase_type, "\" not recognised");
+                __input_error("Unhandled direction ", _direction);
             break;
         }
         
-        //Check for any erroneous releases
-        var _i = 0;
-        repeat(array_length(__held_verbs_array))
-        {
-            if (!_player_verbs_struct[$ __held_verbs_array[_i]].held)
-            {
-                return __INPUT_COMBO_STATE.__FAIL;
-            }
-            
-            ++_i;
-        }
-        
-        //Check for any erroneous holds
-        var _basic_verb_array = global.__input_basic_verb_array;
-        var _i = 0;
-        repeat(array_length(_basic_verb_array))
-        {
-            var _verb_name = _basic_verb_array[_i];
-            if ((_player_verbs_struct[$ _verb_name].held) 
-            &&  !variable_struct_exists(__held_verbs_struct, _verb_name)  //Not required to be held
-            &&  !variable_struct_exists(__pressed_verbs_dict, _verb_name) //Not pressed in a previous phase
-            &&  (_verb_name != _phase_verb))                              //Not the verb we're checking for
-            {
-                return __INPUT_COMBO_STATE.__FAIL;
-            }
-            
-            ++_i;
-        }
-        
-        return __INPUT_COMBO_STATE.__WAITING;
+        __direction = (_direction + __combo_params.__reference_direction + 3600) mod 360;
     }
 }

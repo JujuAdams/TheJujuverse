@@ -1,3 +1,4 @@
+// Feather disable all
 /// @desc    Sets the coordinate space for the player's cursor when using mouse input.
 ///          The coordinate space should be a member of the INPUT_COORD_SPACE enum:
 ///              .ROOM      Room coordinates; should be the same as mouse_x and mouse_y. This is the default value
@@ -8,6 +9,8 @@
 
 function input_cursor_coord_space_set(_coord_space, _player_index = 0)
 {
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
     if (_player_index == all)
     {
         var _p = 0;
@@ -22,15 +25,15 @@ function input_cursor_coord_space_set(_coord_space, _player_index = 0)
     
     __INPUT_VERIFY_PLAYER_INDEX
     
-    with(global.__input_players[_player_index].__cursor)
+    with(_global.__players[_player_index].__cursor)
     {
         if (__coord_space != _coord_space)
         {
-            __x = global.__input_pointer_x[_coord_space];
-            __y = global.__input_pointer_y[_coord_space];
+            __x = _global.__pointer_x[_coord_space];
+            __y = _global.__pointer_y[_coord_space];
             
-            __prev_x = __x - global.__input_pointer_dx[_coord_space];
-            __prev_y = __y - global.__input_pointer_dy[_coord_space];
+            __prev_x = __x - _global.__pointer_dx[_coord_space];
+            __prev_y = __y - _global.__pointer_dy[_coord_space];
             
             __coord_space = _coord_space;
         }

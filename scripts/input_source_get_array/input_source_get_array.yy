@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_source_get_array",
   "parent":{
-    "name":"Sources",
-    "path":"folders/Input/Sources.yy",
+    "name":"18  Sources",
+    "path":"folders/Input/18  Sources.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

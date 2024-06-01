@@ -1,3 +1,4 @@
+// Feather disable all
 /// @param GMconstant
 /// @param rawIndex
 /// @param rawMappingType
@@ -5,6 +6,8 @@
 
 function __input_class_gamepad_mapping(_gm, _raw, _type, _sdl_name) constructor
 {
+    __INPUT_GLOBAL_STATIC_VARIABLE  //Set static __global
+    
     gm       = _gm;
     raw      = _raw;
     type     = _type;
@@ -17,7 +20,7 @@ function __input_class_gamepad_mapping(_gm, _raw, _type, _sdl_name) constructor
     limited_range  = false;
     extended_range = false;
     hat_mask       = undefined;
-    scale          = 256;
+    scale          = 1;
     
     //Hat-on-axis and split axis
     raw_negative = undefined;
@@ -55,7 +58,7 @@ function __input_class_gamepad_mapping(_gm, _raw, _type, _sdl_name) constructor
         
         if (!_scan) return;
         
-        if (INPUT_ALLOW_OUT_OF_FOCUS || global.__input_window_focus)
+        if (__global.__game_input_allowed || (__global.__allow_gamepad_tester && __global.__gamepad_tester_data.__enabled && is_debug_overlay_open()))
         {        
             switch(type)
             {
@@ -102,7 +105,7 @@ function __input_class_gamepad_mapping(_gm, _raw, _type, _sdl_name) constructor
             if (clamp_positive) value = clamp(value,  0, 1);
             if (invert)         value = 1 - value;
                   
-            value = clamp((256/scale)*value, -1, 1);
+            value = clamp(scale*value, -1, 1);
             
             if (__value_previous == undefined)
             {
@@ -125,5 +128,27 @@ function __input_class_gamepad_mapping(_gm, _raw, _type, _sdl_name) constructor
                 release = true;
             }
         }
+    }
+    
+    static __calibrate = function(_success)
+    {
+        if ((type != __INPUT_MAPPING.BUTTON) || (gm == gp_padu) || (gm == gp_padd) || (gm == gp_padl) || (gm == gp_padr))
+        {
+            value   = 0.0;
+            held    = false;
+            press   = false;
+            release = false;
+            if (_success || ((__value_delta != 0.0) && (abs(__value_delta) != 0.5) && (abs(__value_delta) != 1.0)))
+            {                
+                __value_previous = 0.0;
+                __value_delta    = 0.0;
+                
+                return true;
+            }
+                
+            __value_delta = 0.0;
+        }
+                    
+        return false;
     }
 }

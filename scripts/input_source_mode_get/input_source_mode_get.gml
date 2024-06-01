@@ -1,8 +1,9 @@
+// Feather disable all
 /// @desc    Returns the current source mode, a member of the INPUT_SOURCE_MODE enum
 
 function input_source_mode_get()
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
-    return global.__input_source_mode;
+    return _global.__source_mode;
 }

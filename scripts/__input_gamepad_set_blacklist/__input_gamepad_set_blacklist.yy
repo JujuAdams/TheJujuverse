@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__input_gamepad_set_blacklist",
   "parent":{
-    "name":"(System)",
-    "path":"folders/Input/(System).yy",
+    "name":"Gamepads and Steam",
+    "path":"folders/Input/(System)/Gamepads and Steam.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

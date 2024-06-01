@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_player_connected",
   "parent":{
-    "name":"Players",
-    "path":"folders/Input/Players.yy",
+    "name":"15  Players",
+    "path":"folders/Input/15  Players.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

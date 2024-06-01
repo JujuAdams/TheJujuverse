@@ -1,5 +1,8 @@
+// Feather disable all
 function __input_class_verb_state() constructor
 {
+    __INPUT_GLOBAL_STATIC_VARIABLE  //Set static __global
+    
     name = undefined;
     type = undefined;
     __player = undefined;
@@ -13,6 +16,8 @@ function __input_class_verb_state() constructor
     
     value          = 0.0;
     raw            = 0.0;
+    __max_value    = 0.0;
+    
     analogue       = false;
     raw_analogue   = false;
     min_threshold  = 0;
@@ -85,14 +90,14 @@ function __input_class_verb_state() constructor
         __toggle_value = 0.0;
     }
     
-    static tick = function(_verb_group_state_dict)
+    static tick = function(_verb_group_state_dict, _player_active)
     {
         var _time = __input_get_time();
         var _reset_history_array = false;
         
         __toggle_value = value;
         
-        if (global.__input_toggle_momentary_state && (type == __INPUT_VERB_TYPE.__BASIC) && variable_struct_exists(global.__input_toggle_momentary_dict, name))
+        if (__global.__toggle_momentary_state && (type == __INPUT_VERB_TYPE.__BASIC) && variable_struct_exists(__global.__toggle_momentary_dict, name))
         {
             //Catch the leading edge to toggle the verb
             if ((__toggle_prev_value < 0.1) && (__toggle_value > 0.1)) __toggle_state = !__toggle_state;
@@ -102,7 +107,7 @@ function __input_class_verb_state() constructor
             raw   = __toggle_state;
         }
         
-        if (global.__input_cooldown_state && (type == __INPUT_VERB_TYPE.__BASIC) && variable_struct_exists(global.__input_cooldown_dict, name))
+        if (__global.__cooldown_state && (type == __INPUT_VERB_TYPE.__BASIC) && variable_struct_exists(__global.__cooldown_dict, name))
         {
             if (_time < release_time + (INPUT_TIMER_MILLISECONDS? __INPUT_RATE_LIMIT_DURATION : ((__INPUT_RATE_LIMIT_DURATION/1000)*game_get_speed(gamespeed_fps))))
             {
@@ -113,10 +118,16 @@ function __input_class_verb_state() constructor
         
         if (value > 0)
         {
-            __player.__last_input_time = global.__input_current_time;
+            if (previous_value < value)
+            {
+                __player.__last_input_time = __global.__current_time;
+            }
             
             held      = true;
             held_time = _time;
+            
+            //Update the max value
+            __max_value = max(__max_value, value);
         }
         
         if (previous_held != held)
@@ -142,6 +153,9 @@ function __input_class_verb_state() constructor
             {
                 release      = true;
                 release_time = _time;
+                
+                //Reset the max value
+                __max_value = 0;
                 
                 if (double_held)
                 {
@@ -183,7 +197,7 @@ function __input_class_verb_state() constructor
         if (double_held) double_held_time = _time;
         if (long_held) long_held_time = _time;
         
-        var _inactive = (__group_inactive || __consumed);
+        var _inactive = (__group_inactive || __consumed || !_player_active);
         if (_inactive && !__inactive)
         {
             //Newly inactive, better reset the raw history array

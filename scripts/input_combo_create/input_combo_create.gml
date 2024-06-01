@@ -1,53 +1,51 @@
-/// @desc    Returns a struct that describes a combo verb
-///          A combo verb is considered active when all of its input phases have been completed
-///          
-///          The returned struct has some methods available to configure the combo, all of which
-///          return the struct itself and thus form a fluent interface:
-///              .press(verb)
-///              .releae(verb)
-///              .press_or_release(verb)
-///              .hold(verb)
-///              .timeout(time)
-/// 
-///          Here is an example of the Konami Code:
-///              input_combo_create("konami")
-///              .press("up")
-///              .press("up")
-///              .press("down")
-///              .press("down")
-///              .press("left")
-///              .press("right")
-///              .press("left")
-///              .press("right")
-///              .press("cancel")
-///              .press("accept");
-///          
-/// @param   name
-/// @param   [defaultTimeout]
+// Feather disable all
 
-function input_combo_create(_name, _default_timeout = INPUT_TIMER_MILLISECONDS? 333 : 20)
+/// Creates a new combo which can be accessed like any other verb
+/// 
+/// This function returns a struct (instance of __input_class_combo_definition) that you will need
+/// to edit in order to flesh out the combo. The following methods are provided to build the combo:
+///   .press(verb)
+///   .release(verb)
+///   .press_or_release(verb)
+///   .hold(verb)
+///   .charge(verb, [minTime=default])
+/// 
+/// You should execute methods in the order that verbs should activated to execute the combo.
+/// Methods can be chained one after another as a fluent interface e.g.
+/// 
+///   input_combo_create("hadouken").press("down").press("right").press("punch")
+/// 
+/// @param   comboName                Name of the combo
+/// @param   [phaseTimeout=default]   Maximum time allowed between phases
+/// @param   [directional=true]       Whether the combo should adjust based on the first direction pressed
+
+function input_combo_create(_name, _phase_timeout = INPUT_COMBO_DEFAULT_PHASE_TIMEOUT, _directional = true)
 {
-    __input_initialize();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     __input_ensure_unique_verb_name(_name);
     
-    var _combo_definition = new __input_class_combo_definition(_name, _default_timeout);
+    var _combo_definition = new __input_class_combo_definition(_name, _phase_timeout, _directional);
     
     //Store this globally for uniqueness checks later
-    global.__input_all_verb_dict[$ _name] = true;
-    array_push(global.__input_all_verb_array, _name);
+    _global.__all_verb_dict[$ _name] = true;
+    array_push(_global.__all_verb_array, _name);
     
-    global.__input_combo_verb_dict[$ _name] = _combo_definition;
-    array_push(global.__input_combo_verb_array, _name);
+    _global.__combo_verb_dict[$ _name] = _combo_definition;
+    array_push(_global.__combo_verb_array, _name);
     
-    //Add this combo definition to all players
+    //Add this chord definition to all players
     var _p = 0;
     repeat(INPUT_MAX_PLAYERS)
     {
-        global.__input_players[_p].__add_combo(_name);
+        with(_global.__players[_p])
+        {
+            __add_combo_state(_name, _combo_definition);
+            __add_complex_verb(_name, __INPUT_VERB_TYPE.__CHORD);
+        }
+        
         ++_p;
     }
     
-    //Return the combo struct so that the developer can add phases to it
     return _combo_definition;
 }
