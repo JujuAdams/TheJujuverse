@@ -21,7 +21,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/input"><img src="https://raw.githubusercontent.com/JujuAdams/input/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/input">Input</a><br>Comprehensive cross-platform input</td>
-        <td>v5.6.1</td>
+        <td>v6.2.5</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Vinyl"><img src="https://raw.githubusercontent.com/JujuAdams/Vinyl/master/LOGO.png" style="width:120px"></a></td>
@@ -31,7 +31,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Dynamo"><img src="https://raw.githubusercontent.com/JujuAdams/Dynamo/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Dynamo">Dynamo</a><br>Dynamic data loading</td>
-        <td>v3.0.2</td>
+        <td>v3.0.4</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/db"><img src="https://raw.githubusercontent.com/JujuAdams/db/master/LOGO.png" style="width:120px"></a></td>
