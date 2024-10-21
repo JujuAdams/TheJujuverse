@@ -34,7 +34,7 @@ function __input_class_gamepad_motion(_gamepad_index) constructor
                 var _sign_z = 1;
                 var _sensor = 0;
 
-                switch(__global.__gamepads[__index].raw_type)
+                switch(__global.__gamepads[__index].__raw_type)
                 {
                     case "SwitchJoyConPair":
                         if (INPUT_SWITCH_JOYCON_MOTION_RIGHT_HAND)
@@ -98,18 +98,9 @@ function __input_class_gamepad_motion(_gamepad_index) constructor
                     __accel_y = -_steam_data.pos_accel_y / 16384;
                     __accel_z = -_steam_data.pos_accel_z / 16384;
                     
-                    var _gyro_scale = 2949.12;
-                    if ((__global.__gamepads[__index].simple_type == INPUT_GAMEPAD_TYPE_SWITCH)
-                    ||  (__global.__gamepads[__index].simple_type == INPUT_GAMEPAD_TYPE_XBOX_360) //Switch with "Use Nintendo Button Layout"
-                    ||  (__global.__gamepads[__index].simple_type == INPUT_GAMEPAD_TYPE_PS4))
-                    {
-                       //Reduce raw gyro scale for Switch and PS4 sensors
-                        _gyro_scale *= 2;
-                    }
-                    
-                    __gyro_x =  _steam_data.rot_vel_x / _gyro_scale;
-                    __gyro_y = -_steam_data.rot_vel_z / _gyro_scale;
-                    __gyro_z = -_steam_data.rot_vel_y / _gyro_scale;
+                    __gyro_x =  _steam_data.rot_vel_x / 2949.12;
+                    __gyro_y = -_steam_data.rot_vel_z / 2949.12;
+                    __gyro_z = -_steam_data.rot_vel_y / 2949.12;
                 }                
             break;
 

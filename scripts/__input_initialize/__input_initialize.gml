@@ -30,8 +30,23 @@ function __input_initialize()
     //Detect infinity
     if (is_undefined(infinity))
     {
-        __input_error("Error!\nGM constant 'infinity' is undefined. Please file a bug with YoYoGames.\n", "@jujuadams and @offalynne\n", __INPUT_DATE);
+        __input_error("Error!\nGM constant 'infinity' is undefined. Please file a bug with YoYoGames.");
     }
+    
+    //Detect string functions
+    var _use_split_and_trim;
+    try
+    {
+        var _split = array_equals(string_split("Juju\nwaz\nere", "\n", true), ["Juju", "waz", "ere"]);
+        var _trim = (string_trim("         you can't catch me          ") == "you can't catch me");
+        _use_split_and_trim = _split && _trim;
+    }
+    catch(_error)
+    {
+        _use_split_and_trim = false;
+    }
+    
+    if not (_use_split_and_trim) __input_error("Error!\nGM extended string functions are unavailable. Please update GameMaker.");
     
     //Detect is_instanceof(), which offers some minor performance gains
     if (INPUT_ON_WEB)
@@ -278,6 +293,7 @@ function __input_initialize()
     _global.__window_focus       = true;
     _global.__overlay_focus      = false;
     _global.__game_input_allowed = true;
+    _global.__use_native_focus   = (__INPUT_ON_WINDOWS || INPUT_ON_WEB);
 
     //Accessibility state
     _global.__toggle_momentary_dict  = {};
@@ -310,12 +326,7 @@ function __input_initialize()
     _global.__mouse_capture_blocked     = false;
     _global.__mouse_capture_sensitivity = 1;
     _global.__mouse_capture_frame       = 0;
-    
-    //Combos
-    _global.__combo_params = {};
-    input_combo_params_reset();
-    _global.__combo_verb_dict = {};
-    
+        
     //Identify mobile and desktop
     _global.__on_desktop = (__INPUT_ON_WINDOWS || __INPUT_ON_MACOS || __INPUT_ON_LINUX || __INPUT_ON_OPERAGX);
     _global.__on_mobile  = (__INPUT_ON_ANDROID || __INPUT_ON_IOS);
@@ -394,9 +405,6 @@ function __input_initialize()
     _global.__chord_verb_dict  = {};
     _global.__chord_verb_array = [];
     
-    _global.__combo_verb_dict  = {};
-    _global.__combo_verb_array = [];
-    
     //Struct to store keyboard key names
      _global.__key_name_dict = {};
     
@@ -444,17 +452,17 @@ function __input_initialize()
     //Two structs that are returned by input_players_get_status() and input_gamepads_get_status()
     //These are "static" structs that are reset and populated by __input_system_tick()
     _global.__players_status = {
-        any_changed: false,
-        new_connections: [],
-        new_disconnections: [],
-        players: array_create(INPUT_MAX_PLAYERS, INPUT_STATUS.DISCONNECTED),
+        __any_changed: false,
+        __new_connections: [],
+        __new_disconnections: [],
+        __players: array_create(INPUT_MAX_PLAYERS, INPUT_STATUS.DISCONNECTED),
     }
     
     _global.__gamepads_status = {
-        any_changed: false,
-        new_connections: [],
-        new_disconnections: [],
-        gamepads: array_create(_max_gamepads, INPUT_STATUS.DISCONNECTED),
+        __any_changed: false,
+        __new_connections: [],
+        __new_disconnections: [],
+        __gamepads: array_create(_max_gamepads, INPUT_STATUS.DISCONNECTED),
     }
     
     //The default player. This player struct holds default binding data
@@ -814,7 +822,7 @@ function __input_initialize()
     if (__INPUT_ON_WINDOWS || INPUT_ON_WEB)
     {
         //F13 to F32 on Windows and Web
-        for(var _i = vk_f1 + 12; _i < vk_f1 + 32; _i++) __input_key_name_set(_i, "f" + string(_i));
+        for(var _i = 13; _i <= 32; _i++) __input_key_name_set(_i + vk_f1 - 1, "f" + string(_i));
         
         //IntlBackslash, Backquote
         __input_key_name_set(226, (INPUT_ON_WEB? "\\" : "<"));
@@ -974,7 +982,7 @@ function __input_initialize()
                 if (__INPUT_ON_WINDOWS) _identifier = _map[? "video_adapter_description"];
             
                 //Steam Deck GPU identifier
-                if ((_identifier != undefined) && __input_string_contains(_identifier, "AMD Custom GPU 04"))
+                if ((_identifier != undefined) && __input_string_contains(_identifier, "AMD Custom GPU 0"))
                 {
                     _global.__on_steam_deck = true;
                 }
