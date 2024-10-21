@@ -1,9 +1,9 @@
 // Feather disable all
 function __scribble_class_page() constructor
 {
-    static __scribble_state = __scribble_get_state();
-    static __gc_vbuff_refs  = __scribble_get_cache_state().__gc_vbuff_refs;
-    static __gc_vbuff_ids   = __scribble_get_cache_state().__gc_vbuff_ids;
+    static __scribble_state = __scribble_initialize().__state;
+    static __gc_vbuff_refs  = __scribble_initialize().__cache_state.__gc_vbuff_refs;
+    static __gc_vbuff_ids   = __scribble_initialize().__cache_state.__gc_vbuff_ids;
     
     __text = "";
     __glyph_grid = undefined;
@@ -41,7 +41,7 @@ function __scribble_class_page() constructor
         static _u_fSDFRange           = shader_get_uniform(__shd_scribble, "u_fSDFRange"          );
         static _u_fSDFThicknessOffset = shader_get_uniform(__shd_scribble, "u_fSDFThicknessOffset");
         static _u_fSecondDraw         = shader_get_uniform(__shd_scribble, "u_fSecondDraw"        );
-        static _u_fSDF                = shader_get_uniform(__shd_scribble, "u_fSDF"               );
+        static _u_fFontType           = shader_get_uniform(__shd_scribble, "u_fFontType"          );
         
         if (SCRIBBLE_INCREMENTAL_FREEZE && !__frozen && (__created_frame < __scribble_state.__frames)) __freeze();
         
@@ -57,10 +57,27 @@ function __scribble_class_page() constructor
                 gpu_set_tex_filter(_bilinear);
             }
             
-            if (_data[__SCRIBBLE_VERTEX_BUFFER.__SDF])
+            if (_data[__SCRIBBLE_VERTEX_BUFFER.__FONT_TYPE] == __SCRIBBLE_FONT_TYPE.__RASTER)
+            {
+                shader_set_uniform_f(_u_fFontType, __SCRIBBLE_FONT_TYPE.__RASTER);
+                vertex_submit(_data[__SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER], pr_trianglelist, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXTURE]);
+            }
+            else if (_data[__SCRIBBLE_VERTEX_BUFFER.__FONT_TYPE] == __SCRIBBLE_FONT_TYPE.__RASTER_WITH_EFFECTS)
+            {
+                shader_set_uniform_f(_u_fFontType, __SCRIBBLE_FONT_TYPE.__RASTER_WITH_EFFECTS);
+                vertex_submit(_data[__SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER], pr_trianglelist, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXTURE]);
+                
+                if (_double_draw)
+                {
+                    shader_set_uniform_f(_u_fSecondDraw, 1);
+                    vertex_submit(_data[__SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER], pr_trianglelist, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXTURE]);
+                    shader_set_uniform_f(_u_fSecondDraw, 0);
+                }
+            }
+            else if (_data[__SCRIBBLE_VERTEX_BUFFER.__FONT_TYPE] == __SCRIBBLE_FONT_TYPE.__SDF)
             {
                 //Set shader uniforms unique to the SDF shader
-                shader_set_uniform_f(_u_fSDF, 1);
+                shader_set_uniform_f(_u_fFontType, __SCRIBBLE_FONT_TYPE.__SDF);
                 shader_set_uniform_f(_u_vTexel, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXEL_WIDTH], _data[__SCRIBBLE_VERTEX_BUFFER.__TEXEL_HEIGHT]);
                 shader_set_uniform_f(_u_fSDFRange, (_data[__SCRIBBLE_VERTEX_BUFFER.__SDF_RANGE] ?? 0));
                 shader_set_uniform_f(_u_fSDFThicknessOffset, __scribble_state.__sdf_thickness_offset + (_data[__SCRIBBLE_VERTEX_BUFFER.__SDF_THICKNESS_OFFSET] ?? 0));
@@ -73,12 +90,6 @@ function __scribble_class_page() constructor
                     vertex_submit(_data[__SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER], pr_trianglelist, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXTURE]);
                     shader_set_uniform_f(_u_fSecondDraw, 0);
                 }
-            }
-            else
-            {
-                //TODO - Optimise
-                shader_set_uniform_f(_u_fSDF, 0);
-                vertex_submit(_data[__SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER], pr_trianglelist, _data[__SCRIBBLE_VERTEX_BUFFER.__TEXTURE]);
             }
             
             if (_bilinear != undefined)
@@ -144,8 +155,25 @@ function __scribble_class_page() constructor
         }
     }
     
-    static __get_vertex_buffer = function(_texture, _pxrange, _thickness_offset, _bilinear, _model_struct)
+    static __get_vertex_buffer = function(_texture, _fontName)
     {
+        if (_fontName == undefined)
+        {
+            //Sprite or surface
+            var _fontType        = __SCRIBBLE_FONT_TYPE.__RASTER;
+            var _pxrange         = undefined;
+            var _thicknessOffset = undefined;
+            var _bilinear        = SCRIBBLE_SPRITE_BILINEAR_FILTERING;
+        }
+        else
+        {
+            var _fontData = __scribble_get_font_data(_fontName);
+            var _fontType        = _fontData.__fontType;
+            var _pxrange         = _fontData.__sdf_pxrange;
+            var _thicknessOffset = _fontData.__sdf_thickness_offset;
+            var _bilinear        = _fontData.__bilinear;
+        }
+        
         var _pointer_string = string(_texture);
         
         if (!__SCRIBBLE_ON_WEB)
@@ -194,10 +222,10 @@ function __scribble_class_page() constructor
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__VERTEX_BUFFER       ] = _vbuff;
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__TEXTURE             ] = _texture;
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__SDF_RANGE           ] = _pxrange;
-            _data[@ __SCRIBBLE_VERTEX_BUFFER.__SDF_THICKNESS_OFFSET] = _thickness_offset;
+            _data[@ __SCRIBBLE_VERTEX_BUFFER.__SDF_THICKNESS_OFFSET] = _thicknessOffset;
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__TEXEL_WIDTH         ] = texture_get_texel_width(_texture);
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__TEXEL_HEIGHT        ] = texture_get_texel_height(_texture);
-            _data[@ __SCRIBBLE_VERTEX_BUFFER.__SDF                 ] = (_pxrange != undefined); //We're using an SDF font if we have no defined SDF range
+            _data[@ __SCRIBBLE_VERTEX_BUFFER.__FONT_TYPE           ] = _fontType; //We're using an SDF font if we have no defined SDF range
             _data[@ __SCRIBBLE_VERTEX_BUFFER.__BILINEAR            ] = _bilinear;
             
             __vertex_buffer_array[@ array_length(__vertex_buffer_array)] = _data;

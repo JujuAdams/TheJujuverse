@@ -5,7 +5,7 @@
 
 function scribble_anim_cycle(_speed, _saturation, _value)
 {
-    static _array = __scribble_get_anim_properties();
+    static _array = __scribble_initialize().__anim_properties;
     
     if ((_speed      != _array[__SCRIBBLE_ANIM.__CYCLE_SPEED     ])
     ||  (_saturation != _array[__SCRIBBLE_ANIM.__CYCLE_SATURATION])
@@ -15,10 +15,10 @@ function scribble_anim_cycle(_speed, _saturation, _value)
         _array[@ __SCRIBBLE_ANIM.__CYCLE_SATURATION] = _saturation;
         _array[@ __SCRIBBLE_ANIM.__CYCLE_VALUE     ] = _value;
         
-        static _scribble_state = __scribble_get_state();
+        static _scribble_state = __scribble_initialize().__state;
         with(_scribble_state)
         {
-            __shader_anim_desync            = true;
+            __shader_anim_desync            = (not __shader_anim_disabled); //Only re-set uniforms when the animations aren't disabled
             __shader_anim_desync_to_default = false;
         }
     }

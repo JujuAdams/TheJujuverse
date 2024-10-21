@@ -1,19 +1,20 @@
 // Feather disable all
 /// Creates a new font with an outline based on a given source font
 ///
-/// @param sourceFontName       Name, as a string, of the font to use as a basis for the effect
-/// @param newFontName          Name of the new font to create, as a string
-/// @param shader               Shader to use
-/// @param emptyBorderSize      Border around the outside of every output glyph, in pixels. A value of 2 is typical
-/// @param leftPad              Padding around the outside of every *input* glyph. Positive values give more space. e.g. For a shader that adds a border of 2px around the entire glyph, *all* padding arguments should be set to <2>
-/// @param topPad               "
-/// @param rightPad             "
-/// @param bottomPad            "
-/// @param separationDelta      Change in every glyph's SCRIBBLE_GLYPH.SEPARATION value. For a shader that adds a border of 2px around the entire glyph, this value should be 4px
-/// @param smooth               Set to <true> to turn on linear interpolation
-/// @param [surfaceSize=2048]   Size of the surface to use. Defaults to 2048x2048
+/// @param sourceFontName              Name, as a string, of the font to use as a basis for the effect
+/// @param newFontName                 Name of the new font to create, as a string
+/// @param shader                      Shader to use
+/// @param emptyOutlineSize            Outline around the outside of every output glyph, in pixels. A value of 2 is typical
+/// @param leftPad                     Padding around the outside of every *input* glyph. Positive values give more space. e.g. For a shader that adds a outline of 2px around the entire glyph, *all* padding arguments should be set to <2>
+/// @param topPad                      "
+/// @param rightPad                    "
+/// @param bottomPad                   "
+/// @param separationDelta             Change in every glyph's SCRIBBLE_GLYPH.SEPARATION value. For a shader that adds a outline of 2px around the entire glyph, this value should be 4px
+/// @param smooth                      Set to <true> to turn on linear interpolation
+/// @param [surfaceSize=2048]          Size of the surface to use. Defaults to 2048x2048
+/// @param [markAsRasterEffect=false]
 
-function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _border, _l_pad, _t_pad, _r_pad, _b_pad, _separation, _smooth, _texture_size = 2048)
+function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _outline, _l_pad, _t_pad, _r_pad, _b_pad, _separation, _smooth, _texture_size = 2048, _markAsRasterEffect = false)
 {
     if (!is_string(_source_font_name))
     {
@@ -33,11 +34,17 @@ function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _
         return undefined;
     }
 
-    static _font_data_map = __scribble_get_font_data_map();
+    static _font_data_map = __scribble_initialize().__font_data_map;
     var _src_font_data = _font_data_map[? _source_font_name];
     if (!is_struct(_src_font_data))
     {
         __scribble_error("Source font \"", _source_font_name, "\" not found\n\"", _new_font_name, "\" will not be available");
+        return undefined;
+    }
+    
+    if (_src_font_data.__fontType == __SCRIBBLE_FONT_TYPE.__RASTER_WITH_EFFECTS)
+    {
+        __scribble_error("Source font cannot already have been modified by scribble_font_bake_outline_and_shadow()");
         return undefined;
     }
     
@@ -51,12 +58,15 @@ function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _
     var _glyph_count = ds_grid_width(_src_glyph_grid);
     
     //Create a new font
-    var _new_font_data = new __scribble_class_font(_new_font_name, _glyph_count, false);
-    _new_font_data.__runtime = true;
+    var _new_font_data = new __scribble_class_font(_new_font_name, _glyph_count, undefined);
+    _new_font_data.__bilinear = _smooth;
+    _new_font_data.__runtime  = true;
     var _new_glyphs_grid = _new_font_data.__glyph_data_grid;
     
     //Copy the raw data over from the source font (this include the glyph map, glyph grid, and other assorted properties)
     _src_font_data.__copy_to(_new_font_data, false);
+    
+    if (_markAsRasterEffect) _new_font_data.__fontType = __SCRIBBLE_FONT_TYPE.__RASTER_WITH_EFFECTS;
     
     
     
@@ -86,8 +96,8 @@ function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _
             continue;
         }
         
-        var _width_ext  = _width  + _border + _l_pad + _r_pad;
-        var _height_ext = _height + _border + _t_pad + _b_pad;
+        var _width_ext  = _width  + _outline + _l_pad + _r_pad;
+        var _height_ext = _height + _outline + _t_pad + _b_pad;
         
         //Check to see if we have space on this texture page
         if (_line_y + _height_ext >= _texture_size)
@@ -223,7 +233,7 @@ function scribble_font_bake_shader(_source_font_name, _new_font_name, _shader, _
     ds_grid_add_region(_new_glyphs_grid, 0, SCRIBBLE_GLYPH.FONT_HEIGHT, _glyph_count-1, SCRIBBLE_GLYPH.FONT_HEIGHT, _t_pad + _b_pad);
     ds_grid_add_region(_new_glyphs_grid, 0, SCRIBBLE_GLYPH.SEPARATION,  _glyph_count-1, SCRIBBLE_GLYPH.SEPARATION,  _separation);
     ds_grid_set_region(_new_glyphs_grid, 0, SCRIBBLE_GLYPH.TEXTURE,     _glyph_count-1, SCRIBBLE_GLYPH.TEXTURE,     sprite_get_texture(_sprite, 0));
-    ds_grid_set_region(_new_glyphs_grid, 0, SCRIBBLE_GLYPH.BILINEAR,    _glyph_count-1, SCRIBBLE_GLYPH.BILINEAR,    _smooth);
+    ds_grid_set_region(_new_glyphs_grid, 0, SCRIBBLE_GLYPH.FONT_NAME,   _glyph_count-1, SCRIBBLE_GLYPH.FONT_NAME,   _new_font_name);
     
     //Figure out the new UVs using some bulk commands
     var _sprite_uvs = sprite_get_uvs(_sprite, 0);

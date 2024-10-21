@@ -3,7 +3,7 @@
 
 function __scribble_class_typist(_per_line) constructor
 {
-    static __scribble_state = __scribble_get_state();
+    static __scribble_state = __scribble_initialize().__state;
     
     __last_element = undefined;
     
@@ -15,6 +15,8 @@ function __scribble_class_typist(_per_line) constructor
     __skip = false;
     __skip_paused = false;
     __drawn_since_skip = false;
+    
+    __sound_tag_gain = 1;
     
     __sound_array                   = undefined;
     __sound_overlap                 = 0;
@@ -117,6 +119,7 @@ function __scribble_class_typist(_per_line) constructor
         __skip = _state;
         __skip_paused = true;
         __drawn_since_skip = false;
+        __delay_end = -infinity;
         
         return self;
     }
@@ -126,6 +129,7 @@ function __scribble_class_typist(_per_line) constructor
         __skip = _state;
         __skip_paused = false;
         __drawn_since_skip = false;
+        __delay_end = -infinity;
         
         return self;
     }
@@ -358,6 +362,11 @@ function __scribble_class_typist(_per_line) constructor
         }
     }
     
+    static get_delay_paused = function()
+    {
+        return __delay_paused;
+    }
+    
     static get_paused = function()
     {
         return __paused;
@@ -419,6 +428,23 @@ function __scribble_class_typist(_per_line) constructor
     
     
     
+    #region Gain
+    
+    static set_sound_tag_gain = function(_gain)
+    {
+        __sound_tag_gain = _gain;
+        return self;
+    }
+    
+    static get_sound_tag_gain = function()
+    {
+        return __sound_tag_gain;
+    }
+    
+    #endregion
+    
+    
+    
     #region Private Methods
     
     static __associate = function(_text_element)
@@ -454,7 +480,7 @@ function __scribble_class_typist(_per_line) constructor
     
     static __process_event_stack = function(_character_count, _target_element, _function_scope)
     {
-        static _typewriter_events_map = __scribble_get_typewriter_events_map();
+        static _typewriter_events_map = __scribble_initialize().__typewriter_events_map;
         
         //This method processes events on the stack (which is filled by copying data from the target element in .__tick())
         //We return <true> if there have been no pausing behaviours called i.e. [pause] and [delay]
@@ -528,19 +554,19 @@ function __scribble_class_typist(_per_line) constructor
                     {
                         var _asset = _event_data[0];
                         if (is_string(_asset)) _asset = asset_get_index(_asset);
-                        audio_play_sound(_asset, 1, false);
+                        __scribble_play_sound(_asset, __sound_tag_gain, 1);
                     }
                 break;
                 
                 case __SCRIBBLE_TYPIST_SOUND_COMMAND_TAG: //TODO - Add warning when adding a conflicting custom event
-                    sound(asset_get_index(_event_data[1]), real(_event_data[2]), real(_event_data[3]), real(_event_data[4]));
+                    sound(__scribble_parse_sound_array_string(_event_data[1]), real(_event_data[2]), real(_event_data[3]), real(_event_data[4]));
                 break;
                 
                 case __SCRIBBLE_TYPIST_SOUND_PER_CHAR_COMMAND_TAG: //TODO - Add warning when adding a conflicting custom event
                     switch(array_length(_event_data))
                     {
-                        case 4: sound_per_char(asset_get_index(_event_data[1]), real(_event_data[2]), real(_event_data[3])); break;
-                        case 5: sound_per_char(asset_get_index(_event_data[1]), real(_event_data[2]), real(_event_data[3]), _event_data[4]); break;
+                        case 4: sound_per_char(__scribble_parse_sound_array_string(_event_data[1]), real(_event_data[2]), real(_event_data[3])); break;
+                        case 5: sound_per_char(__scribble_parse_sound_array_string(_event_data[1]), real(_event_data[2]), real(_event_data[3]), _event_data[4]); break;
                     }
                 break;
                 
@@ -571,6 +597,8 @@ function __scribble_class_typist(_per_line) constructor
     
     static __play_sound = function(_head_pos, _character)
     {
+        static _external_sound_map = __scribble_initialize().__external_sound_map;
+        
         var _sound_array = __sound_array;
         if (is_array(_sound_array) && (array_length(_sound_array) > 0))
         {
@@ -602,15 +630,12 @@ function __scribble_class_typist(_per_line) constructor
                 var _audio_asset = _sound_array[floor(__scribble_random()*array_length(_sound_array))];
                 if (is_string(_audio_asset))
                 {
-                    var _external_sound_map = __scribble_get_external_sound_map();
                     _audio_asset = _external_sound_map[? _audio_asset];
                 }
                 
                 if (_audio_asset != undefined)
                 {
-                    var _inst = audio_play_sound(_audio_asset, 0, false);
-                    audio_sound_pitch(_inst, lerp(__sound_pitch_min, __sound_pitch_max, __scribble_random()));
-                    audio_sound_gain(_inst, __sound_gain, 0);
+                    var _inst = __scribble_play_sound(_audio_asset, __sound_gain, lerp(__sound_pitch_min, __sound_pitch_max, __scribble_random()));
                     __sound_finish_time = current_time + 1000*audio_sound_length(_inst) - __sound_overlap;
                 }
             }

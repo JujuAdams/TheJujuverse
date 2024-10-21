@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scribble_font_bake_shadow",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Scribble/Fonts.yy",
+    "name":"Legacy",
+    "path":"folders/Scribble/Legacy.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
