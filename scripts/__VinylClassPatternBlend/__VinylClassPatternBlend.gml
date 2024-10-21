@@ -8,40 +8,41 @@
 /// @param mix
 /// @param ducker
 /// @param duckPriority
+/// @param emitterAlias
 /// @param metadata
 
-function __VinylClassPatternBlend(_patternName, _soundArray, _loop, _gain, _animCurve, _mixName, _duckerName, _duckPrio, _metadata) constructor
+function __VinylClassPatternBlend(_patternName, _soundArray, _loop, _gain, _animCurve, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata) constructor
 {
-    static _soundDict     = __VinylSystem().__soundDict;
+    static _emitterMap    = __VinylSystem().__emitterMap;
     static _toUpdateArray = __VinylSystem().__toUpdateArray;
-    
     
     __patternName = _patternName;
     
-    __soundArray = __VinylImportSoundArray(_soundArray);
-    __loop       = _loop;
-    __gain       = _gain;
-    __animCurve  = __VinylImportAnimCurve(_animCurve);
-    __mixName    = _mixName;
-    __duckerName = _duckerName;
-    __duckPrio   = _duckPrio;
-    __metadata   = _metadata;
-        
+    __soundArray   = __VinylImportSoundArray(_soundArray);
+    __loop         = _loop;
+    __gain         = _gain;
+    __animCurve    = __VinylImportAnimCurve(_animCurve);
+    __mixName      = _mixName;
+    __duckerName   = _duckerName;
+    __duckPrio     = _duckPrio;
+    __emitterAlias = _emitterAlias;
+    __metadata     = _metadata;
+    
     if (__VINYL_RUNNING_FROM_IDE && (array_length(_soundArray) <= 0))
     {
-        __VinylWarning("Shuffle pattern \"", __patternName, "\" has no sounds");
+        __VinylWarning("Blend pattern \"", __patternName, "\" has no sounds");
     }
     
     
     
     
     
-    static __Play = function(_loopLocal, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)
+    static __Play = function(_emitter, _loopLocal, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)
     {
-        return (new __VinylClassVoiceBlend(self, _loopLocal, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal, __mixName)).__voiceReference;
+        return (new __VinylClassVoiceBlend(_emitter, self, _loopLocal, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal, __mixName)).__voiceReference;
     }
     
-    static __UpdateSetup = function(_soundArray, _loop, _gain, _animCurve, _mixName, _duckerName, _duckPrio, _metadata)
+    static __UpdateSetup = function(_soundArray, _loop, _gain, _animCurve, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata)
     {
         if (VINYL_LIVE_EDIT)
         {
@@ -49,18 +50,19 @@ function __VinylClassPatternBlend(_patternName, _soundArray, _loop, _gain, _anim
             array_push(_toUpdateArray, self);
         }
         
-        __soundArray = __VinylImportSoundArray(_soundArray);
-        __loop       = _loop;
-        __gain       = _gain;
-        __animCurve  = __VinylImportAnimCurve(_animCurve);
-        __mixName    = _mixName;
-        __duckerName = _duckerName;
-        __duckPrio   = _duckPrio;
-        __metadata   = _metadata;
+        __soundArray   = __VinylImportSoundArray(_soundArray);
+        __loop         = _loop;
+        __gain         = _gain;
+        __animCurve    = __VinylImportAnimCurve(_animCurve);
+        __mixName      = _mixName;
+        __duckerName   = _duckerName;
+        __duckPrio     = _duckPrio;
+        __emitterAlias = _emitterAlias;
+        __metadata     = _metadata;
         
         if (__VINYL_RUNNING_FROM_IDE && (array_length(__soundArray) <= 0))
         {
-            __VinylWarning("Shuffle pattern \"", __patternName, "\" has no sounds");
+            __VinylWarning("Blend pattern \"", __patternName, "\" has no sounds");
         }
     }
     
@@ -92,8 +94,9 @@ function __VinylClassPatternBlend(_patternName, _soundArray, _loop, _gain, _anim
         if (not __loop) _struct.loop = false;
         if (__gain != 1) _struct.gain = __gain;
         if (__animCurve != undefined) _struct.animCurve = animcurve_get(__animCurve).name;
-        
-        //TODO - Write ducker and ducker priority
+        if (__duckerName != undefined) _struct.duckOn = __duckerName;
+        if (__duckPrio != 0) _struct.duckPrio = __duckPrio;
+        if (__emitterAlias != undefined) _struct.emitter = __emitterAlias;
         
         return _struct;
     }
@@ -150,7 +153,29 @@ function __VinylClassPatternBlend(_patternName, _soundArray, _loop, _gain, _anim
             buffer_write(_buffer, buffer_text, ",\n");
         }
         
-        //TODO - Write ducker and ducker priority
+        if (__duckerName != undefined)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    duckOn: \"");
+            buffer_write(_buffer, buffer_text, __duckerName);
+            buffer_write(_buffer, buffer_text, "\",\n");
+        }
+        
+        if (__duckPrio != 0)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    duckPrio: ");
+            buffer_write(_buffer, buffer_text, string(__duckPrio));
+            buffer_write(_buffer, buffer_text, ",\n");
+        }
+        
+        if (__emitterAlias != undefined)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    emitter: \"");
+            buffer_write(_buffer, buffer_text, __emitterAlias);
+            buffer_write(_buffer, buffer_text, "\",\n");
+        }
         
         buffer_write(_buffer, buffer_text, _indent);
         buffer_write(_buffer, buffer_text, "},\n");
@@ -174,6 +199,7 @@ function __VinylImportBlendJSON(_json)
                 case "duckOn":
                 case "duckPrio":
                 case "animCurve":
+                case "emitter":
                 case "metadata":
                 break;
                 
@@ -188,7 +214,7 @@ function __VinylImportBlendJSON(_json)
         if (not struct_exists(_json, "sounds")) __VinylError("Blend pattern \"", _json.blend, "\" property .sounds must be defined");
     }
     
-    VinylSetupBlend(_json.blend, _json.sounds, _json[$ "loop"], _json[$ "gain"], _json[$ "animCurve"], undefined, _json[$ "duckOn"], _json[$ "duckPrio"], _json[$ "metadata"]);
+    VinylSetupBlend(_json.blend, _json.sounds, _json[$ "loop"], _json[$ "gain"], _json[$ "animCurve"], undefined, _json[$ "duckOn"], _json[$ "duckPrio"], _json[$ "emitter"], _json[$ "metadata"]);
     
     return _json.blend;
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"VinylResume",
   "parent":{
-    "name":"Playback",
-    "path":"folders/Vinyl/Playback.yy",
+    "name":"Deprecated",
+    "path":"folders/Vinyl/(Internals)/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -67,7 +67,7 @@ function __VinylResolveChanges(_replace, _oldSoundNameArray = undefined, _oldPat
                 var _j = 0;
                 repeat(array_length(_voiceToStructArray))
                 {
-                    if (_voiceToStructArray[_j].__pattern == _pattern)
+                    if (_voiceToStructArray[_j][$ "__pattern"] == _pattern)
                     {
                         array_push(_toUpdateArray, _voiceToStructArray[_j]);
                     }
@@ -80,7 +80,7 @@ function __VinylResolveChanges(_replace, _oldSoundNameArray = undefined, _oldPat
                 var _j = 0;
                 repeat(array_length(_voiceUpdateArray))
                 {
-                    if (_voiceUpdateArray[_j].__pattern == _pattern)
+                    if (_voiceUpdateArray[_j][$ "__pattern"] == _pattern)
                     {
                         array_push(_toUpdateArray, _voiceUpdateArray[_j]);
                     }
@@ -112,6 +112,19 @@ function __VinylResolveChanges(_replace, _oldSoundNameArray = undefined, _oldPat
                 array_resize(_array, 0);
                 array_resize(_pattern.__priorityArray, 0);
                 _pattern.__maxPriority = -infinity;
+            break;
+            
+            case "__VinylClassQueueTemplate":
+                var _j = 0;
+                repeat(array_length(_voiceUpdateArray))
+                {
+                    if (_voiceUpdateArray[_j][$ "__templateName"] == _pattern)
+                    {
+                        array_push(_toUpdateArray, _voiceUpdateArray[_j]);
+                    }
+                    
+                    ++_j;
+                }
             break;
             
             default:

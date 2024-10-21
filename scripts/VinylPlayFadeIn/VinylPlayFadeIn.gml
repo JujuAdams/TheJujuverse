@@ -9,7 +9,7 @@
 /// @oaram [rateOfChange]
 /// @param [pitch=1]
 /// @param [duckerName]
-/// @param [duckPriority=0]
+/// @param [duckPriority]
 
 function VinylPlayFadeIn(_pattern, _loop = undefined, _gain = 1, _rateOfChange = VINYL_DEFAULT_FADE_IN_RATE, _pitch = 1, _duckerName = undefined, _duckPrio = undefined)
 {

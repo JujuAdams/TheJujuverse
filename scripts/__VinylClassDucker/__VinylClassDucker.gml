@@ -3,14 +3,16 @@
 /// @param duckerName
 /// @param duckedGain
 /// @param rateOfChange
+/// @param samePriorityInterrupt
 
-function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
+function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange, _samePriorityInterrupt) constructor
 {
     static _toUpdateArray = __VinylSystem().__toUpdateArray;
     
-    __duckerName   = _duckerName;
-    __duckedGain   = _duckedGain;
-    __rateOfChange = _rateOfChange;
+    __duckerName            = _duckerName;
+    __duckedGain            = _duckedGain;
+    __rateOfChange          = _rateOfChange;
+    __samePriorityInterrupt = _samePriorityInterrupt;
     
     __maxPriority   = -infinity;
     __voiceArray    = [];
@@ -20,15 +22,50 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
     
     
     
-    static __UpdateSetup = function(_duckedGain, _rateOfChange)
+    static __UpdateSetup = function(_duckedGain, _rateOfChange, _samePriorityInterrupt)
     {
+        static _priorityMap = ds_map_create();
+        
         if (VINYL_LIVE_EDIT)
         {
             array_push(_toUpdateArray, self);
         }
         
-        __duckedGain   = _duckedGain;
-        __rateOfChange = _rateOfChange;
+        var _prune = ((not __samePriorityInterrupt) && _samePriorityInterrupt);
+        
+        __duckedGain            = _duckedGain;
+        __rateOfChange          = _rateOfChange;
+        __samePriorityInterrupt = _samePriorityInterrupt;
+        
+        if (_prune)
+        {
+            //Fade out older (lower indexed) voices if newer (higher indexed) voices have the same priority
+            
+            var _priorityArray = __priorityArray;
+            var _voiceArray    = __voiceArray;
+            
+            var _i = array_length(_voiceArray)-1;
+            repeat(array_length(_voiceArray))
+            {
+                var _priority = _priorityArray[_i];
+                if (ds_map_exists(_priorityMap, _priority))
+                {
+                    _voiceArray[_i].__FadeOut(__rateOfChange, false);
+                    
+                    array_delete(_voiceArray,    _i, 1);
+                    array_delete(_priorityArray, _i, 1);
+                }
+                else
+                {
+                    _priorityMap[? _priority] = true;
+                }
+                
+                --_i;
+            }
+            
+            //Manage memory!
+            ds_map_clear(_priorityMap);
+        }
     }
     
     static __ClearSetup = function()
@@ -41,54 +78,89 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
         var _priorityArray = __priorityArray;
         var _voiceArray    = __voiceArray;
         
-        if (_priority < __maxPriority)
+        if (__samePriorityInterrupt)
         {
-            if (_doDuck) _voiceStruct.__Duck(__duckedGain, __rateOfChange, __behaviour);
+            //Voices with the same priorities interrupt each other
             
-            //Try to find an existing voice to replace
-            var _index = array_get_index(_priorityArray, _priority);
-            if (_index >= 0)
+            if (_priority < __maxPriority)
             {
-                //We found an existing voice with the same priority - fade out the existing voice and replace with ourselves
-                _voiceArray[_i].__FadeOut(__rateOfChange);
-                _voiceArray[_i] = _voiceStruct;
+                if (_doDuck) _voiceStruct.__Duck(__duckedGain, __rateOfChange);
+                
+                //Try to find an existing voice to replace
+                var _index = array_get_index(_priorityArray, _priority);
+                if (_index >= 0)
+                {
+                    //We found an existing voice with the same priority - fade out the existing voice and replace with ourselves
+                    _voiceArray[_i].__FadeOut(__rateOfChange, false);
+                    _voiceArray[_i] = _voiceStruct;
+                }
+                else
+                {
+                    //If no voice exists to replace, add the incoming voice
+                    array_push(_voiceArray, _voiceStruct);
+                    array_push(_priorityArray, _priority);
+                }
             }
-            else
+            else //priority >= maxPriority
             {
+                __maxPriority = _priority;
+                
+                if (_doDuck) _voiceStruct.__Duck(1, __rateOfChange);
+                
+                var _i = 0;
+                repeat(array_length(_priorityArray))
+                {
+                    var _existingPriority = _priorityArray[_i];
+                    if (_existingPriority < _priority)
+                    {
+                        //We found an existing voice with a lower priority - duck the existing voice
+                        _voiceArray[_i].__Duck(__duckedGain, __rateOfChange);
+                    }
+                    else if (_existingPriority == _priority)
+                    {
+                        //We found an existing voice with the same priority - fade out the existing voice and replace with ourselves
+                        _voiceArray[_i].__FadeOut(__rateOfChange, false);
+                        _voiceArray[_i] = _voiceStruct;
+                    }
+                    
+                    ++_i;
+                }
+                
                 //If no voice exists to replace, add the incoming voice
                 array_push(_voiceArray, _voiceStruct);
                 array_push(_priorityArray, _priority);
             }
         }
-        else //priority >= maxPriority
+        else
         {
-            __maxPriority = _priority;
+            //Voices with the same priorities can stack up
             
-            if (_doDuck) _voiceStruct.__Duck(1, __rateOfChange, __VINYL_DUCK.__DO_NOTHING);
-            
-            var _i = 0;
-            repeat(array_length(_priorityArray))
+            if (_priority < __maxPriority)
             {
-                var _existingPriority = _priorityArray[_i];
-                if (_existingPriority < _priority)
-                {
-                    //We found an existing voice with a lower priority - ducker the existing voice
-                    _voiceArray[_i].__Duck(__duckedGain, __rateOfChange, __VINYL_DUCK.__DO_NOTHING);
-                }
-                else if (_existingPriority == _priority)
-                {
-                    //We found an existing voice with the same priority - fade out the existing voice and replace with ourselves
-                    _voiceArray[_i].__FadeOut(__rateOfChange);
-                    _voiceArray[_i] = _voiceStruct;
-                    return;
-                }
+                if (_doDuck) _voiceStruct.__Duck(__duckedGain, __rateOfChange);
+            }
+            else if (_priority > __maxPriority)
+            {
+                __maxPriority = _priority;
                 
-                ++_i;
+                if (_doDuck) _voiceStruct.__Duck(1, __rateOfChange);
+                
+                var _i = 0;
+                repeat(array_length(_priorityArray))
+                {
+                    var _existingPriority = _priorityArray[_i];
+                    if (_existingPriority < _priority)
+                    {
+                        //We found an existing voice with a lower priority - duck the existing voice
+                        _voiceArray[_i].__Duck(__duckedGain, __rateOfChange);
+                    }
+                    
+                    ++_i;
+                }
             }
             
-            //If no voice exists to replace, add the incoming voice
-            array_push(__voiceArray, _voiceStruct);
-            array_push(__priorityArray, _priority);
+            array_push(_voiceArray, _voiceStruct);
+            array_push(_priorityArray, _priority);
         }
     }
     
@@ -117,21 +189,20 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
         var _refresh = false;
         
         //Remove any stopped voices
-        var _i = 0;
+        var _i = array_length(_voiceArray)-1;
         repeat(array_length(_voiceArray))
         {
-            if (!_voiceArray[_i].__IsPlaying())
+            if (not _voiceArray[_i].__IsPlaying())
             {
                 if (_priorityArray[_i] >= __maxPriority) _refresh = true;
                 array_delete(_voiceArray,    _i, 1);
                 array_delete(_priorityArray, _i, 1);
             }
-            else
-            {
-                ++_i;
-            }
+            
+            --_i;
         }
         
+        //Only refresh if we have to because it's quite expensive
         if (_refresh) __Refresh();
     }
     
@@ -140,27 +211,52 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
         var _priorityArray = __priorityArray;
         var _voiceArray    = __voiceArray;
         
-        //Find the voice with the highest priority
+        //To find the voice with the highest priority we must first start at infinity
         __maxPriority = -infinity;
-        var _maxVoice = undefined;
-            
-        var _i = 0;
-        repeat(array_length(_voiceArray))
+        
+        if (__samePriorityInterrupt)
         {
-            var _priority = _priorityArray[_i];
-            if (_priority > __maxPriority)
+            var _maxVoice = undefined;
+            var _i = 0;
+            repeat(array_length(_voiceArray))
             {
-                __maxPriority = _priority;
-                _maxVoice = _voiceArray[_i];
+                var _priority = _priorityArray[_i];
+                if (_priority > __maxPriority)
+                {
+                    __maxPriority = _priority;
+                    _maxVoice = _voiceArray[_i];
+                }
+                
+                ++_i;
             }
             
-            ++_i;
+            //Activate whatever voice is now the highest priority
+            if (_maxVoice != undefined)
+            {
+                _maxVoice.__Duck(1, __rateOfChange);
+            }
         }
-        
-        //Activate whatever voice is now the highest priority
-        if (_maxVoice != undefined)
+        else
         {
-            _maxVoice.__Duck(1, __rateOfChange, __VINYL_DUCK.__DO_NOTHING);
+            //Find the maximum priority
+            var _i = 0;
+            repeat(array_length(_voiceArray))
+            {
+                __maxPriority = max(__maxPriority, _priorityArray[_i]);
+                ++_i;
+            }
+            
+            //And then set duck values for the highest priority voices
+            var _i = 0;
+            repeat(array_length(_voiceArray))
+            {
+                if (_priorityArray[_i] >= __maxPriority)
+                {
+                    _voiceArray[_i].__Duck(1, __rateOfChange);
+                }
+                
+                ++_i;
+            }
         }
     }
     
@@ -170,11 +266,9 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
             ducker: __duckerName,
         };
         
-        _struct.duckedGain   = __duckedGain;
-        _struct.rateOfChange = __rateOfChange;
-        
         if (__duckedGain != 0) _struct.duckedGain = __duckedGain;
         if (__rateOfChange != __VINYL_DEFAULT_DUCK_RATE_OF_GAIN) _struct.rateOfChange = __rateOfChange;
+        if (not __samePriorityInterrupt) _struct.samePriorityInterrupt = __samePriorityInterrupt;
         
         return _struct;
     }
@@ -204,6 +298,14 @@ function __VinylClassDucker(_duckerName, _duckedGain, _rateOfChange) constructor
             buffer_write(_buffer, buffer_text, ",\n");
         }
         
+        if (not __samePriorityInterrupt)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    samePriorityInterrupt: ");
+            buffer_write(_buffer, buffer_text, __samePriorityInterrupt);
+            buffer_write(_buffer, buffer_text, ",\n");
+        }
+        
         buffer_write(_buffer, buffer_text, _indent);
         buffer_write(_buffer, buffer_text, "},\n");
     }
@@ -222,6 +324,7 @@ function __VinylImportDuckerJSON(_json)
                 case "ducker":
                 case "duckedGain":
                 case "rateOfChange":
+                case "samePriorityInterrupt":
                 break;
                 
                 default:
@@ -233,7 +336,7 @@ function __VinylImportDuckerJSON(_json)
         }
     }
     
-    VinylSetupDucker(_json.ducker, _json[$ "duckedGain"], _json[$ "rateOfChange"]);
+    VinylSetupDucker(_json.ducker, _json[$ "duckedGain"], _json[$ "rateOfChange"], _json[$ "samePriorityInterrupt"]);
     
     return _json.ducker;
 }

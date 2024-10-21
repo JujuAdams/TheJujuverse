@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"VinylGetGain",
   "parent":{
-    "name":"Gain",
-    "path":"folders/Vinyl/Gain.yy",
+    "name":"Gain & Pitch",
+    "path":"folders/Vinyl/Gain & Pitch.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

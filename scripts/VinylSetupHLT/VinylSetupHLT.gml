@@ -18,12 +18,18 @@
 /// @param [mix=VINYL_DEFAULT_MIX]
 /// @param [duckerName]
 /// @param [duckPriority=0]
+/// @param [emitterAlias]
 /// @param [metadata]
 
-function VinylSetupHLT(_patternName, _soundHead = undefined, _soundLoop, _soundTail = undefined, _gain = 1, _mixName = VINYL_DEFAULT_MIX, _duckerName = undefined, _duckPrio = undefined, _metadata = undefined)
+function VinylSetupHLT(_patternName, _soundHead = undefined, _soundLoop, _soundTail = undefined, _gain = 1, _mixName = VINYL_DEFAULT_MIX, _duckerName = undefined, _duckPrio = undefined, _emitterAlias = undefined, _metadata = undefined)
 {
     static _system      = __VinylSystem();
     static _patternDict = _system.__patternDict;
+    
+    if (is_array(_gain))
+    {
+        __VinylError("Cannot use an array as a blend pattern gain");
+    }
     
     if (_mixName == VINYL_NO_MIX) _mixName = undefined;
     
@@ -35,7 +41,7 @@ function VinylSetupHLT(_patternName, _soundHead = undefined, _soundLoop, _soundT
     }
     else
     {
-        _patternDict[$ _patternName] = new __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _metadata);
+        _patternDict[$ _patternName] = new __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata);
     }
     
     if (VINYL_LIVE_EDIT && (not _system.__importingJSON))

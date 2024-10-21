@@ -11,7 +11,7 @@
 
 function VinylSetupExportJSON(_ignoreEmpty = true)
 {
-    static _duckerArray    = __VinylSystem().__duckerArray;
+    static _duckerArray  = __VinylSystem().__duckerArray;
     static _mixDict      = __VinylSystem().__mixDict;
     static _patternDict  = __VinylSystem().__patternDict;
     static _soundDict    = __VinylSystem().__soundDict;

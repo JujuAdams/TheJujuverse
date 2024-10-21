@@ -71,6 +71,10 @@ function __VinylSetupImportJSONInner(_json)
         {
             return __VinylImportDuckerJSON(_json);
         }
+        else if (struct_exists(_json, "queueTemplate"))
+        {
+            return __VinylImportQueueTemplateJSON(_json);
+        }
         else if (struct_exists(_json, "metadata"))
         {
             return __VinylImportGlobalMetadataJSON(_json);

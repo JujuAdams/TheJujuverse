@@ -7,17 +7,15 @@
 
 function VinylWillStop(_voice)
 {
-    if (_voice == undefined) return true;
-    if (not audio_is_playing(_voice)) return true;
-    if (audio_sound_get_loop(_voice)) return false;
+    static _voiceToStructMap = __VinylSystem().__voiceToStructMap;
     
-    if (audio_sound_get_loop_end(_voice) <= 0)
+    var _voiceStruct = _voiceToStructMap[? _voice];
+    if (_voiceStruct == undefined)
     {
-        //No loop points
-         return (audio_sound_get_track_position(_voice) >= audio_sound_length(_voice) - audio_sound_get_pitch(_voice)*VINYL_WILL_STOP_TOLERANCE/1000);
+        return __VinylWillStop(_voice);
     }
     else
     {
-        return (audio_sound_get_track_position(_voice) >= audio_sound_get_loop_end(_voice) - audio_sound_get_pitch(_voice)*VINYL_WILL_STOP_TOLERANCE/1000);
+        return _voiceStruct.__WillStop();
     }
 }

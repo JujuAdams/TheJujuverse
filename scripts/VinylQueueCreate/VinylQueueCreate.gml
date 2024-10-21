@@ -1,7 +1,7 @@
 // Feather disable all
 
 /// Create a new sound queue. A sound queue is used to play audio in a particular sequence which is
-/// useful to set up dynamix soundtracks, in-game radio stations etc.  This function returns a
+/// useful to set up dynamic soundtracks, in-game radio stations etc.  This function returns a
 /// queue index which can be used like the voice index returned by VinylPlay(). This means you can
 /// call VinylFadeOut(), VinylPause(), VinylSetGain() etc. targeting a queue and the queue will
 /// behave appropriately.
@@ -19,11 +19,12 @@
 /// The queue itself can be set to loop as well. Internally this is achieved by pushing stopping
 /// sounds to the bottom of the queue.
 /// 
-/// @oaram behaviour
+/// @param behaviour
 /// @param loopQueue
 /// @param [gain=1]
+/// @param [emitter]
 
-function VinylQueueCreate(_behaviour, _loopQueue, _gain = 1)
+function VinylQueueCreate(_behaviour, _loopQueue, _gain = 1, _emitter = undefined)
 {
-    return (new __VinylClassVoiceQueue(_behaviour, _loopQueue, _gain)).__voiceReference;
+    return (new __VinylClassVoiceQueue(undefined, _behaviour, _loopQueue, _gain, _emitter)).__voiceReference;
 }

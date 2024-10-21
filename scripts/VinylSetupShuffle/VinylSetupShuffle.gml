@@ -3,6 +3,9 @@
 /// Sets up a shuffle pattern for playback with Vinyl. When played, a shuffle pattern will randomly
 /// choose a sound from an array of sounds when played.
 /// 
+/// If the `emitterAlias` parameter is defined, Vinyl will attempt to play sounds defined for the
+/// pattern on the specified emitter. You can register an emitter with `VinylRegisterEmitter()`.
+/// 
 /// You should typically only call this function once on boot or if you're reloading configuration
 /// data due to the presence of mods. Subsequent calls to this function will only affect audio that
 /// is already playing if VINYL_LIVE_EDIT is set to <true>, and even then calls to this function
@@ -16,9 +19,10 @@
 /// @param [mix=VINYL_DEFAULT_MIX]
 /// @param [duckerName]
 /// @param [duckPriority=0]
+/// @param [emitterAlias]
 /// @param [metadata]
 
-function VinylSetupShuffle(_patternName, _soundArray, _gain = undefined, _pitch = undefined, _loop = undefined, _mixName = VINYL_DEFAULT_MIX, _duckerName = undefined, _duckPrio = undefined, _metadata = undefined)
+function VinylSetupShuffle(_patternName, _soundArray, _gain = undefined, _pitch = undefined, _loop = undefined, _mixName = VINYL_DEFAULT_MIX, _duckerName = undefined, _duckPrio = undefined, _emitterAlias = undefined, _metadata = undefined)
 {
     static _system      = __VinylSystem();
     static _patternDict = _system.__patternDict;
@@ -75,11 +79,11 @@ function VinylSetupShuffle(_patternName, _soundArray, _gain = undefined, _pitch 
     var _existingPattern = _patternDict[$ _patternName];
     if (_existingPattern != undefined)
     {
-        _existingPattern.__UpdateSetup(_soundArray, _gainMin, _gainMax, _pitchMin, _pitchMax, _loop, _mixName, _duckerName, _duckPrio, _metadata);
+        _existingPattern.__UpdateSetup(_soundArray, _gainMin, _gainMax, _pitchMin, _pitchMax, _loop, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata);
     }
     else
     {
-        _patternDict[$ _patternName] = new __VinylClassPatternShuffle(_patternName, _soundArray, _gainMin, _gainMax, _pitchMin, _pitchMax, _loop, _mixName, _duckerName, _duckPrio, _metadata);
+        _patternDict[$ _patternName] = new __VinylClassPatternShuffle(_patternName, _soundArray, _gainMin, _gainMax, _pitchMin, _pitchMax, _loop, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata);
     }
     
     if (VINYL_LIVE_EDIT && (not _system.__importingJSON))

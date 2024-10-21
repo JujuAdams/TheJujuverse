@@ -11,6 +11,6 @@ function __VinylError()
         ++_i;
     }
     
-    show_debug_message("Vinyl " + __VINYL_VERSION + ": " + string_replace_all(_string, "\n", "\n             "));
+    show_debug_message("Vinyl " + VINYL_VERSION + ": " + string_replace_all(_string, "\n", "\n             "));
     show_error("Vinyl:\n" + _string + "\n ", true);
 }

@@ -2,6 +2,8 @@
 
 /// Returns if the target voice's playback is paused.
 /// 
+/// N.B. This function only works with voices and will not work with patterns or sound assets.
+/// 
 /// @param voice
 
 function VinylIsPaused(_voice)
@@ -15,6 +17,6 @@ function VinylIsPaused(_voice)
     }
     else
     {
-        return _voice.__IsPaused();
+        return _voiceStruct.__IsPaused();
     }
 }

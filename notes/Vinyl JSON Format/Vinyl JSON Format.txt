@@ -90,6 +90,7 @@ Sounds:
     "loop": <boolean>, defaults to false
     "duckOn": <ducker name>
     "duckPrio", <number>, default to 0
+    "emitter", <string>, default to <undefined>, emitter must have been registered with VinylRegisterEmitter()
     "metadata": <any>
 }
 
@@ -101,6 +102,7 @@ Shuffle Patterns:
     "pitch": <number> or <2-element array>, defaults to 1
     "duckOn": <ducker name>
     "duckPrio", <number>, default to 0
+    "emitter", <string>, default to <undefined>, emitter must have been registered with VinylRegisterEmitter()
     "metadata": <any>
 }
 
@@ -117,15 +119,24 @@ Head-Loop-Tail Patterns:
 }
 
 Blend Patterns:
-    {
-        "blend": <pattern name>, required
-        "sounds": <array of sound assets>, required
-        "loop": <boolean>, defaults to true
-        "gain": <number>, defaults to 1
-        "duckOn": <ducker name>
-        "duckPrio", <number>, default to 0
-        "metadata": <any>
-    }
+{
+    "blend": <pattern name>, required
+    "sounds": <array of sound assets>, required
+    "loop": <boolean>, defaults to true
+    "gain": <number>, defaults to 1
+    "duckOn": <ducker name>
+    "duckPrio", <number>, default to 0
+    "metadata": <any>
+}
+
+Queue Templates:
+{
+    "queueTemplate": <template name>, required
+    "sounds": <array of sound assets, or wildcard pattern to match against>, required
+    "behavior": <integer>, default to 0 (VINYL_QUEUE.DONT_LOOP)
+    "loopQueue": <boolean>, default to <false>
+    "emitter", <string>, default to <undefined>, emitter must have been registered with VinylRegisterEmitter()
+}
 
 Mixes:
 {
@@ -141,6 +152,7 @@ Duckers:
     "ducker": <ducker name>, required
     "duckedGain": <number>, defaults to 1
     "rateOfChange": <number>, defaults to 1
+    "samePriorityInterrupt": <boolean>, defaults to <true>
 }
 
 Global Metadata:

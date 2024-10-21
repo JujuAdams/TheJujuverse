@@ -4,25 +4,31 @@
 /// @param baseGain
 /// @param membersLoop
 /// @param membersDuckOn
+/// @param membersEmitterAlias
 /// @param metadata
 
-function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _metadata) constructor
+function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _membersEmitterAlias, _metadata) constructor
 {
     static _toUpdateArray = __VinylSystem().__toUpdateArray;
     static _soundDict     = __VinylSystem().__soundDict;
     static _patternDict   = __VinylSystem().__patternDict;
     
-    __mixName       = _mixName;
-    __gainPattern   = _gainPattern;
-    __membersLoop   = _membersLoop;
-    __membersDuckOn = _membersDuckOn;
-    __metadata      = _metadata;
+    __mixName             = _mixName;
+    __gainPattern         = _gainPattern;
+    __membersLoop         = _membersLoop;
+    __membersDuckOn       = _membersDuckOn;
+    __membersEmitterAlias = _membersEmitterAlias;
+    __metadata            = _metadata;
     
     __gainLocal = 1;
     __gainFinal = _gainPattern;
     
     __gainLocalTarget = 1;
     __gainLocalSpeed  = infinity;
+    
+    __pitchLocal       = 1;
+    __pitchLocalTarget = __pitchLocal;
+    __pitchLocalSpeed  = infinity;
     
     __cleanUpIndex = 0;
     __voiceArray   = [];
@@ -35,8 +41,14 @@ function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _
     {
         if (__gainLocal != __gainLocalTarget)
         {
-            __gainLocal += _delta*clamp(__gainLocalTarget - __gainLocal, -__gainLocalSpeed, __gainLocalSpeed);
+            __gainLocal += clamp(__gainLocalTarget - __gainLocal, -_delta*__gainLocalSpeed, _delta*__gainLocalSpeed);
             __UpdateMemberGain();
+        }
+        
+        if (__pitchLocal != __pitchLocalTarget)
+        {
+            __pitchLocal += clamp(__pitchLocalTarget - __pitchLocal, -_delta*__pitchLocalSpeed, _delta*__pitchLocalSpeed);
+            __UpdateMemberPitch();
         }
         
         var _array = __voiceArray;
@@ -76,6 +88,19 @@ function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _
         }
     }
     
+    static __UpdateMemberPitch = function()
+    {
+        var _pitchFinal = __pitchLocal;
+        
+        var _array = __voiceArray;
+        var _i = 0;
+        repeat(array_length(_array))
+        {
+            __VinylEnsureSoundVoice(_array[_i]).__SetMixPitch(_pitchFinal);
+            ++_i;
+        }
+    }
+    
     static __ClearSetup = function()
     {
         __UpdateSetup(1, false, undefined);
@@ -102,12 +127,12 @@ function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _
         }
     }
     
-    static __VoicesFadeOut = function(_rateOfChange)
+    static __VoicesFadeOut = function(_rateOfChange, _pause)
     {
         var _i = 0;
         repeat(array_length(__voiceArray))
         {
-            VinylFadeOut(__voiceArray[_i], _rateOfChange);
+            VinylFadeOut(__voiceArray[_i], _rateOfChange, _pause);
             ++_i;
         }
     }
@@ -143,6 +168,18 @@ function __VinylClassMix(_mixName, _gainPattern, _membersLoop, _membersDuckOn, _
         {
             __gainLocal = _gain;
             __UpdateMemberGain();
+        }
+    }
+    
+    static __SetLocalPitch = function(_pitch, _rateOfChange)
+    {
+        __pitchLocalTarget = _pitch;
+        __pitchLocalSpeed  = _rateOfChange;
+        
+        if (_rateOfChange > 100)
+        {
+            __pitchLocal = _pitch;
+            __UpdateMemberPitch();
         }
     }
     
@@ -325,6 +362,7 @@ function __VinylImportMixGroupJSON(_json)
                 case "baseGain":
                 case "membersLoop":
                 case "membersDuckOn":
+                case "membersEmitter":
                 case "members":
                 case "metadata":
                 break;
@@ -338,7 +376,7 @@ function __VinylImportMixGroupJSON(_json)
         }
     }
     
-    VinylSetupMix(_json.mix, _json[$ "baseGain"], _json[$ "membersLoop"], _json[$ "membersDuckOn"], _json[$ "metadata"]);
+    VinylSetupMix(_json.mix, _json[$ "baseGain"], _json[$ "membersLoop"], _json[$ "membersDuckOn"], _json[$ "membersEmitter"], _json[$ "metadata"]);
     
     var _membersArray = _json[$ "members"];
     if (is_array(_membersArray))

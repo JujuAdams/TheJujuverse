@@ -9,7 +9,6 @@ function VinylSetMixForAssetTag(_mixName, _assetTag)
 {
     static _system        = __VinylSystem();
     static _toUpdateArray = _system.__toUpdateArray;
-    static _soundDict     = _system.__soundDict;
     
     if (_mixName == VINYL_NO_MIX) _mixName = undefined;
     
@@ -17,7 +16,7 @@ function VinylSetMixForAssetTag(_mixName, _assetTag)
     var _i = 0;
     repeat(array_length(_assetArray))
     {
-        var _pattern = struct_get_from_hash(_soundDict, int64(_assetArray[_i]));
+        var _pattern = __VinylEnsurePatternSound(_assetArray[_i]);
         _pattern.__mixName = _mixName;
         
         if (VINYL_LIVE_EDIT) array_push(_toUpdateArray, _pattern);

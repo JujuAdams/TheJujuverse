@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__VinylGetQueueTemplateMacro",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__VinylGetQueueTemplateMacro",
+  "parent":{
+    "name":"(Internals)",
+    "path":"folders/Vinyl/(Internals).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

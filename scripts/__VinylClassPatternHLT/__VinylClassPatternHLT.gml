@@ -8,34 +8,37 @@
 /// @param mix
 /// @param ducker
 /// @param duckPriority
+/// @param emitterAlias
 /// @param metadata
 
-function __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _metadata) constructor
+function __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata) constructor
 {
     static _voiceUpdateArray = __VinylSystem().__voiceUpdateArray;
+    static _emitterMap       = __VinylSystem().__emitterMap;
     static _toUpdateArray    = __VinylSystem().__toUpdateArray;
     
     __patternName = _patternName;
     
-    __soundHead  = __VinylImportSound(_soundHead);
-    __soundLoop  = __VinylImportSound(_soundLoop);
-    __soundTail  = __VinylImportSound(_soundTail);
-    __gain       = _gain;
-    __mixName    = _mixName;
-    __duckerName = _duckerName;
-    __duckPrio   = _duckPrio;
-    __metadata   = _metadata;
+    __soundHead    = __VinylImportSound(_soundHead);
+    __soundLoop    = __VinylImportSound(_soundLoop);
+    __soundTail    = __VinylImportSound(_soundTail);
+    __gain         = _gain;
+    __mixName      = _mixName;
+    __duckerName   = _duckerName;
+    __duckPrio     = _duckPrio;
+    __emitterAlias = _emitterAlias;
+    __metadata     = _metadata;
     
     
     
     
     
-    static __Play = function(_loopLocal__UNUSED, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)
+    static __Play = function(_emitter, _loopLocal__UNUSED, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)
     {
-        return (new __VinylClassVoiceHLT(self, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)).__voiceReference;
+        return (new __VinylClassVoiceHLT(_emitter, self, _gainLocal, _pitchLocal, _duckerNameLocal, _duckPrioLocal)).__voiceReference;
     }
     
-    static __UpdateSetup = function(_soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _metadata)
+    static __UpdateSetup = function(_soundHead, _soundLoop, _soundTail, _gain, _mixName, _duckerName, _duckPrio, _emitterAlias, _metadata)
     {
         var _newSoundHead = __VinylImportSound(_soundHead);
         var _newSoundLoop = __VinylImportSound(_soundLoop);
@@ -50,14 +53,15 @@ function __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail
             array_push(_toUpdateArray, self);
         }
         
-        __soundHead  = _newSoundHead;
-        __soundLoop  = _newSoundLoop;
-        __soundTail  = _newSoundTail;
-        __gain       = _gain;
-        __mixName    = _mixName;
-        __duckerName = _duckerName;
-        __duckPrio   = _duckPrio;
-        __metadata   = _metadata;
+        __soundHead    = _newSoundHead;
+        __soundLoop    = _newSoundLoop;
+        __soundTail    = _newSoundTail;
+        __gain         = _gain;
+        __mixName      = _mixName;
+        __duckerName   = _duckerName;
+        __duckPrio     = _duckPrio;
+        __emitterAlias = _emitterAlias;
+        __metadata     = _metadata;
     }
     
     static __ClearSetup = function()
@@ -81,8 +85,9 @@ function __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail
         if (__soundTail != undefined) _struct.tail = audio_get_name(__soundTail);
         
         if (__gain != 1) _struct.gain = __gain;
-        
-        //TODO - Write ducker and ducker priority
+        if (__duckerName != undefined) _struct.duckOn = __duckerName;
+        if (__duckPrio != 0) _struct.duckPrio = __duckPrio;
+        if (__emitterAlias != undefined) _struct.emitter = __emitterAlias;
         
         return _struct;
     }
@@ -139,7 +144,29 @@ function __VinylClassPatternHLT(_patternName, _soundHead, _soundLoop, _soundTail
             buffer_write(_buffer, buffer_text, ",\n");
         }
         
-        //TODO - Write ducker and ducker priority
+        if (__duckerName != undefined)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    duckOn: \"");
+            buffer_write(_buffer, buffer_text, __duckerName);
+            buffer_write(_buffer, buffer_text, "\",\n");
+        }
+        
+        if (__duckPrio != 0)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    duckPrio: ");
+            buffer_write(_buffer, buffer_text, string(__duckPrio));
+            buffer_write(_buffer, buffer_text, ",\n");
+        }
+        
+        if (__emitterAlias != undefined)
+        {
+            buffer_write(_buffer, buffer_text, _indent);
+            buffer_write(_buffer, buffer_text, "    emitter: \"");
+            buffer_write(_buffer, buffer_text, __emitterAlias);
+            buffer_write(_buffer, buffer_text, "\",\n");
+        }
         
         buffer_write(_buffer, buffer_text, _indent);
         buffer_write(_buffer, buffer_text, "},\n");
@@ -163,6 +190,7 @@ function __VinylImportHLTJSON(_json)
                 case "gain":
                 case "duckOn":
                 case "duckPrio":
+                case "emitter":
                 case "metadata":
                 break;
                 
@@ -177,7 +205,7 @@ function __VinylImportHLTJSON(_json)
         if (not struct_exists(_json, "loop")) __VinylError("Head-Loop-Tail pattern \"", _json.hlt, "\" property .loop must be defined");
     }
     
-    VinylSetupHLT(_json.hlt, _json[$ "head"], _json.loop, _json[$ "tail"], _json[$ "gain"], undefined, _json[$ "duckOn"], _json[$ "duckPrio"], _json[$ "metadata"]);
+    VinylSetupHLT(_json.hlt, _json[$ "head"], _json.loop, _json[$ "tail"], _json[$ "gain"], undefined, _json[$ "duckOn"], _json[$ "duckPrio"], _json[$ "emitter"], _json[$ "metadata"]);
     
     return _json.hlt;
 }

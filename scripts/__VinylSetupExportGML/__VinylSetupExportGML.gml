@@ -13,7 +13,7 @@
 
 function __VinylSetupExportGML(_useMacros = false, _ignoreEmpty = true)
 {
-    static _duckerDict     = __VinylSystem().__duckerDict;
+    static _duckerDict   = __VinylSystem().__duckerDict;
     static _mixDict      = __VinylSystem().__mixDict;
     static _patternDict  = __VinylSystem().__patternDict;
     static _soundDict    = __VinylSystem().__soundDict;

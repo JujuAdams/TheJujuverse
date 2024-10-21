@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"VinylMixGetPitch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"VinylMixGetPitch",
+  "parent":{
+    "name":"Mixes",
+    "path":"folders/Vinyl/Mixes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

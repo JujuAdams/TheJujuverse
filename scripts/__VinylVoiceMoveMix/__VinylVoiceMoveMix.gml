@@ -21,7 +21,8 @@ function __VinylVoiceMoveMix(_voiceReference, _newMixName)
     if (_newMixName == undefined)
     {
         var _mixStruct = undefined;
-        __gainMix = 1;
+        __gainMix  = 1;
+        __pitchMix = 1;
     }
     else
     {
@@ -32,7 +33,9 @@ function __VinylVoiceMoveMix(_voiceReference, _newMixName)
             return;
         }
         
-        __gainMix = _mixStruct.__gainFinal;
+        __gainMix  = _mixStruct.__gainFinal;
+        __pitchMix = _mixStruct.__pitchLocal;
+        
         _mixStruct.__Add(_voiceReference);
     }
     
