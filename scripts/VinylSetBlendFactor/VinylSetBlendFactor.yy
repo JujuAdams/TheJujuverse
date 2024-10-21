@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetBlendFactor",
   "isCompatibility":false,
   "isDnD":false,

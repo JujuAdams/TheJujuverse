@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_keyboard_virtual_hide",
   "isCompatibility":false,
   "isDnD":false,

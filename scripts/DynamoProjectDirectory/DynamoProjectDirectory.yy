@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DynamoProjectDirectory",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_trigger_effect_feedback",
   "isCompatibility":false,
   "isDnD":false,

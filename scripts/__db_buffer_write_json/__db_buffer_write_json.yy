@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__db_buffer_write_json",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_combo_params_reset",
   "isCompatibility":false,
   "isDnD":false,

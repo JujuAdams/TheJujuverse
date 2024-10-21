@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapDeepForeachStruct",
   "isCompatibility":false,
   "isDnD":false,

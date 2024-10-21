@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_combo_create",
   "isCompatibility":false,
   "isDnD":false,

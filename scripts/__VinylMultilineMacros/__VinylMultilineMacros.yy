@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylMultilineMacros",
   "isCompatibility":false,
   "isDnD":false,

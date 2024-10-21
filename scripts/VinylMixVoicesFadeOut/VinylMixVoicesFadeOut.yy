@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylMixVoicesFadeOut",
   "isCompatibility":false,
   "isDnD":false,

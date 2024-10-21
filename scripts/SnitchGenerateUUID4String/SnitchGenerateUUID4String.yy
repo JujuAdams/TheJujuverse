@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchGenerateUUID4String",
   "isCompatibility":false,
   "isDnD":false,

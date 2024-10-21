@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_held_time",
   "isCompatibility":false,
   "isDnD":false,

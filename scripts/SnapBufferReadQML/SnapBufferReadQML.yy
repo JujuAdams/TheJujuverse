@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapBufferReadQML",
   "isCompatibility":false,
   "isDnD":false,

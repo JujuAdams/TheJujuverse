@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_icon_not_a_binding",
   "isCompatibility":false,
   "isDnD":false,

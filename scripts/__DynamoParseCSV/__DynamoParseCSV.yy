@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__DynamoParseCSV",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapDeepCopy",
   "isCompatibility":false,
   "isDnD":false,

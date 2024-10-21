@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetMixForAssetTag",
   "isCompatibility":false,
   "isDnD":false,

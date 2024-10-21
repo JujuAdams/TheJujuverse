@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_cursor_speed_set",
   "isCompatibility":false,
   "isDnD":false,

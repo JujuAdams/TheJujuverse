@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrGetBudget",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_cursor_limit_remove",
   "isCompatibility":false,
   "isDnD":false,

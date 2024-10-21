@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_virtual_destroy_all",
   "isCompatibility":false,
   "isDnD":false,

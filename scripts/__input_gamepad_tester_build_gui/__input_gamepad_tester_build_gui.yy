@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_gamepad_tester_build_gui",
   "isCompatibility":false,
   "isDnD":false,

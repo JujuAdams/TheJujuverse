@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_is_analogue",
   "isCompatibility":false,
   "isDnD":false,

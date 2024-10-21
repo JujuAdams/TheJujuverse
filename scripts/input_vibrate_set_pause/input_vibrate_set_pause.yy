@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_vibrate_set_pause",
   "isCompatibility":false,
   "isDnD":false,

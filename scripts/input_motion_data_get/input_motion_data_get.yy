@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_motion_data_get",
   "isCompatibility":false,
   "isDnD":false,

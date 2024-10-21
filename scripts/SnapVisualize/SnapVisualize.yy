@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapVisualize",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_gamepad_set_vid_pid",
   "isCompatibility":false,
   "isDnD":false,

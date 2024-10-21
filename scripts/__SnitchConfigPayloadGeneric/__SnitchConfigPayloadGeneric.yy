@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__SnitchConfigPayloadGeneric",
   "isCompatibility":false,
   "isDnD":false,

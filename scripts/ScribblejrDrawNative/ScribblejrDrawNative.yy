@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrDrawNative",
   "isCompatibility":false,
   "isDnD":false,

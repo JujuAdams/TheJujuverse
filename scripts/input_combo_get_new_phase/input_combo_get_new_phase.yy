@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_combo_get_new_phase",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapMerge",
   "isCompatibility":false,
   "isDnD":false,

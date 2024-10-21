@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__db_deep_copy",
   "isCompatibility":false,
   "isDnD":false,

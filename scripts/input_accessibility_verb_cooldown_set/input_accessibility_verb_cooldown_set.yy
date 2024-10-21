@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_accessibility_verb_cooldown_set",
   "isCompatibility":false,
   "isDnD":false,

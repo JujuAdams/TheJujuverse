@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapFromQML",
   "isCompatibility":false,
   "isDnD":false,

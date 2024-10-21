@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrSetCharacterWrap",
   "isCompatibility":false,
   "isDnD":false,

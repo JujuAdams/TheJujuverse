@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_accessibility_global_toggle_set",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"TexanCommit",
   "isCompatibility":false,
   "isDnD":false,

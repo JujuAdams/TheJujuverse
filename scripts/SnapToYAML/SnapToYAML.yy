@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapToYAML",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"db_set_timestamp",
   "isCompatibility":false,
   "isDnD":false,

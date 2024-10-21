@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DynamoForceScan",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapBufferReadGrid",
   "isCompatibility":false,
   "isDnD":false,

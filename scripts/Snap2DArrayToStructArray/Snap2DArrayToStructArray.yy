@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Snap2DArrayToStructArray",
   "isCompatibility":false,
   "isDnD":false,

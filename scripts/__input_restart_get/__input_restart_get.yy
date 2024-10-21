@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_restart_get",
   "isCompatibility":false,
   "isDnD":false,

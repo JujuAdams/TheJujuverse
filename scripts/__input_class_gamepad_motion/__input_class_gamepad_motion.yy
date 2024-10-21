@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_class_gamepad_motion",
   "isCompatibility":false,
   "isDnD":false,

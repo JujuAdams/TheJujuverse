@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapToCSV",
   "isCompatibility":false,
   "isDnD":false,

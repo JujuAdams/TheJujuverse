@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_player_apply_trigger_effects",
   "isCompatibility":false,
   "isDnD":false,

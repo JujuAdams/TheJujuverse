@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__DynamoLoadJSON",
   "isCompatibility":false,
   "isDnD":false,

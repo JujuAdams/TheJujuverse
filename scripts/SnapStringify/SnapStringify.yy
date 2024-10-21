@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapStringify",
   "isCompatibility":false,
   "isDnD":false,

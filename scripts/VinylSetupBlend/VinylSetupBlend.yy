@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetupBlend",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetupHLT",
   "isCompatibility":false,
   "isDnD":false,

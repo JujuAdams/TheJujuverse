@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapReconstructionUnpack",
   "isCompatibility":false,
   "isDnD":false,

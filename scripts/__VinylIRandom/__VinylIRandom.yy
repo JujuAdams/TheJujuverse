@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylIRandom",
   "isCompatibility":false,
   "isDnD":false,

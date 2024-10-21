@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__SnitchHMACSHA256",
   "isCompatibility":false,
   "isDnD":false,

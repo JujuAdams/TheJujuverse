@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_radial_sector",
   "isCompatibility":false,
   "isDnD":false,

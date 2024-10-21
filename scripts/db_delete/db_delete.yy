@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"db_delete",
   "isCompatibility":false,
   "isDnD":false,

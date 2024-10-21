@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DynamoScript",
   "isCompatibility":false,
   "isDnD":false,

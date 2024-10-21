@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylDuckerGetMaxPriority",
   "isCompatibility":false,
   "isDnD":false,

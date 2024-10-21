@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapToVDF",
   "isCompatibility":false,
   "isDnD":false,

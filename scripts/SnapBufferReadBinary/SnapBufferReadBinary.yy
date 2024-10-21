@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapBufferReadBinary",
   "isCompatibility":false,
   "isDnD":false,

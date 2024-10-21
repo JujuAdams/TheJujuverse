@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylWillStop",
   "isCompatibility":false,
   "isDnD":false,

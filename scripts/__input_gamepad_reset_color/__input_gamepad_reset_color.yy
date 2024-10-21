@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_gamepad_reset_color",
   "isCompatibility":false,
   "isDnD":false,

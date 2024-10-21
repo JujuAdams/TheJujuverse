@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylResume",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchConvertToUnixTime",
   "isCompatibility":false,
   "isDnD":false,

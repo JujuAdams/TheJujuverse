@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetupExportJSON",
   "isCompatibility":false,
   "isDnD":false,

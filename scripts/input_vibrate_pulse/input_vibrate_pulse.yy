@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_vibrate_pulse",
   "isCompatibility":false,
   "isDnD":false,

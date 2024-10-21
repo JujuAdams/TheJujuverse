@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"TexanFetch",
   "isCompatibility":false,
   "isDnD":false,

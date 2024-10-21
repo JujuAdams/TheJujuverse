@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapBufferReadTilemapNew",
   "isCompatibility":false,
   "isDnD":false,

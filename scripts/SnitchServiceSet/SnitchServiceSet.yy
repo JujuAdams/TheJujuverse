@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchServiceSet",
   "isCompatibility":false,
   "isDnD":false,

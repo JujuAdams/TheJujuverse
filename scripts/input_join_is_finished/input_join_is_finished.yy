@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_join_is_finished",
   "isCompatibility":false,
   "isDnD":false,

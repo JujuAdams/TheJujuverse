@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapStringFromFile",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_binding_get_label",
   "isCompatibility":false,
   "isDnD":false,

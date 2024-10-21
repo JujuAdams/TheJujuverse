@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapDeepAdd",
   "isCompatibility":false,
   "isDnD":false,

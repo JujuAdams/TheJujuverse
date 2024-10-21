@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrAttachSpritefont",
   "isCompatibility":false,
   "isDnD":false,

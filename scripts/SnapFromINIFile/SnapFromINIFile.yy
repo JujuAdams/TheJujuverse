@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapFromINIFile",
   "isCompatibility":false,
   "isDnD":false,

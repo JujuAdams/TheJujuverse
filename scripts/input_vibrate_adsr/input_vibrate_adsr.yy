@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_vibrate_adsr",
   "isCompatibility":false,
   "isDnD":false,

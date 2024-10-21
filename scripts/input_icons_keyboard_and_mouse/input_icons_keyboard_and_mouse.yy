@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_icons_keyboard_and_mouse",
   "isCompatibility":false,
   "isDnD":false,

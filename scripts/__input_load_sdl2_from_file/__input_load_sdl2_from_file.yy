@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_load_sdl2_from_file",
   "isCompatibility":false,
   "isDnD":false,

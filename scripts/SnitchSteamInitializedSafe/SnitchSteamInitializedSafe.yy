@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchSteamInitializedSafe",
   "isCompatibility":false,
   "isDnD":false,

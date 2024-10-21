@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_mouse_check_pressed",
   "isCompatibility":false,
   "isDnD":false,

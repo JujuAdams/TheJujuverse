@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_mouse_capture_get",
   "isCompatibility":false,
   "isDnD":false,

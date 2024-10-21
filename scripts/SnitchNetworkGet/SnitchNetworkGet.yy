@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchNetworkGet",
   "isCompatibility":false,
   "isDnD":false,

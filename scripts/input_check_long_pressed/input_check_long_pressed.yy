@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_check_long_pressed",
   "isCompatibility":false,
   "isDnD":false,

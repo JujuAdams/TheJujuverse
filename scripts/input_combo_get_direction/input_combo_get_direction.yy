@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_combo_get_direction",
   "isCompatibility":false,
   "isDnD":false,

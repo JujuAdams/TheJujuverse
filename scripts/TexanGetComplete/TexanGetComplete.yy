@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"TexanGetComplete",
   "isCompatibility":false,
   "isDnD":false,

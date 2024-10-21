@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrShrinkExt",
   "isCompatibility":false,
   "isDnD":false,

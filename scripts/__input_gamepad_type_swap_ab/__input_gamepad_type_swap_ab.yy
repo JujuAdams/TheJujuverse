@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_gamepad_type_swap_ab",
   "isCompatibility":false,
   "isDnD":false,

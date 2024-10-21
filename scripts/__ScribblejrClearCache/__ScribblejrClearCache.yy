@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__ScribblejrClearCache",
   "isCompatibility":false,
   "isDnD":false,

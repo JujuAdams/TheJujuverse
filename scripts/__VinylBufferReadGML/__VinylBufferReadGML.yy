@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylBufferReadGML",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchSentryBreadcrumbExt",
   "isCompatibility":false,
   "isDnD":false,

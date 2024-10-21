@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylDuckerGetVoice",
   "isCompatibility":false,
   "isDnD":false,

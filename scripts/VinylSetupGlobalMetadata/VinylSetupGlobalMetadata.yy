@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetupGlobalMetadata",
   "isCompatibility":false,
   "isDnD":false,

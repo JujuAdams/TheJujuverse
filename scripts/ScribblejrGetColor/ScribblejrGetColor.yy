@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrGetColor",
   "isCompatibility":false,
   "isDnD":false,

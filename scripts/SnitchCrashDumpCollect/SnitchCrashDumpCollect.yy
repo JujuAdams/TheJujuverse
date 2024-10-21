@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchCrashDumpCollect",
   "isCompatibility":false,
   "isDnD":false,

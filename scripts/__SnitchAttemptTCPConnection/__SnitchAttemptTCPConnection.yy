@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__SnitchAttemptTCPConnection",
   "isCompatibility":false,
   "isDnD":false,

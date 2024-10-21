@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__SnitchConfigCrashes",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"db_sort_by_timestamp",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__DynamoBufferReadString",
   "isCompatibility":false,
   "isDnD":false,

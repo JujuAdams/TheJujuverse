@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSetBlendAnimCurve",
   "isCompatibility":false,
   "isDnD":false,

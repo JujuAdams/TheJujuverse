@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"TexanFlush",
   "isCompatibility":false,
   "isDnD":false,

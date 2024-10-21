@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__ScribblejrGetSpaceWidth",
   "isCompatibility":false,
   "isDnD":false,

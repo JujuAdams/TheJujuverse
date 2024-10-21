@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_hotswap_params_set",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"db_set_raw_data",
   "isCompatibility":false,
   "isDnD":false,

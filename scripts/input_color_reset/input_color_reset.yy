@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_color_reset",
   "isCompatibility":false,
   "isDnD":false,

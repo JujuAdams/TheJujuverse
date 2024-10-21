@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_binding_get_verbs",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_finalize_default_profiles",
   "isCompatibility":false,
   "isDnD":false,

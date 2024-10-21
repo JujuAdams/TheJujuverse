@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnapMD5",
   "isCompatibility":false,
   "isDnD":false,

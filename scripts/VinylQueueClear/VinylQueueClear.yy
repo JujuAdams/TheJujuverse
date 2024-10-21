@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylQueueClear",
   "isCompatibility":false,
   "isDnD":false,

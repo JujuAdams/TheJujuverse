@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DynamoLiveUpdateEnabled",
   "isCompatibility":false,
   "isDnD":false,

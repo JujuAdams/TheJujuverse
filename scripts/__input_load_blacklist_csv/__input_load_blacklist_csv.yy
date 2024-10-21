@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_load_blacklist_csv",
   "isCompatibility":false,
   "isDnD":false,

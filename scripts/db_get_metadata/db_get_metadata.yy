@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"db_get_metadata",
   "isCompatibility":false,
   "isDnD":false,

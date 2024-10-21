@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ScribblejrCacheFontInfo",
   "isCompatibility":false,
   "isDnD":false,

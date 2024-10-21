@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_player_ghost_set",
   "isCompatibility":false,
   "isDnD":false,

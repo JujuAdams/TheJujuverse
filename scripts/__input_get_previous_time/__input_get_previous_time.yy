@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_get_previous_time",
   "isCompatibility":false,
   "isDnD":false,

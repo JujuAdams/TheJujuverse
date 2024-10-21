@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_trace_loud",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__input_gamepad_tester_destroy_gui",
   "isCompatibility":false,
   "isDnD":false,

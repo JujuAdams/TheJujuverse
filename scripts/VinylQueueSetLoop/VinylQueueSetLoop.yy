@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylQueueSetLoop",
   "isCompatibility":false,
   "isDnD":false,

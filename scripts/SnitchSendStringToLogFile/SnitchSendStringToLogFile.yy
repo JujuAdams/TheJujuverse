@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"SnitchSendStringToLogFile",
   "isCompatibility":false,
   "isDnD":false,
