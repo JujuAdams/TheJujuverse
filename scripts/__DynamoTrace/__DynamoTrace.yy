@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"DynamoScript",
+  "%Name":"__DynamoTrace",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"DynamoScript",
+  "name":"__DynamoTrace",
   "parent":{
-    "name":"GML Script Reloading",
-    "path":"folders/Dynamo/GML Script Reloading.yy",
+    "name":"(System)",
+    "path":"folders/Dynamo/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

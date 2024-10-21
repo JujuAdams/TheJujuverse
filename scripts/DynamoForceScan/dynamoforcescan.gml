@@ -1,3 +1,4 @@
+// Feather disable all
 /// Forces Dynamo to scan all watched assets (scripts and Included Files). Any assets that have
 /// changed and are set to autoload will be reloaded. If DYNAMO_AUTO_SCAN is set to <true> then you
 /// don't need to call this function yourself as Dynamo will constantly scan assets for you.

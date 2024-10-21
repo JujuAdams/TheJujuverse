@@ -1,3 +1,4 @@
+// Feather disable all
 /// Returns whether Dynamo's live update features are enabled.
 
 function DynamoLiveUpdateEnabled()

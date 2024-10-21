@@ -1,3 +1,4 @@
+// Feather disable all
 /// Sets up a script to watch for changes. If DYNAMO_AUTO_SCAN is set to <true> then watched
 /// scripts will be scanned for changes automatically. You can check if a script has  changed
 /// by calling DynamoScriptChanged(), and the script can be loaded and its changes applied with

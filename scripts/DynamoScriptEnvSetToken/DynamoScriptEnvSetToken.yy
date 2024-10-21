@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"DynamoScript",
+  "%Name":"DynamoScriptEnvSetToken",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"DynamoScript",
+  "name":"DynamoScriptEnvSetToken",
   "parent":{
     "name":"GML Script Reloading",
     "path":"folders/Dynamo/GML Script Reloading.yy",

@@ -1,3 +1,4 @@
+// Feather disable all
 /// Returns whether the script file on disk has changed since the last time DynamoScriptChanged()
 /// was called (targetting that script file).
 /// 

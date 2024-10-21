@@ -1,3 +1,4 @@
+// Feather disable all
 /// Sets up an Included File to watch for changes. If DYNAMO_AUTO_SCAN is set to <true> then
 /// watched Included Files will be scanned for changes automatically. You can check if a file has
 /// changed by calling DynamoFileChanged() and the file can be loaded with DynamoFileLoad().

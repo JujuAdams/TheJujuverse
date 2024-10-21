@@ -1,3 +1,4 @@
+// Feather disable all
 function __DynamoClassScript(_name, _path) constructor
 {
     __name = _name;

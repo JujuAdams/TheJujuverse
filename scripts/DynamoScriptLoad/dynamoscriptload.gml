@@ -1,3 +1,4 @@
+// Feather disable all
 /// Forces a script to be loaded, executing the callback defined for the script via DynamoScript() (if any).
 /// 
 /// @param script

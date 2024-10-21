@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"DynamoScriptChanged",
   "parent":{
-    "name":"Dynamo",
-    "path":"folders/Dynamo.yy",
+    "name":"GML Script Reloading",
+    "path":"folders/Dynamo/GML Script Reloading.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

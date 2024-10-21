@@ -1,3 +1,4 @@
+// Feather disable all
 //Whether to allow Dynamo's live updating features to operate
 //You should set this to <false> when releasing builds
 #macro DYNAMO_ENABLED  true
