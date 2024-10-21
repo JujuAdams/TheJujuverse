@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/JujuAdams/TheJujuverse/master/LOGO.png" style="display:block; margin:auto; width:300px"></p>
 
 <h1 align="center">The Jujuverse</h1>
-<h3 align="center">Game starter pack, for GameMaker 2024.4 (and later)</p>
+<h3 align="center">Game starter pack, for GameMaker 2024.8 (and later)</p>
 
 &nbsp;
 
