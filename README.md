@@ -11,27 +11,27 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/scribble"><img src="https://raw.githubusercontent.com/JujuAdams/scribble/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/scribble">Scribble</a><br>Powerful, fully featured text renderer</td>
-        <td>v9.0.0</td>
+        <td>v9.3.3</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/ScribbleJunior"><img src="https://raw.githubusercontent.com/JujuAdams/ScribbleJunior/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/ScribbleJunior">Scribble Jr.</a><br>Fast and lightweight text renderer</td>
-        <td>v1.3.0</td>
+        <td>v1.6.0</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/input"><img src="https://raw.githubusercontent.com/JujuAdams/input/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/input">Input</a><br>Comprehensive cross-platform input</td>
-        <td>v6.2.5</td>
+        <td>v8.0.1</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Vinyl"><img src="https://raw.githubusercontent.com/JujuAdams/Vinyl/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Vinyl">Vinyl</a><br>Live updating modular audio system</td>
-        <td>v6.0.6</td>
+        <td>v6.1.7</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Dynamo"><img src="https://raw.githubusercontent.com/JujuAdams/Dynamo/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/Dynamo">Dynamo</a><br>Dynamic data loading</td>
-        <td>v3.0.4</td>
+        <td>v4.0.2</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/db"><img src="https://raw.githubusercontent.com/JujuAdams/db/master/LOGO.png" style="width:120px"></a></td>
@@ -41,7 +41,7 @@
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/SNAP"><img src="https://raw.githubusercontent.com/JujuAdams/SNAP/master/LOGO.png" style="width:120px"></a></td>
         <td><a href="https://github.com/JujuAdams/SNAP">SNAP</a><br>Struct and array export/import and utilities</td>
-        <td>v6.1.2</td>
+        <td>v7.0.2</td>
     </tr>
     <tr>
         <td align="right"><a href="https://github.com/JujuAdams/Snitch"><img src="https://raw.githubusercontent.com/JujuAdams/Snitch/master/LOGO.png" style="width:120px"></a></td>
