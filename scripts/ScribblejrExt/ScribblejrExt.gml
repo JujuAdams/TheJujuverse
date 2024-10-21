@@ -4,8 +4,6 @@
 /// background, Scribble Jr. will bake a vertex buffer that replaces the native text rendering and
 /// is faster to draw.
 /// 
-/// N.B. Manual line breaks ("newlines") are not supported.
-/// 
 /// This function doesn't actually draw the text, it only returns a "text element struct". This
 /// struct can then be used to draw the text, as well as get the width/height of the text, by
 /// calling methods on the struct.

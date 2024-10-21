@@ -7,6 +7,7 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
     static _vertexFormat = _system.__vertexFormatColor;
     
     __fragmentArray = _fragArray;
+    __font = _font;
     
     __tickMethod = __DecomposeFragment;
     
@@ -29,6 +30,7 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
     __fragment    = 0;
     __stringArray = undefined;
     __glyphX      = 0;
+    __glyphY      = 0;
     
     
     
@@ -55,6 +57,7 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
         __glyph       = 0;
         __glyphCount  = string_length(_fragmentString);
         __glyphX      = _fragmentData.__x;
+        __glyphY      = _fragmentData.__y;
         __glyphColour = _fragmentData.__colour;
         
         __stringArray = __ScribblejrStringDecompose(_fragmentString, __glyphCount);
@@ -69,6 +72,22 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
         
         repeat(SCRIBBLEJR_BAKE_GLYPH_COUNT)
         {
+            if (__glyph >= __glyphCount)
+            {
+                __fragment++;
+                if (__fragment < array_length(__fragmentArray))
+                {
+                    __tickMethod = __DecomposeFragment;
+                    break;
+                }
+                else
+                {
+                    vertex_end(__vertexBuffer);
+                    __tickMethod = __Freeze;
+                    return false;
+                }
+            }
+            
             var _char = __stringArray[__glyph];
             if (_char == " ")
             {
@@ -89,7 +108,7 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
                     var _texB = _texT + _glyphData.h*__texTexelH;
                     
                     var _glyphL = __glyphX + _glyphData.offset-1;
-                    var _glyphT = _glyphData.yOffset-1;
+                    var _glyphT = __glyphY + _glyphData.yOffset-1;
                     var _glyphR = _glyphL + _glyphData.w;
                     var _glyphB = _glyphT + _glyphData.h;
                     
@@ -100,21 +119,6 @@ function __ScribblejrClassBakerExt(_fragArray, _font) constructor
             }
             
             __glyph++;
-            if (__glyph >= __glyphCount)
-            {
-                __fragment++;
-                if (__fragment < array_length(__fragmentArray))
-                {
-                    __tickMethod = __DecomposeFragment;
-                    break;
-                }
-                else
-                {
-                    vertex_end(__vertexBuffer);
-                    __tickMethod = __Freeze;
-                    return false;
-                }
-            }
         }
         
         return false;

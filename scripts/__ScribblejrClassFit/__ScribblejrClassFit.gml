@@ -410,6 +410,16 @@ function __ScribblejrClassFit(_key, _string, _hAlign, _vAlign, _font, _fontScale
     
     
     
+    static GetHAlign = function()
+    {
+        return __hAlign;
+    }
+    
+    static GetVAlign = function()
+    {
+        return __vAlign;
+    }
+    
     static GetWidth = function()
     {
         if (__width == undefined)

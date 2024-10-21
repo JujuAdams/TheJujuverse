@@ -7,8 +7,7 @@
 
 function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale) : __ScribblejrClassBase() constructor
 {
-    static _system     = __ScribblejrSystem();
-    static _colourDict = _system.__colourDict;
+    static _system = __ScribblejrSystem();
     
     static _dropShadowEnableHash = variable_get_hash("dropShadowEnable");
     
@@ -31,53 +30,50 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
     __spriteArray   = [];
     __fragmentArray = [];
     __vertexBuffer  = undefined;
-    __vertexBaker = new __ScribblejrClassBakerExt(__fragmentArray, _font);
+    __vertexBaker   = new __ScribblejrClassBakerExt(__fragmentArray, _font);
     __fontTexture   = ScribblejrCacheFontInfo(_font).__forcedTexturePointer;
     
-    __simple = false;
     __width  = undefined;
     __height = undefined;
     
     if (SCRIBBLEJR_AUTO_RESET_DRAW_STATE) var _oldFont = draw_get_font();
     draw_set_font(__font);
     
-    var _substringArray = string_split(__string, "[");
-    if (array_length(_substringArray) <= 1)
+    if (string_count("[", _string) <= 0)
     {
         //No square brackets, fall back on simple rendering
-        __simple = true;
         
         switch(__hAlign)
         {
             case fa_left:
-                __xOffset = 0;
+                var _xOffset = 0;
             break;
             
             case fa_center:
                 __width = __scale*string_width(_string);
-                __xOffset = -__width/2;
+                var _xOffset = -__width/2;
             break;
             
             case fa_right:
                 __width = __scale*string_width(_string);
-                __xOffset = -__width;
+                var _xOffset = -__width;
             break;
         }
         
         switch(__vAlign)
         {
             case fa_top:
-                __yOffset = 0;
+                var _yOffset = 0;
             break;
             
             case fa_middle:
                 __height = __scale*string_height(_string);
-                __yOffset = -__height/2;
+                var _yOffset = -__height/2;
             break;
             
             case fa_bottom:
                 __height = __scale*string_height(_string);
-                __yOffset = -__height;
+                var _yOffset = -__height;
             break;
         }
         
@@ -87,132 +83,123 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
         array_push(__fragmentArray, {
             __colour: -1,
             __string: __string,
-            __x: 0,
+            __x:      _xOffset,
+            __y:      _yOffset,
         });
     }
     else
     {
-        var _spriteScale = (SCRIBBLEJR_SCALE_SPRITES? 1 : (1/_fontScale)) / SCRIBBLEJR_GLOBAL_FONT_SCALE;
-        var _lineHeight  = __ScribblejrGetSpaceHeight(_font);
+        //Cache some frequently used information
+        var _lineHeight    = __ScribblejrGetSpaceHeight(_font);
+        var _fragmentArray = __fragmentArray;
+        var _spriteArray   = __spriteArray;
         
-        //Handle the first text fragment
-        var _textString = _substringArray[0];
-        if (_textString != "")
+        var _maxLineWidth = 0;
+        var _colour = -1;
+        
+        var _lineArray              = string_split(_string, "\n");
+        var _lineCount              = array_length(_lineArray);
+        var _lineWidthArray         = array_create(_lineCount, undefined); //TODO - Make these arrays static
+        var _lineFragmentStartArray = array_create(_lineCount, undefined);
+        var _lineFragmentEndArray   = array_create(_lineCount, undefined);
+        var _lineSpriteStartArray   = array_create(_lineCount, undefined);
+        var _lineSpriteEndArray     = array_create(_lineCount, undefined);
+        
+        var _lineIndex = 0;
+        repeat(_lineCount)
         {
-            array_push(__fragmentArray, {
-                __colour: -1,
-                __string: _textString,
-                __x: 0,
-            });
+            _lineFragmentStartArray[_lineIndex] = array_length(_fragmentArray);
+            _lineSpriteStartArray[  _lineIndex] = array_length(_spriteArray);
             
-            var _x = string_width(_textString);
+            var _width = __ScribblejrStringFragment(_lineArray[_lineIndex],
+                                                    _lineHeight,
+                                                    (SCRIBBLEJR_SCALE_SPRITES? 1 : (1/_fontScale)) / SCRIBBLEJR_GLOBAL_FONT_SCALE, //Sprite scale
+                                                    _colour,
+                                                    _fragmentArray, _spriteArray);
+            
+            _lineWidthArray[_lineIndex] = _width;
+            _maxLineWidth = max(_maxLineWidth, _width);
+            
+            _lineFragmentEndArray[_lineIndex] = array_length(_fragmentArray);
+            _lineSpriteEndArray[  _lineIndex] = array_length(_spriteArray);
+            
+            with(array_last(_fragmentArray))
+            {
+                _colour = __colour;
+            }
+            
+            ++_lineIndex;
+        }
+        
+        var _lastFragment = array_last(_fragmentArray);
+        if (_lastFragment == undefined)
+        {
+            __width  = 0;
+            __height = 0;
         }
         else
         {
-            var _x = 0;
-        }
-        
-        var _colour = -1;
-        
-        //Then iterate other command tag + text fragment combos, splitting as necessary
-        var _i = 1;
-        repeat(array_length(_substringArray)-1)
-        {
-            var _tagSplitArray = string_split(_substringArray[_i], "]", false, 1);
-            if (array_length(_tagSplitArray) == 2)
+            __width  = __scale*_maxLineWidth;
+            __height = __scale*_lineCount*_lineHeight;
+            
+            if (__vAlign == fa_center)
             {
-                //Handle the contents of the tag
-                var _tagString = _tagSplitArray[0];
-                
-                //First we try to find the colour state
-                var _foundColour = _colourDict[$ _tagString];
-                if (_foundColour != undefined)
+                var _yOffset = -0.5*__height;
+            }
+            else if (__vAlign == fa_right)
+            {
+                var _yOffset = -__height;
+            }
+            else
+            {
+                var _yOffset = 0;
+            }
+            
+            var _lineIndex = 0;
+            repeat(_lineCount)
+            {
+                if (__hAlign == fa_center)
                 {
-                    _colour = _foundColour;
+                    var _xOffset = -0.5*_lineWidthArray[_lineIndex];
+                }
+                else if (__hAlign == fa_right)
+                {
+                    var _xOffset = -_lineWidthArray[_lineIndex];
                 }
                 else
                 {
-                    var _spriteSplitArray = string_split(_tagString, ",");
-                    
-                    //Then we try to find a sprite using the command tag
-                    var _sprite = asset_get_index(_spriteSplitArray[0]);
-                    if (sprite_exists(_sprite))
-                    {
-                        //Decode sprite arguments
-                        switch(array_length(_spriteSplitArray))
-                        {
-                            case 1:
-                                var _spriteImage = 0;
-                                var _spriteX     = 0;
-                                var _spriteY     = 0;
-                            break;
-                            
-                            case 2:
-                                var _spriteImage = real(_spriteSplitArray[1]);
-                                var _spriteX     = 0;
-                                var _spriteY     = 0;
-                            break;
-                            
-                            case 3:
-                                var _spriteImage = real(_spriteSplitArray[1]);
-                                var _spriteX     = real(_spriteSplitArray[2]);
-                                var _spriteY     = 0;
-                            break;
-                            
-                            case 4:
-                                var _spriteImage = real(_spriteSplitArray[1]);
-                                var _spriteX     = real(_spriteSplitArray[2]);
-                                var _spriteY     = real(_spriteSplitArray[3]);
-                            break;
-                        }
-                        
-                        array_push(__spriteArray, {
-                            __sprite: _sprite,
-                            __image: _spriteImage,
-                            __x: _spriteX + _x + _spriteScale*sprite_get_xoffset(_sprite),
-                            __y: _spriteY + 0.5*(_lineHeight - _spriteScale*sprite_get_height(_sprite)) + _spriteScale*sprite_get_yoffset(_sprite),
-                        });
-                        
-                        _x += _spriteScale*sprite_get_width(_sprite);
-                    }
-                    else
-                    {
-                        __ScribblejrTrace("Command tag \"", _tagString, "\" not recognised");
-                    }
+                    var _xOffset = 0;
                 }
                 
-                //Then we handle the next text fragment
-                var _textString = _tagSplitArray[1];
-                if (_textString != "")
+                //Text fragments
+                var _startCount = _lineFragmentStartArray[_lineIndex];
+                var _endCount   = _lineFragmentEndArray[  _lineIndex];
+                
+                var _fragmentIndex = _startCount;
+                repeat(_endCount - _startCount)
                 {
-                    array_push(__fragmentArray, {
-                        __colour: _colour,
-                        __string: _tagSplitArray[1],
-                        __x: _x,
-                    });
-                    
-                    _x += string_width(_textString);
+                    var _fragment = _fragmentArray[_fragmentIndex];
+                    _fragment.__x += _xOffset;
+                    _fragment.__y += _yOffset;
+                    ++_fragmentIndex;
                 }
+                
+                //Sprite fragments
+                var _startCount = _lineSpriteStartArray[_lineIndex];
+                var _endCount   = _lineSpriteEndArray[  _lineIndex];
+                
+                var _spriteIndex = _startCount;
+                repeat(_endCount - _startCount)
+                {
+                    var _sprite = _spriteArray[_spriteIndex];
+                    _sprite.__x += _xOffset;
+                    _sprite.__y += _yOffset;
+                    ++_spriteIndex;
+                }
+                
+                _yOffset += _lineHeight;
+                ++_lineIndex;
             }
-            
-            ++_i;
-        }
-        
-        __width  = __scale*_x;
-        __height = __scale*_lineHeight;
-        
-        switch(__hAlign)
-        {
-            case fa_left:   __xOffset = 0;          break;
-            case fa_center: __xOffset = -__width/2; break;
-            case fa_right:  __xOffset = -__width;   break;
-        }
-        
-        switch(__vAlign)
-        {
-            case fa_top:    __yOffset = 0;           break;
-            case fa_middle: __yOffset = -__height/2; break;
-            case fa_bottom: __yOffset = -__height;   break;
         }
     }
     
@@ -223,15 +210,20 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
     
     
     
+    static GetHAlign = function()
+    {
+        return __hAlign;
+    }
+    
+    static GetVAlign = function()
+    {
+        return __vAlign;
+    }
+    
     static GetWidth = function()
     {
         if (__width == undefined)
         {
-            if (not __simple)
-            {
-                //This should never happen!
-            }
-            
             var _oldFont = draw_get_font();
             draw_set_font(__font);
             __width = __scale*string_width(__string);
@@ -245,11 +237,6 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
     {
         if (__height == undefined)
         {
-            if (not __simple)
-            {
-                //This should never happen!
-            }
-            
             var _oldFont = draw_get_font();
             draw_set_font(__font);
             __height = __scale*string_height(__string);
@@ -335,8 +322,6 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
         draw_set_valign(fa_top);
         
         var _scale = __scale;
-        _x += __xOffset;
-        _y += __yOffset;
         
         if (_sdfEffects != undefined)
         {
@@ -357,7 +342,7 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
                 with(__fragmentArray[_i])
                 {
                     draw_set_colour((__colour >= 0)? __colour : _colour);
-                    draw_text_transformed(_x + _scale*__x, _y, __string, _scale, _scale, 0);
+                    draw_text_transformed(_x + _scale*__x, _y + _scale*__y, __string, _scale, _scale, 0);
                 }
                 
                 ++_i;
@@ -373,7 +358,7 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
                 with(__fragmentArray[_i])
                 {
                     draw_set_colour((__colour >= 0)? __colour : _colour);
-                    draw_text_transformed(_x + _scale*__x, _y, __string, _scale, _scale, 0);
+                    draw_text_transformed(_x + _scale*__x, _y + _scale*__y, __string, _scale, _scale, 0);
                 }
                 
                 ++_i;
@@ -412,9 +397,6 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
         static _shdScribblejrExt_u_vPositionAlphaScale = shader_get_uniform(__shdScribblejrColor, "u_vPositionAlphaScale");
         static _shdScribblejrExt_u_iColour = shader_get_uniform(__shdScribblejrColor, "u_iColour");
         
-        _x += __xOffset;
-        _y += __yOffset;
-        
         __SCRIBBLEJR_SHADER_SET(__shdScribblejrColor);
         shader_set_uniform_f(_shdScribblejrExt_u_vPositionAlphaScale, _x, _y, _alpha, __scale);
         shader_set_uniform_i(_shdScribblejrExt_u_iColour, _colour);
@@ -439,8 +421,6 @@ function __ScribblejrClassExt(_key, _string, _hAlign, _vAlign, _font, _fontScale
             gpu_set_tex_filter(true);
         }
         
-        _x += __xOffset;
-        _y += __yOffset;
         var _scale = __scale;
         
         with(_sdfEffects)

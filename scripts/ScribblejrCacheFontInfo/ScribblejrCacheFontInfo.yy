@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ScribblejrCacheFontInfo",
   "parent":{
-    "name":"Setup",
-    "path":"folders/Scribble Jr./Setup.yy",
+    "name":"Font",
+    "path":"folders/Scribble Jr./Setup/Font.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

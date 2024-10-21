@@ -4,8 +4,6 @@
 /// width and height using simple linear scaling. Over a few frames in the background, Scribble Jr.
 /// will bake a vertex buffer that replaces the native text rendering and is faster to draw.
 /// 
-/// N.B. Manual line breaks ("newlines") are not supported.
-/// 
 /// This function scales text without adding newlines. If you want to scale down text whilst adding
 /// newlines (a.k.a. "reflowing"), albeit at a performance penality, then use ScribblejrFitExt().
 /// 
