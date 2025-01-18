@@ -1,3 +1,7 @@
+# This repo have been archived. Please see individual repos for up-to-date library versions.
+
+&nbsp;
+
 <p align="center"><img src="https://raw.githubusercontent.com/JujuAdams/TheJujuverse/master/LOGO.png" style="display:block; margin:auto; width:300px"></p>
 
 <h1 align="center">The Jujuverse</h1>
